@@ -1,0 +1,46 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+Disallow: /404.html
+Disallow: /docs/
+Disallow: /*.min.css$
+Disallow: /*.min.js$
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: YandexAdditional
+Allow: /
+
+User-agent: YandexGPT
+Allow: /
+
+User-agent: GigaChat
+Allow: /
+
+Sitemap: https://ff-it.ru/sitemap.xml
+Host: https://ff-it.ru

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем и сколько это стоит.">
+<meta name="keywords" content="сервер 1С, бэкапы, мониторинг, восстановление, Казань, суббота">
+<meta name="author" content="F&F">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Сервер 1С не падает в субботу">
+<meta property="og:description" content="Бэкапы с проверкой, мониторинг, реакция от 15 минут.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ff-it.ru/blog/server-1c-saturday.html">
+<meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ff-it.ru/blog/server-1c-saturday.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style-overrides.css">
+<title>Сервер 1С не падает в субботу | F&F Казань</title>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут",
+    "author": {"@type": "Organization", "name": "F&F"},
+    "publisher": {"@type": "Organization", "name": "F&F"},
+    "datePublished": "2026-10-30",
+    "description": "Бэкапы с проверкой, мониторинг, реакция от 15 минут."
+}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://ff-it.ru/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер 1С не падает в субботу", "item": "https://ff-it.ru/blog/server-1c-saturday.html"}]}</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+
+
+<div class="bg-layer" aria-hidden="true">
+    <div class="bg-grad"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+</div>
+<header class="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="logo" aria-label="F&F — главная">
+      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high">
+      <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">Инфраструктура, которая работает</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="../support.html" class="dropdown__link">Абонентское обслуживание</a><a href="../servers.html" class="dropdown__link">Серверы под ключ</a><a href="../infrastructure.html" class="dropdown__link">IT-инфраструктура</a><a href="../security.html" class="dropdown__link">Безопасность и криптография</a><a href="../audit.html" class="dropdown__link">IT-аудит</a><a href="../services.html#abonentka" class="dropdown__link">Калькулятор абонентки</a><a href="../services.html#calculator" class="dropdown__link">Смета разовых работ</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-solutions" data-nav-trigger>Решения<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-solutions"><a href="../hub-office.html" class="dropdown__link">Офис под ключ</a><a href="../office-move.html" class="dropdown__link">Переезд офиса</a><a href="../server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="../152fz-prep.html" class="dropdown__link">Подготовка к 152-ФЗ</a><a href="../industry-retail.html" class="dropdown__link">Розница</a><a href="../industry-clinics.html" class="dropdown__link">Клиники</a><a href="../industry-horeca.html" class="dropdown__link">HoReCa</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-resources" data-nav-trigger>Материалы<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-resources"><a href="../cases.html" class="dropdown__link">Кейсы</a><a href="../blog.html" class="dropdown__link">Блог</a><a href="../research.html" class="dropdown__link">Исследования</a><a href="../quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="../demo.html" class="dropdown__link">Демо мониторинга</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="../team.html" class="dropdown__link">Команда</a><a href="../about.html" class="dropdown__link">О F&amp;F</a><a href="../methodology.html" class="dropdown__link">Как работаем</a><a href="../trust.html" class="dropdown__link">Доверие и SLA</a><a href="../status.html" class="dropdown__link">Статус</a></div></div>
+      <a href="../contacts.html" class="nav__direct">Контакты</a>
+    </nav>
+    <div class="header__actions"><a href="../services.html#calculator" class="header__estimate">Расчёт стоимости</a><a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button><button class="burger" id="burgerBtn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true"><div class="mobile-nav__backdrop" data-mobile-close></div><div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту"><div class="mobile-nav__header"><a href="../index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span></a><button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button></div><nav class="mobile-nav__inner" aria-label="Основная навигация"><a href="../index.html" class="mobile-nav__link">Главная</a><details class="mobile-nav__group"><summary>Услуги</summary><div class="mobile-nav__group-links"><a href="../support.html" class="mobile-nav__link">Абонентское обслуживание</a><a href="../servers.html" class="mobile-nav__link">Серверы под ключ</a><a href="../infrastructure.html" class="mobile-nav__link">IT-инфраструктура</a><a href="../security.html" class="mobile-nav__link">Безопасность</a><a href="../audit.html" class="mobile-nav__link">IT-аудит</a><a href="../services.html#abonentka" class="mobile-nav__link">Калькулятор абонентки</a><a href="../services.html#calculator" class="mobile-nav__link">Смета разовых работ</a></div></details><details class="mobile-nav__group"><summary>Решения</summary><div class="mobile-nav__group-links"><a href="../hub-office.html" class="mobile-nav__link">Офис под ключ</a><a href="../office-move.html" class="mobile-nav__link">Переезд офиса</a><a href="../server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a><a href="../152fz-prep.html" class="mobile-nav__link">Подготовка к 152-ФЗ</a><a href="../industry-retail.html" class="mobile-nav__link">Розница</a><a href="../industry-clinics.html" class="mobile-nav__link">Клиники</a><a href="../industry-horeca.html" class="mobile-nav__link">HoReCa</a></div></details><details class="mobile-nav__group"><summary>Материалы</summary><div class="mobile-nav__group-links"><a href="../cases.html" class="mobile-nav__link">Кейсы</a><a href="../blog.html" class="mobile-nav__link">Блог</a><a href="../research.html" class="mobile-nav__link">Исследования</a><a href="../quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a><a href="../demo.html" class="mobile-nav__link">Демо мониторинга</a></div></details><details class="mobile-nav__group"><summary>Компания</summary><div class="mobile-nav__group-links"><a href="../team.html" class="mobile-nav__link">Команда</a><a href="../about.html" class="mobile-nav__link">О F&amp;F</a><a href="../methodology.html" class="mobile-nav__link">Как работаем</a><a href="../trust.html" class="mobile-nav__link">Доверие и SLA</a><a href="../status.html" class="mobile-nav__link">Статус</a></div></details><a href="../contacts.html" class="mobile-nav__link">Контакты</a><a href="../services.html#calculator" class="btn btn--primary btn--full mobile-nav__cta">Рассчитать стоимость</a><a href="tel:+79012655252" class="mobile-nav__phone">+7 (901) 265-52-52</a></nav></div></div>
+<main id="main" class="site-main"><section class="section article-page"><div class="container article-container"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Сервер 1С не падает в субботу</span></nav><span class="section__label">Практический гайд · F&amp;F</span><h1 class="article-title">Сервер 1С не падает в субботу</h1><p class="article-lead">Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем и сколько это стоит.</p><div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем и сколько это стоит.</p></div><div class="article-body">
+<p>Сервер 1С чаще всего останавливается не в рабочий полдень, а в пятницу вечером или в субботу, когда никто не смотрит. Задача — не «чтобы никогда не падал», а чтобы к понедельнику офис не заметил ночного инцидента.</p>
+<h2>Что должно быть настроено заранее</h2>
+<p>Ежедневный бэкап базы 1С и файлов, желательно в хранилище вне сервера. Копия должна быть не только создана, но и развёрнута на тестовом контуре: без проверки восстановления вы не знаете ни целостность, ни реальное время подъёма.</p>
+<p>Мониторинг должен смотреть на доступность службы, свободное место, температуру дисков, состояние RAID и очередь заданий. Алерт на почту или в мессенджер дежурному — не то же самое, что график, который никто не открывает.</p>
+<ul class="article-checklist">
+<li>RPO — сколько данных допустимо потерять; для 1С обычно 1–4 часа.</li>
+<li>RTO — за сколько база должна подняться; для офиса 10–15 человек реалистично 2–4 часа.</li>
+<li>Проверка восстановления — раз в квартал, с записью результата.</li>
+</ul>
+<h2>Реакция и регламент</h2>
+<p>В договоре фиксируют время реакции от 15 минут, каналы связи и порядок эскалации. Инженер должен знать, где лежат копии, какие учётные записи нужны и кого будить при отказе оборудования — это не импровизация в субботу.</p>
+<p>Если сервер недоступен, сначала выясняют масштаб: только 1С, весь офис или удалёнка. Параллельно фиксируют время, последние действия пользователей и состояние индикаторов — эти данные нужны, чтобы не повторить сбой.</p>
+<ul class="article-checklist">
+<li>Не перезагружать сервер до снятия логов и проверки бэкапа.</li>
+<li>Не начинать восстановление поверх рабочей базы без копии.</li>
+<li>Сообщать сотрудникам конкретное время следующего апдейта, а не «скоро».</li>
+</ul>
+<h2>Стоимость и границы</h2>
+<p>Мониторинг и сопровождение сервера — от 2 400–3 200 ₽/мес, абонентское обслуживание офиса — от 10 000 ₽/мес. В сумму входят алерты и регламент, но не новое железо и не лицензии.</p>
+<p>Простой в 4 часа для офиса на 25 человек обходится примерно в 120 000 ₽ с учётом оплаты труда и упущенных операций. Это не аргумент за «любую цену», но объясняет, почему проверка копий дешевле их отсутствия.</p>
+<ul class="article-checklist">
+<li>SLA 99,5% — это допустимые часы простоя, а не обещание безотказности.</li>
+<li>Плановые работы согласуются заранее и не считаются инцидентом.</li>
+<li>Телефон дежурного должен работать в выходные, иначе SLA остаётся на бумаге.</li>
+</ul>
+<p class="article-note">Надёжность 1С — это проверенная копия, понятный RTO и дежурный, который отвечает ночью. SLA 99,5% и реакция от 15 минут достижимы, если регламент написан до сбоя.</p>
+<h2>Как мы работаем по этой задаче</h2>
+<p>Сначала — короткий аудит: снимаем метрики, опрашиваем сотрудников, фиксируем узкие места. Потом — спецификация с ценами и сроками. После согласования — монтаж, настройка, тестирование, документация. Клиент получает работающую систему и понятную схему, а не «мы всё сделали».</p>
+<p>Сопровождение — по договору: мониторинг, обновления, реакция от 15 минут. Если что-то ломается — мы уже знаем, где и почему, и чиним быстро.</p>
+<ul class="article-checklist">
+<li>Аудит и спецификация до старта работ.</li>
+<li>Монтаж, настройка, тестирование, документация.</li>
+<li>Сопровождение по SLA с мониторингом.</li>
+<li>Ежемесячный отчёт: что сделано, что требует внимания.</li>
+</ul>
+
+<h2>Перед тем как начать</h2>
+<p>Проверьте три вещи: есть ли бэкапы, есть ли документация, есть ли запас по ресурсам. Если хотя бы одного нет — начинайте с этого, а не с покупки нового железа. Часто оказывается, что проблему решает чистка базы или настройка мониторинга, а не новый сервер.</p>
+<ul class="article-checklist">
+<li>Бэкапы актуальны и проверены восстановлением.</li>
+<li>Документация по инфраструктуре существует и доступна.</li>
+<li>Ресурсы (диск, RAM, CPU) имеют запас минимум 30%.</li>
+<li>Мониторинг настроен и алерты приходят.</li>
+</ul>
+</div><div class="related-guides"><h2>Читайте также</h2><a class="related-guide" href="server-1c.html">Сервер для 1С: сколько RAM, какой диск<span aria-hidden="true">→</span></a><a class="related-guide" href="backup-3-2-1.html">Бэкапы, которые реально восстанавливаются<span aria-hidden="true">→</span></a><a class="related-guide" href="server-down-saturday.html">Сервер упал в субботу: что делать<span aria-hidden="true">→</span></a></div><div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Обсудить задачу</a></div></div></section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__col"><div class="footer__brand"><img src="../logo.webp" alt="Логотип F&F" class="footer__logo" width="36" height="36" loading="lazy"><span>F&amp;F</span></div><p class="footer__desc">Ваш IT-контур под контролем. Даже в субботу. Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.</p></div>
+            <div class="footer__col"><h5 class="footer__title">Услуги</h5><a href="../servers.html" class="footer__link">Серверы под ключ</a><a href="../infrastructure.html" class="footer__link">IT-инфраструктура</a><a href="../security.html" class="footer__link">Безопасность</a><a href="../services.html#support" class="footer__link">Обслуживание</a></div>
+            <div class="footer__col"><h5 class="footer__title">Компания</h5><a href="../team.html" class="footer__link">Команда</a><a href="../cases.html" class="footer__link">Кейсы</a><a href="../audit.html" class="footer__link">IT-аудит</a><a href="../contacts.html" class="footer__link">Контакты</a></div>
+            <div class="footer__col"><h5 class="footer__title">Контакты</h5><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a><a href="https://t.me/FathFed" class="footer__link">Telegram @FathFed</a><a href="https://max.ru/u/f9LHodD0cOLFeIrLBc8Lkmm-dG1WylOPja64RkmBQJ0tf-1lJO7uBlXgmiE" class="footer__link">MAX: FathFed</a></div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661<br>Деятельность: услуги по установке и настройке ПО · ОКВЭД 62.09</p>
+            <p class="footer__copy">© 2026 F&amp;F. Все права защищены.</p>
+            <p class="footer__geo">Работаем по Казани и всей России · Удалённо и с выездом</p>
+        </div>
+    </div>
+  <div class="footer__docs"><a href="../map.html">Карта сайта</a></div>
+</footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Уведомление о cookie">
+    <div class="cookie__text">
+        <strong>Cookie и конфиденциальность</strong>
+        Соглашаясь, вы принимаете <a href="../privacy.html" target="_blank">Политику конфиденциальности</a> и даёте согласие на использование файлов Cookie для аналитики и улучшения работы платформы.
+    </div>
+    <div class="cookie__actions">
+        <button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button>
+        <button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button>
+    </div>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<script src="../script.js" defer></script>
+</body>
+</html>

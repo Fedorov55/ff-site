@@ -1,0 +1,9 @@
+.agents/
+docs/
+promo/
+.clinerules
+skills-lock.json
+*.bak
+*.tmp
+node_modules/
+.env

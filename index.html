@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Сисадмин и сервер под ключ в Казани. Абонентское обслуживание от 10 000 ₽/мес. Реакция от 15 минут, сервер работает 99,5% времени. Казань — приедем, Россия — удалённо.">
+<meta name="keywords" content="IT-аутсорсинг Казань, IT-обслуживание, системный администратор, серверы под ключ, IT-инфраструктура, безопасность, криптография, ЭЦП, абонентское обслуживание, IT-аудит, мониторинг 24/7, обслуживание серверов, аутсорсинг IT-инфраструктуры, приходящий системный администратор, IT-контур, Казань">
+<meta name="author" content="F&F">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Системный администратор | Сервер под ключ | F&amp;F Казань">
+<meta property="og:description" content="Серверы под ключ, IT-аутсорсинг и системный админ в Казани. Без «100%», но с гарантией.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ff-it.ru/">
+<meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
+<link rel="canonical" href="https://ff-it.ru/">
+<link rel="icon" type="image/webp" href="logo.webp">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-overrides.css">
+<title>Системный администратор | Сервер под ключ | F&amp;F Казань</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "F&F",
+  "url": "https://ff-it.ru/",
+  "logo": "https://ff-it.ru/logo.webp",
+  "slogan": "Ваш IT-контур под контролем. Даже в субботу",
+  "telephone": "+79012655252",
+  "email": "FathFed@yandex.ru",
+  "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressCountry": "RU"},
+  "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Чем удалённый сисадмин отличается от штатного?", "acceptedAnswer": {"@type": "Answer", "text": "Штатный специалист имеет один профиль, уходит в отпуск и болеет. Команда F&F — это несколько инженеров с фиксированным SLA: реакция от 15 минут, сервер работает 99,5% времени."}},
+    {"@type": "Question", "name": "Вы гарантируете 100% аптайм?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, мы не обещаем невозможного. И если кто-то гарантирует — уточните, что он курит. Мы гарантируем SLA: доступность 99,5% и время реакции от 15 минут."}},
+    {"@type": "Question", "name": "Сколько на самом деле стоит штатный сисадмин в Казани?", "acceptedAnswer": {"@type": "Answer", "text": "Оклад 80 000 ₽ на руки обходится компании примерно в 120 000 ₽/мес с учётом налогов и взносов. В год это около 1,4 млн ₽ — без отпускных, больничных и оборудования."}},
+    {"@type": "Question", "name": "Почему аутсорсинг выгоднее?", "acceptedAnswer": {"@type": "Answer", "text": "Абонентское обслуживание офиса — от 10 000 ₽/мес. Вы получаете команду специалистов и платите фиксированную сумму, не оплачивая налоги, больничные и отпуска."}},
+    {"@type": "Question", "name": "Почему не нанять дёшево на Profi.ru?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что настройка за 1 230 ₽ не включает проверку восстановления бэкапа, регламент реакции и SLA. Дёшево — это когда сервер настроен, но никто не спросил, зачем."}},
+    {"@type": "Question", "name": "Вы работаете официально? Есть договор и документы?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Договор, акт выполненных работ, чек. Для юрлиц и ИП — безналичный расчёт, счёт, все закрывающие документы."}},
+    {"@type": "Question", "name": "В каких городах вы работаете?", "acceptedAnswer": {"@type": "Answer", "text": "Казань и Республика Татарстан — с выездом. По всей России — удалённо, с тем же SLA. Для крупных проектов возможна командировка."}},
+    {"@type": "Question", "name": "Сколько стоит сервер под ключ?", "acceptedAnswer": {"@type": "Answer", "text": "Для офиса 10–15 человек — от 200 000 ₽. Для 15–40 человек — от 500 000 ₽. Refurbished — от 130 000 ₽. Настройка — от 4 000 ₽."}},
+    {"@type": "Question", "name": "Что делать, если сервер уже упал?", "acceptedAnswer": {"@type": "Answer", "text": "Звоните: +7 (901) 265-52-52. Реакция от 15 минут. Мы не гадаем пароли — у нас есть реестр доступов и бэкапы."}},
+    {"@type": "Question", "name": "Можно ли работать без своего сервера?", "acceptedAnswer": {"@type": "Answer", "text": "Да, можно уйти в облако. Но если у вас 1С и более 10 пользователей — свой сервер часто выгоднее и быстрее. Считаем TCO под ваш офис."}}
+  ]
+}
+</script>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="F&F — Ваш IT-контур под контролем">
+    <meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+    <meta name="twitter:image" content="https://ff-it.ru/img/og-preview.webp">
+    <link rel="alternate" hreflang="ru" href="https://ff-it.ru/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://ff-it.ru/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="bg-layer" aria-hidden="true"><div class="bg-grad"></div><div class="bg-grid"></div><div class="bg-orb bg-orb--1"></div><div class="bg-orb bg-orb--2"></div></div>
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo" aria-label="F&F — главная">
+      <img src="logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high">
+      <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">Инфраструктура, которая работает</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="support.html" class="dropdown__link">Абонентское обслуживание</a><a href="servers.html" class="dropdown__link">Серверы под ключ</a><a href="infrastructure.html" class="dropdown__link">IT-инфраструктура</a><a href="security.html" class="dropdown__link">Безопасность и криптография</a><a href="audit.html" class="dropdown__link">IT-аудит</a><a href="services.html#abonentka" class="dropdown__link">Калькулятор абонентки</a><a href="services.html#calculator" class="dropdown__link">Смета разовых работ</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-solutions" data-nav-trigger>Решения<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-solutions"><a href="hub-office.html" class="dropdown__link">Офис под ключ</a><a href="office-move.html" class="dropdown__link">Переезд офиса</a><a href="server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="152fz-prep.html" class="dropdown__link">Подготовка к 152-ФЗ</a><a href="industry-retail.html" class="dropdown__link">Розница</a><a href="industry-clinics.html" class="dropdown__link">Клиники</a><a href="industry-horeca.html" class="dropdown__link">HoReCa</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-resources" data-nav-trigger>Материалы<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-resources"><a href="cases.html" class="dropdown__link">Кейсы</a><a href="blog.html" class="dropdown__link">Блог</a><a href="research.html" class="dropdown__link">Исследования</a><a href="quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="demo.html" class="dropdown__link">Демо мониторинга</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="team.html" class="dropdown__link">Команда</a><a href="about.html" class="dropdown__link">О F&amp;F</a><a href="methodology.html" class="dropdown__link">Как работаем</a><a href="trust.html" class="dropdown__link">Доверие и SLA</a><a href="status.html" class="dropdown__link">Статус</a></div></div>
+      <a href="contacts.html" class="nav__direct">Контакты</a>
+    </nav>
+    <div class="header__actions"><a href="services.html#calculator" class="header__estimate">Расчёт стоимости</a><a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button><button class="burger" id="burgerBtn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true"><div class="mobile-nav__backdrop" data-mobile-close></div><div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту"><div class="mobile-nav__header"><a href="index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span></a><button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button></div><nav class="mobile-nav__inner" aria-label="Основная навигация"><a href="index.html" class="mobile-nav__link">Главная</a><details class="mobile-nav__group"><summary>Услуги</summary><div class="mobile-nav__group-links"><a href="support.html" class="mobile-nav__link">Абонентское обслуживание</a><a href="servers.html" class="mobile-nav__link">Серверы под ключ</a><a href="infrastructure.html" class="mobile-nav__link">IT-инфраструктура</a><a href="security.html" class="mobile-nav__link">Безопасность</a><a href="audit.html" class="mobile-nav__link">IT-аудит</a><a href="services.html#abonentka" class="mobile-nav__link">Калькулятор абонентки</a><a href="services.html#calculator" class="mobile-nav__link">Смета разовых работ</a></div></details><details class="mobile-nav__group"><summary>Решения</summary><div class="mobile-nav__group-links"><a href="hub-office.html" class="mobile-nav__link">Офис под ключ</a><a href="office-move.html" class="mobile-nav__link">Переезд офиса</a><a href="server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a><a href="152fz-prep.html" class="mobile-nav__link">Подготовка к 152-ФЗ</a><a href="industry-retail.html" class="mobile-nav__link">Розница</a><a href="industry-clinics.html" class="mobile-nav__link">Клиники</a><a href="industry-horeca.html" class="mobile-nav__link">HoReCa</a></div></details><details class="mobile-nav__group"><summary>Материалы</summary><div class="mobile-nav__group-links"><a href="cases.html" class="mobile-nav__link">Кейсы</a><a href="blog.html" class="mobile-nav__link">Блог</a><a href="research.html" class="mobile-nav__link">Исследования</a><a href="quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a><a href="demo.html" class="mobile-nav__link">Демо мониторинга</a></div></details><details class="mobile-nav__group"><summary>Компания</summary><div class="mobile-nav__group-links"><a href="team.html" class="mobile-nav__link">Команда</a><a href="about.html" class="mobile-nav__link">О F&amp;F</a><a href="methodology.html" class="mobile-nav__link">Как работаем</a><a href="trust.html" class="mobile-nav__link">Доверие и SLA</a><a href="status.html" class="mobile-nav__link">Статус</a></div></details><a href="contacts.html" class="mobile-nav__link">Контакты</a><a href="services.html#calculator" class="btn btn--primary btn--full mobile-nav__cta">Рассчитать стоимость</a><a href="tel:+79012655252" class="mobile-nav__phone">+7 (901) 265-52-52</a></nav></div></div>
+<main id="main" class="site-main">
+<section class="hero hero--home"><div class="container"><div class="hero__inner"><div class="hero__copy"><span class="hero__badge"><span class="hero__badge-dot"></span> IT-поддержка для бизнеса · Казань и Россия</span><h1 class="hero__title">Ваш IT-контур <span class="gold">под контролем</span><span class="hero__title-sub">Даже в субботу</span></h1><p class="hero__lead">Серверы, сеть, рабочие места и безопасность — в одном понятном контуре поддержки. Согласуем состав работ, стоимость и сроки до старта.</p><ul class="hero__features"><li><span aria-hidden="true">✓</span> Выезд по Казани и Татарстану · удалённая поддержка по России</li><li><span aria-hidden="true">✓</span> Резервные копии с проверкой восстановления</li><li><span aria-hidden="true">✓</span> Объём работ и реакция фиксируются в договоре</li></ul><div class="hero__buttons"><a href="contacts.html" class="btn btn--primary">Обсудить IT-задачу</a><a href="services.html#calculator" class="btn btn--ghost">Рассчитать стоимость</a></div><p class="hero__microcopy">Сначала разберём задачу и варианты. Без обязательств.</p></div><div class="hero__visual" aria-label="Пример состава IT-поддержки"><div class="hero-console"><div class="hero-console__top"><span class="hero-console__lights"><i></i><i></i><i></i></span><span>КОНТУР ПОДДЕРЖКИ</span><span class="hero-console__live"><i></i> SLA</span></div><div class="hero-console__body"><div class="hero-console__headline">Инфраструктура<br><strong>без сюрпризов</strong></div><div class="hero-console__row"><span class="hero-console__icon">01</span><span><b>Серверы и 1С</b><small>мониторинг · обновления · доступы</small></span><em>Сопровождение</em></div><div class="hero-console__row"><span class="hero-console__icon">02</span><span><b>Резервные копии</b><small>расписание · тест восстановления</small></span><em>Проверка</em></div><div class="hero-console__row"><span class="hero-console__icon">03</span><span><b>Офисная сеть</b><small>рабочие места · Wi-Fi · периферия</small></span><em>Поддержка</em></div><div class="hero-console__foot"><span>F&amp;F / IT ДЛЯ БИЗНЕСА</span><span>КАЗАНЬ · УДАЛЁННО</span></div></div></div></div></div><div class="hero-proof"><span><b>01</b> Понятная смета до работ</span><span><b>02</b> Документация у клиента</span><span><b>03</b> SLA в договоре</span></div></div></section>
+<!-- КВИЗ -->
+<section id="quiz" class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Проверка на прочность</span>
+      <h2 class="section__title">Готова ли ваша инфраструктура к субботе?</h2>
+      <p class="section__subtitle">5 вопросов — и вы узнаете свой уровень и стоимость бездействия. Без звонка.</p>
+    </div>
+    <div class="quiz fade-up">
+      <div class="quiz__head">
+        <div class="quiz__head-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Диагностика</div>
+        <div class="quiz__progress"><span class="quiz__dot active"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span></div>
+      </div>
+      <div class="quiz__body"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЧТО БУДЕТ ЕСЛИ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Что будет, если...</span>
+      <h2 class="section__title">8 сценариев и как мы это чиним</h2>
+      <p class="section__subtitle">Без «гарантируем 100%». Просто показываем, как мы отрабатываем аварии, пока вы пьёте кофе.</p>
+    </div>
+    <div class="why__grid fade-up">
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h4 class="why-item__title">01. Сервер упал в субботу</h4><p class="why-item__text">F&F получает алерт, инженер просыпается. Реакция от 15 минут. В понедельник офис думает, что так и было. Мы не говорим «бывает», мы просто чиним.</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h4 class="why-item__title">02. Уволился админ</h4><p class="why-item__text">И пароли не передал? Трафик падает на 40%. Мы не гадаем, мы проверяем реестр доступов и переписываем права. Чтобы новый админ не ушел с концами.</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4 class="why-item__title">03. Бэкап есть, а толку нет</h4><p class="why-item__text">25% компаний живут в иллюзии. Мы разворачиваем тестовый контур. Иногда сюрпризы неприятные. Лучше узнать о них до того, как 1С превратится в тыкву.</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><h4 class="why-item__title">04. Токен ЭЦП потерян</h4><p class="why-item__text">Блокируем, перевыпускаем. Пока вы пьёте кофе, мы уже перевыпустили сертификат. Если украли — это не «неприятно», а статья УК. Регламент — наше всё.</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div><h4 class="why-item__title">05. Сменился главбух</h4><p class="why-item__text">Токены внезапно «не видны» в браузере. Мы перевыпускаем сертификаты, настраиваем рабочие места и пишем простую инструкцию: «нажми сюда, не трогай это».</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h4 class="why-item__title">06. Подрядчик пропал</h4><p class="why-item__text">Бывает. Если предыдущий «специалист» оставил после себя черный ход в сервер, сначала лечим, потом настраиваем. Без «а что тут вообще было?!».</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4 class="why-item__title">07. Офис переехал</h4><p class="why-item__text">А розетки остались в прошлом? Сначала дизайн, потом розетки — классика. Мы проектируем слаботочку ДО ремонта. Если поздно — работаем с тем, что есть, но предупреждаем, где будет «потом дорого».</p></div>
+      <div class="why-item"><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h4 class="why-item__title">08. Ничего не упало</h4><p class="why-item__text">Но вы не знаете, что там внутри? Самый страшный сценарий. Проводим аудит. Иногда говорим «всё ок», иногда «молитесь, чтобы это не упало сегодня ночью».</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- УСЛУГИ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Услуги</span>
+      <h2 class="section__title">Полный IT-контур вашего бизнеса</h2>
+    </div>
+    <div class="services__grid">
+      <a href="support.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3 class="service-card__title">Абонентское обслуживание</h3>
+        <p class="service-card__text">Штатный админ — 1,4 млн ₽/год. Абонент F&F — от 10 000 ₽/мес. Команда инженеров за цену одного сотрудника, без налогов и отпусков.</p>
+        <span class="service-card__price">от 10 000 ₽/мес</span>
+      </a>
+      <a href="servers.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="13" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="16" x2="6.01" y2="16"/></svg></div>
+        <h3 class="service-card__title">Серверы под ключ</h3>
+        <p class="service-card__text">Сервер для малого бизнеса — от 150 000 ₽, а не «от миллиона». Подберём конфигурацию, смонтируем, настроим виртуализацию и бэкапы с проверкой.</p>
+        <span class="service-card__price">от 4 000 ₽</span>
+      </a>
+      <a href="infrastructure.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3 class="service-card__title">Офис под ключ</h3>
+        <p class="service-card__text">СКС, Wi-Fi, СКУД, видеонаблюдение POE, серверная. Офис на 50 человек — от 2 до 3,25 млн ₽. Розетки не за креслом.</p>
+        <span class="service-card__price">от 5 000 ₽</span>
+      </a>
+      <a href="security.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 class="service-card__title">Безопасность и криптография</h3>
+        <p class="service-card__text">ЭЦП, защищённые каналы, шифрование дисков. Штрафы за утечку ПДн — до 15 млн ₽. Внедряем защиту, а не галочку.</p>
+        <span class="service-card__price">от 1 200 ₽</span>
+      </a>
+      <a href="audit.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3 class="service-card__title">IT-аудит и миграция</h3>
+        <p class="service-card__text">Экспресс за 15 минут — бесплатно. Покажем, где инфраструктура теряет деньги, и составим план миграции без простоя. Без «всё плохо» — только факты.</p>
+        <span class="service-card__price">от 0 ₽</span>
+      </a>
+      <a href="infrastructure.html" class="service-card fade-up">
+        <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+        <h3 class="service-card__title">Сети и интернет</h3>
+        <p class="service-card__text">Настройка роутеров, коммутаторов, VPN, Wi-Fi. Решаем проблемы с провайдерами. Чтобы интернет работал, а не «моргал».</p>
+        <span class="service-card__price">от 2 000 ₽</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- КЕЙСЫ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Проекты</span>
+      <h2 class="section__title">Кейсы с цифрами</h2>
+      <p class="section__subtitle">Формат «было / стало / цифра» — без «мы всё сделали хорошо».</p>
+    </div>
+    <div class="cases__bento fade-up">
+      <a href="cases/tobacco.html" class="case-card case-card--large">
+        <img src="img/case-tobacco.webp" alt="Табачный магазин" loading="lazy">
+        <div class="case-card__content">
+          <span class="case-card__tag">3 года обслуживания</span>
+          <h3 class="case-card__title">Табачный магазин</h3>
+          <div class="case-card__result"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 0 простоев касс за 3 года</div>
+        </div>
+      </a>
+      <a href="cases/tatar-septic.html" class="case-card">
+        <img src="img/case-tatar-septic.webp" alt="Tatar-Septic" loading="lazy">
+        <div class="case-card__content">
+          <span class="case-card__tag">Автоматизация</span>
+          <h3 class="case-card__title">Tatar-Septic</h3>
+          <div class="case-card__result"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Заявки в 2 раза быстрее</div>
+        </div>
+      </a>
+      <a href="cases/server-turnkey.html" class="case-card">
+        <img src="img/case-server-turnkey.webp" alt="Сервер под ключ" loading="lazy">
+        <div class="case-card__content">
+          <span class="case-card__tag">Серверы</span>
+          <h3 class="case-card__title">Сервер под ключ</h3>
+          <div class="case-card__result"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Экономия 660 000 ₽/год</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ПОЧЕМУ МЫ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Преимущества</span>
+      <h2 class="section__title">Почему выбирают F&amp;F</h2>
+    </div>
+    <div class="why__grid">
+      <div class="why-item fade-up"><span class="why-item__num">01</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h4 class="why-item__title">Команда, а не один человек</h4><p class="why-item__text">У штатного админа один профиль. Заболел — инфраструктура встала. F&F — это инженеры по сетям, серверам и безопасности.</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">02</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h4 class="why-item__title">Честный SLA</h4><p class="why-item__text">Не обещаем 100% — и если кто-то обещает, уточните, что он курит. Гарантируем 99,5%, реакцию от 15 минут и регламент.</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">03</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4 class="why-item__title">Гарантия 30 дней</h4><p class="why-item__text">Работаем по договору. Если сервер отвалится по нашей вине — переделаем бесплатно. Без «мы подумаем» и «нужно еще доплатить».</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">04</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="2"/></svg></div><h4 class="why-item__title">Договор и безнал</h4><p class="why-item__text">Работаем официально: договор, акт, чек. Для ИП и юрлиц — безналичный расчёт и все закрывающие документы.</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">05</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h4 class="why-item__title">Не храним ключи</h4><p class="why-item__text">Ваши пароли, ЭЦП и данные — только у вас. После работ удаляем все доступы. Работаем по NDA. Проверяли: даже нам самим страшно.</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">06</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h4 class="why-item__title">Экономия до 40%</h4><p class="why-item__text">Оклад 80 000 ₽ на руки — это 1,4 млн ₽/год для компании. Абонент — от 10 000 ₽/мес. Считайте сами, мы не обидимся.</p></div>
+      <div class="why-item fade-up"><span class="why-item__num">07</span><div class="why-item__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4 class="why-item__title">На связи 24/7</h4><p class="why-item__text">Сервер упал в субботу? Инженер F&F уже работает. Аварии — приоритет. Плановые работы — по договорённости и без сюрпризов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- КАК РАБОТАЕМ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Процесс</span>
+      <h2 class="section__title">Как мы работаем</h2>
+    </div>
+    <div class="timeline fade-up">
+      <div class="tl-step"><div class="tl-num">01</div><div><h4>Заявка</h4><p>Отвечаем за 15 минут. Задаем 3–5 вопросов по делу (а не «как вы видите рынок в 2030»).</p></div></div>
+      <div class="tl-step"><div class="tl-num">02</div><div><h4>Аудит</h4><p>Смотрим, что у вас там. Если всё ок — так и скажем. Если нет — покажем, где «болит».</p></div></div>
+      <div class="tl-step"><div class="tl-num">03</div><div><h4>Смета</h4><p>Фиксируем цену в договоре. Никаких «внезапных» доплат в конце месяца.</p></div></div>
+      <div class="tl-step"><div class="tl-num">04</div><div><h4>Работа</h4><p>Приезжаем, настраиваем, тестируем. Всё, что можно было сломать — ломаем в тестовом контуре.</p></div></div>
+      <div class="tl-step"><div class="tl-num">05</div><div><h4>Поддержка</h4><p>Спим с телефоном, чтобы вы спали спокойно. Мониторинг 24/7 и суббота — тоже рабочий день.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- КОМАНДА -->
+<section class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Команда</span>
+      <h2 class="section__title">Четыре человека из Казани</h2>
+      <p class="section__subtitle">Серверы, сети, безопасность, криптография. <a href="team.html" style="color:var(--gold-light);text-decoration:underline">Познакомиться поближе →</a></p>
+    </div>
+    <div class="team__grid fade-up">
+      <div class="team-card">
+        <div class="team-card__photo"><img loading="lazy" src="img/team-bulat.webp" alt="Булат"></div>
+        <h4 class="team-card__name">Булат</h4>
+        <p class="team-card__role">Техдир и Финдир</p>
+        <p class="team-card__desc">Знает всё про VLAN и амортизацию. Считает бюджеты так, чтобы хватило и на сервер, и на кофе.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo"><img loading="lazy" src="img/team-emil.webp" alt="Эмиль"></div>
+        <h4 class="team-card__name">Эмиль</h4>
+        <p class="team-card__role">Маркетинг и продажи</p>
+        <p class="team-card__desc">Продаст сервер так, что вы захотите ещё и серверную. А потом посмотрит на ваш сайт и скажет: «здесь отступ не тот».</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo"><img loading="lazy" src="img/team-dilyara.webp" alt="Диляра"></div>
+        <h4 class="team-card__name">Диляра</h4>
+        <p class="team-card__role">Дизайн и тексты</p>
+        <p class="team-card__desc">Делает так, чтобы слово «бэкап» звучало красиво, а инструкции читались без снотворного.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo"><img loading="lazy" src="img/team-ruslan.webp" alt="Руслан"></div>
+        <h4 class="team-card__name">Руслан</h4>
+        <p class="team-card__role">Главный инженер</p>
+        <p class="team-card__desc">Пока остальные обсуждают архитектуру, он уже в серверной с отверткой. Виртуализация, миграции, ViPNet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Отзывы</span>
+      <h2 class="section__title">Что говорят клиенты</h2>
+      <p class="section__subtitle">4.9 из 5 — на основе 27 отзывов. Мы не просим ставить пятёрки — просто делаем работу.</p>
+    </div>
+    <div class="reviews__wrapper fade-up">
+      <button class="slider-btn slider-btn--prev" aria-label="Назад"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="reviews__slider">
+        <div class="review-card">
+          <div><div class="review-card__stars">★★★★★</div><p class="review-card__text">«Спасли от увольнения главбуха. Бэкап развернули за 20 минут. Офис даже не заметил, что сервер умирал».</p></div>
+          <div class="review-card__author"><div class="avatar" style="background:#D4AF37">А</div><div><strong>Альбина</strong><span>Бухгалтер, ИП</span></div></div>
+        </div>
+        <div class="review-card">
+          <div><div class="review-card__stars">★★★★★</div><p class="review-card__text">«Заказывали сервер и сеть для офиса. Приехали в тот же день. Данные в безопасности — проверили восстановление бэкапа при нас».</p></div>
+          <div class="review-card__author"><div class="avatar" style="background:#00FF88">Р</div><div><strong>Рустам</strong><span>Директор, ООО «СтройГрад»</span></div></div>
+        </div>
+        <div class="review-card">
+          <div><div class="review-card__stars">★★★★★</div><p class="review-card__text">«Помогли с КриптоПро для ЕИС. 15 минут — всё работало. Цена приятно удивила. В следующий раз даже не искали других».</p></div>
+          <div class="review-card__author"><div class="avatar" style="background:#B8932E">И</div><div><strong>Ильдар</strong><span>Директор, ООО «ТехСтрой»</span></div></div>
+        </div>
+        <div class="review-card">
+          <div><div class="review-card__stars">★★★★★</div><p class="review-card__text">«Наконец-то перестал думать об IT. F&F взяли всё на себя: бэкапы, мониторинг. Когда сломался сервер — восстановили из резерва за 2 часа, сотрудники даже не заметили».</p></div>
+          <div class="review-card__author"><div class="avatar" style="background:#D4AF37">Д</div><div><strong>Динар</strong><span>Директор, Оптовая торговля</span></div></div>
+        </div>
+        <div class="review-card">
+          <div><div class="review-card__stars">★★★★★</div><p class="review-card__text">«Раньше админ был один и в отпуске. Теперь — команда, и суббота перестала быть днём сюрпризов. Реакция реально 15 минут».</p></div>
+          <div class="review-card__author"><div class="avatar" style="background:#00FF88">М</div><div><strong>Марат</strong><span>Директор, ООО «Аврора»</span></div></div>
+        </div>
+      </div>
+      <button class="slider-btn slider-btn--next" aria-label="Вперед"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">FAQ</span>
+      <h2 class="section__title">Частые вопросы</h2>
+    </div>
+    <div class="faq__list fade-up">
+      <details class="faq__item"><summary class="faq__question">Чем удалённый сисадмин отличается от штатного?</summary><p class="faq__answer">Штатный специалист имеет один профиль, уходит в отпуск и болеет. Команда F&F — это несколько инженеров с фиксированным SLA: реакция от 15 минут, сервер работает 99,5% времени. Пока один в отпуске — второй уже смотрит логи.</p></details>
+      <details class="faq__item"><summary class="faq__question">Вы гарантируете 100% аптайм?</summary><p class="faq__answer">Нет, мы не обещаем невозможного. И если кто-то гарантирует — уточните, что он курит. Мы гарантируем SLA: доступность 99,5%, время реакции от 15 минут и проверенные бэкапы.</p></details>
+      <details class="faq__item"><summary class="faq__question">Сколько на самом деле стоит штатный сисадмин в Казани?</summary><p class="faq__answer">Оклад 80 000 ₽ на руки обходится компании примерно в 120 000 ₽/мес с учётом налогов и взносов. В год это около 1,4 млн ₽ — без отпускных, больничных, оборудования и подбора.</p></details>
+      <details class="faq__item"><summary class="faq__question">Почему аутсорсинг выгоднее?</summary><p class="faq__answer">Абонентское обслуживание офиса — от 10 000 ₽/мес. Вы получаете команду специалистов и платите фиксированную сумму, не оплачивая налоги, больничные и отпуска.</p></details>
+      <details class="faq__item"><summary class="faq__question">Почему не нанять дёшево на Profi.ru?</summary><p class="faq__answer">Потому что настройка за 1 230 ₽ не включает проверку восстановления бэкапа, регламент реакции и SLA. Дёшево — это когда сервер настроен, но никто не спросил, зачем.</p></details>
+      <details class="faq__item"><summary class="faq__question">Вы работаете официально? Есть договор и документы?</summary><p class="faq__answer">Да. Договор, акт выполненных работ, чек. Для юрлиц и ИП — безналичный расчёт, счёт, все закрывающие документы.</p></details>
+      <details class="faq__item"><summary class="faq__question">В каких городах вы работаете?</summary><p class="faq__answer">Казань и Республика Татарстан — с выездом. По всей России — удалённо, с тем же SLA. Для крупных проектов возможна командировка.</p></details>
+      <details class="faq__item"><summary class="faq__question">Сколько стоит сервер под ключ?</summary><p class="faq__answer">Для офиса 10–15 человек — от 200 000 ₽. Для 15–40 человек — от 500 000 ₽. Refurbished — от 130 000 ₽. Настройка — от 4 000 ₽.</p></details>
+      <details class="faq__item"><summary class="faq__question">Что делать, если сервер уже упал?</summary><p class="faq__answer">Звоните: +7 (901) 265-52-52. Реакция от 15 минут. Мы не гадаем пароли — у нас есть реестр доступов и бэкапы.</p></details>
+      <details class="faq__item"><summary class="faq__question">Можно ли работать без своего сервера?</summary><p class="faq__answer">Да, можно уйти в облако. Но если у вас 1С и более 10 пользователей — свой сервер часто выгоднее и быстрее. Считаем TCO под ваш офис.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР -->
+
+
+<!-- ПРОВЕРКА НА СУББОТУ -->
+<section class="section">
+    <div class="container">
+        <div class="section__head fade-up">
+            <span class="section__label">Суббота</span>
+            <h2 class="section__title">Проверка на субботу</h2>
+            <p class="section__subtitle">Смоделируйте субботний сбой — и посмотрите, как F&F отрабатывает аварию, пока вы спите.</p>
+        </div>
+        <div class="fade-up" style="max-width:600px;margin:0 auto;">
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+                <div id="saturdayTimeline" style="position:relative;padding-left:24px;">
+                    <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border);"></div>
+                    <div style="margin-bottom:20px;position:relative;">
+                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--danger,#ff4d4d);"></span>
+                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:00 — Сервер ушёл в ребут. Офис спит.</div>
+                        <div style="font-size:12px;color:var(--muted);">Ничего не предвещало.</div>
+                    </div>
+                    <div style="margin-bottom:20px;position:relative;">
+                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
+                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:15 — F&F получил алерт. Инженер уже с ноутбуком.</div>
+                        <div style="font-size:12px;color:var(--muted);">Реакция от 15 минут — это не рекорд, а норма.</div>
+                    </div>
+                    <div style="margin-bottom:20px;position:relative;">
+                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
+                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:40 — Причина найдена. Перезапуск сервиса.</div>
+                        <div style="font-size:12px;color:var(--muted);">Сервис работает. Проверяем логи.</div>
+                    </div>
+                    <div style="margin-bottom:20px;position:relative;">
+                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
+                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">01:10 — Сервис работает. Проверяем логи.</div>
+                        <div style="font-size:12px;color:var(--muted);">Всё под контролем.</div>
+                    </div>
+                    <div style="position:relative;">
+                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--neon);"></span>
+                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">08:00 — Офис приходит. Никто ничего не заметил. Кроме нас — мы заметили в 00:15.</div>
+                        <div style="font-size:12px;color:var(--muted);">Ваш IT-контур под контролем. Даже в субботу.</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:24px;">
+                    <button class="btn btn--primary" onclick="document.getElementById('saturdayTimeline').style.opacity='0.3';setTimeout(()=>{document.getElementById('saturdayTimeline').style.opacity='1';},500);">Смоделировать субботний сбой</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENTO GRID -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Обзор</span>
+      <h2 class="section__title">Всё в одном месте</h2>
+      <p class="section__subtitle">Серверы, инфраструктура, безопасность, криптография — один контур, одна команда, одна ответственность.</p>
+    </div>
+    <div class="fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto;">
+      <div style="grid-column:span 2;grid-row:span 2;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Серверы</div>
+          <div style="font-size:24px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">от 30 000 ₽/мес</div>
+          <div style="font-size:13px;color:var(--text-2);">Подбор, установка, настройка. AD, файловые, терминальные серверы. Виртуализация. Казань — приедем.</div>
+        </div>
+        <a href="servers.html" class="btn btn--ghost btn--sm" style="align-self:flex-start;">Подробнее</a>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Инфраструктура</div>
+        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">СКС, Wi-Fi, СКУД</div>
+        <div style="font-size:12px;color:var(--text-2);">Собираем офис с нуля. 8–12 недель от проекта до сдачи.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Безопасность</div>
+        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">ЭЦП, ViPNet</div>
+        <div style="font-size:12px;color:var(--text-2);">Криптография, видеонаблюдение, разграничение доступа.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Абонентка</div>
+        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">от 9 900 ₽/мес</div>
+        <div style="font-size:12px;color:var(--text-2);">Мониторинг 24/7, реакция от 15 минут.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">IT-аудит</div>
+        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">Бесплатно</div>
+        <div style="font-size:12px;color:var(--text-2);">Экспресс-аудит за 30 минут. Без обязательств.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ИГРА: СЛОМАЙ СЕРВЕР -->
+<section class="section">
+  <div class="container">
+    <div class="section__head fade-up">
+      <span class="section__label">Игра</span>
+      <h2 class="section__title">Сломай сервер</h2>
+      <p class="section__subtitle">Попробуйте сломать сервер — и посмотрите, как F&F его чинит. Кликайте по угрозам, чтобы нейтрализовать их.</p>
+    </div>
+    <div class="fade-up" style="max-width:600px;margin:0 auto;">
+      <div id="breakServer" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
+        <div style="font-size:14px;margin-bottom:16px;">Сервер: <span id="serverStatus" style="color:var(--neon);font-weight:700;">работает</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">
+          <button onclick="attack('ddos')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">DDoS-атака</button>
+          <button onclick="attack('disk')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Диск умирает</button>
+          <button onclick="attack('power')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Отключили свет</button>
+          <button onclick="attack('backup')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Бэкап не работает</button>
+          <button onclick="attack('admin')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Админ уволился</button>
+          <button onclick="attack('ransom')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Шифровальщик</button>
+        </div>
+        <div id="gameLog" aria-live="polite" style="font-size:12px;color:var(--text-2);min-height:60px;text-align:left;padding:12px;background:var(--bg-2);border-radius:8px;margin-bottom:12px;"></div>
+        <button onclick="resetGame()" class="btn btn--ghost btn--sm">Сбросить</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+var serverHealth = 100;
+var threats = [];
+function attack(type){
+  var log = document.getElementById('gameLog');
+  var status = document.getElementById('serverStatus');
+  var msgs = {
+    ddos: 'DDoS-атака! Сервер перегружен. F&F включает rate-limiting и CDN. Сервер стабилен.',
+    disk: 'Диск умирает! F&F поднимает RAID и бэкап. Данные спасены.',
+    power: 'Отключили свет! ИБП держит 15 минут. F&F запускает генератор. Сервер жив.',
+    backup: 'Бэкап не работает! F&F разворачивает тестовый контур. Восстановлено за 40 минут.',
+    admin: 'Админ уволился! F&F проверяет реестр доступов. Права переписаны.',
+    ransom: 'Шифровальщик! F&F блокирует, восстанавливает из бэкапа. Данные целы.'
+  };
+  threats.push(type);
+  log.innerHTML += '<div style="margin-bottom:4px;">⚠ ' + msgs[type] + '</div>';
+  serverHealth = Math.max(0, serverHealth - 10);
+  if(serverHealth > 50){
+    status.textContent = 'работает';
+    status.style.color = 'var(--neon)';
+  } else if(serverHealth > 20){
+    status.textContent = 'под нагрузкой';
+    status.style.color = 'var(--gold-light)';
+  } else {
+    status.textContent = 'критично';
+    status.style.color = '#ff4d4d';
+  }
+  log.scrollTop = log.scrollHeight;
+}
+function resetGame(){
+  serverHealth = 100;
+  threats = [];
+  document.getElementById('serverStatus').textContent = 'работает';
+  document.getElementById('serverStatus').style.color = 'var(--neon)';
+  document.getElementById('gameLog').innerHTML = '';
+}
+</script>
+
+<!-- 3D INFRASTRUCTURE / LAZY WEBGL -->
+<section class="section section--alt webgl-section" aria-labelledby="webgl-title">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__label">Инженерная схема</span>
+      <h2 class="section__title" id="webgl-title">Инфраструктура — в одном контуре</h2>
+      <p class="section__subtitle">Демонстрационная схема. Поворачивайте её мышью, пальцем или стрелками клавиатуры.</p>
+    </div>
+    <div class="webgl-frame">
+      <div class="webgl-fallback" id="webglFallback">
+        <div class="webgl-fallback__hub">IT-контур F&amp;F</div>
+        <div class="webgl-fallback__nodes"><span>Серверы</span><span>Сеть</span><span>Резервные копии</span><span>Рабочие места</span></div>
+        <p>Схема остаётся доступна и без 3D-графики.</p>
+      </div>
+      <div id="webgl-container" class="webgl-canvas" tabindex="0" role="img" aria-label="Демонстрационная интерактивная 3D-схема IT-инфраструктуры" hidden></div>
+      <div class="webgl-controls" id="webglControls" aria-label="Управление схемой" hidden><button type="button" data-rotate="-1" aria-label="Повернуть влево">←</button><span>ПОВОРОТ СХЕМЫ</span><button type="button" data-rotate="1" aria-label="Повернуть вправо">→</button></div>
+      <span class="webgl-caption">Демонстрационная схема · не подключена к инфраструктуре клиента</span>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  'use strict';
+  var host=document.getElementById('webgl-container');
+  var fallback=document.getElementById('webglFallback');
+  var controls=document.getElementById('webglControls');
+  if(!host||!fallback)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)return;
+  var loaded=false;
+  function showFallback(){host.hidden=true;fallback.hidden=false;if(controls)controls.hidden=true;}
+  function startThree(){
+    if(loaded||!window.THREE)return;
+    loaded=true;
+    var THREE=window.THREE,renderer,scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,1,.1,100);
+    camera.position.set(0,0,8.3);
+    try{renderer=new THREE.WebGLRenderer({antialias:window.devicePixelRatio<2,alpha:true,powerPreference:'low-power'});}
+    catch(error){showFallback();return;}
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.35));
+    renderer.setClearColor(0x0b1018,0);
+    renderer.outputEncoding=THREE.sRGBEncoding;
+    host.appendChild(renderer.domElement);
+    renderer.domElement.setAttribute('aria-hidden','true');
+    host.hidden=false;fallback.hidden=true;if(controls)controls.hidden=false;
+    var rig=new THREE.Group();scene.add(rig);
+    scene.add(new THREE.AmbientLight(0x9aabc2,.85));
+    var light=new THREE.PointLight(0xd4af37,2.2,30);light.position.set(3,4,5);scene.add(light);
+    var mint=new THREE.PointLight(0x00c981,1.3,24);mint.position.set(-4,-1,3);scene.add(mint);
+    var shaderUniforms=[];
+    var vertex='varying vec3 vPos;uniform float uTime;void main(){vPos=position;vec3 p=position;p.y+=sin(position.x*5.0+uTime)*0.028;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);}';
+    var fragment='varying vec3 vPos;uniform float uTime;uniform vec3 uColor;void main(){float pulse=.78+.22*sin(uTime*1.6+vPos.x*4.0);float bands=.94+.06*sin((vPos.y+uTime*.12)*20.0);gl_FragColor=vec4(uColor*pulse*bands,1.0);}';
+    function shader(color){var uniforms={uTime:{value:0},uColor:{value:new THREE.Color(color)}};shaderUniforms.push(uniforms);return new THREE.ShaderMaterial({uniforms:uniforms,vertexShader:vertex,fragmentShader:fragment});}
+    var core=new THREE.Mesh(new THREE.IcosahedronGeometry(.62,2),shader(0xd4af37));rig.add(core);
+    var colors=[0xd4af37,0x00d890,0x6e91ff,0x5ec7d7,0xe8c44d,0x63d49b],nodes=[];
+    for(var i=0;i<6;i++){var a=i*Math.PI*2/6,node=new THREE.Mesh(new THREE.BoxGeometry(.34,.34,.34),shader(colors[i]));node.position.set(Math.cos(a)*2.25,Math.sin(a)*1.45,Math.sin(a*2)*.3);rig.add(node);nodes.push(node);rig.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),node.position.clone()]),new THREE.LineBasicMaterial({color:colors[i],transparent:true,opacity:.46})));}
+    var ring=new THREE.Mesh(new THREE.TorusGeometry(2.55,.008,6,90),new THREE.MeshBasicMaterial({color:0xd4af37,transparent:true,opacity:.4}));ring.rotation.x=.26;rig.add(ring);
+    var visible=true,drag=false,lastX=0,lastY=0,t=0,raf=0;
+    function draw(){renderer.render(scene,camera);}
+    function resize(){var box=host.getBoundingClientRect();if(!box.width||!box.height)return;renderer.setSize(box.width,box.height,false);camera.aspect=box.width/box.height;camera.updateProjectionMatrix();draw();}
+    function frame(){if(!visible||document.hidden)return;t+=.016;shaderUniforms.forEach(function(u){u.uTime.value=t;});if(!drag)rig.rotation.y+=.0016;core.rotation.y+=.002;nodes.forEach(function(n,i){n.rotation.x+=.0008+i*.0001;n.rotation.y+=.0012;});draw();raf=requestAnimationFrame(frame);}
+    function start(){if(visible&&!document.hidden){cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);}}
+    function stop(){cancelAnimationFrame(raf);draw();}
+    host.addEventListener('pointerdown',function(e){drag=true;lastX=e.clientX;lastY=e.clientY;host.classList.add('is-dragging');if(host.setPointerCapture)host.setPointerCapture(e.pointerId);});
+    host.addEventListener('pointermove',function(e){if(!drag)return;rig.rotation.y+=(e.clientX-lastX)*.008;rig.rotation.x+=(e.clientY-lastY)*.006;lastX=e.clientX;lastY=e.clientY;draw();});
+    ['pointerup','pointercancel','pointerleave'].forEach(function(type){host.addEventListener(type,function(){drag=false;host.classList.remove('is-dragging');});});
+    host.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rig.rotation.y+=e.key==='ArrowLeft'?.16:-.16;draw();}});
+    host.addEventListener('wheel',function(e){e.preventDefault();camera.position.z=Math.max(5.4,Math.min(10,camera.position.z+e.deltaY*.006));draw();},{passive:false});
+    if(controls)controls.querySelectorAll('[data-rotate]').forEach(function(button){button.addEventListener('click',function(){rig.rotation.y+=Number(button.dataset.rotate)*.2;draw();});});
+    if('IntersectionObserver'in window)new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;if(visible)start();else stop();},{rootMargin:'120px'}).observe(host);else start();
+    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start();});
+    if('ResizeObserver'in window)new ResizeObserver(resize).observe(host);else window.addEventListener('resize',resize,{passive:true});
+    resize();start();
+  }
+  function load(){if(loaded)return;if(window.THREE){startThree();return;}var tag=document.createElement('script');tag.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';tag.async=true;tag.onload=startThree;tag.onerror=showFallback;document.head.appendChild(tag);}
+  if('IntersectionObserver'in window){var observer=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){observer.disconnect();load();}},{rootMargin:'220px'});observer.observe(host);}else load();
+})();
+</script>
+
+<!-- ПРОЗРАЧНОСТЬ -->
+<section class="section section--alt">
+    <div class="container">
+        <div class="section__head fade-up">
+            <span class="section__label">Прозрачность</span>
+            <h2 class="section__title">Мы не прячем то, что было</h2>
+            <p class="section__subtitle">Здесь мы показываем, как всё работает — и что было, когда что-то ломалось. Без «мы лучшие». Просто цифры.</p>
+        </div>
+        <div class="fade-up" style="max-width:600px;margin:0 auto;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;">
+                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
+                    <div style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:4px;">12 мин</div>
+                    <div style="font-size:12px;color:var(--muted);">Медиана ответа за неделю</div>
+                </div>
+                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
+                    <div style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:4px;">47</div>
+                    <div style="font-size:12px;color:var(--muted);">Заявок за месяц</div>
+                </div>
+                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
+                    <div style="font-size:28px;font-weight:800;color:var(--neon);margin-bottom:4px;">0</div>
+                    <div style="font-size:12px;color:var(--muted);">Инцидентов за 30 дней</div>
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:16px;font-size:12px;color:var(--muted);">Обновлено 18.10.2026. Каналы: сайт, Авито, Telegram, MAX, звонки. MAX — новый канал, но метрику считаем с первого дня.</p>
+            <div style="text-align:center;margin-top:20px;">
+                <a href="status.html" class="btn btn--outline">Полная статус-страница</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__brand"><img src="logo.webp" alt="F&F" width="32" height="32"><span>F&amp;F</span></div>
+        <p class="footer__desc">Ваш IT-контур под контролем. Даже в субботу. Серверы, инфраструктура, безопасность. Казань — приедем, Россия — удалённо.</p>
+      </div>
+      <div class="footer__col">
+        <h5 class="footer__title">Услуги</h5>
+        <a href="servers.html" class="footer__link">Серверы под ключ</a>
+        <a href="support.html" class="footer__link">Абонентское обслуживание</a>
+        <a href="infrastructure.html" class="footer__link">Инфраструктура</a>
+        <a href="security.html" class="footer__link">Безопасность</a>
+      </div>
+      <div class="footer__col">
+        <h5 class="footer__title">Компания</h5>
+        <a href="cases.html" class="footer__link">Кейсы</a>
+        <a href="team.html" class="footer__link">Команда</a>
+        <a href="audit.html" class="footer__link">IT-аудит</a>
+        <a href="blog.html" class="footer__link">Блог</a>
+        <a href="contacts.html" class="footer__link">Контакты</a>
+      </div>
+      <div class="footer__col">
+        <h5 class="footer__title">Контакты</h5>
+        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+        <a href="https://t.me/FathFed" class="footer__link">Telegram</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661</p>
+      <p class="footer__copy">© 2026 F&amp;F. Все права защищены.</p>
+      
+    </div>
+  </div>
+  <div class="footer__docs"><a href="map.html">Карта сайта</a></div>
+</footer>
+
+<!-- ВИДЖЕТЫ -->
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+
+
+
+
+
+<div class="cookie" id="cookie" style="display:none;">
+  <div class="cookie__text"><strong>Cookie</strong> Соглашаясь, вы принимаете <a href="privacy.html">Политику конфиденциальности</a>.</div>
+  <div class="cookie__actions"><button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

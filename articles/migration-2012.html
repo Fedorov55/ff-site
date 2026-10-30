@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0D14">
+    <meta name="description" content="Переезд с Windows Server 2012 на современный сервер: пошаговый план миграции без простоя. Что делать с 1С, AD, файлами и бэкапами.">
+    <meta name="keywords" content="миграция Windows Server, обновление сервера, переезд сервера, Windows Server 2012, миграция без простоя">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ff-it.ru/articles/migration-2012.html">
+    <title>Переезд с Windows Server 2012: как не потерять данные | F&amp;F</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style-overrides.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Переезд с Windows Server 2012: как не потерять данные",
+        "description": "Пошаговый план миграции со старой системы. Что делать с 1С, AD, файлами и бэкапами.",
+        "author": {"@type": "Organization", "name": "F&F"},
+        "publisher": {"@type": "Organization", "name": "F&F", "logo": {"@type": "ImageObject", "url": "https://ff-it.ru/logo.png"}},
+        "datePublished": "2026-10-16"
+    }
+    </script>
+<meta property="og:title" content="Переезд с Windows Server 2012: как не потерять данные | F&amp;F">
+<meta property="og:description" content="Переезд с Windows Server 2012 на современный сервер: пошаговый план миграции без простоя. Что делать с 1С, AD, файлами и бэкапами.">
+<meta property="og:url" content="https://ff-it.ru/articles/migration-2012.html">
+<meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://ff-it.ru/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Переезд с Windows Server 2012: как не потерять данные", "item": "https://ff-it.ru/articles/migration-2012.html"}]}</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+
+
+
+<div class="bg-layer" aria-hidden="true"><div class="bg-grad"></div><div class="bg-grid"></div><div class="bg-orb bg-orb--1"></div><div class="bg-orb bg-orb--2"></div></div>
+<header class="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="logo" aria-label="F&F — главная">
+      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high">
+      <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">Инфраструктура, которая работает</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="../support.html" class="dropdown__link">Абонентское обслуживание</a><a href="../servers.html" class="dropdown__link">Серверы под ключ</a><a href="../infrastructure.html" class="dropdown__link">IT-инфраструктура</a><a href="../security.html" class="dropdown__link">Безопасность и криптография</a><a href="../audit.html" class="dropdown__link">IT-аудит</a><a href="../services.html#abonentka" class="dropdown__link">Калькулятор абонентки</a><a href="../services.html#calculator" class="dropdown__link">Смета разовых работ</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-solutions" data-nav-trigger>Решения<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-solutions"><a href="../hub-office.html" class="dropdown__link">Офис под ключ</a><a href="../office-move.html" class="dropdown__link">Переезд офиса</a><a href="../server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="../152fz-prep.html" class="dropdown__link">Подготовка к 152-ФЗ</a><a href="../industry-retail.html" class="dropdown__link">Розница</a><a href="../industry-clinics.html" class="dropdown__link">Клиники</a><a href="../industry-horeca.html" class="dropdown__link">HoReCa</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-resources" data-nav-trigger>Материалы<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-resources"><a href="../cases.html" class="dropdown__link">Кейсы</a><a href="../blog.html" class="dropdown__link">Блог</a><a href="../research.html" class="dropdown__link">Исследования</a><a href="../quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="../demo.html" class="dropdown__link">Демо мониторинга</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="../team.html" class="dropdown__link">Команда</a><a href="../about.html" class="dropdown__link">О F&amp;F</a><a href="../methodology.html" class="dropdown__link">Как работаем</a><a href="../trust.html" class="dropdown__link">Доверие и SLA</a><a href="../status.html" class="dropdown__link">Статус</a></div></div>
+      <a href="../contacts.html" class="nav__direct">Контакты</a>
+    </nav>
+    <div class="header__actions"><a href="../services.html#calculator" class="header__estimate">Расчёт стоимости</a><a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button><button class="burger" id="burgerBtn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true"><div class="mobile-nav__backdrop" data-mobile-close></div><div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту"><div class="mobile-nav__header"><a href="../index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span></a><button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button></div><nav class="mobile-nav__inner" aria-label="Основная навигация"><a href="../index.html" class="mobile-nav__link">Главная</a><details class="mobile-nav__group"><summary>Услуги</summary><div class="mobile-nav__group-links"><a href="../support.html" class="mobile-nav__link">Абонентское обслуживание</a><a href="../servers.html" class="mobile-nav__link">Серверы под ключ</a><a href="../infrastructure.html" class="mobile-nav__link">IT-инфраструктура</a><a href="../security.html" class="mobile-nav__link">Безопасность</a><a href="../audit.html" class="mobile-nav__link">IT-аудит</a><a href="../services.html#abonentka" class="mobile-nav__link">Калькулятор абонентки</a><a href="../services.html#calculator" class="mobile-nav__link">Смета разовых работ</a></div></details><details class="mobile-nav__group"><summary>Решения</summary><div class="mobile-nav__group-links"><a href="../hub-office.html" class="mobile-nav__link">Офис под ключ</a><a href="../office-move.html" class="mobile-nav__link">Переезд офиса</a><a href="../server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a><a href="../152fz-prep.html" class="mobile-nav__link">Подготовка к 152-ФЗ</a><a href="../industry-retail.html" class="mobile-nav__link">Розница</a><a href="../industry-clinics.html" class="mobile-nav__link">Клиники</a><a href="../industry-horeca.html" class="mobile-nav__link">HoReCa</a></div></details><details class="mobile-nav__group"><summary>Материалы</summary><div class="mobile-nav__group-links"><a href="../cases.html" class="mobile-nav__link">Кейсы</a><a href="../blog.html" class="mobile-nav__link">Блог</a><a href="../research.html" class="mobile-nav__link">Исследования</a><a href="../quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a><a href="../demo.html" class="mobile-nav__link">Демо мониторинга</a></div></details><details class="mobile-nav__group"><summary>Компания</summary><div class="mobile-nav__group-links"><a href="../team.html" class="mobile-nav__link">Команда</a><a href="../about.html" class="mobile-nav__link">О F&amp;F</a><a href="../methodology.html" class="mobile-nav__link">Как работаем</a><a href="../trust.html" class="mobile-nav__link">Доверие и SLA</a><a href="../status.html" class="mobile-nav__link">Статус</a></div></details><a href="../contacts.html" class="mobile-nav__link">Контакты</a><a href="../services.html#calculator" class="btn btn--primary btn--full mobile-nav__cta">Рассчитать стоимость</a><a href="tel:+79012655252" class="mobile-nav__phone">+7 (901) 265-52-52</a></nav></div></div>
+<main id="main" class="site-main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section" style="padding: 40px 0 20px;">
+    <div class="container" style="max-width: 860px;">
+        <p style="color: var(--dim); font-size: 13px; margin-bottom: 20px;"><a href="../index.html" style="color: var(--muted);">Главная</a> / <a href="../blog.html" style="color: var(--muted);">Блог</a> / <span>Переезд с Windows Server 2012</span></p>
+        <span class="section__label">Серверы · 15 мин чтения</span>
+        <h1 class="section__title" style="text-align: left; margin: 20px 0 16px; font-size: clamp(28px, 4vw, 42px);">Переезд с Windows Server 2012: как не потерять данные</h1>
+        <p style="color: var(--text-2); font-size: 17px; line-height: 1.7; margin-bottom: 40px;">Пошаговый план миграции со старой системы. Что делать с 1С, AD, файлами и бэкапами.</p>
+
+        <div style="color: var(--text-2); font-size: 15px; line-height: 1.85;">
+            <h2 style="color: var(--text); font-size: 22px; margin: 30px 0 14px;">Почему нельзя тянуть</h2>
+            <p style="margin-bottom: 16px;">Windows Server 2012 R2 — система, поддержка которой закончилась ещё в октябре 2023 года. Это значит: <strong>обновлений безопасности не выходит</strong>, новые уязвимости не закрываются. Каждая новая атака может стать успешной.</p>
+            <p style="margin-bottom: 16px;">Плюс современные версии 1С, CRM и офисных пакетов перестают поддерживать старые системы. Через 1–2 года вы упрётесь в невозможность обновления ключевых программ.</p>
+
+            <h2 style="color: var(--text); font-size: 22px; margin: 30px 0 14px;">Куда переезжать</h2>
+            <p style="margin-bottom: 16px;">Три варианта:</p>
+            <ul style="padding-left: 24px; margin-bottom: 20px; color: var(--text-2);">
+                <li style="margin-bottom: 8px;"><strong>Windows Server 2022</strong> — оптимальный выбор. Поддержка до 2031 года, современные функции, полная совместимость с 1С и AD.</li>
+                <li style="margin-bottom: 8px;"><strong>Windows Server 2025</strong> — самая свежая версия. Поддержка до 2035 года. Но некоторые программы могут быть не готовы к ней.</li>
+                <li style="margin-bottom: 8px;"><strong>Linux</strong> — если готовы переводить инфраструктуру. Экономия на лицензиях, но потребуется адаптация сервисов.</li>
+            </ul>
+
+            <h2 style="color: var(--text); font-size: 22px; margin: 30px 0 14px;">План миграции</h2>
+            <p style="margin-bottom: 16px;"><strong>Шаг 1. Аудит.</strong> Что у вас стоит на сервере: AD, 1С, файлы, принт-сервер, почта? Какие версии программ? Кто и как часто это использует?</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 2. Проверка совместимости.</strong> Перед переездом надо убедиться, что версии 1С, CRM, бухгалтерии работают на новой системе. Часто нужны обновления самих программ.</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 3. Подготовка нового сервера.</strong> Установить новый сервер (или виртуальную машину), проверить производительность, поставить нужные роли.</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 4. Пилотный перенос.</strong> Сначала переносим самое простое — файлы или тестовую базу 1С. Убеждаемся, что всё работает.</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 5. Миграция Active Directory.</strong> AD переносится с сохранением всех пользователей, прав и настроек. Через репликацию — без остановки работы.</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 6. Перенос остальных сервисов.</strong> Файлы, принт-сервер, 1С. Каждый сервис — в нерабочее время с чётким планом отката.</p>
+            <p style="margin-bottom: 16px;"><strong>Шаг 7. Отключение старого сервера.</strong> Через 1–2 недели после полного переезда. Ещё месяц хранится как бэкап.</p>
+
+            <h2 style="color: var(--text); font-size: 22px; margin: 30px 0 14px;">Сколько это стоит</h2>
+            <p style="margin-bottom: 16px;">Миграция сервера с AD, файлами и 1С на офис из 15–20 человек:</p>
+            <ul style="padding-left: 24px; margin-bottom: 20px; color: var(--text-2);">
+                <li style="margin-bottom: 8px;">Аудит и план — от 5 000 ₽.</li>
+                <li style="margin-bottom: 8px;">Настройка нового сервера — от 3 000 ₽.</li>
+                <li style="margin-bottom: 8px;">Перенос AD — от 6 000 ₽.</li>
+                <li style="margin-bottom: 8px;">Перенос 1С — от 5 000 ₽.</li>
+                <li style="margin-bottom: 8px;">Перенос файлов и общих папок — от 3 000 ₽.</li>
+                <li style="margin-bottom: 8px;"><strong>Итого под ключ:</strong> от 20 000 ₽ плюс стоимость нового сервера и лицензий.</li>
+            </ul>
+
+            <h2 style="color: var(--text); font-size: 22px; margin: 30px 0 14px;">Сроки</h2>
+            <p style="margin-bottom: 16px;">Типовая миграция — 3–5 рабочих дней. Самый большой срок — это подготовка. Сама миграция занимает несколько часов в нерабочее время. Простой для сотрудников — обычно 1–2 часа ночью.</p>
+
+            <p style="margin-bottom: 16px;"><a href="../servers.html" style="color: var(--gold-light); font-weight: 700;">→ Заказать миграцию сервера</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="container" style="max-width:900px"><div class="related-guides"><h2>Читайте также</h2><a class="related-guide" href="../blog/server-office.html">Сервер для офиса 10–15 человек: от 200 000 ₽<span aria-hidden="true">→</span></a><a class="related-guide" href="../blog/server-1c.html">Сервер для 1С: сколько RAM, какой диск<span aria-hidden="true">→</span></a><a class="related-guide" href="../blog/backup-3-2-1.html">Бэкапы, которые реально восстанавливаются<span aria-hidden="true">→</span></a></div></div></section>
+<section class="section">
+    <div class="container">
+        <div class="contact__form fade-up" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 44px 32px;">
+            <span class="section__label">Заявка</span>
+            <h2 class="section__title" style="margin-bottom: 16px;">Проведём миграцию под ключ</h2>
+            <p style="color: var(--text-2); margin-bottom: 26px;">Бесплатно оценим объём работ.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="../contacts.html" class="btn btn--primary">Оставить заявку</a>
+                <a href="../blog.html" class="btn btn--ghost">Смотреть другие статьи</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__bottom">
+            <p class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661</p>
+            <p class="footer__copy">© 2026 F&amp;F. Все права защищены.</p>
+            <p class="footer__geo">Работаем по Казани и всей России · Удалённо и с выездом</p>
+            <div class="footer__docs"><a href="../map.html">Карта сайта</a><a href="../docs/dogovor.docx" download>Договор</a><a href="../docs/akt.docx" download>Акт</a><a href="../docs/raspiska.docx" download>Расписка</a><a href="../privacy.html">Политика ПДн</a></div>
+        </div>
+    </div>
+</footer>
+
+<div class="cookie" id="cookie">
+    <div class="cookie__text"><strong>Cookie и аналитика</strong><br>Разрешить cookie и обработку данных внешними сервисами аналитики? Так мы видим, как пользуются платформой, и улучшаем её. Без вашего разрешения счётчики не включаются. <a href="../privacy.html" target="_blank">Подробнее</a></div>
+    <div class="cookie__actions"><button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button></div>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<script src="../script.js"></script>
+</body>
+</html>

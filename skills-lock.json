@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "audit": {
+      "source": "ScaleBrick/founder-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "skills/audit/SKILL.md",
+      "computedHash": "4bc41d68f6a648aa22949c3f7697c851de501abda2c8dae1da8dbb69efc8121d"
+    },
+    "competitors": {
+      "source": "ScaleBrick/founder-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "skills/competitors/SKILL.md",
+      "computedHash": "d0b6569d3e065f43959d732b999eeea8d923120ebded2a561769230c43e1b808"
+    },
+    "forge-motion": {
+      "source": "BekhruzTursunboev/Bexa-professional-frontend-design-skills-for-ai-agents",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "d97f2a77ae48a3df2712b409af36070ea73ec88ca43fb3755f000f121d73d380"
+    },
+    "frontend-no-slop": {
+      "source": "Emily2040/frontend-no-slop",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "0295240798757dcf0027e4faba7fed323dd6da9f79eef0c137a55dc2d9f4084c"
+    },
+    "keywords": {
+      "source": "ScaleBrick/founder-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "skills/keywords/SKILL.md",
+      "computedHash": "0262c297fceb9097a8368834c969e95c6a8b9da1fc8a101ea71d983988ba81cc"
+    },
+    "strategy": {
+      "source": "ScaleBrick/founder-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "skills/strategy/SKILL.md",
+      "computedHash": "9f250c9414d1813e14cf703171c49528db313db924d5e481317cdbc9cee88279"
+    },
+    "ui-ux-design-pro": {
+      "source": "saifyxpro/ui-ux-design-pro-skill",
+      "sourceType": "github",
+      "skillPath": "skills/ui-ux-design-pro/SKILL.md",
+      "computedHash": "035ea182bbe684c1328c1130f2a340c111efa994348abecc837a9b6832c702a1"
+    }
+  }
+}
