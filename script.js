@@ -20,6 +20,8 @@
       try{ localStorage.setItem('ff_theme', next); }catch(e){}
       updateThemeIcon(next);
     };
+    const themeBtn = document.getElementById('themeToggle');
+    if(themeBtn){ themeBtn.addEventListener('click', window.toggleTheme); }
     function updateThemeIcon(theme){
       const btn = document.getElementById('themeToggle');
       if(!btn) return;
