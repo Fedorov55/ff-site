@@ -275,3 +275,11 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-terminal__cmd{color:var(--text)}
 .hero-terminal__out{margin-top:6px;color:var(--text-2);font-size:11px;line-height:1.7}
 .hero-terminal__out .ok{color:var(--gold-light)}
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  header, footer, .cookie, .to-top, .mobile-nav, .exit-popup { display: none !important; }
+  .quiz__loss-box, .quiz__result-header { page-break-inside: avoid; }
+  .btn { display: none !important; }
+  .site-main { padding: 0 !important; }
+  @page { margin: 1.5cm; }
+}

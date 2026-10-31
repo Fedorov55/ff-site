@@ -152,6 +152,7 @@
             </div>
             <div class="quiz__actions">
               <button class="btn btn--primary" onclick="submitQuiz(event)">Обсудить задачу</button>
+              <button class="btn btn--ghost" onclick="window.print()" style="margin-top:8px;">Скачать PDF-чеклист</button>
             </div>
           </div>
         `;
