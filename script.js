@@ -683,7 +683,7 @@
       { t: '[✓] Бэкап · 3-2-1 · оффлайн ', cls: 'ok', bar: true },
       { t: '[✓] Защитный контур · EDR   ', cls: 'ok', bar: true },
       { t: '', cls: '' },
-      { t: '[ OK ] Мониторинг 24/7 · SLA 99.9%', cls: 'ok2' },
+      { t: '[ OK ] Мониторинг 24/7 · SLA 99.5%', cls: 'ok2' },
       { t: '[ OK ] Готовы помочь вашему бизнесу.', cls: 'ok2' },
     ];
     let li = 0;
@@ -736,7 +736,14 @@
     };
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } });
-    }, { threshold: 0.3 });
-    nums.forEach(n => obs.observe(n));
+    }, { threshold: 0.1 });
+    nums.forEach(n => {
+      const rect = n.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        animate(n);
+      } else {
+        obs.observe(n);
+      }
+    });
   } catch(e) {}
 })();

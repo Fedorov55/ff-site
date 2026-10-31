@@ -1,10 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /privacy.html
-Disallow: /404.html
 Disallow: /docs/
-Disallow: /*.min.css$
-Disallow: /*.min.js$
+Disallow: /*.zip$
 
 # Yandex
 User-agent: Yandex
@@ -42,5 +39,4 @@ Allow: /
 User-agent: GigaChat
 Allow: /
 
-Sitemap: https://ff-it.ru/sitemap.xml
-Host: https://ff-it.ru
+Sitemap: https://fedorov55.github.io/ff-site/sitemap.xml
