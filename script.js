@@ -184,12 +184,12 @@
         btn.textContent = 'Отправляем...'; btn.disabled = true;
 
         try {
-          const resp = await fetch('/send.php', {
-            method: 'POST', headers: {'Content-Type': 'application/json'},
+          const resp = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
             body: JSON.stringify({ name, contact_way: contact, message: `Пройден квиз. Потери: ${loss}`, service: 'Квиз', agree: true })
           });
           const res = await resp.json();
-          if(res.status === 'success'){
+          if(resp.ok){
             qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо, ${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Свяжемся в течение 15 минут.</p><a href="services.html#calculator" class="btn btn--primary">Пока посмотреть цены</a></div>`;
           } else {
             showToast(btn, res.message || 'Ошибка', 'error'); btn.disabled = false; btn.textContent = 'Обсудить задачу';
@@ -322,7 +322,7 @@
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: 'Расчёт сметы с сайта', service: 'Калькулятор', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('calcSuccess');
-          if(res && res.status === 'success'){
+          if(res && res.ok === true){
             if(succ){ succ.style.display='block'; succ.textContent = 'Спасибо, ' + name.trim() + '! Вышлем смету в ближайшее время.'; }
           } else {
             showToast(btn, (res && res.message) || 'Ошибка', 'error');
@@ -376,7 +376,7 @@
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: message.trim(), service: 'Главная страница', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('contactSuccess');
-          if(res && res.status === 'success'){
+          if(res && res.ok === true){
             if(succ){ succ.style.display='block'; succ.textContent = 'Спасибо, ' + name.trim() + '! Свяжемся в течение 15 минут.'; }
             contactForm.reset();
           } else {
@@ -627,8 +627,9 @@
         if(hp && hp.value) return; // honeypot
         const email = (form.querySelector('input[name="email"]')||{}).value || '';
         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-        if(success){ success.style.display = 'block'; }
+        if(success){ success.style.display = 'block'; success.textContent = 'Спасибо! Проверьте почту.'; }
         form.style.display = 'none';
+        try { fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({ email: email, service: 'Exit-popup чек-лист', agree: true }) }); } catch(e){}
       });
     }
   } catch(e) {}
