@@ -690,7 +690,7 @@
       const div = document.createElement('div');
       div.className = 'term-win__line';
       if (l.cls === 'prompt') div.style.color = '#00E5FF';
-      else if (l.cls === 'comment') div.style.color = '#5B6472';
+      else if (l.cls === 'comment') div.style.color = '#9AA0A6';
       else if (l.cls === 'ok2') div.style.color = '#00E5FF';
       else div.style.color = '#00FF88';
       if (l.bar) {
