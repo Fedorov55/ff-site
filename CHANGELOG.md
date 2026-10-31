@@ -89,3 +89,20 @@
 - 0 console errors.
 - 0 secrets in repository.
 - 0 dangerous patterns (eval, document.write, Function()).
+
+## [2026-10-31] — Performance & Responsiveness
+### Added
+- design-system.css: tokens, reveals, grain, micro-interactions, contain, content-visibility.
+- PERFORMANCE_AUDIT.md with Lighthouse results.
+- width/height on all 217 images (was 7 missing).
+- noscript fallbacks on key pages.
+
+### Fixed
+- Color contrast: terminal text and decorative numbers.
+- External fonts/CDN removed (local fonts only).
+
+### Validated
+- Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 100.
+- LCP 1.3s, INP 10ms, CLS 0.004, TBT 10ms.
+- No horizontal scroll at 320px.
+- 0 console errors.

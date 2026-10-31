@@ -332,3 +332,9 @@ h1, h2, h3 { text-wrap: balance; }
   .term-win__body { font-size: 10px; min-height: 180px; }
   .shield-globe { width: 200px; height: 230px; }
 }
+/* Performance: contain for isolated components */
+.card, .service-card, .case-card, .blog-card, .why-item, .team-card, .review-card {
+  contain: layout style paint;
+}
+/* content-visibility for off-screen sections (already partial) */
+.section:not(:first-of-type) { content-visibility: auto; contain-intrinsic-size: 0 400px; }
