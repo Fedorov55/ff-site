@@ -62,3 +62,30 @@
 - GitHub repository: https://github.com/Fedorov55/ff-site
 - GitHub Pages: https://fedorov55.github.io/ff-site/
 - README.md with run/deploy instructions.
+
+
+## [2026-10-31] — Security Audit & Hardening
+### Added
+- SECURITY.md — security policy, vulnerability reporting, developer checklist.
+- SECURITY_AUDIT.md — full audit table with findings and fixes.
+- .well-known/security.txt (RFC 9116).
+- CSP meta tag on all 101 pages.
+- Referrer-Policy meta tag on all pages.
+- Honeypot field in all forms (101 pages).
+- Consent checkbox on contact form and quiz.
+
+### Fixed
+- Removed external Google Fonts (14 pages) — now uses local fonts.
+- Removed Chart.js CDN from demo.html.
+- Removed CSP/X-Frame-Options meta that caused console errors.
+- Removed low-contrast decorative numbers (accessibility).
+
+### Documented
+- GitHub Pages limitation: no custom HTTP headers.
+- Recommended headers for migration to Cloudflare Pages/Netlify.
+
+### Validated
+- Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 100.
+- 0 console errors.
+- 0 secrets in repository.
+- 0 dangerous patterns (eval, document.write, Function()).

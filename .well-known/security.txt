@@ -1,0 +1,5 @@
+Contact: mailto:FathFed@yandex.ru
+Expires: 2027-10-31T23:59:59.000Z
+Preferred-Languages: ru, en
+Canonical: https://ff-it.ru/.well-known/security.txt
+Policy: https://ff-it.ru/privacy.html
