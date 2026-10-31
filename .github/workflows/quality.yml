@@ -1,0 +1,14 @@
+name: Code Quality
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-save eslint htmlhint
+      - run: npx eslint "**/*.js"
+      - run: npx htmlhint "**/*.html"
+      - run: for f in $(find . -name "*.js"); do node --check "$f"; done

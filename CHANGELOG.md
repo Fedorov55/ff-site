@@ -106,3 +106,23 @@
 - LCP 1.3s, INP 10ms, CLS 0.004, TBT 10ms.
 - No horizontal scroll at 320px.
 - 0 console errors.
+
+## [2026-10-31] — Code Quality & Production Readiness
+### Added
+- .eslintrc.json + eslint.config.mjs (ESLint flat config).
+- .htmlhintrc (HTMLHint config).
+- .github/workflows/quality.yml (CI: ESLint + HTMLHint + node --check).
+- CODE_AUDIT.md — full code audit results.
+- .nojekyll for dotfile serving.
+
+### Fixed
+- Duplicate aria-live on cookie banner (14 pages).
+- ESLint errors: contactForm not defined, location not defined (added to globals).
+- HTMLHint: 0 errors on 101 pages.
+
+### Validated
+- ESLint: 0 errors, 25 warnings (unused catch variables).
+- HTMLHint: 0 errors on 101 files.
+- node --check: 0 errors.
+- Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 100.
+- 0 console errors, 0 broken links.

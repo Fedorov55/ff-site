@@ -174,8 +174,6 @@
 
         if(!name) return showToast(btn, 'Укажите имя', 'error');
         if(!contact) return showToast(btn, 'Укажите контакт', 'error');
-        const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
-        if(hp) return; // honeypot
         if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
 
         btn.textContent = 'Отправляем...'; btn.disabled = true;
