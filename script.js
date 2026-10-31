@@ -173,6 +173,8 @@
 
         if(!name) return showToast(btn, 'Укажите имя', 'error');
         if(!contact) return showToast(btn, 'Укажите контакт', 'error');
+        const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
+        if(hp) return; // honeypot
         if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
 
         btn.textContent = 'Отправляем...'; btn.disabled = true;
@@ -312,7 +314,7 @@
       if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
       if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
       try {
-        fetch('/send.php', { method:'POST', headers:{'Content-Type':'application/json'},
+        fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: 'Расчёт сметы с сайта', service: 'Калькулятор', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('calcSuccess');
@@ -362,9 +364,11 @@
         const agree = (contactForm.querySelector('#agree')||{}).checked;
         if(!name.trim()) return showToast(btn, 'Укажите имя', 'error');
         if(!contact.trim()) return showToast(btn, 'Укажите контакт', 'error');
+        const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
+        if(hp) return; // honeypot
         if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
         if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
-        fetch('/send.php', { method:'POST', headers:{'Content-Type':'application/json'},
+        fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: message.trim(), service: 'Главная страница', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('contactSuccess');
@@ -592,4 +596,71 @@
     root.querySelectorAll('[data-sub-plan]').forEach(function(button){button.addEventListener('click',function(){plan=button.dataset.subPlan;root.querySelectorAll('[data-sub-plan]').forEach(function(item){var selected=item===button;item.classList.toggle('is-selected',selected);item.setAttribute('aria-pressed',String(selected));});update();});});[pc,srv,printer].forEach(function(input){if(input)input.addEventListener('input',update);});root.querySelectorAll('[data-sub-extra]').forEach(function(input){input.addEventListener('change',update);});update();}
   var estimator=document.querySelector('#calculator .calc');
   if(estimator){estimator.querySelectorAll('.calc__service').forEach(function(button){button.setAttribute('aria-pressed',String(button.classList.contains('active')));});}
+})();
+
+/* ====== EXIT-INTENT POPUP ====== */
+(function(){
+  try {
+    const popup = document.getElementById('exitPopup');
+    if(!popup) return;
+    const closeBtn = document.getElementById('exitPopupClose');
+    const backdrop = document.getElementById('exitPopupBackdrop');
+    const form = document.getElementById('exitPopupForm');
+    const success = document.getElementById('exitPopupSuccess');
+    let shown = false;
+    function show(){ if(shown) return; shown = true; popup.classList.add('is-open'); popup.setAttribute('aria-hidden','false'); }
+    function hide(){ popup.classList.remove('is-open'); popup.setAttribute('aria-hidden','true'); }
+    closeBtn && closeBtn.addEventListener('click', hide);
+    backdrop && backdrop.addEventListener('click', hide);
+    document.addEventListener('mouseleave', function(e){ if(e.clientY <= 0) show(); });
+    let scrolled = false;
+    window.addEventListener('scroll', function(){ if(scrolled) return; const pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight; if(pct >= 0.5){ scrolled = true; setTimeout(show, 30000); } });
+    setTimeout(show, 60000);
+    if(form){
+      form.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        const hp = form.querySelector('input[name="website"]');
+        if(hp && hp.value) return; // honeypot
+        const email = (form.querySelector('input[name="email"]')||{}).value || '';
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+        if(success){ success.style.display = 'block'; }
+        form.style.display = 'none';
+      });
+    }
+  } catch(e) {}
+})();
+
+/* ====== HERO TERMINAL ====== */
+(function(){
+  try {
+    const cmdEl = document.getElementById('heroTerminalCmd');
+    const outEl = document.getElementById('heroTerminalOut');
+    if(!cmdEl || !outEl) return;
+    const cmd = './ff-it --status';
+    const lines = ['[ OK ] RAID-массив','[ OK ] Шифрование AES-256','[ OK ] Мониторинг 24/7','[ OK ] SLA 99.5%'];
+    let i = 0;
+    function typeCmd(){
+      if(i < cmd.length){ cmdEl.textContent += cmd[i]; i++; setTimeout(typeCmd, 60); }
+      else { setTimeout(showLines, 400); }
+    }
+    let li = 0;
+    function showLines(){
+      if(li < lines.length){ const d = document.createElement('div'); d.className='ok'; d.textContent = lines[li]; outEl.appendChild(d); li++; setTimeout(showLines, 350); }
+    }
+    setTimeout(typeCmd, 600);
+  } catch(e) {}
+})();
+
+/* ====== LIVE METRICS ====== */
+(function(){
+  try {
+    fetch('data.json').then(r=>r.json()).then(d=>{
+      const r = document.getElementById('metric-response');
+      const q = document.getElementById('metric-requests');
+      const i = document.getElementById('metric-incidents');
+      if(r && d.response) r.textContent = d.response;
+      if(q && d.requests) q.textContent = d.requests;
+      if(i && d.incidents) i.textContent = d.incidents;
+    }).catch(()=>{});
+  } catch(e) {}
 })();

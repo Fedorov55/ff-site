@@ -257,3 +257,21 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width:1000px){.map-grid{columns:3}}
 @media (max-width:760px){.map-grid{columns:2}}
 @media (max-width:480px){.map-grid{columns:1}}
+
+/* Exit-intent popup */
+.exit-popup{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.exit-popup.is-open{display:flex}
+.exit-popup__backdrop{position:absolute;inset:0;background:rgba(3,6,12,.78);backdrop-filter:blur(4px)}
+.exit-popup__card{position:relative;z-index:1;max-width:420px;width:100%;background:var(--card);border:1px solid var(--border-gold);border-radius:18px;padding:28px 24px;box-shadow:var(--shadow)}
+.exit-popup__close{position:absolute;top:10px;right:14px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer}
+.exit-popup h3{margin:0 0 8px;color:var(--text);font-size:20px;font-weight:800}
+.exit-popup p{margin:0 0 16px;color:var(--text-2);font-size:14px}
+.exit-popup input[type="email"]{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg-2);color:var(--text);font-size:14px;margin-bottom:12px}
+.exit-popup .btn--full{width:100%}
+
+/* Hero terminal */
+.hero-terminal{margin-top:18px;padding:12px 14px;background:rgba(0,0,0,.35);border:1px solid var(--border-gold);border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold-light);min-height:96px}
+.hero-terminal__prompt{color:var(--neon);font-weight:700}
+.hero-terminal__cmd{color:var(--text)}
+.hero-terminal__out{margin-top:6px;color:var(--text-2);font-size:11px;line-height:1.7}
+.hero-terminal__out .ok{color:var(--gold-light)}

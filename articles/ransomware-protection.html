@@ -42,7 +42,7 @@
 <header class="header">
   <div class="container header__inner">
     <a href="../index.html" class="logo" aria-label="F&F — главная">
-      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high">
+      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high" loading="lazy">
       <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">Инфраструктура, которая работает</span></span>
     </a>
     <nav class="nav" aria-label="Основная навигация">
@@ -142,6 +142,11 @@
             <div class="footer__docs"><a href="../map.html">Карта сайта</a><a href="../docs/dogovor.docx" download>Договор</a><a href="../docs/akt.docx" download>Акт</a><a href="../docs/raspiska.docx" download>Расписка</a><a href="../privacy.html">Политика ПДн</a></div>
         </div>
     </div>
+  <div class="footer__signature" style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);line-height:1.6;">
+    <div>$ cat about-site.txt</div>
+    <div>Да, этот сайт сделали мы сами. И да, мы можем сделать такой же вам. Но сначала — сервер. Сайт подождёт.</div>
+    <div>$ ssh contact@ff-it.ru</div>
+  </div>
 </footer>
 
 <div class="cookie" id="cookie">
@@ -152,5 +157,21 @@
 <button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <script src="../script.js"></script>
+
+<div class="exit-popup" id="exitPopup" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="exit-popup__backdrop" id="exitPopupBackdrop"></div>
+  <div class="exit-popup__card">
+    <button class="exit-popup__close" id="exitPopupClose" aria-label="Закрыть">&times;</button>
+    <h3>Уходите? Заберите чек-лист</h3>
+    <p>Проверка инфраструктуры за 5 минут. Отправим на email.</p>
+    <form id="exitPopupForm">
+      <input type="email" name="email" placeholder="your@email.com" required aria-label="Email">
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="btn btn--primary btn--full">Получить чек-лист</button>
+    </form>
+    <div id="exitPopupSuccess" style="display:none;margin-top:12px;color:var(--gold-light);font-size:14px;">Спасибо! Проверьте почту.</div>
+  </div>
+</div>
+
 </body>
 </html>

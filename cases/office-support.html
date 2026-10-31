@@ -31,7 +31,7 @@
 <header class="header">
   <div class="container header__inner">
     <a href="../index.html" class="logo" aria-label="F&F — главная">
-      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high">
+      <img src="../logo.webp" alt="" class="logo__img" width="48" height="48" fetchpriority="high" loading="lazy">
       <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">Инфраструктура, которая работает</span></span>
     </a>
     <nav class="nav" aria-label="Основная навигация">
@@ -74,7 +74,7 @@
 </section>
 
 <section class="section" style="padding: 20px 0 40px;">
-    <div class="container"><img src="../img/hero-server.webp" alt="IT-обслуживание офиса" width="1200" height="600" style="width: 100%; max-width: 900px; margin: 0 auto 40px; border-radius: var(--radius); border: 1px solid var(--border); display: block; aspect-ratio: 16/8; object-fit: cover;"></div>
+    <div class="container"><img src="../img/hero-server.webp" alt="IT-обслуживание офиса" width="1200" height="600" style="width: 100%; max-width: 900px; margin: 0 auto 40px; border-radius: var(--radius); border: 1px solid var(--border); display: block; aspect-ratio: 16/8; object-fit: cover;" loading="lazy"></div>
 </section>
 
 <section class="section">
@@ -127,7 +127,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__grid">
-            <div class="footer__col"><div class="footer__brand"><img src="../logo.webp" alt="Логотип F&F" class="footer__logo" width="36" height="36"><span>F&amp;F</span></div><p class="footer__desc">Ваш IT-контур под контролем. Казань и вся Россия.</p></div>
+            <div class="footer__col"><div class="footer__brand"><img src="../logo.webp" alt="Логотип F&F" class="footer__logo" width="36" height="36" loading="lazy"><span>F&amp;F</span></div><p class="footer__desc">Ваш IT-контур под контролем. Казань и вся Россия.</p></div>
             <div class="footer__col"><h5 class="footer__title">Услуги</h5><a href="../servers.html" class="footer__link">Серверы под ключ</a><a href="../infrastructure.html" class="footer__link">IT-инфраструктура</a><a href="../security.html" class="footer__link">Безопасность</a><a href="../services.html" class="footer__link">Обслуживание</a></div>
             <div class="footer__col"><h5 class="footer__title">Компания</h5><a href="../cases.html" class="footer__link">Кейсы</a><a href="../audit.html" class="footer__link">IT-аудит</a><a href="../contacts.html" class="footer__link">Контакты</a><a href="../blog.html" class="footer__link">Блог</a></div>
             <div class="footer__col"><h5 class="footer__title">Контакты</h5><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a><a href="https://t.me/ff_team" class="footer__link">Telegram @ff_team</a><a href="https://max.ru/u/f9LHodD0cOLFeIrLBc8Lkmm-dG1WylOPja64RkmBQJ0tf-1lJO7uBlXgmiE" class="footer__link">MAX: FathFed</a></div>
@@ -139,6 +139,11 @@
         </div>
     </div>
   <div class="footer__docs"><a href="../map.html">Карта сайта</a></div>
+  <div class="footer__signature" style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);line-height:1.6;">
+    <div>$ cat about-site.txt</div>
+    <div>Да, этот сайт сделали мы сами. И да, мы можем сделать такой же вам. Но сначала — сервер. Сайт подождёт.</div>
+    <div>$ ssh contact@ff-it.ru</div>
+  </div>
 </footer>
 
 <div class="cookie" id="cookie">
@@ -149,5 +154,21 @@
 <button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
 
 <script src="../script.js"></script>
+
+<div class="exit-popup" id="exitPopup" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="exit-popup__backdrop" id="exitPopupBackdrop"></div>
+  <div class="exit-popup__card">
+    <button class="exit-popup__close" id="exitPopupClose" aria-label="Закрыть">&times;</button>
+    <h3>Уходите? Заберите чек-лист</h3>
+    <p>Проверка инфраструктуры за 5 минут. Отправим на email.</p>
+    <form id="exitPopupForm">
+      <input type="email" name="email" placeholder="your@email.com" required aria-label="Email">
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" class="btn btn--primary btn--full">Получить чек-лист</button>
+    </form>
+    <div id="exitPopupSuccess" style="display:none;margin-top:12px;color:var(--gold-light);font-size:14px;">Спасибо! Проверьте почту.</div>
+  </div>
+</div>
+
 </body>
 </html>
