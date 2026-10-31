@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../style-overrides.css">
+<link rel="stylesheet" href="../design-system.css">
 <meta property="og:title" content="Кейс: ViPNet между офисами клиники | F&amp;F">
 <meta property="og:description" content="Кейс F&F: ViPNet между офисами клиники. Защищённый канал между двумя зданиями на 12 рабочих мест. ViPNet Coordinator, политика доступа, резерв.">
 <meta property="og:url" content="https://ff-it.ru/cases/vipnet-offices.html">
@@ -21,7 +22,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
-<body>
+<body class="grain">
 <a href="#main" class="skip-link">Перейти к содержимому</a>
 
 
@@ -62,7 +63,7 @@
 
 
 
-<section class="section" style="padding: 40px 0 20px;">
+<section class="section reveal" style="padding: 40px 0 20px;">
     <div class="container">
         <p style="color: var(--dim); font-size: 13px; margin-bottom: 20px;"><a href="../index.html" style="color: var(--muted);">Главная</a> / <a href="../cases.html" style="color: var(--muted);">Кейсы</a> / <span>ViPNet между офисами</span></p>
         <div class="hero__badge"><span class="hero__badge-dot"></span> Защищённая сеть</div>
@@ -73,15 +74,15 @@
     </div>
 </section>
 
-<section class="section" style="padding: 20px 0 40px;">
+<section class="section reveal" style="padding: 20px 0 40px;">
     <div class="container"><img src="../img/service-vipnet.webp" alt="ViPNet между офисами" width="1200" height="600" style="width: 100%; max-width: 900px; margin: 0 auto 40px; border-radius: var(--radius); border: 1px solid var(--border); display: block; aspect-ratio: 16/8; object-fit: cover;" loading="lazy"></div>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <div class="container" style="max-width: 860px;">
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; font-size: 28px;">Задача</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; font-size: 28px;">Задача</h2>
         <p style="color: var(--text-2); font-size: 16px; line-height: 1.85; margin-bottom: 30px;">Клиника с двумя зданиями в разных районах Казани. Нужно было объединить их в единую сеть для работы с медицинской информационной системой (МИС). Требования к защите медицинских данных — максимальные. Обычный VPN не подходит.</p>
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Что мы сделали</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Что мы сделали</h2>
         <div class="services__grid" style="grid-template-columns: 1fr;">
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h3 class="service-card__title">Развернули ViPNet Coordinator</h3><p class="service-card__text">Центральный координатор на сервере в первом офисе. Coordinator HW 1000 как альтернатива — программный вариант на своём сервере дешевле и гибче.</p></div>
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 class="service-card__title">ViPNet Client на 12 мест</h3><p class="service-card__text">Настроили клиентские места: врачи, регистратура, бухгалтерия, администраторы. Доступ к МИС через защищённый туннель.</p></div>
@@ -89,7 +90,7 @@
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 8h16"/></svg></div><h3 class="service-card__title">Оформили бумаги</h3><p class="service-card__text">Подготовили ОРД, приказы, регламенты, журналы учёта СКЗИ. Для медицинских учреждений — обязательное требование.</p></div>
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3 class="service-card__title">Резервное подключение</h3><p class="service-card__text">Настроили резервный канал связи на случай, если основной провайдер упадёт. Клиника продолжает работать.</p></div>
         </div>
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Результат</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Результат</h2>
         <div class="why__grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="why-item"><h3 class="why-item__title">Офиса в единой сети</h3><p class="why-item__text">Все данные и МИС доступны из обоих зданий.</p></div>
             <div class="why-item"><h3 class="why-item__title">Рабочих мест</h3><p class="why-item__text">Врачи, регистратура, бухгалтерия — все работают через защищённый канал.</p></div>
@@ -104,11 +105,11 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <div class="container">
         <div class="contact__form fade-up" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 44px 32px;">
-            <span class="section__label">Хотите так же?</span>
-            <h2 class="section__title" style="margin-bottom: 16px;">Защитим ваши офисы</h2>
+            <span class="section__label reveal">Хотите так же?</span>
+            <h2 class="section__title reveal" style="margin-bottom: 16px;">Защитим ваши офисы</h2>
             <p style="color: var(--text-2); margin-bottom: 26px; max-width: 520px; margin-left: auto; margin-right: auto;">Настроим ViPNet между офисами — с документами и обучением.</p>
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                 <a href="../security.html" class="btn btn--primary">Криптография и ViPNet</a>

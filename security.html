@@ -5,6 +5,7 @@
 <title>ЭЦП и криптография в Казани | F&amp;F — КриптоПро, ViPNet, 152-ФЗ, безопасность</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style-overrides.css">
+<link rel="stylesheet" href="design-system.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -41,7 +42,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
-<body>
+<body class="grain">
 
 <a href="#main" class="skip-link">Перейти к основному содержанию</a>
 
@@ -65,12 +66,12 @@
 <div class="mobile-nav" id="mobileNav" aria-hidden="true"><div class="mobile-nav__backdrop" data-mobile-close></div><div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту"><div class="mobile-nav__header"><a href="index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span></a><button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button></div><nav class="mobile-nav__inner" aria-label="Основная навигация"><a href="index.html" class="mobile-nav__link">Главная</a><details class="mobile-nav__group"><summary>Услуги</summary><div class="mobile-nav__group-links"><a href="support.html" class="mobile-nav__link">Абонентское обслуживание</a><a href="servers.html" class="mobile-nav__link">Серверы под ключ</a><a href="infrastructure.html" class="mobile-nav__link">IT-инфраструктура</a><a href="security.html" class="mobile-nav__link">Безопасность</a><a href="audit.html" class="mobile-nav__link">IT-аудит</a><a href="services.html#abonentka" class="mobile-nav__link">Калькулятор абонентки</a><a href="services.html#calculator" class="mobile-nav__link">Смета разовых работ</a></div></details><details class="mobile-nav__group"><summary>Решения</summary><div class="mobile-nav__group-links"><a href="hub-office.html" class="mobile-nav__link">Офис под ключ</a><a href="office-move.html" class="mobile-nav__link">Переезд офиса</a><a href="server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a><a href="152fz-prep.html" class="mobile-nav__link">Подготовка к 152-ФЗ</a><a href="industry-retail.html" class="mobile-nav__link">Розница</a><a href="industry-clinics.html" class="mobile-nav__link">Клиники</a><a href="industry-horeca.html" class="mobile-nav__link">HoReCa</a></div></details><details class="mobile-nav__group"><summary>Материалы</summary><div class="mobile-nav__group-links"><a href="cases.html" class="mobile-nav__link">Кейсы</a><a href="blog.html" class="mobile-nav__link">Блог</a><a href="research.html" class="mobile-nav__link">Исследования</a><a href="quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a><a href="demo.html" class="mobile-nav__link">Демо мониторинга</a></div></details><details class="mobile-nav__group"><summary>Компания</summary><div class="mobile-nav__group-links"><a href="team.html" class="mobile-nav__link">Команда</a><a href="about.html" class="mobile-nav__link">О F&amp;F</a><a href="methodology.html" class="mobile-nav__link">Как работаем</a><a href="trust.html" class="mobile-nav__link">Доверие и SLA</a><a href="status.html" class="mobile-nav__link">Статус</a></div></details><a href="contacts.html" class="mobile-nav__link">Контакты</a><a href="services.html#calculator" class="btn btn--primary btn--full mobile-nav__cta">Рассчитать стоимость</a><a href="tel:+79012655252" class="mobile-nav__phone">+7 (901) 265-52-52</a></nav></div></div>
 <main id="main" class="site-main">
 
-  <section class="section" style="padding-top:140px">
+  <section class="section reveal" style="padding-top:140px">
     <div class="container">
-      <div class="section__head">
-        <span class="section__label">Безопасность</span>
-        <h1 class="section__title">ЭЦП — это не «файл с подписью»</h1>
-        <p class="section__subtitle">Это инфраструктура из четырёх частей, три из которых платные. А криптография без управления ключами — замок без двери.</p>
+      <div class="section__head reveal">
+        <span class="section__label reveal">Безопасность</span>
+        <h1 class="section__title reveal">ЭЦП — это не «файл с подписью»</h1>
+        <p class="section__subtitle reveal">Это инфраструктура из четырёх частей, три из которых платные. А криптография без управления ключами — замок без двери.</p>
       </div>
 
       <div class="grid-4" style="margin-bottom:60px">
@@ -80,9 +81,9 @@
         <div class="card"><div class="card__icon">💾</div><h3 class="card__title">Шифрование</h3><p class="card__text">Диски и контейнеры. Без управления ключами — замок без двери.</p></div>
       </div>
 
-      <div class="section__head" style="margin-top:80px">
-        <span class="section__label">Проблематика</span>
-        <h2 class="section__title">Чем это грозит</h2>
+      <div class="section__head reveal" style="margin-top:80px">
+        <span class="section__label reveal">Проблематика</span>
+        <h2 class="section__title reveal">Чем это грозит</h2>
       </div>
       <div class="grid-2">
         <div class="card" style="border-left:4px solid var(--danger)"><h3 class="card__title">01. Утерян токен ЭЦП</h3><p class="card__text">Блокируем сертификат, перевыпускаем. Если украли — риск мошенничества. Регламент — не «когда-нибудь», а «сейчас».</p></div>
@@ -93,9 +94,9 @@
     </div>
   </section>
 
-  <section class="section" style="background:var(--bg-2)">
+  <section class="section reveal" style="background:var(--bg-2)">
     <div class="container" style="max-width:800px">
-      <div class="section__head"><h2 class="section__title">FAQ</h2></div>
+      <div class="section__head reveal"><h2 class="section__title reveal">FAQ</h2></div>
       <div class="faq-list">
         <div class="faq-item"><button class="faq-question">Сколько стоит КриптоПро?</button><div class="faq-answer">Лицензия — от 1 200 ₽. Установка + настройка — от 2 400 ₽.</div></div>
         <div class="faq-item"><button class="faq-question">Штрафы за утечку ПДн?</button><div class="faq-answer">При утере ноутбука с базой — 500 тыс. – 1 млн ₽. Массовая утечка — до 6 млн ₽.</div></div>
@@ -104,12 +105,12 @@
     </div>
   </section>
 
-<section class="section section--alt" style="padding-top:30px">
+<section class="section section--alt reveal" style="padding-top:30px">
   <div class="container">
-    <div class="section__head fade-up">
-      <span class="section__label">Безопасность сделки</span>
-      <h2 class="section__title">Что написано пером — не вырубишь топором</h2>
-      <p class="section__subtitle">Каждый пункт — строка в договоре, а не тёплое обещание по телефону.</p>
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Безопасность сделки</span>
+      <h2 class="section__title reveal">Что написано пером — не вырубишь топором</h2>
+      <p class="section__subtitle reveal">Каждый пункт — строка в договоре, а не тёплое обещание по телефону.</p>
     </div>
     <div class="fade-up" style="max-width:800px;margin:0 auto;">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
@@ -151,12 +152,12 @@
   </div>
 </section>
 
-<section class="section section--alt security-checklist-section" aria-labelledby="security-checklist-title">
+<section class="section section--alt security-checklist-section reveal" aria-labelledby="security-checklist-title">
   <div class="container">
-    <div class="section__head">
-      <span class="section__label">Самопроверка</span>
-      <h2 class="section__title" id="security-checklist-title">Чек-лист безопасности офиса</h2>
-      <p class="section__subtitle">Отметьте, что уже настроено. Список помогает найти темы для проверки, но не заменяет аудит и требования вашей модели угроз.</p>
+    <div class="section__head reveal">
+      <span class="section__label reveal">Самопроверка</span>
+      <h2 class="section__title reveal" id="security-checklist-title">Чек-лист безопасности офиса</h2>
+      <p class="section__subtitle reveal">Отметьте, что уже настроено. Список помогает найти темы для проверки, но не заменяет аудит и требования вашей модели угроз.</p>
     </div>
     <div class="security-checklist" id="securityChecklist">
       <label><input type="checkbox" data-security-check><span>Резервные копии создаются по правилу 3-2-1</span></label>

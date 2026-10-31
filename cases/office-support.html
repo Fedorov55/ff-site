@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../style-overrides.css">
+<link rel="stylesheet" href="../design-system.css">
 <meta property="og:title" content="Кейс: IT-обслуживание офиса на 15 ПК | F&amp;F">
 <meta property="og:description" content="Кейс F&F: IT-обслуживание офиса на 15 ПК. Мониторинг 24/7, автоматические бэкапы, отчёты. Экономия 40% против штатного сисадмина.">
 <meta property="og:url" content="https://ff-it.ru/cases/office-support.html">
@@ -21,7 +22,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
-<body>
+<body class="grain">
 <a href="#main" class="skip-link">Перейти к содержимому</a>
 
 
@@ -62,7 +63,7 @@
 
 
 
-<section class="section" style="padding: 40px 0 20px;">
+<section class="section reveal" style="padding: 40px 0 20px;">
     <div class="container">
         <p style="color: var(--dim); font-size: 13px; margin-bottom: 20px;"><a href="../index.html" style="color: var(--muted);">Главная</a> / <a href="../cases.html" style="color: var(--muted);">Кейсы</a> / <span>IT-обслуживание офиса</span></p>
         <div class="hero__badge"><span class="hero__badge-dot"></span> Абонентка</div>
@@ -73,15 +74,15 @@
     </div>
 </section>
 
-<section class="section" style="padding: 20px 0 40px;">
+<section class="section reveal" style="padding: 20px 0 40px;">
     <div class="container"><img src="../img/hero-server.webp" alt="IT-обслуживание офиса" width="1200" height="600" style="width: 100%; max-width: 900px; margin: 0 auto 40px; border-radius: var(--radius); border: 1px solid var(--border); display: block; aspect-ratio: 16/8; object-fit: cover;" loading="lazy"></div>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <div class="container" style="max-width: 860px;">
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; font-size: 28px;">Задача</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; font-size: 28px;">Задача</h2>
         <p style="color: var(--text-2); font-size: 16px; line-height: 1.85; margin-bottom: 30px;">Офис на 15 сотрудников, есть сервер с AD и файлами. Штатный сисадмин уволился, новый не находился. Сотрудники жаловались на постоянные сбои, файлы терялись, никто не делал бэкапы. Директор искал подрядчика на абонентское обслуживание.</p>
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Что мы сделали</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Что мы сделали</h2>
         <div class="services__grid" style="grid-template-columns: 1fr;">
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3 class="service-card__title">Провели аудит за 2 дня</h3><p class="service-card__text">Нашли 3 критичные проблемы: бэкапы не работали 8 месяцев, сервер на грани перегрева, дыры в правах доступа. Показали отчёт директору.</p></div>
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 class="service-card__title">Настроили мониторинг</h3><p class="service-card__text">Zabbix следит за всеми серверами и сетью. Если что-то не так — SMS и email на телефон дежурного. Аварии фиксим до того, как их заметят сотрудники.</p></div>
@@ -89,7 +90,7 @@
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 class="service-card__title">Навели порядок в правах</h3><p class="service-card__text">Настроили групповые политики, разграничили доступ по отделам. Уволили лишние учётки, включили двухфакторку для админа.</p></div>
             <div class="service-card fade-up"><div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3 class="service-card__title">Поддержка сотрудников</h3><p class="service-card__text">Помогаем по телефону, через AnyDesk, приезжаем на месте. Средняя реакция — 10 минут, средняя решение — 2 часа. Регламент SLA в договоре.</p></div>
         </div>
-        <h2 class="section__title" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Результат</h2>
+        <h2 class="section__title reveal" style="text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px;">Результат</h2>
         <div class="why__grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="why-item"><span class="why-item__num" aria-hidden="true">−40%</span><h3 class="why-item__title">Экономия</h3><p class="why-item__text">Абонентка на 15 ПК дешевле штатного сисадмина с налогами и рабочим местом.</p></div>
             <div class="why-item"><h3 class="why-item__title">Критических сбоев</h3><p class="why-item__text">За год — ни одного простоя сервера.</p></div>
@@ -104,11 +105,11 @@
     </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
     <div class="container">
         <div class="contact__form fade-up" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 44px 32px;">
-            <span class="section__label">Хотите так же?</span>
-            <h2 class="section__title" style="margin-bottom: 16px;">Возьмём ваш офис на абонентку</h2>
+            <span class="section__label reveal">Хотите так же?</span>
+            <h2 class="section__title reveal" style="margin-bottom: 16px;">Возьмём ваш офис на абонентку</h2>
             <p style="color: var(--text-2); margin-bottom: 26px; max-width: 520px; margin-left: auto; margin-right: auto;">Опишите задачу — рассчитаем тариф и покажем, на чём сэкономите.</p>
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                 <a href="../contacts.html" class="btn btn--primary">Обсудить обслуживание</a>
