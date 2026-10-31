@@ -665,3 +665,75 @@
     }).catch(()=>{});
   } catch(e) {}
 })();
+
+/* ====== CYBER HERO TERMINAL ====== */
+(function(){
+  try {
+    const body = document.getElementById('heroTermBody');
+    if(!body) return;
+    const lines = [
+      { t: 'root@ff-it:~# ./ff-it --status --verbose', cls: 'prompt' },
+      { t: '# Инициализация защитного ядра F&F v4.0', cls: 'comment' },
+      { t: '# Хаб: Казань · Узлы: 128 · Статус: OK', cls: 'comment' },
+      { t: '[✓] RAID-массив · NVMe SSD  ', cls: 'ok', bar: true },
+      { t: '[✓] Шифрование AES-256      ', cls: 'ok', bar: true },
+      { t: '[✓] Бэкап · 3-2-1 · оффлайн ', cls: 'ok', bar: true },
+      { t: '[✓] Защитный контур · EDR   ', cls: 'ok', bar: true },
+      { t: '', cls: '' },
+      { t: '[ OK ] Мониторинг 24/7 · SLA 99.9%', cls: 'ok2' },
+      { t: '[ OK ] Готовы помочь вашему бизнесу.', cls: 'ok2' },
+    ];
+    let li = 0;
+    function showLine() {
+      if (li >= lines.length) return;
+      const l = lines[li];
+      const div = document.createElement('div');
+      div.className = 'term-win__line';
+      if (l.cls === 'prompt') div.style.color = '#00E5FF';
+      else if (l.cls === 'comment') div.style.color = '#5B6472';
+      else if (l.cls === 'ok2') div.style.color = '#00E5FF';
+      else div.style.color = '#00FF88';
+      if (l.bar) {
+        div.innerHTML = l.t + '<span class="term-win__progress"><span class="term-win__progress-fill"></span></span> 100%';
+      } else {
+        div.textContent = l.t;
+      }
+      body.appendChild(div);
+      // animate progress bar
+      if (l.bar) {
+        const fill = div.querySelector('.term-win__progress-fill');
+        if (fill) setTimeout(() => { fill.style.width = '100%'; }, 50);
+      }
+      li++;
+      const delay = l.t.length > 0 ? Math.min(800, 200 + l.t.length * 8) : 200;
+      setTimeout(showLine, delay);
+    }
+    setTimeout(showLine, 400);
+  } catch(e) {}
+})();
+
+/* ====== BRANDbar COUNTERS ====== */
+(function(){
+  try {
+    const nums = document.querySelectorAll('.brandbar-cyber__num[data-target]');
+    if(!nums.length) return;
+    const animate = (el) => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1200;
+      const start = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + (p < 1 ? '' : suffix);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+    };
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } });
+    }, { threshold: 0.3 });
+    nums.forEach(n => obs.observe(n));
+  } catch(e) {}
+})();
