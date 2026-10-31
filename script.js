@@ -155,6 +155,7 @@
             <div class="quiz__actions">
               <button class="btn btn--primary" onclick="submitQuiz(event)">Обсудить задачу</button>
               <button class="btn btn--ghost" onclick="window.print()" style="margin-top:8px;">Скачать PDF-чеклист</button>
+              <a class="btn btn--ghost" id="quizTgBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в Telegram</a>
             </div>
           </div>
         `;
@@ -165,6 +166,8 @@
           document.getElementById('lossVal').innerHTML = (e*h*r).toLocaleString('ru-RU') + ' ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small>';
         };
         ['lossEmp','lossHours','lossRate'].forEach(id => document.getElementById(id).addEventListener('input', calcLoss));
+        const tgBtn = document.getElementById('quizTgBtn');
+        if(tgBtn){ tgBtn.href = 'https://t.me/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '. Потери за инцидент: ' + (parseInt(document.getElementById('lossEmp').value)||0)*(parseInt(document.getElementById('lossHours').value)||0)*(parseInt(document.getElementById('lossRate').value)||0) + ' ₽'); }
       }
 
       window.submitQuiz = async function(ev){
