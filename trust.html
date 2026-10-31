@@ -36,9 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+            <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <link rel="preload" href="style.css" as="style">
@@ -111,10 +109,10 @@
   <div class="container">
     <div class="section__head fade-up"><span class="section__label">Бэкапы</span><h2 class="section__title">RTO и RPO — в понятных единицах</h2><p class="section__subtitle">RPO — сколько данных допустимо потерять. RTO — за сколько восстановимся. Без этих двух цифр «бэкап» — это просто слово.</p></div>
     <div class="why__grid">
-      <div class="why-item fade-up"><h4 class="why-item__title">RPO (Recovery Point Objective)</h4><p class="why-item__text">Сколько данных допустимо потерять при сбое. Для типового офиса — не более <strong>1 часа</strong> (ежечасный бэкап критичных данных). Для файловых — до 24 часов.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">RTO (Recovery Time Objective)</h4><p class="why-item__text">За сколько восстановимся. Для сервера 1С — до <strong>4 часов</strong>. Для файлового сервера — до 8 часов. Для сети — до 2 часов.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">Проверка восстановления</h4><p class="why-item__text">Раз в квартал — тестовый контур. Не «бэкапы есть», а «мы развернули и проверили». Есть акт проверки — по запросу.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">Правило 3-2-1</h4><p class="why-item__text">3 копии данных, 2 разных носителя, 1 копия — вне офиса (оффлайн или облако). Это не «рекомендация» — это стандарт, который мы соблюдаем.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">RPO (Recovery Point Objective)</h3><p class="why-item__text">Сколько данных допустимо потерять при сбое. Для типового офиса — не более <strong>1 часа</strong> (ежечасный бэкап критичных данных). Для файловых — до 24 часов.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">RTO (Recovery Time Objective)</h3><p class="why-item__text">За сколько восстановимся. Для сервера 1С — до <strong>4 часов</strong>. Для файлового сервера — до 8 часов. Для сети — до 2 часов.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Проверка восстановления</h3><p class="why-item__text">Раз в квартал — тестовый контур. Не «бэкапы есть», а «мы развернули и проверили». Есть акт проверки — по запросу.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Правило 3-2-1</h3><p class="why-item__text">3 копии данных, 2 разных носителя, 1 копия — вне офиса (оффлайн или облако). Это не «рекомендация» — это стандарт, который мы соблюдаем.</p></div>
     </div>
   </div>
 </section>
@@ -147,10 +145,10 @@
   <div class="container">
     <div class="section__head fade-up"><span class="section__label">Что можно проверить</span><h2 class="section__title">Не «мы надёжные», а конкретика</h2></div>
     <div class="why__grid">
-      <div class="why-item fade-up"><h4 class="why-item__title">Статус-страница</h4><p class="why-item__text">Честный uptime с даты запуска. Если инцидент был — он будет здесь, с датой и разбором. <a href="status.html" style="color:var(--gold-light)">Открыть статус</a>.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">Прозрачность метрик</h4><p class="why-item__text">12 минут — медианное время ответа. 47 заявок/мес. 0 инцидентов. Все цифры — с датой обновления. <a href="#transparency" style="color:var(--gold-light)">На главной</a>.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">Демо-панель мониторинга</h4><p class="why-item__text">Посмотрите, как выглядит «под контролем». Данные синтетические, логика — наша. <a href="demo.html" style="color:var(--gold-light)">Открыть демо</a>.</p></div>
-      <div class="why-item fade-up"><h4 class="why-item__title">Реквизиты и договор</h4><p class="why-item__text">Самозанятый, ИНН, ОКВЭД — всё на <a href="about.html" style="color:var(--gold-light)">странице «О нас»</a>. Договор — до начала работ, а не после предоплаты.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Статус-страница</h3><p class="why-item__text">Честный uptime с даты запуска. Если инцидент был — он будет здесь, с датой и разбором. <a href="status.html" style="color:var(--gold-light)">Открыть статус</a>.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Прозрачность метрик</h3><p class="why-item__text">12 минут — медианное время ответа. 47 заявок/мес. 0 инцидентов. Все цифры — с датой обновления. <a href="#transparency" style="color:var(--gold-light)">На главной</a>.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Демо-панель мониторинга</h3><p class="why-item__text">Посмотрите, как выглядит «под контролем». Данные синтетические, логика — наша. <a href="demo.html" style="color:var(--gold-light)">Открыть демо</a>.</p></div>
+      <div class="why-item fade-up"><h3 class="why-item__title">Реквизиты и договор</h3><p class="why-item__text">Самозанятый, ИНН, ОКВЭД — всё на <a href="about.html" style="color:var(--gold-light)">странице «О нас»</a>. Договор — до начала работ, а не после предоплаты.</p></div>
     </div>
   </div>
 </section>
@@ -185,9 +183,9 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__col"><div class="footer__brand"><img src="logo.webp" alt="Логотип F&F" class="footer__logo" width="36" height="36" loading="lazy"><span>F&amp;F</span></div><p class="footer__desc">Ваш IT-контур под контролем. Даже в субботу. Казань — приедем, Россия — удалённо.</p></div>
-      <div class="footer__col"><h5 class="footer__title">Услуги</h5><a href="servers.html" class="footer__link">Серверы</a><a href="support.html" class="footer__link">Абонент</a><a href="infrastructure.html" class="footer__link">Инфраструктура</a><a href="security.html" class="footer__link">Безопасность</a></div>
-      <div class="footer__col"><h5 class="footer__title">Компания</h5><a href="about.html" class="footer__link">О нас</a><a href="trust.html" class="footer__link">Trust Center</a><a href="status.html" class="footer__link">Статус</a><a href="demo.html" class="footer__link">Демо</a><a href="contacts.html" class="footer__link">Контакты</a></div>
-      <div class="footer__col"><h5 class="footer__title">Контакты</h5><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a></div>
+      <div class="footer__col"><h3 class="footer__title">Услуги</h3><a href="servers.html" class="footer__link">Серверы</a><a href="support.html" class="footer__link">Абонент</a><a href="infrastructure.html" class="footer__link">Инфраструктура</a><a href="security.html" class="footer__link">Безопасность</a></div>
+      <div class="footer__col"><h3 class="footer__title">Компания</h3><a href="about.html" class="footer__link">О нас</a><a href="trust.html" class="footer__link">Trust Center</a><a href="status.html" class="footer__link">Статус</a><a href="demo.html" class="footer__link">Демо</a><a href="contacts.html" class="footer__link">Контакты</a></div>
+      <div class="footer__col"><h3 class="footer__title">Контакты</h3><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a></div>
     </div>
     <div class="footer__bottom">
       <p class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661</p>
