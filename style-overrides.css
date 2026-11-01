@@ -1043,9 +1043,10 @@ h1, h2, h3 { text-wrap: balance; }
   background: transparent;
   border: 1px solid #D4AF37;
   color: #D4AF37;
-  padding: 6px 12px;
+  padding: 10px 16px;
+  min-height: 44px;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
   align-self: flex-start;
