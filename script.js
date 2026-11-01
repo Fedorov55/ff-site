@@ -84,7 +84,10 @@
       updateToTop();
       toTop.addEventListener('click', () => {
         toTop.classList.remove('visible');
+        toTop.style.opacity = '0';
+        toTop.style.pointerEvents = 'none';
         window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+        setTimeout(() => { toTop.style.opacity = ''; toTop.style.pointerEvents = ''; }, 800);
       });
     }
   }catch(e){}
@@ -173,17 +176,14 @@
         qBody.innerHTML = `
           <div class="quiz__step active">
             <div class="quiz__result-header">
+              <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Ваш уровень зрелости</div>
               <span class="quiz__level quiz__level--${cls}">${level}</span>
               <p style="font-size:14px;color:var(--text-2);margin:10px 0 0;">${text}</p>
             </div>
-            <div style="text-align:center;margin:16px 0;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--border);">
-              <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Ваш уровень зрелости</div>
-              <div style="font-size:20px;font-weight:800;color:var(--gold-light);">${level}</div>
-            </div>
             <div class="quiz__loss-box">
               <div class="quiz__loss-title">Стоимость бездействия</div>
-              <div class="quiz__loss-val" id="lossVal">65 000 ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small></div>
-               <div style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">Средняя зарплата сотрудника: 650 ₽/час · без учёта потерянной выручки</div>
+              <div class="quiz__loss-val" id="lossVal">65 000 ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент *</small></div>
+               <div style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">* без учёта потерянной прибыли</div>
               <div class="quiz__loss-controls">
                 <div class="quiz__input-group"><label>Сотрудников</label><input type="number" id="lossEmp" value="25" min="1"></div>
                 <div class="quiz__input-group"><label>Часов простоя</label><input type="number" id="lossHours" value="4" min="1"></div>
@@ -202,6 +202,7 @@
               <button class="btn btn--primary" onclick="submitQuiz(event)">Обсудить задачу</button>
               <button class="btn btn--ghost" onclick="window.print()" style="margin-top:8px;">Скачать PDF-чеклист</button>
               <a class="btn btn--ghost" id="quizTgBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в Telegram</a>
+          <a class="btn btn--ghost" id="quizMaxBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в MAX (Российский мессенджер)</a>
             </div>
           </div>
         `;
@@ -225,11 +226,9 @@
         const agree = document.getElementById('qAgree').checked;
         const loss = document.getElementById('lossVal').innerText;
 
-        let hasErr = false;
-        if(!name){ showFieldError(document.getElementById('qName'), 'Укажите имя'); hasErr = true; }
-        if(!contact){ showFieldError(document.getElementById('qContact'), 'Укажите контакт'); hasErr = true; }
-        if(!agree){ showFieldError(document.getElementById('qAgree'), 'Подтвердите согласие'); hasErr = true; }
-        if(hasErr) return;
+        if(!name) return showToast(btn, 'Укажите имя', 'error');
+        if(!contact) return showToast(btn, 'Укажите контакт', 'error');
+        if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
 
         btn.textContent = 'Отправляем...'; btn.disabled = true;
 
@@ -416,13 +415,11 @@
         const contact = (contactForm.querySelector('#contact-way')||{}).value || '';
         const message = (contactForm.querySelector('#problem')||{}).value || '';
         const agree = (contactForm.querySelector('#agree')||{}).checked;
-        let hasErr = false;
-        if(!name.trim()){ showFieldError(contactForm.querySelector('#name'), 'Укажите имя'); hasErr = true; }
-        if(!contact.trim()){ showFieldError(contactForm.querySelector('#contact-way'), 'Укажите контакт'); hasErr = true; }
+        if(!name.trim()) return showToast(btn, 'Укажите имя', 'error');
+        if(!contact.trim()) return showToast(btn, 'Укажите контакт', 'error');
         const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
         if(hp) return; // honeypot
-        if(!agree){ showFieldError(contactForm.querySelector('#agree'), 'Подтвердите согласие с политикой'); hasErr = true; }
-        if(hasErr) return;
+        if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
         if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
         fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: message.trim(), service: 'Главная страница', agree: true })
@@ -450,7 +447,7 @@
       toast.style.color = type === 'error' ? '#fff' : '#000';
       toast.style.opacity = '1';
       clearTimeout(window._toastTimer);
-      window._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 3000);
+      window._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 6000);
     }catch(e){}
   };
 
@@ -589,26 +586,6 @@
 
 
 
-  /* ====== INLINE FIELD ERROR HELPER ====== */
-  window.showFieldError = function(input, msg){
-    if(!input) return;
-    let err = input.parentElement.querySelector('.field-error');
-    if(!err){ err = document.createElement('div'); err.className = 'field-error'; err.style.cssText = 'color:#ff4d4d;font-size:11px;margin-top:4px;'; input.parentElement.appendChild(err); }
-    err.textContent = msg;
-    input.style.borderColor = '#ff4d4d';
-  };
-  window.clearFieldError = function(input){
-    if(!input) return;
-    const err = input.parentElement.querySelector('.field-error');
-    if(err) err.remove();
-    input.style.borderColor = '';
-  };
-  // Clear errors on input
-  document.addEventListener('input', function(e){
-    if(e.target && (e.target.id === 'name' || e.target.id === 'contact-way' || e.target.id === 'problem' || e.target.id === 'qName' || e.target.id === 'qContact')) {
-      clearFieldError(e.target);
-    }
-  });
 
 /* Shared navigation and restored calculators */
 (function(){
@@ -649,55 +626,6 @@
     root.querySelectorAll('[data-sub-plan]').forEach(function(button){button.addEventListener('click',function(){plan=button.dataset.subPlan;root.querySelectorAll('[data-sub-plan]').forEach(function(item){var selected=item===button;item.classList.toggle('is-selected',selected);item.setAttribute('aria-pressed',String(selected));});update();});});[pc,srv,printer].forEach(function(input){if(input)input.addEventListener('input',update);});root.querySelectorAll('[data-sub-extra]').forEach(function(input){input.addEventListener('change',update);});update();}
   var estimator=document.querySelector('#calculator .calc');
   if(estimator){estimator.querySelectorAll('.calc__service').forEach(function(button){button.setAttribute('aria-pressed',String(button.classList.contains('active')));});}
-})();
-
-/* ====== EXIT-INTENT POPUP ====== */
-(function(){
-  try {
-    const popup = document.getElementById('exitPopup');
-    if(!popup) return;
-    const closeBtn = document.getElementById('exitPopupClose');
-    const backdrop = document.getElementById('exitPopupBackdrop');
-    const form = document.getElementById('exitPopupForm');
-    const success = document.getElementById('exitPopupSuccess');
-    let shown = false;
-    function show(){ if(shown) return; shown = true; popup.classList.add('is-open'); popup.setAttribute('aria-hidden','false'); }
-    function hide(){ popup.classList.remove('is-open'); popup.setAttribute('aria-hidden','true'); }
-    closeBtn && closeBtn.addEventListener('click', hide);
-    backdrop && backdrop.addEventListener('click', hide);
-    document.addEventListener('mouseleave', function(e){ if(e.clientY <= 0) show(); });
-    let scrolled = false;
-    window.addEventListener('scroll', function(){ if(scrolled) return; const pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight; if(pct >= 0.5){ scrolled = true; setTimeout(show, 30000); } });
-    setTimeout(show, 60000);
-    if(form){
-      form.addEventListener('submit', function(ev){
-        ev.preventDefault();
-        const hp = form.querySelector('input[name="website"]');
-        if(hp && hp.value) return; // honeypot
-        const email = (form.querySelector('input[name="email"]')||{}).value || '';
-        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-        if(success){ success.style.display = 'block'; success.textContent = 'Спасибо! Проверьте почту.'; }
-        form.style.display = 'none';
-        try { fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({ email: email, service: 'Exit-popup чек-лист', agree: true }) }); } catch(e){}
-      });
-    }
-  } catch(e) {}
-})();
-
-/* HERO TERMINAL REMOVED */
-
-/* ====== LIVE METRICS ====== */
-(function(){
-  try {
-    fetch('data.json').then(r=>r.json()).then(d=>{
-      const r = document.getElementById('metric-response');
-      const q = document.getElementById('metric-requests');
-      const i = document.getElementById('metric-incidents');
-      if(r && d.response) r.textContent = d.response;
-      if(q && d.requests) q.textContent = d.requests;
-      if(i && d.incidents) i.textContent = d.incidents;
-    }).catch(()=>{});
-  } catch(e) {}
 })();
 
 /* ====== CYBER HERO TERMINAL ====== */
@@ -796,21 +724,28 @@
 
 
 /* ====== TERMINAL PROGRESSIVE LOADING ====== */
-try {
-  const termBody = document.getElementById('terminalBody');
-  if (termBody) {
-    const items = Array.from(termBody.children);
-    items.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(6px)'; el.style.transition = 'opacity 0.35s ease, transform 0.35s ease'; });
-    let delay = 200;
-    items.forEach((el, i) => {
-      setTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, delay);
-      delay += 320;
-    });
-  }
-} catch(e) {}
+function initTerminalLoading() {
+  try {
+    const termBody = document.getElementById('terminalBody');
+    if (termBody) {
+      const items = Array.from(termBody.children);
+      items.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(6px)'; el.style.transition = 'opacity 0.35s ease, transform 0.35s ease'; });
+      let delay = 100;
+      items.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, delay);
+        delay += 320;
+      });
+    }
+  } catch(e) {}
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTerminalLoading);
+} else {
+  initTerminalLoading();
+}
 
 
   window.openQuizPDF = function(){
