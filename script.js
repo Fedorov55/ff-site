@@ -71,22 +71,61 @@
   try{
     const toTop = document.getElementById('toTop');
     if(toTop){
-      window.addEventListener('scroll', () => { toTop.classList.toggle('visible', window.scrollY > 500); }, { passive: true });
-      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' }));
+      let lastY = window.scrollY;
+      const updateToTop = () => {
+        const y = window.scrollY;
+        const show = y > 500 && y < lastY; // show only when scrolling up and not at top
+        // Actually show when scrolled down enough, hide at top
+        const shouldShow = y > 600;
+        toTop.classList.toggle('visible', shouldShow);
+        lastY = y;
+      };
+      window.addEventListener('scroll', updateToTop, { passive: true });
+      updateToTop();
+      toTop.addEventListener('click', () => {
+        toTop.classList.remove('visible');
+        window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+      });
     }
   }catch(e){}
 
-  /* КАРУСЕЛЬ ОТЗЫВОВ */
+  /* КАРУСЕЛЬ ОТЗЫВОВ (бесконечная) */
   try{
     const slider = document.querySelector('.reviews__slider');
     const prevBtn = document.querySelector('.slider-btn--prev');
     const nextBtn = document.querySelector('.slider-btn--next');
     if(slider && prevBtn && nextBtn){
+      // Clone first and last cards for infinite loop
+      const cards = Array.from(slider.children);
+      if(cards.length > 1){
+        const firstClone = cards[0].cloneNode(true);
+        const lastClone = cards[cards.length-1].cloneNode(true);
+        slider.appendChild(firstClone);
+        slider.insertBefore(lastClone, cards[0]);
+        slider.scrollLeft = lastClone.offsetWidth;
+      }
+      let isScrolling = false;
+      const cardWidth = () => slider.querySelector('.review-card') ? slider.querySelector('.review-card').offsetWidth + 24 : slider.offsetWidth;
       prevBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: -slider.offsetWidth, behavior: 'smooth' });
+        if(isScrolling) return;
+        isScrolling = true;
+        slider.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+        setTimeout(() => { isScrolling = false; }, 400);
       });
       nextBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: slider.offsetWidth, behavior: 'smooth' });
+        if(isScrolling) return;
+        isScrolling = true;
+        slider.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+        setTimeout(() => { isScrolling = false; }, 400);
+      });
+      // Reset scroll position for infinite loop
+      slider.addEventListener('scroll', () => {
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        if(slider.scrollLeft <= 10){
+          slider.scrollLeft = maxScroll - slider.clientWidth - 10;
+        } else if(slider.scrollLeft >= maxScroll - 10){
+          slider.scrollLeft = slider.clientWidth + 10;
+        }
       });
     }
   }catch(e){}
@@ -704,3 +743,17 @@
     });
   } catch(e) {}
 })();
+
+
+  /* ====== FAQ SMOOTH ANIMATION ====== */
+  try{
+    document.querySelectorAll('.faq__item').forEach(details => {
+      const summary = details.querySelector('.faq__question');
+      if(!summary) return;
+      summary.addEventListener('click', (e) => {
+        if(details.open) return; // let default close happen
+        // animate open
+        details.style.overflow = 'hidden';
+      });
+    });
+  }catch(e){}
