@@ -1159,3 +1159,16 @@ h1, h2, h3 { text-wrap: balance; }
 #saturdayTimeline .sat-line.danger .sat-time { color: #ff6b6b; }
 #saturdayTimeline .sat-line.gold .sat-time { color: var(--gold-light); }
 #saturdayTimeline .sat-line.neon .sat-time { color: var(--neon); }
+
+
+/* ====== MOBILE: button min-height 48px, section padding ====== */
+@media (max-width: 768px) {
+  .btn, .btn--primary, .btn--ghost, .header__phone, .header__estimate {
+    min-height: 48px !important;
+    padding: 16px 24px !important;
+  }
+  .section { padding-block: 60px !important; }
+  h1 { font-size: 2.25rem !important; }
+  h2 { font-size: 1.5rem !important; }
+}
+html, body { overflow-x: clip; }
