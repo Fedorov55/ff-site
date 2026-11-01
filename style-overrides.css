@@ -1295,3 +1295,157 @@ input.border-error {
   border-radius: 50%;
 }
 '''
+
+/* ====== HEADER REDESIGN (new) ====== */
+/* Font-weight normalization */
+.nav__trigger, .nav__direct, .dropdown__link, .mobile-nav__link, .mobile-nav__group summary,
+.header__phone, .header__estimate, .header__cta, .nav__item button { font-weight: 600 !important; }
+.header__phone, .header__estimate, .btn--primary { font-weight: 700 !important; }
+.tariff__name, .tariff__price, .section__title { font-weight: 800 !important; }
+
+/* Header base */
+.header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 500 !important;
+  height: 72px !important;
+  background: color-mix(in srgb, #0A0D14 92%, transparent) !important;
+  border-bottom: 1px solid rgba(130, 140, 158, 0.14) !important;
+  backdrop-filter: blur(12px);
+}
+[data-theme="light"] .header { background: color-mix(in srgb, #FBF6EA 92%, transparent) !important; }
+
+.header__inner {
+  min-height: 72px !important;
+  height: 72px;
+  gap: 16px;
+}
+
+/* Logo */
+.logo__img { width: 44px !important; height: 44px !important; }
+.logo__text { font-size: 20px; font-weight: 800; }
+.logo__slogan {
+  font-size: 11px !important;
+  color: #828C9E !important;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* Nav items */
+.nav__trigger, .nav__direct {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #B6BFCF !important;
+  padding: 8px 10px !important;
+  min-height: 40px;
+}
+.nav__trigger:hover, .nav__direct:hover,
+.nav__trigger[aria-expanded="true"] {
+  color: #E8C44D !important;
+  background: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Dropdown */
+.dropdown {
+  background: #11151F !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.42) !important;
+}
+.dropdown__link {
+  font-size: 14px !important;
+  padding: 11px 12px !important;
+  color: #B6BFCF !important;
+}
+.dropdown__link:hover, .dropdown__link:focus-visible {
+  background: rgba(212, 175, 55, 0.1) !important;
+  color: #E8C44D !important;
+}
+
+/* Right side actions */
+.header__phone {
+  color: #E8C44D !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 10px;
+}
+.header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 18px !important;
+  border-radius: 10px !important;
+  background: #D4AF37 !important;
+  color: #17130A !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.header__cta:hover {
+  background: #E8C44D !important;
+  transform: translateY(-1px);
+}
+.theme-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px;
+}
+.burger {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Desktop menu from 1100px */
+@media (min-width: 1100px) {
+  .nav { display: flex !important; }
+  .burger { display: none !important; }
+  .header__actions { display: flex !important; }
+}
+@media (max-width: 1099px) {
+  .nav { display: none !important; }
+  .header__estimate { display: none !important; }
+  .burger { display: flex !important; }
+}
+
+/* Mobile panel full screen */
+.mobile-nav__panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: #0A0D14 !important;
+  border-left: none !important;
+}
+.mobile-nav__group {
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  background: rgba(20, 25, 38, 0.7) !important;
+  margin-bottom: 8px;
+}
+.mobile-nav__group summary {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  min-height: 48px;
+}
+.mobile-nav__link {
+  font-size: 14px !important;
+  min-height: 44px;
+}
+.mobile-nav__footer {
+  position: sticky;
+  bottom: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  background: #0A0D14;
+  display: flex;
+  gap: 8px;
+}
+
+/* Mobile nav close on resize to desktop */

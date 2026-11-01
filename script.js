@@ -624,6 +624,8 @@
   }
   var burger=document.getElementById('burgerBtn'),drawer=document.getElementById('mobileNav');
   if(burger&&drawer){
+    // Close mobile nav when resizing to desktop
+    window.addEventListener('resize', function(){ if(window.innerWidth >= 1100 && drawer.classList.contains('is-open')){ drawer.classList.remove('is-open'); burger.classList.remove('active'); drawer.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); } });
     var panel=drawer.querySelector('.mobile-nav__panel');
     var closeButtons=drawer.querySelectorAll('[data-mobile-close]');
     var previousFocus=null;
