@@ -961,3 +961,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateCarousel();
 });
+
+
+/* ====== AUDIT FORM ====== */
+try {
+  const auditForm = document.getElementById('audit-form');
+  if (auditForm) {
+    auditForm.addEventListener('submit', function(ev) {
+      ev.preventDefault();
+      const btn = auditForm.querySelector('button[type="submit"]');
+      const name = (auditForm.querySelector('#audit-name')||{}).value || '';
+      const phone = (auditForm.querySelector('#audit-phone')||{}).value || '';
+      const agree = (auditForm.querySelector('#audit-agree')||{}).checked;
+      // Validation
+      let hasErr = false;
+      if (!name.trim()) { showToast(btn, 'Укажите имя', 'error'); hasErr = true; }
+      const phoneClean = phone.replace(/\D/g, '');
+      if (phoneClean.length < 10) {
+        const phoneInput = auditForm.querySelector('#audit-phone');
+        if (phoneInput) { phoneInput.classList.add('border-error'); phoneInput.style.borderColor = '#D32F2F'; }
+        showToast(btn, 'Неверный телефон', 'error');
+        hasErr = true;
+      }
+      if (!agree) { showToast(btn, 'Подтвердите согласие', 'error'); hasErr = true; }
+      if (hasErr) return;
+      // Submit
+      if (btn) { btn.textContent = 'Отправляем...'; btn.disabled = true; }
+      fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name: name.trim(), phone: phone.trim(), service: auditForm.querySelector('#audit-service').value, source: auditForm.querySelector('input[name="source"]').value, agree: true })
+      }).then(r => r.json()).then(res => {
+        if (res && res.ok === true) {
+          showToast(btn, 'Заявка отправлена! Свяжемся в течение 15 минут.', 'success');
+          auditForm.reset();
+        } else {
+          showToast(btn, (res && res.message) || 'Ошибка отправки', 'error');
+        }
+        if (btn) { btn.disabled = false; btn.textContent = 'Получить расчёт'; }
+      }).catch(() => {
+        showToast(btn, 'Ошибка соединения', 'error');
+        if (btn) { btn.disabled = false; btn.textContent = 'Получить расчёт'; }
+      });
+    });
+    // Clear red border on input
+    const phoneInput = auditForm.querySelector('#audit-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function() { this.classList.remove('border-error'); this.style.borderColor = ''; });
+    }
+  }
+} catch(e) {}
