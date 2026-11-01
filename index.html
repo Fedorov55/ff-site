@@ -15,9 +15,9 @@
 <meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
 <link rel="canonical" href="https://ff-it.ru/index.html">
 <link rel="icon" type="image/webp" href="logo.webp">
-<link rel="stylesheet" href="style.css?v=8">
-<link rel="stylesheet" href="style-overrides.css?v=8">
-<link rel="stylesheet" href="design-system.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style-overrides.css?v=9">
+<link rel="stylesheet" href="design-system.css?v=9">
 <title>IT-аутсорсинг для бизнеса в Казани | F&F — серверы и инфра</title>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "slogan": "Ваш IT-контур под контролем. Даже в субботу", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressCountry": "RU"}, "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script>
@@ -32,7 +32,7 @@
             <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-    <link rel="preload" href="style.css?v=8" as="style">
+    <link rel="preload" href="style.css?v=9" as="style">
     <link rel="preload" href="script.js" as="script">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -611,7 +611,7 @@ function resetGame(){
   <div class="cookie__actions"><button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button></div>
 </div>
 
-<script src="script.js?v=8" defer></script>
+<script src="script.js?v=9" defer></script>
 
 <div class="exit-popup" id="exitPopup" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="exit-popup__backdrop" id="exitPopupBackdrop"></div>
@@ -629,5 +629,23 @@ function resetGame(){
 </div>
 
 <noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div><div class="footer__brand gold">F&amp;F</div><p class="footer__desc">Ваш IT-контур под контролем. Даже в субботу.</p><p class="footer__desc" style="font-size:12px">Самозанятый: Фатхутдинов Булат Ильмирович<br>ИНН: 165506822661</p></div>
+      <div><div class="footer__title">Услуги</div><a href="servers.html" class="footer__link">Серверы</a><a href="support.html" class="footer__link">Абонент</a><a href="infrastructure.html" class="footer__link">Инфраструктура</a><a href="security.html" class="footer__link">Безопасность</a></div>
+      <div><div class="footer__title">Компания</div><a href="about.html" class="footer__link">О нас</a><a href="team.html" class="footer__link">Команда</a><a href="cases.html" class="footer__link">Кейсы</a><a href="contacts.html" class="footer__link">Контакты</a></div>
+      <div><div class="footer__title">Контакты</div><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a></div>
+    </div>
+    
+    <div class="footer__bottom"><div>© 2026 F&F. Все права защищены.</div></div>
+  </div>
+  
+  <div class="footer__signature" style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);line-height:1.6;text-align:right;">
+    <div class="footer__sig-cmd" onclick="this.parentElement.classList.toggle('is-open')" style="cursor:pointer;color:#00FF88;transition:color .2s ease;">$ cat about-site.txt</div>
+    <div class="footer__sig-msg" style="display:none;color:var(--text-2);margin:6px 0;">Да, этот сайт сделали мы сами. И да, мы можем сделать такой же вам. Но сначала — сервер. Сайт подождёт.</div>
+    <a href="contacts.html" class="footer__sig-ssh" style="display:inline-block;margin-top:6px;color:#00FF88;text-decoration:none;border:1px solid rgba(0,255,136,0.3);padding:4px 10px;border-radius:6px;font-size:11px;transition:all .2s ease;">$ ssh contact@ff-it.ru</a>
+  </div>
+</footer>
 </body>
 </html>

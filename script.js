@@ -225,9 +225,11 @@
         const agree = document.getElementById('qAgree').checked;
         const loss = document.getElementById('lossVal').innerText;
 
-        if(!name) return showToast(btn, 'Укажите имя', 'error');
-        if(!contact) return showToast(btn, 'Укажите контакт', 'error');
-        if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
+        let hasErr = false;
+        if(!name){ showFieldError(document.getElementById('qName'), 'Укажите имя'); hasErr = true; }
+        if(!contact){ showFieldError(document.getElementById('qContact'), 'Укажите контакт'); hasErr = true; }
+        if(!agree){ showFieldError(document.getElementById('qAgree'), 'Подтвердите согласие'); hasErr = true; }
+        if(hasErr) return;
 
         btn.textContent = 'Отправляем...'; btn.disabled = true;
 
@@ -414,11 +416,13 @@
         const contact = (contactForm.querySelector('#contact-way')||{}).value || '';
         const message = (contactForm.querySelector('#problem')||{}).value || '';
         const agree = (contactForm.querySelector('#agree')||{}).checked;
-        if(!name.trim()) return showToast(btn, 'Укажите имя', 'error');
-        if(!contact.trim()) return showToast(btn, 'Укажите контакт', 'error');
+        let hasErr = false;
+        if(!name.trim()){ showFieldError(contactForm.querySelector('#name'), 'Укажите имя'); hasErr = true; }
+        if(!contact.trim()){ showFieldError(contactForm.querySelector('#contact-way'), 'Укажите контакт'); hasErr = true; }
         const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
         if(hp) return; // honeypot
-        if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
+        if(!agree){ showFieldError(contactForm.querySelector('#agree'), 'Подтвердите согласие с политикой'); hasErr = true; }
+        if(hasErr) return;
         if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
         fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: message.trim(), service: 'Главная страница', agree: true })
@@ -583,6 +587,28 @@
 
 
 
+
+
+  /* ====== INLINE FIELD ERROR HELPER ====== */
+  window.showFieldError = function(input, msg){
+    if(!input) return;
+    let err = input.parentElement.querySelector('.field-error');
+    if(!err){ err = document.createElement('div'); err.className = 'field-error'; err.style.cssText = 'color:#ff4d4d;font-size:11px;margin-top:4px;'; input.parentElement.appendChild(err); }
+    err.textContent = msg;
+    input.style.borderColor = '#ff4d4d';
+  };
+  window.clearFieldError = function(input){
+    if(!input) return;
+    const err = input.parentElement.querySelector('.field-error');
+    if(err) err.remove();
+    input.style.borderColor = '';
+  };
+  // Clear errors on input
+  document.addEventListener('input', function(e){
+    if(e.target && (e.target.id === 'name' || e.target.id === 'contact-way' || e.target.id === 'problem' || e.target.id === 'qName' || e.target.id === 'qContact')) {
+      clearFieldError(e.target);
+    }
+  });
 
 /* Shared navigation and restored calculators */
 (function(){

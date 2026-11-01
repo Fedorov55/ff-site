@@ -508,7 +508,7 @@ h1, h2, h3 { text-wrap: balance; }
   gap: 20px;
 }
 .why-item {
-  background: #12151C;
+  background: #1A1F2B;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 24px;
@@ -699,7 +699,7 @@ h1, h2, h3 { text-wrap: balance; }
 [data-theme="light"] .terminal__log--dim { color: #6B6055 !important; }
 [data-theme="light"] .bar__fill { color: #00823F !important; }
 [data-theme="light"] .bar__empty { color: #D8D0BE !important; }
-[data-theme="light"] .why-item { background: #FFFFFF; border-color: rgba(30,25,19,0.08); }
+[data-theme="light"] .why-item { background: #F7F2E6; border-color: rgba(30,25,19,0.08); }
 [data-theme="light"] .why-item__title { color: #1E1913; }
 [data-theme="light"] .why-item__text { color: #4D4239; }
 [data-theme="light"] .why-item__num { color: #D8D0BE; }
