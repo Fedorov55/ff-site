@@ -158,6 +158,12 @@
       
       function showQuizResult(){
         qDots.forEach(d => d.classList.add('done'));
+        // Show "thinking" state for 1.5s
+        qBody.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:14px;color:var(--muted);margin-bottom:16px;">Анализируем ваши ответы...</div><div style="width:60px;height:4px;background:var(--border);border-radius:2px;margin:0 auto;overflow:hidden;"><div style="width:0;height:100%;background:var(--gold-light);animation:quizLoad 1.5s ease forwards;"></div></div></div>';
+        setTimeout(() => { renderQuizResult(); }, 1500);
+        return;
+      }
+      function renderQuizResult(){
         let level, cls, text;
         if(qScore <= 3){ level='Всё отлично'; cls='green'; text='Вы молодцы. Инфраструктура под контролем. Но профилактика не помешает.'; }
         else if(qScore <= 8){ level='Крепко, но есть нюансы'; cls='yellow'; text='Инфраструктура держится на честном слове. Мы можем это исправить до того, как оно исправит вас.'; }
@@ -177,6 +183,7 @@
             <div class="quiz__loss-box">
               <div class="quiz__loss-title">Стоимость бездействия</div>
               <div class="quiz__loss-val" id="lossVal">65 000 ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small></div>
+               <div style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">Средняя зарплата сотрудника: 650 ₽/час · без учёта потерянной выручки</div>
               <div class="quiz__loss-controls">
                 <div class="quiz__input-group"><label>Сотрудников</label><input type="number" id="lossEmp" value="25" min="1"></div>
                 <div class="quiz__input-group"><label>Часов простоя</label><input type="number" id="lossHours" value="4" min="1"></div>
@@ -206,6 +213,8 @@
         };
         ['lossEmp','lossHours','lossRate'].forEach(id => document.getElementById(id).addEventListener('input', calcLoss));
         const tgBtn = document.getElementById('quizTgBtn');
+        const maxBtn = document.getElementById('quizMaxBtn');
+        if(maxBtn){ maxBtn.href = 'https://max.ru/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '.'); }
         if(tgBtn){ tgBtn.href = 'https://t.me/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '. Потери за инцидент: ' + (parseInt(document.getElementById('lossEmp').value)||0)*(parseInt(document.getElementById('lossHours').value)||0)*(parseInt(document.getElementById('lossRate').value)||0) + ' ₽'); }
       }
 
@@ -757,3 +766,139 @@
       });
     });
   }catch(e){}
+
+
+
+/* ====== TERMINAL PROGRESSIVE LOADING ====== */
+try {
+  const termBody = document.getElementById('terminalBody');
+  if (termBody) {
+    const items = Array.from(termBody.children);
+    items.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(6px)'; el.style.transition = 'opacity 0.35s ease, transform 0.35s ease'; });
+    let delay = 200;
+    items.forEach((el, i) => {
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, delay);
+      delay += 320;
+    });
+  }
+} catch(e) {}
+
+
+  window.openQuizPDF = function(){
+    const name = (document.getElementById('qName')||{}).value || '';
+    const level = document.querySelector('.quiz__level') ? document.querySelector('.quiz__level').textContent : '';
+    const loss = document.getElementById('lossVal') ? document.getElementById('lossVal').innerText : '';
+    const html = '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Чек-лист F&F</title><style>body{font-family:Inter,sans-serif;padding:40px;color:#1E1913;}h1{color:#B8932E;}ul{line-height:1.8;}</style></head><body><h1>Чек-лист инфраструктуры F&F</h1><p>Имя: ' + (name||'Клиент') + '</p><p>Уровень: ' + level + '</p><p>Стоимость бездействия: ' + loss + '</p><h2>Что проверить:</h2><ul><li>Бэкапы: проверка восстановления раз в месяц</li><li>Мониторинг 24/7 с алертами</li><li>SLA с фиксированным временем реакции</li><li>Документация: схемы, пароли, процедуры</li><li>ЭЦП и криптография: токены, сертификаты</li><li>Сетевая инфраструктура: VLAN, VPN, Wi-Fi</li></ul><p style="margin-top:40px;color:#7D7266;font-size:12px;">F&F — Ваш IT-контур под контролем. Даже в субботу.</p></body></html>';
+    const w = window.open('', '_blank');
+    if(w){ w.document.write(html); w.document.close(); }
+  };
+
+
+/* ====== SATURDAY SCENARIOS (10, random, no repeat) ====== */
+(function(){
+  const scenarios = [
+    [
+      {t:'00:00 — Сервер ушёл в ребут. Офис спит.', d:'Ничего не предвещало.', c:'danger'},
+      {t:'00:15 — F&F получил алерт. Инженер уже с ноутбуком.', d:'Реакция от 15 минут — норма.', c:'gold'},
+      {t:'00:40 — Причина найдена. Перезапуск сервиса.', d:'Сервис работает. Проверяем логи.', c:'gold'},
+      {t:'01:10 — Сервис работает. Логи чисты.', d:'Всё под контролем.', c:'gold'},
+      {t:'08:00 — Офис приходит. Никто ничего не заметил.', d:'Ваш IT-контур под контролем. Даже в субботу.', c:'neon'}
+    ],
+    [
+      {t:'02:30 — Диск умирает. SMART-алерт.', d:'F&F замечает деградацию.', c:'danger'},
+      {t:'02:45 — F&F поднимает RAID-массив из бэкапа.', d:'Данные не потеряны.', c:'gold'},
+      {t:'03:20 — Миграция на новый диск завершена.', d:'Проверка целостности.', c:'gold'},
+      {t:'04:00 — Всё работает. Уведомление клиенту.', d:'Утром — отчёт.', c:'gold'},
+      {t:'09:00 — Офис работает. Диск заменён.', d:'Плановая замена в понедельник.', c:'neon'}
+    ],
+    [
+      {t:'23:45 — Отключили свет в офисе.', d:'ИБП включился.', c:'danger'},
+      {t:'23:50 — F&F получил алерт об отключении питания.', d:'Инженер на связи.', c:'gold'},
+      {t:'00:05 — ИБП держит 15 минут. Запуск генератора.', d:'Сервер жив.', c:'gold'},
+      {t:'00:20 — Электричество восстановлено.', d:'Переход на основное питание.', c:'gold'},
+      {t:'08:00 — Офис приходит. Сервер работает.', d:'Ни минуты простоя.', c:'neon'}
+    ],
+    [
+      {t:'01:00 — Бэкап не прошёл. Алерт.', d:'F&F проверяет.', c:'danger'},
+      {t:'01:20 — Найдена причина: переполнен диск бэкапов.', d:'Очистка + новый план.', c:'gold'},
+      {t:'02:00 — Тестовый контур развёрнут.', d:'Восстановление проверено.', c:'gold'},
+      {t:'02:30 — Бэкап работает. Отчёт клиенту.', d:'Всё под контролем.', c:'gold'},
+      {t:'08:00 — Офис работает. Бэкапы в норме.', d:'Без потерь.', c:'neon'}
+    ],
+    [
+      {t:'03:00 — Шифровальщик обнаружен.', d:'F&F блокирует сеть.', c:'danger'},
+      {t:'03:15 — Изоляция заражённого сегмента.', d:'Угроза локализована.', c:'gold'},
+      {t:'03:45 — Восстановление из оффлайн-бэкапа.', d:'Данные целы.', c:'gold'},
+      {t:'04:30 — Система чиста. Отчёт.', d:'Инцидент закрыт.', c:'gold'},
+      {t:'09:00 — Офис работает. Всё восстановлено.', d:'Защитный контур усилен.', c:'neon'}
+    ],
+    [
+      {t:'00:30 — Админ уволился. Пароли не переданы.', d:'Риск утечки.', c:'danger'},
+      {t:'00:45 — F&F проверяет реестр доступов.', d:'Аудит прав.', c:'gold'},
+      {t:'01:30 — Все пароли сброшены. Права переписаны.', d:'Доступы убраны.', c:'gold'},
+      {t:'02:00 — Документация обновлена.', d:'Новый админ получит доступы.', c:'gold'},
+      {t:'08:00 — Офис работает. Безопасность восстановлена.', d:'Контур под контролем.', c:'neon'}
+    ],
+    [
+      {t:'01:00 — Сетевой сбой. VPN отвалился.', d:'Удалённые сотрудники без доступа.', c:'danger'},
+      {t:'01:20 — F&F переключает на резервный канал.', d:'Связь восстановлена.', c:'gold'},
+      {t:'01:45 — Диагностика провайдера.', d:'Проблема на стороне провайдера.', c:'gold'},
+      {t:'02:10 — Резервный канал стабилен.', d:'Всё работает.', c:'gold'},
+      {t:'08:00 — Офис работает. VPN поднят.', d:'Без простоев.', c:'neon'}
+    ],
+    [
+      {t:'00:00 — 1С упала. База не отвечает.', d:'Бухгалтерия встала.', c:'danger'},
+      {t:'00:20 — F&F перезапускает сервис 1С.', d:'Проверка базы.', c:'gold'},
+      {t:'00:45 — База восстановлена из бэкапа.', d:'Потеряно 15 минут данных.', c:'gold'},
+      {t:'01:10 — 1С работает. Проверка целостности.', d:'Всё в норме.', c:'gold'},
+      {t:'08:00 — Офис работает. 1С доступна.', d:'Без простоя.', c:'neon'}
+    ],
+    [
+      {t:'02:00 — Wi-Fi сеть упала. Клиенты без интернета.', d:'Розница встала.', c:'danger'},
+      {t:'02:15 — F&F перезагружает точки доступа.', d:'Диагностика.', c:'gold'},
+      {t:'02:40 — Найдена причина: перегрев точки.', d:'Замена точки.', c:'gold'},
+      {t:'03:00 — Wi-Fi работает. Сеть стабильна.', d:'Всё под контролем.', c:'gold'},
+      {t:'08:00 — Офис работает. Wi-Fi в норме.', d:'Без потерь.', c:'neon'}
+    ],
+    [
+      {t:'00:00 — Пожарная сигнализация. Серверная в дыму.', d:'Критическая ситуация.', c:'danger'},
+      {t:'00:05 — F&F получает алерт. Инженер выезжает.', d:'Аварийный выезд.', c:'gold'},
+      {t:'00:40 — Сервер эвакуирован. Данные спасены.', d:'Бэкап в облаке.', c:'gold'},
+      {t:'01:30 — Сервер поднят в резервном ЦОД.', d:'Работа восстановлена.', c:'gold'},
+      {t:'08:00 — Офис работает. Без потерь данных.', d:'Контур под контролем.', c:'neon'}
+    ]
+  ];
+  let used = [];
+  window.runSaturdayScenario = function(){
+    const container = document.getElementById('saturdayTimeline');
+    if(!container) return;
+    // pick random unused
+    let available = scenarios.map((_,i)=>i).filter(i=>!used.includes(i));
+    if(available.length === 0){ used = []; available = scenarios.map((_,i)=>i); }
+    const idx = available[Math.floor(Math.random()*available.length)];
+    used.push(idx);
+    const scen = scenarios[idx];
+    // clear
+    const line = container.querySelector('div[style*="position:absolute;left:8px"]');
+    container.innerHTML = '';
+    container.appendChild(line);
+    // reveal one by one
+    let delay = 100;
+    scen.forEach((s, i) => {
+      setTimeout(() => {
+        const div = document.createElement('div');
+        div.style.cssText = 'margin-bottom:20px;position:relative;opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease;';
+        const dotColor = s.c === 'danger' ? 'var(--danger,#ff4d4d)' : (s.c === 'neon' ? 'var(--neon)' : 'var(--gold-light)');
+        div.innerHTML = '<span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:'+dotColor+';box-shadow:0 0 8px '+dotColor+';"></span>'
+          + '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">' + s.t + '</div>'
+          + '<div style="font-size:12px;color:var(--muted);">' + s.d + '</div>';
+        container.appendChild(div);
+        requestAnimationFrame(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; });
+      }, delay);
+      delay += 600;
+    });
+  };
+})();

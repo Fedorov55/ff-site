@@ -15,9 +15,9 @@
 <meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
 <link rel="canonical" href="https://ff-it.ru/index.html">
 <link rel="icon" type="image/webp" href="logo.webp">
-<link rel="stylesheet" href="style.css?v=6">
-<link rel="stylesheet" href="style-overrides.css?v=6">
-<link rel="stylesheet" href="design-system.css?v=6">
+<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style-overrides.css?v=8">
+<link rel="stylesheet" href="design-system.css?v=8">
 <title>IT-аутсорсинг для бизнеса в Казани | F&F — серверы и инфра</title>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "slogan": "Ваш IT-контур под контролем. Даже в субботу", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressCountry": "RU"}, "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script>
@@ -32,7 +32,7 @@
             <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-    <link rel="preload" href="style.css?v=6" as="style">
+    <link rel="preload" href="style.css?v=8" as="style">
     <link rel="preload" href="script.js" as="script">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -432,7 +432,7 @@
 <!-- ФУТЕР -->
 
 
-<!-- ПРОВЕРКА НА СУББОТУ -->
+<!-- проверка на субботу -->
 <section class="section reveal">
     <div class="container">
         <div class="section__head fade-up reveal">
@@ -442,82 +442,20 @@
         </div>
         <div class="fade-up" style="max-width:600px;margin:0 auto;">
             <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-                <div id="saturdayTimeline" style="position:relative;padding-left:24px;">
+                <div id="saturdayTimeline" style="position:relative;padding-left:24px;min-height:200px;">
                     <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border);"></div>
-                    <div style="margin-bottom:20px;position:relative;">
-                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--danger,#ff4d4d);"></span>
-                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:00 — Сервер ушёл в ребут. Офис спит.</div>
-                        <div style="font-size:12px;color:var(--muted);">Ничего не предвещало.</div>
-                    </div>
-                    <div style="margin-bottom:20px;position:relative;">
-                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
-                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:15 — F&F получил алерт. Инженер уже с ноутбуком.</div>
-                        <div style="font-size:12px;color:var(--muted);">Реакция от 15 минут — это не рекорд, а норма.</div>
-                    </div>
-                    <div style="margin-bottom:20px;position:relative;">
-                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
-                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">00:40 — Причина найдена. Перезапуск сервиса.</div>
-                        <div style="font-size:12px;color:var(--muted);">Сервис работает. Проверяем логи.</div>
-                    </div>
-                    <div style="margin-bottom:20px;position:relative;">
-                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold-light);"></span>
-                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">01:10 — Сервис работает. Проверяем логи.</div>
-                        <div style="font-size:12px;color:var(--muted);">Всё под контролем.</div>
-                    </div>
-                    <div style="position:relative;">
-                        <span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--neon);"></span>
-                        <div style="font-size:13px;font-weight:700;margin-bottom:4px;">08:00 — Офис приходит. Никто ничего не заметил. Кроме нас — мы заметили в 00:15.</div>
-                        <div style="font-size:12px;color:var(--muted);">Ваш IT-контур под контролем. Даже в субботу.</div>
-                    </div>
                 </div>
                 <div style="text-align:center;margin-top:24px;">
-                    <button class="btn btn--primary" onclick="document.getElementById('saturdayTimeline').style.opacity='0.3';setTimeout(()=>{document.getElementById('saturdayTimeline').style.opacity='1';},500);">Смоделировать субботний сбой</button>
+                    <button class="btn btn--primary" onclick="runSaturdayScenario()">Смоделировать субботний сбой</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+
 <!-- BENTO GRID -->
-<section class="section section--alt reveal">
-  <div class="container">
-    <div class="section__head fade-up reveal">
-      <span class="section__label reveal">Обзор</span>
-      <h2 class="section__title reveal">Всё в одном месте</h2>
-      <p class="section__subtitle reveal">Серверы, инфраструктура, безопасность, криптография — один контур, одна команда, одна ответственность.</p>
-    </div>
-    <div class="fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto;">
-      <div style="grid-column:span 2;grid-row:span 2;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-        <div>
-          <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Серверы</div>
-          <div style="font-size:24px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">от 30 000 ₽/мес</div>
-          <div style="font-size:13px;color:var(--text-2);">Подбор, установка, настройка. AD, файловые, терминальные серверы. Виртуализация. Казань — приедем.</div>
-        </div>
-        <a href="servers.html" class="btn btn--ghost btn--sm" style="align-self:flex-start;">Как это работает</a>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
-        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Инфраструктура</div>
-        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">СКС, Wi-Fi, СКУД</div>
-        <div style="font-size:12px;color:var(--text-2);">Собираем офис с нуля. 8–12 недель от проекта до сдачи.</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
-        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Безопасность</div>
-        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">ЭЦП, ViPNet</div>
-        <div style="font-size:12px;color:var(--text-2);">Криптография, видеонаблюдение, разграничение доступа.</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
-        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Абонентка</div>
-        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">от 9 900 ₽/мес</div>
-        <div style="font-size:12px;color:var(--text-2);">Мониторинг 24/7, реакция от 15 минут.</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;">
-        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">IT-аудит</div>
-        <div style="font-size:18px;font-weight:800;color:var(--gold-light);margin-bottom:8px;">Бесплатно</div>
-        <div style="font-size:12px;color:var(--text-2);">Экспресс-аудит за 30 минут. Без обязательств.</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ИГРА: СЛОМАЙ СЕРВЕР -->
 <section class="section reveal">
@@ -660,86 +598,6 @@ function resetGame(){
 })();
 </script>
 
-<!-- ПРОЗРАЧНОСТЬ -->
-<section class="section section--alt reveal">
-    <div class="container">
-        <div class="section__head fade-up reveal">
-            <span class="section__label reveal">Прозрачность</span>
-            <h2 class="section__title reveal">Мы не прячем то, что было</h2>
-            <p class="section__subtitle reveal">Здесь мы показываем, как всё работает — и что было, когда что-то ломалось. Без «мы лучшие». Просто цифры.</p>
-        </div>
-        <div class="fade-up" style="max-width:600px;margin:0 auto;">
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;">
-                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
-                    <div id="metric-response" style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:4px;">12 мин</div>
-                    <div style="font-size:12px;color:var(--muted);">Медиана ответа за неделю</div>
-                </div>
-                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
-                    <div id="metric-requests" style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:4px;">47</div>
-                    <div style="font-size:12px;color:var(--muted);">Заявок за месяц</div>
-                </div>
-                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;">
-                    <div style="font-size:28px;font-weight:800;color:var(--neon);margin-bottom:4px;">0</div>
-                    <div style="font-size:12px;color:var(--muted);">Инцидентов за 30 дней</div>
-                </div>
-            </div>
-            <p style="text-align:center;margin-top:16px;font-size:12px;color:var(--muted);">Обновлено 18.10.2026. Каналы: сайт, Авито, Telegram, MAX, звонки. MAX — новый канал, но метрику считаем с первого дня.</p>
-            <div style="text-align:center;margin-top:20px;">
-                <a href="status.html" class="btn btn--outline">Полная статус-страница</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__col">
-        <div class="footer__brand"><img src="logo.webp" alt="F&F" width="32" height="32" loading="lazy"><span>F&amp;F</span></div>
-        <p class="footer__desc">Ваш IT-контур под контролем. Даже в субботу. Серверы, инфраструктура, безопасность. Казань — приедем, Россия — удалённо.</p>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__title">Услуги</h3>
-        <a href="servers.html" class="footer__link">Серверы под ключ</a>
-        <a href="support.html" class="footer__link">Абонентское обслуживание</a>
-        <a href="infrastructure.html" class="footer__link">Инфраструктура</a>
-        <a href="security.html" class="footer__link">Безопасность</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__title">Компания</h3>
-        <a href="cases.html" class="footer__link">Кейсы</a>
-        <a href="team.html" class="footer__link">Команда</a>
-        <a href="audit.html" class="footer__link">IT-аудит</a>
-        <a href="blog.html" class="footer__link">Блог</a>
-        <a href="contacts.html" class="footer__link">Контакты</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__title">Контакты</h3>
-        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
-        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
-        <a href="https://t.me/FathFed" class="footer__link">Telegram</a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661</p>
-      <p class="footer__copy">© 2026 F&amp;F. Все права защищены.</p>
-      
-    </div>
-  </div>
-  <div class="footer__docs"><a href="map.html">Карта сайта</a></div>
-  <div class="footer__signature" style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);line-height:1.6;">
-    <div>$ cat about-site.txt</div>
-    <div>Да, этот сайт сделали мы сами. И да, мы можем сделать такой же вам. Но сначала — сервер. Сайт подождёт.</div>
-    <div>$ ssh contact@ff-it.ru</div>
-  </div>
-</footer>
-
 <!-- ВИДЖЕТЫ -->
 <button class="to-top" id="toTop" aria-label="Наверх" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
 
@@ -753,7 +611,7 @@ function resetGame(){
   <div class="cookie__actions"><button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button></div>
 </div>
 
-<script src="script.js?v=6" defer></script>
+<script src="script.js?v=8" defer></script>
 
 <div class="exit-popup" id="exitPopup" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="exit-popup__backdrop" id="exitPopupBackdrop"></div>
