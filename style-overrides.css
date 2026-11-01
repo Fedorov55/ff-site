@@ -338,3 +338,59 @@ h1, h2, h3 { text-wrap: balance; }
 }
 /* content-visibility for off-screen sections (already partial) */
 .section:not(:first-of-type) { content-visibility: auto; contain-intrinsic-size: 0 400px; }
+
+
+/* ====== BACKGROUND ENHANCEMENT: grid +20%, more glows, seamless ====== */
+.bg-grad {
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(212,175,55,.16), transparent 70%),
+    radial-gradient(ellipse 62% 46% at 88% 28%, rgba(0,255,136,.09), transparent 72%),
+    radial-gradient(ellipse 76% 58% at 48% 100%, rgba(74,114,201,.11), transparent 74%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(212,175,55,.04), transparent 80%);
+}
+.bg-grid {
+  opacity: .22 !important;
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 110% 95% at 50% 50%, #000 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 110% 95% at 50% 50%, #000 45%, transparent 100%);
+}
+.bg-orb { filter: blur(100px); opacity: .55; }
+.bg-orb--1 { width: 460px; height: 460px; top: -160px; left: -120px; background: radial-gradient(circle, var(--gold-glow), transparent 70%); }
+.bg-orb--2 { width: 520px; height: 520px; bottom: -220px; right: -160px; background: radial-gradient(circle, var(--neon-glow), transparent 70%); opacity: .6; }
+.bg-layer::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  top: 30%; left: 60%;
+  background: radial-gradient(circle, rgba(80,130,255,.12), transparent 70%);
+  filter: blur(90px);
+  opacity: .5;
+  pointer-events: none;
+}
+.bg-layer::after {
+  content: '';
+  position: absolute;
+  width: 350px; height: 350px;
+  top: 65%; left: 15%;
+  background: radial-gradient(circle, rgba(212,175,55,.10), transparent 70%);
+  filter: blur(80px);
+  opacity: .45;
+  pointer-events: none;
+}
+.section { background: transparent !important; }
+.section--alt {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--bg-2) 60%, transparent), color-mix(in srgb, var(--bg) 40%, transparent)) !important;
+  border-block: none !important;
+}
+.shield-globe__glow {
+  inset: -60px;
+  background: radial-gradient(circle, rgba(0,255,136,0.30) 0%, transparent 65%);
+  filter: blur(50px);
+  opacity: .8;
+}
+.shield-globe__shield {
+  filter: drop-shadow(0 0 28px rgba(0,255,136,0.6));
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-layer::before, .bg-layer::after { display: none; }
+}
