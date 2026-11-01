@@ -928,3 +928,75 @@ try {
     });
   };
 })();
+
+
+/* ====== INFRA SCHEME 3D CAROUSEL ====== */
+document.addEventListener('DOMContentLoaded', () => {
+  const stage = document.querySelector('.scheme-stage');
+  const carousel = document.querySelector('.scheme-carousel');
+  const cards = document.querySelectorAll('.scheme-card');
+  const tags = document.querySelectorAll('.scheme-tag');
+  const btnPrev = document.getElementById('schemePrev');
+  const btnNext = document.getElementById('schemeNext');
+  if(!stage || !carousel || !cards.length) return;
+
+  let currentIndex = 0;
+  const totalCards = cards.length;
+  const angleStep = 360 / totalCards;
+  const radius = 220;
+
+  cards.forEach((card, index) => {
+    const angle = index * angleStep;
+    card.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + radius + 'px)';
+  });
+
+  function updateCarousel() {
+    const rotateAngle = currentIndex * -angleStep;
+    carousel.style.transform = 'rotateY(' + rotateAngle + 'deg)';
+    tags.forEach((tag, i) => { tag.classList.toggle('active', i === currentIndex); });
+  }
+
+  if(btnNext) btnNext.addEventListener('click', () => { currentIndex = (currentIndex + 1) % totalCards; updateCarousel(); });
+  if(btnPrev) btnPrev.addEventListener('click', () => { currentIndex = (currentIndex - 1 + totalCards) % totalCards; updateCarousel(); });
+
+  tags.forEach((tag, index) => {
+    tag.addEventListener('click', () => { currentIndex = index; updateCarousel(); });
+  });
+
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && btnNext) btnNext.click();
+    if (e.key === 'ArrowLeft' && btnPrev) btnPrev.click();
+  });
+
+  let startX = 0, isDragging = false;
+  stage.addEventListener('pointerdown', (e) => { startX = e.clientX; isDragging = true; });
+  stage.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    if (deltaX > 50) { if(btnPrev) btnPrev.click(); isDragging = false; }
+    if (deltaX < -50) { if(btnNext) btnNext.click(); isDragging = false; }
+  });
+  stage.addEventListener('pointerup', () => { isDragging = false; });
+  stage.addEventListener('pointerleave', () => { isDragging = false; });
+
+  cards.forEach(card => {
+    const btn = card.querySelector('.scheme-card__btn');
+    const calcKey = card.getAttribute('data-calc-key');
+    if (btn && calcKey) {
+      btn.addEventListener('click', () => {
+        const calcCheckbox = document.querySelector('.calc__service[data-key="' + calcKey + '"]');
+        if (calcCheckbox) {
+          const isActive = calcCheckbox.classList.contains('active');
+          calcCheckbox.click();
+          if (!isActive) { btn.textContent = '✓ В смете'; btn.classList.add('added'); }
+          else { btn.textContent = 'Добавить в смету'; btn.classList.remove('added'); }
+        } else {
+          btn.textContent = '✓ Выбрано';
+          btn.classList.add('added');
+        }
+      });
+    }
+  });
+
+  updateCarousel();
+});
