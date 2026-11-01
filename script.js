@@ -92,43 +92,49 @@
     }
   }catch(e){}
 
-  /* КАРУСЕЛЬ ОТЗЫВОВ (бесконечная) */
+  /* КАРУСЕЛЬ ОТЗЫВОВ (бесконечная, без прыжков) */
   try{
     const slider = document.querySelector('.reviews__slider');
     const prevBtn = document.querySelector('.slider-btn--prev');
     const nextBtn = document.querySelector('.slider-btn--next');
     if(slider && prevBtn && nextBtn){
-      // Clone first and last cards for infinite loop
       const cards = Array.from(slider.children);
       if(cards.length > 1){
         const firstClone = cards[0].cloneNode(true);
         const lastClone = cards[cards.length-1].cloneNode(true);
         slider.appendChild(firstClone);
         slider.insertBefore(lastClone, cards[0]);
+        // Start at first real card (after clone)
         slider.scrollLeft = lastClone.offsetWidth;
       }
       let isScrolling = false;
-      const cardWidth = () => slider.querySelector('.review-card') ? slider.querySelector('.review-card').offsetWidth + 24 : slider.offsetWidth;
+      const cardWidth = () => { const c = slider.querySelector('.review-card'); return c ? c.offsetWidth + 24 : slider.offsetWidth; };
+      function resetIfNeeded() {
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        // If at the last clone, jump to first real (no animation)
+        if (slider.scrollLeft >= maxScroll - 5) {
+          slider.scrollLeft = slider.clientWidth + 10 - (maxScroll - slider.scrollLeft);
+          // simpler: jump to first real card
+          const lc = slider.querySelector('.review-card');
+          if(lc) slider.scrollLeft = lc.offsetWidth;
+        }
+        // If at the first clone, jump to last real
+        if (slider.scrollLeft <= 5) {
+          const cards2 = slider.querySelectorAll('.review-card');
+          if(cards2.length > 2) slider.scrollLeft = slider.scrollWidth - slider.clientWidth - cards2[0].offsetWidth - 24;
+        }
+      }
       prevBtn.addEventListener('click', () => {
         if(isScrolling) return;
         isScrolling = true;
         slider.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
-        setTimeout(() => { isScrolling = false; }, 400);
+        setTimeout(() => { resetIfNeeded(); isScrolling = false; }, 450);
       });
       nextBtn.addEventListener('click', () => {
         if(isScrolling) return;
         isScrolling = true;
         slider.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-        setTimeout(() => { isScrolling = false; }, 400);
-      });
-      // Reset scroll position for infinite loop
-      slider.addEventListener('scroll', () => {
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        if(slider.scrollLeft <= 10){
-          slider.scrollLeft = maxScroll - slider.clientWidth - 10;
-        } else if(slider.scrollLeft >= maxScroll - 10){
-          slider.scrollLeft = slider.clientWidth + 10;
-        }
+        setTimeout(() => { resetIfNeeded(); isScrolling = false; }, 450);
       });
     }
   }catch(e){}
@@ -196,13 +202,12 @@
             </div>
             <div class="form-group form-group--checkbox" style="margin-bottom:16px;">
               <input type="checkbox" id="qAgree">
-              <label for="qAgree" style="font-size:12px;color:var(--text-2)">Согласен с <a href="privacy.html" style="color:var(--gold-light)">политикой конфиденциальности</a></label>
+              <label for="qAgree" style="font-size:12px;color:var(--text-2)">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" style="color:var(--gold-light)">политикой конфиденциальности</a></label>
             </div>
             <div class="quiz__actions">
               <button class="btn btn--primary" onclick="submitQuiz(event)">Обсудить задачу</button>
               <button class="btn btn--ghost" onclick="window.print()" style="margin-top:8px;">Скачать PDF-чеклист</button>
-              <a class="btn btn--ghost" id="quizTgBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в Telegram</a>
-          <a class="btn btn--ghost" id="quizMaxBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в MAX (Российский мессенджер)</a>
+              <a class="btn btn--ghost" id="quizMaxBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в MAX (Российский мессенджер)</a>
             </div>
           </div>
         `;
@@ -213,7 +218,6 @@
           document.getElementById('lossVal').innerHTML = (e*h*r).toLocaleString('ru-RU') + ' ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small>';
         };
         ['lossEmp','lossHours','lossRate'].forEach(id => document.getElementById(id).addEventListener('input', calcLoss));
-        const tgBtn = document.getElementById('quizTgBtn');
         const maxBtn = document.getElementById('quizMaxBtn');
         if(maxBtn){ maxBtn.href = 'https://max.ru/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '.'); }
         if(tgBtn){ tgBtn.href = 'https://t.me/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '. Потери за инцидент: ' + (parseInt(document.getElementById('lossEmp').value)||0)*(parseInt(document.getElementById('lossHours').value)||0)*(parseInt(document.getElementById('lossRate').value)||0) + ' ₽'); }
@@ -441,11 +445,27 @@
   window.showToast = function(btn, msg, type){
     try{
       let toast = document.getElementById('ff-toast');
-      if(!toast){ toast = document.createElement('div'); toast.id='ff-toast'; toast.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;transition:opacity .3s;'; document.body.appendChild(toast); }
+      if(!toast){ toast = document.createElement('div'); toast.id='ff-toast'; toast.style.cssText='position:absolute;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;transition:opacity .3s;box-shadow:0 4px 16px rgba(0,0,0,0.3);white-space:nowrap;'; document.body.appendChild(toast); }
       toast.textContent = msg;
       toast.style.background = type === 'error' ? '#ff4d4d' : '#00FF88';
       toast.style.color = type === 'error' ? '#fff' : '#000';
       toast.style.opacity = '1';
+      // Position near btn if provided
+      if(btn && btn.getBoundingClientRect){
+        const r = btn.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollX = window.scrollX || window.pageXOffset;
+        toast.style.top = (r.bottom + scrollY + 8) + 'px';
+        toast.style.left = (r.left + scrollX) + 'px';
+        toast.style.transform = 'none';
+        toast.style.position = 'absolute';
+      } else {
+        toast.style.position = 'fixed';
+        toast.style.bottom = '24px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.top = '';
+      }
       clearTimeout(window._toastTimer);
       window._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 6000);
     }catch(e){}
