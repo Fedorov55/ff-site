@@ -474,3 +474,108 @@ h1, h2, h3 { text-wrap: balance; }
   .hero__brandbar { flex-direction: column; align-items: flex-start; }
   .hero__brandbar-metrics { justify-content: center; width: 100%; }
 }
+
+
+/* ====== FORCE SEAMLESS BACKGROUND ON ALL BLOCKS ====== */
+.section, .section--alt, .footer, .hero, .hero--home, .page-intro, .cta-section {
+  background: transparent !important;
+  border-block: none !important;
+}
+.footer {
+  background: transparent !important;
+  border-top: 1px solid var(--border) !important;
+}
+/* Make bg-layer cover everything including footer */
+.bg-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+}
+.site-main, .header, .footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ====== WHY-SECTION (old site format) ====== */
+.why-section {
+  padding: 80px 0;
+  background: transparent !important;
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.why-item {
+  background: #12151C;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.why-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+.why-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.why-item__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 136, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  color: #D4AF37;
+}
+.why-item__num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1E28;
+  line-height: 1;
+  font-family: Space Grotesk, sans-serif;
+  user-select: none;
+}
+.why-item__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #E8EAF0;
+  margin-bottom: 12px;
+}
+.why-item__text {
+  font-size: 13.5px;
+  color: #9AA0A6;
+  line-height: 1.6;
+}
+
+/* ====== HERO BADGE DOT BLINK ====== */
+.hero__badge-dot {
+  animation: badgeBlink 1.6s ease-in-out infinite;
+}
+@keyframes badgeBlink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--neon); }
+  50% { opacity: 0.4; box-shadow: 0 0 4px var(--neon); }
+}
+
+/* ====== BRANDBAR (FF-IT.RU) GOLD SHIMMER ====== */
+.hero__brandbar-name {
+  background: linear-gradient(90deg, #e8eaf0 0%, #D4AF37 50%, #e8eaf0 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+@keyframes goldShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
