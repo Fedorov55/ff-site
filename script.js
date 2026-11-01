@@ -514,32 +514,7 @@
   }catch(e){}
 
 
-  /* ====== PERSONALIZATION ====== */
-  try{
-    const visits = parseInt(localStorage.getItem('ff_visits') || '0', 10) + 1;
-    localStorage.setItem('ff_visits', visits.toString());
-    if(visits > 1){
-      // Returning visitor - show personalized greeting
-      const hero = document.querySelector('.hero__title');
-      if(hero){
-        const greeting = document.createElement('div');
-        greeting.style.cssText = 'font-size:14px;color:var(--gold-light);margin-bottom:8px;';
-        greeting.textContent = 'С возвращением! Вы были здесь ' + visits + ' раз.';
-        hero.parentNode.insertBefore(greeting, hero);
-      }
-    }
-    // Time-based greeting
-    const hour = new Date().getHours();
-    let timeGreeting = '';
-    if(hour < 6) timeGreeting = 'Доброй ночи';
-    else if(hour < 12) timeGreeting = 'Доброе утро';
-    else if(hour < 18) timeGreeting = 'Добрый день';
-    else timeGreeting = 'Добрый вечер';
-    const subtitle = document.querySelector('.hero__title-sub');
-    if(subtitle && !subtitle.textContent.includes(timeGreeting)){
-      // Add time greeting to first hero subtitle only
-    }
-  }catch(e){}
+  /* ====== PERSONALIZATION REMOVED ====== */
 
   /* ФУТЕР - НРАВИТСЯ САЙТ */
   try{
@@ -635,26 +610,7 @@
   } catch(e) {}
 })();
 
-/* ====== HERO TERMINAL ====== */
-(function(){
-  try {
-    const cmdEl = document.getElementById('heroTerminalCmd');
-    const outEl = document.getElementById('heroTerminalOut');
-    if(!cmdEl || !outEl) return;
-    const cmd = './ff-it --status';
-    const lines = ['[ OK ] RAID-массив','[ OK ] Шифрование AES-256','[ OK ] Мониторинг 24/7','[ OK ] SLA 99.5%'];
-    let i = 0;
-    function typeCmd(){
-      if(i < cmd.length){ cmdEl.textContent += cmd[i]; i++; setTimeout(typeCmd, 60); }
-      else { setTimeout(showLines, 400); }
-    }
-    let li = 0;
-    function showLines(){
-      if(li < lines.length){ const d = document.createElement('div'); d.className='ok'; d.textContent = lines[li]; outEl.appendChild(d); li++; setTimeout(showLines, 350); }
-    }
-    setTimeout(typeCmd, 600);
-  } catch(e) {}
-})();
+/* HERO TERMINAL REMOVED */
 
 /* ====== LIVE METRICS ====== */
 (function(){
