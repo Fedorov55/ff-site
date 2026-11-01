@@ -845,23 +845,29 @@ if (document.readyState === 'loading') {
     // clear
     const line = container.querySelector('div[style*="position:absolute;left:8px"]');
     container.innerHTML = '';
-    container.appendChild(line);
-    // reveal one by one
+    if (line) container.appendChild(line);
+    // reveal one by one with effects
     let delay = 100;
     scen.forEach((s, i) => {
       setTimeout(() => {
         const div = document.createElement('div');
-        div.style.cssText = 'margin-bottom:20px;position:relative;opacity:0;transform:translateY(8px);transition:opacity 0.4s ease,transform 0.4s ease;';
-        const dotColor = s.c === 'danger' ? 'var(--danger,#ff4d4d)' : (s.c === 'neon' ? 'var(--neon)' : 'var(--gold-light)');
-        div.innerHTML = '<span style="position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:'+dotColor+';box-shadow:0 0 8px '+dotColor+';"></span>'
-          + '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">' + s.t + '</div>'
-          + '<div style="font-size:12px;color:var(--muted);">' + s.d + '</div>';
+        div.className = 'sat-line ' + s.c;
+        const dotColor = s.c === 'danger' ? '#ff4d4d' : (s.c === 'neon' ? 'var(--neon)' : 'var(--gold-light)');
+        div.innerHTML = '<span class="sat-dot" style="background:'+dotColor+';color:'+dotColor+';"></span>'
+          + '<div class="sat-time">' + s.t + '</div>'
+          + '<div class="sat-desc">' + s.d + '</div>';
         container.appendChild(div);
-        requestAnimationFrame(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; });
+        requestAnimationFrame(() => { div.classList.add('visible'); });
       }, delay);
-      delay += 600;
+      delay += 500;
     });
   };
+  // Show a random scenario on first visit
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function(){ setTimeout(runSaturdayScenario, 800); });
+  } else {
+    setTimeout(runSaturdayScenario, 800);
+  }
 })();
 
 
