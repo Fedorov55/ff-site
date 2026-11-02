@@ -506,12 +506,6 @@ body.menu-open{overflow:hidden}
 
 
 
-/* ====== A11Y: IMPROVED CONTRAST ====== */
-:root {
-  --text: #e8e8e8;
-  --text-2: #b8b8b8;
-  --muted: #888888;
-}
 
 /* ====== A11Y: SKIP LINK ====== */
 .skip-link {
