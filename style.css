@@ -1988,11 +1988,6 @@ a.link-slide:hover::after { width: 100%; }
 [data-theme="light"] 
 
 /* ====== SUBSCRIPTION CALC CONTRAST FIX ====== */
-.subscription-calculator__section, .subscription-calculator__section * {
-  color: #FFFFFF !important;
-  background: #0A0D14 !important;
-  background-color: #0A0D14 !important;
-}
 .subscription-calculator__section .calc-section-heading > span {
   background: #141926 !important;
   color: #D4AF37 !important;
