@@ -1555,3 +1555,39 @@ input.border-error {
   color: #828C9E;
   margin-top: 4px;
 }
+
+/* ====== SCENARIO CARDS (4 cards, 2x2) ====== */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (min-width: 800px) {
+  .scenario-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.scenario-card {
+  background: #141926;
+  border: 1px solid rgba(130, 140, 158, 0.14);
+  border-radius: 16px;
+  padding: 24px;
+}
+.scenario-card__num {
+  font-size: 13px;
+  color: #D4AF37;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.scenario-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #F2F5FA;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.scenario-card__text {
+  font-size: 16px;
+  color: #B6BFCF;
+  line-height: 1.6;
+}
