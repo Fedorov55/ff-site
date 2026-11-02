@@ -100,19 +100,16 @@
 <section id="quiz" class="section reveal">
   <div class="container">
     <div class="section__head fade-up reveal">
-      <span class="section__label reveal">Проверка на прочность</span>
-      <h2 class="section__title reveal">Готова ли ваша инфраструктура к субботе?</h2>
-      <p class="section__subtitle reveal">5 вопросов — и вы узнаете свой уровень и стоимость бездействия. Без звонка.</p>
+      <span class="section__label reveal">Проверка</span>
+      <h2 class="section__title reveal">Готова ли инфраструктура к субботе</h2>
+      <p class="section__subtitle reveal">Пять вопросов. В конце — уровень риска, без звонка.</p>
     </div>
-    <div class="quiz fade-up">
-      <div class="quiz__head">
-        <div class="quiz__head-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Диагностика</div>
-        <div class="quiz__progress"><span class="quiz__dot active"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span></div>
-      </div>
-      <div class="quiz__body"></div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="quiz.html" class="btn btn--primary">Пройти проверку</a>
     </div>
   </div>
 </section>
+
 
 
 <!-- ФОРМА ЗАХВАТА -->
@@ -362,264 +359,20 @@
 
 
 <!-- FAQ -->
+
+
+
+<!-- Нужна смета, не игра -->
 <section class="section reveal">
   <div class="container">
-    <div class="section__head fade-up reveal">
-      <span class="section__label reveal">FAQ</span>
-      <h2 class="section__title reveal">Частые вопросы</h2>
-    </div>
-    <div class="faq__list fade-up">
-      <details class="faq__item"><summary class="faq__question">Чем абонентка отличается от штатного сисадмина?</summary><p class="faq__answer">Штатный специалист один: отпуск, больничный, один навык. В абонентке несколько инженеров, реакция от 15 минут и доступность 99,5% в договоре.</p></details>
-      <details class="faq__item"><summary class="faq__question">Вы обещаете, что сервер не упадёт?</summary><p class="faq__answer">Нет. В договоре доступность 99,5% и срок реакции. Кто обещает 100%, не называет, что будет при аварии.</p></details>
-      <details class="faq__item"><summary class="faq__question">Сколько стоит штатный сисадмин в Казани?</summary><p class="faq__answer">Оклад 80 000 ₽ на руки — это около 120 000 ₽ в месяц для компании и около 1,4 млн ₽ в год без отпускных, больничных и техники.</p></details>
-      <details class="faq__item"><summary class="faq__question">Сколько стоит абонентка?</summary><p class="faq__answer">От 10 000 ₽ в месяц или от 900 ₽ за ПК, берётся большая сумма. Смета до договора.</p></details>
-      <details class="faq__item"><summary class="faq__question">Сколько стоит сервер?</summary><p class="faq__answer">Офис 10–15 человек — от 200 000 ₽. Офис 15–40 человек — от 500 000 ₽. Восстановленная техника — от 130 000 ₽. Настройка — от 4 000 ₽.</p></details>
-      <details class="faq__item"><summary class="faq__question">Если сервер уже не работает?</summary><p class="faq__answer">Звоните +7 (901) 265-52-52. Реакция от 15 минут.</p></details>
-      <details class="faq__item"><summary class="faq__question">Где вы работаете?</summary><p class="faq__answer">Казань и Татарстан — с выездом. Остальная Россия — удалённо, с тем же сроком реакции.</p></details>
-      <details class="faq__item"><summary class="faq__question">Какие документы вы даёте?</summary><p class="faq__answer">Чек самозанятого. Работы фиксируем в договоре.</p></details>
+    <div style="max-width:600px;margin:0 auto;background:#11151F;border-radius:18px;padding:32px;text-align:center;">
+      <h2 class="section__title reveal" style="font-size:24px;">Нужна смета, не игра</h2>
+      <p style="color:#B6BFCF;font-size:16px;margin:12px 0 24px;">Опишите офис: сколько людей, есть ли сервер и 1С. Ответим за 15 минут.</p>
+      <a href="services.html#calculator" class="btn btn--primary">Рассчитать стоимость</a>
+      <p style="margin-top:16px;font-size:13px;color:#828C9E;">или позвонить <a href="tel:+79012655252" style="color:#00FF88;text-decoration:none;">+7 (901) 265-52-52</a></p>
     </div>
   </div>
 </section>
-
-
-<!-- ФУТЕР -->
-
-
-<!-- проверка на субботу -->
-<section class="section reveal">
-    <div class="container">
-        <div class="section__head fade-up reveal">
-            <span class="section__label reveal">Суббота</span>
-            <h2 class="section__title reveal">Проверка на субботу</h2>
-            <p class="section__subtitle reveal">Смоделируйте субботний сбой — и посмотрите, как F&F отрабатывает аварию, пока вы спите.</p>
-        </div>
-        <div class="fade-up" style="max-width:600px;margin:0 auto;">
-            <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-                <div id="saturdayTimeline" style="position:relative;padding-left:24px;min-height:200px;">
-                    <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border);"></div>
-                </div>
-                <div style="text-align:center;margin-top:24px;">
-                    <button class="btn btn--primary" onclick="runSaturdayScenario()">Смоделировать субботний сбой</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- BENTO GRID -->
-
-
-<!-- ИГРА: СЛОМАЙ СЕРВЕР -->
-<section class="section reveal">
-  <div class="container">
-    <div class="section__head fade-up reveal">
-      <span class="section__label reveal">Игра</span>
-      <h2 class="section__title reveal">Сломай сервер</h2>
-      <p class="section__subtitle reveal">Попробуйте сломать сервер — и посмотрите, как F&F его чинит. Кликайте по угрозам, чтобы нейтрализовать их.</p>
-    </div>
-    <div class="fade-up" style="max-width:600px;margin:0 auto;">
-      <div id="breakServer" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
-        <div style="font-size:14px;margin-bottom:16px;">Сервер: <span id="serverStatus" style="color:var(--neon);font-weight:700;">работает</span></div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">
-          <button onclick="attack('ddos')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">DDoS-атака</button>
-          <button onclick="attack('disk')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Диск умирает</button>
-          <button onclick="attack('power')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Отключили свет</button>
-          <button onclick="attack('backup')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Бэкап не работает</button>
-          <button onclick="attack('admin')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Админ уволился</button>
-          <button onclick="attack('ransom')" style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);cursor:pointer;font-size:12px;">Шифровальщик</button>
-        </div>
-        <div id="gameLog" aria-live="polite" style="font-size:12px;color:var(--text-2);min-height:60px;text-align:left;padding:12px;background:var(--bg-2);border-radius:8px;margin-bottom:12px;"></div>
-        <button onclick="resetGame()" class="btn btn--ghost btn--sm">Сбросить</button>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-var serverHealth = 100;
-var threats = [];
-function attack(type){
-  var log = document.getElementById('gameLog');
-  var status = document.getElementById('serverStatus');
-  var msgs = {
-    ddos: 'DDoS-атака! Сервер перегружен. F&F включает rate-limiting и CDN. Сервер стабилен.',
-    disk: 'Диск умирает! F&F поднимает RAID и бэкап. Данные спасены.',
-    power: 'Отключили свет! ИБП держит 15 минут. F&F запускает генератор. Сервер жив.',
-    backup: 'Бэкап не работает! F&F разворачивает тестовый контур. Восстановлено за 40 минут.',
-    admin: 'Админ уволился! F&F проверяет реестр доступов. Права переписаны.',
-    ransom: 'Шифровальщик! F&F блокирует, восстанавливает из бэкапа. Данные целы.'
-  };
-  threats.push(type);
-  log.innerHTML += '<div style="margin-bottom:4px;">⚠ ' + msgs[type] + '</div>';
-  serverHealth = Math.max(0, serverHealth - 10);
-  if(serverHealth > 50){
-    status.textContent = 'работает';
-    status.style.color = 'var(--neon)';
-  } else if(serverHealth > 20){
-    status.textContent = 'под нагрузкой';
-    status.style.color = 'var(--gold-light)';
-  } else {
-    status.textContent = 'критично';
-    status.style.color = '#ff4d4d';
-  }
-  log.scrollTop = log.scrollHeight;
-}
-function resetGame(){
-  serverHealth = 100;
-  threats = [];
-  document.getElementById('serverStatus').textContent = 'работает';
-  document.getElementById('serverStatus').style.color = 'var(--neon)';
-  document.getElementById('gameLog').innerHTML = '';
-}
-</script>
-
-<!-- 3D INFRASTRUCTURE / LAZY WEBGL -->
-<section class="infra-scheme-section" id="infra-scheme">
-  <div class="container">
-    <div class="section__head text-center">
-      <span class="section__label">ИНЖЕНЕРНАЯ СХЕМА</span>
-      <h2 class="section__title">Инфраструктура<br><span class="gold">— в одном контуре</span></h2>
-      <p class="section__subtitle">Демонстрационная схема. Поворачивайте её мышью, пальцем или стрелками клавиатуры. Нажмите на элемент, чтобы добавить его в смету.</p>
-    </div>
-    <div class="scheme-stage" tabindex="0" aria-label="Интерактивная 3D-схема инфраструктуры">
-      <div class="scheme-core">
-        <div class="scheme-core__glow"></div>
-        <div class="scheme-core__text">IT-контур<br>F&F</div>
-      </div>
-      <div class="scheme-carousel">
-        <div class="scheme-card" data-node="servers" data-calc-key="server-select" data-angle="0">
-          <h3>Серверы</h3>
-          <p>Подбор, монтаж, настройка. От 4 000 ₽.</p>
-          <button class="scheme-card__btn">Добавить в смету</button>
-        </div>
-        <div class="scheme-card" data-node="network" data-calc-key="audit-express" data-angle="90">
-          <h3>Сеть</h3>
-          <p>Стабильный Wi-Fi, СКС, коммутаторы. От 5 000 ₽.</p>
-          <button class="scheme-card__btn">Добавить в смету</button>
-        </div>
-        <div class="scheme-card" data-node="backups" data-calc-key="server-backup" data-angle="180">
-          <h3>Резервные копии</h3>
-          <p>Бэкапы с проверкой восстановления. От 4 800 ₽.</p>
-          <button class="scheme-card__btn">Добавить в смету</button>
-        </div>
-        <div class="scheme-card" data-node="workstations" data-calc-key="mnt-file" data-angle="270">
-          <h3>Рабочие места</h3>
-          <p>1С, почта, доступы. Без «попробуйте перезагрузить». От 900 ₽.</p>
-          <button class="scheme-card__btn">Добавить в смету</button>
-        </div>
-      </div>
-    </div>
-    <div class="scheme-controls">
-      <button class="scheme-arrow" id="schemePrev" aria-label="Повернуть влево">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="scheme-tags">
-        <button class="scheme-tag active" data-target="servers">Серверы</button>
-        <button class="scheme-tag" data-target="network">Сеть</button>
-        <button class="scheme-tag" data-target="backups">Резервные копии</button>
-        <button class="scheme-tag" data-target="workstations">Рабочие места</button>
-      </div>
-      <button class="scheme-arrow" id="schemeNext" aria-label="Повернуть вправо">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-    <div class="scheme-notes">
-      <p>Схема остаётся доступна и без 3D-графики.</p>
-      <p class="dim">Демонстрационная схема · не подключена к инфраструктуре клиента</p>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  'use strict';
-  var host=document.getElementById('webgl-container');
-  var fallback=document.getElementById('webglFallback');
-  var controls=document.getElementById('webglControls');
-  if(!host||!fallback)return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce)return;
-  var loaded=false;
-  function showFallback(){host.hidden=true;fallback.hidden=false;if(controls)controls.hidden=true;}
-  function startThree(){
-    if(loaded||!window.THREE)return;
-    loaded=true;
-    var THREE=window.THREE,renderer,scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,1,.1,100);
-    camera.position.set(0,0,8.3);
-    try{renderer=new THREE.WebGLRenderer({antialias:window.devicePixelRatio<2,alpha:true,powerPreference:'low-power'});}
-    catch(error){showFallback();return;}
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.35));
-    renderer.setClearColor(0x0b1018,0);
-    renderer.outputEncoding=THREE.sRGBEncoding;
-    host.appendChild(renderer.domElement);
-    renderer.domElement.setAttribute('aria-hidden','true');
-    host.hidden=false;fallback.hidden=true;if(controls)controls.hidden=false;
-    var rig=new THREE.Group();scene.add(rig);
-    scene.add(new THREE.AmbientLight(0x9aabc2,.85));
-    var light=new THREE.PointLight(0xd4af37,2.2,30);light.position.set(3,4,5);scene.add(light);
-    var mint=new THREE.PointLight(0x00c981,1.3,24);mint.position.set(-4,-1,3);scene.add(mint);
-    var shaderUniforms=[];
-    var vertex='varying vec3 vPos;uniform float uTime;void main(){vPos=position;vec3 p=position;p.y+=sin(position.x*5.0+uTime)*0.028;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);}';
-    var fragment='varying vec3 vPos;uniform float uTime;uniform vec3 uColor;void main(){float pulse=.78+.22*sin(uTime*1.6+vPos.x*4.0);float bands=.94+.06*sin((vPos.y+uTime*.12)*20.0);gl_FragColor=vec4(uColor*pulse*bands,1.0);}';
-    function shader(color){var uniforms={uTime:{value:0},uColor:{value:new THREE.Color(color)}};shaderUniforms.push(uniforms);return new THREE.ShaderMaterial({uniforms:uniforms,vertexShader:vertex,fragmentShader:fragment});}
-    var core=new THREE.Mesh(new THREE.IcosahedronGeometry(.62,2),shader(0xd4af37));rig.add(core);
-    var colors=[0xd4af37,0x00d890,0x6e91ff,0x5ec7d7,0xe8c44d,0x63d49b],nodes=[];
-    for(var i=0;i<6;i++){var a=i*Math.PI*2/6,node=new THREE.Mesh(new THREE.BoxGeometry(.34,.34,.34),shader(colors[i]));node.position.set(Math.cos(a)*2.25,Math.sin(a)*1.45,Math.sin(a*2)*.3);rig.add(node);nodes.push(node);rig.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),node.position.clone()]),new THREE.LineBasicMaterial({color:colors[i],transparent:true,opacity:.46})));}
-    var ring=new THREE.Mesh(new THREE.TorusGeometry(2.55,.008,6,90),new THREE.MeshBasicMaterial({color:0xd4af37,transparent:true,opacity:.4}));ring.rotation.x=.26;rig.add(ring);
-    var visible=true,drag=false,lastX=0,lastY=0,t=0,raf=0;
-    function draw(){renderer.render(scene,camera);}
-    function resize(){var box=host.getBoundingClientRect();if(!box.width||!box.height)return;renderer.setSize(box.width,box.height,false);camera.aspect=box.width/box.height;camera.updateProjectionMatrix();draw();}
-    function frame(){if(!visible||document.hidden)return;t+=.016;shaderUniforms.forEach(function(u){u.uTime.value=t;});if(!drag)rig.rotation.y+=.0016;core.rotation.y+=.002;nodes.forEach(function(n,i){n.rotation.x+=.0008+i*.0001;n.rotation.y+=.0012;});draw();raf=requestAnimationFrame(frame);}
-    function start(){if(visible&&!document.hidden){cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);}}
-    function stop(){cancelAnimationFrame(raf);draw();}
-    host.addEventListener('pointerdown',function(e){drag=true;lastX=e.clientX;lastY=e.clientY;host.classList.add('is-dragging');if(host.setPointerCapture)host.setPointerCapture(e.pointerId);});
-    host.addEventListener('pointermove',function(e){if(!drag)return;rig.rotation.y+=(e.clientX-lastX)*.008;rig.rotation.x+=(e.clientY-lastY)*.006;lastX=e.clientX;lastY=e.clientY;draw();});
-    ['pointerup','pointercancel','pointerleave'].forEach(function(type){host.addEventListener(type,function(){drag=false;host.classList.remove('is-dragging');});});
-    host.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rig.rotation.y+=e.key==='ArrowLeft'?.16:-.16;draw();}});
-    host.addEventListener('wheel',function(e){e.preventDefault();camera.position.z=Math.max(5.4,Math.min(10,camera.position.z+e.deltaY*.006));draw();},{passive:false});
-    if(controls)controls.querySelectorAll('[data-rotate]').forEach(function(button){button.addEventListener('click',function(){rig.rotation.y+=Number(button.dataset.rotate)*.2;draw();});});
-    if('IntersectionObserver'in window)new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;if(visible)start();else stop();},{rootMargin:'120px'}).observe(host);else start();
-    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start();});
-    if('ResizeObserver'in window)new ResizeObserver(resize).observe(host);else window.addEventListener('resize',resize,{passive:true});
-    resize();start();
-  }
-  function load(){if(loaded)return;if(window.THREE){startThree();return;}var tag=document.createElement('script');tag.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';tag.async=true;tag.onload=startThree;tag.onerror=showFallback;document.head.appendChild(tag);}
-  if('IntersectionObserver'in window){var observer=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){observer.disconnect();load();}},{rootMargin:'220px'});observer.observe(host);}else load();
-})();
-</script>
-
-<!-- ВИДЖЕТЫ -->
-<button class="to-top" id="toTop" aria-label="Наверх" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></button>
-
-
-
-
-
-
-<div class="cookie" id="cookie" style="display:none;">
-  <div class="cookie__text"><strong>Cookie</strong> Соглашаясь, вы принимаете <a href="privacy.html">Политику конфиденциальности</a>.</div>
-  <div class="cookie__actions"><button class="btn btn--outline btn--sm" onclick="rejectCookie()">Не разрешать</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">Разрешить</button></div>
-</div>
-
-<script src="script.js?v=18" defer></script>
-
-<noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript>
-
-<!-- ДВОЙНОЙ CTA -->
-<section class="section reveal">
-  <div class="container">
-    <div class="section__head fade-up reveal">
-      <span class="section__label reveal">Действие</span>
-      <h2 class="section__title reveal">Готовы навести порядок в IT?</h2>
-      <p class="section__subtitle reveal">Рассчитаем стоимость или обсудим задачу — без обязательств.</p>
-    </div>
-    <div class="double-cta fade-up">
-      <a href="#calc" class="btn btn--primary">Рассчитать стоимость</a>
-      <a href="contacts.html" class="btn btn--ghost">Обсудить задачу</a>
-    </div>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
