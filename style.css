@@ -1999,3 +1999,14 @@ a.link-slide:hover::after { width: 100%; }
   background: #0A0D14 !important;
 }
 
+
+/* ====== WHY-ITEM CONTRAST FIX (servers.html) ====== */
+.why-item {
+  background: #0A0D14 !important;
+}
+.why-item__title, .why-item h3 {
+  color: #FFFFFF !important;
+}
+.why-item__text, .why-item p {
+  color: #B6BFCF !important;
+}
