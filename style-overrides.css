@@ -1591,3 +1591,67 @@ input.border-error {
   color: #B6BFCF;
   line-height: 1.6;
 }
+
+/* ====== SERVICES CARDS (Prompt 5) ====== */
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 700px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .services__grid { grid-template-columns: repeat(3, 1fr); }
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: #141926;
+  border: 1px solid rgba(130, 140, 158, 0.14);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.service-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  color: #D4AF37;
+  margin-bottom: 16px;
+}
+.service-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #F2F5FA;
+  margin: 0 0 8px;
+}
+.service-card__text {
+  font-size: 15px;
+  color: #B6BFCF;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  flex: 1;
+}
+.service-card__price {
+  font-size: 18px;
+  color: #E8C44D;
+  font-weight: 700;
+}
+.service-card__note {
+  font-size: 13px;
+  color: #828C9E;
+  display: block;
+  margin-top: 4px;
+}
