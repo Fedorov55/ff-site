@@ -70,32 +70,127 @@
         </ul>
         <div class="hero__buttons">
           <a href="services.html#calculator" class="btn btn--primary">Рассчитать стоимость</a>
-          <a href="#team" class="btn btn--ghost">Кто будет чинить</a>
+          <a href="#quiz" class="btn btn--ghost">Проверить инфраструктуру</a>
         </div>
       </div>
-      <div class="hero__card">
-        <div class="hero__card-title">Как мы дежурим</div>
-        <div class="hero__card-line"><span class="hero__card-key">Дежурство:</span><span class="hero__card-val">да, включая субботу</span></div>
-        <div class="hero__card-line"><span class="hero__card-key">Реакция:</span><span class="hero__card-val">от 15 минут</span></div>
-        <div class="hero__card-line"><span class="hero__card-key">Бэкап:</span><span class="hero__card-val">проверяем восстановление</span></div>
-        <div class="hero__card-line"><span class="hero__card-key">По договору:</span><span class="hero__card-val">доступность 99,5%</span></div>
-        <div class="hero__card-line"><span class="hero__card-key">Город:</span><span class="hero__card-val">Казань</span></div>
-        <div class="hero__card-footnote">Это регламент F&F, не мониторинг вашей сети.</div>
+      <div class="hero__terminal-col">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--yellow"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+            <span class="terminal__title">ff-it — shield — 80×24</span>
+          </div>
+          <div class="terminal__body" id="terminalBody">
+            <div class="terminal__log"><span class="terminal__log--prompt">root@ff-it</span><span class="terminal__log--cmd">:~#</span> <span class="terminal__log--cmd">./ff-it --status --verbose</span></div>
+            <div class="terminal__log"><span class="terminal__log--dim"># Инициализация защитного ядра F&F v4.0</span></div>
+            <div class="terminal__log"><span class="terminal__log--dim"># Хаб: Казань · Дежурство: да · Статус: OK</span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">  [✓] </span><span class="terminal__log--dim">RAID-массив · NVMe SSD</span> <span class="progress-slot"><span class="bar__fill">██████████████████</span><span class="bar__empty"></span> <span class="terminal__log--ok">100%</span></span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">  [✓] </span><span class="terminal__log--dim">Шифрование AES-256</span> <span class="progress-slot"><span class="bar__fill">██████████████████</span><span class="bar__empty"></span> <span class="terminal__log--ok">100%</span></span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">  [✓] </span><span class="terminal__log--dim">Бэкап · 3-2-1 · оффлайн</span> <span class="progress-slot"><span class="bar__fill">██████████████████</span><span class="bar__empty"></span> <span class="terminal__log--ok">100%</span></span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">  [✓] </span><span class="terminal__log--dim">Защитный контур</span> <span class="progress-slot"><span class="bar__fill">██████████████████</span><span class="bar__empty"></span> <span class="terminal__log--ok">100%</span></span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">[ OK ] Мониторинг 24/7 · SLA 99,5%</span></div>
+            <div class="terminal__log"><span class="terminal__log--ok">[ OK ] Готовы помочь вашему бизнесу.</span></div>
+            <div class="terminal__scene">
+              <svg class="terminal__globe-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <radialGradient id="globeAtm" cx="50%" cy="50%"><stop offset="0%" stop-color="#00FF88" stop-opacity="0"></stop><stop offset="60%" stop-color="#00FF88" stop-opacity="0.1"></stop><stop offset="82%" stop-color="#00FF88" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#00FF88" stop-opacity="0"></stop></radialGradient>
+                  <radialGradient id="globeBody" cx="42%" cy="38%"><stop offset="0%" stop-color="#0A3D28" stop-opacity="0.85"></stop><stop offset="55%" stop-color="#052418" stop-opacity="0.95"></stop><stop offset="100%" stop-color="#02120D" stop-opacity="1"></stop></radialGradient>
+                  <radialGradient id="globeEdge" cx="50%" cy="50%"><stop offset="80%" stop-color="#00FF88" stop-opacity="0"></stop><stop offset="94%" stop-color="#00FF88" stop-opacity="0.6"></stop><stop offset="100%" stop-color="#00FF88" stop-opacity="0"></stop></radialGradient>
+                  <radialGradient id="globeHighlight" cx="38%" cy="32%"><stop offset="0%" stop-color="#7FEEBE" stop-opacity="0.4"></stop><stop offset="40%" stop-color="#00FF88" stop-opacity="0.1"></stop><stop offset="100%" stop-color="#00FF88" stop-opacity="0"></stop></radialGradient>
+                  <filter id="gGlow"><feGaussianBlur stdDeviation="1.4" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+                  <filter id="gGlowStrong"><feGaussianBlur stdDeviation="2.8" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+                </defs>
+                <circle cx="160" cy="160" r="130" fill="url(#globeAtm)"></circle>
+                <circle cx="160" cy="160" r="80" fill="url(#globeBody)"></circle>
+                <circle cx="160" cy="160" r="80" fill="url(#globeHighlight)"></circle>
+                <circle cx="160" cy="160" r="80" fill="url(#globeEdge)"></circle>
+                <circle cx="160" cy="160" r="80" fill="none" stroke="#00FF88" stroke-width="1.2" opacity="0.9" filter="url(#gGlow)"></circle>
+                <g stroke="#00FF88" fill="none" stroke-width="0.5" opacity="0.6">
+                  <line x1="80" y1="160" x2="240" y2="160" opacity="0.95"></line>
+                  <ellipse cx="160" cy="160" rx="79" ry="15" opacity="0.75"></ellipse>
+                  <ellipse cx="160" cy="160" rx="72" ry="35" opacity="0.7"></ellipse>
+                  <ellipse cx="160" cy="160" rx="58" ry="55" opacity="0.6"></ellipse>
+                  <ellipse cx="160" cy="160" rx="38" ry="72" opacity="0.5"></ellipse>
+                </g>
+                <ellipse cx="160" cy="160" ry="80" rx="0" stroke="#00FF88" fill="none" stroke-width="0.6" opacity="0.8" filter="url(#gGlow)"><animate attributeName="rx" values="0;80;0" dur="7s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="opacity" values="0.2;0.95;0.2" dur="7s" repeatCount="indefinite" begin="0s"></animate></ellipse>
+                <ellipse cx="160" cy="160" ry="80" rx="0" stroke="#00FF88" fill="none" stroke-width="0.6" opacity="0.8" filter="url(#gGlow)"><animate attributeName="rx" values="0;80;0" dur="7s" repeatCount="indefinite" begin="1.75s"></animate><animate attributeName="opacity" values="0.2;0.95;0.2" dur="7s" repeatCount="indefinite" begin="1.75s"></animate></ellipse>
+                <ellipse cx="160" cy="160" ry="80" rx="0" stroke="#00FF88" fill="none" stroke-width="0.6" opacity="0.8" filter="url(#gGlow)"><animate attributeName="rx" values="0;80;0" dur="7s" repeatCount="indefinite" begin="3.5s"></animate><animate attributeName="opacity" values="0.2;0.95;0.2" dur="7s" repeatCount="indefinite" begin="3.5s"></animate></ellipse>
+                <ellipse cx="160" cy="160" ry="80" rx="0" stroke="#00FF88" fill="none" stroke-width="0.6" opacity="0.8" filter="url(#gGlow)"><animate attributeName="rx" values="0;80;0" dur="7s" repeatCount="indefinite" begin="5.25s"></animate><animate attributeName="opacity" values="0.2;0.95;0.2" dur="7s" repeatCount="indefinite" begin="5.25s"></animate></ellipse>
+                <g fill="#00FF88" filter="url(#gGlowStrong)">
+                  <circle cx="120" cy="105" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="0s"></animate></circle>
+                  <circle cx="200" cy="115" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="0.3s"></animate></circle>
+                  <circle cx="130" cy="200" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="0.6s"></animate></circle>
+                  <circle cx="205" cy="195" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="0.9s"></animate></circle>
+                  <circle cx="160" cy="85" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="1.2s"></animate></circle>
+                  <circle cx="175" cy="240" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="1.5s"></animate></circle>
+                  <circle cx="95" cy="155" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="1.8s"></animate></circle>
+                  <circle cx="235" cy="160" r="2.5"><animate attributeName="r" values="2;3.8;2" dur="2s" repeatCount="indefinite" begin="2.1s"></animate></circle>
+                </g>
+                <g stroke="#00FF88" fill="none" stroke-width="0.45" filter="url(#gGlow)">
+                  <line x1="120" y1="105" x2="200" y2="115"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite" begin="0s"></animate></line>
+                  <line x1="120" y1="105" x2="160" y2="85"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.2s" repeatCount="indefinite" begin="0.15s"></animate></line>
+                  <line x1="120" y1="105" x2="130" y2="200"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.4s" repeatCount="indefinite" begin="0.3s"></animate></line>
+                  <line x1="200" y1="115" x2="205" y2="195"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.6s" repeatCount="indefinite" begin="0.45s"></animate></line>
+                  <line x1="160" y1="85" x2="200" y2="115"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.8s" repeatCount="indefinite" begin="0.6s"></animate></line>
+                  <line x1="130" y1="200" x2="205" y2="195"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" begin="0.75s"></animate></line>
+                  <line x1="130" y1="200" x2="175" y2="240"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.2s" repeatCount="indefinite" begin="0.9s"></animate></line>
+                  <line x1="95" y1="155" x2="120" y2="105"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.4s" repeatCount="indefinite" begin="1.05s"></animate></line>
+                  <line x1="95" y1="155" x2="130" y2="200"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.6s" repeatCount="indefinite" begin="1.2s"></animate></line>
+                  <line x1="235" y1="160" x2="200" y2="115"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.8s" repeatCount="indefinite" begin="1.35s"></animate></line>
+                  <line x1="235" y1="160" x2="205" y2="195"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="1.5s"></animate></line>
+                </g>
+                <circle cx="160" cy="160" r="4" fill="#00FF88" opacity="0.9" filter="url(#gGlowStrong)"><animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite"></animate></circle>
+                <circle cx="160" cy="160" r="20" fill="none" stroke="#00FF88" stroke-width="0.5" opacity="0"><animate attributeName="r" values="20;120" dur="4s" repeatCount="indefinite" begin="0s"></animate><animate attributeName="opacity" values="0.6;0" dur="4s" repeatCount="indefinite" begin="0s"></animate></circle>
+                <circle cx="160" cy="160" r="20" fill="none" stroke="#00FF88" stroke-width="0.5" opacity="0"><animate attributeName="r" values="20;120" dur="4s" repeatCount="indefinite" begin="2s"></animate><animate attributeName="opacity" values="0.6;0" dur="4s" repeatCount="indefinite" begin="2s"></animate></circle>
+                <path d="M160 12 L292 58 Q292 245 160 308 Q28 245 28 58 Z" fill="none" stroke="#00FF88" stroke-width="0.8" opacity="0.3" stroke-linejoin="round"></path>
+                <path d="M160 20 L284 64 Q284 238 160 298 Q36 238 36 64 Z" fill="none" stroke="#00FF88" stroke-width="0.5" opacity="0.15" stroke-dasharray="3 5" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="terminal__status"><span class="terminal__status-dot"></span> ONLINE · КАЗАНЬ · 24/7</div>
+          </div>
+        </div>
+        <div class="hero__brandbar">
+          <div class="hero__brandbar-logo">
+            <img src="logo.webp" alt="Логотип F&F" class="hero__brandbar-logo-img" width="48" height="48" loading="lazy">
+            <div>
+              <div class="hero__brandbar-name">FF-IT.RU</div>
+              <span class="hero__brandbar-sub">Ваш IT-контур под контролем</span>
+            </div>
+          </div>
+          <div class="hero__brandbar-metrics">
+            <div class="hero__metric"><span class="hero__metric-value">5</span><div class="hero__metric-label">лет в Казани</div></div>
+            <div class="hero__metric"><span class="hero__metric-value">120+</span><div class="hero__metric-label">проектов</div></div>
+            <div class="hero__metric"><span class="hero__metric-value">15 мин</span><div class="hero__metric-label">реакция</div></div>
+            <div class="hero__metric"><span class="hero__metric-value">99,5%</span><div class="hero__metric-label">по договору</div></div>
+            <div class="hero__metric"><span class="hero__metric-value">4</span><div class="hero__metric-label">инженера</div></div>
+            <div class="hero__metric"><span class="hero__metric-value">24/7</span><div class="hero__metric-label">на связи</div></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="container" style="margin-top:24px;">
-    <div class="hero__metrics">
-      <div class="hero__metric-item"><span class="hero__metric-num">5</span><span class="hero__metric-label">лет в Казани</span></div>
-      <div class="hero__metric-item"><span class="hero__metric-num">120+</span><span class="hero__metric-label">проектов</span></div>
-      <div class="hero__metric-item"><span class="hero__metric-num">15 мин</span><span class="hero__metric-label">реакция</span></div>
-      <div class="hero__metric-item"><span class="hero__metric-num">99,5%</span><span class="hero__metric-label">по договору</span></div>
-      <div class="hero__metric-item"><span class="hero__metric-num">4</span><span class="hero__metric-label">инженера</span></div>
     </div>
   </div>
 </section>
 
+<!-- КВИЗ -->
 <section id="quiz" class="section reveal">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Проверка на прочность</span>
+      <h2 class="section__title reveal">Готова ли инфраструктура к субботе</h2>
+      <p class="section__subtitle reveal">Пять вопросов. В конце — уровень риска и цена простоя. Без звонка.</p>
+    </div>
+    <div class="quiz fade-up" style="max-width:840px;margin:0 auto;background:#141926;border:1px solid rgba(212,175,55,.35);border-radius:18px;padding:32px;">
+      <div class="quiz__head">
+        <div class="quiz__head-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Диагностика</div>
+        <div class="quiz__progress"><span class="quiz__dot active"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span><span class="quiz__dot"></span></div>
+      </div>
+      <div class="quiz__body"></div>
+    </div>
+  </div>
+</section>
+
+ id="quiz" class="section reveal">
   <div class="container">
     <div class="section__head fade-up reveal">
       <span class="section__label reveal">Проверка</span>
@@ -111,43 +206,7 @@
 
 
 <!-- ФОРМА ЗАХВАТА -->
-<section class="section reveal" id="audit-form-section">
-  <div class="container">
-    <div class="section__head fade-up reveal">
-      <span class="section__label reveal">Заявка</span>
-      <h2 class="section__title reveal">Получить расчёт</h2>
-      <p class="section__subtitle reveal">Оставьте контакты — мы свяжемся в течение 15 минут.</p>
-    </div>
-    <form id="audit-form" class="audit-form fade-up">
-      <input type="hidden" name="source" value="index">
-      <div class="form-group">
-        <label for="audit-name">Имя</label>
-        <input type="text" id="audit-name" name="name" placeholder="Ваше имя" required>
-      </div>
-      <div class="form-group">
-        <label for="audit-company">Компания</label>
-        <input type="text" id="audit-company" name="company" placeholder="Название компании">
-      </div>
-      <div class="form-group">
-        <label for="audit-phone">Телефон</label>
-        <input type="tel" id="audit-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-      </div>
-      <div class="form-group">
-        <label for="audit-service">Выбор услуги</label>
-        <select id="audit-service" name="service">
-          <option value="audit">Аудит</option>
-          <option value="server">Сервер</option>
-          <option value="support">Поддержка</option>
-        </select>
-      </div>
-      <div class="form-checkbox">
-        <input type="checkbox" id="audit-agree" required>
-        <label for="audit-agree">Согласен на обработку данных. Вы не будете присылать спам.</label>
-      </div>
-      <button type="submit" class="btn btn--primary">Получить расчёт</button>
-    </form>
-  </div>
-</section>
+
 
 <!-- ЧТО БУДЕТ ЕСЛИ -->
 <section class="section section--alt reveal">
@@ -210,6 +269,7 @@
         <p class="service-card__text" style="font-size:15px;color:#B6BFCF;">Команда вместо одного сисадмина: мониторинг, выезд по Казани, реакция от 15 минут.</p>
         <span class="service-card__price" style="font-size:18px;color:#E8C44D;">от 10 000 ₽/мес</span>
         <span class="service-card__note" style="font-size:13px;color:#828C9E;display:block;margin-top:4px;">или от 900 ₽ за ПК, что больше</span>
+        <a href="support.html#calculator" style="font-size:12px;color:var(--gold-light);margin-top:8px;display:inline-block;">Собрать абонентку →</a>
       </a>
       <a href="servers.html" class="service-card fade-up" style="background:#141926;border:1px solid rgba(130,140,158,.14);border-radius:16px;padding:24px;">
         <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="13" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="16" x2="6.01" y2="16"/></svg></div>
@@ -237,6 +297,7 @@
         <h3 class="service-card__title" style="font-size:22px;">IT-аудит</h3>
         <p class="service-card__text" style="font-size:15px;color:#B6BFCF;">За 15 минут показываем, где контур теряет деньги. Дальше — письменный план.</p>
         <span class="service-card__price" style="font-size:18px;color:#E8C44D;">экспресс 0 ₽</span>
+        <a href="services.html#estimate" style="font-size:12px;color:var(--gold-light);margin-top:8px;display:inline-block;">Собрать разовую смету →</a>
       </a>
       <a href="infrastructure.html" class="service-card fade-up" style="background:#141926;border:1px solid rgba(130,140,158,.14);border-radius:16px;padding:24px;">
         <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
@@ -360,17 +421,7 @@
 
 
 
-<!-- Нужна смета, не игра -->
-<section class="section reveal">
-  <div class="container">
-    <div style="max-width:600px;margin:0 auto;background:#11151F;border-radius:18px;padding:32px;text-align:center;">
-      <h2 class="section__title reveal" style="font-size:24px;">Нужна смета, не игра</h2>
-      <p style="color:#B6BFCF;font-size:16px;margin:12px 0 24px;">Опишите офис: сколько людей, есть ли сервер и 1С. Ответим за 15 минут.</p>
-      <a href="services.html#calculator" class="btn btn--primary">Рассчитать стоимость</a>
-      <p style="margin-top:16px;font-size:13px;color:#828C9E;">или позвонить <a href="tel:+79012655252" style="color:#00FF88;text-decoration:none;">+7 (901) 265-52-52</a></p>
-    </div>
-  </div>
-</section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
