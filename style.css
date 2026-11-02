@@ -2000,3 +2000,8 @@ a.link-slide:hover::after { width: 100%; }
 }
 
 
+
+/* ====== CONTACTS PAGE CONTRAST FIX ====== */
+.contact__form label { color: #FFFFFF !important; }
+.contact__layout p { color: #B6BFCF !important; }
+.contact__item { color: #B6BFCF !important; }
