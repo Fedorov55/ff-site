@@ -774,7 +774,7 @@ if (document.readyState === 'loading') {
     const name = (document.getElementById('qName')||{}).value || '';
     const level = document.querySelector('.quiz__level') ? document.querySelector('.quiz__level').textContent : '';
     const loss = document.getElementById('lossVal') ? document.getElementById('lossVal').innerText : '';
-    const html = '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Чек-лист F&F</title><style>body{font-family:Inter,sans-serif;padding:40px;color:#1E1913;}h1{color:#B8932E;}ul{line-height:1.8;}</style></head><body><h1>Чек-лист инфраструктуры F&F</h1><p>Имя: ' + (name||'Клиент') + '</p><p>Уровень: ' + level + '</p><p>Стоимость бездействия: ' + loss + '</p><h2>Что проверить:</h2><ul><li>Бэкапы: проверка восстановления раз в месяц</li><li>Мониторинг 24/7 с алертами</li><li>SLA с фиксированным временем реакции</li><li>Документация: схемы, пароли, процедуры</li><li>ЭЦП и криптография: токены, сертификаты</li><li>Сетевая инфраструктура: VLAN, VPN, Wi-Fi</li></ul><p style="margin-top:40px;color:#7D7266;font-size:12px;">F&F — Ваш IT-контур под контролем. Даже в субботу.</p></body></html>';
+    const html = '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Чек-лист F&F</title><style>body{font-family:Inter,sans-serif;padding:40px;color:#1E1913;}h1{color:#B8932E;}ul{line-height:1.8;}</style></head><body><h1>Чек-лист инфраструктуры F&F</h1><p>Имя: ' + (name||'Клиент') + '</p><p>Уровень: ' + level + '</p><p>Стоимость бездействия: ' + loss + '</p><h2>Что проверить:</h2><ul><li>Бэкапы: проверка восстановления раз в месяц</li><li>Мониторинг 24/7 с алертами</li><li>SLA с фиксированным временем реакции</li><li>Документация: схемы, пароли, процедуры</li><li>ЭЦП и криптография: токены, сертификаты</li><li>Сетевая инфраструктура: VLAN, VPN, Wi-Fi</li></ul><p style="margin-top:40px;color:#7D7266;font-size:12px;">F&F — IT-контур для бизнеса. Казань.</p></body></html>';
     const w = window.open('', '_blank');
     if(w){ w.document.write(html); w.document.close(); }
   };
@@ -788,7 +788,7 @@ if (document.readyState === 'loading') {
       {t:'00:15 — F&F получил алерт. Инженер уже с ноутбуком.', d:'Реакция от 15 минут — норма.', c:'gold'},
       {t:'00:40 — Причина найдена. Перезапуск сервиса.', d:'Сервис работает. Проверяем логи.', c:'gold'},
       {t:'01:10 — Сервис работает. Логи чисты.', d:'Всё под контролем.', c:'gold'},
-      {t:'08:00 — Офис приходит. Никто ничего не заметил.', d:'Ваш IT-контур под контролем. Даже в субботу.', c:'neon'}
+      {t:'08:00 — Офис приходит. Никто ничего не заметил.', d:'IT-контур для бизнеса. Казань.', c:'neon'}
     ],
     [
       {t:'02:30 — Диск умирает. SMART-алерт.', d:'F&F замечает деградацию.', c:'danger'},
