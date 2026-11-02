@@ -1365,7 +1365,7 @@ h1, h2, h3 { text-wrap: balance; }
 .terminal__log--ok { color: #00FF88 !important; font-weight: 600; }
 .bar__fill { color: #00FF88 !important; letter-spacing: 1px; }
 .bar__empty { color: #2A3040 !important; }
-.terminal__title { color: #5B6472 !important; }
+.terminal__title { color: #8B95A5 !important; }
 .terminal__status { color: #00FF88 !important; }
 .terminal__cursor { background: #00FF88 !important; }
 
@@ -2621,7 +2621,7 @@ a.link-slide:hover::after { width: 100%; }
   color: #9AA0A6 !important;
   line-height: 1.7;
 }
-.terminal__title { color: #5B6472 !important; }
+.terminal__title { color: #8B95A5 !important; }
 .terminal__status { color: #00FF88 !important; }
 .terminal__cursor { background: #00FF88 !important; }
 .terminal__dot--red { background: #ff5f56; }
