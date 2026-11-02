@@ -243,12 +243,12 @@
           });
           const res = await resp.json();
           if(resp.ok){
-            qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо, ${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Свяжемся в течение 15 минут.</p><a href="services.html#calculator" class="btn btn--primary">Пока посмотреть цены</a></div>`;
+            qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо, ${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Заявка получена.</p><a href="services.html#calculator" class="btn btn--primary">Пока посмотреть цены</a></div>`;
           } else {
             showToast(btn, res.message || 'Ошибка', 'error'); btn.disabled = false; btn.textContent = 'Обсудить задачу';
           }
         } catch(e) {
-          showToast(btn, 'Ошибка соединения', 'error'); btn.disabled = false; btn.textContent = 'Обсудить задачу';
+          showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); btn.disabled = false; btn.textContent = 'Обсудить задачу';
         }
       };
       renderQuiz();
@@ -381,8 +381,8 @@
             showToast(btn, (res && res.message) || 'Ошибка', 'error');
             if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; }
           }
-        }).catch(()=>{ showToast(btn, 'Ошибка соединения', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
-      } catch(e){ showToast(btn, 'Ошибка', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } }
+        }).catch(()=>{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
+      } catch(e){ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } }
     };
   }catch(e){ console.error('Calc', e); }
 
@@ -430,13 +430,13 @@
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('contactSuccess');
           if(res && res.ok === true){
-            if(succ){ succ.style.display='block'; succ.textContent = 'Спасибо, ' + name.trim() + '! Свяжемся в течение 15 минут.'; }
+            if(succ){ succ.style.display='block'; succ.textContent = 'Спасибо, ' + name.trim() + '! Заявка получена.'; }
             contactForm.reset();
           } else {
             showToast(btn, (res && res.message) || 'Ошибка', 'error');
             if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; }
           }
-        }).catch(()=>{ showToast(btn, 'Ошибка соединения', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
+        }).catch(()=>{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
       });
     }
   }catch(e){}
@@ -996,14 +996,14 @@ try {
         body: JSON.stringify({ name: name.trim(), phone: phone.trim(), service: auditForm.querySelector('#audit-service').value, source: auditForm.querySelector('input[name="source"]').value, agree: true })
       }).then(r => r.json()).then(res => {
         if (res && res.ok === true) {
-          showToast(btn, 'Заявка отправлена! Свяжемся в течение 15 минут.', 'success');
+          showToast(btn, 'Заявка отправлена! Заявка получена.', 'success');
           auditForm.reset();
         } else {
           showToast(btn, (res && res.message) || 'Ошибка отправки', 'error');
         }
         if (btn) { btn.disabled = false; btn.textContent = 'Получить расчёт'; }
       }).catch(() => {
-        showToast(btn, 'Ошибка соединения', 'error');
+        showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error');
         if (btn) { btn.disabled = false; btn.textContent = 'Получить расчёт'; }
       });
     });
@@ -1014,3 +1014,36 @@ try {
     }
   }
 } catch(e) {}
+
+
+
+/* ====== YANDEX METRIKA (placeholder) ====== */
+// Замените XXXXXX на реальный номер счётчика после регистрации.
+// (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+// m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+// (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+// ym(XXXXXX,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+
+window.ffTrack = function(eventName, params){
+  try {
+    if(typeof ym === 'function' && window.YM_COUNTER_ID){
+      ym(window.YM_COUNTER_ID, 'reachGoal', eventName, params || {});
+    }
+  } catch(e){}
+};
+
+window.trackPhoneClick = function(){ window.ffTrack('phone_click'); };
+window.trackTelegramClick = function(){ window.ffTrack('telegram_click'); };
+window.trackFormSuccess = function(formName){ window.ffTrack('form_success', { form: formName || 'unknown' }); };
+window.trackCalculatorOpen = function(){ window.ffTrack('calculator_open'); };
+window.trackQuizComplete = function(){ window.ffTrack('quiz_complete'); };
+
+// Wire tracking to phone/telegram links
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click', function(){ window.trackPhoneClick(); });
+  });
+  document.querySelectorAll('a[href*="t.me"]').forEach(function(a){
+    a.addEventListener('click', function(){ window.trackTelegramClick(); });
+  });
+});
