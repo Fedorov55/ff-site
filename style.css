@@ -1986,3 +1986,18 @@ a.link-slide:hover::after { width: 100%; }
 [data-theme="light"] .subscription-plan strong { color: #1E5AA8 !important; }
 [data-theme="light"] .subscription-plan__name i { color: #8C6A16 !important; }
 [data-theme="light"] .subscription-plan > span:last-child { color: #4D4239 !important; }
+
+/* ====== SUBSCRIPTION CALC CONTRAST FIX ====== */
+.subscription-calculator__section, .subscription-calculator__section * {
+  color: #FFFFFF !important;
+}
+.subscription-calculator__section .calc-section-heading > span {
+  background: #141926 !important;
+  color: #D4AF37 !important;
+}
+.subscription-calculator__section .calc-section-heading p {
+  color: #B6BFCF !important;
+}
+.subscription-calculator {
+  background: #0A0D14 !important;
+}
