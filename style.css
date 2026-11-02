@@ -1977,3 +1977,8 @@ a.link-slide:hover::after { width: 100%; }
   body { padding-bottom: 0; }
   .to-top { bottom: 24px !important; }
 }
+
+/* ====== SUBSCRIPTION PLAN CONTRAST FIX ====== */
+[data-theme="light"] .subscription-plan strong { color: #1E5AA8 !important; }
+[data-theme="light"] .subscription-plan__name i { color: #8C6A16 !important; }
+[data-theme="light"] .subscription-plan > span:last-child { color: #4D4239 !important; }
