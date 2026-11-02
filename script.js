@@ -177,7 +177,7 @@
         if(qScore <= 3){ level='Всё отлично'; cls='green'; text='Вы молодцы. Инфраструктура под контролем. Но профилактика не помешает.'; }
         else if(qScore <= 8){ level='Крепко, но есть нюансы'; cls='yellow'; text='Инфраструктура держится на честном слове. Мы можем это исправить до того, как оно исправит вас.'; }
         else if(qScore <= 12){ level='Пора задуматься'; cls='orange'; text='Риски высоки. Пора навести порядок, пока не случилась беда.'; }
-        else { level='Критично'; cls='red'; text='Мы не говорим «всё плохо». Мы говорим: давайте посмотрим, где именно. Бесплатный аудит.'; }
+        else { level='Критично'; cls='red'; text='Давайте посмотрим, где именно. Разбор 15 минут — 0 ₽.'; }
 
         qBody.innerHTML = `
           <div class="quiz__step active">
@@ -205,10 +205,9 @@
               <label for="qAgree" style="font-size:12px;color:var(--text-2)">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" style="color:var(--gold-light)">политикой конфиденциальности</a></label>
             </div>
             <div class="quiz__actions">
-              <button class="btn btn--primary" onclick="submitQuiz(event)">Обсудить задачу</button>
-              <button class="btn btn--ghost" onclick="window.print()" style="margin-top:8px;">Скачать PDF-чеклист</button>
-              <a class="btn btn--ghost" id="quizMaxBtn" style="margin-top:8px;display:inline-block;text-align:center;" target="_blank" rel="noopener">Отправить результат в MAX (Российский мессенджер)</a>
+              <button class="btn btn--primary" onclick="submitQuiz(event)">Прислать разбор</button>
             </div>
+            <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px;">Можно ничего не оставлять и просто позвонить</p>
           </div>
         `;
         const calcLoss = () => {
@@ -218,8 +217,7 @@
           document.getElementById('lossVal').innerHTML = (e*h*r).toLocaleString('ru-RU') + ' ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small>';
         };
         ['lossEmp','lossHours','lossRate'].forEach(id => document.getElementById(id).addEventListener('input', calcLoss));
-        const maxBtn = document.getElementById('quizMaxBtn');
-        if(maxBtn){ maxBtn.href = 'https://max.ru/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '.'); }
+
         if(tgBtn){ tgBtn.href = 'https://t.me/FathFed?text=' + encodeURIComponent('Результат квиза F&F: уровень «' + level + '», баллы: ' + qScore + '. Потери за инцидент: ' + (parseInt(document.getElementById('lossEmp').value)||0)*(parseInt(document.getElementById('lossHours').value)||0)*(parseInt(document.getElementById('lossRate').value)||0) + ' ₽'); }
       }
 
@@ -771,14 +769,6 @@ if (document.readyState === 'loading') {
 }
 
 
-  window.openQuizPDF = function(){
-    const name = (document.getElementById('qName')||{}).value || '';
-    const level = document.querySelector('.quiz__level') ? document.querySelector('.quiz__level').textContent : '';
-    const loss = document.getElementById('lossVal') ? document.getElementById('lossVal').innerText : '';
-    const html = '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Чек-лист F&F</title><style>body{font-family:Inter,sans-serif;padding:40px;color:#1E1913;}h1{color:#B8932E;}ul{line-height:1.8;}</style></head><body><h1>Чек-лист инфраструктуры F&F</h1><p>Имя: ' + (name||'Клиент') + '</p><p>Уровень: ' + level + '</p><p>Стоимость бездействия: ' + loss + '</p><h2>Что проверить:</h2><ul><li>Бэкапы: проверка восстановления раз в месяц</li><li>Мониторинг 24/7 с алертами</li><li>SLA с фиксированным временем реакции</li><li>Документация: схемы, пароли, процедуры</li><li>ЭЦП и криптография: токены, сертификаты</li><li>Сетевая инфраструктура: VLAN, VPN, Wi-Fi</li></ul><p style="margin-top:40px;color:#7D7266;font-size:12px;">F&F — IT-контур для бизнеса. Казань.</p></body></html>';
-    const w = window.open('', '_blank');
-    if(w){ w.document.write(html); w.document.close(); }
-  };
 
 
 /* ====== SATURDAY SCENARIOS (10, random, no repeat) ====== */
