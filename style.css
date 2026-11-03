@@ -1515,12 +1515,12 @@ input.border-error {
 }
 .hero__lead {
   font-size: 18px !important;
-  color: #B6BFCF !important;
+  color: var(--text-2) !important;
   max-width: 62ch;
 }
 .hero__features li {
   font-size: 16px;
-  color: #B6BFCF;
+  color: var(--text-2);
 }
 .hero__features li > span {
   background: var(--gold-soft) !important;
@@ -1539,8 +1539,8 @@ input.border-error {
 
 /* Hero card (right side) */
 .hero__card {
-  background: #11151F;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: var(--bg-2);
+  border: 1px solid var(--border-gold);
   border-radius: 18px;
   padding: 24px;
   font-family: JetBrains Mono, monospace;
@@ -1560,7 +1560,7 @@ input.border-error {
   gap: 12px;
   padding: 8px 0;
   border-bottom: 1px solid rgba(130, 140, 158, 0.1);
-  color: #F2F5FA;
+  color: var(--text);
 }
 .hero__card-line:last-of-type { border-bottom: none; }
 .hero__card-key { color: #828C9E; }
@@ -1591,7 +1591,7 @@ input.border-error {
   display: block;
   font-size: 28px;
   font-weight: 800;
-  color: #F2F5FA;
+  color: var(--text);
   line-height: 1.1;
 }
 .hero__metric-label {
@@ -1612,8 +1612,8 @@ input.border-error {
   .scenario-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .scenario-card {
-  background: #141926;
-  border: 1px solid rgba(130, 140, 158, 0.14);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
 }
@@ -1626,13 +1626,13 @@ input.border-error {
 .scenario-card__title {
   font-size: 22px;
   font-weight: 700;
-  color: #F2F5FA;
+  color: var(--text);
   margin: 0 0 12px;
   line-height: 1.2;
 }
 .scenario-card__text {
   font-size: 16px;
-  color: #B6BFCF;
+  color: var(--text-2);
   line-height: 1.6;
 }
 
@@ -1651,8 +1651,8 @@ input.border-error {
 .service-card {
   display: flex;
   flex-direction: column;
-  background: #141926;
-  border: 1px solid rgba(130, 140, 158, 0.14);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   text-decoration: none;
@@ -1955,14 +1955,6 @@ a.link-slide:hover::after { width: 100%; }
 }
 
 /* ====== SUBSCRIPTION PLAN CONTRAST FIX ====== */
-[data-theme="light"] 
-[data-theme="light"] 
-[data-theme="light"] 
-
-[data-theme="light"] 
-[data-theme="light"] 
-[data-theme="light"] 
-
 /* ====== SUBSCRIPTION CALC CONTRAST FIX ====== */
 .subscription-calculator__section .calc-section-heading > span {
   background: #141926 !important;
@@ -1978,7 +1970,7 @@ a.link-slide:hover::after { width: 100%; }
 
 
 /* ====== CONTACTS PAGE CONTRAST FIX ====== */
-.contact__form label { color: #FFFFFF !important; }
+
 .contact__layout p { color: #B6BFCF !important; }
 .contact__item { color: #B6BFCF !important; }
 
