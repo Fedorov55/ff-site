@@ -1040,3 +1040,21 @@ document.addEventListener('DOMContentLoaded', function(){
     a.addEventListener('click', function(){ window.trackTelegramClick(); });
   });
 });
+
+
+/* SECURITY CHECKLIST */
+try {
+  const checklist = document.getElementById('securityChecklist');
+  if (checklist) {
+    const countEl = document.getElementById('securityChecklistCount');
+    const checkboxes = checklist.querySelectorAll('input[data-security-check]');
+    function updateCount() {
+      const checked = checklist.querySelectorAll('input[data-security-check]:checked').length;
+      if (countEl) countEl.textContent = checked + ' / ' + checkboxes.length;
+    }
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateCount);
+    });
+    updateCount();
+  }
+} catch(e) { console.error('Security checklist', e); }
