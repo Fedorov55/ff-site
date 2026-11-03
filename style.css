@@ -926,12 +926,8 @@ section {
 .hero, .hero--home { position: relative; z-index: 1; }
 
 /* ====== BRAND BAR TEXT IN ONE LINE ====== */
-.hero__brandbar-name { white-space: nowrap; }
-.hero__brandbar-sub { white-space: nowrap; }
-.hero__brandbar { flex-wrap: nowrap; }
 @media (max-width: 768px) {
-  .hero__brandbar { flex-wrap: wrap; }
-}
+  }
 
 
 /* ====== QUIZ LOADING ANIMATION ====== */
@@ -2026,42 +2022,6 @@ body { background: var(--bg) !important; }
 * { box-sizing: border-box; }
 
 /* hero__brandbar */
-.hero__brandbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding: 20px 24px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-top: 24px;
-}
-.hero__brandbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.hero__brandbar-logo-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-}
-.hero__brandbar-name {
-  font-weight: 800;
-  font-size: 16px;
-  color: var(--text);
-}
-.hero__brandbar-sub {
-  font-size: 12px;
-  color: var(--text-2);
-}
-.hero__brandbar-metrics {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
 .hero__metric {
   text-align: center;
   min-width: 60px;
@@ -2362,11 +2322,7 @@ body { background: var(--bg) !important; }
   .quiz-teaser {
     grid-template-columns: 1fr;
   }
-  .hero__brandbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .transparency {
+    .transparency {
     grid-template-columns: 1fr 1fr;
   }
   .scenarios {
@@ -2377,3 +2333,97 @@ body { background: var(--bg) !important; }
 /* ============================================================
    End layout fixes
    ============================================================ */
+
+
+/* ====== HERO BRANDBAR (Prompt 2) ====== */
+.hero__brandbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #11151F;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  padding: 18px 22px;
+  margin-top: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero__brandbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #D4AF37;
+}
+[data-theme="light"] .hero__brandbar {
+  background: #FFFFFF;
+}
+.hero__brandbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.hero__brandbar-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.hero__brandbar-name {
+  font-weight: 800;
+  font-size: 16px;
+  color: #D4AF37;
+  white-space: nowrap;
+}
+.hero__brandbar-sub {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.hero__brandbar-metrics {
+  display: flex;
+  gap: 22px;
+  justify-content: space-between;
+  flex: 1;
+}
+.hero__metric {
+  text-align: center;
+  min-width: 72px;
+  flex: 0 0 auto;
+}
+.hero__metric-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+  display: block;
+}
+.hero__metric-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+  display: block;
+}
+@media (max-width: 900px) {
+  .hero__brandbar {
+    flex-wrap: wrap;
+  }
+  .hero__brandbar-logo {
+    width: 100%;
+  }
+  .hero__brandbar-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    flex: none;
+  }
+  .hero__metric {
+    min-width: 0;
+  }
+}
