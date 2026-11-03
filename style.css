@@ -768,7 +768,8 @@ section {
 }
 
 
-/* ====== ] .terminal__log--cmd { color: #1E1913 !important; }
+/* ====== LIGHT THEME OVERRIDES ====== */
+[data-theme="light"] .terminal__log--cmd { color: #1E1913 !important; }
 [data-theme="light"] .terminal__log--dim { color: #6B6055 !important; }
 [data-theme="light"] .bar__fill { color: #00823F !important; }
 [data-theme="light"] .bar__empty { color: #D8D0BE !important; }
