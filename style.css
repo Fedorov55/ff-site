@@ -2089,7 +2089,6 @@ body { background: var(--bg) !important; }
 .blog-nav a {
   padding: 6px 12px;
   border-radius: 8px;
-  background: var(--card);
   border: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
