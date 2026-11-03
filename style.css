@@ -2091,7 +2091,7 @@ body { background: var(--bg) !important; }
   border-radius: 8px;
   background: var(--card);
   border: 1px solid var(--border);
-  color: var(--text-2);
+  color: var(--text);
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
