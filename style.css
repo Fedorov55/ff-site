@@ -1906,7 +1906,7 @@ a.link-slide:hover::after { width: 100%; }
 .terminal__log--ok { color: #00FF88 !important; }
 .terminal__globe-svg {
   width: 100%;
-  max-width: 400px;
+  max-width: 280px;
   height: auto;
   filter: drop-shadow(0 0 18px rgba(0, 255, 136, 0.35));
 }
