@@ -259,12 +259,14 @@
       'server-select':4000,'server-file':2800,'server-domain':4000,'server-dns':2000,'server-rdp':4400,'server-backup':4800,'server-custom':4000,
       'mnt-file':2400,'mnt-domain':4000,'mnt-dns':2000,'mnt-rdp':3600,'mnt-backup':3200,
       'crypto-license':1200,'crypto-install':1200,'crypto-setup':1600,'crypto-ecp':1200,'vipnet-install':1200,'encrypt-full':1600,
-      'audit-express':4000,'audit-full':12000
+      'audit-express':4000,'audit-full':12000,
+      'visit-engineer':3000,'work-hour':2500,'ats-setup':25000,'vpn-wireguard':8000,'mail-migration':12000,'ai-pilot':80000
     }, names: {
       'server-select':'Подбор серверного оборудования','server-file':'Файловый сервер','server-domain':'Доменный сервер (AD)','server-dns':'DNS-сервер','server-rdp':'Терминальный сервер (RDS)','server-backup':'Сервер резервного копирования','server-custom':'Настройка под другие задачи',
       'mnt-file':'Обслуживание файлового сервера','mnt-domain':'Обслуживание доменного сервера','mnt-dns':'Обслуживание DNS-сервера','mnt-rdp':'Обслуживание терминального сервера','mnt-backup':'Обслуживание сервера бэкапов',
       'crypto-license':'КриптоПро: продажа лицензии','crypto-install':'КриптоПро: установка','crypto-setup':'КриптоПро: настройка','crypto-ecp':'Клонирование ЭЦП','vipnet-install':'ViPNet: установка','encrypt-full':'Шифрование данных (VeraCrypt)',
-      'audit-express':'Экспресс IT-аудит','audit-full':'Полный IT-аудит'
+      'audit-express':'Экспресс IT-аудит','audit-full':'Полный IT-аудит',
+      'visit-engineer':'Выезд инженера','work-hour':'Час работ','ats-setup':'Настройка АТС до 15 абонентов','vpn-wireguard':'VPN WireGuard для офиса','mail-migration':'Перенос почты на свой сервер','ai-pilot':'Пилот бота в Telegram'
     } };
     const calcDots = document.querySelectorAll('.calc__dot');
     const calcSteps = document.querySelectorAll('.calc__step');
