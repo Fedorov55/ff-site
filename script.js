@@ -71,23 +71,22 @@
   try{
     const toTop = document.getElementById('toTop');
     if(toTop){
-      let lastY = window.scrollY;
+      let ticking = false;
       const updateToTop = () => {
         const y = window.scrollY;
-        const show = y > 500 && y < lastY; // show only when scrolling up and not at top
-        // Actually show when scrolled down enough, hide at top
-        const shouldShow = y > 600;
-        toTop.classList.toggle('visible', shouldShow);
-        lastY = y;
+        toTop.classList.toggle('visible', y > 500);
+        ticking = false;
       };
-      window.addEventListener('scroll', updateToTop, { passive: true });
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateToTop);
+          ticking = true;
+        }
+      }, { passive: true });
       updateToTop();
       toTop.addEventListener('click', () => {
         toTop.classList.remove('visible');
-        toTop.style.opacity = '0';
-        toTop.style.pointerEvents = 'none';
         window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
-        setTimeout(() => { toTop.style.opacity = ''; toTop.style.pointerEvents = ''; }, 800);
       });
     }
   }catch(e){}
