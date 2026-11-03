@@ -2009,3 +2009,8 @@ a.link-slide:hover::after { width: 100%; }
 @media (max-width: 1099px) {
   .to-top { bottom: 88px !important; }
 }
+
+/* ====== FIX: body background in light theme ====== */
+body {
+  background: var(--bg) !important;
+}
