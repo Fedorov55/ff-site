@@ -2648,3 +2648,5 @@ body { background: var(--bg) !important; }
   min-width: 48px !important;
   padding: 8px 16px;
 }
+
+.cookie { display: none; }
