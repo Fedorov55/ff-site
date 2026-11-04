@@ -46,25 +46,13 @@
   /* СЧЕТЧИКИ */
   try{
     const counters = document.querySelectorAll('[data-count]');
-    const runCounter = (el) => {
+    counters.forEach(el => {
       if(el.dataset.done === '1') return;
       el.dataset.done = '1';
       const target = parseInt(el.getAttribute('data-count'), 10) || 0;
       const sup = el.querySelector('sup') ? el.querySelector('sup').outerHTML : '';
-      const start = performance.now(), dur = 1100;
-      const tick = (now) => {
-        const p = Math.min((now - start) / dur, 1);
-        el.innerHTML = Math.round(target * (1 - Math.pow(1 - p, 3))) + sup;
-        if(p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-    if(counters.length && 'IntersectionObserver' in window){
-      const cObs = new IntersectionObserver((entries) => {
-        entries.forEach(en => { if(en.isIntersecting){ runCounter(en.target); cObs.unobserve(en.target); } });
-      }, { threshold: .05 });
-      counters.forEach(c => cObs.observe(c));
-    } else { counters.forEach(runCounter); }
+      el.innerHTML = target + sup;
+    });
   }catch(e){}
 
   /* КНОПКА НАВЕРХ */

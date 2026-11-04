@@ -1783,7 +1783,12 @@ input.border-error {
   --transition-slow: 400ms ease;
 }
 
-/* Scroll-driven reveal (CSS-first) */
+/* Scroll-driven reveal (CSS-first) — elements visible by default */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
 @supports (animation-timeline: view()) {
   .reveal {
     animation: fade-up linear both;
@@ -1793,13 +1798,8 @@ input.border-error {
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0.85; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Fallback for browsers without scroll-timeline */
-@supports not (animation-timeline: view()) {
-  .reveal { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2698,3 +2698,5 @@ body { background: var(--bg) !important; }
 [data-theme="light"] .bg-blur--gold { opacity: 0.04; }
 [data-theme="light"] .bg-blur--green { opacity: 0.03; }
 /* ====== END BACKGROUND LAYER ====== */
+
+.fade-up { opacity: 1; transform: none; }
