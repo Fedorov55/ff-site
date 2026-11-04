@@ -205,6 +205,8 @@
             </div>
             <div class="quiz__actions">
               <button class="btn btn--primary" onclick="submitQuiz(event)">Прислать разбор</button>
+              <a href="services.html#estimate" class="btn btn--ghost">Рассчитать стоимость</a>
+              <a href="tel:+79012655252" class="btn btn--ghost">+7 (901) 265-52-52</a>
             </div>
             <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px;">Можно ничего не оставлять и просто позвонить</p>
           </div>
