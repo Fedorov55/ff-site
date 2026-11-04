@@ -670,6 +670,7 @@ body.menu-open{overflow:hidden}
   min-height: 48px !important;
   height: 48px !important;
   padding: 12px 20px !important;
+  width: auto !important;
 }
   /* Tables responsive */
   table {
