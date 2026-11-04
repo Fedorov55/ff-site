@@ -666,11 +666,11 @@ body.menu-open{overflow:hidden}
   }
   .cookie__actions .btn {
   flex: 1;
+  width: 100% !important;
+  height: 56px !important;
   min-width: 48px !important;
   min-height: 48px !important;
-  height: 48px !important;
   padding: 12px 20px !important;
-  width: auto !important;
 }
   /* Tables responsive */
   table {
