@@ -665,8 +665,10 @@ body.menu-open{overflow:hidden}
     width: 100%;
   }
   .cookie__actions .btn {
-    flex: 1;
-  }
+  flex: 1;
+  min-width: 48px;
+  min-height: 48px;
+}
   /* Tables responsive */
   table {
     display: block;
