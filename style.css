@@ -666,8 +666,8 @@ body.menu-open{overflow:hidden}
   }
   .cookie__actions .btn {
   flex: 1;
-  min-width: 48px;
-  min-height: 48px;
+  min-width: 48px !important;
+  min-height: 48px !important;
 }
   /* Tables responsive */
   table {
