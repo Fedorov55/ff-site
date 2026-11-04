@@ -405,7 +405,6 @@
       let choice = null;
       try{ choice = localStorage.getItem('ff_cookie'); }catch(e){}
       if(choice){ cookieBanner.style.display = 'none'; }
-      else { cookieBanner.style.display = 'flex'; }
     }
   }catch(e){}
 
