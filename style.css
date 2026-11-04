@@ -1700,7 +1700,7 @@ input.border-error {
 }
 .service-card__note {
   font-size: 13px;
-  color: #828C9E;
+  color: var(--text-2);
   display: block;
   margin-top: 4px;
 }
