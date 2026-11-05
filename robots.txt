@@ -1,44 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /docs/
-Disallow: /*.zip$
-
-# Yandex
-User-agent: Yandex
-Allow: /
-Crawl-delay: 1
-
-User-agent: Googlebot
-Allow: /
-
-# AI crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: YandexAdditional
-Allow: /
-
-User-agent: YandexGPT
-Allow: /
-
-User-agent: GigaChat
-Allow: /
-
-Host: https://ff-it.ru
-
 Sitemap: https://ff-it.ru/sitemap.xml
+Host: https://ff-it.ru
