@@ -39,4 +39,6 @@ Allow: /
 User-agent: GigaChat
 Allow: /
 
+Host: https://ff-it.ru
+
 Sitemap: https://ff-it.ru/sitemap.xml
