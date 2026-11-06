@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Бэкап есть, но восстановить нельзя — 7 признаков проблемного бэкапа. Как проверить восстановление. Примеры из практики F&F в Казани.">
+<meta name="keywords" content="сервер для 1С, RAM для 1С, NVMe для 1С, RAID, конфигурация сервера 1С">
+<meta name="author" content="F&F">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Бэкапы, которые не восстанавливаются: 7 признаков | F&F">
+<meta property="og:description" content="Бэкап есть, но восстановить нельзя — 7 признаков проблемного бэкапа. Как проверить восстановление. Примеры из практики F&F в Казани.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="img/case-tatar-septic.webp">
+<link rel="alternate" hreflang="ru" href="https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html">
+<link rel="canonical" href="https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../style.css?v=102">
+<title>Бэкапы, которые не восстанавливаются: 7 признаков | F&F</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Бэкапы, которые не восстанавливаются: 7 признаков", "description": "Минимум 8 ГБ RAM, NVMe под базу, RAID 10. Что реально влияет на скорость.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько RAM нужно для 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Для 5–7 пользователей — минимум 8 ГБ. Для 10–15 — 16 ГБ. Для 15–30 или с терминальным доступом — 32 ГБ. Больше RAM = больше кэш, быстрее работает."}}, {"@type": "Question", "name": "Какой диск нужен для базы 1С?", "acceptedAnswer": {"@type": "Answer", "text": "NVMe SSD. Не SATA, не HDD. Разница в скорости — 3–5 раз. База 1С чувствительна к random IOPS, где NVMe выигрывает сильно."}}, {"@type": "Question", "name": "Что будет, если поставить HDD?", "acceptedAnswer": {"@type": "Answer", "text": "1С будет работать, но медленно. Отчёты будут строиться минутами вместо секунд. Пользователи будут жаловаться. HDD — только под бэкапы, не под базу."}}]}</script>
+<meta property="og:url" content="https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "./"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер для 1С: сколько RAM, какой диск", "item": "blog/backup-not-restoring.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../favicon.ico" sizes="any">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "F&F", "alternateName": "FF-IT", "description": "IT-аутсорсинг, серверы под ключ и абонентское обслуживание компьютеров в Казани", "url": "./", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": "55.7887", "longitude": "49.1221"}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}, "priceRange": "₽₽", "areaServed": ["Казань", "Татарстан", "Россия"]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="img/og-preview.webp">
+</head>
+<section class="section article-page reveal"><div class="container article-container">
+<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Бэкапы, которые не восстанавливаются</span></nav>
+<span class="section__label reveal">Практический гайд · F&amp;F</span>
+<h1 class="article-title">Бэкапы, которые не восстанавливаются: 7 признаков</h1>
+<p class="article-lead">Бэкап есть, но восстановить нельзя — 7 признаков проблемного бэкапа. Как проверить восстановление. Примеры из практики F&F в Казани.</p>
+<div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Бэкап, который нельзя восстановить — это не бэкап. Проверьте: когда последний раз разворачивали? Если «никогда» — вы в зоне риска.</p></div>
+<div class="article-body">
+
+<p>«У нас есть бэкапы» — фраза, которую мы слышим от каждого второго клиента в Казани. Но когда мы спрашиваем «когда последний раз восстанавливали?», ответ обычно «никогда» или «попробовали раз, не получилось». Бэкап, который нельзя восстановить — это не бэкап. Это иллюзия безопасности.</p>
+
+<h2>Признак 1. Бэкап никогда не проверяли</h2>
+<p>Самый частый случай. Бэкап «настроен» — копирование идёт, файлы лежат на диске или в облаке. Но никто ни разу не попытался их восстановить. Восстановление — это не «скопировать файл», это «развернуть архив, открыть базу, проверить, что данные целы». Если этого не делали — вы не знаете, работает ли бэкап.</p>
+<p><strong>Пример:</strong> клиент из Казани хранил бэкапы на внешнем диске 2 года. При аварии выяснилось, что архив повреждён — диск «сыпался» постепенно. Восстановить не удалось. Потеря — база 1С за 6 месяцев.</p>
+
+<h2>Признак 2. Бэкап на том же диске, что оригинал</h2>
+<p>Если база и бэкап лежат на одном диске — при сбое диска потеряете и оригинал, и копию. RAID 1 не спасает: RAID защищает от отказа диска, но не от вируса, который зашифрует всё. Бэкап должен быть на отдельном носителе.</p>
+
+<h2>Признак 3. Нет проверки целостности архива</h2>
+<p>Архив может быть повреждён при копировании, при сбое питания, при ошибке носителя. Без проверки целостности (контрольная сумма, тестовое восстановление) вы узнаете о проблеме только в момент аварии.</p>
+
+<h2>Признак 4. Версия бэкапа не совпадает с версией 1С</h2>
+<p>Если база обновлялась, а бэкап остался со старой версией — восстановление не сработает. База 1С не откроется на несовместимой версии платформы. Нужно, чтобы бэкап и платформа были синхронизированы.</p>
+
+<h2>Признак 5. Бэкап делается «по настроению»</h2>
+<p>Ручной бэкап — это бэкап, которого нет. Человек забывает, отвлекается, уходит в отпуск. Автоматический бэкап с расписанием — единственный надёжный вариант. Ежедневно, с глубиной 7–14 дней.</p>
+
+<h2>Признак 6. Нет глубины хранения</h2>
+<p>Если бэкап перезаписывается каждый день — у вас только одна копия. Если вирус зашифровал файлы вчера — восстанавливаться не из чего. Глубина 7–14 дней позволяет откатиться к любой точке за последние 2 недели.</p>
+
+<h2>Признак 7. Бэкап не хранится вне офиса</h2>
+<p>Пожар, кража, потоп — и бэкап уничтожен вместе с оригиналом. Внешний диск, NAS или облако — обязательно. Если офис сгорит, бэкап должен выжить.</p>
+
+<h2>Как проверить восстановление</h2>
+<p>Берём бэкап, восстанавливаем на тестовом сервере, проверяем, что база открывается и работает. Это первое, что делаем при аудите. Проверка занимает 15–30 минут. Подробнее о <a href="../servers.html" style="color:var(--gold-light);">серверах под ключ</a> и <a href="../support.html" style="color:var(--gold-light);">абонентском обслуживании</a>.</p>
+
+<h2>Сколько это стоит</h2>
+<p>Проверка восстановления бэкапа — от 4 000 ₽ (в рамках IT-аудита). Настройка бэкапов с проверкой — от 4 800 ₽. Обслуживание сервера бэкапов — от 3 200 ₽/мес. Полный расчёт — в <a href="../services.html#calculator" style="color:var(--gold-light);">калькуляторе</a>.</p>
+
+
+<h2>Как проверить восстановление: пошагово</h2>
+<ol class="article-checklist">
+  <li><strong>Скачайте бэкап</strong> на отдельный компьютер (не на тот же сервер).</li>
+  <li><strong>Разверните архив</strong> в тестовую папку.</li>
+  <li><strong>Откройте базу 1С</strong> — проверьте, что она запускается и данные целы.</li>
+  <li><strong>Проверьте файлы</strong> — документы, отчёты, справочники.</li>
+  <li><strong>Запишите результат</strong> — дата проверки, что проверяли, что нашли.</li>
+</ol>
+<p>Проверка занимает 15–30 минут. Если бэкап не восстанавливается — вы узнаете об этом до аварии, а не во время.</p>
+
+<h2>Что делать, если бэкап уже не восстанавливается</h2>
+<p>Если вы проверили бэкап и он не работает — не паникуйте. Шаги:</p>
+<ol class="article-checklist">
+  <li><strong>Не форматируйте диски.</strong> Данные могут быть восстановимы.</li>
+  <li><strong>Проверьте другие копии.</strong> Возможно, есть более старая версия, которая работает.</li>
+  <li><strong>Звоните в F&F: +7 (901) 265-52-52.</strong> Мы попытаемся восстановить данные с повреждённого носителя.</li>
+  <li><strong>Не пытайтесь «починить сами».</strong> Без реестра доступов можно сделать хуже.</li>
+</ol>
+<p>Восстановление данных с повреждённого диска — от 4 000 ₽. Если нужен новый сервер — от 200 000 ₽ под ключ.</p>
+
+<h2>Как предотвратить проблему в будущем</h2>
+<ul class="article-checklist">
+  <li><strong>Автоматический бэкап:</strong> ежедневно, с расписанием. Не «когда вспомним».</li>
+  <li><strong>Глубина 7–14 дней:</strong> чтобы откатиться к любой точке.</li>
+  <li><strong>Отдельный носитель:</strong> внешний диск, NAS или облако. Не на том же диске.</li>
+  <li><strong>Проверка целостности:</strong> контрольная сумма или тестовое восстановление.</li>
+  <li><strong>Вне офиса:</strong> если пожар — бэкап должен выжить.</li>
+  <li><strong>Мониторинг:</strong> мы узнаём о проблеме с бэкапом раньше вас.</li>
+</ul>
+<p>Подробнее: <a href="../servers.html" style="color:var(--gold-light);">серверы под ключ</a>, <a href="../support.html" style="color:var(--gold-light);">абонентское обслуживание</a>, <a href="../audit.html" style="color:var(--gold-light);">IT-аудит</a>.</p>
+
+<h2>Сколько это стоит</h2>
+<p>Проверка восстановления бэкапа — от 4 000 ₽ (в рамках IT-аудита). Настройка бэкапов с проверкой — от 4 800 ₽. Обслуживание сервера бэкапов — от 3 200 ₽/мес. Абонентка с мониторингом — от 10 000 ₽/мес. Полный расчёт — в <a href="../services.html#calculator" style="color:var(--gold-light);">калькуляторе</a>.</p>
+
+<h2>Частые вопросы о бэкапах</h2>
+<p>За годы работы мы собрали вопросы, которые задают чаще всего:</p>
+<ul class="article-checklist">
+  <li><strong>«У нас есть бэкапы, зачем проверять?»</strong> — Потому что бэкап, который нельзя восстановить, не спасёт при аварии. Проверка занимает 15 минут и стоит от 4 000 ₽. Авария без рабочего бэкапа — от 2 млн ₽.</li>
+  <li><strong>«Мы используем облако, там всё автоматически»</strong> — Облачные бэкапы тоже нужно проверять. Облако не гарантирует, что ваш архив не повреждён. Проверка восстановления обязательна.</li>
+  <li><strong>«Бэкап каждый день — это слишком часто?»</strong> — Нет. Для базы 1С, которая меняется каждый день, ежедневный бэкап — минимум. Глубина 7–14 дней позволяет откатиться к любой точке.</li>
+  <li><strong>«Сколько хранить бэкапы?»</strong> — Минимум 7 дней для оперативного восстановления, 30 дней для расследования инцидентов, 1 год для архивных целей.</li>
+  <li><strong>«Можно ли хранить бэкап на том же сервере?»</strong> — Нет. При сбое диска потеряете и оригинал, и копию. Внешний носитель или облако — обязательно.</li>
+</ul>
+
+<h2>Реальная история: бэкап, который не восстановился</h2>
+<p>Клиент из Казани: офис 20 человек, 1С на сервере, бэкап на внешнем диске. Диск «сыпался» постепенно — никто не проверял. Когда сервер умер, попытались восстановить из бэкапа — архив повреждён. Восстановить не удалось. Потеря — база 1С за 6 месяцев. Перенабор данных занял 3 недели. После этого клиент перешёл на абонентку F&F с мониторингом 24/7 и проверкой восстановления бэкапа раз в квартал. За 2 года — ни одной потери данных.</p>
+
+<h2>Чек-лист: надёжный бэкап</h2>
+<ul class="article-checklist">
+  <li>Бэкап автоматический, ежедневный.</li>
+  <li>Глубина хранения 7–14 дней.</li>
+  <li>Отдельный носитель (внешний диск, NAS, облако).</li>
+  <li>Проверка целостности архива.</li>
+  <li>Тестовое восстановление раз в квартал.</li>
+  <li>Хранение вне офиса (на случай пожара/кражи).</li>
+  <li>Мониторинг: уведомление при сбое бэкапа.</li>
+  <li>Документация: что бэкапится, где хранится, как восстановить.</li>
+</ul>
+<div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p>
+<p style="font-size:14px;margin:0;">
+<a href="../servers.html" style="color:var(--gold-light);">настройка серверов в Казани</a> ·
+<a href="../support.html" style="color:var(--gold-light);">IT-аутсорсинг для малого бизнеса</a> ·
+<a href="../servers.html" style="color:var(--gold-light);">резервное копирование с проверкой</a>
+</p>
+</div>
+
+<div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Обсудить задачу</a></div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand gold">F&amp;F</div>
+        <p class="footer__desc">IT-контур для бизнеса. Казань.</p>
+        <p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+        <p class="footer__desc" style="font-size:12px">Самозанятый: Фатхутдинов Булат Ильмирович<br>ИНН: 165506822661</p>
+      </div>
+      <div>
+        <div class="footer__title">Услуги</div>
+        <a href="../servers.html" class="footer__link">Серверы</a>
+        <a href="../support.html" class="footer__link">Абонентка</a>
+        <a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+        <a href="../security.html" class="footer__link">Безопасность</a>
+      </div>
+      <div>
+        <div class="footer__title">Компания</div>
+        <a href="../about.html" class="footer__link">О нас</a>
+        <a href="../team.html" class="footer__link">Команда</a>
+        <a href="../cases.html" class="footer__link">Кейсы</a>
+        <a href="../contacts.html" class="footer__link">Контакты</a>
+      </div>
+      <div>
+        <div class="footer__title">Контакты</div>
+        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 F&amp;F. Все права защищены.</div>
+      <div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="../script.js?v=102" defer></script>
+
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+  <a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+  <a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Рассчитать</a>
+</div>
+</body>
+</html>

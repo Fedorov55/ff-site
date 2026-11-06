@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Сколько стоит штатный сисадмин в Казани в 2026: оклад 80 000 ₽ → 1,4 млн ₽/год с налогами. Сравнение с абоненткой F&F. Реальная арифметика.">
+<meta name="keywords" content="сервер для 1С, RAM для 1С, NVMe для 1С, RAID, конфигурация сервера 1С">
+<meta name="author" content="F&F">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Сколько стоит штатный сисадмин в Казани в 2026 году | F&F">
+<meta property="og:description" content="Сколько стоит штатный сисадмин в Казани в 2026: оклад 80 000 ₽ → 1,4 млн ₽/год с налогами. Сравнение с абоненткой F&F. Реальная арифметика.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="img/case-tatar-septic.webp">
+<link rel="alternate" hreflang="ru" href="https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html">
+<link rel="canonical" href="https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../style.css?v=102">
+<title>Сколько стоит штатный сисадмин в Казани в 2026 году | F&F</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сколько стоит штатный сисадмин в Казани в 2026 году", "description": "Минимум 8 ГБ RAM, NVMe под базу, RAID 10. Что реально влияет на скорость.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько RAM нужно для 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Для 5–7 пользователей — минимум 8 ГБ. Для 10–15 — 16 ГБ. Для 15–30 или с терминальным доступом — 32 ГБ. Больше RAM = больше кэш, быстрее работает."}}, {"@type": "Question", "name": "Какой диск нужен для базы 1С?", "acceptedAnswer": {"@type": "Answer", "text": "NVMe SSD. Не SATA, не HDD. Разница в скорости — 3–5 раз. База 1С чувствительна к random IOPS, где NVMe выигрывает сильно."}}, {"@type": "Question", "name": "Что будет, если поставить HDD?", "acceptedAnswer": {"@type": "Answer", "text": "1С будет работать, но медленно. Отчёты будут строиться минутами вместо секунд. Пользователи будут жаловаться. HDD — только под бэкапы, не под базу."}}]}</script>
+<meta property="og:url" content="https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "./"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер для 1С: сколько RAM, какой диск", "item": "blog/sisadmin-cost-2026.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../favicon.ico" sizes="any">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "F&F", "alternateName": "FF-IT", "description": "IT-аутсорсинг, серверы под ключ и абонентское обслуживание компьютеров в Казани", "url": "./", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": "55.7887", "longitude": "49.1221"}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}, "priceRange": "₽₽", "areaServed": ["Казань", "Татарстан", "Россия"]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="img/og-preview.webp">
+</head>
+<section class="section article-page reveal"><div class="container article-container">
+<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Сколько стоит штатный сисадмин в Казани</span></nav>
+<span class="section__label reveal">Расчёт · F&amp;F</span>
+<h1 class="article-title">Сколько стоит штатный сисадмин в Казани в 2026 году</h1>
+<p class="article-lead">Оклад 80 000 ₽ на руки обходится компании примерно в 1,4 млн ₽ в год. Арифметика без «миллионов» — просто налоги, отпускные и подбор.</p>
+<div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Штатный сисадмин с окладом 80 000 ₽ стоит компании ~1,4–1,6 млн ₽/год. Абонентка F&F — от 120 000 ₽/год. Разница — в 8–12 раз.</p></div>
+<div class="article-body">
+
+<p>Когда директор спрашивает «сколько стоит сисадмин», обычно слышит оклад. 80 000 ₽ на руки — и кажется, что это 960 000 ₽ в год. На самом деле для компании стоимость в 1,5 раза выше. Разберём по строкам.</p>
+
+<h2>Оклад — это верхушка айсберга</h2>
+<p>Оклад «на руки» — 80 000 ₽/мес. Но компания платит не только оклад. Налоги и взносы (30%) — ещё ~34 500 ₽/мес. Отпускные и больничные — ~8 000 ₽/мес в среднем. Подбор и адаптация — от 150 000 до 250 000 ₽ за первый год. Итого: ~120 000 ₽/мес → ~1,4–1,6 млн ₽/год. И это без оборудования, обучения и лицензий.</p>
+
+<h2>С 2026 года льгота МСП по взносам ушла</h2>
+<p>На «сотку» на руки взносы выросли с ~17 000 ₽ до ~34 500 ₽/мес — плюс ~207 000 ₽/год только налогов. Штат подорожал без повышения окладов. Для малого бизнеса Казани это ощутимо: тот же сисадмин обходится дороже на 200+ тысяч в год.</p>
+
+<h2>А если он уйдёт?</h2>
+<p>Подбор и замена — 6–10 недель. Гонорар агентства — 15–25% годового оклада. И всё это время инфраструктура живёт «на честном слове». По данным кейсов — трафик падает до 40%, восстановление доступа занимает месяц. Один человек = один профиль = bus factor 1.</p>
+
+<h2>Что получаете за те же деньги у F&F</h2>
+<p>Абонентка F&F — от 10 000 ₽/мес или 120 000 ₽/год. В 8–12 раз дешевле штатного сисадмина. Включает: мониторинг 24/7, выезд по Казани, реакция от 15 минут, бэкапы с проверкой восстановления, ЭЦП, КриптоПро, регламент действий при инциденте. Команда из 4 инженеров вместо одного человека.</p>
+<p>Подробнее о <a href="../support.html" style="color:var(--gold-light);">абонентском обслуживании в Казани</a> и <a href="../servers.html" style="color:var(--gold-light);">серверах под ключ</a>.</p>
+
+<h2>Сколько стоит</h2>
+<p>Штатный сисадмин: ~1,4–1,6 млн ₽/год. Абонентка F&F: от 120 000 ₽/год. Экономия — до 1,3 млн ₽/год. При этом вы получаете команду вместо одного человека и SLA в договоре.</p>
+
+
+<h2>Скрытые расходы, которые не считают</h2>
+<p>Кроме оклада и налогов есть расходы, которые не попадают в «зарплатную ведомость», но реально ложатся на бюджет:</p>
+<ul class="article-checklist">
+  <li><strong>Обучение и сертификация:</strong> Курсы по 1С, Microsoft, криптографии — от 20 000 до 80 000 ₽/год. Без обучения сисадмин отстаёт от технологий.</li>
+  <li><strong>Инструменты и лицензии:</strong> TeamViewer, Radmin, мониторинг — от 15 000 ₽/год. Часто покупаются «из кармана» сисадмина, а потом компенсируются.</li>
+  <li><strong>Оборудование:</strong> Ноутбук, телефон, инструменты для выезда — от 30 000 ₽/год амортизации.</li>
+  <li><strong>Подмена при болезни:</strong> Если сисадмин заболел — ищете фрилансера или просите коллег. Это 5 000–15 000 ₽ за разовый выезд.</li>
+  <li><strong>Риск ошибок:</strong> Один человек = один профиль. Если он не знает криптографию — ЭЦП настраивает «как получится». Штраф за ошибку — до 15 млн ₽.</li>
+</ul>
+<p>Скрытые расходы добавляют ещё 100 000–200 000 ₽/год. Итого реальная стоимость штатного сисадмина — 1,5–1,8 млн ₽/год.</p>
+
+<h2>Сравнение по месяцам: штат vs абонентка</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;">
+  <thead><tr style="border-bottom:2px solid var(--border);"><th style="text-align:left;padding:8px;">Статья расходов</th><th style="text-align:left;padding:8px;">Штатный (мес)</th><th style="text-align:left;padding:8px;">Абонентка F&F (мес)</th></tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Оклад/абонент</td><td style="padding:8px;">80 000 ₽</td><td style="padding:8px;">от 10 000 ₽</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Налоги и взносы</td><td style="padding:8px;">~34 500 ₽</td><td style="padding:8px;">0 ₽ (включено)</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Отпускные/больничные</td><td style="padding:8px;">~8 000 ₽</td><td style="padding:8px;">0 ₽ (замещение включено)</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;">Обучение/инструменты</td><td style="padding:8px;">~15 000 ₽</td><td style="padding:8px;">0 ₽ (включено)</td></tr>
+    <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px;font-weight:700;">Итого в месяц</td><td style="padding:8px;font-weight:700;">~137 500 ₽</td><td style="padding:8px;font-weight:700;">от 10 000 ₽</td></tr>
+    <tr><td style="padding:8px;font-weight:700;">Итого в год</td><td style="padding:8px;font-weight:700;">~1,65 млн ₽</td><td style="padding:8px;font-weight:700;">от 120 000 ₽</td></tr>
+  </tbody>
+</table>
+<p>Разница — более 1,5 млн ₽/год. При этом абонентка включает мониторинг 24/7, выезд по Казани, бэкапы с проверкой восстановления, ЭЦП, КриптоПро, регламент действий при инциденте.</p>
+
+<h2>Что входит в абонентку F&F</h2>
+<ul class="article-checklist">
+  <li><strong>Мониторинг 24/7:</strong> мы узнаём о проблеме раньше вас. Суббота, ночь, праздник — не имеет значения.</li>
+  <li><strong>Выезд по Казани:</strong> при аварии приезжаем в день обращения. Татарстан — по согласованию.</li>
+  <li><strong>Реакция от 15 минут:</strong> по SLA, в договоре. Не «постараемся», а цифры.</li>
+  <li><strong>Бэкапы с проверкой:</strong> ежедневные копии + тест восстановления раз в квартал.</li>
+  <li><strong>ЭЦП и КриптоПро:</strong> установка, настройка, клонирование, продление.</li>
+  <li><strong>Регламент действий:</strong> что делать при инциденте — написано в договоре.</li>
+  <li><strong>Документация:</strong> схема, пароли, инструкции — передаём клиенту.</li>
+</ul>
+
+<h2>Как перейти со штатного на абонентку</h2>
+<p>Переход занимает 1–2 недели. Шаги:</p>
+<ol class="article-checklist">
+  <li><strong>Экспресс-аудит (0 ₽, 15 минут):</strong> звоните +7 (901) 265-52-52, мы смотрим, что есть.</li>
+  <li><strong>Полный аудит (от 15 000 ₽):</strong> серверы, сеть, бэкапы, безопасность. Отчёт с приоритетами.</li>
+  <li><strong>Смета и договор:</strong> цена фиксируется до начала работ. Без «мы вам перезвоним».</li>
+  <li><strong>Запуск:</strong> настраиваем, переносим данные, проверяем восстановление бэкапа.</li>
+  <li><strong>Поддержка:</strong> мониторинг 24/7, реакция от 15 минут, суббота входит.</li>
+</ol>
+<p>Штатный сисадмин при этом не увольняется автоматически — вы решаете, когда и как перейти. Мы помогаем с плавным переходом без простоя.</p>
+
+<h2>Итоговый расчёт</h2>
+<p>Для офиса 10–15 человек в Казани: штатный сисадмин обходится в 1,4–1,8 млн ₽/год. Абонентка F&F — от 120 000 ₽/год. Экономия — до 1,6 млн ₽/год. При этом вы получаете команду из 4 инженеров вместо одного человека, SLA в договоре и документацию.</p>
+<p>Подробнее: <a href="../support.html" style="color:var(--gold-light);">абонентское обслуживание в Казани</a>, <a href="../servers.html" style="color:var(--gold-light);">серверы под ключ</a>, <a href="../services.html" style="color:var(--gold-light);">цены на IT-услуги</a>.</p>
+
+<h2>Реальная история: штатный vs абонентка</h2>
+<p>Клиент из Казани: офис 25 человек, штатный сисадмин с окладом 90 000 ₽. В год — 1,6 млн ₽ с налогами. Бэкапы не проверялись, документации не было, в субботу — недоступен. После перехода на абонентку F&F (42 000 ₽/мес = 504 000 ₽/год) экономия составила 1,1 млн ₽/год. За 6 месяцев — ноль простоев. Бэкапы проверяются раз в квартал, документация передана, SLA 99,5% в договоре.</p>
+
+<h2>Когда штатный сисадмин оправдан</h2>
+<p>Мы не утверждаем, что абонентка всегда лучше. Штатный сисадмин оправдан, если:</p>
+<ul class="article-checklist">
+  <li><strong>Ежедневное физическое присутствие:</strong> нужен человек в офисе каждый день для настройки оборудования, помощи пользователям.</li>
+  <li><strong>Глубокое знание специфики:</strong> бизнес со сложной инфраструктурой (производство, лаборатория), где нужен человек, который знает каждый компьютер.</li>
+  <li><strong>Крупный офис:</strong> от 50+ человек, где объём задач оправдывает полную ставку.</li>
+</ul>
+<p>Для малого и среднего бизнеса (до 30–40 человек) абонентка обычно выгоднее: дешевле, надёжнее (команда вместо одного человека), с документацией и SLA.</p>
+
+<h2>Итог</h2>
+<p>Штатный сисадмин с окладом 80 000 ₽ стоит компании 1,4–1,8 млн ₽/год. Абонентка F&F — от 120 000 ₽/год. Разница — до 1,6 млн ₽/год. При этом вы получаете команду из 4 инженеров, мониторинг 24/7, бэкапы с проверкой и SLA в договоре.</p>
+<p>Не знаете, что выбрать? <a href="../audit.html" style="color:var(--gold-light);">IT-аудит</a> поможет оценить текущую инфраструктуру за 15 минут — бесплатно. Или позвоните: +7 (901) 265-52-52.</p>
+<div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p>
+<p style="font-size:14px;margin:0;">
+<a href="../servers.html" style="color:var(--gold-light);">настройка серверов в Казани</a> ·
+<a href="../support.html" style="color:var(--gold-light);">IT-аутсорсинг для малого бизнеса</a> ·
+<a href="../servers.html" style="color:var(--gold-light);">резервное копирование с проверкой</a>
+</p>
+</div>
+
+<div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Обсудить задачу</a></div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand gold">F&amp;F</div>
+        <p class="footer__desc">IT-контур для бизнеса. Казань.</p>
+        <p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+        <p class="footer__desc" style="font-size:12px">Самозанятый: Фатхутдинов Булат Ильмирович<br>ИНН: 165506822661</p>
+      </div>
+      <div>
+        <div class="footer__title">Услуги</div>
+        <a href="../servers.html" class="footer__link">Серверы</a>
+        <a href="../support.html" class="footer__link">Абонентка</a>
+        <a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+        <a href="../security.html" class="footer__link">Безопасность</a>
+      </div>
+      <div>
+        <div class="footer__title">Компания</div>
+        <a href="../about.html" class="footer__link">О нас</a>
+        <a href="../team.html" class="footer__link">Команда</a>
+        <a href="../cases.html" class="footer__link">Кейсы</a>
+        <a href="../contacts.html" class="footer__link">Контакты</a>
+      </div>
+      <div>
+        <div class="footer__title">Контакты</div>
+        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 F&amp;F. Все права защищены.</div>
+      <div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="../script.js?v=102" defer></script>
+
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+  <a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+  <a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Рассчитать</a>
+</div>
+</body>
+</html>
