@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Что будет, если сервер упадёт в субботу: пошаговый план действий. Первые 15 минут, первый час, первый день, неделя. Как подготовиться заранее.">
+<meta name="keywords" content="сервер упал в субботу, сервер не работает, что делать если сервер упал, план восстановления сервера, авария сервера">
+<meta name="author" content="F&F">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Что будет, если сервер упадёт в субботу: пошаговый план | F&F">
+<meta property="og:description" content="Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="img/og-preview.webp">
+<link rel="alternate" hreflang="ru" href="https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html">
+<link rel="canonical" href="https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../style.css?v=102">
+<title>Что будет, если сервер упадёт в субботу: пошаговый план | F&F</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Что будет, если сервер упадёт в субботу: пошаговый план", "description": "Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "datePublished": "2026-11-07", "dateModified": "2026-11-07"}</script>
+<meta property="og:url" content="https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "../blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер упал в субботу", "item": "server-upal-subbotu-plan.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "F&F", "alternateName": "FF-IT", "description": "IT-аутсорсинг, серверы под ключ и абонентское обслуживание компьютеров в Казани", "url": "../", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": "55.7887", "longitude": "49.1221"}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}, "priceRange": "₽₽", "areaServed": ["Казань", "Татарстан", "Россия"]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="img/og-preview.webp">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+   window.YM_COUNTER_ID = 00000000;
+   ym(window.YM_COUNTER_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute;left:-9999px;" alt="" loading="lazy" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta name="yandex-verification" content="PLACEHOLDER_YANDEX" />
+<meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" />
+</head>
+<body class="grain">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="bg-layer" aria-hidden="true"><div class="bg-grid"></div><div class="bg-spot--gold"></div><div class="bg-spot--green"></div><div class="bg-blur--gold"></div><div class="bg-blur--green"></div></div>
+<header class="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="logo" aria-label="F&F">
+      <img src="../logo.webp" alt="" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager">
+      <span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">IT-контур для бизнеса. Казань</span></span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="../support.html" class="dropdown__link">Абонентское обслуживание</a><a href="../servers.html" class="dropdown__link">Серверы под ключ</a><a href="../infrastructure.html" class="dropdown__link">Инфраструктура</a><a href="../security.html" class="dropdown__link">Безопасность</a><a href="../audit.html" class="dropdown__link">IT-аудит</a><a href="../visit.html" class="dropdown__link">Разовый выезд</a><a href="../server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="../mail.html" class="dropdown__link">Почта</a><a href="../pbx.html" class="dropdown__link">Телефония</a><a href="../vpn.html" class="dropdown__link">VPN</a><a href="../crypto-error.html" class="dropdown__link">ЭЦП</a><a href="../152fz-prep.html" class="dropdown__link">152-ФЗ</a><a href="../ai.html" class="dropdown__link">ИИ</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-tasks" data-nav-trigger>Задачи<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-tasks"><a href="../hub-office.html" class="dropdown__link">Офис под ключ</a><a href="../office-move.html" class="dropdown__link">Переезд офиса</a><a href="../industries.html" class="dropdown__link">Отрасли</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="../team.html" class="dropdown__link">Команда</a><a href="../about.html" class="dropdown__link">О F&amp;F</a><a href="../methodology.html" class="dropdown__link">Как работаем</a><a href="../cases.html" class="dropdown__link">Кейсы</a><a href="../trust.html" class="dropdown__link">Доверие и SLA</a><a href="../partners.html" class="dropdown__link">Партнёрам</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-more" data-nav-trigger>Ещё<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-more"><a href="../blog.html" class="dropdown__link">Блог</a><a href="../quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="../demo.html" class="dropdown__link">Демо</a></div></div>
+      <a href="../contacts.html" class="nav__direct">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a>
+      <a href="../services.html#estimate" class="header__cta">Рассчитать</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button>
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main id="main" class="site-main">
+<section class="section article-page reveal"><div class="container article-container">
+<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Сервер упал в субботу</span></nav>
+<span class="section__label reveal">Практический гайд · F&amp;F</span>
+<h1 class="article-title">Что будет, если сервер упадёт в субботу: пошаговый план</h1>
+<p class="article-lead">Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.</p>
+<div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Не паникуйте. Позвоните ответственному. Проверьте, что именно упало. Если есть бэкап — восстановление займёт часы, а не недели. Если бэкапа нет — читайте дальше и делайте выводы.</p></div>
+<div class="article-body">
+
+<p>Суббота, 14:00. Звонок: «Сервер не работает, 1С не открывается, почта не приходит». Классика. Серверы не спрашивают, удобно ли сейчас. Они падают в субботу, в отпуске, в Новый год. Вопрос не в том, упадёт ли сервер. Вопрос — что вы будете делать в первые 15 минут. Ниже — пошаговый план, который мы используем сами и рекомендуем клиентам.</p>
+
+<h2>Шаг 0. До аварии: подготовка</h2>
+<p>Если вы читаете это до аварии — вам повезло. Подготовьтесь сейчас:</p>
+<ul class="article-checklist">
+  <li>Запишите, кто отвечает за сервер: имя, телефон, доступы.</li>
+  <li>Храните бэкапы на отдельном носителе, вне офиса.</li>
+  <li>Проверьте восстановление из бэкапа хотя бы раз.</li>
+  <li>Имейте ИБП на 15-30 минут работы.</li>
+  <li>Запишите, какие сервисы критичны: 1С, почта, файлы, телефония.</li>
+</ul>
+<p>Ирония: 90% клиентов готовятся к аварии после первой аварии. Не будьте в этих 90%.</p>
+
+<h2>Первые 15 минут: не паниковать, а диагностировать</h2>
+<p>Первое правило: не перезагружайте сервер бездумно. Перезагрузка может уничтожить данные, если диск уже «сыпется». Сначала — диагностика.</p>
+<ul class="article-checklist">
+  <li>Проверьте, доступен ли сервер по сети (ping, RDP).</li>
+  <li>Если сервер недоступен — проверьте питание, ИБП, сеть.</li>
+  <li>Если сервер доступен, но сервисы не работают — проверьте, какие именно: 1С, почта, файлы.</li>
+  <li>Посмотрите логи: что упало последним.</li>
+  <li>Позвоните ответственному (сисадмин, аутсорсер).</li>
+</ul>
+<p>Главная ошибка: начать «чинить» до того, как поняли, что сломалось. Потеряете время и можете усугубить.</p>
+
+<h2>Первый час: восстановление или обходной путь</h2>
+<p>Если проблема ясна — приступайте к восстановлению. Если нет — включайте обходной путь:</p>
+<ul class="article-checklist">
+  <li>Если 1С упала — можно ли работать в старой копии базы?</li>
+  <li>Если почта упала — можно ли использовать веб-почту или мобильное приложение?</li>
+  <li>Если файлы недоступны — есть ли копия на другом диске или в облаке?</li>
+  <li>Сообщите сотрудникам: что работает, что нет, когда ждать восстановления.</li>
+</ul>
+<p>Главное — не молчать. Сотрудники должны знать, что происходит. Иначе каждый второй позвонит и спросит «а у меня тоже не работает?».</p>
+
+<h2>Первый день: восстановление из бэкапа</h2>
+<p>Если сервер не поднимается — восстанавливаем из бэкапа. На подготовленном железе или в облаке. Время восстановления зависит от размера базы и скорости носителя. База 10 ГБ на NVMe — 30 минут. На HDD — 2 часа. В облаке — зависит от скорости канала.</p>
+<p>После восстановления:</p>
+<ul class="article-checklist">
+  <li>Проверьте, что база открывается и данные целы.</li>
+  <li>Проверьте, что пользователи могут работать.</li>
+  <li>Зафиксируйте, какие данные потеряны (если есть).</li>
+  <li>Сообщите руководству: что произошло, что сделано, что потеряно.</li>
+</ul>
+
+<h2>Первая неделя: разбор и выводы</h2>
+<p>Авария закончилась. Теперь — разбор полётов. Без вины, с фактами:</p>
+<ul class="article-checklist">
+  <li>Почему упал сервер? Диск, питание, ошибка, вирус?</li>
+  <li>Почему не сработал бэкап? Или сработал?</li>
+  <li>Сколько времени заняло восстановление?</li>
+  <li>Что можно было сделать иначе?</li>
+  <li>Как предотвратить повторение?</li>
+</ul>
+<p>Запишите выводы. Обновите регламент. Если нужно — замените железо. Авария — это не катастрофа, если из неё сделали выводы.</p>
+
+<h2>Что мы делаем для клиентов</h2>
+<p>В рамках абонентки F&F: мониторинг 24/7, бэкапы с проверкой восстановления раз в квартал, план аварийного восстановления (DRP), выезд инженера при необходимости. Клиенты, у которых всё это настроено, переживают аварии за часы, а не за недели.</p>
+<p>Ирония: клиенты, которые «сами справляются», справляются — но в 3 раза дольше и с потерей данных. Мы не против самостоятельности. Мы против потери данных.</p>
+
+<h2>Что делать прямо сейчас</h2>
+<ul class="article-checklist">
+  <li>Составить план аварийного восстановления (кто, что, когда).</li>
+  <li>Проверить бэкапы: есть ли, где хранятся, восстанавливаются ли.</li>
+  <li>Записать контакты ответственных.</li>
+  <li>Убедиться, что ИБП работает.</li>
+</ul>
+
+<div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p>
+<p style="font-size:14px;margin:0;">
+<a href="../backup-checklist.html" style="color:var(--gold-light);">чек-лист проверки бэкапов</a> ·
+<a href="../servers.html" style="color:var(--gold-light);">настройка серверов в Казани</a> ·
+<a href="../security.html" style="color:var(--gold-light);">безопасность IT-инфраструктуры</a>
+</p>
+</div>
+
+</div>
+
+<div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Обсудить задачу</a></div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand gold">F&amp;F</div>
+        <p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p>
+        <p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="../server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+        <p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p>
+      </div>
+      <div>
+        <div class="footer__title">Услуги</div>
+        <a href="../servers.html" class="footer__link">Серверы</a>
+        <a href="../support.html" class="footer__link">Абонентка</a>
+        <a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+        <a href="../security.html" class="footer__link">Безопасность</a>
+      </div>
+      <div>
+        <div class="footer__title">Компания</div>
+        <a href="../about.html" class="footer__link">О нас</a>
+        <a href="../team.html" class="footer__link">Команда</a>
+        <a href="../cases.html" class="footer__link">Кейсы</a>
+        <a href="../contacts.html" class="footer__link">Контакты</a>
+      </div>
+      <div>
+        <div class="footer__title">Контакты</div>
+        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 F&amp;F. Все права защищены.</div>
+      <div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="../script.js?v=102" defer></script>
+
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+  <a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+  <a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Рассчитать</a>
+</div>
+<noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="../contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript>
+</body>
+</html>
