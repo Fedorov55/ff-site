@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа. Реакция от 15 минут.">
+<meta name="keywords" content="сервер для 1С, RAM для 1С, NVMe для 1С, RAID, конфигурация сервера 1С">
+<meta name="author" content="F&F">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Сисадмин уволился без передачи дел: что делать | F&F Казань">
+<meta property="og:description" content="Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа. Реакция от 15 минут.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="img/case-tatar-septic.webp">
+<link rel="alternate" hreflang="ru" href="https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html">
+<link rel="canonical" href="https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../style.css?v=102">
+<title>Сисадмин уволился без передачи дел: что делать | F&F Казань</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сисадмин уволился без передачи дел: что делать", "description": "Минимум 8 ГБ RAM, NVMe под базу, RAID 10. Что реально влияет на скорость.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06"}</script>
+
+<meta property="og:url" content="https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "./"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер для 1С: сколько RAM, какой диск", "item": "blog/sisadmin-uvolilsya.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../favicon.ico" sizes="any">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "F&F", "alternateName": "FF-IT", "description": "IT-аутсорсинг, серверы под ключ и абонентское обслуживание компьютеров в Казани", "url": "./", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": "55.7887", "longitude": "49.1221"}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}, "priceRange": "₽₽", "areaServed": ["Казань", "Татарстан", "Россия"]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="img/og-preview.webp">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+   window.YM_COUNTER_ID = 00000000;
+   ym(window.YM_COUNTER_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute;left:-9999px;" alt="" loading="lazy" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta name="yandex-verification" content="PLACEHOLDER_YANDEX" />
+<meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что делать, если сисадмин уволился и не отдал пароли?", "acceptedAnswer": {"@type": "Answer", "text": "Составить список доступов, сменить пароли на всё, к чему есть доступ. Роутер — сброс на заводские. Звонить в F&F: +7 (901) 265-52-52."}}, {"@type": "Question", "name": "Сколько стоит восстановление доступов?", "acceptedAnswer": {"@type": "Answer", "text": "Выезд и инвентаризация — от 4 000 ₽. Полный разбор — от 12 000 ₽."}}, {"@type": "Question", "name": "Как не допустить в следующий раз?", "acceptedAnswer": {"@type": "Answer", "text": "Реестр доступов, схема сети, документация у руководителя. Не в голове одного человека."}}]}</script>
+</head>
+<section class="section article-page reveal"><div class="container article-container">
+<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Сисадмин уволился без передачи дел: что делать</span></nav>
+<span class="section__label reveal">Практический гайд · F&amp;F</span>
+<h1 class="article-title">Сисадмин уволился без передачи дел: что делать</h1>
+<p class="article-lead">Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа.</p>
+<div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа.</p></div>
+<div class="article-body">
+
+<p>Сисадмин уволился — и через неделю вы понимаете, что не знаете пароли от роутера, сервера, почты, 1С и домена. В Казани это происходит чаще, чем хотелось бы. Это не катастрофа, если действовать быстро.</p>
+
+<h2>Что делать в первые 24 часа</h2>
+<ol class="article-checklist">
+  <li><strong>Не паниковать.</strong> Данные обычно можно восстановить.</li>
+  <li><strong>Составить список доступов:</strong> роутер, сервер, почта, 1С, домен, хостинг, CRM. Что есть, что потеряно.</li>
+  <li><strong>Сменить пароли</strong> на всё, к чему есть доступ. Роутер — сброс на заводские и настройка заново.</li>
+  <li><strong>Звонить в F&F: +7 (901) 265-52-52.</strong> Реакция от 15 минут. Мы не гадаем пароли — у нас есть реестр доступов.</li>
+</ol>
+
+<h2>Что мы делаем</h2>
+<ul class="article-checklist">
+  <li><strong>Инвентаризация доступов:</strong> список всего, что есть и что потеряно.</li>
+  <li><strong>Смена паролей:</strong> меняем на всё, к чему есть доступ. Роутер — сброс и настройка заново.</li>
+  <li><strong>Схема:</strong> рисуем схему сети, реестр паролей, инструкции. Передаём руководителю.</li>
+  <li><strong>Документация:</strong> чтобы в следующий раз не начинать с нуля.</li>
+</ul>
+
+<h2>Сколько это стоит</h2>
+<p>Выезд и инвентаризация — от 4 000 ₽. Полный разбор с восстановлением доступов и схемой — от 12 000 ₽. Если нужен новый сервер или сеть — считаем отдельно. Полный расчёт — в <a href="../services.html#calculator" style="color:var(--gold-light);">калькуляторе</a>.</p>
+<p>Подробнее: <a href="../support.html" style="color:var(--gold-light);">абонентское обслуживание в Казани</a>, <a href="../servers.html" style="color:var(--gold-light);">серверы под ключ</a>, <a href="../audit.html" style="color:var(--gold-light);">IT-аудит</a>.</p>
+
+<div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p>
+<p style="font-size:14px;margin:0;">
+<a href="../servers.html" style="color:var(--gold-light);">настройка серверов в Казани</a> ·
+<a href="../support.html" style="color:var(--gold-light);">IT-аутсорсинг для малого бизнеса</a> ·
+<a href="../servers.html" style="color:var(--gold-light);">резервное копирование с проверкой</a>
+</p>
+</div>
+
+<div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Обсудить задачу</a></div>
+
+</div></div></section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand gold">F&amp;F</div>
+        <p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p>
+        <p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="../server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+        <p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p>
+      </div>
+      <div>
+        <div class="footer__title">Услуги</div>
+        <a href="../servers.html" class="footer__link">Серверы</a>
+        <a href="../support.html" class="footer__link">Абонентка</a>
+        <a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+        <a href="../security.html" class="footer__link">Безопасность</a>
+      </div>
+      <div>
+        <div class="footer__title">Компания</div>
+        <a href="../about.html" class="footer__link">О нас</a>
+        <a href="../team.html" class="footer__link">Команда</a>
+        <a href="../cases.html" class="footer__link">Кейсы</a>
+        <a href="../contacts.html" class="footer__link">Контакты</a>
+      </div>
+      <div>
+        <div class="footer__title">Контакты</div>
+        <a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+        <a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 F&amp;F. Все права защищены.</div>
+      <div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="../script.js?v=102" defer></script>
+
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+  <a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+  <a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Рассчитать</a>
+</div>
+<noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="../contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript>
+</body>
+</html>
