@@ -16,7 +16,7 @@ input,textarea,select{font-family:inherit}
 
 :root{
   --bg:#0A0D14;--bg-2:#11151F;--bg-3:#171C29;--card:#141926;
-  --text:#F2F5FA;--text-2:#B6BFCF;--muted:#828C9E;--dim:#555E70;
+  --text:#F2F5FA;--text-2:#B6BFCF;--muted:#9AA4B2;--dim:#555E70;
   --gold:#D4AF37;--gold-light:#E8C44D;--gold-bright:#FFF4C4;--gold-deep:#B8932E;
   --gold-glow:rgba(212,175,55,.4);--gold-soft:rgba(212,175,55,.1);
   --neon:#00FF88;--neon-soft:rgba(0,255,136,.12);--neon-glow:rgba(0,255,136,.45);
