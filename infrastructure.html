@@ -146,6 +146,38 @@
   </div></section>
 
 <p style="text-align:center;font-size:13px;color:var(--text-2);margin:16px 0;">Популярные запросы: <a href="infrastructure.html" style="color:var(--gold-light);">IT-инфраструктура Казань</a>, <a href="servers.html" style="color:var(--gold-light);">сервер под ключ</a>, <a href="support.html" style="color:var(--gold-light);">абонентское обслуживание в Казани</a></p>
+
+<section class="section reveal" style="padding-top:0">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Калькулятор</span>
+      <h2 class="section__title reveal">Рассчитать слаботочку</h2>
+      <p class="section__subtitle reveal">Укажите площадь офиса и количество рабочих мест — получите порядок цифр.</p>
+    </div>
+    <div style="max-width:600px;margin:0 auto;">
+      <div style="display:grid;gap:12px;">
+        <label style="font-size:14px;color:var(--text-2);">Площадь офиса (м²): <input type="number" id="slabArea" value="100" min="10" max="1000" style="width:100px;padding:8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);"></label>
+        <label style="font-size:14px;color:var(--text-2);">Рабочих мест: <input type="number" id="slabSeats" value="10" min="1" max="200" style="width:100px;padding:8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);"></label>
+        <button type="button" class="btn btn--primary" onclick="calcSlab()">Рассчитать</button>
+        <div id="slabResult" style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);display:none;">
+          <strong style="color:var(--gold-light);">Порядок цифр: <span id="slabTotal"></span></strong>
+          <p style="font-size:13px;color:var(--text-2);margin:4px 0 0;">СКС на 50 человек — 700 тыс.–1,2 млн ₽. Точный расчёт — после обследования.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    function calcSlab(){
+      var area = parseInt(document.getElementById('slabArea').value) || 100;
+      var seats = parseInt(document.getElementById('slabSeats').value) || 10;
+      var perSeat = 15000;
+      var perArea = 5000;
+      var total = seats * perSeat + area * perArea;
+      document.getElementById('slabTotal').textContent = total.toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('slabResult').style.display = 'block';
+    }
+    </script>
+  </div>
+</section>
   <section class="section reveal" style="padding-top:0"><div class="container">
     <div style="max-width:760px;margin:0 auto;">
       <h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 12px;">Смотрите также</h3>
