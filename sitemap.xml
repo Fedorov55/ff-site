@@ -11,6 +11,26 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ff-it.ru/_lm1.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/_lm2.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/_lm3.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/_lm4.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ff-it.ru/about.html</loc>
     <lastmod>2026-11-07</lastmod>
     <priority>0.5</priority>
@@ -226,6 +246,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ff-it.ru/lead-audit.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/lead-ecp.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ff-it.ru/lead-magnet-audit.html</loc>
     <lastmod>2026-11-07</lastmod>
     <priority>0.7</priority>
@@ -242,6 +272,16 @@
   </url>
   <url>
     <loc>https://ff-it.ru/lead-magnet-server-1c.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/lead-network-move.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ff-it.ru/lead-server-1c.html</loc>
     <lastmod>2026-11-07</lastmod>
     <priority>0.7</priority>
   </url>
