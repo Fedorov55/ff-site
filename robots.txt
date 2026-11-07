@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /404.html
-Sitemap: https://ff-it.ru/sitemap.xml
-Host: https://ff-it.ru
+Sitemap: https://fedorov55.github.io/ff-site/sitemap.xml
+Host: https://fedorov55.github.io/ff-site
