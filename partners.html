@@ -89,10 +89,15 @@
         <h2 style="color:var(--gold-light);font-size:18px;margin:24px 0 8px;">Комиссия</h2>
         <p style="color:var(--text-2);font-size:15px;line-height:1.7;margin-bottom:24px;">10% с первого счёта приведённого клиента, если клиент сам подтвердил, что пришёл от вас. Без «вечной доли» — только с первого счёта. Если клиент пришёл сам, без рекомендации — комиссии нет.</p>
         <h2 style="color:var(--gold-light);font-size:18px;margin:24px 0 8px;">Форма</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:grid;gap:12px;max-width:400px;margin:0 auto 24px;">
+        <!-- TODO: заменить на реальный Formspree ID -->
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:grid;gap:12px;max-width:400px;margin:0 auto 24px;">
           <input type="text" name="name" placeholder="Имя" required style="padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);">
           <input type="text" name="contact" placeholder="Контакт (телефон или email)" required style="padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);">
           <input type="text" name="who" placeholder="Кто вы (бухгалтер, программист 1С, веб-студия)" required style="padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);">
+          <div class="form-group form-group--checkbox" style="display:flex;align-items:center;gap:8px;">
+            <input type="checkbox" id="partners-agree" name="agree" required aria-required="true">
+            <label for="partners-agree" style="font-size:12px;color:var(--text-2);">Согласен на обработку персональных данных</label>
+          </div>
           <button type="submit" class="btn btn--primary" style="width:100%;">Отправить</button>
         <div style="display:none" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <div class="form-success" aria-live="polite" style="display:none;margin-top:16px"></div>
