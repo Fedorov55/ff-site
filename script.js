@@ -1071,3 +1071,31 @@ try {
     updateCount();
   }
 } catch(e) { console.error('Security checklist', e); }
+
+
+  /* ====== EXIT-INTENT POPUP (desktop) ====== */
+  try{
+    if(!sessionStorage.getItem('ff_exit_shown')){
+      let shown = false;
+      document.addEventListener('mouseleave', function(ev){
+        if(shown) return;
+        if(ev.clientY > 10) return;
+        shown = true;
+        try{ sessionStorage.setItem('ff_exit_shown','1'); }catch(e){}
+        const prefix = (location.pathname.indexOf('/blog/')>-1 || location.pathname.indexOf('/services/')>-1 || location.pathname.indexOf('/cases/')>-1) ? '../' : '';
+        const modal = document.createElement('div');
+        modal.id = 'ff-exit-modal';
+        modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:flex;align-items:center;justify-content:center;';
+        modal.innerHTML = '<div style="background:#141925;border:1px solid #D4AF37;border-radius:16px;padding:24px;max-width:400px;width:90%;text-align:center;position:relative;">' +
+          '<button id="ff-exit-close" type="button" aria-label="Закрыть" style="position:absolute;top:8px;right:12px;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;">×</button>' +
+          '<h3 style="color:#D4AF37;margin:0 0 8px;font-size:18px;">Уходите? Заберите чек-лист</h3>' +
+          '<p style="color:#9AA4B2;font-size:14px;margin:0 0 16px;">7 признаков, что ваши бэкапы не работают. Проверьте за 10 минут.</p>' +
+          '<a href="' + prefix + 'backup-checklist.html" class="btn btn--primary" style="display:inline-block;">Скачать чек-лист</a>' +
+        '</div>';
+        document.body.appendChild(modal);
+        const closeBtn = document.getElementById('ff-exit-close');
+        if(closeBtn){ closeBtn.addEventListener('click', function(){ modal.remove(); }); }
+        modal.addEventListener('click', function(e){ if(e.target === modal){ modal.remove(); } });
+      });
+    }
+  }catch(e){}
