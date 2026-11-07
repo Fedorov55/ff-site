@@ -398,37 +398,61 @@
     }
   }catch(e){}
 
-  /* ====== CONTACT FORM ====== */
+  /* ====== FORMS (generic) ====== */
   try{
-    const contactForm = document.querySelector('form[name="contact-form"]');
-    if(contactForm){
-      contactForm.addEventListener('submit', function(ev){
+    const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // TODO: Заменить на реальный ID
+    document.querySelectorAll('form').forEach(function(form){
+      if(form.dataset.ffBound) return;
+      form.dataset.ffBound = '1';
+      form.addEventListener('submit', async function(ev){
         ev.preventDefault();
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const name = (contactForm.querySelector('#name')||{}).value || '';
-        const contact = (contactForm.querySelector('#contact-way')||{}).value || '';
-        const message = (contactForm.querySelector('#problem')||{}).value || '';
-        const agree = (contactForm.querySelector('#agree')||{}).checked;
-        if(!name.trim()) return showToast(btn, 'Укажите имя', 'error');
-        if(!contact.trim()) return showToast(btn, 'Укажите контакт', 'error');
-        const hp = (contactForm.querySelector('input[name="website"]')||{}).value || '';
-        if(hp) return; // honeypot
-        if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
+        const btn = form.querySelector('button[type="submit"]');
+        if(btn && !btn.dataset.originalText){ btn.dataset.originalText = btn.textContent; }
+        const hp = form.querySelector('input[name="website"]');
+        if(hp && hp.value){ return; } // honeypot
+        const agree = form.querySelector('input[name="agree"]');
+        if(agree && !agree.checked){ showToast(btn, 'Подтвердите согласие', 'error'); return; }
+        const required = Array.from(form.querySelectorAll('[required]'));
+        for(const el of required){
+          if(!String(el.value || '').trim()){ showToast(btn, 'Заполните обязательные поля', 'error'); el.focus(); return; }
+        }
+        const emails = Array.from(form.querySelectorAll('input[type="email"]'));
+        for(const el of emails){
+          if(el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)){ showToast(btn, 'Укажите корректный email', 'error'); el.focus(); return; }
+        }
+        const data = {};
+        form.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.name) return;
+          if(el.type === 'checkbox'){ data[el.name] = el.checked; }
+          else { data[el.name] = String(el.value || '').trim(); }
+        });
+        if(!data.service){ data.service = form.getAttribute('name') || 'Форма'; }
         if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
-        fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-          body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: message.trim(), service: 'Главная страница', agree: true })
-        }).then(r=>r.json()).then(res=>{
-          const succ = document.getElementById('contactSuccess');
-          if(res && res.ok === true){
-            if(succ){ succ.style.display='block'; succ.textContent = 'Спасибо, ' + name.trim() + '! Заявка получена.'; }
-            contactForm.reset();
+        try{
+          const resp = await fetch(FORM_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data) });
+          const res = await resp.json().catch(function(){ return {}; });
+          if(resp.ok){
+            let successEl = form.querySelector('.form-success');
+            if(!successEl){
+              const nm = form.getAttribute('name');
+              if(nm === 'contact-form') successEl = document.getElementById('contactSuccess');
+              else if(nm === 'lead-magnet-form') successEl = document.getElementById('leadSuccess');
+              else if(nm === 'course-subscriber') successEl = document.getElementById('courseSuccess');
+            }
+            if(successEl){ successEl.style.display = 'block'; successEl.textContent = 'Заявка ушла. Ответим в течение 15 минут.'; }
+            form.reset();
+            const fileLink = document.getElementById('fileLink');
+            if(fileLink){ fileLink.style.display = 'block'; }
           } else {
             showToast(btn, (res && res.message) || 'Ошибка', 'error');
-            if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; }
+            if(btn){ btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Отправить'; }
           }
-        }).catch(()=>{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
+        } catch(e){
+          showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error');
+          if(btn){ btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Отправить'; }
+        }
       });
-    }
+    });
   }catch(e){}
 
   /* ====== TOAST HELPER ====== */
