@@ -231,6 +231,49 @@
     <a href="https://calendly.com/ff-it/15min" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:16px;padding:14px 28px;">Записаться на 15-минутный созвон</a>
   </div>
 </section>
+
+<section class="section reveal" style="padding-top:24px;" id="two-step">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Быстрая заявка</span>
+      <h2 class="section__title reveal">2 шага — и мы перезвоним</h2>
+    </div>
+    <form class="contact__form fade-up" name="two-step-form" novalidate style="max-width:400px;margin:0 auto;">
+      <input type="hidden" name="service" value="Быстрая заявка (2 шага)">
+      <!-- Step 1 -->
+      <div id="ts-step1">
+        <div class="form-group"><label for="ts-contact" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Телефон или email</label><input type="text" id="ts-contact" name="contact_way" placeholder="+7 (901) 265-52-52 или email" required></div>
+        <button type="button" class="btn btn--primary btn--full" id="ts-next">Далее</button>
+      </div>
+      <!-- Step 2 -->
+      <div id="ts-step2" style="display:none;">
+        <div class="form-group"><label for="ts-name" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Имя</label><input type="text" id="ts-name" name="name" placeholder="Иван" required></div>
+        <div class="form-group"><label for="ts-emp" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Сколько сотрудников?</label><input type="text" id="ts-emp" name="employees" placeholder="до 10 / 10-30 / 30+"></div>
+        <div class="form-group"><label for="ts-concern" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Что беспокоит?</label><input type="text" id="ts-concern" name="concern" placeholder="1С тормозит, бэкапы, сеть..."></div>
+        <div class="form-group"><label for="ts-timing" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Когда нужно?</label><input type="text" id="ts-timing" name="timing" placeholder="Срочно / в этом месяце / планируем"></div>
+        <div style="display:none" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-group form-group--checkbox"><input type="checkbox" id="ts-agree" name="agree" required aria-required="true"><label for="ts-agree">Согласен на обработку ПДн</label></div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+      </div>
+      <div class="form-success" id="ts-success" aria-live="polite" style="display:none;margin-top:16px"></div>
+    </form>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var next = document.getElementById('ts-next');
+      var s1 = document.getElementById('ts-step1');
+      var s2 = document.getElementById('ts-step2');
+      if (next && s1 && s2) {
+        next.addEventListener('click', function(){
+          var c = document.getElementById('ts-contact');
+          if (!c || !c.value.trim()) { alert('Укажите телефон или email'); return; }
+          s1.style.display = 'none';
+          s2.style.display = 'block';
+        });
+      }
+    });
+    </script>
+  </div>
+</section>
 </main>
 <footer class="footer">
   <div class="container">

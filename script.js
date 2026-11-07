@@ -1115,3 +1115,18 @@ try {
       }
     });
   }catch(e){}
+
+
+  /* ====== STICKY TELEGRAM BUTTON ====== */
+  try{
+    const sticky = document.createElement('a');
+    sticky.href = 'https://t.me/FathFed';
+    sticky.target = '_blank';
+    sticky.rel = 'noopener noreferrer';
+    sticky.textContent = 'Написать в Telegram';
+    sticky.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9997;background:#D4AF37;color:#0A0D14;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.35);';
+    function adjustSticky(){ sticky.style.bottom = (window.innerWidth < 1100) ? '72px' : '20px'; }
+    adjustSticky();
+    window.addEventListener('resize', adjustSticky);
+    document.body.appendChild(sticky);
+  }catch(e){}
