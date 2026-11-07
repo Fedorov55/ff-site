@@ -719,16 +719,7 @@
     const animate = (el) => {
       const target = parseInt(el.getAttribute('data-target'), 10);
       const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1200;
-      const start = performance.now();
-      function step(now) {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * eased) + (p < 1 ? '' : suffix);
-        if (p < 1) requestAnimationFrame(step);
-        else el.textContent = target + suffix;
-      }
-      requestAnimationFrame(step);
+      el.textContent = target + suffix;
     };
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } });
