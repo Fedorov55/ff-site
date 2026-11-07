@@ -147,6 +147,7 @@
         if(qi >= Q.length){ showQuizResult(); return; }
         const item = Q[qi];
         qBody.innerHTML = `<div class="quiz__step active"><div class="quiz__q">${item.q}</div><div class="quiz__opts">${item.a.map((opt,i) => `<button type="button" class="quiz__opt" data-i="${i}">${opt.t}</button>`).join('')}</div></div>`;
+      if(typeof window.ymGoal === 'function'){ window.ymGoal('quiz_complete'); }
         qBody.querySelectorAll('.quiz__opt').forEach(btn => {
           btn.addEventListener('click', () => { qScore += item.a[parseInt(btn.getAttribute('data-i'),10)].s; qi++; renderQuiz(); });
         });
@@ -440,6 +441,7 @@
               else if(nm === 'course-subscriber') successEl = document.getElementById('courseSuccess');
             }
             if(successEl){ successEl.style.display = 'block'; successEl.textContent = 'Заявка ушла. Ответим в течение 15 минут.'; }
+            if(typeof window.ymGoal === 'function'){ window.ymGoal('form_submit'); }
             form.reset();
             const fileLink = document.getElementById('fileLink');
             if(fileLink){ fileLink.style.display = 'block'; }
@@ -1089,4 +1091,27 @@ try {
         modal.addEventListener('click', function(e){ if(e.target === modal){ modal.remove(); } });
       });
     }
+  }catch(e){}
+
+
+  /* ====== ANALYTICS GOALS (Yandex.Metrika) ====== */
+  try{
+    window.YM_COUNTER_ID = window.YM_COUNTER_ID || null;
+    window.ymGoal = function(goal){
+      try{
+        if(typeof ym === 'function' && window.YM_COUNTER_ID){
+          ym(window.YM_COUNTER_ID, 'reachGoal', goal);
+        }
+      }catch(e){}
+    };
+    // phone click tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){ window.ymGoal('phone_click'); });
+    });
+    // calculate button tracking
+    document.querySelectorAll('a,button').forEach(function(el){
+      if(/Рассчитать/.test(el.textContent || '')){
+        el.addEventListener('click', function(){ window.ymGoal('calculate_click'); });
+      }
+    });
   }catch(e){}
