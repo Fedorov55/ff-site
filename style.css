@@ -1961,7 +1961,7 @@ a.link-slide:hover::after { width: 100%; }
   color: #D4AF37 !important;
 }
 .subscription-calculator__section .calc-section-heading p {
-  color: #B6BFCF !important;
+  color: #333333 !important;
 }
 .subscription-calculator {
   background: #0A0D14 !important;
