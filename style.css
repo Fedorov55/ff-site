@@ -5,3 +5,11 @@ html,body{overflow-x:hidden;max-width:100%;}img,video,iframe,table{max-width:100
   .page-intro__title { font-size: clamp(24px, 6vw, 30px) !important; line-height: 1.2 !important; }
   .section__title { font-size: clamp(20px, 5vw, 26px) !important; }
 }
+
+@media (max-width: 640px) {
+  .header__inner { min-height: 56px !important; padding: 6px 12px !important; }
+  .logo__img { width: 36px !important; height: 36px !important; }
+  .header__cta, .btn--primary { min-height: 40px !important; padding: 8px 14px !important; font-size: 13px !important; }
+  .burger { width: 44px !important; height: 44px !important; }
+  .mobile-nav__panel { width: 85vw; max-width: 320px; }
+}
