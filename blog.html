@@ -1,1 +1,942 @@
-<!DOCTYPE html><html lang="ru" data-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#0A0D14"><meta name="description" content="Блог F&F: про серверы, аутсорсинг и безопасность без снотворного. С цифрами, иронией и без «мы лучшие». Казань, Татарстан, выезд. Реакция от 15 минут."><meta name="keywords" content="IT-аутсорсинг Казань, IT-обслуживание, системный администратор, серверы, инфраструктура, безопасность, криптография, ЭЦП, абонентское обслуживание, IT-аудит, мониторинг, обслуживание серверов, аутсорсинг IT-инфраструктуры"><meta name="author" content="F&F"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta property="og:title" content="Блог F&F — IT для бизнеса в Казани | F&F"><meta property="og:description" content="Блог F&F: про серверы, аутсорсинг и безопасность без снотворного. С цифрами, иронией и без «мы лучшие». Казань, Татарстан, выезд. Реакция от 15 минут."><meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:url" content="https://ff-it.ru/blog.html"><meta property="og:image" content="https://ff-it.ru/img/og-preview.webp"><link rel="canonical" href="https://ff-it.ru/blog.html"><link rel="icon" type="image/webp" href="logo.webp"><link rel="stylesheet" href="critical.css?v=103"><link rel="preload" href="style.css?v=103" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="style.css?v=103"></noscript><title>Блог F&F — IT для бизнеса в Казани | F&F</title><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="F&F — Ваш IT-контур под контролем"><meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо."><meta name="twitter:image" content="https://ff-it.ru/img/og-preview.webp"><link rel="alternate" hreflang="ru" href="https://ff-it.ru/blog.html"><meta http-equiv="X-Content-Type-Options" content="nosniff"><meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"><meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"><link rel="preload" href="style.css?v=102" as="style"><link rel="preload" href="script.js?v=103" as="script"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Практические IT-гайды для бизнеса", "item": "https://ff-it.ru/blog.html"}]}</script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="favicon.ico" sizes="any"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "F&F", "url": "https://ff-it.ru/", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script><meta name="yandex-verification" content="PLACEHOLDER_YANDEX" /><meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" /><meta property="og:site_name" content="F&F"><meta name="twitter:site" content="@FathFed"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань"><link rel="apple-touch-icon" href="https://ff-it.ru/apple-touch-icon-180.webp"><script type="application/ld+json">{"@context": "https://schema.org", "@type": ["LocalBusiness", "ProfessionalService"], "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "image": "https://ff-it.ru/img/og-preview.webp", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "areaServed": ["Казань", "Республика Татарстан", "Россия"], "priceRange": "₽₽", "openingHours": "Mo-Su 09:00-21:00"}</script><link rel="preload" href="fonts/inter-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/inter-v20-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin></head><body class="grain"><a href="#main" class="skip-link">Перейти к содержимому</a><div class="bg-layer" aria-hidden="true"><div class="bg-grid"></div><div class="bg-spot--gold"></div><div class="bg-spot--green"></div><div class="bg-blur--gold"></div><div class="bg-blur--green"></div></div><header class="header"><div class="container header__inner"><a href="index.html" class="logo" aria-label="F&F — IT-контур для бизнеса. Казань"><img src="logo-44.webp?v=103" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager"><span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">IT-контур для бизнеса. Казань</span></span></a><nav class="nav" aria-label="Основная навигация"><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="support.html" class="dropdown__link">Абонентское обслуживание</a><a href="servers.html" class="dropdown__link">Серверы под ключ</a><a href="infrastructure.html" class="dropdown__link">Инфраструктура</a><a href="security.html" class="dropdown__link">Безопасность</a><a href="audit.html" class="dropdown__link">IT-аудит</a><a href="visit.html" class="dropdown__link">Разовый выезд</a><a href="server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="mail.html" class="dropdown__link">Почта</a><a href="pbx.html" class="dropdown__link">Телефония</a><a href="vpn.html" class="dropdown__link">VPN</a><a href="crypto-error.html" class="dropdown__link">ЭЦП</a><a href="152fz-prep.html" class="dropdown__link">152-ФЗ</a><a href="ai.html" class="dropdown__link">ИИ</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-tasks" data-nav-trigger>Задачи<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-tasks"><a href="hub-office.html" class="dropdown__link">Офис под ключ</a><a href="office-move.html" class="dropdown__link">Переезд офиса</a><a href="industries.html" class="dropdown__link">Отрасли</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="team.html" class="dropdown__link">Команда</a><a href="about.html" class="dropdown__link">О F&amp;F</a><a href="methodology.html" class="dropdown__link">Как работаем</a><a href="cases.html" class="dropdown__link">Кейсы</a><a href="trust.html" class="dropdown__link">Доверие и SLA</a><a href="partners.html" class="dropdown__link">Партнёрам</a><a href="for-owner.html" class="dropdown__link">Для собственника</a><a href="for-it-director.html" class="dropdown__link">Для IT-директора</a><a href="for-accountant.html" class="dropdown__link">Для бухгалтера</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-more" data-nav-trigger>Ещё<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-more"><a href="blog.html" class="dropdown__link">Блог</a><a href="quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="demo.html" class="dropdown__link">Демо</a></div></div><a href="contacts.html" class="nav__direct">Контакты</a></nav><div class="header__actions"><a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a><a href="services.html#estimate" class="header__cta">Получить точную смету</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button><button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div></div></header><div class="mobile-nav" id="mobileNav" aria-hidden="true"><div class="mobile-nav__backdrop" data-mobile-close></div><div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту"><div class="mobile-nav__header"><a href="index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span></a><button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button></div><nav class="mobile-nav__inner" aria-label="Основная навигация"><a href="index.html" class="mobile-nav__link">Главная</a><details class="mobile-nav__group"><summary>Услуги</summary><div class="mobile-nav__group-links"><a href="support.html" class="mobile-nav__link">Абонентское обслуживание</a><a href="servers.html" class="mobile-nav__link">Серверы под ключ</a><a href="infrastructure.html" class="mobile-nav__link">Инфраструктура</a><a href="security.html" class="mobile-nav__link">Безопасность</a><a href="audit.html" class="mobile-nav__link">IT-аудит</a><a href="visit.html" class="mobile-nav__link">Разовый выезд</a><a href="server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a><a href="mail.html" class="mobile-nav__link">Почта</a><a href="pbx.html" class="mobile-nav__link">Телефония</a><a href="vpn.html" class="mobile-nav__link">VPN</a><a href="crypto-error.html" class="mobile-nav__link">ЭЦП</a><a href="152fz-prep.html" class="mobile-nav__link">152-ФЗ</a><a href="ai.html" class="mobile-nav__link">ИИ</a><a href="services.html" class="mobile-nav__link">Цены</a></div></details><details class="mobile-nav__group"><summary>Задачи</summary><div class="mobile-nav__group-links"><a href="hub-office.html" class="mobile-nav__link">Офис под ключ</a><a href="office-move.html" class="mobile-nav__link">Переезд офиса</a><a href="industries.html" class="mobile-nav__link">Отрасли</a></div></details><details class="mobile-nav__group"><summary>Компания</summary><div class="mobile-nav__group-links"><a href="team.html" class="mobile-nav__link">Команда</a><a href="about.html" class="mobile-nav__link">О F&amp;F</a><a href="methodology.html" class="mobile-nav__link">Как работаем</a><a href="cases.html" class="mobile-nav__link">Кейсы</a><a href="trust.html" class="mobile-nav__link">Доверие и SLA</a><a href="partners.html" class="mobile-nav__link">Партнёрам</a></div></details><details class="mobile-nav__group"><summary>Ещё</summary><div class="mobile-nav__group-links"><a href="blog.html" class="mobile-nav__link">Блог</a><a href="quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a><a href="demo.html" class="mobile-nav__link">Демо</a><a href="ai.html" class="mobile-nav__link">ИИ для бизнеса</a></div></details><a href="incident.html" class="mobile-nav__link" style="color:#ff5f56;font-weight:700;">Авария</a><a href="contacts.html" class="mobile-nav__link">Контакты</a></nav><div class="mobile-nav__footer" style="position:sticky;bottom:0;padding:12px 0;border-top:1px solid var(--border);background:var(--bg);display:flex;gap:8px;"><a href="services.html#calculator" class="btn btn--primary" style="flex:1;text-align:center;">Получить точную смету</a><a href="tel:+79012655252" class="btn btn--ghost" style="flex:1;text-align:center;">+7 (901) 265-52-52</a></div></div></div><main id="main" class="site-main"><nav class="breadcrumb" aria-label="Хлебные крошки" style="padding:12px 0;font-size:13px;color:var(--muted);"><a href="index.html" style="color:var(--text-2);text-decoration:none;">Главная</a><span style="margin:0 4px;">→</span><a href="services.html" style="color:var(--text-2);text-decoration:none;">Услуги</a><span style="margin:0 4px;">→</span><span style="color:var(--text);">Blog</span></nav><section class="page-intro"><div class="container page-intro__inner"><div class="page-intro__copy"><span class="section__label reveal">Блог · F&amp;F</span><h1 class="page-intro__title">Блог о серверах, безопасности и поддержке</h1><p class="page-intro__lead">40 материалов о серверах, резервном копировании, безопасности, ЭЦП и IT-обслуживании. Без «мы лучшие»: цифры, процедуры и понятные следующие шаги. Длинных манифестов нет. Есть разбор, после которого понятно, что чинить.</p><div class="page-intro__actions"><a class="btn btn--primary" href="contacts.html">Получить консультацию за 15 минут</a><a class="btn btn--ghost" href="services.html#calculator">Посчитать стоимость</a></div></div></div></div></section><section class="section reveal" style="padding-top:8px"><div class="container"><nav class="blog-nav" aria-label="Темы блога"><a href="#servers">Серверы</a><a href="#security">Безопасность</a><a href="#data">Бэкапы</a><a href="#office">Инфраструктура</a><a href="#support">IT-поддержка</a><a href="#articles">Большие разборы</a></nav><section class="blog-group" id="articles"><div class="blog-group__head"><h2 class="blog-group__title">Большие разборы</h2><span class="blog-group__count">8 материалов</span></div><div class="blog-grid blog-grid--articles"><a class="blog-card blog-card--wide" href="articles/152fz-prep.html"><span class="blog-card__tag">F&amp;F</span><h3 class="blog-card__title">Подготовка к 152-ФЗ</h3><p class="blog-card__text">Как подготовиться к проверке 152-ФЗ: криптография, ЭЦП, разграничение доступа, регламенты. Что нужно для соответствия.</p><div class="blog-card__meta"><span>5 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="articles/ad-setup.html"><span class="blog-card__tag">Серверы</span><h3 class="blog-card__title">Active Directory: зачем он нужен малому бизнесу</h3><p class="blog-card__text">Зачем малому бизнесу Active Directory: единый вход, права доступа, контроль сотрудников. Разбираем на примерах, когда пора ставить контроллер домена.</p><div class="blog-card__meta"><span>8 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/backup-3-2-1.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Правило 3-2-1: как не потерять данные навсегда</h3><p class="blog-card__text">Правило 3-2-1: как не потерять данные навсегда. Разбираем схему резервного копирования, которая спасает бизнес при сбоях, вирусах и кражах.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/migration-2012.html"><span class="blog-card__tag">Серверы</span><h3 class="blog-card__title">Переезд с Windows Server 2012: как не потерять данные</h3><p class="blog-card__text">Переезд с Windows Server 2012 на современный сервер: пошаговый план миграции без простоя. Что делать с 1С, AD, файлами и бэкапами.</p><div class="blog-card__meta"><span>15 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/ransomware-protection.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Как защитить бизнес от вирусов-шифровальщиков</h3><p class="blog-card__text">Как защитить бизнес от вирусов-шифровальщиков: пошаговая стратегия от запрета макросов до оффлайн-бэкапов. Что делать, если атака уже произошла.</p><div class="blog-card__meta"><span>10 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/server-1c-saturday.html"><span class="blog-card__tag">F&amp;F</span><h3 class="blog-card__title">Сервер 1С не падает в субботу</h3><p class="blog-card__text">Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем.</p><div class="blog-card__meta"><span>15 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/server-vs-cloud.html"><span class="blog-card__tag">Серверы</span><h3 class="blog-card__title">Локальный сервер или облако: что выгоднее в 2026?</h3><p class="blog-card__text">Локальный сервер или облако в 2026 году — что выгоднее для малого бизнеса. Считаем на реальных цифрах, разбираем плюсы и минусы.</p><div class="blog-card__meta"><span>12 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="articles/tco-calc.html"><span class="blog-card__tag">F&amp;F</span><h3 class="blog-card__title">TCO-калькулятор IT-инфраструктуры</h3><p class="blog-card__text">TCO-калькулятор: сколько стоит IT-инфраструктура офиса в Казани. Штат, аутсорсинг, простои, железо.</p><div class="blog-card__meta"><span>5 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="pain-1c-slow.html"><span class="blog-card__tag">Боль</span><h3 class="blog-card__title">1С тормозит</h3><p class="blog-card__text">Почему база на компьютере — это проблема. Как перенести на сервер.</p><div class="blog-card__meta"><span>3 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="pain-admin-left.html"><span class="blog-card__tag">Боль</span><h3 class="blog-card__title">Сисадмин уволился и не отдал пароли</h3><p class="blog-card__text">Инвентаризация доступов, смена паролей, схема. Выезд от 4 000 ₽.</p><div class="blog-card__meta"><span>3 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="pain-no-backup.html"><span class="blog-card__tag">Боль</span><h3 class="blog-card__title">Бэкап есть, восстановить нельзя</h3><p class="blog-card__text">Проверка восстановления, не новый сервер сразу.</p><div class="blog-card__meta"><span>3 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="pain-astra.html"><span class="blog-card__tag">Боль</span><h3 class="blog-card__title">Переход офиса на Astra Linux или РЕД ОС</h3><p class="blog-card__text">Что реально переносим, что не обещаем. Пилот одного места от 8 000 ₽.</p><div class="blog-card__meta"><span>4 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="pain-new-employee.html"><span class="blog-card__tag">Боль</span><h3 class="blog-card__title">Новый сотрудник, а рабочего места нет</h3><p class="blog-card__text">Учётка, почта, доступ к папке и 1С. От 2 500 ₽ за место.</p><div class="blog-card__meta"><span>3 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="industries.html"><span class="blog-card__tag">Отрасли</span><h3 class="blog-card__title">IT для разных отраслей бизнеса</h3><p class="blog-card__text">Ритейл, клиники, HoReCa, бизнес-центр, бухгалтерия, риэлторы, коворкинг, ИТ-парк и другие.</p><div class="blog-card__meta"><span>2 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="blog/pochemu-1c-tormozit.html"><span class="blog-card__tag">1С</span><h3 class="blog-card__title">Почему 1С тормозит: 5 причин и что с этим делать</h3><p class="blog-card__text">Диск, RAM, сеть, база, терминальный сервер. Что мешает 1С работать быстро и как это исправить.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="blog/vybor-servera-ofisa.html"><span class="blog-card__tag">Серверы</span><h3 class="blog-card__title">Как выбрать сервер для офиса: 7 вопросов перед покупкой</h3><p class="blog-card__text">Нагрузка, терминальный доступ, диск, RAID, размещение, обслуживание, стоимость владения.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="blog/server-upal-subbotu-plan.html"><span class="blog-card__tag">Аварии</span><h3 class="blog-card__title">Что будет, если сервер упадёт в субботу: пошаговый план</h3><p class="blog-card__text">Первые 15 минут, первый час, первый день, неделя. Как подготовиться заранее.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card blog-card--wide" href="blog/vpn-udalenny-dostup.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">VPN для офиса: удалённый доступ без дыр</h3><p class="blog-card__text">WireGuard vs OpenVPN, site-to-site, безопасность. Практический гайд.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a></div></section><section class="blog-group" id="servers"><div class="blog-group__head"><h2 class="blog-group__title">Серверы и железо</h2><span class="blog-group__count">7 материалов</span></div><div class="blog-grid"><a class="blog-card" href="blog/server-office.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер для офиса 10–15 человек: от 200 000 ₽</h3><p class="blog-card__text">Сервер для офиса 10–15 человек: от 200 000 ₽. Что реально нужно (RAID 1, бэкапы, 16 ГБ RAM), а что — маркетинг. Tower vs rack, где купить в Казани.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/abonentka-chto-vhodit.html"><span class="blog-card__tag">Абонентское обслуживание</span><h3 class="blog-card__title">Абонентское обслуживание компьютеров в Казани: что входит и сколько стоит</h3><p class="blog-card__text">Абонентское IT-обслуживание в Казани: что входит, сколько стоит, как выбрать. От 10 000 ₽/мес.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/it-autsorsing-kazan-guide.html"><span class="blog-card__tag">IT-аутсорсинг</span><h3 class="blog-card__title">IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы</h3><p class="blog-card__text">IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы. Когда выгодно, когда нет. Реальная арифметика.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-pod-klyuch-kazan-guide.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер под ключ в Казани: от 200 000 ₽ — что входит</h3><p class="blog-card__text">Сервер под ключ в Казани от 200 000 ₽: подбор, монтаж, виртуализация, бэкап с проверкой.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sisadmin-uvolilsya.html"><span class="blog-card__tag">Боли бизнеса</span><h3 class="blog-card__title">Сисадмин уволился без передачи дел: что делать</h3><p class="blog-card__text">Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/backup-check-15min.html"><span class="blog-card__tag">Бэкапы</span><h3 class="blog-card__title">Бэкап не восстанавливается — как проверить за 15 минут</h3><p class="blog-card__text">Бэкап не восстанавливается? Проверьте за 15 минут: 7 признаков проблемного бэкапа.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/it-retail-kazan.html"><span class="blog-card__tag">Отрасли</span><h3 class="blog-card__title">IT для ритейла в Казани: кассы, Честный Знак, 1С</h3><p class="blog-card__text">IT для ритейла в Казани: кассы, «Честный Знак», 1С, серверы, видеонаблюдение. Без простоев касс.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/it-clinics-kazan.html"><span class="blog-card__tag">Отрасли</span><h3 class="blog-card__title">IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ</h3><p class="blog-card__text">IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ, серверы, резервное копирование.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/it-horeca-kazan.html"><span class="blog-card__tag">Отрасли</span><h3 class="blog-card__title">IT для HoReCa в Казани: кассы, Wi-Fi, видеонаблюдение</h3><p class="blog-card__text">IT для HoReCa в Казани: кассы R-Keeper/iiko, Wi-Fi для гостей, видеонаблюдение.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sisadmin-cost-2026.html"><span class="blog-card__tag">Аутсорсинг</span><h3 class="blog-card__title">Сколько стоит штатный сисадмин в Казани в 2026 году</h3><p class="blog-card__text">Оклад 80 000 ₽ → 1,4 млн ₽/год с налогами. Сравнение с абоненткой F&F. Реальная арифметика без прикрас.</p><div class="blog-card__meta"><span>8 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-1c-saturday-plan.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер 1С упал в субботу: пошаговый план действий</h3><p class="blog-card__text">Сервер 1С упал в субботу — что делать по шагам. Диагностика, восстановление, бэкап, контакты. Реакция от 15 минут. Казань.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/backup-not-restoring.html"><span class="blog-card__tag">Бэкапы</span><h3 class="blog-card__title">Бэкапы, которые не восстанавливаются: 7 признаков</h3><p class="blog-card__text">Бэкап есть, но восстановить нельзя — 7 признаков проблемного бэкапа. Как проверить восстановление. Примеры из практики.</p><div class="blog-card__meta"><span>8 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-1c.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер для 1С: сколько RAM, какой диск</h3><p class="blog-card__text">Сервер для 1С: сколько RAM (минимум 8 ГБ для 5–7 человек), какой диск (NVMe), почему RAID. Что реально влияет на скорость, а что — нет.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-1c-saturday.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер 1С не падает в субботу</h3><p class="blog-card__text">Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем и сколько это стоит.</p><div class="blog-card__meta"><span>15 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-cloud-vs-local.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Файловый сервер vs облако: что дешевле</h3><p class="blog-card__text">Файловый сервер vs облако: что дешевле за 3 года. Считаем TCO: локальный сервер, Яндекс.Диск, Selectel. Без «облако всегда дороже».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/server-down-saturday.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Сервер упал в субботу: что делать</h3><p class="blog-card__text">Сервер упал в субботу: что делать по шагам. Что проверить первым, кому звонить, как минимизировать простой. Без «успокойтесь».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/refurbished.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Refurbished-сервер: экономия или лотерея</h3><p class="blog-card__text">Refurbished-сервер: экономия 40% или лотерея. Где экономятся деньги, где — нет. Что проверять перед покупкой восстановленного сервера.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/rds-remote.html"><span class="blog-card__tag">Серверы и железо</span><h3 class="blog-card__title">Терминальный сервер для удалёнки</h3><p class="blog-card__text">Терминальный сервер для удалёнки: RDS, VPN, лицензии. Когда RDS дешевле покупки ноутбуков для сотрудников. Разграничение доступа.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a></div></section><section class="blog-group" id="security"><div class="blog-group__head"><h2 class="blog-group__title">Безопасность, ЭЦП и персональные данные</h2><span class="blog-group__count">8 материалов</span></div><div class="blog-grid"><a class="blog-card" href="blog/152fz-prep.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Подготовка к 152-ФЗ</h3><p class="blog-card__text">Как подготовиться к проверке 152-ФЗ: криптография, ЭЦП, разграничение доступа, регламенты. Что нужно для соответствия и сколько это стоит.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/152fz.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Подготовка к проверке по 152-ФЗ</h3><p class="blog-card__text">Подготовка к проверке Роскомнадзора по 152-ФЗ: что проверяют, какие документы нужны, что будет, если нет. Штрафы 2026.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/ecp-guide.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">ЭЦП для сотрудника vs руководителя</h3><p class="blog-card__text">ЭЦП для сотрудника vs для руководителя: что бесплатно, что платно, как не потерять токен. КриптоПро, настройка рабочего места. Казань — приедем, Россия — удалённо.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/ecp-lost.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Утерян токен ЭЦП: первые 15 минут</h3><p class="blog-card__text">Утерян токен ЭЦП: первые 15 минут. Что делать, кому звонить, как заблокировать. Без «а вдруг пронесёт».</p><div class="blog-card__meta"><span>15 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/cryptopro-vipnet.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">КриптоПро и ViPNet: совместимость</h3><p class="blog-card__text">КриптоПро и ViPNet: совместимость, когда что выбирать. Два разных стандарта. Как не поставить оба «на всякий случай» и не сломать рабочее место.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/veracrypt.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Шифрование ноутбуков: VeraCrypt vs BitLocker</h3><p class="blog-card__text">Шифрование ноутбуков: VeraCrypt vs BitLocker. Что выбрать, где теряется скорость, как восстановить, если забыли пароль.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/fines-2026.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Штрафы за утечку ПДн в 2026</h3><p class="blog-card__text">Штрафы за утечку персональных данных в 2026: таблица, оборотные до 3% выручки. Как не попасть и что делать, если утечка случилась.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/admin-quit.html"><span class="blog-card__tag">Безопасность</span><h3 class="blog-card__title">Уволился админ — пароли не передал: что делать</h3><p class="blog-card__text">Уволился админ — пароли не передал. Что делать в первые 24 часа, как восстановить доступ, как не допустить в следующий раз.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a></div></section><section class="blog-group" id="data"><div class="blog-group__head"><h2 class="blog-group__title">Бэкапы, почта и данные</h2><span class="blog-group__count">3 материалов</span></div><div class="blog-grid"><a class="blog-card" href="blog/backup-3-2-1.html"><span class="blog-card__tag">Бэкапы</span><h3 class="blog-card__title">Бэкапы, которые реально восстанавливаются</h3><p class="blog-card__text">Бэкапы, которые реально восстанавливаются: правило 3-2-1, RPO/RTO, проверка восстановления. Как не оказаться с «бэкапом», который не разворачивается.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/backup-strategy.html"><span class="blog-card__tag">Бэкапы</span><h3 class="blog-card__title">Стратегия резервного копирования</h3><p class="blog-card__text">Стратегия резервного копирования для бизнеса: правило 3-2-1, тестирование восстановления, частые ошибки.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/mail-server.html"><span class="blog-card__tag">Бэкапы</span><h3 class="blog-card__title">Почтовый сервер: Mailcow vs Exchange</h3><p class="blog-card__text">Почтовый сервер: Mailcow vs Exchange. Open source без лицензий vs коммерческий. Что выбрать для офиса 25–100 человек.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a></div></section><section class="blog-group" id="support"><div class="blog-group__head"><h2 class="blog-group__title">IT-поддержка, SLA и экономика</h2><span class="blog-group__count">8 материалов</span></div><div class="blog-grid"><a class="blog-card" href="blog/sisadmin-kazan.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Сисадмин за 50 000 и сервер за 300 000/час</h3><p class="blog-card__text">Сисадмин за 50 000 ₽ и сервер за 300 000 ₽/час: казанская арифметика. Почему «дешёвый» админ на бумаге — это дорого в реальности.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sisadmin-cost.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Сколько стоит сисадмин в Казани в 2026</h3><p class="blog-card__text">Сколько стоит сисадмин в Казани в 2026: медиана «на руки», реальная стоимость для компании, как меняется по опыту.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sisadmin-vs-abonent.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Штатный сисадмин vs абонент: считаем год</h3><p class="blog-card__text">Штатный сисадмин vs абонент: считаем год. 1,4–1,6 млн ₽ за штат против 120 000–300 000 ₽ за абонент. С честным блоком «где штат объективно лучше».</p><div class="blog-card__meta"><span>15 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/transition-to-abonent.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Переход со штата на абонент</h3><p class="blog-card__text">Переход со штата на абонент: пошагово. Как передать инфраструктуру без простоя. Что должно быть в акте приёма-передачи.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/what-included.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Абонентское обслуживание: что входит</h3><p class="blog-card__text">Абонентское обслуживание: что входит и что нет. Мониторинг, реакция, бэкапы, обновления. Где граница между «входит» и «за отдельные деньги».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/how-to-choose.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">Как выбрать IT-подрядчика: 7 вопросов</h3><p class="blog-card__text">Как выбрать IT-подрядчика: 7 вопросов до подписания договора. На что смотреть в ответах. Без «мы лучшие».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sla-995.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">SLA 99,5% — что это значит в часах</h3><p class="blog-card__text">SLA 99,5% — что это значит в часах. Переводим проценты в понятные единицы: сколько часов простоя в год, что считается инцидентом.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/tco-calc.html"><span class="blog-card__tag">IT-поддержка</span><h3 class="blog-card__title">TCO-калькулятор IT-инфраструктуры</h3><p class="blog-card__text">TCO-калькулятор: сколько стоит IT-инфраструктура офиса в Казани. Штат, аутсорсинг, простои, железо. Считаем не оклад, а год.</p><div class="blog-card__meta"><span>7 мин чтения</span><b>Читать →</b></div></a></div></section><section class="blog-group" id="office"><div class="blog-group__head"><h2 class="blog-group__title">Инфраструктура офиса</h2><span class="blog-group__count">6 материалов</span></div><div class="blog-grid"><a class="blog-card" href="blog/office-move.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">Переезд офиса без простоя</h3><p class="blog-card__text">Переезд офиса без простоя: чек-лист. Что делать до переезда, в день переезда, после. Где теряют деньги на «сделаем потом».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/ad-small-business.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">Active Directory для малого бизнеса</h3><p class="blog-card__text">Active Directory для малого бизнеса: зачем нужен офису на 15 человек, что даёт, сколько стоит внедрение и обслуживание. Без «AD только для энтерпрайза».</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/wifi6-office.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">Wi-Fi 6 для офиса</h3><p class="blog-card__text">Wi-Fi 6 для офиса: точки, контроллер, безопасность. Сколько точек на 50 человек. Цены в Казани.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/sks-ports.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">СКС для офиса 50 человек</h3><p class="blog-card__text">СКС для офиса 50 человек: сколько портов, запас 20%, Cat6 vs Cat6A, где экономить, где — нет. Цифры и практика.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/skud-office.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">СКУД для офиса до 300 м²</h3><p class="blog-card__text">СКУД для офиса до 300 м²: биометрия vs карты, автономная vs сетевая. Точка прохода — от 25 000 ₽. Что выбрать.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a><a class="blog-card" href="blog/cctv-poe.html"><span class="blog-card__tag">Инфраструктура офиса</span><h3 class="blog-card__title">Видеонаблюдение POE для офиса</h3><p class="blog-card__text">Видеонаблюдение POE для офиса: цены в Казани, от 46 400 ₽ под ключ. Что входит, сколько камер, где хранить архив.</p><div class="blog-card__meta"><span>6 мин чтения</span><b>Читать →</b></div></a></div></section></div></section><section class="section reveal" style="padding-top:0"><div class="container"><div style="max-width:760px;margin:0 auto;"><h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 12px;">Смотрите также</h3><div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="../support.html" class="btn btn--ghost btn--sm">Абонентское обслуживание</a><a href="../servers.html" class="btn btn--ghost btn--sm">Серверы под ключ</a><a href="../services.html" class="btn btn--ghost btn--sm">Цены</a><a href="../contacts.html" class="btn btn--ghost btn--sm">Контакты</a></div></div></div></section><section class="section reveal" style="padding-top:0"><div class="container" style="text-align:center;"><p style="font-size:14px;color:var(--text-2);margin-bottom:8px;">Нужна консультация? Звоните.</p><a href="tel:+79012655252" class="btn btn--primary" style="font-size:18px;font-weight:700;">+7 (901) 265-52-52</a></div></section><section class="section reveal" style="padding-top:0"><div class="container" style="text-align:center;"><h2 class="section__title reveal" style="font-size:clamp(20px,3vw,28px);margin-bottom:8px;">Нужна смета или консультация?</h2><p style="font-size:15px;color:var(--text-2);margin-bottom:16px;">Опишите задачу — ответим за 15 минут. Цена фиксируется в договоре.</p><div class="double-cta"><a href="services.html#estimate" class="btn btn--primary">Рассчитать стоимость</a><a href="tel:+79012655252" class="btn btn--ghost">Позвонить +7 (901) 265-52-52</a></div></div></section></main><footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand gold">F&amp;F</div><p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p><p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p><p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p></div><div><div class="footer__title">Услуги</div><a href="../servers.html" class="footer__link">Серверы</a><a href="../support.html" class="footer__link">Абонентка</a><a href="../infrastructure.html" class="footer__link">Инфраструктура</a><a href="../security.html" class="footer__link">Безопасность</a></div><div><div class="footer__title">Компания</div><a href="../about.html" class="footer__link">О нас</a><a href="../team.html" class="footer__link">Команда</a><a href="../cases.html" class="footer__link">Кейсы</a><a href="../contacts.html" class="footer__link">Контакты</a></div><div><div class="footer__title">Контакты</div><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a></div></div><div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);"><div class="footer__title">Полезные материалы</div><p style="font-size:13px;color:var(--text-2);line-height:1.8;margin:8px 0 0;"><a href="backup-checklist.html" style="color:var(--text-2);text-decoration:underline;">Чек-лист бэкапов</a> · <a href="lead-server-1c.html" style="color:var(--text-2);text-decoration:underline;">Сервер под 1С</a> · <a href="lead-network-move.html" style="color:var(--text-2);text-decoration:underline;">Сеть перед переездом</a> · <a href="lead-audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит за 30 минут</a> · <a href="lead-ecp.html" style="color:var(--text-2);text-decoration:underline;">ЭЦП и КриптоПро</a> · <a href="it-budget.html" style="color:var(--text-2);text-decoration:underline;">IT-бюджет 2026</a> · <a href="course.html" style="color:var(--text-2);text-decoration:underline;">Мини-курс</a> · <a href="https://calendly.com/ff-it/15min" target="_blank" rel="noopener noreferrer" style="color:var(--text-2);text-decoration:underline;">Забронировать 15 минут с инженером</a> · <a href="vpn.html" style="color:var(--text-2);text-decoration:underline;">VPN WireGuard</a></p></div><div class="footer__bottom"><div>© 2026 F&amp;F. Все права защищены.</div><div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div></div></div></footer></div><button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button><script src="script.js?v=103" defer></script><div class="mobile-bottom-bar" id="mobileBottomBar"><a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a><a href="services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Получить точную смету</a></div><noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript></body></html>
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Блог F&F: про серверы, аутсорсинг и безопасность без снотворного. С цифрами, иронией и без «мы лучшие». Казань, Татарстан, выезд. Реакция от 15 минут.">
+<meta name="keywords" content="IT-аутсорсинг Казань, IT-обслуживание, системный администратор, серверы, инфраструктура, безопасность, криптография, ЭЦП, абонентское обслуживание, IT-аудит, мониторинг, обслуживание серверов, аутсорсинг IT-инфраструктуры">
+<meta name="author" content="F&F">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="Блог F&F — IT для бизнеса в Казани | F&F">
+<meta property="og:description" content="Блог F&F: про серверы, аутсорсинг и безопасность без снотворного. С цифрами, иронией и без «мы лучшие». Казань, Татарстан, выезд. Реакция от 15 минут.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://ff-it.ru/blog.html">
+<meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
+<link rel="canonical" href="https://ff-it.ru/blog.html">
+<link rel="icon" type="image/webp" href="logo.webp">
+<link rel="stylesheet" href="critical.css?v=103">
+<link rel="preload" href="style.css?v=103" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="style.css?v=103">
+</noscript>
+<title>Блог F&F — IT для бизнеса в Казани | F&F</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — Ваш IT-контур под контролем">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="https://ff-it.ru/img/og-preview.webp">
+<link rel="alternate" hreflang="ru" href="https://ff-it.ru/blog.html">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<link rel="preload" href="style.css?v=102" as="style">
+<link rel="preload" href="script.js?v=103" as="script">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Практические IT-гайды для бизнеса", "item": "https://ff-it.ru/blog.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="favicon.ico" sizes="any">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "F&F", "url": "https://ff-it.ru/", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script>
+<meta name="yandex-verification" content="PLACEHOLDER_YANDEX" />
+<meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" />
+<meta property="og:site_name" content="F&F">
+<meta name="twitter:site" content="@FathFed">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань">
+<link rel="apple-touch-icon" href="https://ff-it.ru/apple-touch-icon-180.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["LocalBusiness", "ProfessionalService"], "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "image": "https://ff-it.ru/img/og-preview.webp", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "areaServed": ["Казань", "Республика Татарстан", "Россия"], "priceRange": "₽₽", "openingHours": "Mo-Su 09:00-21:00"}</script>
+<link rel="preload" href="fonts/inter-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-v20-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="grain">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="bg-layer" aria-hidden="true">
+<div class="bg-grid">
+</div>
+<div class="bg-spot--gold">
+</div>
+<div class="bg-spot--green">
+</div>
+<div class="bg-blur--gold">
+</div>
+<div class="bg-blur--green">
+</div>
+</div>
+<header class="header">
+<div class="container header__inner">
+<a href="index.html" class="logo" aria-label="F&F — IT-контур для бизнеса. Казань">
+<img src="logo-44.webp?v=103" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager">
+<span class="logo__text-wrap">
+<span class="logo__text">F&amp;F</span>
+<span class="logo__slogan">IT-контур для бизнеса. Казань</span>
+</span>
+</a>
+<nav class="nav" aria-label="Основная навигация">
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-services">
+<a href="support.html" class="dropdown__link">Абонентское обслуживание</a>
+<a href="servers.html" class="dropdown__link">Серверы под ключ</a>
+<a href="infrastructure.html" class="dropdown__link">Инфраструктура</a>
+<a href="security.html" class="dropdown__link">Безопасность</a>
+<a href="audit.html" class="dropdown__link">IT-аудит</a>
+<a href="visit.html" class="dropdown__link">Разовый выезд</a>
+<a href="server-1c-saturday.html" class="dropdown__link">Сервер 1С</a>
+<a href="mail.html" class="dropdown__link">Почта</a>
+<a href="pbx.html" class="dropdown__link">Телефония</a>
+<a href="vpn.html" class="dropdown__link">VPN</a>
+<a href="crypto-error.html" class="dropdown__link">ЭЦП</a>
+<a href="152fz-prep.html" class="dropdown__link">152-ФЗ</a>
+<a href="ai.html" class="dropdown__link">ИИ</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-tasks" data-nav-trigger>Задачи<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-tasks">
+<a href="hub-office.html" class="dropdown__link">Офис под ключ</a>
+<a href="office-move.html" class="dropdown__link">Переезд офиса</a>
+<a href="industries.html" class="dropdown__link">Отрасли</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-company">
+<a href="team.html" class="dropdown__link">Команда</a>
+<a href="about.html" class="dropdown__link">О F&amp;F</a>
+<a href="methodology.html" class="dropdown__link">Как работаем</a>
+<a href="cases.html" class="dropdown__link">Кейсы</a>
+<a href="trust.html" class="dropdown__link">Доверие и SLA</a>
+<a href="partners.html" class="dropdown__link">Партнёрам</a>
+<a href="for-owner.html" class="dropdown__link">Для собственника</a>
+<a href="for-it-director.html" class="dropdown__link">Для IT-директора</a>
+<a href="for-accountant.html" class="dropdown__link">Для бухгалтера</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-more" data-nav-trigger>Ещё<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-more">
+<a href="blog.html" class="dropdown__link">Блог</a>
+<a href="quiz.html" class="dropdown__link">Проверка инфраструктуры</a>
+<a href="demo.html" class="dropdown__link">Демо</a>
+</div>
+</div>
+<a href="contacts.html" class="nav__direct">Контакты</a>
+</nav>
+<div class="header__actions">
+<a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a>
+<a href="services.html#estimate" class="header__cta">Получить точную смету</a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему">
+</button>
+<button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+<div class="mobile-nav__backdrop" data-mobile-close>
+</div>
+<div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту">
+<div class="mobile-nav__header">
+<a href="index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span>
+</a>
+<button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button>
+</div>
+<nav class="mobile-nav__inner" aria-label="Основная навигация">
+<a href="index.html" class="mobile-nav__link">Главная</a>
+<details class="mobile-nav__group">
+<summary>Услуги</summary>
+<div class="mobile-nav__group-links">
+<a href="support.html" class="mobile-nav__link">Абонентское обслуживание</a>
+<a href="servers.html" class="mobile-nav__link">Серверы под ключ</a>
+<a href="infrastructure.html" class="mobile-nav__link">Инфраструктура</a>
+<a href="security.html" class="mobile-nav__link">Безопасность</a>
+<a href="audit.html" class="mobile-nav__link">IT-аудит</a>
+<a href="visit.html" class="mobile-nav__link">Разовый выезд</a>
+<a href="server-1c-saturday.html" class="mobile-nav__link">Сервер 1С</a>
+<a href="mail.html" class="mobile-nav__link">Почта</a>
+<a href="pbx.html" class="mobile-nav__link">Телефония</a>
+<a href="vpn.html" class="mobile-nav__link">VPN</a>
+<a href="crypto-error.html" class="mobile-nav__link">ЭЦП</a>
+<a href="152fz-prep.html" class="mobile-nav__link">152-ФЗ</a>
+<a href="ai.html" class="mobile-nav__link">ИИ</a>
+<a href="services.html" class="mobile-nav__link">Цены</a>
+</div>
+</details>
+<details class="mobile-nav__group">
+<summary>Задачи</summary>
+<div class="mobile-nav__group-links">
+<a href="hub-office.html" class="mobile-nav__link">Офис под ключ</a>
+<a href="office-move.html" class="mobile-nav__link">Переезд офиса</a>
+<a href="industries.html" class="mobile-nav__link">Отрасли</a>
+</div>
+</details>
+<details class="mobile-nav__group">
+<summary>Компания</summary>
+<div class="mobile-nav__group-links">
+<a href="team.html" class="mobile-nav__link">Команда</a>
+<a href="about.html" class="mobile-nav__link">О F&amp;F</a>
+<a href="methodology.html" class="mobile-nav__link">Как работаем</a>
+<a href="cases.html" class="mobile-nav__link">Кейсы</a>
+<a href="trust.html" class="mobile-nav__link">Доверие и SLA</a>
+<a href="partners.html" class="mobile-nav__link">Партнёрам</a>
+</div>
+</details>
+<details class="mobile-nav__group">
+<summary>Ещё</summary>
+<div class="mobile-nav__group-links">
+<a href="blog.html" class="mobile-nav__link">Блог</a>
+<a href="quiz.html" class="mobile-nav__link">Проверка инфраструктуры</a>
+<a href="demo.html" class="mobile-nav__link">Демо</a>
+<a href="ai.html" class="mobile-nav__link">ИИ для бизнеса</a>
+</div>
+</details>
+<a href="incident.html" class="mobile-nav__link" style="color:#ff5f56;font-weight:700;">Авария</a>
+<a href="contacts.html" class="mobile-nav__link">Контакты</a>
+</nav>
+<div class="mobile-nav__footer" style="position:sticky;bottom:0;padding:12px 0;border-top:1px solid var(--border);background:var(--bg);display:flex;gap:8px;">
+<a href="services.html#calculator" class="btn btn--primary" style="flex:1;text-align:center;">Получить точную смету</a>
+<a href="tel:+79012655252" class="btn btn--ghost" style="flex:1;text-align:center;">+7 (901) 265-52-52</a>
+</div>
+</div>
+</div>
+<main id="main" class="site-main">
+<nav class="breadcrumb" aria-label="Хлебные крошки" style="padding:12px 0;font-size:13px;color:var(--muted);">
+<a href="index.html" style="color:var(--text-2);text-decoration:none;">Главная</a>
+<span style="margin:0 4px;">→</span>
+<a href="services.html" style="color:var(--text-2);text-decoration:none;">Услуги</a>
+<span style="margin:0 4px;">→</span>
+<span style="color:var(--text);">Blog</span>
+</nav>
+<section class="page-intro">
+<div class="container page-intro__inner">
+<div class="page-intro__copy">
+<span class="section__label reveal">Блог · F&amp;F</span>
+<h1 class="page-intro__title">Блог о серверах, безопасности и поддержке</h1>
+<p class="page-intro__lead">40 материалов о серверах, резервном копировании, безопасности, ЭЦП и IT-обслуживании. Без «мы лучшие»: цифры, процедуры и понятные следующие шаги. Длинных манифестов нет. Есть разбор, после которого понятно, что чинить.</p>
+<div class="page-intro__actions">
+<a class="btn btn--primary" href="contacts.html">Получить консультацию за 15 минут</a>
+<a class="btn btn--ghost" href="services.html#calculator">Посчитать стоимость</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section reveal" style="padding-top:8px">
+<div class="container">
+<nav class="blog-nav" aria-label="Темы блога">
+<a href="#servers">Серверы</a>
+<a href="#security">Безопасность</a>
+<a href="#data">Бэкапы</a>
+<a href="#office">Инфраструктура</a>
+<a href="#support">IT-поддержка</a>
+<a href="#articles">Большие разборы</a>
+</nav>
+<section class="blog-group" id="articles">
+<div class="blog-group__head">
+<h2 class="blog-group__title">Большие разборы</h2>
+<span class="blog-group__count">8 материалов</span>
+</div>
+<div class="blog-grid blog-grid--articles">
+<a class="blog-card blog-card--wide" href="articles/152fz-prep.html">
+<span class="blog-card__tag">F&amp;F</span>
+<h3 class="blog-card__title">Подготовка к 152-ФЗ</h3>
+<p class="blog-card__text">Как подготовиться к проверке 152-ФЗ: криптография, ЭЦП, разграничение доступа, регламенты. Что нужно для соответствия.</p>
+<div class="blog-card__meta">
+<span>5 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="articles/ad-setup.html">
+<span class="blog-card__tag">Серверы</span>
+<h3 class="blog-card__title">Active Directory: зачем он нужен малому бизнесу</h3>
+<p class="blog-card__text">Зачем малому бизнесу Active Directory: единый вход, права доступа, контроль сотрудников. Разбираем на примерах, когда пора ставить контроллер домена.</p>
+<div class="blog-card__meta">
+<span>8 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/backup-3-2-1.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Правило 3-2-1: как не потерять данные навсегда</h3>
+<p class="blog-card__text">Правило 3-2-1: как не потерять данные навсегда. Разбираем схему резервного копирования, которая спасает бизнес при сбоях, вирусах и кражах.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/migration-2012.html">
+<span class="blog-card__tag">Серверы</span>
+<h3 class="blog-card__title">Переезд с Windows Server 2012: как не потерять данные</h3>
+<p class="blog-card__text">Переезд с Windows Server 2012 на современный сервер: пошаговый план миграции без простоя. Что делать с 1С, AD, файлами и бэкапами.</p>
+<div class="blog-card__meta">
+<span>15 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/ransomware-protection.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Как защитить бизнес от вирусов-шифровальщиков</h3>
+<p class="blog-card__text">Как защитить бизнес от вирусов-шифровальщиков: пошаговая стратегия от запрета макросов до оффлайн-бэкапов. Что делать, если атака уже произошла.</p>
+<div class="blog-card__meta">
+<span>10 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/server-1c-saturday.html">
+<span class="blog-card__tag">F&amp;F</span>
+<h3 class="blog-card__title">Сервер 1С не падает в субботу</h3>
+<p class="blog-card__text">Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем.</p>
+<div class="blog-card__meta">
+<span>15 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/server-vs-cloud.html">
+<span class="blog-card__tag">Серверы</span>
+<h3 class="blog-card__title">Локальный сервер или облако: что выгоднее в 2026?</h3>
+<p class="blog-card__text">Локальный сервер или облако в 2026 году — что выгоднее для малого бизнеса. Считаем на реальных цифрах, разбираем плюсы и минусы.</p>
+<div class="blog-card__meta">
+<span>12 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="articles/tco-calc.html">
+<span class="blog-card__tag">F&amp;F</span>
+<h3 class="blog-card__title">TCO-калькулятор IT-инфраструктуры</h3>
+<p class="blog-card__text">TCO-калькулятор: сколько стоит IT-инфраструктура офиса в Казани. Штат, аутсорсинг, простои, железо.</p>
+<div class="blog-card__meta">
+<span>5 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="pain-1c-slow.html">
+<span class="blog-card__tag">Боль</span>
+<h3 class="blog-card__title">1С тормозит</h3>
+<p class="blog-card__text">Почему база на компьютере — это проблема. Как перенести на сервер.</p>
+<div class="blog-card__meta">
+<span>3 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="pain-admin-left.html">
+<span class="blog-card__tag">Боль</span>
+<h3 class="blog-card__title">Сисадмин уволился и не отдал пароли</h3>
+<p class="blog-card__text">Инвентаризация доступов, смена паролей, схема. Выезд от 4 000 ₽.</p>
+<div class="blog-card__meta">
+<span>3 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="pain-no-backup.html">
+<span class="blog-card__tag">Боль</span>
+<h3 class="blog-card__title">Бэкап есть, восстановить нельзя</h3>
+<p class="blog-card__text">Проверка восстановления, не новый сервер сразу.</p>
+<div class="blog-card__meta">
+<span>3 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="pain-astra.html">
+<span class="blog-card__tag">Боль</span>
+<h3 class="blog-card__title">Переход офиса на Astra Linux или РЕД ОС</h3>
+<p class="blog-card__text">Что реально переносим, что не обещаем. Пилот одного места от 8 000 ₽.</p>
+<div class="blog-card__meta">
+<span>4 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="pain-new-employee.html">
+<span class="blog-card__tag">Боль</span>
+<h3 class="blog-card__title">Новый сотрудник, а рабочего места нет</h3>
+<p class="blog-card__text">Учётка, почта, доступ к папке и 1С. От 2 500 ₽ за место.</p>
+<div class="blog-card__meta">
+<span>3 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="industries.html">
+<span class="blog-card__tag">Отрасли</span>
+<h3 class="blog-card__title">IT для разных отраслей бизнеса</h3>
+<p class="blog-card__text">Ритейл, клиники, HoReCa, бизнес-центр, бухгалтерия, риэлторы, коворкинг, ИТ-парк и другие.</p>
+<div class="blog-card__meta">
+<span>2 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="blog/pochemu-1c-tormozit.html">
+<span class="blog-card__tag">1С</span>
+<h3 class="blog-card__title">Почему 1С тормозит: 5 причин и что с этим делать</h3>
+<p class="blog-card__text">Диск, RAM, сеть, база, терминальный сервер. Что мешает 1С работать быстро и как это исправить.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="blog/vybor-servera-ofisa.html">
+<span class="blog-card__tag">Серверы</span>
+<h3 class="blog-card__title">Как выбрать сервер для офиса: 7 вопросов перед покупкой</h3>
+<p class="blog-card__text">Нагрузка, терминальный доступ, диск, RAID, размещение, обслуживание, стоимость владения.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="blog/server-upal-subbotu-plan.html">
+<span class="blog-card__tag">Аварии</span>
+<h3 class="blog-card__title">Что будет, если сервер упадёт в субботу: пошаговый план</h3>
+<p class="blog-card__text">Первые 15 минут, первый час, первый день, неделя. Как подготовиться заранее.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card blog-card--wide" href="blog/vpn-udalenny-dostup.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">VPN для офиса: удалённый доступ без дыр</h3>
+<p class="blog-card__text">WireGuard vs OpenVPN, site-to-site, безопасность. Практический гайд.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+<section class="blog-group" id="servers">
+<div class="blog-group__head">
+<h2 class="blog-group__title">Серверы и железо</h2>
+<span class="blog-group__count">7 материалов</span>
+</div>
+<div class="blog-grid">
+<a class="blog-card" href="blog/server-office.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер для офиса 10–15 человек: от 200 000 ₽</h3>
+<p class="blog-card__text">Сервер для офиса 10–15 человек: от 200 000 ₽. Что реально нужно (RAID 1, бэкапы, 16 ГБ RAM), а что — маркетинг. Tower vs rack, где купить в Казани.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/abonentka-chto-vhodit.html">
+<span class="blog-card__tag">Абонентское обслуживание</span>
+<h3 class="blog-card__title">Абонентское обслуживание компьютеров в Казани: что входит и сколько стоит</h3>
+<p class="blog-card__text">Абонентское IT-обслуживание в Казани: что входит, сколько стоит, как выбрать. От 10 000 ₽/мес.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/it-autsorsing-kazan-guide.html">
+<span class="blog-card__tag">IT-аутсорсинг</span>
+<h3 class="blog-card__title">IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы</h3>
+<p class="blog-card__text">IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы. Когда выгодно, когда нет. Реальная арифметика.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-pod-klyuch-kazan-guide.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер под ключ в Казани: от 200 000 ₽ — что входит</h3>
+<p class="blog-card__text">Сервер под ключ в Казани от 200 000 ₽: подбор, монтаж, виртуализация, бэкап с проверкой.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sisadmin-uvolilsya.html">
+<span class="blog-card__tag">Боли бизнеса</span>
+<h3 class="blog-card__title">Сисадмин уволился без передачи дел: что делать</h3>
+<p class="blog-card__text">Сисадмин уволился и не отдал пароли. Инвентаризация доступов, смена паролей, схема. Что делать в первые 24 часа.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/backup-check-15min.html">
+<span class="blog-card__tag">Бэкапы</span>
+<h3 class="blog-card__title">Бэкап не восстанавливается — как проверить за 15 минут</h3>
+<p class="blog-card__text">Бэкап не восстанавливается? Проверьте за 15 минут: 7 признаков проблемного бэкапа.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/it-retail-kazan.html">
+<span class="blog-card__tag">Отрасли</span>
+<h3 class="blog-card__title">IT для ритейла в Казани: кассы, Честный Знак, 1С</h3>
+<p class="blog-card__text">IT для ритейла в Казани: кассы, «Честный Знак», 1С, серверы, видеонаблюдение. Без простоев касс.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/it-clinics-kazan.html">
+<span class="blog-card__tag">Отрасли</span>
+<h3 class="blog-card__title">IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ</h3>
+<p class="blog-card__text">IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ, серверы, резервное копирование.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/it-horeca-kazan.html">
+<span class="blog-card__tag">Отрасли</span>
+<h3 class="blog-card__title">IT для HoReCa в Казани: кассы, Wi-Fi, видеонаблюдение</h3>
+<p class="blog-card__text">IT для HoReCa в Казани: кассы R-Keeper/iiko, Wi-Fi для гостей, видеонаблюдение.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sisadmin-cost-2026.html">
+<span class="blog-card__tag">Аутсорсинг</span>
+<h3 class="blog-card__title">Сколько стоит штатный сисадмин в Казани в 2026 году</h3>
+<p class="blog-card__text">Оклад 80 000 ₽ → 1,4 млн ₽/год с налогами. Сравнение с абоненткой F&F. Реальная арифметика без прикрас.</p>
+<div class="blog-card__meta">
+<span>8 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-1c-saturday-plan.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер 1С упал в субботу: пошаговый план действий</h3>
+<p class="blog-card__text">Сервер 1С упал в субботу — что делать по шагам. Диагностика, восстановление, бэкап, контакты. Реакция от 15 минут. Казань.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/backup-not-restoring.html">
+<span class="blog-card__tag">Бэкапы</span>
+<h3 class="blog-card__title">Бэкапы, которые не восстанавливаются: 7 признаков</h3>
+<p class="blog-card__text">Бэкап есть, но восстановить нельзя — 7 признаков проблемного бэкапа. Как проверить восстановление. Примеры из практики.</p>
+<div class="blog-card__meta">
+<span>8 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-1c.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер для 1С: сколько RAM, какой диск</h3>
+<p class="blog-card__text">Сервер для 1С: сколько RAM (минимум 8 ГБ для 5–7 человек), какой диск (NVMe), почему RAID. Что реально влияет на скорость, а что — нет.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-1c-saturday.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер 1С не падает в субботу</h3>
+<p class="blog-card__text">Сервер 1С не падает в субботу: бэкапы с проверкой, мониторинг, реакция от 15 минут. Как мы это делаем и сколько это стоит.</p>
+<div class="blog-card__meta">
+<span>15 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-cloud-vs-local.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Файловый сервер vs облако: что дешевле</h3>
+<p class="blog-card__text">Файловый сервер vs облако: что дешевле за 3 года. Считаем TCO: локальный сервер, Яндекс.Диск, Selectel. Без «облако всегда дороже».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/server-down-saturday.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Сервер упал в субботу: что делать</h3>
+<p class="blog-card__text">Сервер упал в субботу: что делать по шагам. Что проверить первым, кому звонить, как минимизировать простой. Без «успокойтесь».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/refurbished.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Refurbished-сервер: экономия или лотерея</h3>
+<p class="blog-card__text">Refurbished-сервер: экономия 40% или лотерея. Где экономятся деньги, где — нет. Что проверять перед покупкой восстановленного сервера.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/rds-remote.html">
+<span class="blog-card__tag">Серверы и железо</span>
+<h3 class="blog-card__title">Терминальный сервер для удалёнки</h3>
+<p class="blog-card__text">Терминальный сервер для удалёнки: RDS, VPN, лицензии. Когда RDS дешевле покупки ноутбуков для сотрудников. Разграничение доступа.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+<section class="blog-group" id="security">
+<div class="blog-group__head">
+<h2 class="blog-group__title">Безопасность, ЭЦП и персональные данные</h2>
+<span class="blog-group__count">8 материалов</span>
+</div>
+<div class="blog-grid">
+<a class="blog-card" href="blog/152fz-prep.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Подготовка к 152-ФЗ</h3>
+<p class="blog-card__text">Как подготовиться к проверке 152-ФЗ: криптография, ЭЦП, разграничение доступа, регламенты. Что нужно для соответствия и сколько это стоит.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/152fz.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Подготовка к проверке по 152-ФЗ</h3>
+<p class="blog-card__text">Подготовка к проверке Роскомнадзора по 152-ФЗ: что проверяют, какие документы нужны, что будет, если нет. Штрафы 2026.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/ecp-guide.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">ЭЦП для сотрудника vs руководителя</h3>
+<p class="blog-card__text">ЭЦП для сотрудника vs для руководителя: что бесплатно, что платно, как не потерять токен. КриптоПро, настройка рабочего места. Казань — приедем, Россия — удалённо.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/ecp-lost.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Утерян токен ЭЦП: первые 15 минут</h3>
+<p class="blog-card__text">Утерян токен ЭЦП: первые 15 минут. Что делать, кому звонить, как заблокировать. Без «а вдруг пронесёт».</p>
+<div class="blog-card__meta">
+<span>15 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/cryptopro-vipnet.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">КриптоПро и ViPNet: совместимость</h3>
+<p class="blog-card__text">КриптоПро и ViPNet: совместимость, когда что выбирать. Два разных стандарта. Как не поставить оба «на всякий случай» и не сломать рабочее место.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/veracrypt.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Шифрование ноутбуков: VeraCrypt vs BitLocker</h3>
+<p class="blog-card__text">Шифрование ноутбуков: VeraCrypt vs BitLocker. Что выбрать, где теряется скорость, как восстановить, если забыли пароль.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/fines-2026.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Штрафы за утечку ПДн в 2026</h3>
+<p class="blog-card__text">Штрафы за утечку персональных данных в 2026: таблица, оборотные до 3% выручки. Как не попасть и что делать, если утечка случилась.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/admin-quit.html">
+<span class="blog-card__tag">Безопасность</span>
+<h3 class="blog-card__title">Уволился админ — пароли не передал: что делать</h3>
+<p class="blog-card__text">Уволился админ — пароли не передал. Что делать в первые 24 часа, как восстановить доступ, как не допустить в следующий раз.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+<section class="blog-group" id="data">
+<div class="blog-group__head">
+<h2 class="blog-group__title">Бэкапы, почта и данные</h2>
+<span class="blog-group__count">3 материалов</span>
+</div>
+<div class="blog-grid">
+<a class="blog-card" href="blog/backup-3-2-1.html">
+<span class="blog-card__tag">Бэкапы</span>
+<h3 class="blog-card__title">Бэкапы, которые реально восстанавливаются</h3>
+<p class="blog-card__text">Бэкапы, которые реально восстанавливаются: правило 3-2-1, RPO/RTO, проверка восстановления. Как не оказаться с «бэкапом», который не разворачивается.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/backup-strategy.html">
+<span class="blog-card__tag">Бэкапы</span>
+<h3 class="blog-card__title">Стратегия резервного копирования</h3>
+<p class="blog-card__text">Стратегия резервного копирования для бизнеса: правило 3-2-1, тестирование восстановления, частые ошибки.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/mail-server.html">
+<span class="blog-card__tag">Бэкапы</span>
+<h3 class="blog-card__title">Почтовый сервер: Mailcow vs Exchange</h3>
+<p class="blog-card__text">Почтовый сервер: Mailcow vs Exchange. Open source без лицензий vs коммерческий. Что выбрать для офиса 25–100 человек.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+<section class="blog-group" id="support">
+<div class="blog-group__head">
+<h2 class="blog-group__title">IT-поддержка, SLA и экономика</h2>
+<span class="blog-group__count">8 материалов</span>
+</div>
+<div class="blog-grid">
+<a class="blog-card" href="blog/sisadmin-kazan.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Сисадмин за 50 000 и сервер за 300 000/час</h3>
+<p class="blog-card__text">Сисадмин за 50 000 ₽ и сервер за 300 000 ₽/час: казанская арифметика. Почему «дешёвый» админ на бумаге — это дорого в реальности.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sisadmin-cost.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Сколько стоит сисадмин в Казани в 2026</h3>
+<p class="blog-card__text">Сколько стоит сисадмин в Казани в 2026: медиана «на руки», реальная стоимость для компании, как меняется по опыту.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sisadmin-vs-abonent.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Штатный сисадмин vs абонент: считаем год</h3>
+<p class="blog-card__text">Штатный сисадмин vs абонент: считаем год. 1,4–1,6 млн ₽ за штат против 120 000–300 000 ₽ за абонент. С честным блоком «где штат объективно лучше».</p>
+<div class="blog-card__meta">
+<span>15 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/transition-to-abonent.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Переход со штата на абонент</h3>
+<p class="blog-card__text">Переход со штата на абонент: пошагово. Как передать инфраструктуру без простоя. Что должно быть в акте приёма-передачи.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/what-included.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Абонентское обслуживание: что входит</h3>
+<p class="blog-card__text">Абонентское обслуживание: что входит и что нет. Мониторинг, реакция, бэкапы, обновления. Где граница между «входит» и «за отдельные деньги».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/how-to-choose.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">Как выбрать IT-подрядчика: 7 вопросов</h3>
+<p class="blog-card__text">Как выбрать IT-подрядчика: 7 вопросов до подписания договора. На что смотреть в ответах. Без «мы лучшие».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sla-995.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">SLA 99,5% — что это значит в часах</h3>
+<p class="blog-card__text">SLA 99,5% — что это значит в часах. Переводим проценты в понятные единицы: сколько часов простоя в год, что считается инцидентом.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/tco-calc.html">
+<span class="blog-card__tag">IT-поддержка</span>
+<h3 class="blog-card__title">TCO-калькулятор IT-инфраструктуры</h3>
+<p class="blog-card__text">TCO-калькулятор: сколько стоит IT-инфраструктура офиса в Казани. Штат, аутсорсинг, простои, железо. Считаем не оклад, а год.</p>
+<div class="blog-card__meta">
+<span>7 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+<section class="blog-group" id="office">
+<div class="blog-group__head">
+<h2 class="blog-group__title">Инфраструктура офиса</h2>
+<span class="blog-group__count">6 материалов</span>
+</div>
+<div class="blog-grid">
+<a class="blog-card" href="blog/office-move.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">Переезд офиса без простоя</h3>
+<p class="blog-card__text">Переезд офиса без простоя: чек-лист. Что делать до переезда, в день переезда, после. Где теряют деньги на «сделаем потом».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/ad-small-business.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">Active Directory для малого бизнеса</h3>
+<p class="blog-card__text">Active Directory для малого бизнеса: зачем нужен офису на 15 человек, что даёт, сколько стоит внедрение и обслуживание. Без «AD только для энтерпрайза».</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/wifi6-office.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">Wi-Fi 6 для офиса</h3>
+<p class="blog-card__text">Wi-Fi 6 для офиса: точки, контроллер, безопасность. Сколько точек на 50 человек. Цены в Казани.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/sks-ports.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">СКС для офиса 50 человек</h3>
+<p class="blog-card__text">СКС для офиса 50 человек: сколько портов, запас 20%, Cat6 vs Cat6A, где экономить, где — нет. Цифры и практика.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/skud-office.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">СКУД для офиса до 300 м²</h3>
+<p class="blog-card__text">СКУД для офиса до 300 м²: биометрия vs карты, автономная vs сетевая. Точка прохода — от 25 000 ₽. Что выбрать.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+<a class="blog-card" href="blog/cctv-poe.html">
+<span class="blog-card__tag">Инфраструктура офиса</span>
+<h3 class="blog-card__title">Видеонаблюдение POE для офиса</h3>
+<p class="blog-card__text">Видеонаблюдение POE для офиса: цены в Казани, от 46 400 ₽ под ключ. Что входит, сколько камер, где хранить архив.</p>
+<div class="blog-card__meta">
+<span>6 мин чтения</span>
+<b>Читать →</b>
+</div>
+</a>
+</div>
+</section>
+</div>
+</section>
+<section class="section reveal" style="padding-top:0">
+<div class="container">
+<div style="max-width:760px;margin:0 auto;">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 12px;">Смотрите также</h3>
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<a href="../support.html" class="btn btn--ghost btn--sm">Абонентское обслуживание</a>
+<a href="../servers.html" class="btn btn--ghost btn--sm">Серверы под ключ</a>
+<a href="../services.html" class="btn btn--ghost btn--sm">Цены</a>
+<a href="../contacts.html" class="btn btn--ghost btn--sm">Контакты</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section reveal" style="padding-top:0">
+<div class="container" style="text-align:center;">
+<p style="font-size:14px;color:var(--text-2);margin-bottom:8px;">Нужна консультация? Звоните.</p>
+<a href="tel:+79012655252" class="btn btn--primary" style="font-size:18px;font-weight:700;">+7 (901) 265-52-52</a>
+</div>
+</section>
+<section class="section reveal" style="padding-top:0">
+<div class="container" style="text-align:center;">
+<h2 class="section__title reveal" style="font-size:clamp(20px,3vw,28px);margin-bottom:8px;">Нужна смета или консультация?</h2>
+<p style="font-size:15px;color:var(--text-2);margin-bottom:16px;">Опишите задачу — ответим за 15 минут. Цена фиксируется в договоре.</p>
+<div class="double-cta">
+<a href="services.html#estimate" class="btn btn--primary">Рассчитать стоимость</a>
+<a href="tel:+79012655252" class="btn btn--ghost">Позвонить +7 (901) 265-52-52</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer__grid">
+<div>
+<div class="footer__brand gold">F&amp;F</div>
+<p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p>
+<p class="footer__desc" style="font-size:12px">
+<a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+<p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p>
+</div>
+<div>
+<div class="footer__title">Услуги</div>
+<a href="../servers.html" class="footer__link">Серверы</a>
+<a href="../support.html" class="footer__link">Абонентка</a>
+<a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+<a href="../security.html" class="footer__link">Безопасность</a>
+</div>
+<div>
+<div class="footer__title">Компания</div>
+<a href="../about.html" class="footer__link">О нас</a>
+<a href="../team.html" class="footer__link">Команда</a>
+<a href="../cases.html" class="footer__link">Кейсы</a>
+<a href="../contacts.html" class="footer__link">Контакты</a>
+</div>
+<div>
+<div class="footer__title">Контакты</div>
+<a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+<a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+</div>
+</div>
+<div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);">
+<div class="footer__title">Полезные материалы</div>
+<p style="font-size:13px;color:var(--text-2);line-height:1.8;margin:8px 0 0;">
+<a href="backup-checklist.html" style="color:var(--text-2);text-decoration:underline;">Чек-лист бэкапов</a> · <a href="lead-server-1c.html" style="color:var(--text-2);text-decoration:underline;">Сервер под 1С</a> · <a href="lead-network-move.html" style="color:var(--text-2);text-decoration:underline;">Сеть перед переездом</a> · <a href="lead-audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит за 30 минут</a> · <a href="lead-ecp.html" style="color:var(--text-2);text-decoration:underline;">ЭЦП и КриптоПро</a> · <a href="it-budget.html" style="color:var(--text-2);text-decoration:underline;">IT-бюджет 2026</a> · <a href="course.html" style="color:var(--text-2);text-decoration:underline;">Мини-курс</a> · <a href="https://calendly.com/ff-it/15min" target="_blank" rel="noopener noreferrer" style="color:var(--text-2);text-decoration:underline;">Забронировать 15 минут с инженером</a> · <a href="vpn.html" style="color:var(--text-2);text-decoration:underline;">VPN WireGuard</a>
+</p>
+</div>
+<div class="footer__bottom">
+<div>© 2026 F&amp;F. Все права защищены.</div>
+<div>
+<a href="../privacy.html" class="footer__link">Политика конфиденциальности</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+<polyline points="18 15 12 9 6 15"/>
+</svg>
+</button>
+<script src="script.js?v=103" defer>
+</script>
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+<a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+<a href="services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Получить точную смету</a>
+</div>
+<noscript>
+<div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" style="color:var(--gold-light)">контакты</a>.</div>
+</noscript>
+</body>
+</html>

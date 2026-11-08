@@ -1,3 +1,334 @@
-<!DOCTYPE html><html lang="ru" data-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#0A0D14"><meta name="description" content="Что будет, если сервер упадёт в субботу: пошаговый план действий действий. Первые 15 минут, первый час, первый день, неделя. Как подготовиться заранее."><meta name="keywords" content="сервер упал в субботу, сервер не работает, что делать если сервер упал, план восстановления сервера, авария сервера"><meta name="author" content="F&F"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta property="og:title" content="Что будет, если сервер упадёт в субботу: пошаговый план действий | F&F"><meta property="og:description" content="Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее."><meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:image" content="https://ff-it.ru/img/og-preview.webp"><link rel="alternate" hreflang="ru" href="https://ff-it.ru/blog/server-upal-subbotu-plan.html"><link rel="canonical" href="https://ff-it.ru/blog/server-upal-subbotu-plan.html"><link rel="icon" type="image/webp" href="../logo.webp"><link rel="stylesheet" href="../critical.css?v=103"><link rel="preload" href="../style.css?v=103" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="../style.css?v=103"></noscript><title>Что будет, если сервер упадёт в субботу: пошаговый план | F&F</title><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Что будет, если сервер упадёт в субботу: пошаговый план", "description": "Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "image": "https://ff-it.ru/img/og-preview.webp", "datePublished": "2026-11-07", "dateModified": "2026-11-07"}</script><meta property="og:url" content="https://ff-it.ru/blog/server-upal-subbotu-plan.html"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://ff-it.ru/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер упал в субботу", "item": "https://ff-it.ru/server-upal-subbotu-plan.html"}]}</script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="../favicon.ico" sizes="any"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="F&F — IT-аутсорсинг Казань"><meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо."><meta name="twitter:image" content="https://ff-it.ru/img/og-preview.webp"><meta name="yandex-verification" content="PLACEHOLDER_YANDEX" /><meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" /><meta property="og:site_name" content="F&F"><meta name="twitter:site" content="@FathFed"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань"><link rel="apple-touch-icon" href="https://ff-it.ru/apple-touch-icon-180.webp"><script type="application/ld+json">{"@context": "https://schema.org", "@type": ["LocalBusiness", "ProfessionalService"], "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "image": "https://ff-it.ru/img/og-preview.webp", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "areaServed": ["Казань", "Республика Татарстан", "Россия"], "priceRange": "₽₽", "openingHours": "Mo-Su 09:00-21:00"}</script><link rel="preload" href="../fonts/inter-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/inter-v20-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../script.js?v=103" as="script"></head><body class="grain"><a href="#main" class="skip-link">Перейти к содержимому</a><div class="bg-layer" aria-hidden="true"><div class="bg-grid"></div><div class="bg-spot--gold"></div><div class="bg-spot--green"></div><div class="bg-blur--gold"></div><div class="bg-blur--green"></div></div><header class="header"><div class="container header__inner"><a href="../index.html" class="logo" aria-label="F&F — IT-контур для бизнеса. Казань"><img src="../logo-44.webp?v=103" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager"><span class="logo__text-wrap"><span class="logo__text">F&amp;F</span><span class="logo__slogan">IT-контур для бизнеса. Казань</span></span></a><nav class="nav" aria-label="Основная навигация"><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-services"><a href="../support.html" class="dropdown__link">Абонентское обслуживание</a><a href="../servers.html" class="dropdown__link">Серверы под ключ</a><a href="../infrastructure.html" class="dropdown__link">Инфраструктура</a><a href="../security.html" class="dropdown__link">Безопасность</a><a href="../audit.html" class="dropdown__link">IT-аудит</a><a href="../visit.html" class="dropdown__link">Разовый выезд</a><a href="../server-1c-saturday.html" class="dropdown__link">Сервер 1С</a><a href="../mail.html" class="dropdown__link">Почта</a><a href="../pbx.html" class="dropdown__link">Телефония</a><a href="../vpn.html" class="dropdown__link">VPN</a><a href="../crypto-error.html" class="dropdown__link">ЭЦП</a><a href="../152fz-prep.html" class="dropdown__link">152-ФЗ</a><a href="../ai.html" class="dropdown__link">ИИ</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-tasks" data-nav-trigger>Задачи<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-tasks"><a href="../hub-office.html" class="dropdown__link">Офис под ключ</a><a href="../office-move.html" class="dropdown__link">Переезд офиса</a><a href="../industries.html" class="dropdown__link">Отрасли</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="../team.html" class="dropdown__link">Команда</a><a href="../about.html" class="dropdown__link">О F&amp;F</a><a href="../methodology.html" class="dropdown__link">Как работаем</a><a href="../cases.html" class="dropdown__link">Кейсы</a><a href="../trust.html" class="dropdown__link">Доверие и SLA</a><a href="../partners.html" class="dropdown__link">Партнёрам</a><a href="../for-owner.html" class="dropdown__link">Для собственника</a><a href="../for-it-director.html" class="dropdown__link">Для IT-директора</a><a href="../for-accountant.html" class="dropdown__link">Для бухгалтера</a></div></div><div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-more" data-nav-trigger>Ещё<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-more"><a href="../blog.html" class="dropdown__link">Блог</a><a href="../quiz.html" class="dropdown__link">Проверка инфраструктуры</a><a href="../demo.html" class="dropdown__link">Демо</a></div></div><a href="../contacts.html" class="nav__direct">Контакты</a></nav><div class="header__actions"><a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a><a href="../services.html#estimate" class="header__cta">Получить точную смету</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему"></button><button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div></div></header><main id="main" class="site-main"><section class="section article-page reveal"><div class="container article-container"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="../index.html">Главная</a><a href="../blog.html">Блог</a><span>Сервер упал в субботу</span></nav><span class="section__label reveal">Практический гайд · F&amp;F</span><h1 class="article-title">Что будет, если сервер упадёт в субботу: пошаговый план</h1><p class="article-lead">Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.</p><div class="article-callout"><span class="article-callout__label">Короткий ответ</span><p>Не паникуйте. Позвоните ответственному. Проверьте, что именно упало. Если есть бэкап — восстановление займёт часы, а не недели. Если бэкапа нет — читайте дальше и делайте выводы.</p></div><div class="article-body"><p>Суббота, 14:00. Звонок: «Сервер не работает, 1С не открывается, почта не приходит». Классика. Серверы не спрашивают, удобно ли сейчас. Они падают в субботу, в отпуске, в Новый год. Вопрос не в том, упадёт ли сервер. Вопрос — что вы будете делать в первые 15 минут. Ниже — пошаговый план, который мы используем сами и рекомендуем клиентам.</p><h2>Шаг 0. До аварии: подготовка</h2><p>Если вы читаете это до аварии — вам повезло. Подготовьтесь сейчас:</p><ul class="article-checklist"><li>Запишите, кто отвечает за сервер: имя, телефон, доступы.</li><li>Храните бэкапы на отдельном носителе, вне офиса.</li><li>Проверьте восстановление из бэкапа хотя бы раз.</li><li>Имейте ИБП на 15-30 минут работы.</li><li>Запишите, какие сервисы критичны: 1С, почта, файлы, телефония.</li></ul><p>Ирония: 90% клиентов готовятся к аварии после первой аварии. Не будьте в этих 90%.</p><h2>Первые 15 минут: не паниковать, а диагностировать</h2><p>Первое правило: не перезагружайте сервер бездумно. Перезагрузка может уничтожить данные, если диск уже «сыпется». Сначала — диагностика.</p><ul class="article-checklist"><li>Проверьте, доступен ли сервер по сети (ping, RDP).</li><li>Если сервер недоступен — проверьте питание, ИБП, сеть.</li><li>Если сервер доступен, но сервисы не работают — проверьте, какие именно: 1С, почта, файлы.</li><li>Посмотрите логи: что упало последним.</li><li>Позвоните ответственному (сисадмин, аутсорсер).</li></ul><p>Главная ошибка: начать «чинить» до того, как поняли, что сломалось. Потеряете время и можете усугубить.</p><h2>Первый час: восстановление или обходной путь</h2><p>Если проблема ясна — приступайте к восстановлению. Если нет — включайте обходной путь:</p><ul class="article-checklist"><li>Если 1С упала — можно ли работать в старой копии базы?</li><li>Если почта упала — можно ли использовать веб-почту или мобильное приложение?</li><li>Если файлы недоступны — есть ли копия на другом диске или в облаке?</li><li>Сообщите сотрудникам: что работает, что нет, когда ждать восстановления.</li></ul><p>Главное — не молчать. Сотрудники должны знать, что происходит. Иначе каждый второй позвонит и спросит «а у меня тоже не работает?».</p><h2>Первый день: восстановление из бэкапа</h2><p>Если сервер не поднимается — восстанавливаем из бэкапа. На подготовленном железе или в облаке. Время восстановления зависит от размера базы и скорости носителя. База 10 ГБ на NVMe — 30 минут. На HDD — 2 часа. В облаке — зависит от скорости канала.</p><p>После восстановления:</p><ul class="article-checklist"><li>Проверьте, что база открывается и данные целы.</li><li>Проверьте, что пользователи могут работать.</li><li>Зафиксируйте, какие данные потеряны (если есть).</li><li>Сообщите руководству: что произошло, что сделано, что потеряно.</li></ul><h2>Первая неделя: разбор и выводы</h2><p>Авария закончилась. Теперь — разбор полётов. Без вины, с фактами:</p><ul class="article-checklist"><li>Почему упал сервер? Диск, питание, ошибка, вирус?</li><li>Почему не сработал бэкап? Или сработал?</li><li>Сколько времени заняло восстановление?</li><li>Что можно было сделать иначе?</li><li>Как предотвратить повторение?</li></ul><p>Запишите выводы. Обновите регламент. Если нужно — замените железо. Авария — это не катастрофа, если из неё сделали выводы.</p><h2>Что мы делаем для клиентов</h2><p>В рамках абонентки F&F: мониторинг 24/7, бэкапы с проверкой восстановления раз в квартал, план аварийного восстановления (DRP), выезд инженера при необходимости. Клиенты, у которых всё это настроено, переживают аварии за часы, а не за недели.</p><p>Ирония: клиенты, которые «сами справляются», справляются — но в 3 раза дольше и с потерей данных. Мы не против самостоятельности. Мы против потери данных.</p><h2>Что делать прямо сейчас</h2><ul class="article-checklist"><li>Составить план аварийного восстановления (кто, что, когда).</li><li>Проверить бэкапы: есть ли, где хранятся, восстанавливаются ли.</li><li>Записать контакты ответственных.</li><li>Убедиться, что ИБП работает.</li></ul><h2>Как мы помогаем при аварии</h2><p>Когда клиент на абонентке F&F звонит в субботу, мы уже знаем, что делать. Мониторинг показывает, что упало. Бэкапы проверены. План восстановления готов. Инженер подключается удалённо или выезжает. Время восстановления — от 30 минут до 2 часов, в зависимости от проблемы.</p><p>Клиенты без абонентки звонят в панике: «Что делать?» Мы помогаем и им, но время реакции больше, а стоимость — выше. Аварийный выезд стоит от 5 000 ₽, плюс диагностика. Если бы они были на абонентке, это было бы включено.</p><p>Ирония: абонентка стоит 30 000 ₽ в месяц. Один аварийный выезд с диагностикой — 8 000 ₽. Два выезда в месяц — и абонентка уже окупилась. А ещё мониторинг, бэкапы, обновления. Считайте.</p><h2>Пример из практики</h2><p>Клиент из Казани: офис 15 человек, сервер с 1С и почтой, бэкап на внешнем диске. Суббота, 16:00 — сервер упал. Диск «сыпался» постепенно, бэкап не проверяли. Восстановить из бэкапа не удалось — архив повреждён.</p><p>Мы приехали в воскресенье. Диагностика: диск мёртв. Купили новый диск, восстановили базу из старой копии (потеряли 2 недели данных). Перенабор занял 5 дней. После этого клиент перешёл на абонентку F&F: мониторинг 24/7, бэкапы с проверкой раз в квартал, план аварийного восстановления.</p><p>За 3 года после аварии — ни одной потери данных. Клиент говорит: «Лучше бы я это сделал до аварии, а не после». Мы согласны.</p><h2>Что делать, если бэкапа нет</h2><p>Если бэкапа нет — ситуация тяжёлая, но не безнадёжная. Восстановление данных с повреждённого диска возможно, но дорого и не гарантировано. Стоимость — от 30 000 ₽, срок — от 3 дней.</p><p>Параллельно — перенабор данных: ввод документов заново, восстановление из бумажных копий, запросы в банки и контрагентам. Это недели работы и потеря бизнес-информации.</p><p>Вывод один: бэкап нужен. Не «когда-нибудь», а сейчас. Настройка бэкапа стоит 5 000 ₽. Восстановление без бэкапа — 100 000 ₽ и недели простоя. Считайте.</p><h2>Итог: подготовка решает всё</h2><p>Авария — это не вопрос «если», а вопрос «когда». Подготовленный бизнес восстанавливается за часы. Неподготовленный — за недели, с потерей данных и денег.</p><p>Не ждите субботы. Составьте план сейчас. Проверьте бэкапы. Запишите контакты. Это займёт 2 часа и сэкономит недели.</p><h2>Проверка готовности: 5 вопросов</h2><p>Ответьте честно: есть ли бэкап? Проверяли ли восстановление? Знаете ли, кто отвечает за сервер? Есть ли ИБП? Есть ли план аварийного восстановления? Если хотя бы на один ответ «нет» — вы не готовы.</p><p>Не нужно сложного плана. Достаточно: контакты ответственного, место хранения бэкапа, инструкция по восстановлению, список критичных сервисов. Это 1 страница, которая спасёт вас в субботу.</p><h2>Последний совет</h2><p>Авария в субботу — это не конец света. Это проверка готовности. Если вы готовы — переживёте за часы. Если нет — за недели. Выбор за вами.</p><h2>Помните о людях</h2><p>Авария — это не только техника. Это люди, которые не могут работать. Сообщайте сотрудникам, что происходит, когда ждать восстановления, что делать в это время. Коммуникация снижает панику и сохраняет доверие.</p><p>Даже самый простой план лучше его отсутствия. Начните с одной страницы.</p><h2>Как снизить риски заранее</h2><p>Мониторинг 24/7 покажет проблему до того, как пользователи заметят. Бэкапы с проверкой восстановления раз в квартал гарантируют, что данные не потеряны. План аварийного восстановления (DRP) сократит время простоя с недель до часов. ИБП на 30 минут даст время корректно завершить работу.</p><p>Всё это — в рамках абонентки F&F. Клиенты, у которых всё настроено, переживают аварии за часы, а не за недели. Клиенты без подготовки — теряют данные и деньги.</p><h2>Помните о людях</h2><p>Авария — это не только техника. Это люди, которые не могут работать. Сообщайте сотрудникам, что происходит, когда ждать восстановления, что делать в это время. Коммуникация снижает панику и сохраняет доверие. Даже простой план лучше его отсутствия. Начните с одной страницы.</p><h2>Проверка готовности: 5 вопросов</h2><p>Ответьте честно: есть ли бэкап? Проверяли ли восстановление? Знаете ли, кто отвечает за сервер? Есть ли ИБП? Есть ли план аварийного восстановления? Если хотя бы на один ответ «нет» — вы не готовы. Не нужно сложного плана. Достаточно: контакты ответственного, место хранения бэкапа, инструкция по восстановлению, список критичных сервисов.</p><p>Авария в субботу — это не конец света. Это проверка готовности. Если вы готовы — переживёте за часы. Если нет — за недели. Выбор за вами.</p><div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);"><p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p><p style="font-size:14px;margin:0;"><a href="../backup-checklist.html" style="color:var(--gold-light);">чек-лист проверки бэкапов · <a href="../backup-checklist.html" style="color:var(--gold-light);">чек-лист проверки бэкапов (PDF)</a></a> ·
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0D14">
+<meta name="description" content="Что будет, если сервер упадёт в субботу: пошаговый план действий действий. Первые 15 минут, первый час, первый день, неделя. Как подготовиться заранее.">
+<meta name="keywords" content="сервер упал в субботу, сервер не работает, что делать если сервер упал, план восстановления сервера, авария сервера">
+<meta name="author" content="F&F">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="Что будет, если сервер упадёт в субботу: пошаговый план действий | F&F">
+<meta property="og:description" content="Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://ff-it.ru/img/og-preview.webp">
+<link rel="alternate" hreflang="ru" href="https://ff-it.ru/blog/server-upal-subbotu-plan.html">
+<link rel="canonical" href="https://ff-it.ru/blog/server-upal-subbotu-plan.html">
+<link rel="icon" type="image/webp" href="../logo.webp">
+<link rel="stylesheet" href="../critical.css?v=103">
+<link rel="preload" href="../style.css?v=103" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="../style.css?v=103">
+</noscript>
+<title>Что будет, если сервер упадёт в субботу: пошаговый план | F&F</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Что будет, если сервер упадёт в субботу: пошаговый план", "description": "Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "image": "https://ff-it.ru/img/og-preview.webp", "datePublished": "2026-11-07", "dateModified": "2026-11-07"}</script>
+<meta property="og:url" content="https://ff-it.ru/blog/server-upal-subbotu-plan.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ff-it.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://ff-it.ru/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Сервер упал в субботу", "item": "https://ff-it.ru/server-upal-subbotu-plan.html"}]}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formspree.io;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
+<meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
+<meta name="twitter:image" content="https://ff-it.ru/img/og-preview.webp">
+<meta name="yandex-verification" content="PLACEHOLDER_YANDEX" />
+<meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" />
+<meta property="og:site_name" content="F&F">
+<meta name="twitter:site" content="@FathFed">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань">
+<link rel="apple-touch-icon" href="https://ff-it.ru/apple-touch-icon-180.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["LocalBusiness", "ProfessionalService"], "name": "F&F", "url": "https://ff-it.ru/", "logo": "https://ff-it.ru/logo.webp", "image": "https://ff-it.ru/img/og-preview.webp", "telephone": "+79012655252", "email": "FathFed@yandex.ru", "address": {"@type": "PostalAddress", "addressLocality": "Казань", "addressRegion": "Республика Татарстан", "addressCountry": "RU"}, "areaServed": ["Казань", "Республика Татарстан", "Россия"], "priceRange": "₽₽", "openingHours": "Mo-Su 09:00-21:00"}</script>
+<link rel="preload" href="../fonts/inter-v20-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/inter-v20-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../script.js?v=103" as="script">
+</head>
+<body class="grain">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="bg-layer" aria-hidden="true">
+<div class="bg-grid">
+</div>
+<div class="bg-spot--gold">
+</div>
+<div class="bg-spot--green">
+</div>
+<div class="bg-blur--gold">
+</div>
+<div class="bg-blur--green">
+</div>
+</div>
+<header class="header">
+<div class="container header__inner">
+<a href="../index.html" class="logo" aria-label="F&F — IT-контур для бизнеса. Казань">
+<img src="../logo-44.webp?v=103" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager">
+<span class="logo__text-wrap">
+<span class="logo__text">F&amp;F</span>
+<span class="logo__slogan">IT-контур для бизнеса. Казань</span>
+</span>
+</a>
+<nav class="nav" aria-label="Основная навигация">
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-services" data-nav-trigger>Услуги<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-services">
+<a href="../support.html" class="dropdown__link">Абонентское обслуживание</a>
+<a href="../servers.html" class="dropdown__link">Серверы под ключ</a>
+<a href="../infrastructure.html" class="dropdown__link">Инфраструктура</a>
+<a href="../security.html" class="dropdown__link">Безопасность</a>
+<a href="../audit.html" class="dropdown__link">IT-аудит</a>
+<a href="../visit.html" class="dropdown__link">Разовый выезд</a>
+<a href="../server-1c-saturday.html" class="dropdown__link">Сервер 1С</a>
+<a href="../mail.html" class="dropdown__link">Почта</a>
+<a href="../pbx.html" class="dropdown__link">Телефония</a>
+<a href="../vpn.html" class="dropdown__link">VPN</a>
+<a href="../crypto-error.html" class="dropdown__link">ЭЦП</a>
+<a href="../152fz-prep.html" class="dropdown__link">152-ФЗ</a>
+<a href="../ai.html" class="dropdown__link">ИИ</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-tasks" data-nav-trigger>Задачи<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-tasks">
+<a href="../hub-office.html" class="dropdown__link">Офис под ключ</a>
+<a href="../office-move.html" class="dropdown__link">Переезд офиса</a>
+<a href="../industries.html" class="dropdown__link">Отрасли</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>Компания<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-company">
+<a href="../team.html" class="dropdown__link">Команда</a>
+<a href="../about.html" class="dropdown__link">О F&amp;F</a>
+<a href="../methodology.html" class="dropdown__link">Как работаем</a>
+<a href="../cases.html" class="dropdown__link">Кейсы</a>
+<a href="../trust.html" class="dropdown__link">Доверие и SLA</a>
+<a href="../partners.html" class="dropdown__link">Партнёрам</a>
+<a href="../for-owner.html" class="dropdown__link">Для собственника</a>
+<a href="../for-it-director.html" class="dropdown__link">Для IT-директора</a>
+<a href="../for-accountant.html" class="dropdown__link">Для бухгалтера</a>
+</div>
+</div>
+<div class="nav__item">
+<button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-more" data-nav-trigger>Ещё<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="m5 7 5 5 5-5"/>
+</svg>
+</button>
+<div class="dropdown" id="menu-more">
+<a href="../blog.html" class="dropdown__link">Блог</a>
+<a href="../quiz.html" class="dropdown__link">Проверка инфраструктуры</a>
+<a href="../demo.html" class="dropdown__link">Демо</a>
+</div>
+</div>
+<a href="../contacts.html" class="nav__direct">Контакты</a>
+</nav>
+<div class="header__actions">
+<a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a>
+<a href="../services.html#estimate" class="header__cta">Получить точную смету</a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить цветовую тему">
+</button>
+<button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</div>
+</header>
+<main id="main" class="site-main">
+<section class="section article-page reveal">
+<div class="container article-container">
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+<a href="../index.html">Главная</a>
+<a href="../blog.html">Блог</a>
+<span>Сервер упал в субботу</span>
+</nav>
+<span class="section__label reveal">Практический гайд · F&amp;F</span>
+<h1 class="article-title">Что будет, если сервер упадёт в субботу: пошаговый план</h1>
+<p class="article-lead">Сервер упал в субботу. Что делать в первые 15 минут, час, день. Пошаговый план и как подготовиться заранее.</p>
+<div class="article-callout">
+<span class="article-callout__label">Короткий ответ</span>
+<p>Не паникуйте. Позвоните ответственному. Проверьте, что именно упало. Если есть бэкап — восстановление займёт часы, а не недели. Если бэкапа нет — читайте дальше и делайте выводы.</p>
+</div>
+<div class="article-body">
+<p>Суббота, 14:00. Звонок: «Сервер не работает, 1С не открывается, почта не приходит». Классика. Серверы не спрашивают, удобно ли сейчас. Они падают в субботу, в отпуске, в Новый год. Вопрос не в том, упадёт ли сервер. Вопрос — что вы будете делать в первые 15 минут. Ниже — пошаговый план, который мы используем сами и рекомендуем клиентам.</p>
+<h2>Шаг 0. До аварии: подготовка</h2>
+<p>Если вы читаете это до аварии — вам повезло. Подготовьтесь сейчас:</p>
+<ul class="article-checklist">
+<li>Запишите, кто отвечает за сервер: имя, телефон, доступы.</li>
+<li>Храните бэкапы на отдельном носителе, вне офиса.</li>
+<li>Проверьте восстановление из бэкапа хотя бы раз.</li>
+<li>Имейте ИБП на 15-30 минут работы.</li>
+<li>Запишите, какие сервисы критичны: 1С, почта, файлы, телефония.</li>
+</ul>
+<p>Ирония: 90% клиентов готовятся к аварии после первой аварии. Не будьте в этих 90%.</p>
+<h2>Первые 15 минут: не паниковать, а диагностировать</h2>
+<p>Первое правило: не перезагружайте сервер бездумно. Перезагрузка может уничтожить данные, если диск уже «сыпется». Сначала — диагностика.</p>
+<ul class="article-checklist">
+<li>Проверьте, доступен ли сервер по сети (ping, RDP).</li>
+<li>Если сервер недоступен — проверьте питание, ИБП, сеть.</li>
+<li>Если сервер доступен, но сервисы не работают — проверьте, какие именно: 1С, почта, файлы.</li>
+<li>Посмотрите логи: что упало последним.</li>
+<li>Позвоните ответственному (сисадмин, аутсорсер).</li>
+</ul>
+<p>Главная ошибка: начать «чинить» до того, как поняли, что сломалось. Потеряете время и можете усугубить.</p>
+<h2>Первый час: восстановление или обходной путь</h2>
+<p>Если проблема ясна — приступайте к восстановлению. Если нет — включайте обходной путь:</p>
+<ul class="article-checklist">
+<li>Если 1С упала — можно ли работать в старой копии базы?</li>
+<li>Если почта упала — можно ли использовать веб-почту или мобильное приложение?</li>
+<li>Если файлы недоступны — есть ли копия на другом диске или в облаке?</li>
+<li>Сообщите сотрудникам: что работает, что нет, когда ждать восстановления.</li>
+</ul>
+<p>Главное — не молчать. Сотрудники должны знать, что происходит. Иначе каждый второй позвонит и спросит «а у меня тоже не работает?».</p>
+<h2>Первый день: восстановление из бэкапа</h2>
+<p>Если сервер не поднимается — восстанавливаем из бэкапа. На подготовленном железе или в облаке. Время восстановления зависит от размера базы и скорости носителя. База 10 ГБ на NVMe — 30 минут. На HDD — 2 часа. В облаке — зависит от скорости канала.</p>
+<p>После восстановления:</p>
+<ul class="article-checklist">
+<li>Проверьте, что база открывается и данные целы.</li>
+<li>Проверьте, что пользователи могут работать.</li>
+<li>Зафиксируйте, какие данные потеряны (если есть).</li>
+<li>Сообщите руководству: что произошло, что сделано, что потеряно.</li>
+</ul>
+<h2>Первая неделя: разбор и выводы</h2>
+<p>Авария закончилась. Теперь — разбор полётов. Без вины, с фактами:</p>
+<ul class="article-checklist">
+<li>Почему упал сервер? Диск, питание, ошибка, вирус?</li>
+<li>Почему не сработал бэкап? Или сработал?</li>
+<li>Сколько времени заняло восстановление?</li>
+<li>Что можно было сделать иначе?</li>
+<li>Как предотвратить повторение?</li>
+</ul>
+<p>Запишите выводы. Обновите регламент. Если нужно — замените железо. Авария — это не катастрофа, если из неё сделали выводы.</p>
+<h2>Что мы делаем для клиентов</h2>
+<p>В рамках абонентки F&F: мониторинг 24/7, бэкапы с проверкой восстановления раз в квартал, план аварийного восстановления (DRP), выезд инженера при необходимости. Клиенты, у которых всё это настроено, переживают аварии за часы, а не за недели.</p>
+<p>Ирония: клиенты, которые «сами справляются», справляются — но в 3 раза дольше и с потерей данных. Мы не против самостоятельности. Мы против потери данных.</p>
+<h2>Что делать прямо сейчас</h2>
+<ul class="article-checklist">
+<li>Составить план аварийного восстановления (кто, что, когда).</li>
+<li>Проверить бэкапы: есть ли, где хранятся, восстанавливаются ли.</li>
+<li>Записать контакты ответственных.</li>
+<li>Убедиться, что ИБП работает.</li>
+</ul>
+<h2>Как мы помогаем при аварии</h2>
+<p>Когда клиент на абонентке F&F звонит в субботу, мы уже знаем, что делать. Мониторинг показывает, что упало. Бэкапы проверены. План восстановления готов. Инженер подключается удалённо или выезжает. Время восстановления — от 30 минут до 2 часов, в зависимости от проблемы.</p>
+<p>Клиенты без абонентки звонят в панике: «Что делать?» Мы помогаем и им, но время реакции больше, а стоимость — выше. Аварийный выезд стоит от 5 000 ₽, плюс диагностика. Если бы они были на абонентке, это было бы включено.</p>
+<p>Ирония: абонентка стоит 30 000 ₽ в месяц. Один аварийный выезд с диагностикой — 8 000 ₽. Два выезда в месяц — и абонентка уже окупилась. А ещё мониторинг, бэкапы, обновления. Считайте.</p>
+<h2>Пример из практики</h2>
+<p>Клиент из Казани: офис 15 человек, сервер с 1С и почтой, бэкап на внешнем диске. Суббота, 16:00 — сервер упал. Диск «сыпался» постепенно, бэкап не проверяли. Восстановить из бэкапа не удалось — архив повреждён.</p>
+<p>Мы приехали в воскресенье. Диагностика: диск мёртв. Купили новый диск, восстановили базу из старой копии (потеряли 2 недели данных). Перенабор занял 5 дней. После этого клиент перешёл на абонентку F&F: мониторинг 24/7, бэкапы с проверкой раз в квартал, план аварийного восстановления.</p>
+<p>За 3 года после аварии — ни одной потери данных. Клиент говорит: «Лучше бы я это сделал до аварии, а не после». Мы согласны.</p>
+<h2>Что делать, если бэкапа нет</h2>
+<p>Если бэкапа нет — ситуация тяжёлая, но не безнадёжная. Восстановление данных с повреждённого диска возможно, но дорого и не гарантировано. Стоимость — от 30 000 ₽, срок — от 3 дней.</p>
+<p>Параллельно — перенабор данных: ввод документов заново, восстановление из бумажных копий, запросы в банки и контрагентам. Это недели работы и потеря бизнес-информации.</p>
+<p>Вывод один: бэкап нужен. Не «когда-нибудь», а сейчас. Настройка бэкапа стоит 5 000 ₽. Восстановление без бэкапа — 100 000 ₽ и недели простоя. Считайте.</p>
+<h2>Итог: подготовка решает всё</h2>
+<p>Авария — это не вопрос «если», а вопрос «когда». Подготовленный бизнес восстанавливается за часы. Неподготовленный — за недели, с потерей данных и денег.</p>
+<p>Не ждите субботы. Составьте план сейчас. Проверьте бэкапы. Запишите контакты. Это займёт 2 часа и сэкономит недели.</p>
+<h2>Проверка готовности: 5 вопросов</h2>
+<p>Ответьте честно: есть ли бэкап? Проверяли ли восстановление? Знаете ли, кто отвечает за сервер? Есть ли ИБП? Есть ли план аварийного восстановления? Если хотя бы на один ответ «нет» — вы не готовы.</p>
+<p>Не нужно сложного плана. Достаточно: контакты ответственного, место хранения бэкапа, инструкция по восстановлению, список критичных сервисов. Это 1 страница, которая спасёт вас в субботу.</p>
+<h2>Последний совет</h2>
+<p>Авария в субботу — это не конец света. Это проверка готовности. Если вы готовы — переживёте за часы. Если нет — за недели. Выбор за вами.</p>
+<h2>Помните о людях</h2>
+<p>Авария — это не только техника. Это люди, которые не могут работать. Сообщайте сотрудникам, что происходит, когда ждать восстановления, что делать в это время. Коммуникация снижает панику и сохраняет доверие.</p>
+<p>Даже самый простой план лучше его отсутствия. Начните с одной страницы.</p>
+<h2>Как снизить риски заранее</h2>
+<p>Мониторинг 24/7 покажет проблему до того, как пользователи заметят. Бэкапы с проверкой восстановления раз в квартал гарантируют, что данные не потеряны. План аварийного восстановления (DRP) сократит время простоя с недель до часов. ИБП на 30 минут даст время корректно завершить работу.</p>
+<p>Всё это — в рамках абонентки F&F. Клиенты, у которых всё настроено, переживают аварии за часы, а не за недели. Клиенты без подготовки — теряют данные и деньги.</p>
+<h2>Помните о людях</h2>
+<p>Авария — это не только техника. Это люди, которые не могут работать. Сообщайте сотрудникам, что происходит, когда ждать восстановления, что делать в это время. Коммуникация снижает панику и сохраняет доверие. Даже простой план лучше его отсутствия. Начните с одной страницы.</p>
+<h2>Проверка готовности: 5 вопросов</h2>
+<p>Ответьте честно: есть ли бэкап? Проверяли ли восстановление? Знаете ли, кто отвечает за сервер? Есть ли ИБП? Есть ли план аварийного восстановления? Если хотя бы на один ответ «нет» — вы не готовы. Не нужно сложного плана. Достаточно: контакты ответственного, место хранения бэкапа, инструкция по восстановлению, список критичных сервисов.</p>
+<p>Авария в субботу — это не конец света. Это проверка готовности. Если вы готовы — переживёте за часы. Если нет — за недели. Выбор за вами.</p>
+<div style="margin:24px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<p style="font-size:14px;color:var(--text-2);margin:0 0 8px;">Полезные ссылки:</p>
+<p style="font-size:14px;margin:0;">
+<a href="../backup-checklist.html" style="color:var(--gold-light);">чек-лист проверки бэкапов · <a href="../backup-checklist.html" style="color:var(--gold-light);">чек-лист проверки бэкапов (PDF)</a>
+</a> ·
 <a href="../servers.html" style="color:var(--gold-light);">настройка серверов в Казани</a> ·
-<a href="../security.html" style="color:var(--gold-light);">безопасность IT-инфраструктуры</a></p></div></div><div class="article-cta"><div><strong>Нужен разбор вашей ситуации?</strong><p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p></div><a class="btn btn--primary" href="../contacts.html">Получить консультацию за 15 минут</a></div></main><footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand gold">F&amp;F</div><p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p><p class="footer__desc" style="font-size:12px"><a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="../server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p><p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p></div><div><div class="footer__title">Услуги</div><a href="../servers.html" class="footer__link">Серверы</a><a href="../support.html" class="footer__link">Абонентка</a><a href="../infrastructure.html" class="footer__link">Инфраструктура</a><a href="../security.html" class="footer__link">Безопасность</a></div><div><div class="footer__title">Компания</div><a href="../about.html" class="footer__link">О нас</a><a href="../team.html" class="footer__link">Команда</a><a href="../cases.html" class="footer__link">Кейсы</a><a href="../contacts.html" class="footer__link">Контакты</a></div><div><div class="footer__title">Контакты</div><a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a><a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a></div></div><div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);"><div class="footer__title">Полезные материалы</div><p style="font-size:13px;color:var(--text-2);line-height:1.8;margin:8px 0 0;"><a href="../backup-checklist.html" style="color:var(--text-2);text-decoration:underline;">Чек-лист бэкапов</a> · <a href="../lead-server-1c.html" style="color:var(--text-2);text-decoration:underline;">Сервер под 1С</a> · <a href="../lead-network-move.html" style="color:var(--text-2);text-decoration:underline;">Сеть перед переездом</a> · <a href="../lead-audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит за 30 минут</a> · <a href="../lead-ecp.html" style="color:var(--text-2);text-decoration:underline;">ЭЦП и КриптоПро</a> · <a href="../it-budget.html" style="color:var(--text-2);text-decoration:underline;">IT-бюджет 2026</a> · <a href="../course.html" style="color:var(--text-2);text-decoration:underline;">Мини-курс</a> · <a href="https://calendly.com/ff-it/15min" target="_blank" rel="noopener noreferrer" style="color:var(--text-2);text-decoration:underline;">Забронировать 15 минут с инженером</a> · <a href="../vpn.html" style="color:var(--text-2);text-decoration:underline;">VPN WireGuard</a></p></div><div class="footer__bottom"><div>© 2026 F&amp;F. Все права защищены.</div><div><a href="../privacy.html" class="footer__link">Политика конфиденциальности</a></div></div></div></footer></div><button class="to-top" id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button><script src="../script.js?v=103" defer></script><div class="mobile-bottom-bar" id="mobileBottomBar"><a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a><a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Получить точную смету</a></div><noscript><div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="../contacts.html" style="color:var(--gold-light)">контакты</a>.</div></noscript></body></html>
+<a href="../security.html" style="color:var(--gold-light);">безопасность IT-инфраструктуры</a>
+</p>
+</div>
+</div>
+<div class="article-cta">
+<div>
+<strong>Нужен разбор вашей ситуации?</strong>
+<p>Опишите задачу — поможем определить состав работ и подготовим предварительный расчёт.</p>
+</div>
+<a class="btn btn--primary" href="../contacts.html">Получить консультацию за 15 минут</a>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer__grid">
+<div>
+<div class="footer__brand gold">F&amp;F</div>
+<p class="footer__desc" style="font-size:13px;">Казань, Республика Татарстан</p>
+<p class="footer__desc" style="font-size:12px">
+<a href="../support.html" style="color:var(--text-2);text-decoration:underline;">абонентское обслуживание компьютеров в Казани</a> · <a href="../servers.html" style="color:var(--text-2);text-decoration:underline;">сервер под ключ Казань</a> · <a href="../audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит Казань</a> · <a href="../index.html" style="color:var(--text-2);text-decoration:underline;">системный администратор Казань</a> · <a href="../server-1c-saturday.html" style="color:var(--text-2);text-decoration:underline;">обслуживание 1С Казань</a>. 5 лет · 120+ проектов · 4 инженера.</p>
+<p class="footer__desc" style="font-size:12px">Самозанятый Фатхутдинов Булат Ильмирович<br>ИНН 165506822661</p>
+</div>
+<div>
+<div class="footer__title">Услуги</div>
+<a href="../servers.html" class="footer__link">Серверы</a>
+<a href="../support.html" class="footer__link">Абонентка</a>
+<a href="../infrastructure.html" class="footer__link">Инфраструктура</a>
+<a href="../security.html" class="footer__link">Безопасность</a>
+</div>
+<div>
+<div class="footer__title">Компания</div>
+<a href="../about.html" class="footer__link">О нас</a>
+<a href="../team.html" class="footer__link">Команда</a>
+<a href="../cases.html" class="footer__link">Кейсы</a>
+<a href="../contacts.html" class="footer__link">Контакты</a>
+</div>
+<div>
+<div class="footer__title">Контакты</div>
+<a href="tel:+79012655252" class="footer__link">+7 (901) 265-52-52</a>
+<a href="mailto:FathFed@yandex.ru" class="footer__link">FathFed@yandex.ru</a>
+</div>
+</div>
+<div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);">
+<div class="footer__title">Полезные материалы</div>
+<p style="font-size:13px;color:var(--text-2);line-height:1.8;margin:8px 0 0;">
+<a href="../backup-checklist.html" style="color:var(--text-2);text-decoration:underline;">Чек-лист бэкапов</a> · <a href="../lead-server-1c.html" style="color:var(--text-2);text-decoration:underline;">Сервер под 1С</a> · <a href="../lead-network-move.html" style="color:var(--text-2);text-decoration:underline;">Сеть перед переездом</a> · <a href="../lead-audit.html" style="color:var(--text-2);text-decoration:underline;">IT-аудит за 30 минут</a> · <a href="../lead-ecp.html" style="color:var(--text-2);text-decoration:underline;">ЭЦП и КриптоПро</a> · <a href="../it-budget.html" style="color:var(--text-2);text-decoration:underline;">IT-бюджет 2026</a> · <a href="../course.html" style="color:var(--text-2);text-decoration:underline;">Мини-курс</a> · <a href="https://calendly.com/ff-it/15min" target="_blank" rel="noopener noreferrer" style="color:var(--text-2);text-decoration:underline;">Забронировать 15 минут с инженером</a> · <a href="../vpn.html" style="color:var(--text-2);text-decoration:underline;">VPN WireGuard</a>
+</p>
+</div>
+<div class="footer__bottom">
+<div>© 2026 F&amp;F. Все права защищены.</div>
+<div>
+<a href="../privacy.html" class="footer__link">Политика конфиденциальности</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<button class="to-top" id="toTop" aria-label="Наверх">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+<polyline points="18 15 12 9 6 15"/>
+</svg>
+</button>
+<script src="../script.js?v=103" defer>
+</script>
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+<a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+<a href="../services.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Получить точную смету</a>
+</div>
+<noscript>
+<div style="padding:20px;text-align:center;color:var(--text-2);font-size:14px;">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="../contacts.html" style="color:var(--gold-light)">контакты</a>.</div>
+</noscript>
+</body>
+</html>
