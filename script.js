@@ -231,7 +231,7 @@
           });
           const res = await resp.json();
           if(resp.ok){
-            qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо, ${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Заявка получена.</p><a href="services.html#calculator" class="btn btn--primary">Пока посмотреть цены</a></div>`;
+            qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо, ${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Заявка получена.</p><a href="services.html#calculator" class="btn btn--primary">Получить детальный разбор бесплатно</a></div>`;
           } else {
             showToast(btn, res.message || 'Ошибка', 'error'); btn.disabled = false; btn.textContent = 'Обсудить задачу';
           }
