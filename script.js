@@ -444,7 +444,7 @@
             if(typeof window.ymGoal === 'function'){ window.ymGoal('form_submit'); }
             form.reset();
             const fileLink = document.getElementById('fileLink');
-            if(fileLink){ fileLink.style.display = 'block'; }
+            if(fileLink){ fileLink.style.display = 'block'; if(typeof window.ymGoal === 'function'){ fileLink.addEventListener('click', function(){ window.ymGoal('lead_magnet_download'); }, {once:true}); } }
           } else {
             showToast(btn, (res && res.message) || 'Ошибка', 'error');
             if(btn){ btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Отправить'; }
