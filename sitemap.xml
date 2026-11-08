@@ -271,6 +271,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ff-it.ru/map.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ff-it.ru/methodology.html</loc>
     <lastmod>2026-11-07</lastmod>
     <priority>0.6</priority>
@@ -393,42 +398,42 @@
   <url>
     <loc>https://ff-it.ru/articles/152fz-prep.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/ad-setup.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/backup-3-2-1.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/migration-2012.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/ransomware-protection.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/server-1c-saturday.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/server-vs-cloud.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/articles/tco-calc.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ff-it.ru/blog/152fz-prep.html</loc>
