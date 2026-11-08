@@ -34,3 +34,14 @@ html,body{overflow-x:hidden;max-width:100%;}img,video,iframe,table{max-width:100
 }
 
 @media (max-width: 1099px) { .mobile-bottom-bar.is-visible ~ .to-top, .to-top { bottom: 72px; } }
+
+@media (max-width: 640px) {
+  .form-group input, .form-group textarea, .form-group select {
+    min-height: 48px;
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+  .form-group label { font-size: 13px; margin-bottom: 6px; }
+  .form-group { margin-bottom: 14px; }
+  .btn--full { min-height: 50px; font-size: 16px; }
+}
