@@ -1,5 +1,20 @@
 User-agent: *
 Allow: /
 Disallow: /404.html
+Disallow: /pasahalki
+Disallow: /room
+Disallow: /vcard
+Disallow: /privacy.html
+
 Sitemap: https://fedorov55.github.io/ff-site/sitemap.xml
 Host: https://fedorov55.github.io/ff-site
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+"
