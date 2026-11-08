@@ -1131,3 +1131,19 @@ try {
     window.addEventListener('resize', adjustSticky);
     document.body.appendChild(sticky);
   }catch(e){}
+
+  /* ====== MOBILE BOTTOM BAR VISIBILITY ====== */
+  try{
+    const mbar = document.getElementById('mobileBottomBar');
+    if(mbar){
+      function updateMbar(){
+        if(window.innerWidth >= 1100){ mbar.classList.remove('is-visible'); return; }
+        const total = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const scrolled = (window.scrollY + window.innerHeight) / total;
+        if(scrolled > 0.45){ mbar.classList.add('is-visible'); } else { mbar.classList.remove('is-visible'); }
+      }
+      window.addEventListener('scroll', updateMbar, {passive:true});
+      window.addEventListener('resize', updateMbar);
+      updateMbar();
+    }
+  }catch(e){}

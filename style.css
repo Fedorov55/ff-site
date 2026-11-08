@@ -2700,3 +2700,8 @@ body { background: var(--bg) !important; }
 /* ====== END BACKGROUND LAYER ====== */
 
 .fade-up { opacity: 1; transform: none; }
+
+@media (max-width: 1099px) {
+  .mobile-bottom-bar { transform: translateY(100%); transition: transform 0.3s ease; }
+  .mobile-bottom-bar.is-visible { transform: translateY(0); }
+}
