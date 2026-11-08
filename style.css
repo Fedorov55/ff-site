@@ -1,4 +1,17 @@
 
+/* Mobile breakpoints used:
+   - 320px: smallest phones (iPhone SE)
+   - 360px: compact Android
+   - 375px: iPhone standard
+   - 390px: iPhone 14
+   - 412px: Pixel / large Android
+   - 430px: iPhone Pro Max
+   - 640px: mobile landscape / small tablet
+   - 768px: tablet
+   - 1099px: desktop nav threshold
+   - 1100px: desktop (mobile bar hidden)
+*/
+
 body { font-size: 16px; line-height: 1.6; }
 @media (max-width: 640px) {
   body { font-size: 16px; line-height: 1.65; }
