@@ -45,3 +45,11 @@ html,body{overflow-x:hidden;max-width:100%;}img,video,iframe,table{max-width:100
   .form-group { margin-bottom: 14px; }
   .btn--full { min-height: 50px; font-size: 16px; }
 }
+
+@media (max-width: 640px) {
+  .services__grid, .cases__grid, .cases__bento, .blog-grid, .transparency, .subscription-calculator { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .service-card, .case-card, .scheme-card, .review-card { padding: 16px !important; margin-bottom: 16px !important; }
+  .section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .container { padding-left: 16px !important; padding-right: 16px !important; }
+  .section__head { margin-bottom: 20px !important; }
+}
