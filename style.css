@@ -66,3 +66,10 @@ html,body{overflow-x:hidden;max-width:100%;}img,video,iframe,table{max-width:100
   .container { padding-left: 16px !important; padding-right: 16px !important; }
   .section__head { margin-bottom: 20px !important; }
 }
+
+/* Readability */
+p, li { max-width: 70ch; }
+.article-body p, .page-intro__lead, .section__subtitle { max-width: 65ch; }
+@media (max-width: 640px) {
+  p, li { max-width: 100%; }
+}
