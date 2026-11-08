@@ -32,3 +32,5 @@ html,body{overflow-x:hidden;max-width:100%;}img,video,iframe,table{max-width:100
   .nav__trigger { min-height: 44px !important; padding: 8px 12px !important; }
   .to-top { width: 48px !important; height: 48px !important; }
 }
+
+@media (max-width: 1099px) { .mobile-bottom-bar.is-visible ~ .to-top, .to-top { bottom: 72px; } }
