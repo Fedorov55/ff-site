@@ -1083,7 +1083,8 @@ try {
           '<button id="ff-exit-close" type="button" aria-label="Закрыть" style="position:absolute;top:8px;right:12px;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;">×</button>' +
           '<h3 style="color:#D4AF37;margin:0 0 8px;font-size:18px;">Уходите? Заберите чек-лист</h3>' +
           '<p style="color:#9AA4B2;font-size:14px;margin:0 0 16px;">7 признаков, что ваши бэкапы не работают. Проверьте за 10 минут.</p>' +
-          '<a href="' + prefix + 'backup-checklist.html" class="btn btn--primary" style="display:inline-block;">Скачать чек-лист</a>' +
+          '<a href="' + prefix + 'backup-checklist.html" class="btn btn--primary" style="display:inline-block;margin-bottom:8px;">Скачать чек-лист</a>' +
+          '<br><a href="' + prefix + 'contacts.html" style="color:#D4AF37;font-size:13px;">Или получите расчёт стоимости за 15 минут →</a>' +
         '</div>';
         document.body.appendChild(modal);
         const closeBtn = document.getElementById('ff-exit-close');
