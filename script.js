@@ -14,3 +14,18 @@
       });
     }
   }catch(e){}
+
+  /* ====== MOBILE NAV ACCORDION ====== */
+  try{
+    const drawer = document.getElementById('mobileNav');
+    if(drawer){
+      const groups = drawer.querySelectorAll('.mobile-nav__group');
+      groups.forEach(function(g){
+        g.addEventListener('toggle', function(){
+          if(g.open){
+            groups.forEach(function(other){ if(other !== g) other.open = false; });
+          }
+        });
+      });
+    }
+  }catch(e){}
