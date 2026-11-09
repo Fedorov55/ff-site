@@ -29,3 +29,17 @@
       });
     }
   }catch(e){}
+
+
+  /* ====== ACTIVE NAV HIGHLIGHT ====== */
+  try{
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav__direct, .dropdown__link, .mobile-nav__link').forEach(function(a){
+      const href = (a.getAttribute('href') || '').split('/').pop().split('?')[0].split('#')[0];
+      if (href && href === path) {
+        a.classList.add('is-active');
+        a.style.color = 'var(--gold-light)';
+        a.style.fontWeight = '700';
+      }
+    });
+  }catch(e){}
