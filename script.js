@@ -43,3 +43,44 @@
       }
     });
   }catch(e){}
+
+
+  /* ====== COOKIE BANNER & CONSENT ====== */
+  try{
+    const COOKIE_KEY = 'ff_cookie_consent';
+    function getConsent(){ try{ return localStorage.getItem(COOKIE_KEY); }catch(e){ return null; } }
+    function setConsent(v){ try{ localStorage.setItem(COOKIE_KEY, v); }catch(e){} }
+    function loadAnalytics(){
+      // TODO: подключить Яндекс.Метрику после получения реального ID
+    }
+    function showBanner(){
+      if(document.getElementById('ff-cookie-banner')) return;
+      const banner = document.createElement('div');
+      banner.id = 'ff-cookie-banner';
+      banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#11151F;border-top:1px solid #2A3142;padding:16px 20px;font-size:14px;color:#B6BFCF;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;';
+      banner.innerHTML = '<div style="flex:1;min-width:200px;"><strong style="color:#F2F5FA;">Cookie и персональные данные</strong><p style="margin:4px 0 0;font-size:13px;">Мы используем необходимые cookie для работы сайта. Аналитические cookie загружаются только с вашего согласия. Подробнее — в <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:#D4AF37;">Политике конфиденциальности</a>.</p></div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+        '<button id="ff-cookie-necessary" type="button" style="padding:8px 14px;border:1px solid #2A3142;border-radius:8px;background:transparent;color:#B6BFCF;cursor:pointer;font-size:13px;">Только необходимые</button>' +
+        '<button id="ff-cookie-accept" type="button" style="padding:8px 14px;border:none;border-radius:8px;background:#D4AF37;color:#0A0D14;cursor:pointer;font-size:13px;font-weight:700;">Принять всё</button>' +
+        '</div>';
+      document.body.appendChild(banner);
+      document.getElementById('ff-cookie-accept').addEventListener('click', function(){ setConsent('all'); banner.remove(); loadAnalytics(); });
+      document.getElementById('ff-cookie-necessary').addEventListener('click', function(){ setConsent('necessary'); banner.remove(); });
+    }
+    const consent = getConsent();
+    if(consent === 'all'){ loadAnalytics(); }
+    else if(!consent){ showBanner(); }
+    function addFooterLink(){
+      const footerBottom = document.querySelector('.footer__bottom');
+      if(footerBottom && !document.getElementById('ff-cookie-manage')){
+        const link = document.createElement('a');
+        link.id = 'ff-cookie-manage';
+        link.href = '#';
+        link.textContent = 'Управление cookie';
+        link.style.cssText = 'color:var(--text-2);font-size:12px;text-decoration:underline;margin-left:12px;';
+        link.addEventListener('click', function(e){ e.preventDefault(); try{ localStorage.removeItem(COOKIE_KEY); }catch(err){} showBanner(); });
+        footerBottom.appendChild(link);
+      }
+    }
+    if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', addFooterLink); } else { addFooterLink(); }
+  }catch(e){}
