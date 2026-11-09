@@ -84,3 +84,16 @@
     }
     if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', addFooterLink); } else { addFooterLink(); }
   }catch(e){}
+
+  /* ====== STICKY HEADER SCROLLED STATE ====== */
+  try {
+    const header = document.querySelector('.header');
+    if (header) {
+      const onScroll = () => {
+        if (window.scrollY > 20) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  } catch (e) {}
