@@ -89,3 +89,25 @@ p, li { max-width: 70ch; }
 .callout--success { border-left-color: #00FF88; }
 .inline-stat { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--gold-light); background: var(--card); padding: 4px 8px; border-radius: 4px; margin: 0 4px; }
 .section-conclusion { font-size: 14px; color: var(--text-2); font-style: italic; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+/* Unified interaction states */
+a:hover, .btn:hover, .seek-card:hover, .case-card:hover, .service-card:hover {
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+a:focus-visible, .btn:focus-visible, .seek-card:focus-visible, .case-card:focus-visible, .service-card:focus-visible, input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}
+.btn:active, .seek-card:active, .case-card:active, .service-card:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+.btn:disabled, button:disabled, input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
