@@ -126,3 +126,19 @@
 - node --check: 0 errors.
 - Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 100.
 - 0 console errors, 0 broken links.
+
+
+## [2026-11-09] — Deep audit & fixes
+### Fixed
+- script.js: removed ReferenceError sources (tgBtn, runSaturdayScenario, updateMbar).
+- script.js: ym calls guarded via window.ym.
+- Schema: converted LocalBusiness/ProfessionalService to Organization (no office per AGENTS.md); removed PostalAddress, openingHours, priceRange.
+- Fixed aggregateRating reviewCount to match actual reviews (3).
+- Meta: added og:title/twitter:card to consent, cookie, privacy, terms, map.
+- map.html: fixed garbage meta description.
+- style.css: changed font-display from block to optional (reduce CLS).
+- All JS passes eslint (0 errors) and node --check.
+### Validated
+- 164 HTML pages: 0 broken internal links, 0 missing required meta, 0 invalid schema (518 blocks).
+- 0 images missing alt/dimensions.
+- noindex only on 404 + service/legal pages.
