@@ -303,6 +303,7 @@ input:focus, textarea:focus, select:focus {
 /* ===== GLOBAL BACKGROUND (restored from old site) ===== */
 html {
   background: var(--bg);
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
