@@ -681,3 +681,17 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 .team-card__role { margin: 6px 0 0; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); }
 .team-card__desc { margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: var(--text-2); }
 .team-card__meta { margin: 12px 0 0; font-size: 12px; line-height: 1.4; color: var(--text-2); }
+
+
+/* === Estimate form (servers.html) === */
+.estimate-form { max-width: 720px; margin: 0 auto; text-align: left; padding: 32px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; }
+.estimate-form h2, .estimate-form p { text-align: center; }
+.estimate-form h2 { color: var(--text); font-size: clamp(24px, 3vw, 32px); margin: 0 0 12px; }
+.estimate-form label { display: block; margin: 14px 0 6px; font-size: 13px; color: var(--text-2); }
+.estimate-form input, .estimate-form textarea { width: 100%; box-sizing: border-box; border: 1px solid var(--border); border-radius: 12px; background: var(--bg); color: var(--text); padding: 12px 14px; font: inherit; }
+.estimate-form textarea { min-height: 120px; resize: vertical; }
+.estimate-form__check { display: flex; gap: 10px; align-items: flex-start; }
+.estimate-form__check input { width: auto; margin-top: 3px; }
+.estimate-form .btn--primary { margin-top: 16px; }
+.estimate-form__fallback { margin: 12px 0 0; font-size: 14px; color: var(--text-2); }
+@media (max-width: 640px) { .estimate-form .btn--primary { width: 100%; } }
