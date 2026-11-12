@@ -1,8 +1,8 @@
 # Инструкция по подключению Cloudflare
 
 ## 1. Подключение домена
-1. Зарегистрируйте домен ff-it.ru (если ещё не сделано).
-2. В Cloudflare: Add Site → ff-it.ru → выберите Free план.
+1. Зарегистрируйте домен fedorov55.github.io/ff-site (если ещё не сделано).
+2. В Cloudflare: Add Site → fedorov55.github.io/ff-site → выберите Free план.
 3. Обновите NS-записи у регистратора на те, что выдаст Cloudflare.
 4. Дождитесь распространения DNS (до 24 часов).
 
@@ -19,11 +19,11 @@
 Для своего сервера настройте аналогичные заголовки в nginx/Apache.
 
 ## 4. После подключения
-1. Заменить `YOUR_FORM_ID` в `script.js` на реальный Formspree ID.
+1. Заменить `` в `script.js` на реальный Formspree ID.
 2. Подключить Яндекс.Метрику (реальный ID) — раскомментировать скрипт.
 3. Заменить `PLACEHOLDER_YANDEX` / `PLACEHOLDER_GOOGLE`.
 4. Снять `noindex` с `privacy.html` (если нужна индексация).
-5. Обновить canonical/og/sitemap на `https://ff-it.ru/` (уже сделано).
+5. Обновить canonical/og/sitemap на `https://fedorov55.github.io/ff-site/` (уже сделано).
 6. Отправить sitemap в Яндекс.Вебмастер и Google Search Console.
 7. Настроить 301-редиректы со старых URL.
 8. Проверить Lighthouse на продакшене.

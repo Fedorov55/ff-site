@@ -1,4 +1,4 @@
-# A/B-тесты для ff-it.ru
+# A/B-тесты для fedorov55.github.io/ff-site
 
 ## Тест 1: Текст главной кнопки
 **Страница:** index.html (Hero)

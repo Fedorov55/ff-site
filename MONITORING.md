@@ -1,17 +1,17 @@
-# Мониторинг ff-it.ru
+# Мониторинг fedorov55.github.io/ff-site
 
 ## 1. Uptime (UptimeRobot / Uptime Kuma / Pingdom)
 Настрой проверки каждые 5 минут на:
-- https://ff-it.ru/ (главная)
-- https://ff-it.ru/support.html (абонентка)
-- https://ff-it.ru/servers.html (серверы)
-- https://ff-it.ru/contacts.html (контакты)
+- https://fedorov55.github.io/ff-site/ (главная)
+- https://fedorov55.github.io/ff-site/support.html (абонентка)
+- https://fedorov55.github.io/ff-site/servers.html (серверы)
+- https://fedorov55.github.io/ff-site/contacts.html (контакты)
 
 Алерт: email + Telegram при downtime > 2 мин.
 
 ## 2. Проверка sitemap и robots.txt
-- Раз в неделю: `curl -I https://ff-it.ru/sitemap.xml` → 200
-- Раз в неделю: `curl -I https://ff-it.ru/robots.txt` → 200
+- Раз в неделю: `curl -I https://fedorov55.github.io/ff-site/sitemap.xml` → 200
+- Раз в неделю: `curl -I https://fedorov55.github.io/ff-site/robots.txt` → 200
 - Проверять, что sitemap не содержит 404-страниц и служебных URL
 - После добавления новых страниц — регенерировать sitemap
 

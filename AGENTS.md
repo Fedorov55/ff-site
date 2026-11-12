@@ -1,7 +1,7 @@
 # AGENTS.md — F&F SEO Project
 
 ## Project
-- Site: F&F (ff-it.ru), static HTML/CSS/JS, GitHub Pages.
+- Site: F&F (fedorov55.github.io/ff-site), static HTML/CSS/JS, GitHub Pages.
 - Stack: Vanilla JS, no backend. Forms → Formspree/Getform.
 - Style: dark theme (#0A0D14), gold accent (#D4AF37), JetBrains Mono for accents, Inter for body.
 - Tone: business, status, light self-irony. No «100%», no «cheap», no «best in the world».

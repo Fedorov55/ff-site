@@ -6,7 +6,7 @@ Disallow: /room
 Disallow: /vcard
 Disallow: /privacy.html
 
-Sitemap: https://ff-it.ru/sitemap.xml
+Sitemap: https://fedorov55.github.io/ff-site/sitemap.xml
 
 User-agent: GPTBot
 Allow: /

@@ -117,7 +117,7 @@
       if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
       if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
       try {
-        fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        fetch('', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: 'Расчёт сметы с сайта', service: 'Калькулятор', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('calcSuccess');
