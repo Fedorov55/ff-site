@@ -60,7 +60,7 @@
 ## [2026-10-31] — Phase 4: Deployment
 ### Added
 - GitHub repository: https://github.com/Fedorov55/ff-site
-- GitHub Pages: https://fedorov55.github.io/ff-site/
+- GitHub Pages: https://ff-it.ru/
 - README.md with run/deploy instructions.
 
 

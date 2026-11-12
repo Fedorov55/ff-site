@@ -21,7 +21,7 @@
 ## 4. 301-редиректы (настроить на сервере / .htaccess / nginx)
 ```
 # Старые URL GitHub Pages → новый домен
-https://fedorov55.github.io/ff-site/* → https://ff-it.ru/* (301)
+https://ff-it.ru/* → https://ff-it.ru/* (301)
 
 # Слэш в конце
 https://ff-it.ru/index.html → https://ff-it.ru/ (301)
