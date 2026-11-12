@@ -1,3 +1,4 @@
+html,body{background:var(--bg)}
 
 /* Mobile breakpoints used:
    - 320px: smallest phones (iPhone SE)
@@ -321,13 +322,7 @@ body {
   position: relative;
 }
 
-.bg-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
+
 
 .bg-grad {
   position: absolute;
@@ -415,7 +410,7 @@ html[data-theme="dark"] {
 html, body { min-height: 100vh; }
 body { background: transparent !important; }
 html { background: var(--bg) !important; }
-.bg-layer { z-index: 0 !important; }
+
 
 
 /* === Sticky header (restored) === */
