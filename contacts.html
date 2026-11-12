@@ -164,269 +164,39 @@
 <section class="section reveal" style="padding-top:0">
 <div class="container">
 <div class="contact__layout">
-<form class="contact__form fade-up" name="contact-form" action="mailto:FathFed@yandex.ru" method="POST" novalidate>
-<input type="hidden" name="service" value="Контакты">
-<div class="form-step">
-<div class="form-step__num">1</div>
-<div class="form-step__label">Опишите проблему или задачу</div>
-</div>
-<div class="form-group">
-<label for="problem" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Задача</label>
-<textarea id="problem" name="message" rows="4" placeholder="Например: сервер 1С падает в субботу, нужен аутсорсинг, настроить ЭЦП...">
-</textarea>
-</div>
-<div class="form-step">
-<div class="form-step__num">2</div>
-<div class="form-step__label">Как к вам обращаться</div>
-</div>
-<div class="form-group">
-<label for="name" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Имя</label>
-<input type="text" id="name" name="name" placeholder="Иван Петров" autocomplete="name" required>
-</div>
-<div class="form-step">
-<div class="form-step__num">3</div>
-<div class="form-step__label">Куда удобнее написать</div>
-</div>
-<div class="form-group">
-<label for="contact-way" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Контакт</label>
-<input type="text" id="contact-way" name="contact_way" placeholder="Telegram: @FathFed, MAX или номер телефона" required>
-</div>
-<div style="display:none" aria-hidden="true">
-<label>Website<input type="text" name="website" tabindex="-1" autocomplete="off">
-</label>
-</div>
-<div class="form-group form-group--checkbox">
-<input type="checkbox" id="agree" name="agree" required aria-required="true">
-<label for="agree">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
-</label>
-</div>
-<p style="font-size:12px;color:var(--muted);margin-bottom:12px;">Если форма молчит, звоните. Так быстрее.</p>
-<button type="submit" class="btn btn--primary btn--full">Получить предложение</button>
-      <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px;">Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности. Данные используются только для ответа на вашу заявку.</p>
-<div class="form-success" id="contactSuccess" aria-live="polite" style="display:none;margin-top:16px">
-</div>
-</form>
-<div class="contact__info fade-up">
-<a href="tel:+79012655252" class="contact__phone-large">+7 (901) 265-52-52</a>
-<p style="font-size:14px;color:var(--text-2);margin-bottom:16px;">Ответим за 15 минут. Смета без обязательств.</p>
-<div style="background:var(--card);border:1px solid var(--border);border-radius:18px;height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--text-2);margin-bottom:16px;position:relative;overflow:hidden;">
-<div style="position:absolute;inset:0;opacity:.15;background-image:radial-gradient(var(--gold) 1px,transparent 1px);background-size:18px 18px;">
-</div>
-<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin-bottom:14px;filter:drop-shadow(0 0 10px var(--neon-glow));" aria-hidden="true">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-<circle cx="12" cy="10" r="3"/>
-</svg>
-<span style="color:var(--text);font-weight:700;font-size:17px;z-index:1;">Зона покрытия: Казань</span>
-<span style="font-size:13px;margin-top:6px;z-index:1;text-align:center;padding:0 20px;">Выезд по городу и Татарстану.<br>Удалённо — вся Россия, тот же SLA.</span>
-</div>
-<div class="contact__grid">
-<a href="tel:+79012655252" class="contact__item">
-<div class="contact__icon">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-</svg>
-</div>
-<span class="contact__label">Телефон</span>
-<span class="contact__value">+7 (901) 265-52-52</span>
-</a>
-<a href="https://t.me/FathFed" class="contact__item" target="_blank" rel="noopener noreferrer">
-<div class="contact__icon">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-</svg>
-</div>
-<span class="contact__label">Telegram</span>
-<span class="contact__value">@FathFed</span>
-</a>
-<a href="https://max.ru/se14849309_bot" class="contact__item" target="_blank" rel="noopener noreferrer">
-<div class="contact__icon">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-</svg>
-</div>
-<span class="contact__label">MAX</span>
-<span class="contact__value">FathFed</span>
-</a>
-<a href="mailto:FathFed@yandex.ru" class="contact__item">
-<div class="contact__icon">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-<polyline points="22,6 12,13 2,6"/>
-</svg>
-</div>
-<span class="contact__label">Email</span>
-<span class="contact__value">FathFed@yandex.ru</span>
-</a>
-</div>
-</div>
-<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:16px;">
-<h2 class="section__title reveal">Как мы работаем с заявкой</h2>
-<ol style="margin:0;padding-left:20px;color:var(--text-2);font-size:14px;line-height:1.8;">
-<li>Читаем задачу. Если нужно — звоним уточнить.</li>
-<li>Считаем смету. Отправляем до договора.</li>
-<li>Если согласны — выезжаем или начинаем удалённо.</li>
-</ol>
-</div>
-<p style="margin-top:16px;font-size:13px;color:var(--muted);text-align:center;">Приезжаем к вам. Отдельного шоурума нет. Ответ с 9:00 до 22:00, авария — от 15 минут. Суббота входит в дежурство.</p>
-</div>
-</div>
-</section>
-<section class="section reveal" style="padding-top:0">
-<div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">География</span>
-<h2 class="section__title reveal">Работаем в городах Татарстана</h2>
-<p class="section__subtitle reveal">Казань — приедем в день обращения. Выезд в Альметьевск, Набережные Челны, Нижнекамск, Зеленодольск и Иннополис — по согласованию.</p>
-</div>
-<div class="related-guides fade-up">
-<a class="related-guide" href="geo/server-kazan.html">Сервер под ключ в Казани<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/servers-almetyevsk.html">Серверы в Альметьевске<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/servers-nabchelny.html">Серверы в Набережных Челнах<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/servers-innopolis.html">Серверы в Иннополисе<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/support-kazan.html">Поддержка в Казани<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/support-almetyevsk.html">Поддержка в Альметьевске<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/support-nizhnekamsk.html">Поддержка в Нижнекамске<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/support-zelendolsk.html">Поддержка в Зеленодольске<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/security-nabchelny.html">Криптография в Набережных Челнах<span aria-hidden="true">→</span>
-</a>
-<a class="related-guide" href="geo/security-nizhnekamsk.html">Криптография в Нижнекамске<span aria-hidden="true">→</span>
-</a>
-</div>
-</div>
-</section>
-<section class="section reveal" style="padding-top:0">
-<div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">Что будет после заявки</span>
-<h2 class="section__title reveal">Три шага — без «мы вам перезвоним»</h2>
-</div>
-<div class="steps__grid">
-<div class="step fade-up">
-<div class="step__num">01</div>
-<h3 class="step__title">Заявка</h3>
-<p class="step__text">Отвечаем в течение 15 минут в рабочее время. Если заявка в субботу — ответим в субботу.</p>
-</div>
-<div class="step fade-up">
-<div class="step__num">02</div>
-<h3 class="step__title">3–5 вопросов</h3>
-<p class="step__text">Задаём по делу, а не «расскажите о бизнесе с 2010 года». Нам нужно понять задачу, а не историю успеха.</p>
-</div>
-<div class="step fade-up">
-<div class="step__num">03</div>
-<h3 class="step__title">Расчёт</h3>
-<p class="step__text">Считаем вилку и говорим, что входит, а что — нет. Если задача не наша — скажем сразу, а не после предоплаты.</p>
-</div>
-<div class="step fade-up">
-<div class="step__num">04</div>
-<h3 class="step__title">Работа</h3>
-<p class="step__text">Казань — приедем. Россия — удалённо, с тем же SLA: реакция от 15 минут, доступность 99,5%.</p>
-</div>
-<div class="step fade-up">
-<div class="step__num">05</div>
-<h3 class="step__title">Поддержка</h3>
-<p class="step__text">Остаёмся на связи. При абонентке — мониторинг 24/7 и плановые проверки. Суббота — тоже рабочий день, если что.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section reveal" style="padding-top:0">
-<div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">Процесс</span>
-<h2 class="section__title reveal">Как проходит первая заявка</h2>
-</div>
-<div style="max-width:760px;margin:0 auto;display:grid;gap:12px;">
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
-<strong style="color:var(--gold-light);">1. Звонок или форма</strong>
-<p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Описываете задачу. Отвечаем за 15 минут.</p>
-</div>
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
-<strong style="color:var(--gold-light);">2. Смета</strong>
-<p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Считаем стоимость до договора. Без обязательств.</p>
-</div>
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
-<strong style="color:var(--gold-light);">3. Выезд или удалённо</strong>
-<p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Приезжаем в Казань или подключаемся удалённо. Суббота входит в дежурство.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section reveal" style="padding-top:0" aria-label="Смотрите также Абонентское обслуживание ">
-<div class="container">
-<div style="max-width:760px;margin:0 auto;">
-<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 12px;">Смотрите также</h3>
-<div style="display:flex;gap:12px;flex-wrap:wrap;">
-<a href="support.html" class="btn btn--ghost btn--sm">Абонентское обслуживание</a>
-<a href="servers.html" class="btn btn--ghost btn--sm">Серверы под ключ</a>
-<a href="services.html" class="btn btn--ghost btn--sm">Цены</a>
-<a href="contacts.html" class="btn btn--ghost btn--sm">Контакты</a>
-</div>
-</div>
-</div>
-</section>
-<section class="section reveal" style="padding-top:0" aria-label="Нужна консультация? Звоните. +7 (901) 26">
-<div class="container" style="text-align:center;">
-<p style="font-size:14px;color:var(--text-2);margin-bottom:8px;">Нужна консультация? Звоните.</p>
-<a href="tel:+79012655252" class="btn btn--primary" style="font-size:18px;font-weight:700;">+7 (901) 265-52-52</a>
-</div>
-</section>
-<section class="section reveal" aria-label="Или запишитесь на 15-минутный созвон: За">
-<div class="container" style="text-align:center;">
-<p style="font-size:15px;color:var(--text-2);margin-bottom:12px;">Или запишитесь на 15-минутный созвон:</p>
-<a href="https://t.me/FathFed" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:16px;padding:14px 28px;">Записаться на 15-минутный созвон</a>
-</div>
-</section>
-<section class="section reveal" id="two-step">
-<div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">Быстрая заявка</span>
-<h2 class="section__title reveal">2 шага — и мы перезвоним</h2>
-</div>
-<form class="contact__form fade-up" name="two-step-form" action="mailto:FathFed@yandex.ru" method="POST" novalidate style="max-width:400px;margin:0 auto;">
-<input type="hidden" name="service" value="Быстрая заявка (2 шага)">
-<div id="ts-step1">
-<div class="form-group">
-<label for="ts-contact" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Телефон или email</label>
-<input type="text" id="ts-contact" name="contact_way" placeholder="+7 (901) 265-52-52 или email" required>
-</div>
-<button type="button" class="btn btn--primary btn--full" id="ts-next">Далее</button>
-</div>
-<div id="ts-step2" style="display:none;">
-<div class="form-group">
-<label for="ts-name" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Имя</label>
-<input type="text" id="ts-name" name="name" placeholder="Иван" required>
-</div>
-<div class="form-group">
-<label for="ts-emp" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Сколько сотрудников?</label>
-<input type="text" id="ts-emp" name="employees" placeholder="до 10 / 10-30 / 30+">
-</div>
-<div class="form-group">
-<label for="ts-concern" style="font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px">Что беспокоит?</label>
-<input type="text" id="ts-concern" name="concern" placeholder="1С тормозит, бэкапы, сеть...">
+<div class="contact-channels">
+  <a href="tel:+79012655252">Позвонить</a>
+  <a href="https://t.me/FathFed" target="_blank" rel="noopener noreferrer">Telegram</a>
+  <a href="https://wa.me/79012655252" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a href="mailto:FathFed@yandex.ru">Почта</a>
 </div>
 
-<div style="display:none" aria-hidden="true">
-<label>Website<input type="text" name="website" tabindex="-1" autocomplete="off">
-</label>
-</div>
-<div class="form-group form-group--checkbox">
-<input type="checkbox" id="ts-agree" name="agree" required aria-required="true">
-<label for="ts-agree">Согласен на обработку ПДн в соответствии с <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);">Политикой конфиденциальности</a></label>
-</div>
-<button type="submit" class="btn btn--primary btn--full">Получить предложение</button>
-      <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px;">Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности. Данные используются только для ответа на вашу заявку.</p>
-</div>
-<div class="form-success" id="ts-success" aria-live="polite" style="display:none;margin-top:16px">
-</div>
+<form class="contact__form fade-up" name="contact-form" action="mailto:FathFed@yandex.ru" method="POST" novalidate>
+  <input type="hidden" name="service" value="Контакты">
+  <div class="form-group">
+    <label for="contact-name">Имя</label>
+    <input type="text" id="contact-name" name="name" placeholder="Иван Петров" autocomplete="name" required>
+  </div>
+  <div class="form-group">
+    <label for="contact-phone">Телефон</label>
+    <input type="tel" id="contact-phone" name="phone" placeholder="+7 901 000-00-00" autocomplete="tel" required>
+  </div>
+  <div class="form-group">
+    <label for="contact-task">Задача</label>
+    <textarea id="contact-task" name="task" required minlength="10" placeholder="Например: сервер 1С падает в субботу, 12 компьютеров" style="min-height:120px;"></textarea>
+  </div>
+  <div hidden>
+    <label>Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+  <div class="form-group form-group--checkbox">
+    <input type="checkbox" id="contact-agree" name="agree" required aria-required="true">
+    <label for="contact-agree">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);">политикой конфиденциальности</a></label>
+  </div>
+  <button class="btn btn--primary btn--full" type="submit">Отправить</button>
+  <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px;">Нужно согласие на обработку данных.</p>
+  <div class="form-success" id="contactSuccess" style="display:none;" aria-live="polite"></div>
 </form>
+
 <script> document.addEventListener('DOMContentLoaded', function(){ var next = document.getElementById('ts-next'); var s1 = document.getElementById('ts-step1'); var s2 = document.getElementById('ts-step2'); if (next && s1 && s2) { next.addEventListener('click', function(){ var c = document.getElementById('ts-contact'); if (!c || !c.value.trim()) { alert('Укажите телефон или email'); return; } s1.style.display = 'none'; s2.style.display = 'block'; }); } }); </script>
 </div>
 </section>

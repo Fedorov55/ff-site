@@ -733,3 +733,10 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 .srv-step strong { color: var(--gold-light); }
 .srv-step p { margin: 4px 0 0; color: var(--text-2); font-size: 14px; }
 .srv-final { max-width: 720px; margin: 0 auto; }
+
+/* contact channels + form fields */
+.contact-channels { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+.contact-channels a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; color: var(--text); text-decoration: none; }
+.contact-channels a:hover { border-color: var(--gold); color: var(--gold); }
+.contact__form input, .contact__form textarea, .contact__form select { box-sizing: border-box; width: 100%; padding: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+.contact__form textarea { min-height: 120px; resize: vertical; }
