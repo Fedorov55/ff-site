@@ -695,3 +695,18 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 .estimate-form .btn--primary { margin-top: 16px; }
 .estimate-form__fallback { margin: 12px 0 0; font-size: 14px; color: var(--text-2); }
 @media (max-width: 640px) { .estimate-form .btn--primary { width: 100%; } }
+/* team cards (reworked) */
+.team__grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 700px) { .team__grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .team__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.team-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; min-width: 0; transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+.team-card:hover { border-color: var(--border-gold); transform: translateY(-4px); box-shadow: 0 16px 36px -18px var(--gold-glow); }
+.team-card__photo { width: 128px; height: 128px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); margin-bottom: 18px; background: var(--bg); padding: 0; }
+.team-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+.team-card__name { margin: 0 0 4px; font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.team-card__role { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light); }
+.team-card__desc { margin: 0 0 14px; font-size: 15px; line-height: 1.5; color: var(--text-2); max-width: 28ch; }
+.team-card__focus { list-style: none; padding: 0; margin: 0 0 16px; width: 100%; text-align: left; }
+.team-card__focus li { position: relative; padding-left: 14px; font-size: 13px; line-height: 1.45; color: var(--text-2); margin-bottom: 5px; }
+.team-card__focus li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.team-card__meta { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.4; color: var(--muted); width: 100%; }
