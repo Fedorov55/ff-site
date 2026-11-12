@@ -192,16 +192,16 @@
 <span class="section__label reveal">Конфигурации</span>
 <h2 class="section__title reveal">Две рабочие конфигурации</h2>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
-<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;">
-<div style="font-size:28px;font-weight:800;color:var(--text);margin-bottom:4px;">10–15 человек</div>
-<div style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:12px;">200 000–250 000 ₽</div>
-<p style="font-size:14px;color:var(--text-2);line-height:1.6;margin:0 0 12px;">Tower. 1С, файлы и бэкап на 3–5 лет. RAID 1, SSD под систему. Для офиса без стойки.</p>
-<p style="font-size:13px;color:var(--muted);margin:0;">1С на 10–15 пользователей с RAID 10 — 400 000–600 000 ₽.</p>
+<div class="srv-configs">
+<div class="srv-config">
+<div class="srv-config__title">10–15 человек</div>
+<div class="srv-config__price">200 000–250 000 ₽</div>
+<p class="srv-config__text">Tower. 1С, файлы и бэкап на 3–5 лет. RAID 1, SSD под систему. Для офиса без стойки.</p>
+<p class="srv-config__note">1С на 10–15 пользователей с RAID 10 — 400 000–600 000 ₽.</p>
 </div>
-<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;">
-<div style="font-size:28px;font-weight:800;color:var(--text);margin-bottom:4px;">15–40 человек</div>
-<div style="font-size:28px;font-weight:800;color:var(--gold-light);margin-bottom:12px;">500 000–900 000 ₽</div>
+<div class="srv-config">
+<div class="srv-config__title">15–40 человек</div>
+<div class="srv-config__price">500 000–900 000 ₽</div>
 <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin:0;">Xeon или EPYC, 32–128 ГБ ECC, SSD и RAID, резерв питания, терминальный доступ.</p>
 </div>
 </div>
@@ -218,7 +218,7 @@
 <h2 class="section__title reveal">Один офис, одна цифра</h2>
 </div>
 <div style="max-width:760px;margin:0 auto;">
-<a href="cases/server-turnkey.html" style="display:block;padding:24px;border:1px solid var(--border);border-radius:16px;background:var(--card);text-decoration:none;color:inherit;">
+<a href="cases/server-turnkey.html" class="srv-case">
 <span style="font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);">Серверы</span>
 <h3 style="font-size:20px;font-weight:750;color:var(--text);margin:8px 0 4px;">Офис 15 человек</h3>
 <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin:0 0 8px;">Было: папка на ноутбуке, 1С тормозила. Стало: tower 240 000 ₽, RAID 1.</p>
@@ -235,20 +235,20 @@
 <span class="section__label reveal">Запуск</span>
 <h2 class="section__title reveal">Как проходит запуск</h2>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:900px;margin:0 auto;">
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<div class="srv-steps">
+<div class="srv-step">
 <strong style="color:var(--gold-light);">Обследование.</strong>
 <p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Срок называем до старта.</p>
 </div>
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<div class="srv-step">
 <strong style="color:var(--gold-light);">Подбор.</strong>
 <p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Железо под задачу.</p>
 </div>
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<div class="srv-step">
 <strong style="color:var(--gold-light);">Монтаж.</strong>
 <p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Стойка и кабель.</p>
 </div>
-<div style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);">
+<div class="srv-step">
 <strong style="color:var(--gold-light);">Запуск.</strong>
 <p style="margin:4px 0 0;color:var(--text-2);font-size:14px;">Перенос данных и проверка, что бэкап открывается.</p>
 </div>
@@ -296,6 +296,7 @@
 <!-- 7. Final -->
 <section class="section section--end" id="estimate" style="scroll-margin-top:96px;">
 <div class="container">
+<div class="srv-final">
 <form class="end-cta estimate-form" action="mailto:FathFed@yandex.ru" method="POST">
 <h2>Сервер считаем до договора</h2>
 <p>Офис 10–15 человек — от 200 000 ₽. Настройка — от 4 000 ₽. Срок называем до старта.</p>
@@ -312,6 +313,7 @@
 <button class="btn btn--primary" type="submit">Рассчитать стоимость</button>
 <p class="estimate-form__fallback">Если форма молчит, звоните +7 (901) 265-52-52. Так быстрее.</p>
 </form>
+</div>
 </div>
 </section>
 YPE html>
