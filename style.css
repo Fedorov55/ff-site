@@ -745,3 +745,14 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 /* skip-link (a11y) */
 .skip-link { position: absolute; top: -100px; left: 16px; padding: 12px 20px; background: var(--card); color: var(--text); border: 2px solid var(--gold); border-radius: 8px; z-index: 10000; transition: top .3s; }
 .skip-link:focus, .skip-link:focus-visible { top: 16px; }
+
+/* mobile touch targets */
+.btn { min-height: 44px; min-width: 44px; }
+@media (max-width: 640px) {
+  .hero__buttons { flex-direction: column; }
+  .hero__buttons .btn { width: 100%; }
+  .form .btn--primary { width: 100%; }
+  .estimate-form .btn--primary { width: 100%; }
+}
+.faq__question { min-height: 44px; }
+.blog-nav a { min-height: 44px; display: inline-flex; align-items: center; }

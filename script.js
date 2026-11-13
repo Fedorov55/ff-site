@@ -62,8 +62,8 @@
       banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#11151F;border-top:1px solid #2A3142;padding:16px 20px;font-size:14px;color:#B6BFCF;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;';
       banner.innerHTML = '<div style="flex:1;min-width:200px;"><strong style="color:#F2F5FA;">Cookie и персональные данные</strong><p style="margin:4px 0 0;font-size:13px;">Мы используем необходимые cookie для работы сайта. Аналитические cookie загружаются только с вашего согласия. Подробнее — в <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:#D4AF37;">Политике конфиденциальности</a>.</p></div>' +
         '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
-        '<button id="ff-cookie-necessary" type="button" style="padding:8px 14px;border:1px solid #2A3142;border-radius:8px;background:transparent;color:#B6BFCF;cursor:pointer;font-size:13px;">Только необходимые</button>' +
-        '<button id="ff-cookie-accept" type="button" style="padding:8px 14px;border:none;border-radius:8px;background:#D4AF37;color:#0A0D14;cursor:pointer;font-size:13px;font-weight:700;">Принять</button>' +
+        '<button id="ff-cookie-necessary" type="button" style="padding:8px 14px;border:1px solid #2A3142;border-radius:8px;background:transparent;color:#B6BFCF;cursor:pointer;font-size:13px;min-height:44px;">Только необходимые</button>' +
+        '<button id="ff-cookie-accept" type="button" style="padding:8px 14px;border:none;border-radius:8px;background:#D4AF37;color:#0A0D14;cursor:pointer;font-size:13px;font-weight:700;min-height:44px;">Принять</button>' +
         '</div>';
       document.body.appendChild(banner);
       document.getElementById('ff-cookie-accept').addEventListener('click', function(){ setConsent('all'); banner.remove(); loadAnalytics(); });
