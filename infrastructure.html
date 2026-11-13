@@ -1,11 +1,48 @@
-<!DOCTYPE html>
+<!DOCTYPE
+
+<!-- Tasks we solve -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Задачи</span>
+<h2 class="section__title reveal">Какие задачи закрываем</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:900px;margin:0 auto;">
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Настройка VPN для офиса</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Удалённый доступ сотрудников. WireGuard, OpenVPN, IPSec. Без дыр в безопасности.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">VPN между офисами</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Объединение филиалов в одну сеть. Общий доступ к 1С, файлам, принтерам.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Локальная сеть офиса</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Проектирование, монтаж СКС, коммутация. Розетки до ремонта.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Корпоративный Wi-Fi</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Разделение гостевой и рабочей сети. Стабильное покрытие, без обрывов.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Active Directory</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Централизованные учётки, права доступа, групповые политики. Порядок вместо хаоса.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Файловый сервер</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Общие папки, права, бэкапы. Не «файлы на каждом компьютере».</p>
+</div>
+</div>
+</div>
+</section>
+ html>
 <html lang="ru" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="public, max-age=3600, must-revalidate">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IT-инфраструктура офиса в Казани — СКС, Wi-Fi, СКУД | F&F</title>
+<title>Настройка VPN, локальной сети и Wi-Fi для офиса в Казани | F&F</title>
 <link rel="stylesheet" href="critical.css?v=106">
 <link rel="stylesheet" href="style.css?v=106">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "IT-инфраструктура офиса", "provider": {"@type": "Organization", "name": "F&F", "url": "https://fedorov55.github.io/ff-site/"}, "description": "СКС, Wi-Fi, СКУД, видеонаблюдение, серверная. Собираем офис с нуля. Казань — приедем, Россия — удалённо.", "offers": {"@type": "Offer", "price": "10000", "priceCurrency": "RUB"}, "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script>
@@ -18,9 +55,9 @@
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <link rel="preload" href="script.js?v=106" as="script">
-<meta name="description" content="СКС, Wi-Fi, СКУД, видеонаблюдение и серверная для офиса в Казани. Проектируем до ремонта, чтобы потом не долбить стены. Смета за 15 минут.">
-<meta property="og:title" content="IT-инфраструктура офиса в Казани — СКС, Wi-Fi, СКУД | F&F">
-<meta property="og:description" content="СКС, Wi-Fi, СКУД, видеонаблюдение и серверная для офиса в Казани. Проектируем до ремонта, чтобы потом не долбить стены. Смета за 15 минут.">
+<meta name="description" content="Настройка VPN для офиса и между филиалами, локальная сеть, монтаж СКС, корпоративный Wi-Fi, Active Directory и файловый сервер в Казани. Проектирование и настройка под ключ.">
+<meta property="og:title" content="Настройка VPN, локальной сети и Wi-Fi для офиса в Казани | F&F">
+<meta property="og:description" content="Настройка VPN для офиса и между филиалами, локальная сеть, монтаж СКС, корпоративный Wi-Fi, Active Directory и файловый сервер в Казани. Проектирование и настройка под ключ.">
 <meta property="og:url" content="https://fedorov55.github.io/ff-site/infrastructure.html">
 <meta property="og:image" content="https://fedorov55.github.io/ff-site/img/og-preview.webp">
 <meta property="og:type" content="website">
@@ -148,7 +185,7 @@
 <div class="container">
 <div class="section__head reveal">
 <span class="section__label reveal">Инфраструктура</span>
-<h1>Проектирование и монтаж IT-инфраструктуры в Казани</h1>
+<h1>Сетевая инфраструктура офиса в Казани: VPN, локальная сеть, Wi-Fi и доступ</h1>
 <p class="section__subtitle reveal">СКС, Wi-Fi, СКУД, видео, телефония. Проектируем до ремонта, чтобы потом не долбить стены.</p>
 </div>
 <div class="grid-3" style="margin-bottom:60px">
@@ -323,24 +360,7 @@
 </div>
 </div>
 </section>
-<section class="section reveal">
-<div class="container">
-<div style="max-width:860px;margin:0 auto;padding:24px;border:2px solid var(--gold-light);border-radius:16px;background:var(--card);">
-<h2 style="font-size:22px;font-weight:700;margin:0 0 12px;color:var(--gold-light);">Мы не прячем цены и не держим вас заложником</h2>
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">
-<strong>Цены:</strong> Стоимость зависит от количества портов и срочности. Базовый абонент — от 15 000 ₽/мес. Точная вилка — после 15-минутного разговора.</p>
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">
-<strong>Передача дел:</strong> Если вы решите уйти — мы передаём все доступы, схемы, паспорт линий и документацию. Без «мы подумаем».</p>
-<ul style="margin:0 0 16px;padding-left:20px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--text-2);line-height:1.8;">
-<li>Пароли и доступы</li>
-<li>Схемы сети и серверной</li>
-<li>Паспорт линий СКС</li>
-<li>Инструкции по восстановлению из бэкапа</li>
-</ul>
-<p style="font-size:13px;color:var(--text-2);font-style:italic;margin:0;">Передача занимает 3–5 рабочих дней. Всё фиксируется в акте.</p>
-</div>
-</div>
-</section>
+
 <section class="section reveal">
 <div class="container">
 <div style="max-width:760px;margin:0 auto;text-align:center;padding:32px 24px;border:2px solid var(--gold-light);border-radius:16px;background:var(--card);">
