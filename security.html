@@ -1,11 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE
+
+<!-- Tasks we solve -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Задачи</span>
+<h2 class="section__title reveal">Какие задачи закрываем</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:900px;margin:0 auto;">
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Настройка ЭЦП</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Установка, настройка, проверка. ЭЦП работает с первого раза.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">КриптоПро и ViPNet</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Настройка СКЗИ, браузерные плагины, обновление сертификатов.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">ЭЦП для ЕИС и торгов</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Настройка рабочего места для тендеров, проверка совместимости.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Ошибки ЭЦП</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Диагностика и устранение. «ЭЦП не работает» — находим причину.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Защита ПДн по 152-ФЗ</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Порядок в доступах, паролях, учётных записях. Базовая защита рабочих мест.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Аудит ИБ</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Что проверяем, в каком виде отдаём результат, кому особенно полезно.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Антивирус и обновления</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Базовая защита рабочих мест, регулярные обновления, мониторинг.</p>
+</div>
+<div style="padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px;">Политика доступов и паролей</h3>
+<p style="font-size:14px;color:var(--text-2);margin:0;">Разграничение прав, учётные записи, контроль доступа к данным.</p>
+</div>
+</div>
+</div>
+</section>
+ html>
 <html lang="ru" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="public, max-age=3600, must-revalidate">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЭЦП и криптография в Казани — КриптоПро, ViPNet, 152-ФЗ</title>
+<title>Настройка ЭЦП, КриптоПро и IT-безопасность офиса в Казани | F&F</title>
 <link rel="stylesheet" href="critical.css?v=106">
 <link rel="stylesheet" href="style.css?v=106">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Безопасность и криптография", "provider": {"@type": "Organization", "name": "F&F", "url": "https://fedorov55.github.io/ff-site/"}, "description": "ЭЦП, ViPNet, VeraCrypt, IP-видеонаблюдение, СКУД, резервное копирование. Казань — приедем, Россия — удалённо.", "offers": {"@type": "Offer", "price": "10000", "priceCurrency": "RUB"}, "areaServed": [{"@type": "City", "name": "Казань"}, {"@type": "Country", "name": "Россия"}]}</script>
@@ -18,9 +63,9 @@
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <link rel="preload" href="script.js?v=106" as="script">
-<meta name="description" content="ЭЦП, КриптоПро, ViPNet и защита персональных данных по 152-ФЗ в Казани. Настройка криптографии, аудит контура безопасности, УКЭП, консультация бесплатно.">
-<meta property="og:title" content="ЭЦП и криптография в Казани — КриптоПро, ViPNet, 152-ФЗ">
-<meta property="og:description" content="ЭЦП, КриптоПро, ViPNet и защита персональных данных по 152-ФЗ в Казани. Настройка криптографии, аудит контура безопасности, УКЭП, консультация бесплатно.">
+<meta name="description" content="Настройка ЭЦП и КриптоПро в Казани, электронная подпись для ЕИС и торгов, IT-безопасность офиса, защита персональных данных по 152-ФЗ, аудит и базовые меры защиты. Выезд по Казани.">
+<meta property="og:title" content="Настройка ЭЦП, КриптоПро и IT-безопасность офиса в Казани | F&F">
+<meta property="og:description" content="Настройка ЭЦП и КриптоПро в Казани, электронная подпись для ЕИС и торгов, IT-безопасность офиса, защита персональных данных по 152-ФЗ, аудит и базовые меры защиты. Выезд по Казани.">
 <meta property="og:url" content="https://fedorov55.github.io/ff-site/security.html">
 <meta property="og:image" content="https://fedorov55.github.io/ff-site/img/og-preview.webp">
 <meta property="og:type" content="website">
@@ -34,7 +79,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <meta name="yandex-verification" content="PLACEHOLDER_YANDEX" />
 <meta name="google-site-verification" content="PLACEHOLDER_GOOGLE" />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит КриптоПро?", "acceptedAnswer": {"@type": "Answer", "text": "Лицензия — от 1 200 ₽. Установка + настройка — от 2 400 ₽."}}, {"@type": "Question", "name": "Штрафы за утечку ПДн?", "acceptedAnswer": {"@type": "Answer", "text": "При утере ноутбука с базой — 500 тыс. – 1 млн ₽. Массовая утечка — до 6 млн ₽."}}, {"@type": "Question", "name": "Почему не поставить шифрование и забыть?", "acceptedAnswer": {"@type": "Answer", "text": "Без управления ключами это «шифрование, которое никто не может восстановить». Мы внедряем политики и процедуры восстановления."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит настройка ЭЦП в Казани?", "acceptedAnswer": {"@type": "Answer", "text": "Настройка ЭЦП — от 1 200 ₽. Установка КриптоПро, настройка браузера, проверка работы. Точная цена зависит от количества рабочих мест."}}, {"@type": "Question", "name": "Настраиваете ли КриптоПро?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Установка, настройка, обновление сертификатов, решение ошибок. Работаем с КриптоПро CSP и ЭЦП Browser plug-in."}}, {"@type": "Question", "name": "Делаете ли электронную подпись для ЕИС и торгов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Настройка рабочего места для тендеров, проверка совместимости с площадками, установка необходимых компонентов."}}, {"@type": "Question", "name": "Что делать, если ЭЦП не работает?", "acceptedAnswer": {"@type": "Answer", "text": "Диагностируем причину: сертификат, браузер, плагин, права доступа. Устраняем. Обычно за 1–2 часа."}}, {"@type": "Question", "name": "Помогаете ли с 152-ФЗ на уровне IT?", "acceptedAnswer": {"@type": "Answer", "text": "Помогаем с технической стороны: доступы, пароли, шифрование, учётные записи, бэкапы. Юридическую консультацию не даём."}}, {"@type": "Question", "name": "Нужен ли небольшой компании аудит информационной безопасности?", "acceptedAnswer": {"@type": "Answer", "text": "Если есть персональные данные (152-ФЗ) или ЭЦП — да. Проверяем доступы, бэкапы, обновления, права. Отчёт с приоритетами."}}, {"@type": "Question", "name": "Настраиваете ли политику паролей и доступов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Разграничение прав, политика паролей, учётные записи, контроль доступа к данным и системам."}}, {"@type": "Question", "name": "Можно ли совместить безопасность с абонентским обслуживанием?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Безопасность — часть абонентки. ЭЦП, доступы, бэкапы, обновления — всё включено в состав работ."}}]}</script>
 <meta property="og:site_name" content="F&F">
 <meta name="twitter:site" content="@FathFed">
 <meta property="og:image:width" content="1200">
@@ -148,7 +193,7 @@
 <div class="container">
 <div class="section__head reveal">
 <span class="section__label reveal">Безопасность</span>
-<h1>Безопасность данных и ЭЦП для бизнеса в Казани</h1>
+<h1>ЭЦП, КриптоПро и IT-безопасность офиса в Казани</h1>
 <p class="section__subtitle reveal">ЭЦП, криптография, доступы, шифрование. Чтобы штраф за утечку не стал сюрпризом.</p>
 </div>
 <div class="grid-4" style="margin-bottom:60px">
@@ -357,16 +402,36 @@
 </div>
 <div class="faq__list fade-up">
 <details class="faq__item">
-<summary class="faq__question">Нужен ли антивирус, если есть бэкапы?</summary>
-<p class="faq__answer">Бэкапы восстанавливают данные, но не предотвращают утечку. Антивирус + бэкапы = защита и восстановление.</p>
+<summary class="faq__question">Сколько стоит настройка ЭЦП в Казани?</summary>
+<p class="faq__answer">Настройка ЭЦП — от 1 200 ₽. Установка КриптоПро, настройка браузера, проверка работы. Точная цена зависит от количества рабочих мест.</p>
 </details>
 <details class="faq__item">
-<summary class="faq__question">Что такое 152-ФЗ для офиса?</summary>
-<p class="faq__answer">Закон о персональных данных. Если вы обрабатываете данные клиентов (ФИО, телефоны) — вы оператор ПДн. Нужен регламент, ЭЦП, разграничение доступа.</p>
+<summary class="faq__question">Настраиваете ли КриптоПро?</summary>
+<p class="faq__answer">Да. Установка, настройка, обновление сертификатов, решение ошибок. Работаем с КриптоПро CSP и ЭЦП Browser plug-in.</p>
 </details>
 <details class="faq__item">
-<summary class="faq__question">ЭЦП для торгов обязательна?</summary>
-<p class="faq__answer">Для участия в госзакупках и некоторых аукционах — да. Для торгов на коммерческих площадках — зависит от условий.</p>
+<summary class="faq__question">Делаете ли электронную подпись для ЕИС и торгов?</summary>
+<p class="faq__answer">Да. Настройка рабочего места для тендеров, проверка совместимости с площадками, установка необходимых компонентов.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Что делать, если ЭЦП не работает?</summary>
+<p class="faq__answer">Диагностируем причину: сертификат, браузер, плагин, права доступа. Устраняем. Обычно за 1–2 часа.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Помогаете ли с 152-ФЗ на уровне IT?</summary>
+<p class="faq__answer">Помогаем с технической стороны: доступы, пароли, шифрование, учётные записи, бэкапы. Юридическую консультацию не даём.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Нужен ли небольшой компании аудит информационной безопасности?</summary>
+<p class="faq__answer">Если есть персональные данные (152-ФЗ) или ЭЦП — да. Проверяем доступы, бэкапы, обновления, права. Отчёт с приоритетами.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Настраиваете ли политику паролей и доступов?</summary>
+<p class="faq__answer">Да. Разграничение прав, политика паролей, учётные записи, контроль доступа к данным и системам.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Можно ли совместить безопасность с абонентским обслуживанием?</summary>
+<p class="faq__answer">Да. Безопасность — часть абонентки. ЭЦП, доступы, бэкапы, обновления — всё включено в состав работ.</p>
 </details>
 </div>
 <p style="text-align:center;margin-top:16px;">
@@ -464,24 +529,7 @@
 </div>
 </div>
 </section>
-<section class="section reveal">
-<div class="container">
-<div style="max-width:860px;margin:0 auto;padding:24px;border:2px solid var(--gold-light);border-radius:16px;background:var(--card);">
-<h2 style="font-size:22px;font-weight:700;margin:0 0 12px;color:var(--gold-light);">Мы не прячем цены и не держим вас заложником</h2>
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">
-<strong>Цены:</strong> Стоимость зависит от количества портов и срочности. Базовый абонент — от 15 000 ₽/мес. Точная вилка — после 15-минутного разговора.</p>
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">
-<strong>Передача дел:</strong> Если вы решите уйти — мы передаём все доступы, схемы, паспорт линий и документацию. Без «мы подумаем».</p>
-<ul style="margin:0 0 16px;padding-left:20px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--text-2);line-height:1.8;">
-<li>Пароли и доступы</li>
-<li>Схемы сети и серверной</li>
-<li>Паспорт линий СКС</li>
-<li>Инструкции по восстановлению из бэкапа</li>
-</ul>
-<p style="font-size:13px;color:var(--text-2);font-style:italic;margin:0;">Передача занимает 3–5 рабочих дней. Всё фиксируется в акте.</p>
-</div>
-</div>
-</section>
+
 <section class="section reveal">
 <div class="container">
 <div style="max-width:760px;margin:0 auto;text-align:center;padding:32px 24px;border:2px solid var(--gold-light);border-radius:16px;background:var(--card);">
