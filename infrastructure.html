@@ -264,9 +264,36 @@
 <summary class="faq__question">Можно ли сделать после ремонта?</summary>
 <p class="faq__answer">Можно, но дороже: придётся штробить стены или тянуть кабель поверху. Лучше до ремонта.</p>
 </details>
+<details class="faq__item">
+<summary class="faq__question">Настраиваете ли VPN для удалённых сотрудников?</summary>
+<p class="faq__answer">Да. VPN для удалённых сотрудников: безопасный доступ к 1С, файлам, внутренним системам. WireGuard, OpenVPN, IPSec.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Делаете ли VPN между офисами в Казани?</summary>
+<p class="faq__answer">Да. VPN между офисами и филиалами: объединение в одну сеть, общие папки, учётки, принтеры.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Можно ли безопасно открыть доступ к 1С извне?</summary>
+<p class="faq__answer">Да. VPN или терминальный доступ. Не открываем лишнего. Права, логирование, шифрование.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Что лучше — VPN или терминальный доступ?</summary>
+<p class="faq__answer">Зависит от задачи. VPN — для доступа к ресурсам. Терминальный — для работы с 1С из дома. Часто комбинируют.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Настраиваете ли OpenVPN и WireGuard?</summary>
+<p class="faq__answer">Да. Выбор протокола — под задачу: стабильность, удобство, поддержка, безопасность.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Можно ли объединить филиалы в одну сеть?</summary>
+<p class="faq__answer">Да. VPN между офисами, единые стандарты, централизованное управление доступами.</p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Сопровождаете ли VPN после настройки?</summary>
+<p class="faq__answer">Да. Обновления, доступы сотрудников, контроль, изменения. В рамках абонентки или разово.</p>
+</details>
 </div>
-<p style="text-align:center;margin-top:16px;">
-<a href="index.html#faq" style="color:var(--gold-light);text-decoration:underline;">Все вопросы — в общем FAQ →</a>
+<p style="text-align:center;margin-top:16px;"><a href="index.html#faq" style="color:var(--gold-light);text-decoration:underline;">Все вопросы — в общем FAQ →</a></p>
 </p>
 </div>
 </section>
@@ -416,6 +443,83 @@
 </section>
 
 
+
+
+
+<!-- VPN для удалённых сотрудников -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">VPN</span>
+<h2 class="section__title reveal">VPN для удалённых сотрудников</h2>
+<p class="section__subtitle reveal">Безопасный доступ к офисным ресурсам из дома или командировки.</p>
+</div>
+<div style="max-width:760px;margin:0 auto;">
+<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">Когда нужен: сотрудники работают удалённо, нужен доступ к 1С, файлам, внутренним системам. Что получают: защищённый канал, единые правила доступа, контроль. Чем лучше «раздачи доступов как получится»: минимально необходимые права, шифрование, логирование.</p>
+</div>
+</div>
+</section>
+
+<!-- VPN между офисами -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Филиалы</span>
+<h2 class="section__title reveal">VPN между офисами и филиалами</h2>
+<p class="section__subtitle reveal">Объединение площадок в одну сеть.</p>
+</div>
+<div style="max-width:760px;margin:0 auto;">
+<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">Связка двух и более офисов: общие папки, учётки, принтеры, внутренние системы. Офисы работают как одна сеть. Централизованное управление доступами.</p>
+</div>
+</div>
+</section>
+
+<!-- OpenVPN / WireGuard -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Протоколы</span>
+<h2 class="section__title reveal">OpenVPN и WireGuard — практический смысл</h2>
+</div>
+<div style="max-width:760px;margin:0 auto;">
+<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">Выбор протокола зависит от задачи: стабильность, удобство, поддержка, безопасность. Не священная война, а инструмент под задачу. Акцент — на внедрении и сопровождении, не на сравнении ради сравнения.</p>
+</div>
+</div>
+</section>
+
+<!-- Удалённый доступ к 1С -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">1С</span>
+<h2 class="section__title reveal">Удалённый доступ к 1С и терминальный доступ</h2>
+</div>
+<div style="max-width:760px;margin:0 auto;">
+<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">Доступ к 1С извне: когда хватает VPN, когда лучше терминальный сервер. Связка с servers.html. Риски плохо настроенного удалённого доступа: открытые порты, слабые пароли, отсутствие логирования.</p>
+<p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0;">Подробнее: <a href="servers.html" style="color:var(--gold);">серверы и 1С</a>, <a href="security.html" style="color:var(--gold);">безопасность</a>.</p>
+</div>
+</div>
+</section>
+
+<!-- Как мы внедряем -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Процесс</span>
+<h2 class="section__title reveal">Как мы внедряем VPN и доступ</h2>
+</div>
+<div style="max-width:760px;margin:0 auto;">
+<ul style="font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px;padding-left:20px;">
+<li>Анализ текущей схемы и потребностей</li>
+<li>Проектирование доступа: кто, к чему, зачем</li>
+<li>Настройка VPN, роутеров, точек доступа</li>
+<li>Проверка: подключение, скорость, безопасность</li>
+<li>Документация и передача</li>
+<li>При необходимости — сопровождение</li>
+</ul>
+</div>
+</div>
+</section>
 
 <!-- Переезд офиса -->
 <section class="section reveal">
