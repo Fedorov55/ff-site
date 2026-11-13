@@ -154,6 +154,12 @@
 <span class="section__label reveal">F&amp;F · IT для бизнеса</span>
 <h1 class="page-intro__title">404 — сервер ушёл в отпуск</h1>
 <p class="page-intro__lead">Страница не найдена. Сервер ушёл в отпуск. Но мы знаем, где он. Вернитесь на главную или проверьте статус.</p>
+<div style="max-width:480px;margin:20px auto 0;">
+  <form onsubmit="var q=this.q.value.trim();if(q)window.location.href='https://www.google.com/search?q=site:fedorov55.github.io/ff-site+'+encodeURIComponent(q);return false;" style="display:flex;gap:8px;">
+    <input type="text" name="q" placeholder="Что вы искали?" style="flex:1;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);font-size:15px;">
+    <button type="submit" class="btn btn--primary" style="padding:12px 20px;">Найти</button>
+  </form>
+</div>
 <div class="page-intro__actions">
 <a class="btn btn--primary" href="contacts.html">Оставить заявку</a>
 <a class="btn btn--ghost" href="services.html">Услуги и цены</a>
@@ -164,10 +170,13 @@
 </section>
 <section class="section reveal" aria-label="На главную Услуги Контакты Или позвоните">
   <div class="container" style="text-align:center;">
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:24px;">
-      <a href="index.html" class="btn btn--primary">На главную</a>
-      <a href="services.html" class="btn btn--ghost">Услуги</a>
-      <a href="contacts.html" class="btn btn--ghost">Контакты</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:720px;margin:0 auto 24px;">
+      <a href="support.html" class="btn btn--ghost" style="padding:16px;">Абонентское обслуживание</a>
+      <a href="servers.html" class="btn btn--ghost" style="padding:16px;">Серверы под ключ</a>
+      <a href="audit.html" class="btn btn--ghost" style="padding:16px;">IT-аудит</a>
+      <a href="cases.html" class="btn btn--ghost" style="padding:16px;">Кейсы</a>
+      <a href="contacts.html" class="btn btn--ghost" style="padding:16px;">Контакты</a>
+      <a href="index.html" class="btn btn--primary" style="padding:16px;">На главную</a>
     </div>
     <p style="font-size:14px;color:var(--text-2);margin-bottom:8px;">Или позвоните: <a href="tel:+79012655252" style="color:var(--gold-light);font-weight:600;">+7 (901) 265-52-52</a></p>
     <p style="font-size:14px;color:var(--text-2);">Или напишите в <a href="https://t.me/FathFed" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);">Telegram</a></p>

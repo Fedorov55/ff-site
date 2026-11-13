@@ -774,3 +774,6 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 .u-mb-12 { margin-bottom: 12px; }
 .u-italic { font-style: italic; }
 .u-center { text-align: center; }
+
+/* scroll margin for sticky header */
+.section, h1, h2, h3 { scroll-margin-top: 96px; }
