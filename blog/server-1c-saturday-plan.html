@@ -5,6 +5,9 @@
 <meta http-equiv="Cache-Control" content="public, max-age=3600, must-revalidate">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="stylesheet" href="critical.css?v=106">
+<link rel="stylesheet" href="style.css?v=106" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="style.css?v=106"></noscript>
 <meta name="theme-color" content="#0A0D14">
 <meta name="description" content="Сервер 1С упал в субботу: пошаговый план действий. ">
 <meta name="keywords" content="сервер для 1С, RAM для 1С, NVMe для 1С, RAID, конфигурация сервера 1С">
@@ -18,7 +21,7 @@
 <link rel="canonical" href="https://fedorov55.github.io/ff-site/blog/server-1c-saturday-plan.html">
 <link rel="icon" type="image/webp" href="../logo.webp">
 <link rel="stylesheet" href="../critical.css?v=106">
-<link rel="stylesheet" href="../style.css?v=106">
+<noscript><link rel="stylesheet" href="style.css?v=106"></noscript>>
 <title>Сервер 1С упал в субботу: пошаговый план действий | F&F</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сервер 1С упал в субботу: пошаговый план действий", "description": "Минимум 8 ГБ RAM, NVMe под базу, RAID 10. Что реально влияет на скорость.", "author": {"@type": "Organization", "name": "F&F"}, "publisher": {"@type": "Organization", "name": "F&F"}, "image": "https://fedorov55.github.io/ff-site/img/og-preview.webp", "datePublished": "2026-11-06", "dateModified": "2026-11-06"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько RAM нужно для 1С?", "acceptedAnswer": {"@type": "Answer", "text": "Для 5–7 пользователей — минимум 8 ГБ. Для 10–15 — 16 ГБ. Для 15–30 или с терминальным доступом — 32 ГБ. Больше RAM = больше кэш, быстрее работает."}}, {"@type": "Question", "name": "Какой диск нужен для базы 1С?", "acceptedAnswer": {"@type": "Answer", "text": "NVMe SSD. Не SATA, не HDD. Разница в скорости — 3–5 раз. База 1С чувствительна к random IOPS, где NVMe выигрывает сильно."}}, {"@type": "Question", "name": "Что будет, если поставить HDD?", "acceptedAnswer": {"@type": "Answer", "text": "1С будет работать, но медленно. Отчёты будут строиться минутами вместо секунд. Пользователи будут жаловаться. HDD — только под бэкапы, не под базу."}}]}</script>
