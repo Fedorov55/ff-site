@@ -800,4 +800,6 @@ img,svg{max-width:100%;height:auto}
   .terminal__globe-svg { filter: none !important; }
   /* Simplify terminal */
   .terminal { font-size: 11px !important; }
+  /* Hide decorative terminal on mobile to keep CTA above fold */
+  .hero .terminal { display: none !important; }
 }
