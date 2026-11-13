@@ -756,3 +756,21 @@ code, pre, .terminal, .terminal__body, .terminal__log, .hero__metric-value, .her
 }
 .faq__question { min-height: 44px; }
 .blog-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* utility classes (extracted from inline styles) */
+.u-gold { color: var(--gold-light); }
+.u-text { color: var(--text); }
+.u-text-2 { color: var(--text-2); }
+.u-muted { color: var(--muted); }
+.u-fs-22 { font-size: 22px; }
+.u-fs-15 { font-size: 15px; }
+.u-fs-13 { font-size: 13px; }
+.u-fs-18 { font-size: 18px; }
+.u-fw-700 { font-weight: 700; }
+.u-mt-4 { margin-top: 4px; }
+.u-mt-8 { margin-top: 8px; }
+.u-mt-16 { margin-top: 16px; }
+.u-mt-24 { margin-top: 24px; }
+.u-mb-12 { margin-bottom: 12px; }
+.u-italic { font-style: italic; }
+.u-center { text-align: center; }
