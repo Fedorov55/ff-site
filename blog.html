@@ -47,6 +47,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.webp">
+<link rel="alternate" type="application/rss+xml" title="F&F Блог" href="rss.xml">
 </head>
 <body class="grain">
 <a href="#main" class="skip-link">Перейти к содержимому</a>
@@ -180,8 +181,18 @@
 <h2 class="blog-group__title">Большие разборы</h2>
 <span class="blog-group__count">8 материалов</span>
 </div>
+<div class="blog-filter" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;justify-content:center;">
+<button class="blog-filter__btn is-active" data-filter="all">Все</button>
+<button class="blog-filter__btn" data-filter="1С">1С</button>
+<button class="blog-filter__btn" data-filter="Безопасность">Безопасность</button>
+<button class="blog-filter__btn" data-filter="Бэкапы">Бэкапы</button>
+<button class="blog-filter__btn" data-filter="Исследование">Исследование</button>
+<button class="blog-filter__btn" data-filter="Офис">Офис</button>
+<button class="blog-filter__btn" data-filter="Поддержка">Поддержка</button>
+<button class="blog-filter__btn" data-filter="Серверы">Серверы</button>
+</div>
 <div class="blog-grid">
-<a class="blog-card" href="articles/152fz-prep.html">
+<a class="blog-card" data-tag="Безопасность" href="articles/152fz-prep.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-11-03">3 ноя 2025</time>
@@ -193,7 +204,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/it-outsourcing-cost-kazan-2026.html">
+<a class="blog-card" data-tag="Исследование" href="blog/it-outsourcing-cost-kazan-2026.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Исследование</span>
     <time class="blog-card__date" datetime="2026-11-14">14 ноя 2026</time>
@@ -205,7 +216,7 @@
     <span class="blog-card__cta">Читать →</span>
   </div>
 </a>
-<a class="blog-card" href="blog/cost-of-downtime.html">
+<a class="blog-card" data-tag="Исследование" href="blog/cost-of-downtime.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Исследование</span>
     <time class="blog-card__date" datetime="2026-11-14">14 ноя 2026</time>
@@ -217,7 +228,7 @@
     <span class="blog-card__cta">Читать →</span>
   </div>
 </a>
-<a class="blog-card" href="blog/3-year-tco-comparison.html">
+<a class="blog-card" data-tag="Исследование" href="blog/3-year-tco-comparison.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Исследование</span>
     <time class="blog-card__date" datetime="2026-11-14">14 ноя 2026</time>
@@ -230,7 +241,7 @@
   </div>
 </a>
 
-<a class="blog-card" href="articles/ad-setup.html">
+<a class="blog-card" data-tag="Серверы" href="articles/ad-setup.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-10-29">29 окт 2025</time>
@@ -242,7 +253,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/backup-3-2-1.html">
+<a class="blog-card" data-tag="Безопасность" href="articles/backup-3-2-1.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-10-23">23 окт 2025</time>
@@ -254,7 +265,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/migration-2012.html">
+<a class="blog-card" data-tag="Серверы" href="articles/migration-2012.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-10-16">16 окт 2025</time>
@@ -266,7 +277,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/ransomware-protection.html">
+<a class="blog-card" data-tag="Безопасность" href="articles/ransomware-protection.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-10-09">9 окт 2025</time>
@@ -278,7 +289,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/server-1c-saturday.html">
+<a class="blog-card" data-tag="Серверы" href="articles/server-1c-saturday.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-10-03">3 окт 2025</time>
@@ -290,7 +301,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/server-vs-cloud.html">
+<a class="blog-card" data-tag="Серверы" href="articles/server-vs-cloud.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-09-29">29 сен 2025</time>
@@ -302,7 +313,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="articles/tco-calc.html">
+<a class="blog-card" data-tag="Поддержка" href="articles/tco-calc.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-09-25">25 сен 2025</time>
@@ -314,7 +325,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="pain-1c-slow.html">
+<a class="blog-card" data-tag="1С" href="pain-1c-slow.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">1С</span>
     <time class="blog-card__date" datetime="2025-09-18">18 сен 2025</time>
@@ -326,7 +337,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="pain-admin-left.html">
+<a class="blog-card" data-tag="Поддержка" href="pain-admin-left.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-09-14">14 сен 2025</time>
@@ -338,7 +349,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="pain-no-backup.html">
+<a class="blog-card" data-tag="Бэкапы" href="pain-no-backup.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-09-08">8 сен 2025</time>
@@ -350,7 +361,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="pain-astra.html">
+<a class="blog-card" data-tag="Безопасность" href="pain-astra.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-09-01">1 сен 2025</time>
@@ -362,7 +373,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="pain-new-employee.html">
+<a class="blog-card" data-tag="Офис" href="pain-new-employee.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-08-26">26 авг 2025</time>
@@ -374,7 +385,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="industries.html">
+<a class="blog-card" data-tag="Офис" href="industries.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-08-22">22 авг 2025</time>
@@ -386,7 +397,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/pochemu-1c-tormozit.html">
+<a class="blog-card" data-tag="1С" href="blog/pochemu-1c-tormozit.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">1С</span>
     <time class="blog-card__date" datetime="2025-08-16">16 авг 2025</time>
@@ -398,7 +409,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/vybor-servera-ofisa.html">
+<a class="blog-card" data-tag="Серверы" href="blog/vybor-servera-ofisa.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-08-12">12 авг 2025</time>
@@ -410,7 +421,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-upal-subbotu-plan.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/server-upal-subbotu-plan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-08-05">5 авг 2025</time>
@@ -422,7 +433,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/vpn-udalenny-dostup.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/vpn-udalenny-dostup.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-08-01">1 авг 2025</time>
@@ -442,7 +453,7 @@
 <span class="blog-group__count">7 материалов</span>
 </div>
 <div class="blog-grid">
-<a class="blog-card" href="blog/server-office.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-office.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-07-26">26 июл 2025</time>
@@ -454,7 +465,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/abonentka-chto-vhodit.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/abonentka-chto-vhodit.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-07-20">20 июл 2025</time>
@@ -466,7 +477,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/it-autsorsing-kazan-guide.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/it-autsorsing-kazan-guide.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-07-15">15 июл 2025</time>
@@ -478,7 +489,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-pod-klyuch-kazan-guide.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-pod-klyuch-kazan-guide.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-07-09">9 июл 2025</time>
@@ -490,7 +501,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sisadmin-uvolilsya.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sisadmin-uvolilsya.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-07-05">5 июл 2025</time>
@@ -502,7 +513,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/backup-check-15min.html">
+<a class="blog-card" data-tag="Бэкапы" href="blog/backup-check-15min.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-06-28">28 июн 2025</time>
@@ -514,7 +525,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/it-retail-kazan.html">
+<a class="blog-card" data-tag="Офис" href="blog/it-retail-kazan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-06-24">24 июн 2025</time>
@@ -526,7 +537,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/it-clinics-kazan.html">
+<a class="blog-card" data-tag="Офис" href="blog/it-clinics-kazan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-06-20">20 июн 2025</time>
@@ -538,7 +549,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/it-horeca-kazan.html">
+<a class="blog-card" data-tag="Офис" href="blog/it-horeca-kazan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-06-14">14 июн 2025</time>
@@ -550,7 +561,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sisadmin-cost-2026.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sisadmin-cost-2026.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-06-10">10 июн 2025</time>
@@ -562,7 +573,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-1c-saturday-plan.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-1c-saturday-plan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-06-03">3 июн 2025</time>
@@ -574,7 +585,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/backup-not-restoring.html">
+<a class="blog-card" data-tag="Бэкапы" href="blog/backup-not-restoring.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-05-28">28 май 2025</time>
@@ -586,7 +597,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-1c.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-1c.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-05-21">21 май 2025</time>
@@ -598,7 +609,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-1c-saturday.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-1c-saturday.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-05-17">17 май 2025</time>
@@ -610,7 +621,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-cloud-vs-local.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-cloud-vs-local.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-05-10">10 май 2025</time>
@@ -622,7 +633,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/server-down-saturday.html">
+<a class="blog-card" data-tag="Серверы" href="blog/server-down-saturday.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-05-06">6 май 2025</time>
@@ -634,7 +645,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/refurbished.html">
+<a class="blog-card" data-tag="Серверы" href="blog/refurbished.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-05-02">2 май 2025</time>
@@ -646,7 +657,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/rds-remote.html">
+<a class="blog-card" data-tag="Серверы" href="blog/rds-remote.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Серверы</span>
     <time class="blog-card__date" datetime="2025-04-28">28 апр 2025</time>
@@ -666,7 +677,7 @@
 <span class="blog-group__count">8 материалов</span>
 </div>
 <div class="blog-grid">
-<a class="blog-card" href="blog/152fz-prep.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/152fz-prep.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-04-22">22 апр 2025</time>
@@ -678,7 +689,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/152fz.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/152fz.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-04-18">18 апр 2025</time>
@@ -690,7 +701,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/ecp-guide.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/ecp-guide.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-04-13">13 апр 2025</time>
@@ -702,7 +713,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/ecp-lost.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/ecp-lost.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-04-08">8 апр 2025</time>
@@ -714,7 +725,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/cryptopro-vipnet.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/cryptopro-vipnet.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-04-03">3 апр 2025</time>
@@ -726,7 +737,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/veracrypt.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/veracrypt.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-03-29">29 мар 2025</time>
@@ -738,7 +749,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/fines-2026.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/fines-2026.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-03-24">24 мар 2025</time>
@@ -750,7 +761,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/admin-quit.html">
+<a class="blog-card" data-tag="Безопасность" href="blog/admin-quit.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Безопасность</span>
     <time class="blog-card__date" datetime="2025-03-19">19 мар 2025</time>
@@ -770,7 +781,7 @@
 <span class="blog-group__count">3 материалов</span>
 </div>
 <div class="blog-grid">
-<a class="blog-card" href="blog/backup-3-2-1.html">
+<a class="blog-card" data-tag="Бэкапы" href="blog/backup-3-2-1.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-03-15">15 мар 2025</time>
@@ -782,7 +793,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/backup-strategy.html">
+<a class="blog-card" data-tag="Бэкапы" href="blog/backup-strategy.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-03-10">10 мар 2025</time>
@@ -794,7 +805,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/mail-server.html">
+<a class="blog-card" data-tag="Бэкапы" href="blog/mail-server.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Бэкапы</span>
     <time class="blog-card__date" datetime="2025-03-05">5 мар 2025</time>
@@ -814,7 +825,7 @@
 <span class="blog-group__count">8 материалов</span>
 </div>
 <div class="blog-grid">
-<a class="blog-card" href="blog/sisadmin-kazan.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sisadmin-kazan.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-28">28 фев 2025</time>
@@ -826,7 +837,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sisadmin-cost.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sisadmin-cost.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-24">24 фев 2025</time>
@@ -838,7 +849,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sisadmin-vs-abonent.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sisadmin-vs-abonent.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-17">17 фев 2025</time>
@@ -850,7 +861,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/transition-to-abonent.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/transition-to-abonent.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-12">12 фев 2025</time>
@@ -862,7 +873,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/what-included.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/what-included.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-05">5 фев 2025</time>
@@ -874,7 +885,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/how-to-choose.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/how-to-choose.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-02-01">1 фев 2025</time>
@@ -886,7 +897,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sla-995.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/sla-995.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-01-27">27 янв 2025</time>
@@ -898,7 +909,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/tco-calc.html">
+<a class="blog-card" data-tag="Поддержка" href="blog/tco-calc.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Поддержка</span>
     <time class="blog-card__date" datetime="2025-01-23">23 янв 2025</time>
@@ -918,7 +929,7 @@
 <span class="blog-group__count">6 материалов</span>
 </div>
 <div class="blog-grid">
-<a class="blog-card" href="blog/office-move.html">
+<a class="blog-card" data-tag="Офис" href="blog/office-move.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-01-18">18 янв 2025</time>
@@ -930,7 +941,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/ad-small-business.html">
+<a class="blog-card" data-tag="Офис" href="blog/ad-small-business.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-01-11">11 янв 2025</time>
@@ -942,7 +953,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/wifi6-office.html">
+<a class="blog-card" data-tag="Офис" href="blog/wifi6-office.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2025-01-06">6 янв 2025</time>
@@ -954,7 +965,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/sks-ports.html">
+<a class="blog-card" data-tag="Офис" href="blog/sks-ports.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2024-12-30">30 дек 2024</time>
@@ -966,7 +977,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/skud-office.html">
+<a class="blog-card" data-tag="Офис" href="blog/skud-office.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2024-12-26">26 дек 2024</time>
@@ -978,7 +989,7 @@
 <span class="blog-card__cta">Читать →</span>
 </div>
 </a>
-<a class="blog-card" href="blog/cctv-poe.html">
+<a class="blog-card" data-tag="Офис" href="blog/cctv-poe.html">
   <div class="blog-card__top">
     <span class="blog-card__tag">Офис</span>
     <time class="blog-card__date" datetime="2024-12-20">20 дек 2024</time>

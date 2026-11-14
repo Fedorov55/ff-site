@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>F&F — IT-аутсорсинг Казань: Блог</title>
+<link>https://fedorov55.github.io/ff-site/blog.html</link>
+<description>Статьи об IT-инфраструктуре, серверах, безопасности и аутсорсинге для бизнеса в Казани</description>
+<language>ru</language>
+<atom:link href="https://fedorov55.github.io/ff-site/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>IT-аутсорсинг vs штатный сисадмин: сравнение расходов за 3 года | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/3-year-tco-comparison.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/3-year-tco-comparison.html</guid>
+<description>Сколько стоит штатный сисадмин за 3 года? Сравнение полных расходов: зарплата, налоги, простои, обучение. IT-аутсорсинг F&F дешевле на 72%. Расчёт F&F.</description>
+<pubDate>Sat, 14 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сколько стоит простой IT-инфраструктуры для малого бизнеса: исследование F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/cost-of-downtime.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/cost-of-downtime.html</guid>
+<description>Сколько стоит простой IT для офиса? Анализ 47 инцидентов за 2 года. Реальные цифры потерь от простоя сервера, интернета, потери данных. Исследование F&F.</description>
+<pubDate>Sat, 14 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Средняя стоимость IT-аутсорсинга в Казани 2026: исследование F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/it-outsourcing-cost-kazan-2026.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/it-outsourcing-cost-kazan-2026.html</guid>
+<description>Сколько стоит IT-аутсорсинг в Казани в 2026 году? Анализ 15 компаний, 12 интервью, реальные цены. Скрытые расходы, сравнение тарифов. Исследование F&F.</description>
+<pubDate>Sat, 14 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Почему 1С тормозит: 5 причин и что с этим делать | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/pochemu-1c-tormozit.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/pochemu-1c-tormozit.html</guid>
+<description>Почему 1С тормозит: 5 причин и что с этим делать. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sat, 07 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Что будет, если сервер упадёт в субботу: пошаговый план | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html</guid>
+<description>Что будет, если сервер упадёт в субботу: пошаговый план.  F&F Казань. Звоните: +7 (901) 265-52...</description>
+<pubDate>Sat, 07 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>VPN для офиса: удалённый доступ без дыр в безопасности | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/vpn-udalenny-dostup.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/vpn-udalenny-dostup.html</guid>
+<description>VPN для офиса: удалённый доступ без дыр в безопасности. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sat, 07 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Как выбрать сервер для офиса: 7 вопросов перед покупкой | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/vybor-servera-ofisa.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/vybor-servera-ofisa.html</guid>
+<description>Как выбрать сервер для офиса: 7 вопросов перед покупкой.  F&F Казань. Звоните: +7 (901) 265-52...</description>
+<pubDate>Sat, 07 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Абонентское обслуживание компьютеров в Казани: что входит | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/abonentka-chto-vhodit.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/abonentka-chto-vhodit.html</guid>
+<description>Абонентское обслуживание компьютеров в Казани: что входит и сколько стоит.  F&F Казань.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Бэкап не восстанавливается — как проверить за 15 минут | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/backup-check-15min.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/backup-check-15min.html</guid>
+<description>Бэкап не восстанавливается — как проверить за 15 минут. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Бэкапы, которые не восстанавливаются: 7 признаков | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html</guid>
+<description>Бэкапы, которые не восстанавливаются: 7 признаков. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/it-autsorsing-kazan-guide.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/it-autsorsing-kazan-guide.html</guid>
+<description>IT-аутсорсинг для малого бизнеса в Казани: плюсы и минусы.  F&F Казань. Звоните: +7 (901) 265-...</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/it-clinics-kazan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/it-clinics-kazan.html</guid>
+<description>IT для клиник в Казани: МИС, ЭЦП, 152-ФЗ. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>IT для HoReCa в Казани: кассы, Wi-Fi, видеонаблюдение | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/it-horeca-kazan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/it-horeca-kazan.html</guid>
+<description>IT для HoReCa в Казани: кассы, Wi-Fi, видеонаблюдение. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>IT для ритейла в Казани: кассы, Честный Знак, 1С | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/it-retail-kazan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/it-retail-kazan.html</guid>
+<description>IT для ритейла в Казани: кассы, Честный Знак, 1С. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер 1С упал в субботу: пошаговый план действий | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-1c-saturday-plan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-1c-saturday-plan.html</guid>
+<description>Сервер 1С упал в субботу: пошаговый план действий. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер под ключ в Казани: от 200 000 ₽ — что входит | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-pod-klyuch-kazan-guide.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-pod-klyuch-kazan-guide.html</guid>
+<description>Сервер под ключ в Казани: от 200 000 ₽ — что входит. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сколько стоит штатный сисадмин в Казани в 2026 году | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html</guid>
+<description>Сколько стоит штатный сисадмин в Казани в 2026 году. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сисадмин уволился без передачи дел: что делать | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html</guid>
+<description>Сисадмин уволился без передачи дел: что делать. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>TCO-калькулятор IT-инфраструктуры | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/tco-calc.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/tco-calc.html</guid>
+<description>TCO-калькулятор IT-инфраструктуры.  F&F Казань. Звони... Подробнее на fedorov55.github.io/ff-site.</description>
+<pubDate>Tue, 03 Nov 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Подготовка к 152-ФЗ Казань — криптография | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/152fz-prep.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/152fz-prep.html</guid>
+<description>Подготовка к 152-ФЗ.  F&F Казань. Звоните +7 (901) 26</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Стратегия резервного копирования Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/backup-strategy.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/backup-strategy.html</guid>
+<description>Стратегия резервного копирования.  F&F Казань. Звонит. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер 1С не падает в субботу Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-1c-saturday.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-1c-saturday.html</guid>
+<description>Сервер 1С не падает в субботу.  F&F Казань. Звоните +</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>TCO-калькулятор IT-инфраструктуры Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/tco-calc.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/tco-calc.html</guid>
+<description>TCO-калькулятор IT-инфраструктуры.  F&F Казань. Звони. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Подготовка к 152-ФЗ: требования и документы — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/152fz-prep.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/152fz-prep.html</guid>
+<description>Подготовка к 152-ФЗ: требования и документы. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер 1С не падает в субботу: бэкапы и мониторинг | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/server-1c-saturday.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/server-1c-saturday.html</guid>
+<description>Сервер 1С не падает в субботу: бэкапы и мониторинг. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 30 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Подготовка к проверке по 152-ФЗ | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/152fz.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/152fz.html</guid>
+<description>Подготовка к проверке по 152-ФЗ.  F&F Казань. Звоните</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Active Directory для малого бизнеса | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/ad-small-business.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/ad-small-business.html</guid>
+<description>Active Directory для малого бизнеса. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Уволился админ — пароли не передал: что делать | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/admin-quit.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/admin-quit.html</guid>
+<description>Уволился админ — пароли не передал: что делать. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Бэкапы, которые реально восстанавливаются | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/backup-3-2-1.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/backup-3-2-1.html</guid>
+<description>Бэкапы, которые реально восстанавливаются. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Видеонаблюдение POE для офиса | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/cctv-poe.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/cctv-poe.html</guid>
+<description>Видеонаблюдение POE для офиса.  F&F Казань. Звоните +</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>КриптоПро и ViPNet: совместимость | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/cryptopro-vipnet.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/cryptopro-vipnet.html</guid>
+<description>КриптоПро и ViPNet: совместимость.  F&F Казань. Звони. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>ЭЦП для сотрудника vs руководителя | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/ecp-guide.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/ecp-guide.html</guid>
+<description>ЭЦП для сотрудника vs руководителя. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Утерян токен ЭЦП: первые 15 минут | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/ecp-lost.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/ecp-lost.html</guid>
+<description>Утерян токен ЭЦП: первые 15 минут.  F&F Казань. Звони. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Штрафы за утечку ПДн в 2026 | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/fines-2026.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/fines-2026.html</guid>
+<description>Штрафы за утечку ПДн в 2026.  F&F Казань. Звоните +7</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Как выбрать IT-подрядчика: 7 вопросов | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/how-to-choose.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/how-to-choose.html</guid>
+<description>Как выбрать IT-подрядчика: 7 вопросов. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Почтовый сервер: Mailcow vs Exchange | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/mail-server.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/mail-server.html</guid>
+<description>Почтовый сервер: Mailcow vs Exchange. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Переезд офиса без простоя | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/office-move.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/office-move.html</guid>
+<description>Переезд офиса без простоя.  F&F Казань. Звоните +7 (9</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Терминальный сервер для удалёнки | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/rds-remote.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/rds-remote.html</guid>
+<description>Терминальный сервер для удалёнки.  F&F Казань. Звонит. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Refurbished-сервер: экономия или лотерея | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/refurbished.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/refurbished.html</guid>
+<description>Refurbished-сервер: экономия или лотерея. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер для 1С: сколько RAM, какой диск | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-1c.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-1c.html</guid>
+<description>Сервер для 1С: сколько RAM, какой диск. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Файловый сервер vs облако: что дешевле | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-cloud-vs-local.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-cloud-vs-local.html</guid>
+<description>Файловый сервер vs облако: что дешевле. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер упал в субботу: что делать | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-down-saturday.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-down-saturday.html</guid>
+<description>Сервер упал в субботу: что делать.  F&F Казань. Звони. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сервер для офиса 10–15 человек от 200 000 ₽ — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/server-office.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/server-office.html</guid>
+<description>Сервер для офиса 10–15 человек: от 200 000 ₽. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сколько стоит сисадмин в Казани в 2026 | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sisadmin-cost.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sisadmin-cost.html</guid>
+<description>Сколько стоит сисадмин в Казани в 2026. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Сисадмин за 50 000 и сервер за 300 000/час | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sisadmin-kazan.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sisadmin-kazan.html</guid>
+<description>Сисадмин за 50 000 и сервер за 300 000/час. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Штатный сисадмин vs абонент: считаем год | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sisadmin-vs-abonent.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sisadmin-vs-abonent.html</guid>
+<description>Штатный сисадмин vs абонент: считаем год. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>СКС для офиса 50 человек | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sks-ports.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sks-ports.html</guid>
+<description>СКС для офиса 50 человек.  F&F Казань. Звоните +7 (90</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>СКУД для офиса до 300 м² | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/skud-office.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/skud-office.html</guid>
+<description>СКУД для офиса до 300 м².  F&F Казань. Звоните +7 (90</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>SLA 99,5% — что это значит в часах | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/sla-995.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/sla-995.html</guid>
+<description>SLA 99,5% — что это значит в часах. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Переход со штата на абонент | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/transition-to-abonent.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/transition-to-abonent.html</guid>
+<description>Переход со штата на абонент.  F&F Казань. Звоните +7</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Шифрование ноутбуков: VeraCrypt vs BitLocker | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/veracrypt.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/veracrypt.html</guid>
+<description>Шифрование ноутбуков: VeraCrypt vs BitLocker. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Абонентское обслуживание: что входит | F&F — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/what-included.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/what-included.html</guid>
+<description>Абонентское обслуживание: что входит. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Wi-Fi 6 для офиса | F&F | F&F</title>
+<link>https://fedorov55.github.io/ff-site/blog/wifi6-office.html</link>
+<guid>https://fedorov55.github.io/ff-site/blog/wifi6-office.html</guid>
+<description>Wi-Fi 6 для офиса.  F&F Казань. Звоните +7 (901) 265-</description>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Active Directory: зачем он нужен малому бизнесу | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/ad-setup.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/ad-setup.html</guid>
+<description>Active Directory: зачем он нужен малому бизнесу. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 16 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Правило 3-2-1: как не потерять данные навсегда | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/backup-3-2-1.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/backup-3-2-1.html</guid>
+<description>Правило 3-2-1: как не потерять данные навсегда. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 16 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Переезд с Windows Server 2012: как не потерять данные | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/migration-2012.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/migration-2012.html</guid>
+<description>Переезд с Windows Server 2012: как не потерять данные. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 16 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Как защитить бизнес от вирусов-шифровальщиков | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/ransomware-protection.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/ransomware-protection.html</guid>
+<description>Как защитить бизнес от вирусов-шифровальщиков. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 16 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+<item>
+<title>Локальный сервер или облако: что выгоднее — Казань | F&F</title>
+<link>https://fedorov55.github.io/ff-site/articles/server-vs-cloud.html</link>
+<guid>https://fedorov55.github.io/ff-site/articles/server-vs-cloud.html</guid>
+<description>Локальный сервер или облако: что выгоднее в 2026?. F&F — IT-аутсорсинг для бизнеса в Казани. Звоните +7 (901) 265-52-52.</description>
+<pubDate>Fri, 16 Oct 2026 00:00:00 +0300</pubDate>
+</item>
+</channel>
+</rss>

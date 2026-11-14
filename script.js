@@ -194,3 +194,24 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+
+/* ===== Blog filter ===== */
+(function(){
+  var filterBtns = document.querySelectorAll('.blog-filter__btn');
+  if (!filterBtns.length) return;
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.blog-card').forEach(function(card){
+        if (filter === 'all' || card.getAttribute('data-tag') === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();

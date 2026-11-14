@@ -978,3 +978,27 @@ img,svg{max-width:100%;height:auto}
   .toc { top: 56px; }
   .toc__link { font-size: 11px; padding: 5px 10px; }
 }
+
+
+/* ===== Blog filter buttons ===== */
+.blog-filter__btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.blog-filter__btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.blog-filter__btn.is-active {
+  background: var(--gold);
+  color: #0A0D14;
+  border-color: var(--gold);
+}
