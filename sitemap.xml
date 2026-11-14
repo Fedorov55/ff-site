@@ -770,4 +770,22 @@
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-outsourcing-cost-kazan-2026.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/cost-of-downtime.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/3-year-tco-comparison.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
