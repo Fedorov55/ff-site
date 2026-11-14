@@ -1,7 +1,22 @@
 {
+  "name": "ff-site",
+  "version": "1.0.0",
+  "description": "F&F IT-outsourcing site",
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "npx esbuild style.css --minify --outfile=dist/style.min.css",
+    "build:js": "npx esbuild script.js --minify --outfile=dist/script.min.js",
+    "lint:js": "npx eslint script.js calculator.js search.js",
+    "lint:html": "npx htmlhint \"**/*.html\"",
+    "audit": "node --check script.js && node --check calculator.js && node --check search.js"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.14.0",
-    "htmlhint": "^1.9.2"
+    "htmlhint": "^1.9.2",
+    "esbuild": "^0.25.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }

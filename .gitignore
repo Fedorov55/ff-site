@@ -7,5 +7,6 @@ skills-lock.json
 *.tmp
 node_modules/
 .env
+dist/
 Полный глубинный аудит сайта F.docx
 "
