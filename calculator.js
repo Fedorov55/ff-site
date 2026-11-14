@@ -128,6 +128,6 @@
             if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; }
           }
         }).catch(()=>{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } });
-      } catch(e){ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } }
+      } catch{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } }
     };
   }catch(e){ console.error('Calc', e); }

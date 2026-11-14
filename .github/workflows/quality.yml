@@ -7,8 +7,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - run: npm install --no-save eslint htmlhint
-      - run: npx eslint "**/*.js"
+      - run: npx eslint "**/*.js" --ignore-pattern "js/chart.umd.min.js" --ignore-pattern "dist/**"
       - run: npx htmlhint "**/*.html"
-      - run: for f in $(find . -name "*.js"); do node --check "$f"; done
+      - run: for f in $(find . -name "*.js" -not -path "*/node_modules/*" -not -name "*.min.js"); do node --check "$f"; done
