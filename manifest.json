@@ -1,0 +1,27 @@
+{
+  "name": "F&F — IT-аутсорсинг Казань",
+  "short_name": "F&F",
+  "description": "IT-инфраструктура для офиса: серверы, сети, безопасность. Казань — приедем, Россия — удалённо.",
+  "start_url": "/ff-site/",
+  "scope": "/ff-site/",
+  "display": "standalone",
+  "background_color": "#0A0D14",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "favicon-32.webp",
+      "sizes": "32x32",
+      "type": "image/webp"
+    },
+    {
+      "src": "logo-44.webp",
+      "sizes": "44x44",
+      "type": "image/webp"
+    },
+    {
+      "src": "apple-touch-icon-180.webp",
+      "sizes": "180x180",
+      "type": "image/webp"
+    }
+  ]
+}
