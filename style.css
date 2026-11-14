@@ -933,3 +933,5 @@ img,svg{max-width:100%;height:auto}
   .search__modal { width: 95vw; max-height: 80vh; }
   .search__toggle { width: 36px; height: 36px; }
 }
+
+.case-card__desc{position:relative;z-index:2;}
