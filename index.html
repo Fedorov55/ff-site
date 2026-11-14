@@ -907,6 +907,318 @@
 </section>
 
 </main>
+
+<section id="estimate-calc" class="section reveal" style="scroll-margin-top:92px;">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Соберите свой контур</span>
+<h2 class="section__title reveal">Конструктор сметы за 3 шага</h2>
+<p class="section__subtitle reveal">Выберите услуги и количество — увидите порядок цифр. Без звонка и «расскажите о бизнесе с 2010 года». Скидка автоматически: от 5 позиций — 10%, от 10 — 20%.</p>
+</div>
+<div class="calc fade-up">
+<div class="calc__head">
+<div class="calc__title">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<rect x="4" y="2" width="16" height="20" rx="2"/>
+<line x1="8" y1="6" x2="16" y2="6"/>
+<line x1="8" y1="18" x2="16" y2="18"/>
+</svg> Смета проекта</div>
+<div class="calc__progress">
+<span class="calc__dot active">
+</span>
+<span class="calc__dot">
+</span>
+<span class="calc__dot">
+</span>
+</div>
+</div>
+<div class="calc__body">
+<div class="calc__step active" data-step="1">
+<div class="calc__step-title">Что нужно сделать?</div>
+<div class="calc__step-desc">Отметьте работы — цены пересчитаются автоматически.</div>
+<div class="calc__group-label">Серверы — настройка</div>
+<div class="calc__services">
+<button type="button" class="calc__service" data-key="server-select" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Подбор серверного оборудования</span>
+<span class="calc__service-price">от 4 000 ₽ · услуга</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="server-file" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Файловый сервер</span>
+<span class="calc__service-price">от 2 800 ₽ · сервер</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="server-domain" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Доменный сервер (AD)</span>
+<span class="calc__service-price">от 4 000 ₽ · сервер</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="server-dns" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">DNS-сервер</span>
+<span class="calc__service-price">от 2 000 ₽ · сервер</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="server-rdp" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Терминальный сервер (RDS)</span>
+<span class="calc__service-price">от 4 400 ₽ · сервер</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="server-backup" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Сервер резервного копирования</span>
+<span class="calc__service-price">от 4 800 ₽ · сервер</span>
+</span>
+</button>
+</div>
+<div class="calc__group-label">Обслуживание серверов / мес</div>
+<div class="calc__services">
+<button type="button" class="calc__service" data-key="mnt-file" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Файловый сервер</span>
+<span class="calc__service-price">от 2 400 ₽/мес</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="mnt-domain" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Доменный сервер</span>
+<span class="calc__service-price">от 4 000 ₽/мес</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="mnt-dns" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">DNS-сервер</span>
+<span class="calc__service-price">от 2 000 ₽/мес</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="mnt-rdp" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Терминальный сервер</span>
+<span class="calc__service-price">от 3 600 ₽/мес</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="mnt-backup" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Сервер бэкапов</span>
+<span class="calc__service-price">от 3 200 ₽/мес</span>
+</span>
+</button>
+</div>
+<div class="calc__group-label">Криптография</div>
+<div class="calc__services">
+<button type="button" class="calc__service" data-key="crypto-license" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">КриптоПро: лицензия</span>
+<span class="calc__service-price">от 1 200 ₽ · шт.</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="crypto-install" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">КриптоПро: установка</span>
+<span class="calc__service-price">от 1 200 ₽ · шт.</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="crypto-setup" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">КриптоПро: настройка</span>
+<span class="calc__service-price">от 1 600 ₽ · шт.</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="crypto-ecp" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Клонирование ЭЦП</span>
+<span class="calc__service-price">от 1 200 ₽ · шт.</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="vipnet-install" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">ViPNet: установка</span>
+<span class="calc__service-price">от 1 200 ₽ · шт.</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="encrypt-full" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Шифрование данных</span>
+<span class="calc__service-price">от 1 600 ₽ · ПК</span>
+</span>
+</button>
+</div>
+<div class="calc__group-label">IT-аудит</div>
+<div class="calc__services">
+<button type="button" class="calc__service" data-key="audit-express" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Экспресс IT-аудит</span>
+<span class="calc__service-price">от 4 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="audit-full" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Полный IT-аудит</span>
+<span class="calc__service-price">от 12 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="visit-engineer" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Выезд инженера</span>
+<span class="calc__service-price">от 3 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="work-hour" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Час работ</span>
+<span class="calc__service-price">от 2 500 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="ats-setup" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Настройка АТС до 15 абонентов</span>
+<span class="calc__service-price">от 25 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="vpn-wireguard" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">VPN WireGuard для офиса</span>
+<span class="calc__service-price">от 8 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="mail-migration" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Перенос почты на свой сервер</span>
+<span class="calc__service-price">от 12 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="ai-pilot" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Пилот бота в Telegram</span>
+<span class="calc__service-price">от 80 000 ₽</span>
+</span>
+</button>
+<button type="button" class="calc__service" data-key="training" onclick="calcToggle(this)">
+<span class="calc__check">
+</span>
+<span class="calc__service-text">
+<span class="calc__service-name">Обучение сотрудников (час)</span>
+<span class="calc__service-price">от 4 000 ₽</span>
+</span>
+</button>
+</div>
+<div class="calc__actions">
+<span>
+</span>
+<button type="button" class="btn btn--primary" onclick="calcNext(event)">Далее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
+</button>
+</div>
+</div>
+<div class="calc__step" data-step="2">
+<div class="calc__step-title">Сколько нужно?</div>
+<div class="calc__step-desc">Укажите количество — смета пересчитается на лету.</div>
+<div class="calc__qty-list" id="calcQtyList">
+</div>
+<div class="calc__actions">
+<button type="button" class="btn btn--ghost" onclick="calcPrev()">Назад</button>
+<button type="button" class="btn btn--primary" onclick="calcNext(event)">К итогу <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+<line x1="5" y1="12" x2="19" y2="12"/>
+<polyline points="12 5 19 12 12 19"/>
+</svg>
+</button>
+</div>
+</div>
+<div class="calc__step" data-step="3">
+<div class="calc__step-title">Ваш контур: примерная смета</div>
+<div class="calc__step-desc">Оставьте контакты — вышлем подробную смету. Без «мы вам перезвоним» на три дня.</div>
+<div class="calc__summary" id="calcSummary">
+</div>
+<div class="calc__total">
+<div class="calc__total-label">Предварительная сумма</div>
+<div class="calc__total-value" id="calcTotalValue">0 ₽</div>
+<div class="calc__total-note">Справочно, не является офертой. Точная цена — после консультации.</div>
+<p style="margin-top:12px;font-size:13px;line-height:1.5;color:#8b93a1;">«Раньше бэкапы “где-то были”. Теперь раз в квартал разворачиваем тестовый контур — и спим спокойно». — ИТ-директор, Казань</p>
+</div>
+<p class="calc__price-hint">Что двигает цену: количество портов и трасс, срочность, наличие готовой серверной, криптография и ЭЦП, география выезда. Мы не прячем это в «индивидуальный расчёт».</p>
+<div class="calc__contacts">
+<div class="calc__input-wrap">
+<input type="text" class="calc__input" id="calcName" placeholder="Ваше имя" autocomplete="name" aria-label="Ваше имя">
+</div>
+<div class="calc__input-wrap">
+<input type="text" class="calc__input" id="calcContact" placeholder="Telegram, MAX или телефон" aria-label="Контакт (Telegram, MAX или телефон)">
+</div>
+</div>
+<div class="form-group form-group--checkbox" style="margin-top:16px">
+<input type="checkbox" id="calcAgree" name="calc_agree">
+<label for="calcAgree">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+</label>
+</div>
+<div class="calc__actions">
+<button type="button" class="btn btn--ghost" onclick="calcPrev()">Назад</button>
+<button type="button" class="btn btn--primary" onclick="calcSubmit(event)">Рассчитать стоимость</button>
+<a href="tel:+79012655252" class="btn btn--ghost">+7 (901) 265-52-52</a>
+<p style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-2);">Минимум по договору — 10 000 ₽/мес. Ответим за 15 минут. Смета без обязательств.</p>
+</div>
+<div class="form-success" id="calcSuccess" aria-live="polite" style="display:none;margin-top:16px">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-2);max-width:600px;margin-left:auto;margin-right:auto;">Минимальная стоимость абонентского обслуживания — 10 000 ₽ в месяц. Если расчёт показал меньше — мы всё равно предложим этот минимум и объясним почему. Минимум по договору — 10 000 ₽/мес.</p>
+</section>
 <footer class="footer">
 <div class="container">
 <div class="footer__grid">
@@ -963,6 +1275,7 @@
 </svg>
 </button>
 <script src="search.js" defer>
+<script src="calculator.js" defer>
 <script src="script.js?v=106" defer>
 </script>
 <noscript>
