@@ -18,13 +18,13 @@ async function build() {
       outfile: f.out,
       minify: true,
       bundle: false,
-      logLevel: 'info',
+      logLevel: 'silent',
     });
     const orig = fs.statSync(f.in).size;
     const min = fs.statSync(f.out).size;
     console.log(f.in, '->', f.out, '|', orig, '->', min, 'bytes', '(' + Math.round((1 - min/orig)*100) + '% reduction)');
   }
-  console.log('Build complete.');
+  console.log('Build complete. Output in dist/');
 }
 
 build().catch(function(e){ console.error(e); process.exit(1); });
