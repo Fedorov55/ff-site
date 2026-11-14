@@ -935,3 +935,46 @@ img,svg{max-width:100%;height:auto}
 }
 
 .case-card__desc{position:relative;z-index:2;}
+
+
+/* ===== Table of Contents (sticky) ===== */
+.toc {
+  position: sticky;
+  top: 74px;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+.toc__inner {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.toc__inner::-webkit-scrollbar { display: none; }
+.toc__link {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.toc__link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+@media (max-width: 768px) {
+  .toc { top: 56px; }
+  .toc__link { font-size: 11px; padding: 5px 10px; }
+}
