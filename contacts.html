@@ -168,6 +168,19 @@
 </section>
 <section class="section reveal" style="padding-top:0">
 <div class="container">
+<div style="max-width:760px;margin:0 auto 24px;padding:24px;border:1px solid var(--border);border-radius:16px;background:var(--card);">
+<h3 style="font-size:18px;font-weight:700;margin:0 0 12px;color:var(--gold-light);">Где мы</h3>
+<p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0 0 8px;">Казань, Республика Татарстан. Выезд по городу и Татарстану. Удалённое обслуживание — по всей России.</p>
+<p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0 0 12px;">Адрес офиса: по запросу (работаем без шоурума, приезжаем к вам).</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;">
+<a href="https://yandex.ru/maps/?text=Казань" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Открыть на Яндекс.Картах</a>
+<a href="https://www.google.com/maps/search/Казань" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Открыть на Google Maps</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section reveal" style="padding-top:0">
+<div class="container">
 <div class="contact__layout">
 <div class="contact-channels">
   <a href="tel:+79012655252">
@@ -211,7 +224,13 @@
   </div>
   <button class="btn btn--primary btn--full" type="submit">Отправить</button>
   <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px;">Нужно согласие на обработку данных.</p>
-  <div class="form-success" id="contactSuccess" style="display:none;" aria-live="polite"></div>
+  <div class="form-success" id="contactSuccess" style="display:none;" aria-live="polite">
+  <div style="text-align:center;padding:20px;">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 12px;"><polyline points="20 6 9 17 4 12"/></svg>
+    <h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--neon);">Заявка отправлена!</h3>
+    <p style="color:var(--text-2);margin:0;">Мы свяжемся с вами в течение 15 минут.</p>
+  </div>
+</div>
 </form>
 
 <script> document.addEventListener('DOMContentLoaded', function(){ var next = document.getElementById('ts-next'); var s1 = document.getElementById('ts-step1'); var s2 = document.getElementById('ts-step2'); if (next && s1 && s2) { next.addEventListener('click', function(){ var c = document.getElementById('ts-contact'); if (!c || !c.value.trim()) { alert('Укажите телефон или email'); return; } s1.style.display = 'none'; s2.style.display = 'block'; }); } }); </script>
