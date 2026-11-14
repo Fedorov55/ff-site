@@ -1,4 +1,28 @@
 (function(){'use strict';window.sanitize = function(str){if(!str)return '';return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');};const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;try{const saved = localStorage.getItem('ff_theme')|| 'dark';document.documentElement.setAttribute('data-theme',saved);window.toggleTheme = function(){const cur = document.documentElement.getAttribute('data-theme');const next = cur === 'dark' ? 'light' : 'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('ff_theme',next);}catch(e){}updateThemeIcon(next);};const themeBtn = document.getElementById('themeToggle');if(themeBtn){themeBtn.addEventListener('click',window.toggleTheme);}function updateThemeIcon(theme){const btn = document.getElementById('themeToggle');if(!btn)return;btn.innerHTML = theme === 'dark' ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; btn.setAttribute('aria-label', theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему');}updateThemeIcon(saved);}catch(e){}try{const fadeEls = document.querySelectorAll('.fade-up');if('IntersectionObserver' in window){const io = new IntersectionObserver((entries)=>{entries.forEach(en =>{if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{threshold: .08,rootMargin: '0px 0px -40px 0px'});fadeEls.forEach(el => io.observe(el));}else{fadeEls.forEach(el => el.classList.add('visible'));}}catch(e){}try{const counters = document.querySelectorAll('[data-count]');counters.forEach(el =>{if(el.dataset.done === '1')return;el.dataset.done = '1';const target = parseInt(el.getAttribute('data-count'),10)|| 0;const sup = el.querySelector('sup')? el.querySelector('sup').outerHTML : '';el.innerHTML = target + sup;});}catch(e){}try{const toTop = document.getElementById('toTop');if(toTop){let ticking = false;const updateToTop =()=>{const y = window.scrollY;toTop.classList.toggle('visible',y > 500);ticking = false;};window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateToTop);ticking = true;}},{passive: true});updateToTop();toTop.addEventListener('click',()=>{toTop.classList.remove('visible');window.scrollTo({top: 0,behavior: prefersReduced ? 'auto' : 'smooth'});});}}catch(e){}try{const slider = document.querySelector('.reviews__slider');const prevBtn = document.querySelector('.slider-btn--prev');const nextBtn = document.querySelector('.slider-btn--next');if(slider && prevBtn && nextBtn){const cards = Array.from(slider.children);if(cards.length > 1){const firstClone = cards[0].cloneNode(true);const lastClone = cards[cards.length-1].cloneNode(true);slider.appendChild(firstClone);slider.insertBefore(lastClone,cards[0]);slider.scrollLeft = lastClone.offsetWidth;}let isScrolling = false;const cardWidth =()=>{const c = slider.querySelector('.review-card');return c ? c.offsetWidth + 24 : slider.offsetWidth;};function resetIfNeeded(){const maxScroll = slider.scrollWidth - slider.clientWidth;if(slider.scrollLeft >= maxScroll - 5){slider.scrollLeft = slider.clientWidth + 10 -(maxScroll - slider.scrollLeft);const lc = slider.querySelector('.review-card');if(lc)slider.scrollLeft = lc.offsetWidth;}if(slider.scrollLeft <= 5){const cards2 = slider.querySelectorAll('.review-card');if(cards2.length > 2)slider.scrollLeft = slider.scrollWidth - slider.clientWidth - cards2[0].offsetWidth - 24;}}prevBtn.addEventListener('click',()=>{if(isScrolling)return;isScrolling = true;slider.scrollBy({left: -cardWidth(),behavior: 'smooth'});setTimeout(()=>{resetIfNeeded();isScrolling = false;},450);});nextBtn.addEventListener('click',()=>{if(isScrolling)return;isScrolling = true;slider.scrollBy({left: cardWidth(),behavior: 'smooth'});setTimeout(()=>{resetIfNeeded();isScrolling = false;},450);});}}catch(e){}try{const quiz = document.getElementById('quiz');if(quiz){const Q = [{q:'Сколько раз за последний год сервер «просто перезагружался»?',a:[{t:'Ни разу',s:0},{t:'1–2 раза',s:1},{t:'Больше',s:2},{t:'Не знаю — это же не моя проблема',s:3}]},{q:'Когда вы последний раз проверяли,что бэкап реально восстанавливается?',a:[{t:'На этой неделе',s:0},{t:'В прошлом квартале',s:1},{t:'Помню,что «делали»',s:2},{t:'Бэкап — это когда файлы лежат рядом',s:3}]},{q:'Кто отвечает за инфраструктуру,если админ уходит в отпуск?',a:[{t:'Команда',s:0},{t:'Другой сотрудник',s:1},{t:'Никто,но мы надеемся',s:2},{t:'Отпуск? У нас так не принято',s:3}]},{q:'Сколько сотрудников могут подписать документ ЭЦП прямо сейчас?',a:[{t:'Все,кому нужно',s:0},{t:'Половина',s:1},{t:'Один — и он в отпуске',s:2},{t:'Мы ещё не считали',s:3}]},{q:'Что будет,если завтра отключится электричество на 2 часа?',a:[{t:'ИБП + генератор',s:0},{t:'ИБП на 20 минут',s:1},{t:'Сервер выключится',s:2},{t:'Начнётся «день без интернета»',s:3}]}];let qi = 0,qScore = 0;const qBody = quiz.querySelector('.quiz__body');const qDots = quiz.querySelectorAll('.quiz__dot');function renderQuiz(){qDots.forEach((d,i)=>{d.classList.remove('active','done');if(i<qi)d.classList.add('done');if(i===qi)d.classList.add('active');});const qp=document.querySelector('.quiz__progress');if(qp)qp.setAttribute('aria-label','Шаг '+(qi+1)+' из '+qDots.length);;if(qi >= Q.length){showQuizResult();return;}const item = Q[qi];qBody.innerHTML = `<div class="quiz__step active"><div class="quiz__q">${item.q}</div><div class="quiz__opts">${item.a.map((opt,i)=> `<button type="button" class="quiz__opt" data-i="${i}">${opt.t}</button>`).join('')}</div></div>`;if(typeof window.ymGoal === 'function'){window.ymGoal('quiz_complete');}qBody.querySelectorAll('.quiz__opt').forEach(btn =>{btn.addEventListener('click',()=>{qScore += item.a[parseInt(btn.getAttribute('data-i'),10)].s;qi++;renderQuiz();});});}function showQuizResult(){qDots.forEach(d => d.classList.add('done'));qBody.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:14px;color:var(--muted);margin-bottom:16px;">Анализируем ваши ответы...</div><div style="width:60px;height:4px;background:var(--border);border-radius:2px;margin:0 auto;overflow:hidden;"><div style="width:0;height:100%;background:var(--gold-light);animation:quizLoad 1.5s ease forwards;"></div></div></div>';setTimeout(()=>{renderQuizResult();},1500);return;}function renderQuizResult(){let level,cls,text;if(qScore <= 3){level='Всё отлично';cls='green';text='Вы молодцы. Инфраструктура под контролем. Но профилактика не помешает.';}else if(qScore <= 8){level='Крепко,но есть нюансы';cls='yellow';text='Инфраструктура держится на честном слове. Мы можем это исправить до того,как оно исправит вас.';}else if(qScore <= 12){level='Пора задуматься';cls='orange';text='Риски высоки. Пора навести порядок,пока не случилась беда.';}else{level='Критично';cls='red';text='Давайте посмотрим,где именно. Разбор 15 минут — 0 ₽.';}qBody.innerHTML = ` <div class="quiz__step active"> <div class="quiz__result-header"> <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Ваш уровень зрелости</div> <span class="quiz__level quiz__level--${cls}">${level}</span> <p style="font-size:14px;color:var(--text-2);margin:10px 0 0;">${text}</p> </div> <div class="quiz__loss-box"> <div class="quiz__loss-title">Стоимость бездействия</div> <div class="quiz__loss-val" id="lossVal">65 000 ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент *</small></div> <div style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">* без учёта потерянной прибыли</div> <div class="quiz__loss-controls"> <div class="quiz__input-group"><label>Сотрудников</label><input type="number" id="lossEmp" value="25" min="1"></div> <div class="quiz__input-group"><label>Часов простоя</label><input type="number" id="lossHours" value="4" min="1"></div> <div class="quiz__input-group"><label>Ср. зарплата(₽/час)</label><input type="number" id="lossRate" value="650" min="1"></div> </div> </div> <div class="quiz__contacts"> <input type="text" class="quiz__input" id="qName" placeholder="Ваше имя"> <input type="text" class="quiz__input" id="qContact" placeholder="Telegram,MAX или телефон"> </div> <div class="form-group form-group--checkbox" style="margin-bottom:16px;"> <input type="checkbox" id="qAgree"> <label for="qAgree" style="font-size:12px;color:var(--text-2)">Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" style="color:var(--gold-light)">политикой конфиденциальности</a></label> </div> <div class="quiz__actions"> <button class="btn btn--primary" onclick="submitQuiz(event)">Прислать разбор</button> <a href="services.html#estimate" class="btn btn--ghost">Рассчитать стоимость</a> <a href="tel:+79012655252" class="btn btn--ghost">+7(901)265-52-52</a> </div> <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px;">Можно ничего не оставлять и просто позвонить</p> </div> `;const calcLoss =()=>{const e = parseInt(document.getElementById('lossEmp').value)||0;const h = parseInt(document.getElementById('lossHours').value)||0;const r = parseInt(document.getElementById('lossRate').value)||0;document.getElementById('lossVal').innerHTML =(e*h*r).toLocaleString('ru-RU')+ ' ₽ <small style="font-size:14px;color:var(--muted);font-family:Inter">за инцидент</small>';};['lossEmp','lossHours','lossRate'].forEach(id => document.getElementById(id).addEventListener('input',calcLoss));}window.submitQuiz = async function(ev){const btn = ev.target.closest('button');const name = document.getElementById('qName').value.trim();const contact = document.getElementById('qContact').value.trim();const agree = document.getElementById('qAgree').checked;const loss = document.getElementById('lossVal').innerText;if(!name)return showToast(btn,'Укажите имя','error');if(!contact)return showToast(btn,'Укажите контакт','error');if(!agree)return showToast(btn,'Подтвердите согласие','error');btn.textContent = 'Отправляем...';btn.disabled = true;try{if(!FORM_ENDPOINT || FORM_ENDPOINT.indexOf('formspree.io/f/') === -1){var qb = 'name: ' + name + '\\ncontact_way: ' + contact + '\\nmessage: Пройден квиз. Потери: ' + loss + '\\nservice: Квиз\\nagree: true\\n\\nСтраница: ' + window.location.href;window.location.href = 'mailto:FathFed@yandex.ru?subject=' + encodeURIComponent('Заявка с сайта F&F') + '&body=' + encodeURIComponent(qb);showToast(btn, 'Если почтовая программа не открылась, позвоните +7 (901) 265-52-52.', 'error');if(btn){btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Прислать разбор';}return;}const resp = await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body: JSON.stringify({name,contact_way: contact,message: `Пройден квиз. Потери: ${loss}`,service: 'Квиз',agree: true})});const res = await resp.json();if(resp.ok){qBody.innerHTML = `<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" style="margin:0 auto 16px;"><polyline points="20 6 9 17 4 12"/></svg><h3 style="font-size:20px;margin-bottom:8px;">Спасибо,${name}!</h3><p style="color:var(--text-2);margin-bottom:20px;">Мы уже изучаем вашу ситуацию. Заявка получена.</p><a href="services.html#calculator" class="btn btn--primary">Получить детальный разбор бесплатно</a></div>`;}else{showToast(btn,res.message || 'Ошибка','error');btn.disabled = false;btn.textContent = 'Обсудить задачу';}}catch(e){showToast(btn,'Не отправилось. Позвоните +7(901)265-52-52 или напишите в Telegram','error');btn.disabled = false;btn.textContent = 'Обсудить задачу';}};renderQuiz();}}catch(e){console.error('Quiz',e);}try{const FORM_ENDPOINT = '';document.querySelectorAll('form').forEach(function(form){if(form.dataset.ffBound)return;form.dataset.ffBound = '1'; form.dataset.loadedAt = String(Date.now());
+  // Form data persistence (lead recovery)
+  var formId = form.id || form.getAttribute('name') || 'default';
+  var storageKey = 'ff_form_' + formId;
+  // Restore saved data
+  try {
+    var saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    Object.keys(saved).forEach(function(k){
+      var el = form.querySelector('[name="'+k+'"]');
+      if (el && !el.value && el.type !== 'hidden' && el.type !== 'checkbox') el.value = saved[k];
+    });
+  } catch(e) {}
+  // Save on input
+  form.addEventListener('input', function(){
+    var data = {};
+    form.querySelectorAll('input,textarea,select').forEach(function(el){
+      if (!el.name || el.type === 'hidden' || el.type === 'checkbox') return;
+      if (el.value.trim()) data[el.name] = el.value.trim();
+    });
+    try { localStorage.setItem(storageKey, JSON.stringify(data)); } catch(e) {}
+  });
+  // Clear on successful submit
+  form.addEventListener('submit', function(){
+    try { localStorage.removeItem(storageKey); } catch(e) {}
+  });
   // Real-time validation on blur
   form.querySelectorAll('input,textarea,select').forEach(function(el){
     if(!el.name || el.type==='hidden' || el.type==='checkbox') return;
@@ -79,3 +103,82 @@
       onScroll();
     }
   } catch (e) {}
+
+
+/* ===== Lead recovery (abandoned form) ===== */
+(function(){
+  // Check if there's saved form data from a previous visit
+  var hasSaved = false;
+  for (var i=0; i<localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (key && key.indexOf('ff_form_') === 0) {
+      try {
+        var data = JSON.parse(localStorage.getItem(key) || '{}');
+        if (Object.keys(data).length > 0) { hasSaved = true; break; }
+      } catch(e) {}
+    }
+  }
+  if (hasSaved && !sessionStorage.getItem('ff_recovery_shown')) {
+    // Show recovery banner after 3 seconds
+    setTimeout(function(){
+      if (sessionStorage.getItem('ff_recovery_shown')) return;
+      sessionStorage.setItem('ff_recovery_shown', '1');
+      var banner = document.createElement('div');
+      banner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--bg-elevated);border:1px solid var(--gold);border-radius:12px;padding:16px 20px;z-index:9998;max-width:400px;width:calc(100% - 40px);box-shadow:0 8px 32px rgba(0,0,0,0.4);display:flex;align-items:center;gap:12px;';
+      banner.innerHTML = '<div style="flex:1;"><div style="font-weight:600;font-size:14px;margin-bottom:4px;">У вас есть незаполненная заявка</div><div style="font-size:12px;color:var(--text-2);">Продолжить заполнение?</div></div><button onclick="this.parentNode.remove()" style="background:var(--gold);color:#17130A;border:none;border-radius:8px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:13px;">Продолжить</button><button onclick="this.parentNode.remove()" style="background:transparent;border:1px solid var(--border);border-radius:8px;padding:8px 12px;cursor:pointer;color:var(--text-2);font-size:13px;">×</button>';
+      document.body.appendChild(banner);
+      // Auto-remove after 10 seconds
+      setTimeout(function(){ if(banner.parentNode) banner.remove(); }, 10000);
+    }, 3000);
+  }
+})();
+
+/* ===== Remarketing (activate with real IDs) =====
+   Uncomment and fill in IDs to enable:
+   window.FF_META_PIXEL_ID = '123456789';
+   window.FF_GOOGLE_ADS_ID = 'AW-XXXXXXXXX';
+*/
+(function(){
+  var metaPixel = window.FF_META_PIXEL_ID;
+  var googleAds = window.FF_GOOGLE_ADS_ID;
+  if (metaPixel) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', metaPixel);
+    fbq('track', 'PageView');
+  }
+  if (googleAds) {
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + googleAds;
+    document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', googleAds);
+  }
+})();
+
+/* ===== Analytics (activate with real IDs) =====
+   To enable: set window.FF_GA4_ID and/or window.FF_YM_ID before this script loads.
+   window.FF_GA4_ID = 'G-XXXXXXXXXX';
+   window.FF_YM_ID = 12345678;
+*/
+(function(){
+  var ga4 = window.FF_GA4_ID;
+  var ymId = window.FF_YM_ID;
+  if (ga4) {
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
+    document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ga4, {send_page_view: true});
+  }
+  if (ymId) {
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+    ym(ymId, 'init', {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+    window.YM_COUNTER_ID = ymId;
+  }
+})();
