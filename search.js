@@ -169,9 +169,11 @@ function createSearchUI(){
   input.addEventListener('input', function(){
     var q=input.value.trim();
     if(q.length<2){ results.innerHTML=''; return; }
-    var res=search(q);
-    renderResults(res, q, results);
-    selectedIdx=-1;
+    loadIndex(function(){
+      var res=search(q);
+      renderResults(res, q, results);
+      selectedIdx=-1;
+    });
   });
   input.addEventListener('keydown', function(e){
     var items=results.querySelectorAll('.search__result');
@@ -194,8 +196,8 @@ function createSearchUI(){
 }
 
 function init(){
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', createSearchUI);
-  else createSearchUI();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ createSearchUI(); loadIndex(function(){}); });
+  else { createSearchUI(); loadIndex(function(){}); }
 }
 init();
 })();
