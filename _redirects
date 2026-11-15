@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects (301)
+/compare-freelancer.html /compare-freelance.html 301
+/compare-staff.html /compare.html 301
+/lead-magnet-audit.html /lead-audit.html 301
+/lead-magnet-backup.html /backup-checklist.html 301
+/lead-magnet-network.html /lead-network-move.html 301
+/lead-magnet-server-1c.html /lead-server-1c.html 301
