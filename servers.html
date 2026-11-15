@@ -347,20 +347,9 @@
 <!-- 1C slow block -->
 <section class="section reveal">
 <div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">1С</span>
-<h2 class="section__title reveal">1С тормозит — что проверяем в первую очередь</h2>
-</div>
-<div style="max-width:760px;margin:0 auto;">
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">Частые причины медленной 1С:</p>
-<ul style="font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px;padding-left:20px;">
-<li>Диск HDD вместо SSD — база читает данные медленно</li>
-<li>Мало оперативной памяти — SQL кэширует меньше, чаще обращается к диску</li>
-<li>1С и файловый сервер на одном диске — конкуренция за I/O</li>
-<li>Нет индексов в базе — запросы сканируют всю таблицу</li>
-<li>Сетевой диск вместо локального — каждый запрос идёт через сеть</li>
-</ul>
-<p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0;">Когда хватает оптимизации: настройка SQL, индексы, вынос 1С на отдельный диск. Когда нужен новый сервер: если железо не тянет по RAM/CPU или диск сыплется.</p>
+<div style="max-width:760px;margin:0 auto;padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card);text-align:center;">
+<p style="font-size:15px;color:var(--text-2);margin:0 0 12px;">1С тормозит? Разбираем причины и решения.</p>
+<a href="blog/pochemu-1c-tormozit.html" style="color:var(--gold);text-decoration:underline;">Почему тормозит 1С →</a>
 </div>
 </div>
 </section>
@@ -368,53 +357,10 @@
 <!-- Как проверить бэкапы -->
 <section class="section reveal">
 <div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">Бэкапы</span>
-<h2 class="section__title reveal">Как проверить бэкапы сервера</h2>
+<div style="max-width:760px;margin:0 auto;padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card);text-align:center;">
+<p style="font-size:15px;color:var(--text-2);margin:0 0 12px;">Как проверить, что бэкапы сервера работают.</p>
+<a href="blog/backup-check-15min.html" style="color:var(--gold);text-decoration:underline;">Проверка бэкапов →</a>
 </div>
-<div style="max-width:760px;margin:0 auto;">
-<p style="font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px;">«Бэкап есть» ≠ «данные можно восстановить». Большинство компаний узнают об этом только в день аварии.</p>
-<p style="font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px;">Что именно нужно проверять:</p>
-<ul style="font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px;padding-left:20px;">
-<li>Копии создаются ежедневно и хранятся отдельно от сервера</li>
-<li>Раз в квартал делаем тестовое восстановление</li>
-<li>Проверяем, что база 1С открывается после восстановления</li>
-<li>Глубина хранения: 7–14 дней минимум</li>
-</ul>
-<p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0;">Абонентское обслуживание с проверкой бэкапов: <a href="support.html" style="color:var(--gold);">обслуживание серверов и компьютеров</a>.</p>
-</div>
-</div>
-</section>
-
-<section class="section reveal">
-<div class="container">
-<div class="section__head fade-up reveal">
-<span class="section__label reveal">FAQ</span>
-<h2 class="section__title reveal">Частые вопросы</h2>
-</div>
-<div class="faq__list fade-up" style="max-width:760px;margin:0 auto;">
-<details class="faq__item">
-<summary class="faq__question">Сколько стоит сервер под ключ в Казани?</summary>
-<p class="faq__answer">Офис 10–15 человек — от 200 000 ₽. Вилка 15–40 человек — 500 000–900 000 ₽. Настройка — от 4 000 ₽.</p>
-</details>
-<details class="faq__item">
-<summary class="faq__question">Какой сервер нужен для 1С на 10–20 пользователей?</summary>
-<p class="faq__answer">16–32 ГБ RAM, RAID 10 на SSD, отдельный диск под бэкапы. Стоимость конфигурации — 400 000–600 000 ₽ под ключ.</p>
-</details>
-<details class="faq__item">
-<summary class="faq__question">Можно ли перенести 1С на новый сервер без простоя?</summary>
-<p class="faq__answer">Перенос баз, настройка терминального доступа, тестирование. Без простоя в рабочий день. Срок называем до договора.</p>
-</details>
-<details class="faq__item">
-<summary class="faq__question">Что делать, если 1С тормозит?</summary>
-<p class="faq__answer">Проверяем: диск HDD вместо SSD, мало RAM, 1С и файловый сервер на одном диске, нет индексов в базе. Иногда хватает оптимизации SQL, иногда нужен новый сервер.</p>
-</details>
-<details class="faq__item">
-<summary class="faq__question">Есть ли обслуживание серверов после запуска?</summary>
-<p class="faq__answer">Да. Абонентка сервера — от 2 400 ₽/мес. Мониторинг, обновления, бэкапы с проверкой.</p>
-</details>
-</div>
-
 </div>
 </section>
 
