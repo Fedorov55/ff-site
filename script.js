@@ -188,8 +188,10 @@ try{const rlKey='ff_form_rl';const rl=JSON.parse(localStorage.getItem(rlKey)||'{
 /* ===== Service Worker registration ===== */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
-      console.log('SW registered:', reg.scope);
+    var isSub = /\/(services|blog|articles|cases|geo|industries)\//.test(location.pathname);
+  var swPath = isSub ? '../sw.js' : 'sw.js';
+  navigator.serviceWorker.register(swPath).then(function(reg) {
+      
     }).catch(function(err) {
       console.warn('SW registration failed:', err);
     });
