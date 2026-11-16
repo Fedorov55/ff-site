@@ -3,23 +3,8 @@
 let INDEX_URL='search-index.json';
 let index=null;
 let indexLoaded=false;
-
-// Levenshtein distance for fuzzy matching
-function levenshtein(a,b){
-  if(a===b) return 0;
-  if(!a.length) return b.length;
-  if(!b.length) return a.length;
-  let prev=Array.from({length:b.length+1},(_,i)=>i);
-  for(let i=1;i<=a.length;i++){
-    let cur=[i];
-    for(let j=1;j<=b.length;j++){
-      let cost=a[i-1]===b[j-1]?0:1;
-      cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+cost);
-    }
-    prev=cur;
-  }
-  return prev[b.length];
-}
+let worker=null;
+let workerReady=false;
 
 // Normalize text for search
 function normalize(text){
@@ -31,40 +16,15 @@ function tokenize(text){
   return normalize(text).split(' ').filter(function(w){return w.length>1;});
 }
 
-// Score a page against query
-function scorePage(page, queryTokens){
-  let title=normalize(page.t);
-  let desc=normalize(page.d);
-  let h1=normalize(page.h);
-  let text=normalize(page.x);
-  let full=title+' '+h1+' '+desc+' '+text;
-  let score=0;
-  let matched=0;
-  for(let i=0;i<queryTokens.length;i++){
-    let q=queryTokens[i];
-    let found=false;
-    // exact match in title (high weight)
-    if(title.indexOf(q)!==-1){ score+=10; found=true; }
-    // exact match in h1
-    if(h1.indexOf(q)!==-1){ score+=8; found=true; }
-    // exact match in description
-    if(desc.indexOf(q)!==-1){ score+=5; found=true; }
-    // exact match in body
-    if(text.indexOf(q)!==-1){ score+=2; found=true; }
-    // fuzzy match (Levenshtein <= 2 for words >= 4 chars)
-    if(!found && q.length>=4){
-      let words=full.split(' ');
-      for(let w=0;w<words.length;w++){
-        if(words[w].length>=3 && levenshtein(q,words[w])<=2){
-          score+=1; found=true; break;
-        }
-      }
-    }
-    if(found) matched++;
+// Initialize Web Worker for fuzzy search
+function initWorker(){
+  if(worker) return;
+  try {
+    worker=new Worker('search-worker.js');
+    workerReady=true;
+  } catch(e){
+    workerReady=false;
   }
-  // bonus for matching all query tokens
-  if(matched===queryTokens.length && queryTokens.length>1) score+=5;
-  return score;
 }
 
 // Load index
@@ -75,18 +35,46 @@ function loadIndex(cb){
   }).catch(function(){ index=[]; indexLoaded=true; cb(); });
 }
 
-// Search
-function search(query){
-  if(!index || !query.trim()) return [];
+// Search (delegates scoring to Web Worker when available)
+function search(query, cb){
+  if(!index || !query.trim()){ cb([]); return; }
   let tokens=tokenize(query);
-  if(!tokens.length) return [];
-  let results=[];
-  for(let i=0;i<index.length;i++){
-    let sc=scorePage(index[i],tokens);
-    if(sc>0) results.push({page:index[i],score:sc});
+  if(!tokens.length){ cb([]); return; }
+
+  if(workerReady && worker){
+    // Use Web Worker for CPU-intensive scoring
+    let handler=function(e){
+      worker.removeEventListener('message', handler);
+      cb(e.data.results || []);
+    };
+    worker.addEventListener('message', handler);
+    worker.postMessage({type:'search', index:index, query:query});
+  } else {
+    // Fallback: inline scoring (no worker available)
+    let results=[];
+    for(let i=0;i<index.length;i++){
+      // Basic scoring without Levenshtein (simplified)
+      let page=index[i];
+      let title=normalize(page.t);
+      let desc=normalize(page.d);
+      let h1=normalize(page.h);
+      let text=normalize(page.x);
+      let full=title+' '+h1+' '+desc+' '+text;
+      let score=0; let matched=0;
+      for(let j=0;j<tokens.length;j++){
+        let q=tokens[j]; let found=false;
+        if(title.indexOf(q)!==-1){score+=10;found=true;}
+        if(h1.indexOf(q)!==-1){score+=8;found=true;}
+        if(desc.indexOf(q)!==-1){score+=5;found=true;}
+        if(text.indexOf(q)!==-1){score+=2;found=true;}
+        if(found) matched++;
+      }
+      if(matched===tokens.length && tokens.length>1) score+=5;
+      if(score>0) results.push({page:page,score:score});
+    }
+    results.sort(function(a,b){return b.score-a.score;});
+    cb(results.slice(0,12));
   }
-  results.sort(function(a,b){return b.score-a.score;});
-  return results.slice(0,12);
 }
 
 // Highlight matched text
@@ -121,20 +109,16 @@ function renderResults(results, query, container){
 
 // Create search UI
 function createSearchUI(){
-  // Find header actions
   let actions=document.querySelector('.header__actions');
   if(!actions) return;
-  // Create search button
   let btn=document.createElement('button');
   btn.className='search__toggle';
   btn.setAttribute('aria-label','Поиск по сайту');
   btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>';
-  // Insert before theme toggle
   let themeToggle=actions.querySelector('.theme-toggle');
   if(themeToggle) actions.insertBefore(btn, themeToggle);
   else actions.insertBefore(btn, actions.firstChild);
 
-  // Create search overlay
   let overlay=document.createElement('div');
   overlay.className='search__overlay';
   overlay.innerHTML='<div class="search__modal"><div class="search__input-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" class="search__input" placeholder="Поиск по сайту..." autocomplete="off" aria-label="Поиск"></div><div class="search__results"></div><div class="search__hint">Esc — закрыть, ↑↓ — навигация, Enter — открыть</div></div>';
@@ -170,9 +154,10 @@ function createSearchUI(){
     let q=input.value.trim();
     if(q.length<2){ results.innerHTML=''; return; }
     loadIndex(function(){
-      let res=search(q);
-      renderResults(res, q, results);
-      selectedIdx=-1;
+      search(q, function(res){
+        renderResults(res, q, results);
+        selectedIdx=-1;
+      });
     });
   });
   input.addEventListener('keydown', function(e){
@@ -196,6 +181,7 @@ function createSearchUI(){
 }
 
 function init(){
+  initWorker();
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ createSearchUI(); loadIndex(function(){}); });
   else { createSearchUI(); loadIndex(function(){}); }
 }
