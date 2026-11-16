@@ -1002,3 +1002,32 @@ img,svg{max-width:100%;height:auto}
   color: #0A0D14;
   border-color: var(--gold);
 }
+
+
+/* === Utility classes (reduce inline styles) === */
+.u-card { padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); }
+.u-card-lg { padding: 20px; border: 1px solid var(--border); border-radius: 16px; background: var(--card); }
+.u-flex { display: flex; gap: 12px; flex-wrap: wrap; }
+.u-flex-center { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.u-text-center { text-align: center; }
+.u-m-0 { margin: 0; }
+.u-mt-4 { margin-top: 4px; }
+.u-mt-8 { margin-top: 8px; }
+.u-mt-12 { margin-top: 12px; }
+.u-mt-16 { margin-top: 16px; }
+.u-mt-24 { margin-top: 24px; }
+.u-mb-8 { margin-bottom: 8px; }
+.u-mb-12 { margin-bottom: 12px; }
+.u-mb-16 { margin-bottom: 16px; }
+.u-mb-24 { margin-bottom: 24px; }
+.u-fs-13 { font-size: 13px; }
+.u-fs-14 { font-size: 14px; }
+.u-fs-15 { font-size: 15px; }
+.u-fs-16 { font-size: 16px; }
+.u-fs-18 { font-size: 18px; }
+.u-fw-600 { font-weight: 600; }
+.u-fw-700 { font-weight: 700; }
+.u-max-760 { max-width: 760px; margin: 0 auto; }
+.u-max-900 { max-width: 900px; margin: 0 auto; }
+.u-p-0 { padding: 0; }
+.u-pt-0 { padding-top: 0; }
