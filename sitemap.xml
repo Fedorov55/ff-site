@@ -541,6 +541,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/wifi-setup.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/sks.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cctv.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/infrastructure.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -662,6 +680,12 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/crypto.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/security-audit.html</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
