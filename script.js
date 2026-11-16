@@ -199,6 +199,36 @@ if ('serviceWorker' in navigator) {
 }
 
 
+
+/* ====== INTERSECTION OBSERVER: prefetch visible links ====== */
+try {
+  if ('IntersectionObserver' in window) {
+    let prefetched = new Set();
+    let prefetchObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let link = entry.target;
+          let href = link.getAttribute('href');
+          if (href && !prefetched.has(href) && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('tel:') && !href.startsWith('mailto:')) {
+            prefetched.add(href);
+            let prefetchLink = document.createElement('link');
+            prefetchLink.rel = 'prefetch';
+            prefetchLink.href = href;
+            document.head.appendChild(prefetchLink);
+          }
+          prefetchObserver.unobserve(link);
+        }
+      });
+    }, { rootMargin: '200px' });
+    document.querySelectorAll('a[href]').forEach(function(link) {
+      let href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('tel:') && !href.startsWith('mailto:')) {
+        prefetchObserver.observe(link);
+      }
+    });
+  }
+} catch(e) {}
+
 /* ===== Blog filter ===== */
 (function(){
   let filterBtns = document.querySelectorAll('.blog-filter__btn');
