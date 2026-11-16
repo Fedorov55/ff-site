@@ -66,9 +66,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/audit-free.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/audit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/backup-restore-test.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/backup-checklist.html</loc>
@@ -559,6 +571,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/mail-server.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/print-management.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/infrastructure.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -679,6 +703,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/ecp-lost-token.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/crypto.html</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -756,6 +786,12 @@
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/support-onboarding.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/support.html</loc>
