@@ -31,11 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/articles/152fz-prep.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/articles/ad-setup.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,11 +81,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/152fz-prep.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/blog/152fz.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -112,11 +102,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/blog/admin-quit.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/backup-3-2-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -221,11 +206,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/server-1c-saturday-plan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/blog/server-1c-saturday.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -252,16 +232,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/blog/server-pod-klyuch-kazan-guide.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -312,11 +282,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/blog/veracrypt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/blog/vpn-udalenny-dostup.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -723,11 +688,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/services/audit-services.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
