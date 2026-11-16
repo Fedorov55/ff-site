@@ -153,6 +153,8 @@ function createSearchUI(){
   input.addEventListener('input', function(){
     let q=input.value.trim();
     if(q.length<2){ results.innerHTML=''; return; }
+    // Show skeleton while loading
+    results.innerHTML='<div class="search__skeleton"><div class="search__skeleton-line"></div><div class="search__skeleton-line search__skeleton-line--short"></div><div class="search__skeleton-line"></div></div>';
     loadIndex(function(){
       search(q, function(res){
         renderResults(res, q, results);
