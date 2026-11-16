@@ -40,14 +40,14 @@ self.addEventListener('activate', function(event) {
 
 // Fetch: cache-first for static assets, network-first for HTML
 self.addEventListener('fetch', function(event) {
-  var url = new URL(event.request.url);
+  let url = new URL(event.request.url);
   // Only handle same-origin requests
   if (url.origin !== location.origin) return;
   // Skip non-GET
   if (event.request.method !== 'GET') return;
 
-  var isHTML = event.request.headers.get('accept') && event.request.headers.get('accept').indexOf('text/html') !== -1;
-  var isStatic = /\.(css|js|woff2|webp|png|jpg|jpeg|svg|json|ico)$/i.test(url.pathname);
+  let isHTML = event.request.headers.get('accept') && event.request.headers.get('accept').indexOf('text/html') !== -1;
+  let isStatic = /\.(css|js|woff2|webp|png|jpg|jpeg|svg|json|ico)$/i.test(url.pathname);
 
   if (isStatic) {
     // Cache-first for static assets
@@ -56,7 +56,7 @@ self.addEventListener('fetch', function(event) {
         if (cached) return cached;
         return fetch(event.request).then(function(response) {
           if (response && response.status === 200) {
-            var clone = response.clone();
+            let clone = response.clone();
             caches.open(CACHE_NAME).then(function(cache) {
               cache.put(event.request, clone);
             });
@@ -72,7 +72,7 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(
       fetch(event.request).then(function(response) {
         if (response && response.status === 200) {
-          var clone = response.clone();
+          let clone = response.clone();
           caches.open(CACHE_NAME).then(function(cache) {
             cache.put(event.request, clone);
           });

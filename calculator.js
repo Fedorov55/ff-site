@@ -100,7 +100,7 @@
       const discount = calcState.selected.size >= 10 ? 0.2 : (calcState.selected.size >= 5 ? 0.1 : 0);
       oneTime = Math.round(oneTime * (1 - discount));
       monthly = Math.round(monthly * (1 - discount));
-      summary.innerHTML = html || '<p style="color:var(--muted);">Ничего не выбрано</p>';
+      summary.innerHTML = html || '<p style="color:let(--muted);">Ничего не выбрано</p>';
       totalEl.textContent = monthly && oneTime
         ? oneTime.toLocaleString('ru-RU') + ' ₽ разово + ' + monthly.toLocaleString('ru-RU') + ' ₽/мес'
         : monthly ? monthly.toLocaleString('ru-RU') + ' ₽/мес' : oneTime.toLocaleString('ru-RU') + ' ₽ разово';
