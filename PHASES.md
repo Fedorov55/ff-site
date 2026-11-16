@@ -77,4 +77,4 @@ Based on SEMANTIC_MAP.md analysis of 174 HTML pages.
 6. Track conversion rates
 
 ---
-**Current status:** Phases 1-7 planned. Starting Phase 1.
+**Current status:** Phase 1 done (redirects). Phase 2 in progress (support-prices.html, crypto.html created).
