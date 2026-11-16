@@ -235,7 +235,7 @@
 </label>
 <label style="font-size:14px;color:var(--text-2);">Рабочих мест: <input type="number" id="slabSeats" value="10" min="1" max="200" style="width:100px;padding:8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);">
 </label>
-<button type="button" class="btn btn--primary" onclick="calcSlab()">Рассчитать стоимость</button>
+<button type="button" class="btn btn--primary" data-action="calc-slab">Рассчитать стоимость</button>
 <div id="slabResult" style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);display:none;">
 <strong class="u-gold">Порядок цифр: <span id="slabTotal">
 </span>
@@ -244,7 +244,7 @@
 </div>
 </div>
 </div>
-<script> function calcSlab(){ let area = parseInt(document.getElementById('slabArea').value) || 100; let seats = parseInt(document.getElementById('slabSeats').value) || 10; let perSeat = 15000; let perArea = 5000; let total = seats * perSeat + area * perArea; document.getElementById('slabTotal').textContent = total.toLocaleString('ru-RU') + ' ₽'; document.getElementById('slabResult').style.display = 'block'; } </script>
+
 </div>
 </section>
 <section class="section reveal u-pt-0" aria-label="Переезжаете офис? Проверьте сеть за 10 м">
@@ -395,6 +395,7 @@
 </div>
 </footer>
 <script src="search.js" defer>
+<script src="calculator.js" defer>
 <script src="script.js?v=114" defer>
 </script>
 <div class="mobile-bottom-bar" id="mobileBottomBar">

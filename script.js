@@ -248,3 +248,9 @@ try {
     });
   });
 })();
+// ====== COOKIE ACCEPTANCE (CSP: no inline onclick) ======
+window.acceptCookie = function() {
+  const cookie = document.getElementById('cookie');
+  if (cookie) cookie.style.display = 'none';
+  try { localStorage.setItem('cookieAccepted', '1'); } catch(err) {}
+};

@@ -131,3 +131,39 @@
       } catch{ showToast(btn, 'Не отправилось. Позвоните +7 (901) 265-52-52 или напишите в Telegram', 'error'); if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; } }
     };
   }catch(e){ console.error('Calc', e); }
+
+// ====== EVENT DELEGATION (CSP: no inline onclick) ======
+document.addEventListener('click', function(e) {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const action = el.getAttribute('data-action');
+  switch (action) {
+    case 'calc-toggle':
+      if (typeof window.calcToggle === 'function') window.calcToggle(el);
+      break;
+    case 'calc-next':
+      if (typeof window.calcNext === 'function') window.calcNext(e);
+      break;
+    case 'calc-prev':
+      if (typeof window.calcPrev === 'function') window.calcPrev();
+      break;
+    case 'calc-submit':
+      if (typeof window.calcSubmit === 'function') window.calcSubmit(e);
+      break;
+    case 'calc-slab':
+      if (typeof window.calcSlab === 'function') window.calcSlab();
+      break;
+    case 'accept-cookie':
+      if (typeof window.acceptCookie === 'function') window.acceptCookie();
+      else {
+        const cookie = document.getElementById('cookie');
+        if (cookie) cookie.style.display = 'none';
+        try { localStorage.setItem('cookieAccepted', '1'); } catch(err) {}
+      }
+      break;
+  }
+});
+
+// ====== SLAB CALCULATOR (infrastructure.html) ======
+function calcSlab(){ let area = parseInt(document.getElementById('slabArea').value) || 100; let seats = parseInt(document.getElementById('slabSeats').value) || 10; let perSeat = 15000; let perArea = 5000; let total = seats * perSeat + area * perArea; document.getElementById('slabTotal').textContent = total.toLocaleString('ru-RU') + ' ₽'; document.getElementById('slabResult').style.display = 'block'; } 
+window.calcSlab = calcSlab;

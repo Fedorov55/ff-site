@@ -366,7 +366,7 @@
 <div class="calc__step-desc">Отметьте работы — цены пересчитаются автоматически.</div>
 <div class="calc__group-label">Серверы — настройка</div>
 <div class="calc__services">
-<button type="button" class="calc__service" data-key="server-select" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-select" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -374,7 +374,7 @@
 <span class="calc__service-price">от 4 000 ₽ · услуга</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="server-file" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-file" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -382,7 +382,7 @@
 <span class="calc__service-price">от 2 800 ₽ · сервер</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="server-domain" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-domain" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -390,7 +390,7 @@
 <span class="calc__service-price">от 4 000 ₽ · сервер</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="server-dns" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-dns" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -398,7 +398,7 @@
 <span class="calc__service-price">от 2 000 ₽ · сервер</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="server-rdp" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-rdp" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -406,7 +406,7 @@
 <span class="calc__service-price">от 4 400 ₽ · сервер</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="server-backup" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="server-backup" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -417,7 +417,7 @@
 </div>
 <div class="calc__group-label">Обслуживание серверов / мес</div>
 <div class="calc__services">
-<button type="button" class="calc__service" data-key="mnt-file" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mnt-file" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -425,7 +425,7 @@
 <span class="calc__service-price">от 2 400 ₽/мес</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="mnt-domain" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mnt-domain" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -433,7 +433,7 @@
 <span class="calc__service-price">от 4 000 ₽/мес</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="mnt-dns" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mnt-dns" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -441,7 +441,7 @@
 <span class="calc__service-price">от 2 000 ₽/мес</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="mnt-rdp" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mnt-rdp" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -449,7 +449,7 @@
 <span class="calc__service-price">от 3 600 ₽/мес</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="mnt-backup" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mnt-backup" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -460,7 +460,7 @@
 </div>
 <div class="calc__group-label">Криптография</div>
 <div class="calc__services">
-<button type="button" class="calc__service" data-key="crypto-license" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="crypto-license" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -468,7 +468,7 @@
 <span class="calc__service-price">от 1 200 ₽ · шт.</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="crypto-install" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="crypto-install" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -476,7 +476,7 @@
 <span class="calc__service-price">от 1 200 ₽ · шт.</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="crypto-setup" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="crypto-setup" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -484,7 +484,7 @@
 <span class="calc__service-price">от 1 600 ₽ · шт.</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="crypto-ecp" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="crypto-ecp" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -492,7 +492,7 @@
 <span class="calc__service-price">от 1 200 ₽ · шт.</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="vipnet-install" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="vipnet-install" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -500,7 +500,7 @@
 <span class="calc__service-price">от 1 200 ₽ · шт.</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="encrypt-full" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="encrypt-full" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -511,7 +511,7 @@
 </div>
 <div class="calc__group-label">IT-аудит</div>
 <div class="calc__services">
-<button type="button" class="calc__service" data-key="audit-express" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="audit-express" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -519,7 +519,7 @@
 <span class="calc__service-price">от 4 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="audit-full" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="audit-full" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -527,7 +527,7 @@
 <span class="calc__service-price">от 12 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="visit-engineer" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="visit-engineer" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -535,7 +535,7 @@
 <span class="calc__service-price">от 3 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="work-hour" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="work-hour" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -543,7 +543,7 @@
 <span class="calc__service-price">от 2 500 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="ats-setup" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="ats-setup" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -551,7 +551,7 @@
 <span class="calc__service-price">от 25 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="vpn-wireguard" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="vpn-wireguard" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -559,7 +559,7 @@
 <span class="calc__service-price">от 8 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="mail-migration" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="mail-migration" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -567,7 +567,7 @@
 <span class="calc__service-price">от 12 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="ai-pilot" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="ai-pilot" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -575,7 +575,7 @@
 <span class="calc__service-price">от 80 000 ₽</span>
 </span>
 </button>
-<button type="button" class="calc__service" data-key="training" onclick="calcToggle(this)">
+<button type="button" class="calc__service" data-key="training" data-action="calc-toggle">
 <span class="calc__check">
 </span>
 <span class="calc__service-text">
@@ -587,7 +587,7 @@
 <div class="calc__actions">
 <span>
 </span>
-<button type="button" class="btn btn--primary" onclick="calcNext(event)">Далее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+<button type="button" class="btn btn--primary" data-action="calc-next">Далее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 <line x1="5" y1="12" x2="19" y2="12"/>
 <polyline points="12 5 19 12 12 19"/>
 </svg>
@@ -600,8 +600,8 @@
 <div class="calc__qty-list" id="calcQtyList">
 </div>
 <div class="calc__actions">
-<button type="button" class="btn btn--ghost" onclick="calcPrev()">Назад</button>
-<button type="button" class="btn btn--primary" onclick="calcNext(event)">К итогу <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+<button type="button" class="btn btn--ghost" data-action="calc-prev">Назад</button>
+<button type="button" class="btn btn--primary" data-action="calc-next">К итогу <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 <line x1="5" y1="12" x2="19" y2="12"/>
 <polyline points="12 5 19 12 12 19"/>
 </svg>
@@ -634,8 +634,8 @@
 </label>
 </div>
 <div class="calc__actions">
-<button type="button" class="btn btn--ghost" onclick="calcPrev()">Назад</button>
-<button type="button" class="btn btn--primary" onclick="calcSubmit(event)">Рассчитать стоимость</button>
+<button type="button" class="btn btn--ghost" data-action="calc-prev">Назад</button>
+<button type="button" class="btn btn--primary" data-action="calc-submit">Рассчитать стоимость</button>
 <a href="tel:+79012655252" class="btn btn--ghost">+7 (901) 265-52-52</a>
 <p style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-2);">Минимум по договору — 10 000 ₽/мес. Ответим за 15 минут. Смета без обязательств.</p>
 </div>
