@@ -1,5 +1,5 @@
 /* Service Worker for F&F site — offline cache of static assets */
-const CACHE_NAME = 'ff-cache-v4';
+const CACHE_NAME = 'ff-cache-v5';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
