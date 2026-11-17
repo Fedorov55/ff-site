@@ -1,4 +1,3 @@
-console.log('script.js loaded');
 (function(){'use strict';window.sanitize = function(str){if(!str)return '';return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');};const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;try{
 let saved = localStorage.getItem('ff_theme') || 'dark';
 document.documentElement.setAttribute('data-theme', saved);
@@ -24,8 +23,7 @@ document.addEventListener('click', function(e){
 function attachThemeHandler(){
   const btn = document.getElementById('themeToggle');
   if(btn){
-    btn.removeEventListener('click', window.toggleTheme);
-    btn.addEventListener('click', window.toggleTheme);
+    btn.onclick = function(e){ e.preventDefault(); window.toggleTheme(); };
   }
 }
 if(document.readyState === 'loading'){
