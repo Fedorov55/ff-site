@@ -33,6 +33,7 @@ document.addEventListener('click', function(e){
 
 // Also try direct attachment when DOM is ready
 function attachThemeHandler(){
+  console.log('attachThemeHandler called, button:', !!document.getElementById('themeToggle'));
   const btn = document.getElementById('themeToggle');
   if(btn){
     btn.onclick = function(e){ e.preventDefault(); e.stopPropagation(); window.toggleTheme(); return false; };
@@ -42,7 +43,7 @@ function attachThemeHandler(){
     setTimeout(attachThemeHandler, 200);
   }
 }
-setTimeout(attachThemeHandler, 100);
+attachThemeHandler();
 const initBtn = document.getElementById('themeToggle');
 if(initBtn){
   const cur = document.documentElement.getAttribute('data-theme');
