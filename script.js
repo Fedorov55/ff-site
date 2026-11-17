@@ -1,7 +1,7 @@
 (function(){'use strict';window.sanitize = function(str){if(!str)return '';return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');};const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;try{
 let saved = localStorage.getItem('ff_theme') || 'dark';
 document.documentElement.setAttribute('data-theme', saved);
-window.toggleTheme = function(){ console.log('toggleTheme called, current:', document.documentElement.getAttribute('data-theme'));
+window.toggleTheme = function(){
   const cur = document.documentElement.getAttribute('data-theme');
   const next = cur === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
@@ -37,13 +37,10 @@ document.addEventListener('click', function(e){
 
 // Also try direct attachment when DOM is ready
 function attachThemeHandler(){
-  console.log('attachThemeHandler called, button:', !!document.getElementById('themeToggle'));
   const btn = document.getElementById('themeToggle');
   if(btn){
     btn.onclick = function(e){ e.preventDefault(); e.stopPropagation(); window.toggleTheme(); return false; };
-    console.log('Theme handler attached to button');
   } else {
-    console.log('Theme button not found, retrying...');
     setTimeout(attachThemeHandler, 200);
   }
 }
