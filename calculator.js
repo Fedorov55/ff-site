@@ -158,7 +158,7 @@ document.addEventListener('click', function(e) {
       else {
         const cookie = document.getElementById('cookie');
         if (cookie) cookie.style.display = 'none';
-        try { localStorage.setItem('cookieAccepted', '1'); } catch(err) {}
+        try { localStorage.setItem('cookieAccepted', '1'); } catch(_err) {}
       }
       break;
   }
