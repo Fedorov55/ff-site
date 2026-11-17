@@ -1,7 +1,7 @@
 (function(){'use strict';window.sanitize = function(str){if(!str)return '';return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');};const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;try{
 let saved = localStorage.getItem('ff_theme') || 'dark';
 document.documentElement.setAttribute('data-theme', saved);
-window.toggleTheme = function(){
+window.toggleTheme = function(){ console.log('toggleTheme called, current:', document.documentElement.getAttribute('data-theme'));
   const cur = document.documentElement.getAttribute('data-theme');
   const next = cur === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
