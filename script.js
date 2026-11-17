@@ -20,16 +20,28 @@ document.addEventListener('click', function(e){
   if(btn){ window.toggleTheme(); }
 });
 // Also try direct attachment
+// Global click handler for theme toggle (works regardless of DOM state)
+document.addEventListener('click', function(e){
+  const target = e.target;
+  const btn = target.closest ? target.closest('.theme-toggle') : (target.classList && target.classList.contains('theme-toggle') ? target : null);
+  if(btn || target.id === 'themeToggle' || (target.parentElement && target.parentElement.id === 'themeToggle')){
+    e.preventDefault();
+    e.stopPropagation();
+    window.toggleTheme();
+  }
+}, true);
+
+// Also try direct attachment when DOM is ready
 function attachThemeHandler(){
   const btn = document.getElementById('themeToggle');
   if(btn){
-    btn.onclick = function(e){ e.preventDefault(); window.toggleTheme(); };
+    btn.onclick = function(e){ e.preventDefault(); e.stopPropagation(); window.toggleTheme(); return false; };
   }
 }
 if(document.readyState === 'loading'){
   document.addEventListener('DOMContentLoaded', attachThemeHandler);
 } else {
-  attachThemeHandler();
+  setTimeout(attachThemeHandler, 0);
 }
 const initBtn = document.getElementById('themeToggle');
 if(initBtn){
