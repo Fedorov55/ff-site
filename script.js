@@ -22,12 +22,16 @@ document.addEventListener('click', function(e){
 // Also try direct attachment
 // Global click handler for theme toggle (works regardless of DOM state)
 document.addEventListener('click', function(e){
-  const target = e.target;
-  const btn = target.closest ? target.closest('.theme-toggle') : (target.classList && target.classList.contains('theme-toggle') ? target : null);
-  if(btn || target.id === 'themeToggle' || (target.parentElement && target.parentElement.id === 'themeToggle')){
-    e.preventDefault();
-    e.stopPropagation();
-    window.toggleTheme();
+  let target = e.target;
+  // Walk up the DOM tree to find the theme toggle button
+  while(target && target !== document.body){
+    if(target.id === 'themeToggle' || (target.classList && target.classList.contains('theme-toggle'))){
+      e.preventDefault();
+      e.stopPropagation();
+      window.toggleTheme();
+      return;
+    }
+    target = target.parentElement;
   }
 }, true);
 
