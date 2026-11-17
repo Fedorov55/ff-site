@@ -991,3 +991,16 @@ img,svg{max-width:100%;height:auto}
 .search__skeleton{padding:12px 16px;}
 .search__skeleton-line{height:14px;margin-bottom:6px;border-radius:4px;background:linear-gradient(90deg,var(--bg-2) 25%,var(--bg-3) 50%,var(--bg-2) 75%);background-size:200% 100%;animation:skeleton-shimmer 1.5s ease-in-out infinite;}
 .search__skeleton-line--short{width:60%;}
+
+/* Globe rotation animation */
+.terminal__globe-svg {
+  animation: globe-rotate 20s linear infinite;
+  transform-origin: center;
+}
+@keyframes globe-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal__globe-svg { animation: none; }
+}
