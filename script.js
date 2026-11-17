@@ -36,13 +36,13 @@ function attachThemeHandler(){
   const btn = document.getElementById('themeToggle');
   if(btn){
     btn.onclick = function(e){ e.preventDefault(); e.stopPropagation(); window.toggleTheme(); return false; };
+    console.log('Theme handler attached to button');
+  } else {
+    console.log('Theme button not found, retrying...');
+    setTimeout(attachThemeHandler, 200);
   }
 }
-if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', attachThemeHandler);
-} else {
-  setTimeout(attachThemeHandler, 0);
-}
+setTimeout(attachThemeHandler, 100);
 const initBtn = document.getElementById('themeToggle');
 if(initBtn){
   const cur = document.documentElement.getAttribute('data-theme');
