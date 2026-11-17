@@ -14,6 +14,12 @@ window.toggleTheme = function(){
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
 };
+// Use event delegation for theme toggle (works even if button not in DOM yet)
+document.addEventListener('click', function(e){
+  const btn = e.target.closest('#themeToggle, .theme-toggle');
+  if(btn){ window.toggleTheme(); }
+});
+// Also try direct attachment
 function attachThemeHandler(){
   const btn = document.getElementById('themeToggle');
   if(btn){
@@ -21,7 +27,11 @@ function attachThemeHandler(){
     btn.addEventListener('click', window.toggleTheme);
   }
 }
-attachThemeHandler();
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', attachThemeHandler);
+} else {
+  attachThemeHandler();
+}
 const initBtn = document.getElementById('themeToggle');
 if(initBtn){
   const cur = document.documentElement.getAttribute('data-theme');
