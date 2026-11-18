@@ -1,0 +1,33 @@
+Аудит навигации F&F
+================================================================================
+Total pages: 172
+Pages in nav (header/footer/mobile): 18
+Orphan pages: 22
+Only in "Смотрите также": 0
+Nowhere: 22
+
+=== NOWHERE (no links at all) ===
+  152fz-template.html
+  404.html
+  backup-restore-test.html
+  case-studies.html
+  consent.html
+  crypto-error.html
+  ecp-lost-token.html
+  it-autsorsing-kazan.html
+  lead-it-director-checklist.html
+  mail.html
+  nastroyka-serverov-tatarstan.html
+  pain-no-internet.html
+  pasahalki.html
+  room.html
+  server-move-checklist.html
+  server-pod-klyuch-kazan.html
+  servers-cases.html
+  sla-template.html
+  spasibo.html
+  support-onboarding.html
+  testimonials.html
+  vcard.html
+
+=== ONLY IN "Смотрите также" ===
