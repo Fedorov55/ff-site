@@ -8,8 +8,8 @@
 /lead-magnet-ecp.html /lead-ecp.html 301
 
 # Phase 1: Deduplication redirects
-/blog/sisadmin-cost-2026.html /blog/sisadmin-cost.html 301
-/blog/backup-3-2-1.html /articles/backup-3-2-1.html 301
+/blog/sisadmin-cost.html /blog/sisadmin-cost-2026.html 301
+/articles/backup-3-2-1.html /blog/backup-3-2-1.html 301
 /blog/server-1c-saturday-plan.html /blog/server-1c-saturday.html 301
 /blog/server-upal-subbotu-plan.html /blog/server-1c-saturday.html 301
 /articles/152fz-prep.html /152fz-prep.html 301
