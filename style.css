@@ -1029,3 +1029,6 @@ bg-orb, .bg-blur, .bg-spot { display: none; }
 /* Unified card/button hover: white highlight + gold glow */
 .card:hover,.service-card:hover,.case-card:hover,.team-card:hover,.tariff:hover,.review-card:hover,.why-item:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 0 20px rgba(255,255,255,0.08),0 20px 40px -20px var(--gold-glow);}
 .btn:hover{transform:translateY(-2px);box-shadow:0 0 16px rgba(255,255,255,0.06),0 8px 24px -8px var(--gold-glow);}
+
+/* More JetBrains Mono on labels, metrics, prices */
+.section__label,.hero__badge,.calc__title,.footer__title,.tariff__price,.hero__metric-value,.hero__metric-num,.case-card__result,.stat__num,.brandbar__metric-value,.u-num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;}
