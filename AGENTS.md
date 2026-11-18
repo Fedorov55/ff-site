@@ -20,14 +20,17 @@
 4. Если сомневаешься — предложи два варианта с плюсами и минусами, но продолжай работу.
 
 ## Pages
-- 101 HTML pages (index, services, servers, infrastructure, security, cases, blog 32 + articles 8, geo 10, services 6, cases 6, hubs, industries, etc.)
-- blog.html — blog index (40 cards)
-- map.html — sitemap (99 links)
+- 202 HTML pages (index, services, servers, infrastructure, security, cases, blog, articles, geo, services, hubs, industries, pain-*, lead magnets, etc.)
+- blog.html — blog index
+- map.html — sitemap (187 links)
 - status.html, quiz.html, demo.html, compare*.html, etc.
 
 ## Key Files
-- style.css (base), style-overrides.css (final layer)
+- style.css (base), critical.css (critical layer)
 - script.js (nav, calculators, quiz, forms, terminal, exit-popup, metrics)
+- calculator.js, search.js, search-worker.js
 - data.json (live metrics)
 - sitemap.xml, robots.txt, llms.txt
-- privacy.html (152-ФЗ policy)
+- privacy.html, terms.html, cookie.html (152-ФЗ policy)
+- _headers, _redirects (Cloudflare Pages)
+- sw.js (Service Worker, ff-cache-v12)

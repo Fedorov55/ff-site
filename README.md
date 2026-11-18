@@ -70,7 +70,7 @@ npm run audit
 - `calculator.js` — калькулятор IT-бюджета (defer)
 - `search-index.json` — индекс для поиска
 - `_headers` — заголовки для Cloudflare Pages
-- `sitemap.xml` — карта сайта (157 URL)
+- `sitemap.xml` — карта сайта (187 URL)
 - `robots.txt` — правила для краулеров
 - `llms.txt` — описание для AI-систем
 - `MONITORING.md` — инструкции по мониторингу
