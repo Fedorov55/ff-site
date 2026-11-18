@@ -1,6 +1,6 @@
 import os
 
-root = 'C:/Users/Eblan/Documents/Проект по умолчанию/ff-site'
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 old = 'https://fedorov55.github.io/ff-site/'
 new = 'https://ff-it.ru/'
 
