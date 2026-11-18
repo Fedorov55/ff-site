@@ -526,11 +526,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/hub.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/incident.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

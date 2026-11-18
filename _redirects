@@ -12,6 +12,11 @@
 /for-accountant.html /services.html 301
 /faq.html /blog.html 301
 /map.html /index.html 301
+/hub.html /index.html 301
+/hub-office.html /services.html 301
+/hub-servers.html /articles.html 301
+/hub-security.html /security.html 301
+/hub-support.html /support.html 301
 
 # Phase 1: Deduplication redirects
 /blog/sisadmin-cost.html /blog/sisadmin-cost-2026.html 301
@@ -31,7 +36,3 @@
 /geo/support-nizhnekamsk.html /cases/case-support-nizhnekamsk.html 301
 /geo/support-zelendolsk.html /cases/case-support-zelendolsk.html 301
 /geo/servers-innopolis.html /cases/case-servers-innopolis.html 301
-/hub-office.html /hub.html 301
-/hub-servers.html /hub.html 301
-/hub-security.html /hub.html 301
-/hub-support.html /hub.html 301
