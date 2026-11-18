@@ -133,7 +133,18 @@ def links_for(rel):
     # Articles
     if rel.startswith('articles/'):
         return [('support.html','Абонентка'),('servers.html','Серверы'),('contacts.html','Контакты')]
-    # Default
+    # Default: contextual fallback based on page path
+    low = rel.lower()
+    if 'security' in low or 'ecp' in low or 'crypto' in low or '152fz' in low:
+        return [('security.html','Безопасность'),('support.html','Абонентка'),('lead-ecp.html','Скачать чек-лист'),('audit.html','IT-аудит')]
+    if 'server' in low or '1c' in low or 'backup' in low:
+        return [('servers.html','Серверы'),('support.html','Абонентка'),('backup-checklist.html','Скачать чек-лист'),('audit.html','IT-аудит')]
+    if 'vpn' in low or 'network' in low or 'wifi' in low or 'sks' in low or 'cctv' in low or 'infra' in low:
+        return [('infrastructure.html','Инфраструктура'),('support.html','Абонентка'),('vpn.html','VPN'),('audit.html','IT-аудит')]
+    if 'office' in low or 'move' in low:
+        return [('office-move.html','Переезд офиса'),('infrastructure.html','Инфраструктура'),('support.html','Абонентка'),('audit.html','IT-аудит')]
+    if 'audit' in low:
+        return [('audit.html','IT-аудит'),('support.html','Абонентка'),('lead-audit.html','Скачать чек-лист'),('servers.html','Серверы')]
     return [('support.html','Абонентка'),('servers.html','Серверы'),('services.html','Услуги'),('contacts.html','Контакты')]
 
 see_also_re = re.compile(r'<section[^>]*>\s*<div class="container">\s*<div class="u-max-760">\s*<h3 class="u-title-16">Смотрите также</h3>.*?</section>', re.S)
