@@ -341,6 +341,56 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-security-nabchelny.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-security-nizhnekamsk.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-server-kazan.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-almetyevsk.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-innopolis.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-nabchelny.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-almetyevsk.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-kazan.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-nizhnekamsk.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-zelendolsk.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/cases/ecp-eis.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -462,76 +512,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/ecp-lost-token.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/faq.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/for-accountant.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/for-it-director.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/for-owner.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/security-nabchelny.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/security-nizhnekamsk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/server-kazan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/servers-almetyevsk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/servers-innopolis.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/servers-nabchelny.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/support-almetyevsk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/support-kazan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/support-nizhnekamsk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/geo/support-zelendolsk.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -682,11 +662,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/mail.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/map.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
