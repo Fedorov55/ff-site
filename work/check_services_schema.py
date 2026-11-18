@@ -1,5 +1,0 @@
-s=open('C:/Users/Eblan/Documents/Проект по умолчанию/ff-site/services.html',encoding='utf-8').read()
-print('Product:', '"@type": "Product"' in s)
-print('Service:', '"@type": "Service"' in s)
-print('LocalBusiness:', '"@type": "LocalBusiness"' in s)
-print('Organization cases:', '"@type": "Organization"' in open('C:/Users/Eblan/Documents/Проект по умолчанию/ff-site/cases.html',encoding='utf-8').read())
