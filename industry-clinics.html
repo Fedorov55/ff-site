@@ -83,8 +83,8 @@
       
       <a href="cases.html" class="nav__direct">Кейсы</a>
       <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-company" data-nav-trigger>О компании<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-company"><a href="about.html" class="dropdown__link">О нас</a><a href="team.html" class="dropdown__link">Команда</a><a href="methodology.html" class="dropdown__link">Как мы работаем</a><a href="trust.html" class="dropdown__link">Доверие и SLA</a><a href="partners.html" class="dropdown__link">Партнёрам</a><a href="research.html" class="dropdown__link">Исследования</a><a href="status.html" class="dropdown__link">Статус</a></div></div>
-      <a href="blog.html" class="nav__direct">Блог</a>
-      <a href="contacts.html" class="nav__direct">Контакты</a>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-blog" data-nav-trigger>Блог<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-blog"><a href="blog.html" class="dropdown__link">Все статьи</a><a href="research.html" class="dropdown__link">Исследования</a><a href="glossary.html" class="dropdown__link">Глоссарий</a><a href="comparison-matrix.html" class="dropdown__link">Матрица сравнения</a><a href="it-budget.html" class="dropdown__link">IT-бюджет 2026</a><a href="demo.html" class="dropdown__link">Интерактивное демо</a><a href="course.html" class="dropdown__link">Мини-курс</a><a href="status.html" class="dropdown__link">Статус</a></div></div>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-prices" data-nav-trigger>Цены<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-prices"><a href="comparison-matrix.html" class="dropdown__link">Матрица сравнения</a><a href="services.html#calculator" class="dropdown__link">Калькуляторы</a><a href="quiz.html" class="dropdown__link">Квиз</a><a href="support-prices.html" class="dropdown__link">Тарифы</a><a href="servers-tco.html" class="dropdown__link">TCO сервера</a><a href="audit-free.html" class="dropdown__link">Бесплатный аудит</a></div></div><a href="contacts.html" class="nav__direct">Контакты</a>
     </nav>
 <div class="header__actions">
 <a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a>
@@ -111,7 +111,7 @@
 </a>
 <button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button>
 </div>
-<nav class="mobile-nav__inner" aria-label="Основная навигация">
+<div class="mobile-nav__inner" aria-label="Основная навигация">
 <a href="index.html" class="mobile-nav__link">Главная</a>
 <details class="mobile-nav__group">
 <summary>Услуги</summary>
@@ -122,32 +122,53 @@
 <a href="security.html" class="mobile-nav__link">Безопасность</a>
 <a href="audit.html" class="mobile-nav__link">IT-аудит</a>
 <a href="visit.html" class="mobile-nav__link">Разовый выезд</a>
+<a href="vpn.html" class="mobile-nav__link">VPN и удалённый доступ</a>
+<a href="pbx.html" class="mobile-nav__link">Телефония</a>
+<a href="printers.html" class="mobile-nav__link">Принтеры</a>
+<a href="mail.html" class="mobile-nav__link">Почта</a>
+<a href="services.html" class="mobile-nav__link">Все услуги и цены</a>
 </div>
 </details>
 <details class="mobile-nav__group">
-<summary>Решения</summary>
+<summary>Цены</summary>
 <div class="mobile-nav__group-links">
-<a href="services.html" class="mobile-nav__link">Для собственника</a>
-<a href="services.html" class="mobile-nav__link">Для IT-директора</a>
-<a href="services.html" class="mobile-nav__link">Для бухгалтера</a>
-<a href="hub-office.html" class="mobile-nav__link">Офис под ключ</a>
-<a href="office-move.html" class="mobile-nav__link">Переезд офиса</a>
+<a href="comparison-matrix.html" class="mobile-nav__link">Матрица сравнения</a>
+<a href="services.html#calculator" class="mobile-nav__link">Калькуляторы</a>
+<a href="quiz.html" class="mobile-nav__link">Квиз</a>
+<a href="support-prices.html" class="mobile-nav__link">Тарифы</a>
+<a href="servers-tco.html" class="mobile-nav__link">TCO сервера</a>
+<a href="audit-free.html" class="mobile-nav__link">Бесплатный аудит</a>
 </div>
 </details>
-<a href="cases.html" class="mobile-nav__link">Кейсы</a>
+<details class="mobile-nav__group">
+<summary>Блог</summary>
+<div class="mobile-nav__group-links">
+<a href="blog.html" class="mobile-nav__link">Все статьи</a>
+<a href="research.html" class="mobile-nav__link">Исследования</a>
+<a href="glossary.html" class="mobile-nav__link">Глоссарий</a>
+<a href="comparison-matrix.html" class="mobile-nav__link">Матрица сравнения</a>
+<a href="it-budget.html" class="mobile-nav__link">IT-бюджет 2026</a>
+<a href="demo.html" class="mobile-nav__link">Интерактивное демо</a>
+<a href="course.html" class="mobile-nav__link">Мини-курс</a>
+<a href="status.html" class="mobile-nav__link">Статус</a>
+</div>
+</details>
 <details class="mobile-nav__group">
 <summary>О компании</summary>
 <div class="mobile-nav__group-links">
+<a href="about.html" class="mobile-nav__link">О нас</a>
 <a href="team.html" class="mobile-nav__link">Команда</a>
 <a href="methodology.html" class="mobile-nav__link">Как мы работаем</a>
 <a href="trust.html" class="mobile-nav__link">Доверие и SLA</a>
 <a href="partners.html" class="mobile-nav__link">Партнёрам</a>
+<a href="research.html" class="mobile-nav__link">Исследования</a>
+<a href="status.html" class="mobile-nav__link">Статус</a>
 </div>
 </details>
-<a href="blog.html" class="mobile-nav__link">Блог</a>
-<a href="incident.html" class="u-incident-link mobile-nav__link" >Авария</a>
+<a href="cases.html" class="mobile-nav__link">Кейсы</a>
+<a href="incident.html" class="u-incident-link mobile-nav__link">Авария</a>
 <a href="contacts.html" class="mobile-nav__link">Контакты</a>
-</nav>
+</div>
 <div class="u-sticky-footer mobile-nav__footer" >
 <a href="services.html#calculator" class="btn btn--primary u-flex-center">Рассчитать стоимость</a>
 <a href="tel:+79012655252" class="btn btn--ghost u-flex-center">+7 (901) 265-52-52</a>
@@ -279,7 +300,7 @@
 </div>
 </section>
 
-<section class="section reveal u-pt-0"><div class="container u-center"><p class="u-text-2-sm">Частые вопросы по IT для вашей отрасли — в <a href="faq.html" class="u-gold">общем FAQ</a>.</p></div></section>
+<section class="section reveal u-pt-0"><div class="container u-center"><p class="u-text-2-sm">Частые вопросы по IT для вашей отрасли — в <a href="blog.html" class="u-gold">общем FAQ</a>.</p></div></section>
 </main>
 
 
@@ -308,7 +329,7 @@
     <div>
 <div class="footer__title">Ресурсы</div>
 <a href="blog.html" class="footer__link">Блог</a>
-<a href="faq.html" class="footer__link">FAQ</a>
+<a href="blog.html" class="footer__link">FAQ</a>
 <a href="cases.html" class="footer__link">Кейсы</a>
 <a href="research.html" class="footer__link">Исследования</a>
 <a href="status.html" class="footer__link">Статус</a>

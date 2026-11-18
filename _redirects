@@ -10,6 +10,8 @@
 /for-owner.html /services.html 301
 /for-it-director.html /services.html 301
 /for-accountant.html /services.html 301
+/faq.html /blog.html 301
+/map.html /index.html 301
 
 # Phase 1: Deduplication redirects
 /blog/sisadmin-cost.html /blog/sisadmin-cost-2026.html 301
