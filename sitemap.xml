@@ -6,16 +6,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/152fz-prep.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/152fz-template.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/about.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -71,22 +61,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/audit-free.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/audit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/backup-checklist.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/backup-restore-test.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -326,11 +306,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/case-studies.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/cases.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -476,11 +451,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/comparison-matrix.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/consent.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -496,32 +466,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/course.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/crypto-error.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/crypto.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/demo.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/ecp-lost-token.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/glossary.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -606,11 +551,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/it-autsorsing-kazan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/it-budget.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -622,11 +562,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/lead-ecp.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-it-director-checklist.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -646,17 +581,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/mail.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/methodology.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/nastroyka-serverov-tatarstan.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -711,6 +636,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/prices.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/print-management.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -726,7 +656,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/quiz.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/research-msb.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -751,32 +681,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/server-move-checklist.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/server-pod-klyuch-kazan.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/servers-cases.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/servers-tco.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/servers.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/services.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/services/152fz.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -796,6 +711,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/services/mail.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/services/server-1c.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -807,26 +727,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/sks.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/sla-template.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/status.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/support-onboarding.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/support-prices.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
