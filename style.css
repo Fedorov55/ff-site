@@ -1032,3 +1032,10 @@ bg-orb, .bg-blur, .bg-spot { display: none; }
 
 /* More JetBrains Mono on labels, metrics, prices */
 .section__label,.hero__badge,.calc__title,.footer__title,.tariff__price,.hero__metric-value,.hero__metric-num,.case-card__result,.stat__num,.brandbar__metric-value,.u-num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;}
+
+/* FAQ aliases (faq__q / faq__a) */
+.faq__q{padding:20px 24px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;color:var(--text);align-items:center;font-size:15px;}
+.faq__a{padding:0 24px 20px;color:var(--text-2);font-size:14px;line-height:1.6;}
+
+.faq__q::after{content:'+';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--gold-light);transition:transform 0.3s ease;}
+.faq__item[open] .faq__q::after{transform:translateY(-50%) rotate(45deg);}
