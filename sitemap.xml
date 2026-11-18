@@ -696,11 +696,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-magnet-ecp.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://fedorov55.github.io/ff-site/lead-network-move.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -852,11 +847,6 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fedorov55.github.io/ff-site/services/audit-services.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
