@@ -286,3 +286,48 @@ PY
 .u-grid-2col-gap12-m24 { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0; }
 .u-gold-fw700-minw32 { color:var(--gold-light);font-weight:700;min-width:32px;font-size:20px; }
 .u-card-flex-start-2 { padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);display:flex;gap:16px;align-items:flex-start; }
+
+/* Utility classes (Phase 2e) */
+.u-avatar-gold-40 { min-width:40px;height:40px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px; }
+.u-fs-15-bold-text-mb4 { font-size:15px;font-weight:700;color:var(--text);margin:0 0 4px; }
+.u-fs-13-text2-m4 { font-size:13px;color:var(--text-2);margin:4px 0 0; }
+.u-fs-12-muted-center-mt8 { font-size:12px;color:var(--muted);text-align:center;margin-top:8px; }
+.u-center-mt16-fs13-muted { text-align:center;margin-top:16px;font-size:13px;color:var(--muted); }
+.u-dim-fs13-mb20 { color: var(--dim); font-size: 13px; margin-bottom: 20px; }
+.u-fs-14-text2-lh18-pl20 { font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px;padding-left:20px; }
+.u-max700-center { max-width:700px;margin:0 auto; }
+.u-mt40-p32-card-bordergold { margin-top: 40px; padding: 32px; background: var(--card); border: 1px solid var(--border-gold); border-radius: var(--radius); position: relative; }
+.u-flex-gap12-py16-borderb { display:flex;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border); }
+.u-fs-15-text2-lh17-mb16 { font-size:15px;color:var(--text-2);line-height:1.7;margin:0 0 16px; }
+.u-flex-gap12-center { display:flex;gap:12px;align-items:center; }
+.u-fs-12-fw600-muted-block-mb6 { font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px; }
+.u-p-8 { padding:8px; }
+.u-fs-14-fw600-text-mb4 { font-size:14px;font-weight:600;color:var(--text);margin:0 0 4px; }
+.u-text2-16-lh185-mb30 { color: var(--text-2); font-size: 16px; line-height: 1.85; margin-bottom: 30px; }
+.u-grid-1col { grid-template-columns: 1fr; }
+.u-grid-auto-220 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.u-gold-42-serif { color: var(--gold-light); font-size: 42px; font-weight: 900; line-height: 1; margin-bottom: 12px; opacity: 0.4; font-family: Georgia, serif; }
+.u-text2-16-italic-mb20 { color: var(--text-2); font-size: 16px; line-height: 1.8; font-style: italic; margin-bottom: 20px; }
+.u-text-14-fw700 { color: var(--text); font-weight: 700; font-size: 14px; }
+.u-dim-fs125 { color: var(--dim); font-size: 12.5px; }
+.u-text2-mb26-max520 { color: var(--text-2); margin-bottom: 26px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.u-flexwrap-gap8 { flex-wrap:wrap;gap:8px; }
+.u-fs-14-text2-lh17 { font-size:14px;color:var(--text-2);line-height:1.7;margin:0; }
+.u-borderb-2 { border-bottom:2px solid var(--border); }
+.u-grid-2col-gap12-m24 { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0; }
+.u-gold-fw700-minw32 { color:var(--gold-light);font-weight:700;min-width:32px;font-size:20px; }
+.u-card-flex-start-2 { padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);display:flex;gap:16px;align-items:flex-start; }
+.u-mt-16 { margin-top:16px; }
+.u-gold-fs18-mb8 { color:var(--gold-light);font-size:18px;margin:0 0 8px; }
+.u-text2-fs14 { color:var(--text-2);font-size:14px;margin:0; }
+.u-max600-center { max-width:600px;margin:0 auto; }
+.u-text2-16-lh17-max700 { color: var(--text-2); font-size: 16px; line-height: 1.7; max-width: 700px; }
+.u-table-full { width:100%;border-collapse:collapse;font-size:14px;margin:16px 0; }
+.u-max760-grid { max-width:760px;margin:0 auto;display:grid;gap:12px; }
+.u-text2-fs15-lh17-mb16 { color:var(--text-2);font-size:15px;line-height:1.7;margin-bottom:16px; }
+.u-p-16 { padding:16px; }
+.u-max860-grid { max-width:860px;margin:0 auto;display:grid;gap:16px; }
+.u-fs-14-text2-mb12 { font-size:14px;color:var(--text-2);margin:0 0 12px; }
+.u-max900 { max-width:900px; }
+.u-mt32-card-center { margin-top:32px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);text-align:center; }
+.u-fs-14-gold-mt4 { font-size:14px;color:var(--gold-light);margin-top:4px; }
