@@ -134,6 +134,7 @@
 .footer__col a:hover { color: var(--gold-light); }
 .footer__bottom { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center !important; }
 .footer a { text-decoration: none !important; }
+.footer__links .btn--sm { min-height: 34px; padding: 6px 12px; font-size: 12px; }
 .footer__links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .footer__links a { text-decoration: none !important; }
 .footer__legal { color: var(--muted); font-size: 12px; line-height: 1.6; }
