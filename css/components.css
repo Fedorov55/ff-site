@@ -32,6 +32,32 @@
 .article-cta strong { color: var(--text); font-size: 17px; }
 .article-cta p { margin: 5px 0 0; color: var(--text-2); font-size: 13px; }
 
+/* Header brand */
+.logo__brand { margin-left: 6px; font-size: 12px; font-weight: 700; color: var(--gold-light); letter-spacing: .02em; }
+.dot-live { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--neon); margin-right: 6px; animation: dotBlink 1.2s ease-in-out infinite; box-shadow: 0 0 8px var(--neon); }
+@keyframes dotBlink { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+
+/* Service/problem cards */
+.service-card__title, .problem-card__title { color: var(--gold-light); }
+.service-card__text, .problem-card__text { color: var(--text); }
+
+/* Gold shimmer on hover */
+.btn--primary, .header__cta, .btn--calc, .calculator button {
+  position: relative; overflow: hidden;
+}
+.btn--primary:hover, .header__cta:hover, .btn--calc:hover, .calculator button:hover {
+  background: linear-gradient(120deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 1.2s ease-in-out;
+}
+@keyframes goldShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* See-also block spacing */
+.section.u-pt-0 { padding-top: 0 !important; padding-bottom: 32px; }
+
 /* Page intro polish */
 .page-intro { padding-block: clamp(42px, 6vw, 72px); }
 .page-intro__title { letter-spacing: -.04em; }
