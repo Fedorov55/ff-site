@@ -128,7 +128,7 @@
 .footer__brand { text-align: center; }
 .footer__brand-row { justify-content: center; }
 .footer__slogan { color: var(--text-2); font-size: 13px; line-height: 1.6; max-width: 320px; margin: 8px auto 0; font-family: 'JetBrains Mono', monospace; font-weight: 400; text-align: center; }
-.footer__heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--gold-light); margin: 0 0 4px; }
+.footer__heading { font-size: 18px; font-weight: 800; color: var(--gold-light); margin: 0 0 8px; }
 .footer__col a { color: var(--text-2); text-decoration: none; font-size: 14px; transition: color .18s ease; }
 .footer__links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px; }
 .footer__col a:hover { color: var(--gold-light); }
