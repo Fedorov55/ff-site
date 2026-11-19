@@ -3,14 +3,14 @@ const CACHE_NAME = 'ff-cache-v13';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
-  '/style.css',
-  '/critical.css',
-  '/script.js',
-  '/search.js',
-  '/calculator.js',
+  '/css/style.css',
+  '/css/critical.css',
+  '/js/script.js',
+  '/js/search.js',
+  '/js/calculator.js',
   '/search-index.json',
-  '/favicon-32.webp',
-  '/logo-44.webp',
+  '/img/favicon-32.webp',
+  '/img/logo-44.webp',
 ];
 
 // Install: precache static assets

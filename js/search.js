@@ -20,7 +20,7 @@ function tokenize(text){
 function initWorker(){
   if(worker) return;
   try {
-    worker=new Worker('search-worker.js');
+    worker=new Worker('js/search-worker.js');
     workerReady=true;
   } catch(e){
     workerReady=false;

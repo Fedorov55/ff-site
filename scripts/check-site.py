@@ -67,7 +67,7 @@ def main():
         ERRORS.append(f'placeholders/TODOs: {placeholder_count} files')
 
     # 4. JS syntax
-    for jsf in ['script.js', 'calculator.js']:
+    for jsf in ['js/script.js', 'js/calculator.js']:
         path = os.path.join(ROOT, jsf)
         if os.path.exists(path):
             r = subprocess.run(['node', '--check', jsf], capture_output=True, text=True, cwd=ROOT)

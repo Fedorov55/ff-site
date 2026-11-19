@@ -6,7 +6,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/about.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/about.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,12 +61,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/audit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/audit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/backup-checklist.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/backup-checklist.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -451,7 +451,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/consent.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/legal/consent.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -461,7 +461,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/cookie.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/legal/cookie.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -626,7 +626,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/partners.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/partners.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -651,7 +651,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/privacy.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/legal/privacy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -666,7 +666,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/security-audit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/security-audit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -736,27 +736,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/team.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/team.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/terms.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/legal/terms.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/testimonials.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/testimonials.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/trust.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/trust.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/visit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/visit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

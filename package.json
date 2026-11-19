@@ -4,11 +4,11 @@
   "description": "F&F IT-outsourcing site",
   "scripts": {
     "build": "node build.js",
-    "build:css": "npx esbuild style.css --minify --outfile=dist/style.min.css",
-    "build:js": "npx esbuild script.js --minify --outfile=dist/script.min.js",
-    "lint:js": "npx eslint script.js calculator.js search.js",
+    "build:css": "npx esbuild css/style.css --minify --outfile=dist/style.min.css",
+    "build:js": "npx esbuild js/script.js --minify --outfile=dist/script.min.js",
+    "lint:js": "npx eslint js/script.js js/calculator.js js/search.js",
     "lint:html": "npx htmlhint \"**/*.html\"",
-    "audit": "node --check script.js && node --check calculator.js && node --check search.js"
+    "audit": "node --check js/script.js && node --check js/calculator.js && node --check js/search.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

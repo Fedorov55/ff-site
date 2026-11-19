@@ -9,17 +9,17 @@
   "theme_color": "#D4AF37",
   "icons": [
     {
-      "src": "favicon-32.webp",
+      "src": "img/favicon-32.webp",
       "sizes": "32x32",
       "type": "image/webp"
     },
     {
-      "src": "logo-44.webp",
+      "src": "img/logo-44.webp",
       "sizes": "44x44",
       "type": "image/webp"
     },
     {
-      "src": "apple-touch-icon-180.webp",
+      "src": "img/apple-touch-icon-180.webp",
       "sizes": "180x180",
       "type": "image/webp"
     }

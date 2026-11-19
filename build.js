@@ -2,11 +2,11 @@ const esbuild = require('esbuild');
 const fs = require('fs');
 
 const files = [
-  { in: 'style.css', out: 'dist/style.min.css' },
-  { in: 'critical.css', out: 'dist/critical.min.css' },
-  { in: 'script.js', out: 'dist/script.min.js' },
-  { in: 'calculator.js', out: 'dist/calculator.min.js' },
-  { in: 'search.js', out: 'dist/search.min.js' },
+  { in: 'css/style.css', out: 'dist/style.min.css' },
+  { in: 'css/critical.css', out: 'dist/critical.min.css' },
+  { in: 'js/script.js', out: 'dist/script.min.js' },
+  { in: 'js/calculator.js', out: 'dist/calculator.min.js' },
+  { in: 'js/search.js', out: 'dist/search.min.js' },
 ];
 
 async function build() {
