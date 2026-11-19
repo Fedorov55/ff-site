@@ -33,6 +33,13 @@
 .article-cta strong { color: var(--text); font-size: 17px; }
 .article-cta p { margin: 5px 0 0; color: var(--text-2); font-size: 13px; }
 
+/* Header nav hover glow */
+.nav__direct, .nav__link { position: relative; transition: color .3s ease; }
+.nav__direct::after, .nav__link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: #D4AF37; border-radius: 2px; transform: scaleX(0); transform-origin: right; transition: transform .3s ease, box-shadow .3s ease; }
+.nav__direct:hover, .nav__link:hover { color: #E8C44D; }
+.nav__direct:hover::after, .nav__link:hover::after { transform: scaleX(1); transform-origin: left; box-shadow: 0 0 8px rgba(212,175,55,.6); }
+.nav__direct.active::after, .nav__link.active::after { transform: scaleX(1); box-shadow: none; }
+
 /* Header brand */
 .logo__text-wrap { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 2px; }
 .logo__brand { margin-left: 0; font-size: 20px; font-weight: 900; color: var(--gold-light); letter-spacing: .06em; text-shadow: 0 0 14px rgba(212,175,55,.5); animation: goldShimmer 3s linear infinite; background-image: linear-gradient(90deg, #D4AF37, #E8C44D, #FFF4C4, #E8C44D, #D4AF37); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
