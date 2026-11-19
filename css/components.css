@@ -43,7 +43,8 @@
 /* Footer brand */
 .footer__brand-row { display: flex; align-items: center; gap: 12px; }
 .footer__brand .logo__brand { font-size: 18px; align-self: center; margin-top: 0; }
-.dot-live { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--neon); margin-right: 6px; vertical-align: middle; animation: dotBlink 1.2s ease-in-out infinite; box-shadow: 0 0 10px var(--neon); }
+.logo__slogan { display: inline-flex; align-items: center; gap: 6px; }
+.dot-live { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--neon) !important; margin-right: 6px; vertical-align: middle; animation: dotBlink 1.2s ease-in-out infinite; box-shadow: 0 0 12px var(--neon) !important; flex-shrink: 0; }
 @keyframes dotBlink { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
 
 /* Light theme overrides */
