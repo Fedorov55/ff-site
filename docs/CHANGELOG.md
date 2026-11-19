@@ -142,3 +142,9 @@
 - 164 HTML pages: 0 broken internal links, 0 missing required meta, 0 invalid schema (518 blocks).
 - 0 images missing alt/dimensions.
 - noindex only on 404 + service/legal pages.
+
+## [2026-11-19] - Repo cleanup
+### Removed
+- Temporary work/ scripts and debug helpers.
+### Kept
+- Core site pages, assets, scripts, and agent skills.
