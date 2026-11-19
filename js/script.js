@@ -307,3 +307,5 @@ window.acceptCookie = function() {
   if (cookie) cookie.style.display = 'none';
   try { localStorage.setItem('cookieAccepted', '1'); } catch(err) {}
 };
+
+(function(){function initNavHover(){document.querySelectorAll('.nav__item').forEach(function(item){var timer;var trigger=item.querySelector('[data-nav-trigger]');function open(){clearTimeout(timer);item.classList.add('is-open');if(trigger)trigger.setAttribute('aria-expanded','true');}function close(){timer=setTimeout(function(){item.classList.remove('is-open');if(trigger)trigger.setAttribute('aria-expanded','false');},150);}item.addEventListener('mouseenter',open);item.addEventListener('mouseleave',close);var dd=item.querySelector('.dropdown');if(dd){dd.addEventListener('mouseenter',open);dd.addEventListener('mouseleave',close);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initNavHover);}else{initNavHover();}})();
