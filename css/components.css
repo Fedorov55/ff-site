@@ -449,3 +449,27 @@ PY
 .u-ml0-pl20-mono-fs14 { margin:0 0 16px;padding-left:20px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--text-2);line-height:1.8; }
 .u-text2-fs13-italic { color:var(--text-2);font-size:13px;font-style:italic;margin:0; }
 .u-flex-gap12-py16 { display:flex;gap:12px;align-items:center;padding:16px 0; }
+
+/* Utility classes (Phase 2j) */
+.u-grid-auto-240-gap16 { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px; }
+.u-mt16-text2-fs14-center { margin-top:16px;color:var(--text-2);font-size:14px;text-align:center; }
+.u-grid-auto-220-gap16-mb24 { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px; }
+.u-fs-14-text2-center { font-size:14px;color:var(--text-2);text-align:center; }
+.u-grid-gap12-max400-mb24 { display:grid;gap:12px;max-width:400px;margin:0 auto 24px; }
+.u-flex-center-gap8 { display:flex;align-items:center;gap:8px; }
+.u-fs-12-text2 { font-size:12px;color:var(--text-2); }
+.u-w-100 { width:100%; }
+.u-center-text2-fs14 { text-align:center;color:var(--text-2);font-size:14px; }
+.u-pt-0 { padding-top:0; }
+.u-fs-14-text2-lh17-mb16 { font-size:14px;color:var(--text-2);line-height:1.7;margin:0 0 16px; }
+.u-mt32-center { margin-top:32px;text-align:center; }
+.u-fs-14-text2-mb16 { font-size:14px;color:var(--text-2);margin-bottom:16px; }
+.u-text2-fs15-lh175 { color:var(--text-2);font-size:15px;line-height:1.75; }
+.u-grid-gap16 { display:grid;gap:16px; }
+.u-fs-15-text2-mb24-lh17 { font-size:15px;color:var(--text-2);margin:0 0 24px;line-height:1.7; }
+.u-fs-12-muted-m16-0 { font-size:12px;color:var(--muted);margin:16px 0 0; }
+.u-w100-p8-card { width:100px;padding:8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text); }
+.u-grid-auto-200-gap16 { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px; }
+.u-flex-between-py8-borderb { display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border); }
+.u-fs-13-text2-mb8 { font-size:13px;color:var(--text-2);margin:0 0 8px; }
+.u-card-pad20-mb24 { padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card);margin-bottom:24px; }
