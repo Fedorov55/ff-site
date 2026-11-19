@@ -14,7 +14,8 @@
 
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .card:hover { transform: translateY(-2px); border-color: var(--border-gold); box-shadow: var(--shadow); }
-.service-card, .case-card { display: flex; flex-direction: column; gap: 12px; }
+.service-card, .case-card { display: flex; flex-direction: column; gap: 12px; position: relative; }
+.service-card__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 
 .faq, .faq__list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq__item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; transition: border-color .2s ease; }
