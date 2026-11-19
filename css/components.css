@@ -237,3 +237,25 @@ PY
 .u-text-left-mb20-fs28 { text-align: left; margin-bottom: 20px; font-size: 28px; }
 .u-text2-no-underline { color:var(--text-2);text-decoration:none; }
 .u-no-underline { text-decoration:none; }
+
+/* Utility classes (Phase 2b) */
+.u-text-2 { color:var(--text-2); }
+.u-py-40-20 { padding: 40px 0 20px; }
+.u-gold-underline { color:var(--gold-light);text-decoration:underline; }
+.u-fs-18-gold-bold-ls1 { font-size:18px;font-weight:900;margin:0;color:var(--gold-light);letter-spacing:1px; }
+.u-fs-14-bold-mb4 { font-size:14px;font-weight:700;margin-bottom:4px; }
+.u-gold-fs18-m24 { color:var(--gold-light);font-size:18px;margin:24px 0 8px; }
+.u-fs-13-muted { font-size:13px;color:var(--muted); }
+.u-max800-center-pad44-32 { max-width: 800px; margin: 0 auto; text-align: center; padding: 44px 32px; }
+.u-flex-center-wrap { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.u-p-12 { padding:12px; }
+.u-inherit { color:inherit; }
+.u-fs-12-mutedold-m4 { font-size:12px;color:#828C9E;margin:4px 0; }
+.u-avatar-gold { flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gold-soft);border:2px solid var(--border-gold);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:var(--gold-light); }
+.u-flex-1 { flex:1; }
+.u-fs-12-gold-mt4 { font-size:12px;color:var(--gold-light);margin-top:4px; }
+.u-hidden-mt16 { display:none;margin-top:16px; }
+.u-flex-between-py12-borderb { display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border); }
+.u-fs-14-text2 { font-size:14px;color:var(--text-2); }
+.u-gold-fs16 { color:var(--gold-light);font-size:16px; }
+.u-m8-text2-fs13 { margin:8px 0 0;color:var(--text-2);font-size:13px; }
