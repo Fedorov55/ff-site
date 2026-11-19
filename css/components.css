@@ -130,7 +130,8 @@
 .footer__col a { color: var(--text-2); text-decoration: none; font-size: 14px; transition: color .18s ease; }
 .footer__links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px; }
 .footer__col a:hover { color: var(--gold-light); }
-.footer__bottom { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); display: grid; gap: 8px; text-align: center !important; justify-items: center !important; }
+.footer__bottom { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center !important; }
+.footer a { text-decoration: none !important; }
 .footer__links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .footer__links a { text-decoration: none !important; }
 .footer__legal { color: var(--muted); font-size: 12px; line-height: 1.6; }
