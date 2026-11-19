@@ -62,4 +62,31 @@
   --container: min(1120px, calc(100% - 40px));
   --text-on-gold: #17130a;
 }
+
+[data-theme="light"] {
+  --bg: #F5F7FA;
+  --bg-2: #FFFFFF;
+  --bg-3: #EEF1F6;
+  --card: #FFFFFF;
+  --text: #1A1D23;
+  --text-2: #4A5568;
+  --muted: #718096;
+  --dim: #A0AEC0;
+  --gold: #B8932E;
+  --gold-light: #D4AF37;
+  --gold-bright: #F6E7B0;
+  --gold-deep: #9A7B26;
+  --gold-glow: rgba(184,147,46,.35);
+  --gold-soft: rgba(184,147,46,.1);
+  --neon: #00A854;
+  --neon-soft: rgba(0,168,84,.12);
+  --neon-glow: rgba(0,168,84,.35);
+  --green: #00A854;
+  --danger: #E53E3E;
+  --warning: #D69E2E;
+  --border: rgba(0,0,0,.1);
+  --border-gold: rgba(184,147,46,.35);
+  --shadow: 0 20px 40px -16px rgba(0,0,0,.15);
+  --text-on-gold: #FFFFFF;
+}
 PY
