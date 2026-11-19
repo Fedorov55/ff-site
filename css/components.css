@@ -331,3 +331,30 @@ PY
 .u-max900 { max-width:900px; }
 .u-mt32-card-center { margin-top:32px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);text-align:center; }
 .u-fs-14-gold-mt4 { font-size:14px;color:var(--gold-light);margin-top:4px; }
+
+/* Utility classes (Phase 2f) */
+.u-fs-15-text2-lh17-mb16 { font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px; }
+.u-max400-center { max-width:400px;margin:0 auto; }
+.u-center-mt12-hidden { text-align:center;margin-top:12px;display:none; }
+.u-p-8-fw700 { padding:8px;font-weight:700; }
+.u-text-left-mb20-mt40-fs28 { text-align: left; margin-bottom: 20px; margin-top: 40px; font-size: 28px; }
+.u-pad12-card-text { padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text); }
+.u-card-flex-between { padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px; }
+.u-fs-15-text { font-size:15px;color:var(--text); }
+.u-fs-24-gold-bold-mb8 { font-size:24px;font-weight:800;color:var(--gold-light);margin-bottom:8px; }
+.u-text-left-m20-16-fs-clamp { text-align: left; margin: 20px 0 16px; font-size: clamp(28px, 5vw, 48px); }
+.u-text2-17-lh17-mb40 { color: var(--text-2); font-size: 17px; line-height: 1.7; margin-bottom: 40px; }
+.u-text2-15-lh185 { color: var(--text-2); font-size: 15px; line-height: 1.85; }
+.u-gold-fw700 { color: var(--gold-light); font-weight: 700; }
+.u-max760-card-pad20 { max-width:760px;margin:0 auto;padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card); }
+.u-max760-card-center { max-width:760px;margin:0 auto;padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card);text-align:center; }
+.u-fs-15-text2-mb12 { font-size:15px;color:var(--text-2);margin:0 0 12px; }
+.u-card-pad20 { padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--card); }
+.u-max860-center { max-width:860px;margin:0 auto; }
+.u-card-pad24-mb20 { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px; }
+.u-fs-16-mb12 { font-size:16px;margin-bottom:12px; }
+.u-flex-gap12-py12 { display:flex;gap:12px;align-items:center;padding:12px 0; }
+.u-center-mt20 { text-align:center;margin-top:20px; }
+.u-fs-14-text2-lh18-mb16 { font-size:14px;color:var(--text-2);line-height:1.8;margin:0 0 16px; }
+.u-text2-fs15-lh18-mb24 { color:var(--text-2);font-size:15px;line-height:1.8;margin-bottom:24px; }
+.u-flex-between-card { display:flex;justify-content:space-between;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--card); }
