@@ -130,6 +130,7 @@
 
 /* Card grid polish */
 .services__grid, .cases__grid, .why__grid { gap: 20px; }
-.service-card__title, .case-card__title { color: var(--text); }
-.service-card__text, .case-card__text { color: var(--text-2); line-height: 1.6; }
+.service-card__title, .case-card__title { color: var(--gold-light); }
+.service-card__text, .case-card__text { color: var(--text); line-height: 1.6; }
+.footer__links a { text-decoration: none !important; }
 PY
