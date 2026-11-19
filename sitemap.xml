@@ -436,17 +436,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/compare-freelance.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare-freelance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/compare-integrator.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare-integrator.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/compare.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -481,67 +481,67 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-accounting.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-accounting.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-bc.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-bc.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-clinics.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-clinics.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-cowork.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-cowork.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-franchise.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-franchise.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-horeca-dealers.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-horeca-dealers.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-horeca.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-horeca.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-itpark.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-itpark.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-logistics.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-logistics.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-manufacturing.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-manufacturing.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-realty.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-realty.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-retail.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-retail.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/industry-web.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-web.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -556,22 +556,22 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-audit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-audit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-ecp.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-ecp.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-network-move.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-network-move.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/lead-server-1c.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-server-1c.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -591,37 +591,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-1c-slow.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-1c-slow.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-admin-left.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-admin-left.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-astra.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-astra.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-new-employee.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-new-employee.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-no-backup.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-no-backup.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-no-internet.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-no-internet.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fedorov55.github.io/ff-site/pain-server-down.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-server-down.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
