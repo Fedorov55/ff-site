@@ -106,6 +106,18 @@
         : monthly ? monthly.toLocaleString('ru-RU') + ' ₽/мес' : oneTime.toLocaleString('ru-RU') + ' ₽ разово';
       if(discount) totalEl.textContent += ' · скидка ' + Math.round(discount*100) + '%';
       calcUpdateMobile();
+      var staffCost = 146000;
+      var staffCostReal = 178000;
+      var savings = Math.max(0, staffCost - monthly);
+      var savingsYear = savings * 12;
+      var payback = oneTime > 0 && savings > 0 ? Math.ceil(oneTime / savings) : 0;
+      var cmpHtml = '<div class="calc__summary-row" style="margin-top:12px;font-weight:700;"><span>Стоимость штатного сисадмина (конс.)</span><span>' + staffCost.toLocaleString('ru-RU') + ' ₽/мес</span></div>';
+      cmpHtml += '<div class="calc__summary-row"><span>Стоимость штатного сисадмина (реал.)</span><span>' + staffCostReal.toLocaleString('ru-RU') + ' ₽/мес</span></div>';
+      cmpHtml += '<div class="calc__summary-row" style="color:var(--neon);font-weight:700;"><span>Экономия в месяц</span><span>' + savings.toLocaleString('ru-RU') + ' ₽</span></div>';
+      cmpHtml += '<div class="calc__summary-row" style="color:var(--neon);font-weight:700;"><span>Экономия в год</span><span>' + savingsYear.toLocaleString('ru-RU') + ' ₽</span></div>';
+      if(payback) cmpHtml += '<div class="calc__summary-row"><span>Срок окупаемости перехода</span><span>' + payback + ' мес.</span></div>';
+      cmpHtml += '<p class="calc__price-hint">По данным открытых вакансий Казани на ноябрь 2026 медиана зарплаты сисадмина 70–72 тыс. ₽ на руки, полная стоимость для компании 1.6–1.9 млн ₽/год. Абонентка F&F: от 10 000 ₽/мес.</p>';
+      summary.innerHTML += cmpHtml;
     }
     window.calcSubmit = function(ev){
       const btn = ev && ev.target ? ev.target.closest('button') : null;
