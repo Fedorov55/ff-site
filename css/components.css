@@ -187,6 +187,9 @@ a { transition: color .18s ease, text-decoration-color .18s ease; }
 .quick-nav a { font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: 6px; white-space: nowrap; }
 .quick-nav a:hover { color: var(--gold-light); background: var(--gold-soft); }
 
+/* Answer-first (GEO/AEO) */
+.answer-first { max-width: 74ch; margin: 0 0 16px; color: var(--text); font-size: 17px; line-height: 1.6; font-weight: 500; }
+
 /* Page intro polish */
 .page-intro { padding-block: clamp(42px, 6vw, 72px); }
 .page-intro__title { letter-spacing: -.04em; }
