@@ -64,3 +64,14 @@
 - Как быстро реагируете? От 15 минут.
 - Есть ли договор? Да, с SLA и реквизитами.
 - Работаете ли удалённо? Да, по всей России.
+## Дополнительные страницы
+
+https://fedorov55.github.io/ff-site/sysadmin-cost-kazan.html
+https://fedorov55.github.io/ff-site/compare/ff-vs-staff-2026.html
+https://fedorov55.github.io/ff-site/compare/staff-sysadmin-cost.html
+https://fedorov55.github.io/ff-site/terms-of-work.html
+https://fedorov55.github.io/ff-site/services.html
+https://fedorov55.github.io/ff-site/audits/audit.html
+https://fedorov55.github.io/ff-site/audits/security-audit.html
+https://fedorov55.github.io/ff-site/audits/backup-checklist.html
+
