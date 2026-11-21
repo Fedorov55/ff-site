@@ -190,9 +190,6 @@ a { transition: color .18s ease, text-decoration-color .18s ease; }
 /* Answer-first (GEO/AEO) */
 .answer-first { max-width: 74ch; margin: 0 0 16px; color: var(--text); font-size: 17px; line-height: 1.6; font-weight: 500; }
 
-/* Trust insert in hero */
-.hero__trust-insert { font-size: 13px; color: var(--muted); margin: 8px 0 0; font-style: italic; }
-
 /* Card marker */
 .u-card-marker { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
 
