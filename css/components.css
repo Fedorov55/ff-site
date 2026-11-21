@@ -193,6 +193,9 @@ a { transition: color .18s ease, text-decoration-color .18s ease; }
 /* Trust insert in hero */
 .hero__trust-insert { font-size: 13px; color: var(--muted); margin: 8px 0 0; font-style: italic; }
 
+/* Card marker */
+.u-card-marker { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+
 /* Page intro polish */
 .page-intro { padding-block: clamp(42px, 6vw, 72px); }
 .page-intro__title { letter-spacing: -.04em; }
