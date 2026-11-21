@@ -600,3 +600,8 @@ PY
 .u-p8-left { padding:8px;text-align:left;; }
 .u-center { text-align:center;; }
 .u-fs-18-gold-bold { font-size:18px;font-weight:700;color:var(--gold-light);; }
+
+/* Utility classes (final cleanup 2) */
+.u-inl2-15b292 { font-size:16px;font-weight:700;color:var(--text);margin:0 0 8px; }
+.u-inl2-c9d437 { margin:0 0 12px; }
+.u-inl2-13076d { text-align:center; }
