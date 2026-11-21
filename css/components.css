@@ -196,6 +196,9 @@ a { transition: color .18s ease, text-decoration-color .18s ease; }
 /* Card marker */
 .u-card-marker { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
 
+/* Content visibility for below-fold sections */
+.section + .section { content-visibility: auto; contain-intrinsic-size: 0 600px; }
+
 /* Page intro polish */
 .page-intro { padding-block: clamp(42px, 6vw, 72px); }
 .page-intro__title { letter-spacing: -.04em; }
