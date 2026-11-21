@@ -1,6 +1,7 @@
 (function(){
 'use strict';
-let INDEX_URL='search-index.json';
+const __searchBase = (function(){ try { if(window.location.pathname.indexOf('/ff-site/') !== -1) return '/ff-site/'; } catch(e){} return '/'; })();
+let INDEX_URL=__searchBase + 'search-index.json';
 let index=null;
 let indexLoaded=false;
 let worker=null;
@@ -20,7 +21,7 @@ function tokenize(text){
 function initWorker(){
   if(worker) return;
   try {
-    worker=new Worker('js/search-worker.js');
+    worker=new Worker(__searchBase + 'js/search-worker.js');
     workerReady=true;
   } catch(e){
     workerReady=false;
@@ -95,13 +96,14 @@ function renderResults(results, query, container){
     container.innerHTML='<div class="search__empty">Ничего не найдено. Попробуйте другой запрос.</div>';
     return;
   }
+  function __esc(s){ if(s==null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
   let html='';
   for(let i=0;i<results.length;i++){
     let r=results[i];
     let p=r.page;
-    html+='<a href="'+p.u+'" class="search__result">';
-    html+='<div class="search__result-title">'+highlight(p.t,query)+'</div>';
-    if(p.d) html+='<div class="search__result-desc">'+highlight(p.d,query)+'</div>';
+    html+='<a href="'+__esc(p.u)+'" class="search__result">';
+    html+='<div class="search__result-title">'+highlight(__esc(p.t),query)+'</div>';
+    if(p.d) html+='<div class="search__result-desc">'+highlight(__esc(p.d),query)+'</div>';
     html+='</a>';
   }
   container.innerHTML=html;

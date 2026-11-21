@@ -2,11 +2,15 @@ const esbuild = require('esbuild');
 const fs = require('fs');
 
 const files = [
+  { in: 'css/tokens.css', out: 'dist/tokens.min.css' },
   { in: 'css/style.css', out: 'dist/style.min.css' },
   { in: 'css/critical.css', out: 'dist/critical.min.css' },
+  { in: 'css/components.css', out: 'dist/components.min.css' },
   { in: 'js/script.js', out: 'dist/script.min.js' },
   { in: 'js/calculator.js', out: 'dist/calculator.min.js' },
   { in: 'js/search.js', out: 'dist/search.min.js' },
+  { in: 'js/search-worker.js', out: 'dist/search-worker.min.js' },
+  { in: 'sw.js', out: 'dist/sw.min.js' },
 ];
 
 async function build() {
@@ -17,7 +21,8 @@ async function build() {
       entryPoints: [f.in],
       outfile: f.out,
       minify: true,
-      bundle: false,
+      bundle: true,
+      external: ['*.woff2','*.png','*.webp','*.svg','*.jpg','*.jpeg','*.ico'],
       logLevel: 'silent',
     });
     const orig = fs.statSync(f.in).size;

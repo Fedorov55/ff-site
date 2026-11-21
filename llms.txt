@@ -11,15 +11,15 @@
 - https://fedorov55.github.io/ff-site/security.html — безопасность и ЭЦП
 - https://fedorov55.github.io/ff-site/services.html — все услуги
 - https://fedorov55.github.io/ff-site/cases.html — кейсы
-- https://fedorov55.github.io/ff-site/about.html — о компании
-- https://fedorov55.github.io/ff-site/team.html — команда
+- https://fedorov55.github.io/ff-site/company/about.html — о компании
+- https://fedorov55.github.io/ff-site/company/team.html — команда
 - https://fedorov55.github.io/ff-site/contacts.html — контакты
 
 ## Услуги
 
 - https://fedorov55.github.io/ff-site/services/it-support.html — IT-аутсорсинг
 - https://fedorov55.github.io/ff-site/services/server-1c.html — сервер 1С
-- https://fedorov55.github.io/ff-site/services/audit-services.html — IT-аудит
+- https://fedorov55.github.io/ff-site/audits/audit.html — IT-аудит
 - https://fedorov55.github.io/ff-site/services/crypto-gos.html — ЭЦП и КриптоПро
 - https://fedorov55.github.io/ff-site/services/vipnet-veracrypt.html — ViPNet и VeraCrypt
 - https://fedorov55.github.io/ff-site/services/import.html — импортозамещение
@@ -35,18 +35,18 @@
 
 ## География
 
-- https://fedorov55.github.io/ff-site/geo/support-kazan.html — Казань
-- https://fedorov55.github.io/ff-site/geo/support-almetyevsk.html — Альметьевск
-- https://fedorov55.github.io/ff-site/geo/support-nizhnekamsk.html — Нижнекамск
-- https://fedorov55.github.io/ff-site/geo/support-zelendolsk.html — Зеленодольск
-- https://fedorov55.github.io/ff-site/geo/server-kazan.html — серверы Казань
-- https://fedorov55.github.io/ff-site/geo/servers-nabchelny.html — серверы Набережные Челны
+- https://fedorov55.github.io/ff-site/cases/office-support.html — Казань
+- https://fedorov55.github.io/ff-site/cases/case-support-almetyevsk.html — Альметьевск
+- https://fedorov55.github.io/ff-site/cases/case-support-nizhnekamsk.html — Нижнекамск
+- https://fedorov55.github.io/ff-site/cases/case-support-zelendolsk.html — Зеленодольск
+- https://fedorov55.github.io/ff-site/cases/case-server-kazan.html — серверы Казань
+- https://fedorov55.github.io/ff-site/cases/case-servers-nabchelny.html — серверы Набережные Челны
 
 ## Блог (избранное)
 
 - https://fedorov55.github.io/ff-site/blog/server-1c.html — сервер для 1С
 - https://fedorov55.github.io/ff-site/blog/backup-3-2-1.html — стратегия бэкапов 3-2-1
-- https://fedorov55.github.io/ff-site/blog/vpn-udalenny-dostup.html — VPN для удалённого доступа
+- https://fedorov55.github.io/ff-site/infrastructure/vpn.html — VPN для удалённого доступа
 - https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html — что делать если сисадмин уволился
 - https://fedorov55.github.io/ff-site/blog/office-move.html — переезд офиса без простоя
 

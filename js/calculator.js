@@ -129,7 +129,17 @@
       if(!agree) return showToast(btn, 'Подтвердите согласие', 'error');
       if(btn){ btn.textContent = 'Отправляем...'; btn.disabled = true; }
       try {
-        fetch('', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        const calcEndpoint = (typeof FORM_ENDPOINT !== 'undefined') ? FORM_ENDPOINT : '';
+        if(!calcEndpoint || calcEndpoint.indexOf('formspree.io/f/') === -1){
+          let mailBody = 'Имя: ' + name.trim() + '\\nКонтакт: ' + contact.trim() + '\\nСообщение: Расчёт сметы с сайта\\n\\nСтраница: ' + window.location.href;
+          window.location.href = 'mailto:FathFed@yandex.ru?subject=' + encodeURIComponent('Заявка с калькулятора F&F') + '&body=' + encodeURIComponent(mailBody);
+          showToast(btn, 'Если почтовая программа не открылась, позвоните +7 (901) 265-52-52.', 'error');
+          if(btn){ btn.disabled=false; btn.textContent='Расчёт стоимости под вашу задачу'; }
+          const succEarly = document.getElementById('calcSuccess');
+          if(succEarly){ succEarly.style.display='block'; succEarly.textContent = 'Спасибо, ' + name.trim() + '! Вышлем смету в ближайшее время.'; }
+          return;
+        }
+        fetch(calcEndpoint, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ name: name.trim(), contact_way: contact.trim(), message: 'Расчёт сметы с сайта', service: 'Калькулятор', agree: true })
         }).then(r=>r.json()).then(res=>{
           const succ = document.getElementById('calcSuccess');
@@ -177,5 +187,5 @@ document.addEventListener('click', function(e) {
 });
 
 // ====== SLAB CALCULATOR (infrastructure.html) ======
-function calcSlab(){ let area = parseInt(document.getElementById('slabArea').value) || 100; let seats = parseInt(document.getElementById('slabSeats').value) || 10; let perSeat = 15000; let perArea = 5000; let total = seats * perSeat + area * perArea; document.getElementById('slabTotal').textContent = total.toLocaleString('ru-RU') + ' ₽'; document.getElementById('slabResult').style.display = 'block'; } 
+function calcSlab(){ const areaEl = document.getElementById('slabArea'); const seatsEl = document.getElementById('slabSeats'); const totalEl = document.getElementById('slabTotal'); const resultEl = document.getElementById('slabResult'); if(!areaEl || !seatsEl || !totalEl || !resultEl) return; let area = parseInt(areaEl.value,10) || 100; let seats = parseInt(seatsEl.value,10) || 10; let perSeat = 15000; let perArea = 5000; let total = seats * perSeat + area * perArea; totalEl.textContent = total.toLocaleString('ru-RU') + ' ₽'; resultEl.style.display = 'block'; } 
 window.calcSlab = calcSlab;

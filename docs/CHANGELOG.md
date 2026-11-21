@@ -148,3 +148,64 @@
 - Temporary work/ scripts and debug helpers.
 ### Kept
 - Core site pages, assets, scripts, and agent skills.
+
+## [2026-11-21] - Full repository audit & P0 fixes
+### Added
+- Full audit via 5 parallel subagents (JS/CSS, HTML, SEO infra, content/links, build/scripts).
+- docs/REPO_AUDIT_2026-11-21.md with consolidated findings and prioritized plan.
+### Fixed
+- js/script.js: FORM_ENDPOINT ReferenceError (forms now fall back to mailto instead of failing).
+- js/script.js: form-data persistence selector injection hardened with CSS.escape.
+- js/calculator.js: empty fetch('') replaced with endpoint/mailto fallback + success state.
+- js/calculator.js: calcSlab null-guards for missing DOM nodes.
+- js/search.js: relative search-index.json/worker paths now resolve under /ff-site/ base.
+- js/search.js: XSS hardening in renderResults (escape of title/desc/url).
+- sw.js: precache paths base-aware (/ff-site/); added components.css, tokens.css, search-worker.js, manifest.json; fallback uses base index.
+- css/style.css: font urls corrected to ../fonts/.
+- Removed UTF-8 BOM from 8 HTML files (index, prices, servers, services, support, audits/audit, compare/compare, infrastructure/infrastructure).
+- build.js: expanded build set (tokens, components, search-worker, sw) and bundle with externalized binary assets.
+### Validated
+- node --check: all JS pass.
+- npm run build: completes successfully.
+
+## [2026-11-21] — P1 fixes
+### Fixed
+- Canonical/og:url absolutized on 67 subdirectory pages.
+- Sitemap regenerated: 159 URLs, no broken/noindex, lastmod + priority differentiation.
+- search-index.json regenerated: 159 entries matching actual files.
+- llms.txt links corrected to canonical subfolder URLs.
+- security.txt (root + .well-known) fixed: stray quote removed, aligned Expires/languages, absolute Canonical/Policy.
+- Added meta description/canonical/robots/OG/twitter to 4 pages (compare/*, sysadmin-cost-kazan, terms-of-work); schema on terms-of-work.
+- De-duplicated 3 meta descriptions.
+- Replaced missing image case-ecp-eis.webp references with service-crypto.webp.
+- Nav consistency: added incidents item to 81 pages.
+### Validated
+- sitemap.xml resolves to existing files; no noindex leaks.
+- search-index.json has 0 dead / 0 missing vs HTML files.
+
+## [2026-11-21] — P2 fixes
+### Fixed
+- CSP img-src tightened to 'self' data: in 137 HTML files and _headers.
+- htmlhint issues: duplicate class attributes and duplicate id="faq" fixed.
+- Removed legacy .eslintrc.json (flat config only).
+- AGENTS.md page count corrected (202 -> 161).
+- Added CI workflow .github/workflows/quality.yml.
+### Notes
+- Heading-order and llms-full.txt regeneration deferred to P3.
+
+## [2026-11-21] — P3 fixes
+### Fixed
+- why-item card titles changed from h3 to h2 on articles.html and resources/research.html (heading order).
+- llms-full.txt regenerated: 159 pages, trimmed to ~136 KB.
+- manifest.json: added lang, dir, id, categories, purpose for apple-touch icon.
+### Validated
+- npm run build successful.
+
+## [2026-11-21] — Фаза 5: валидация
+### Fixed
+- services.html и 5 страниц: inline-скрипт PDF (комментарий // глотал закрывающие скобки) → SyntaxError устранён.
+### Validated
+- 6 страниц проверены в браузере: 0 ошибок консоли.
+- Lighthouse: SEO 1.0, Best Practices 1.0 на index/support.
+- Accessibility: 0.87–0.96 (замечания aria-hidden-focus, landmark-one-main — некритичны).
+- Search-index загружается на вложенных страницах (200 OK).

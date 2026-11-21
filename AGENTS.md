@@ -20,7 +20,7 @@
 4. Если сомневаешься — предложи два варианта с плюсами и минусами, но продолжай работу.
 
 ## Pages
-- 202 HTML pages (index, services, servers, infrastructure, security, cases, blog, articles, geo, services, hubs, industries, pain-*, lead magnets, etc.)
+- 161 HTML pages (index, services, servers, infrastructure, security, cases, blog, articles, industries, pain-*, leads, audits, compare, etc.)
 - blog.html — blog index
 - map.html — sitemap (187 links)
 - status.html, quiz.html, demo.html, compare*.html, etc.

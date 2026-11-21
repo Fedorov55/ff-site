@@ -1,16 +1,21 @@
 /* Service Worker for F&F site — offline cache of static assets */
 const CACHE_NAME = 'ff-cache-v13';
+const __swBase = self.location.pathname.replace(/sw\.js$/, '') || '/';
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/css/critical.css',
-  '/js/script.js',
-  '/js/search.js',
-  '/js/calculator.js',
-  '/search-index.json',
-  '/img/favicon-32.webp',
-  '/img/logo-44.webp',
+  __swBase,
+  __swBase + 'index.html',
+  __swBase + 'css/style.css',
+  __swBase + 'css/critical.css',
+  __swBase + 'css/components.css',
+  __swBase + 'css/tokens.css',
+  __swBase + 'js/script.js',
+  __swBase + 'js/search.js',
+  __swBase + 'js/search-worker.js',
+  __swBase + 'js/calculator.js',
+  __swBase + 'search-index.json',
+  __swBase + 'manifest.json',
+  __swBase + 'img/favicon-32.webp',
+  __swBase + 'img/logo-44.webp',
 ];
 
 // Install: precache static assets
@@ -80,7 +85,7 @@ self.addEventListener('fetch', function(event) {
         return response;
       }).catch(function() {
         return caches.match(event.request).then(function(cached) {
-          return cached || caches.match('/index.html');
+          return cached || caches.match(__swBase + 'index.html');
         });
       })
     );

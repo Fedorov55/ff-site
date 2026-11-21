@@ -1,5 +1,5 @@
 Contact: mailto:FathFed@yandex.ru
 Expires: 2027-10-31T23:59:59.000Z
-Preferred-Languages: ru, en
-Canonical: .well-known/security.txt
-Policy: privacy.html
+Preferred-Languages: ru
+Canonical: https://fedorov55.github.io/ff-site/.well-known/security.txt
+Policy: https://fedorov55.github.io/ff-site/privacy.html

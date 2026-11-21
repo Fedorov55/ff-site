@@ -5,8 +5,12 @@
   "start_url": "/ff-site/",
   "scope": "/ff-site/",
   "display": "standalone",
+  "lang": "ru",
+  "dir": "ltr",
+  "id": "/ff-site/",
   "background_color": "#0A0D14",
   "theme_color": "#D4AF37",
+  "categories": ["business", "productivity"],
   "icons": [
     {
       "src": "img/favicon-32.webp",
@@ -21,7 +25,8 @@
     {
       "src": "img/apple-touch-icon-180.webp",
       "sizes": "180x180",
-      "type": "image/webp"
+      "type": "image/webp",
+      "purpose": "any maskable"
     }
   ]
 }
