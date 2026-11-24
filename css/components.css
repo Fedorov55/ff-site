@@ -165,7 +165,7 @@
 .why-card__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
 .why-card__icon-box { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(212,175,55,0.1)); border: 1px solid rgba(212,175,55,0.4); }
 .why-card__icon-box svg { width: 20px; height: 20px; color: #D4AF37; stroke-width: 2; }
-.why-card__bg-num { position: absolute; top: 16px; right: 20px; font-size: 48px; font-weight: 800; color: rgba(255,255,255,0.03); line-height: 1; }
+.why-card__bg-num { position: absolute; top: 16px; right: 20px; font-size: 48px; font-weight: 800; color: var(--muted); line-height: 1; }
 .why-card__title { color: #E8EAF0; font-size: 17px; font-weight: 700; margin: 0 0 12px; }
 .why-card__text { color: #9AA0A6; font-size: 14px; line-height: 1.6; margin: 0; }
 
@@ -184,7 +184,7 @@ a { transition: color .18s ease, text-decoration-color .18s ease; }
 
 /* Quick nav (anchor navigation) */
 .quick-nav { position: sticky; top: 72px; z-index: 100; display: flex; gap: 8px; padding: 8px 16px; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); overflow-x: auto; }
-.quick-nav a { font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: 6px; white-space: nowrap; }
+.quick-nav a { font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: 6px; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; }
 .quick-nav a:hover { color: var(--gold-light); background: var(--gold-soft); }
 
 /* Answer-first (GEO/AEO) */

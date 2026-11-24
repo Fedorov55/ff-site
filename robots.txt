@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 Disallow: /pasahalki
-Disallow: /room
+Disallow: /infrastructure/room.html
 Disallow: /vcard
 
 Sitemap: https://fedorov55.github.io/ff-site/sitemap.xml

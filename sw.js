@@ -1,5 +1,5 @@
 /* Service Worker for F&F site — offline cache of static assets */
-const CACHE_NAME = 'ff-cache-v13';
+const CACHE_NAME = 'ff-cache-v14';
 const __swBase = self.location.pathname.replace(/sw\.js$/, '') || '/';
 const PRECACHE_URLS = [
   __swBase,

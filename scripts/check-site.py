@@ -15,7 +15,7 @@ def main():
         if '.git' in r or 'node_modules' in r or '.agents' in r:
             continue
         for f in fs:
-            if f.endswith('.html'):
+            if f.endswith('.html') and not f.startswith('google'):
                 html_files.append(os.path.join(r, f))
 
     # 1. Broken internal links

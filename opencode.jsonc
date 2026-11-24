@@ -1,0 +1,59 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "exa": { "type": "remote", "url": "https://mcp.exa.ai/mcp" },
+      "web-search": { "type": "local", "command": ["npx", "-y", "@zhafron/mcp-web-search"] },
+      "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
+      "sequential-thinking": { "type": "local", "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"] },
+      "memory": { "type": "local", "command": ["npx", "-y", "@modelcontextprotocol/server-memory"] },
+      "playwright": { "type": "local", "command": ["npx", "-y", "@playwright/mcp"] },
+      "time": { "type": "local", "command": ["npx", "-y", "@odgrim/mcp-datetime"] },
+      "chrome-devtools": { "type": "local", "command": ["npx", "-y", "chrome-devtools-mcp"] },
+      "computefirst": { "type": "remote", "url": "https://computefirst.net/mcp" },
+      "cve-intelligence": { "type": "remote", "url": "https://excessionlabs.ai/mcp/cve" },
+      "repomix": { "type": "local", "command": ["npx", "-y", "repomix", "--mcp"] },
+      "markitdown": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\markitdown-mcp.exe"],
+        "protocol": "auto"
+      },
+      "scrapling": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\scrapling-mcp.exe"]
+      },
+      "codebase-memory": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\AppData\\Local\\Programs\\codebase-memory-mcp\\codebase-memory-mcp.exe"]
+      },
+      "serena": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\.local\\bin\\serena.exe", "start-mcp-server"]
+      },
+      "crawl4ai": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\.local\\share\\crawl4ai-venv\\Scripts\\crawl4ai-mcp.exe"],
+        "protocol": "auto"
+      },
+      "desktop-commander": {
+        "type": "local",
+        "command": ["npx", "-y", "@wonderwhy-er/desktop-commander"],
+        "timeout": { "startup": 120000 }
+      },
+      "frontend-checklist": {
+        "type": "remote",
+        "url": "https://mcp.frontendchecklist.io"
+      },
+      "seo": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\AppData\\Roaming\\npm\\seo.cmd", "mcp", "serve"],
+        "timeout": { "startup": 120000 }
+      },
+      "openseo": {
+        "type": "remote",
+        "url": "https://app.openseo.so/mcp",
+        "disabled": true
+      }
+    }
+  }
+}

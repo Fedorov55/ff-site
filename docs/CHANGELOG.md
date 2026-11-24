@@ -209,3 +209,22 @@
 - Lighthouse: SEO 1.0, Best Practices 1.0 на index/support.
 - Accessibility: 0.87–0.96 (замечания aria-hidden-focus, landmark-one-main — некритичны).
 - Search-index загружается на вложенных страницах (200 OK).
+
+## [2026-11-22] - Competitive Audit & Enhancement Plan
+### Added
+- Competitive map of 20 competitors (Kazan/Tatarstan + federal top-5) in глобальный_аудитище.md.
+- Deep breakdown of top-8 dangerous competitors.
+- SEO comparison F&F vs competitors.
+- Offer comparison and F&F offer formulation.
+- Trust signals comparison.
+- Conversion best/worst practices.
+- Enhancement plan (A: immediate, B: 14 days, C: 30-45 days).
+
+
+## [2026-11-24] - Deep Competitive Analysis & Guarantee Unification
+### Added
+- Deep competitive analysis synthesis across 11 axes in глобальный_аудитище.md (first screens, pricing architecture, trust speed, service pages, market language, objections, reputation, Tatarstan locality, funnels, SEO attack points, content gaps) with implement-now and 30-days plans.
+- Unified guarantee from 30 days to 6 months across 161 HTML pages (392 replacements); only guarantee-related phrases changed, non-guarantee 30-day contexts preserved.
+### Validated
+- scripts/check-site.py: 161 HTML files, all checks passed.
+- No remaining guarantee-day phrases (verified by check_guarantee_remaining.py).
