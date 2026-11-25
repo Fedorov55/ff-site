@@ -775,6 +775,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/it-autsorsing-malyy-biznes.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/it-podderzhka-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/kompyuternaya-pomoshch-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/leads/lead-audit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,7 +841,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/monitoring-serverov-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/nastroyka-seti-ofisa-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/nizhnekamsk.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/obsluzhivanie-kompyuterov-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/obsluzhivanie-serverov-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -901,6 +943,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/rezervnoe-kopirovanie-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/security/crypto.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -973,6 +1021,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fedorov55.github.io/ff-site/sistemnyy-administrator-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://fedorov55.github.io/ff-site/support.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -986,6 +1040,18 @@
   </url>
   <url>
     <loc>https://fedorov55.github.io/ff-site/terms-of-work.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/udalennyy-sisadmin-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/vosstanovlenie-dannykh-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

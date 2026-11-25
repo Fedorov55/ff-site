@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Мониторинг серверов в Казани — 24/7, алерты, SLA | F&F</title>
+<link rel="preconnect" href="https://formspree.io" crossorigin>
+<link rel="stylesheet" href="css/critical.css?v=130">
+<link rel="preload" href="fonts/inter-v20-cyrillic_latin-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-v20-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+<meta http-equiv="Cache-Control" content="public, max-age=3600, must-revalidate">
+
+<meta name="theme-color" content="#0A0D14">
+<link rel="manifest" href="manifest.json">
+<meta name="description" content="IT-аутсорсинг для офисов 20-50 человек в Казани: серверы 1С, ЭЦП, почта. От 10 000 ₽/мес, SLA 99,5%, реакция 15 мин, гарантия 6 месяцев. Экономия до 80%.">
+<meta name="author" content="Булат, F&F">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Мониторинг серверов в Казани — 24/7, алерты, SLA | F&F">
+<meta property="og:description" content="Мониторинг серверов в Казани 24/7: алерты, SLA 99,5%, отчёты. Выявление сбоев до пользователей. От 3 000 ₽/мес за сервер.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://fedorov55.github.io/ff-site/">
+<meta property="og:image" content="https://fedorov55.github.io/ff-site/img/og-preview.webp">
+<link rel="canonical" href="https://fedorov55.github.io/ff-site/">
+<link rel="icon" type="image/webp" href="img/favicon-32.webp">
+<link rel="stylesheet" href="css/style.css?v=130" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/components.css?v=130" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/style.css?v=130"><link rel="stylesheet" href="css/components.css?v=130"></noscript>
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Мониторинг серверов в Казани — 24/7, алерты, SLA | F&F">
+<meta name="twitter:description" content="IT-инфраструктура и поддержка для офиса в Казани. Абонентка от 10 000 ₽/мес. Реакция от 15 минут. Выезд по городу и Татарстану.">
+<meta name="twitter:image" content="https://fedorov55.github.io/ff-site/img/og-preview.webp">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="favicon.ico" sizes="any">
+
+<meta property="og:site_name" content="F&F">
+<meta name="twitter:site" content="@FathFed">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань">
+<link rel="apple-touch-icon" href="img/apple-touch-icon-180.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"F&F","url":"https://fedorov55.github.io/ff-site/","logo":"https://fedorov55.github.io/ff-site/img/logo.webp","image":"https://fedorov55.github.io/ff-site/img/og-preview.webp","telephone":"+79012655252","email":"FathFed@yandex.ru","address":{"@type":"PostalAddress","addressLocality":"Казань","addressCountry":"RU"},"taxID":"165506822661","description":"IT-аутсорсинг и инфраструктура для бизнеса: серверы, безопасность, криптография. Казань и вся Россия.","areaServed":["Казань","Республика Татарстан","Россия"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"7","bestRating":"5","worstRating":"1"},"sameAs":["https://t.me/FathFed","https://max.ru/se14849309_bot"]}</script>
+<link rel="prefetch" href="support.html">
+<link rel="prefetch" href="servers.html">
+<link rel="prefetch" href="services.html">
+<link rel="alternate" type="application/rss+xml" title="F&F Блог" href="rss.xml">
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Как мы работаем","step":[{"@type":"HowToStep","name":"Заявка и диагностика","text":"Вы описываете задачу — мы проводим бесплатную диагностику и предлагаем решение с точной сметой."},{"@type":"HowToStep","name":"Договор и сроки","text":"Фиксируем объём работ, сроки и стоимость в договоре. Без скрытых платежей."},{"@type":"HowToStep","name":"Выполнение","text":"Выполняем работы в согласованные сроки. Держим вас в курсе на каждом этапе."},{"@type":"HowToStep","name":"Приёмка и гарантия","text":"Передаём результат, подписываем акт. Гарантия 6 месяцев на все работы."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит IT-аутсорсинг в Казани?", "acceptedAnswer": {"@type": "Answer", "text": "От 10 000 ₽/мес для офиса 10–15 человек. Рыночная цена в Казани — 8 000–25 000 ₽/мес. F&F: мониторинг 24/7, SLA 99,5%, реакция 15 мин. Тарифы →"}}, {"@type": "Question", "name": "Чем F&F отличается от штатного сисадмина?", "acceptedAnswer": {"@type": "Answer", "text": "Команда из 4+ специалистов вместо одного человека. Экономия до 80% (1.6–1.9 млн ₽/год vs от 120 000 ₽/год). Нет зависимости от одного человека. Сравнение →"}}, {"@type": "Question", "name": "Как быстро реагируете на аварию?", "acceptedAnswer": {"@type": "Answer", "text": "15 минут в рабочее время, выезд в день обращения. F&F: приоритет аварийным заявкам, SLA 99,5%. Аварийный выезд →"}}, {"@type": "Question", "name": "Есть ли договор и гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "Да, договор с SLA и гарантией 6 месяцев на все работы. F&F: акт, чек, безнал для ИП/ООО. Реквизиты →"}}, {"@type": "Question", "name": "Можно ли отказаться от обслуживания?", "acceptedAnswer": {"@type": "Answer", "text": "Да, с уведомлением за 30 дней. Без штрафов, передаём документацию и доступы. Кейсы →"}}, {"@type": "Question", "name": "Где вы работаете?", "acceptedAnswer": {"@type": "Answer", "text": "Казань — выезд по городу и Татарстану. Россия — удалённая поддержка с тем же SLA и регламентом. Выезд по Казани в день обращения при аварии."}}]}</script>
+<meta name="google-site-verification" content="ccMY4BLEhERCDAMHmIJa5f5-G-zQutGb_YZDnIDaXd8" />
+</head>
+<body class="grain">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grad"></div>
+</div>
+<header class="header">
+<div class="container header__inner">
+<a href="index.html" class="logo">
+<img src="img/logo-44.webp?v=130" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager" decoding="async">
+<span class="logo__text-wrap">
+<span class="logo__brand">F&amp;F</span>
+
+</span>
+</a>
+<nav class="nav" aria-label="Основная навигация">
+      <a href="services.html" class="nav__direct">Услуги</a>
+      
+      <a href="cases.html" class="nav__direct">Кейсы</a>
+<a href="incidents/incident.html" class="nav__direct u-text-danger-bold">Авария</a>
+      <a href="company/about.html" class="nav__direct">О компании</a>
+      <div class="nav__item"><button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="menu-resources" data-nav-trigger>Ресурсы<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></button><div class="dropdown" id="menu-resources"><a href="blog.html" class="dropdown__link">Блог</a><a href="articles.html" class="dropdown__link">Статьи</a><a href="resources/research.html" class="dropdown__link">Исследования</a></div></div>
+      <a href="prices.html" class="nav__direct">Цены</a><a href="contacts.html" class="nav__direct">Контакты</a>
+    </nav>
+<div class="header__actions">
+<a href="tel:+79012655252" class="header__phone">+7 (901) 265-52-52</a>
+<a href="tel:+79012655252" class="header__cta">+7 (901) 265-52-52</a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Включить светлую тему">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+<button class="burger" id="burgerBtn" aria-label="Открыть меню" type="button" aria-expanded="false" aria-controls="mobileNav">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+<div class="mobile-nav__backdrop" data-mobile-close>
+</div>
+<div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Навигация по сайту">
+<div class="mobile-nav__header">
+<a href="index.html" class="mobile-nav__brand">F&amp;F <span>Навигация</span>
+</a>
+<button class="mobile-nav__close" type="button" aria-label="Закрыть меню" data-mobile-close>×</button>
+</div>
+<div class="mobile-nav__inner" aria-label="Основная навигация">
+<a href="index.html" class="mobile-nav__link">Главная</a>
+<a href="services.html" class="mobile-nav__link">Услуги</a>
+<a href="prices.html" class="mobile-nav__link">Цены</a>
+<details class="mobile-nav__group">
+<summary>Ресурсы</summary>
+<div class="mobile-nav__group-links">
+<a href="blog.html" class="mobile-nav__link">Блог</a>
+<a href="articles.html" class="mobile-nav__link">Статьи</a>
+<a href="resources/research.html" class="mobile-nav__link">Исследования</a>
+</div>
+</details>
+<a href="company/about.html" class="mobile-nav__link">О компании</a>
+<a href="cases.html" class="mobile-nav__link">Кейсы</a>
+<a href="incidents/incident.html" class="u-incident-link mobile-nav__link">Авария</a>
+<a href="contacts.html" class="mobile-nav__link">Контакты</a>
+</div><div class="u-sticky-footer mobile-nav__footer" >
+<a href="prices.html#calculator" class="btn btn--primary u-flex-center">Рассчитать стоимость</a>
+<a href="tel:+79012655252" class="btn btn--ghost u-flex-center">+7 (901) 265-52-52</a>
+</div>
+</div>
+</div>
+<main id="main" class="site-main" role="main">
+<nav class="quick-nav" aria-label="Быстрая навигация"><a href="prices.html">Цены</a><a href="#faq">FAQ</a><a href="prices.html#calculator">Калькулятор</a><a href="compare/compare.html">Сравнение</a><a href="#process">Процесс</a></nav>
+
+
+<!-- Hero -->
+<section class="hero hero--home">
+<div class="container">
+<div class="hero__inner">
+<div class="hero__copy">
+<span class="hero__badge">
+<span class="hero__badge-dot">
+</span> Казань — выезд · Россия — удалённо</span>
+<h1 class="hero__title">Мониторинг серверов в Казани 24/7: алерты, SLA, отчёты</h1>
+<p class="answer-first">ИТ-поддержка для офиса 20–50 человек в Казани. От 10 000 ₽/мес, SLA 99,5%, реакция 15 мин, гарантия 6 месяцев. Экономия до 80%.</p>
+<p class="u-updated">Обновлено: 20 ноября 2026</p>
+<p class="hero__lead u-inl-26ea07">Ваш IT-контур под контролем: команда из 4+ специалистов за 10 000 ₽/мес. Экономия до 80%.</p>
+
+<p class="hero__trust-insert">Прозрачная цена и сроки до начала работ. Гарантия на работы — 6 месяцев.</p>
+<div class="hero__buttons">
+<a href="prices.html#estimate-calc" class="btn btn--primary">Рассчитать стоимость</a>
+<a href="tel:+79012655252" class="btn btn--ghost">Позвонить</a>
+</div>
+<p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
+<p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
+</div>
+<div class="hero__terminal-col">
+<div class="terminal">
+<div class="terminal__bar">
+<span class="terminal__dot terminal__dot--red">
+</span>
+<span class="terminal__dot terminal__dot--yellow">
+</span>
+<span class="terminal__dot terminal__dot--green">
+</span>
+<span class="terminal__title">ff-it — shield — 80×24</span>
+</div>
+<div class="terminal__body" id="terminalBody">
+<div class="terminal__log">
+<span class="terminal__log--prompt">root@ff-it</span>
+<span class="terminal__log--cmd">:~#</span>
+<span class="terminal__log--cmd">./ff-it --status --verbose</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--dim"># Инициализация защитного ядра F&F v4.0</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--dim"># Хаб: Казань · Дежурство: да · Статус: OK</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok"> [✓] </span>
+<span class="terminal__log--dim">RAID-массив · NVMe SSD</span>
+<span class="progress-slot">
+<span class="bar__fill">██████████████████</span>
+<span class="bar__empty">
+</span>
+<span class="terminal__log--ok">100%</span>
+</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok"> [✓] </span>
+<span class="terminal__log--dim">Шифрование AES-256</span>
+<span class="progress-slot">
+<span class="bar__fill">██████████████████</span>
+<span class="bar__empty">
+</span>
+<span class="terminal__log--ok">100%</span>
+</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok"> [✓] </span>
+<span class="terminal__log--dim">Бэкап · 3-2-1 · оффлайн</span>
+<span class="progress-slot">
+<span class="bar__fill">██████████████████</span>
+<span class="bar__empty">
+</span>
+<span class="terminal__log--ok">100%</span>
+</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok"> [✓] </span>
+<span class="terminal__log--dim">Защитный контур</span>
+<span class="progress-slot">
+<span class="bar__fill">██████████████████</span>
+<span class="bar__empty">
+</span>
+<span class="terminal__log--ok">100%</span>
+</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok">[ OK ] Мониторинг 24/7 · SLA 99,5%</span>
+</div>
+<div class="terminal__log">
+<span class="terminal__log--ok">[ OK ] Готовы помочь вашему бизнесу.</span>
+</div>
+<div class="terminal__scene">
+<svg class="terminal__globe-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<circle cx="160" cy="160" r="150" fill="none" stroke="#00FF88" stroke-width="1.5" opacity="0.6"/>
+<circle cx="160" cy="160" r="120" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.4"/>
+<circle cx="160" cy="160" r="90" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.3"/>
+<ellipse cx="160" cy="160" rx="150" ry="60" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.4"/>
+<ellipse cx="160" cy="160" rx="150" ry="100" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.3"/>
+<ellipse cx="160" cy="160" rx="60" ry="150" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.4"/>
+<ellipse cx="160" cy="160" rx="100" ry="150" fill="none" stroke="#00FF88" stroke-width="1" opacity="0.3"/>
+<circle cx="160" cy="160" r="4" fill="#00FF88" opacity="0.8"/>
+<circle cx="200" cy="120" r="3" fill="#D4AF37" opacity="0.7"/>
+<circle cx="120" cy="200" r="3" fill="#D4AF37" opacity="0.7"/>
+<circle cx="240" cy="160" r="2" fill="#00FF88" opacity="0.6"/>
+<circle cx="80" cy="140" r="2" fill="#00FF88" opacity="0.6"/>
+<animateTransform attributeName="transform" type="rotate" from="0 160 160" to="360 160 160" dur="20s" repeatCount="indefinite"/>
+</svg>
+</div>
+<div class="terminal__status">
+<span class="terminal__status-dot">
+</span> ONLINE · КАЗАНЬ · 24/7</div>
+</div>
+</div>
+<div class="hero__brandbar">
+<div class="hero__brandbar-logo">
+<img src="img/logo-44.webp?v=130" alt="Логотип F&F" class="hero__brandbar-logo-img" width="48" height="48" loading="lazy" decoding="async">
+<div>
+<div class="hero__brandbar-name">FF-IT.RU</div>
+<span class="hero__brandbar-sub">Ваш IT-контур под контролем</span>
+</div>
+</div>
+<div class="hero__brandbar-metrics">
+<div class="hero__metric">
+<span class="hero__metric-value">5</span>
+<div class="hero__metric-label">лет опыта</div>
+</div>
+<div class="hero__metric">
+<span class="hero__metric-value">120<sup>+</sup></span>
+<div class="hero__metric-label">проектов</div>
+</div>
+<div class="hero__metric">
+<span class="hero__metric-value">27</span>
+<div class="hero__metric-label">отзывов</div>
+</div>
+<div class="hero__metric">
+<span class="hero__metric-value">99<sup>%</sup></span>
+<div class="hero__metric-label">остаются</div>
+</div>
+<div class="hero__metric">
+<span class="hero__metric-value">4<sup>+</sup></span>
+<div class="hero__metric-label">специалиста</div>
+</div>
+<div class="hero__metric">
+<span class="hero__metric-value">24/7</span>
+<div class="hero__metric-label">на связи</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="u-center-mt16" ><a href="company/team.html" class="u-gold">Вся команда →</a></p>
+</div>
+</section>
+
+<!-- Pain: urgent -->
+<section class="section reveal u-pt-0">
+<div class="container">
+<div class="u-inl-980429" >
+  <p class="u-inl-d2ffe4" >Не работает интернет, почта, 1С или сервер?</p>
+  <p class="u-fs-14-text2-mb12" >Вызовите специалиста. Приедем или подключимся удалённо.</p>
+  <a href="company/visit.html" class="u-inl-0a8bef" >Вызвать специалиста →</a>
+</div>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="container">
+<h2 class="section__title reveal u-inl-c3f2e8">Я ищу:</h2>
+<div class="u-grid-auto-220-gap16-max900" >
+<a href="infrastructure/infrastructure.html" class="seek-card">Решение для офиса</a>
+<a href="support.html" class="seek-card">Абонентское обслуживание</a>
+<a href="servers.html" class="seek-card">Сервер под ключ</a>
+<a href="services.html" class="seek-card">IT для собственника</a>
+<a href="audits/backup-checklist.html" class="seek-card">Проверку бэкапов</a>
+<a href="infrastructure/vpn.html" class="seek-card">VPN и удалённый доступ</a>
+</div>
+</div>
+</section>
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Суббота</span>
+<h2 class="section__title reveal">Что ломается в субботу</h2>
+<p class="section__subtitle reveal">Четыре типовые аварии и что мы делаем. Без обещания 100%.</p>
+</div>
+<div class="why__grid fade-up u-inl-443727">
+<div class="why-item">
+<h3 class="why-item__title">Сервер упал в субботу</h3>
+<p class="why-item__text">Диск вышел из строя, база не открывается. Восстановление из бэкапа за 2 часа. <a href="pain/pain-server-down.html" class="u-gold-underline" >План действий →</a></p>
+</div>
+<div class="why-item">
+<h3 class="why-item__title">1С тормозит</h3>
+<p class="why-item__text">Отчёт 10 минут, документ 30 секунд. Перенос на сервер: ускорение в 5 раз. <a href="pain/pain-1c-slow.html" class="u-gold-underline" >Что делать →</a></p>
+</div>
+<div class="why-item">
+<h3 class="why-item__title">Сисадмин уволился</h3>
+<p class="why-item__text">Пароли не передал, документации нет. Восстановление доступов от 1 дня. <a href="pain/pain-admin-left.html" class="u-gold-underline" >План действий →</a></p>
+</div>
+<div class="why-item">
+<h3 class="why-item__title">Бэкап не восстанавливается</h3>
+<p class="why-item__text">Бэкап есть, но при восстановлении — ошибка. Проверяем целостность, пробуем альтернативные копии. <a href="pain/pain-no-backup.html" class="u-gold-underline" >Что делать →</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="quiz" class="section reveal">
+<div class="container u-text-center">
+<h2 class="section__title reveal">Проверьте IT-инфраструктуру</h2>
+<p class="u-inl-979bf2" >5 вопросов — оценка рисков и потерь. Бесплатно.</p>
+<a href="prices.html" class="btn btn--primary">Пройти квиз →</a>
+</div>
+</section>
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Экономика</span>
+<h2 class="section__title reveal">Сколько на самом деле стоит штатный сисадмин в Казани</h2>
+</div>
+<p class="answer-first">Штатный сисадмин обходится компании в 1,4–1,9 млн ₽ в год — не только зарплата, но и налоги, отпускные, больничные, рабочее место и риски. Абонентское обслуживание F&F — от 120 000 ₽/год. Экономия до 80%.</p>
+<div class="u-grid-auto-280-gap16-max900" >
+<div class="u-card-lg">
+<h3 class="u-fs-16-bold-mb8" >Зарплата и налоги</h3>
+<p class="u-text-14-0">Сисадмин в Казани: 70 000–120 000 ₽/мес на руки. С налогами (30%) и взносами: 91 000–156 000 ₽/мес. За год: 1,1–1,9 млн ₽.</p>
+</div>
+<div class="u-card-lg">
+<h3 class="u-fs-16-bold-mb8" >Отпуск и больничные</h3>
+<p class="u-text-14-0">28 дней отпуска + больничные. Компания платит за нерабочее время. При уходе — поиск и подбор нового специалиста (1–3 месяца).</p>
+</div>
+<div class="u-card-lg">
+<h3 class="u-fs-16-bold-mb8" >Рабочее место</h3>
+<p class="u-text-14-0">Аренда рабочего места, оборудование, ПО, обучение. + 10 000–20 000 ₽/мес. За год: 120 000–240 000 ₽.</p>
+</div>
+<div class="u-card-lg">
+<h3 class="u-fs-16-bold-mb8" >Риски</h3>
+<p class="u-text-14-0">Один человек = одна точка отказа. Ушёл — остался «чёрный ящик». Простои при отпуске/больничном. Нет SLA, нет гарантии.</p>
+</div>
+</div>
+<div class="u-card-lg" style="margin-top:16px;">
+<p class="u-text-14-0"><strong>Итого за год:</strong> 1,4–1,9 млн ₽ (зарплата + налоги + отпуск + рабочее место + риски).</p>
+<p class="u-text-14-0"><strong>F&F абонентка:</strong> от 120 000 ₽/год (от 10 000 ₽/мес). Команда 4+ специалистов. SLA 99,5%. Реакция 15 мин. Гарантия 6 месяцев.</p>
+<p class="u-text-14-0"><strong>Экономия:</strong> до 80% (1,2–1,7 млн ₽/год).</p>
+</div>
+<div class="page-intro__actions" style="margin-top:16px;">
+<a class="btn btn--primary" href="prices.html#calculator">Рассчитать стоимость</a>
+<a class="btn btn--ghost" href="support.html">Подробнее об абонентке</a>
+</div>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Услуги</span>
+<h2 class="section__title reveal">Что берём на себя</h2>
+</div>
+<div class="services__grid">
+<a href="servers.html" class="service-card fade-up">
+<h3 class="service-card__title">Серверы под ключ</h3>
+<p class="service-card__text">Подбор, монтаж, настройка, бэкапы. От 200 000 ₽.</p>
+<div class="service-card__price">от 200 000 ₽</div>
+</a>
+<a href="support.html" class="service-card fade-up">
+<h3 class="service-card__title">Абонентское обслуживание</h3>
+<p class="service-card__text">Фиксированная сумма, реакция 15 минут, мониторинг 24/7. От 10 000 ₽/мес.</p>
+<div class="service-card__price">от 10 000 ₽/мес</div>
+</a>
+<a href="infrastructure/infrastructure.html" class="service-card fade-up">
+<h3 class="service-card__title">Инфраструктура и сети</h3>
+<p class="service-card__text">СКС, Wi-Fi, VPN, телефония. От 50 000 ₽.</p>
+<div class="service-card__price">от 50 000 ₽</div>
+</a>
+<a href="security/security.html" class="service-card fade-up">
+<h3 class="service-card__title">Безопасность</h3>
+<p class="service-card__text">ЭЦП, КриптоПро, 152-ФЗ, шифрование. От 1 200 ₽.</p>
+<div class="service-card__price">от 1 200 ₽</div>
+</a>
+<a href="audits/audit.html" class="service-card fade-up">
+<h3 class="service-card__title">IT-аудит</h3>
+<p class="service-card__text">Бесплатная проверка инфраструктуры. Отчёт с приоритетами.</p>
+<div class="service-card__price">бесплатно</div>
+</a>
+</div>
+</section>
+
+
+<!-- Testimonials -->
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Отзывы</span>
+<h2 class="section__title reveal">Что говорят клиенты</h2>
+</div>
+<div class="u-max860-grid" >
+<div class="u-card-flex-start" >
+<div class="u-avatar-gold" >А</div>
+<div class="u-flex-1" >
+<p class="u-text2-italic-14-mb8" >«За 3 года ни одного простоя касс. Удалённый доступ работает без сбоев.»</p>
+<div class="u-fs-13-muted" >— Алексей, директор табачного магазина (Казань)</div>
+<div class="u-fs-12-gold-mt4" >★★★★★</div>
+</div>
+</div>
+<div class="u-card-flex-start" >
+<div class="u-avatar-gold" >И</div>
+<div class="u-flex-1" >
+<p class="u-text2-italic-14-mb8" >«Перешли с штатного админа на абонентку. Экономия 660 тысяч в год.»</p>
+<div class="u-fs-13-muted" >— Игорь, IT-директор клиники (Казань)</div>
+<div class="u-fs-12-gold-mt4" >★★★★★</div>
+</div>
+</div>
+<div class="u-center-mt16" >
+<a href="cases.html" class="btn btn--ghost btn--sm">Все кейсы и отзывы →</a>
+</div>
+</div>
+</section>
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Команда</span>
+<h2 class="section__title reveal">Четыре человека из Казани</h2>
+<p class="section__subtitle reveal">Булат, Эмиль, Диляра, Руслан — инженеры, которые отвечают за ваш офис.</p>
+</div>
+<div class="team__grid">
+<div class="team-card fade-up">
+<div class="team-card__photo">
+<img srcset="img/team-bulat-400w.webp?v=130 400w, img/team-bulat.webp?v=130 800w" src="img/team-bulat.webp?v=130" alt="Булат, технический директор F&F" width="112" height="112" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" decoding="async">
+<span class="team-card__initials u-hidden">Б</span>
+</div>
+<h3 class="team-card__name">Булат</h3>
+<p class="team-card__role">Технический директор</p>
+<p class="team-card__fact">Сети и смета. Цена заканчивается в договоре.</p>
+</div>
+<div class="team-card fade-up">
+<div class="team-card__photo">
+<img srcset="img/team-emil-400w.webp?v=130 400w, img/team-emil.webp?v=130 800w" src="img/team-emil.webp?v=130" alt="Эмиль, первая линия F&F" width="112" height="112" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" decoding="async">
+<span class="team-card__initials u-hidden">Э</span>
+</div>
+<h3 class="team-card__name">Эмиль</h3>
+<p class="team-card__role">Первая линия</p>
+<p class="team-card__fact">Заявку не оставляет до понедельника.</p>
+</div>
+<div class="team-card fade-up">
+<div class="team-card__photo">
+<img srcset="img/team-dilyara-400w.webp?v=130 400w, img/team-dilyara.webp?v=130 800w" src="img/team-dilyara.webp?v=130" alt="Диляра, документы F&F" width="112" height="112" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" decoding="async">
+<span class="team-card__initials u-hidden">Д</span>
+</div>
+<h3 class="team-card__name">Диляра</h3>
+<p class="team-card__role">Документы</p>
+<p class="team-card__fact">Пишет инструкцию, которую можно отдать сотруднику.</p>
+</div>
+<div class="team-card fade-up">
+<div class="team-card__photo">
+<img srcset="img/team-ruslan-400w.webp?v=130 400w, img/team-ruslan.webp?v=130 800w" src="img/team-ruslan.webp?v=130" alt="Руслан, главный инженер F&F" width="112" height="112" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" decoding="async">
+<span class="team-card__initials u-hidden">Р</span>
+</div>
+<h3 class="team-card__name">Руслан</h3>
+<p class="team-card__role">Главный инженер</p>
+<p class="team-card__fact">Пока остальные согласуют, он уже в серверной.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">FAQ</span>
+<h2 class="section__title reveal">Вопросы перед заявкой</h2>
+</div>
+<div class="faq__list fade-up">
+<details class="faq__item">
+<summary class="faq__question">Сколько это стоит и может ли цена вырасти?</summary>
+<p class="faq__answer">Абонентка — от 10 000 ₽/мес. Сервер под ключ — от 200 000 ₽. Разовые задачи — от 1 200 ₽. Цена фиксируется в договоре до старта. Не вырастет. <a href="prices.html" class="u-gold-underline">Тарифы →</a></p>
+</details>
+<details class="faq__item">
+  <summary class="faq__question">Что если результат не устроит?</summary>
+  <p class="faq__answer">Гарантия 6 месяцев — не заработало, исправим бесплатно. Можно отказаться с уведомлением за 30 дней. Без штрафов.</p>
+</details>
+
+<details class="faq__item">
+<summary class="faq__question">Как быстро вы отвечаете?</summary>
+<p class="faq__answer">15 минут в рабочее время. Авария — выезд в день обращения. SLA 99,5% закреплён в договоре. <a href="incidents/incident.html" class="u-gold-underline">Аварийный выезд →</a></p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Какая гарантия на работы?</summary>
+<p class="faq__answer">6 месяцев на все работы. Не заработало — исправим бесплатно. Договор, акт, чек, безнал для ИП/ООО. <a href="company/trust.html" class="u-gold-underline">Доверие →</a></p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Что выгоднее — штатный сисадмин или абонентка?</summary>
+<p class="faq__answer">Штатный — 1,4–1,9 млн ₽/год. Абонентка F&F — от 120 000 ₽/год. Экономия до 80%. Команда 4+ вместо одного человека. <a href="prices.html" class="u-gold-underline">Сравнить →</a></p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Что входит в обслуживание?</summary>
+<p class="faq__answer">Мониторинг 24/7, реакция 15 мин, SLA 99,5%, консультации, удалённая поддержка, бэкапы, антивирус. Выезд, серверы, ЭЦП — отдельно. <a href="support.html" class="u-gold-underline">Что входит →</a></p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Что будет после заявки?</summary>
+<p class="faq__answer">Уточним задачу → дадим смету и сроки → согласование → договор и SLA. Ответ за 15 минут. Без обязательств. <a href="contacts.html" class="u-gold-underline">Оставить заявку →</a></p>
+</details>
+<details class="faq__item">
+<summary class="faq__question">Работаете ли только по Казани или шире?</summary>
+<p class="faq__answer">Казань — выезд по городу и Татарстану. Россия — удалённая поддержка с тем же SLA. Челны, Нижнекамск, Альметьевск, Зеленодольск — по согласованию. <a href="contacts.html" class="u-gold-underline">Контакты →</a></p>
+</details>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="process">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Процесс</span>
+      <h2 class="section__title reveal">Как мы работаем</h2>
+      <p class="section__subtitle reveal">Прозрачный процесс от заявки до результата. Без сюрпризов и скрытых платежей.</p>
+    </div>
+    <div class="services__grid fade-up">
+      <div class="card"><h3 class="service-card__title">1. Заявка и диагностика</h3><p class="service-card__text">Вы описываете задачу — мы проводим бесплатную диагностику и предлагаем решение с точной сметой.</p></div>
+      <div class="card"><h3 class="service-card__title">2. Договор и сроки</h3><p class="service-card__text">Фиксируем объём работ, сроки и стоимость в договоре. Без скрытых платежей.</p></div>
+      <div class="card"><h3 class="service-card__title">3. Выполнение</h3><p class="service-card__text">Выполняем работы в согласованные сроки. Держим вас в курсе на каждом этапе.</p></div>
+      <div class="card"><h3 class="service-card__title">4. Приёмка и гарантия</h3><p class="service-card__text">Передаём результат, подписываем акт. Гарантия 6 месяцев на все работы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="faq">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">FAQ</span>
+      <h2 class="section__title reveal">Частые вопросы</h2>
+    </div>
+    <div class="faq__list fade-up">
+      <details class="faq__item">
+        <summary class="faq__question">Сколько стоит IT-аутсорсинг в Казани?</summary>
+        <p class="faq__answer">От 10 000 ₽/мес для офиса 10–15 человек. Рыночная цена в Казани — 8 000–25 000 ₽/мес. F&F: мониторинг 24/7, SLA 99,5%, реакция 15 мин. <a href="prices.html" class="u-gold-underline">Тарифы →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Вы маленькая компания? Справитесь?</summary>
+        <p class="faq__answer">Команда 4+ специалистов. SLA 99,5%. Гарантия 6 месяцев. Мы не держим заложников — документация и доступы передаются.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Чем F&F отличается от штатного сисадмина?</summary>
+        <p class="faq__answer">Команда из 4+ специалистов вместо одного человека. Экономия до 80% (1.6–1.9 млн ₽/год vs от 120 000 ₽/год). Нет зависимости от одного человека. <a href="compare/ff-vs-staff-2026.html" class="u-gold-underline">Сравнение →</a> <a href="compare/staff-sysadmin-cost.html" class="u-gold-underline">TCO штатного →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Как быстро реагируете на аварию?</summary>
+        <p class="faq__answer">15 минут в рабочее время, выезд в день обращения. F&F: приоритет аварийным заявкам, SLA 99,5%. <a href="incidents/incident.html" class="u-gold-underline">Аварийный выезд →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Есть ли договор и гарантия?</summary>
+        <p class="faq__answer">Да, договор с SLA и гарантией 6 месяцев на все работы. F&F: акт, чек, безнал для ИП/ООО. <a href="legal/terms.html" class="u-gold-underline">Реквизиты →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Можно ли отказаться от обслуживания?</summary>
+        <p class="faq__answer">Да, с уведомлением за 30 дней. Без штрафов, передаём документацию и доступы. <a href="cases.html" class="u-gold-underline">Кейсы →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Будут ли скрытые доплаты?</summary>
+        <p class="faq__answer">Нет. Цена фиксируется в договоре. Что входит и что не входит — прописано. Минимум по договору — 10 000 ₽/мес. Никаких скрытых платежей. <a href="prices.html" class="u-gold-underline">Тарифы →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Можно ли начать с малого?</summary>
+        <p class="faq__answer">Да. Тариф «За заказ» — от 1 200 ₽ за разовую задачу. Без обязательств. Если проблемы повторяются — переходите на абонентку. <a href="prices.html#calculator" class="u-gold-underline">Рассчитать →</a></p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__question">Где вы работаете?</summary>
+        <p class="faq__answer">Казань — выезд по городу и Татарстану. Россия — удалённая поддержка с тем же SLA и регламентом. Выезд по Казани в день обращения при аварии.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section reveal">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Цифры</span>
+      <h2 class="section__title reveal">Результаты в цифрах</h2>
+      <p class="section__subtitle reveal">Реальные метрики нашей работы с клиентами в городе и по России.</p>
+    </div>
+    <div class="services__grid fade-up">
+      <div class="card"><h3 class="service-card__title">99,5%</h3><p class="service-card__text">Uptime серверов наших клиентов за последний год.</p></div>
+      <div class="card"><h3 class="service-card__title">15 мин</h3><p class="service-card__text">Среднее время реакции на инцидент в рабочее время.</p></div>
+      <div class="card"><h3 class="service-card__title">6 месяцев</h3><p class="service-card__text">Гарантия на все выполненные работы.</p></div>
+      <div class="card"><h3 class="service-card__title">40%</h3><p class="service-card__text">Экономия по сравнению со штатным сисадмином.</p></div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="section reveal u-pt-0" aria-label="Нам доверяют">
+    <div class="container">
+      <div class="section__head fade-up reveal">
+        <span class="section__label reveal">Доверие</span>
+        <h2 class="section__title reveal">Нам доверяют</h2>
+      </div>
+      <div class="u-flex u-flex-gap12-py12 u-flex-wrap u-justify-center">
+        <span class="u-card-pad20">Производство, 40 человек</span>
+        <span class="u-card-pad20">Клиника, 25 человек</span>
+        <span class="u-card-pad20">Розница, 15 точек</span>
+        <span class="u-card-pad20">Логистика, 60 человек</span>
+        <span class="u-card-pad20">Строительство, 80 человек</span>
+      </div>
+      <p class="u-text-13-2 u-center-mt20">Мы не держим заложников: клиент может уйти в любой момент. Без штрафов. Передаём документацию и доступы.</p>
+      <p class="u-text-13-2 u-center-mt20">Логотипы клиентов будут добавлены после получения разрешений.</p>
+    </div>
+  </section>
+
+</main>
+
+<section class="section reveal">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Метрики</span>
+      <h2 class="section__title reveal">Что показывают наши цифры</h2>
+      <p class="section__subtitle reveal">Честный срез на основе типичных результатов IT-аутсорсинга для офисов 15–40 человек .</p>
+    </div>
+    <div class="services__grid fade-up">
+      <div class="card"><h3 class="service-card__title">15 мин</h3><p class="service-card__text">Среднее время реакции на инцидент в рабочее время. Аварийные выезды — приоритет.</p></div>
+      <div class="card"><h3 class="service-card__title">&gt;90%</h3><p class="service-card__text">Клиентов остаются с нами больше года. Долгосрочные отношения — наш приоритет.</p></div>
+      <div class="card"><h3 class="service-card__title">до 80%</h3><p class="service-card__text">Типичная экономия относительно штатного сисадмина (1.6–1.9 млн ₽/год vs от 120 000 ₽/год).</p></div>
+      <div class="card"><h3 class="service-card__title">1 раз/мес</h3><p class="service-card__text">Мы реально проверяем восстановление из бэкапа. Тест раз в месяц, отчёт клиенту.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section reveal">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Доверие</span>
+      <h2 class="section__title reveal">Нам доверяют</h2>
+      <p class="section__subtitle reveal">Реальные клиенты, реальные результаты. Без «100%» и «лучшие в мире».</p>
+    </div>
+    <div class="services__grid fade-up">
+      <div class="card"><h3 class="service-card__title">15+ клиентов</h3><p class="service-card__text">Обслуживаем офисы 10–50 человек в Казани и по России.</p></div>
+      <div class="card"><h3 class="service-card__title">99,5% uptime</h3><p class="service-card__text">Серверы клиентов работают без простоев. Мониторинг 24/7.</p></div>
+      <div class="card"><h3 class="service-card__title">6 месяцев гарантия</h3><p class="service-card__text">Не заработало — исправим бесплатно. Отвечаем за результат.</p></div>
+      <div class="card"><h3 class="service-card__title">4+ специалиста</h3><p class="service-card__text">Команда вместо одного сисадмина. Без отпусков и больничных.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section reveal">
+  <div class="container">
+    <div class="section__head fade-up reveal">
+      <span class="section__label reveal">Доверие</span>
+      <h2 class="section__title reveal">Почему нам можно доверять</h2>
+      <p class="section__subtitle reveal">Без воды и без «мы лучшие». Конкретные факты.</p>
+    </div>
+    <div class="services__grid fade-up">
+      <div class="card">
+        <h3 class="service-card__title">Реальные люди</h3>
+        <p class="service-card__text">Булат Фатхутдинов — технический директор, 10+ лет опыта. Сертификаты КриптоПро, ViPNet. Клиент знает, кто приедет и кто ответит на звонок.</p>
+      </div>
+      <div class="card">
+        <h3 class="service-card__title">Официальный статус</h3>
+        <p class="service-card__text">Самозанятый: Фатхутдинов Булат Ильмирович, ИНН 165506822661, ОКВЭД 62.09. Договор, акт, чек — полный пакет документов.</p>
+      </div>
+      <div class="card">
+        <h3 class="service-card__title">Договор и SLA до начала работ</h3>
+        <p class="service-card__text">Фиксируем объём, сроки, стоимость и время реакции до старта. Никаких скрытых платежей.</p>
+      </div>
+      <div class="card">
+        <h3 class="service-card__title">Документация и доступы — у клиента</h3>
+        <p class="service-card__text">Пароли, схемы, документация остаются у вас. После работ удаляем все доступы и следы.</p>
+      </div>
+      <div class="card">
+        <h3 class="service-card__title">Конкретные цифры</h3>
+        <p class="service-card__text">15+ клиентов, 99,5% uptime, гарантия 6 месяцев, команда из 4+ специалистов.</p>
+      </div>
+      <div class="card">
+        <h3 class="service-card__title">Как проверить</h3>
+        <p class="service-card__text">Позвоните +7 (901) 265-52-52, запросите реквизиты, посмотрите кейсы. Мы открыты к проверке.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section reveal u-pt-0">
+  <div class="container">
+    <div class="card u-inl2-13076d">
+      <p class="service-card__text u-inl2-15b292">Следующий шаг</p>
+      <p class="service-card__text u-inl2-c9d437">Не нашли ответ? Напишите в Telegram или рассчитайте стоимость.</p>
+      <div class="u-flex">
+        <a href="https://t.me/FathFed" class="btn btn--primary" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a href="prices.html" class="btn btn--ghost">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+<div class="container footer__inner">
+  <div class="footer__col footer__brand">
+    <div class="footer__brand-row">
+      <a href="index.html" class="logo">
+        <img src="img/logo-44.webp?v=130" alt="F&F" class="logo__img" width="44" height="44" loading="lazy" decoding="async">
+      </a>
+      <span class="logo__brand">F&amp;F</span>
+    </div>
+    <p class="footer__slogan">Ваш IT-контур под контролем. Серверы, инфраструктура, безопасность, криптография. Казань и вся Россия.</p>
+  </div>
+  <div class="footer__col">
+    <div class="footer__links-wrap">
+      <div class="footer__subcol">
+        <a href="services.html" class="footer__heading footer__heading--link">Услуги</a>
+        <a href="servers.html">Серверы под ключ</a>
+        <a href="infrastructure/infrastructure.html">IT-инфраструктура</a>
+        <a href="security/security.html">Безопасность</a>
+        <a href="support.html">Обслуживание</a>
+      </div>
+      <div class="footer__subcol">
+        <a href="cases.html">Кейсы</a>
+        <a href="blog.html">Блог</a>
+        <a href="company/about.html">О компании</a>
+        <a href="incidents/incident.html">Авария</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__col">
+    <p class="footer__heading">Контакты</p>
+    <a href="tel:+79012655252">+7 (901) 265-52-52</a>
+    <a href="mailto:FathFed@yandex.ru">FathFed@yandex.ru</a>
+    <a href="https://t.me/FathFed" target="_blank" rel="noopener">Telegram @FathFed</a>
+    <a href="https://max.ru/se14849309_bot" target="_blank" rel="noopener">MAX: FathFed</a>
+  </div>
+</div>
+<div class="container">
+  <div class="footer__bottom">
+    <div class="footer__legal">Самозанятый: Фатхутдинов Булат Ильмирович · ИНН: 165506822661<br>Деятельность: услуги по установке и настройке ПО · ОКВЭД 62.09</div>
+    <div class="footer__copy">© 2026 F&F. Все права защищены.</div>
+    <div class="footer__region">Работаем по Казани и всей России · Удалённо и с выездом</div>
+    <div class="footer__links">
+      <a href="legal/privacy.html" class="btn btn--ghost btn--sm">Политика ПДн</a>
+      <a href="legal/cookie.html" class="btn btn--ghost btn--sm">Cookie</a>
+      <a href="legal/terms.html" class="btn btn--ghost btn--sm">Условия пользования</a>
+      <a href="legal/consent.html" class="btn btn--ghost btn--sm">Согласие на ПДн</a>
+      <a href="terms-of-work.html" class="btn btn--ghost btn--sm">Условия работы</a>
+    </div>
+  </div>
+</div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Наверх">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+<polyline points="18 15 12 9 6 15"/>
+</svg>
+</button>
+<script src="js/search.js" defer></script>
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+<a href="tel:+79012655252" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--call">Позвонить</a>
+<a href="prices.html#calculator" class="mobile-bottom-bar__btn mobile-bottom-bar__btn--calc">Рассчитать стоимость</a>
+</div>
+<noscript>
+<div class="u-card-center">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" class="u-gold">контакты</a>.</div>
+</noscript>
+<script src="js/script.js?v=130" defer></script>
+</body>
+</html>
