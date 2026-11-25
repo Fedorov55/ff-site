@@ -95,16 +95,11 @@ ssh.close()
 ssh2 = paramiko.SSHClient()
 ssh2.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh2.connect(HOST, port=PORT, username='odmin', password=SUDO_PASS, timeout=15)
-# step 1: remove old backup, move current to backup
-stdin, stdout, stderr = ssh2.exec_command(
-    'echo "%s" | sudo -S rm -rf %s' % (SUDO_PASS, BACKUP))
-stdout.read()
-stdin, stdout, stderr = ssh2.exec_command(
-    'echo "%s" | sudo -S mv %s %s' % (SUDO_PASS, REMOTE_ROOT, BACKUP))
-print('move current->backup:', stdout.read().decode('utf-8','ignore').strip(), stderr.read().decode('utf-8','ignore').strip())
+# step 1: remove old backup, move current to backup (ignore if current doesn't exist)
+ssh2.exec_command('echo "%s" | sudo -S rm -rf %s' % (SUDO_PASS, BACKUP))[1].read()
+ssh2.exec_command('echo "%s" | sudo -S mv %s %s 2>/dev/null || true' % (SUDO_PASS, REMOTE_ROOT, BACKUP))[1].read()
 # step 2: move staging to live
-stdin, stdout, stderr = ssh2.exec_command(
-    'echo "%s" | sudo -S mv %s %s' % (SUDO_PASS, STAGING, REMOTE_ROOT))
+stdin, stdout, stderr = ssh2.exec_command('echo "%s" | sudo -S mv %s %s' % (SUDO_PASS, STAGING, REMOTE_ROOT))
 print('move staging->live:', stdout.read().decode('utf-8','ignore').strip(), stderr.read().decode('utf-8','ignore').strip())
 ssh2.close()
 
