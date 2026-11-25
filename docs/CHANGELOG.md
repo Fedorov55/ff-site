@@ -290,3 +290,4 @@
 - P1-16: prices.html already contains "Что входит и что не входит в поддержку" and "Что входит и что оплачивается отдельно" sections with in/out lists (verified).
 - Competitive SEO analysis: docs/COMPETITOR_SEO.md — 11 competitors on SERP with pricing, SLA, schema comparison and recommendations.
 - Added landing pages for Nizhnekamsk (nizhnekamsk.html) and Zelendolsk (zelendolsk.html) with cases sections; regenerated sitemap.xml (166 URLs).
+- Individual Review schema: added 7 Review entries to Organization schema on company/testimonials.html.
