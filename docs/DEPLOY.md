@@ -39,6 +39,7 @@ python scripts/deploy-test.py
 Управление сервером (SSH, порт 2222, логин odmin):
 - Перезапуск nginx: `echo "!1assert!!" | sudo -S systemctl reload nginx`
 - Просмотр логов: `sudo tail -f /var/log/nginx/access.log`
+- Конфиг nginx: `/etc/nginx/sites-enabled/test-site` (root /var/www/test-site, error_page 404 /404.html)
 
 ## Деплой в репозиторий
 
