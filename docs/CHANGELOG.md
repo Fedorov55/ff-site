@@ -289,3 +289,4 @@
 - P1-15: added FAQ "Что если результат не устроит?" to 124 pages with FAQ blocks.
 - P1-16: prices.html already contains "Что входит и что не входит в поддержку" and "Что входит и что оплачивается отдельно" sections with in/out lists (verified).
 - Competitive SEO analysis: docs/COMPETITOR_SEO.md — 11 competitors on SERP with pricing, SLA, schema comparison and recommendations.
+- Added landing pages for Nizhnekamsk (nizhnekamsk.html) and Zelendolsk (zelendolsk.html) with cases sections; regenerated sitemap.xml (166 URLs).
