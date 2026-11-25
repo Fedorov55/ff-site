@@ -75,3 +75,21 @@ https://fedorov55.github.io/ff-site/audits/audit.html
 https://fedorov55.github.io/ff-site/audits/security-audit.html
 https://fedorov55.github.io/ff-site/audits/backup-checklist.html
 
+## Посадочные под запросы
+- https://fedorov55.github.io/ff-site/sistemnyy-administrator-kazan.html — Системный администратор в Казани
+- https://fedorov55.github.io/ff-site/obsluzhivanie-kompyuterov-kazan.html — Обслуживание компьютеров в Казани
+- https://fedorov55.github.io/ff-site/udalennyy-sisadmin-kazan.html — Удалённый сисадмин в Казани
+- https://fedorov55.github.io/ff-site/obsluzhivanie-serverov-kazan.html — Обслуживание серверов в Казани
+- https://fedorov55.github.io/ff-site/it-podderzhka-kazan.html — IT-поддержка в Казани
+- https://fedorov55.github.io/ff-site/monitoring-serverov-kazan.html — Мониторинг серверов в Казани
+- https://fedorov55.github.io/ff-site/rezervnoe-kopirovanie-kazan.html — Резервное копирование в Казани
+- https://fedorov55.github.io/ff-site/vosstanovlenie-dannykh-kazan.html — Восстановление данных в Казани
+- https://fedorov55.github.io/ff-site/kompyuternaya-pomoshch-kazan.html — Компьютерная помощь в Казани
+- https://fedorov55.github.io/ff-site/nastroyka-seti-ofisa-kazan.html — Настройка сети офиса в Казани
+- https://fedorov55.github.io/ff-site/it-autsorsing-malyy-biznes.html — IT-аутсорсинг для малого бизнеса
+
+## Посадочные по городам
+- https://fedorov55.github.io/ff-site/chelny.html — Набережные Челны
+- https://fedorov55.github.io/ff-site/almet.html — Альметьевск
+- https://fedorov55.github.io/ff-site/nizhnekamsk.html — Нижнекамск
+- https://fedorov55.github.io/ff-site/zelendolsk.html — Зеленодольск
