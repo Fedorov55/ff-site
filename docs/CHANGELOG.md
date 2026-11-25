@@ -1,5 +1,17 @@
 # CHANGELOG.md — F&F SEO Project
 
+## [2026-11-25] — Full Site Audit (technical/perf/a11y/SEO)
+### Added
+- docs/AUDIT_2026-11-25.md with full audit: Lighthouse (mobile 98/91/100/100, desktop 76/96/100/100), AccessLumens 94/100, Frontend Checklist (295 checks, 12 issues), OpenSEO site audit (50 pages, 18 issues), Search Console (0 clicks/impressions), backlinks (0 domains).
+### Found (P0)
+- 15 landing/city pages canonicalize to homepage (self-canonical needed).
+- 16 pages share one meta description.
+- Desktop CLS 0.996 (skip-link/main).
+- aria-prohibited-attr on .quiz__progress.
+### Validated
+- npm run audit: pass; htmlhint: 1 expected error (Google verification file).
+- 178/180 pages with JSON-LD; all 475 images have alt.
+
 ## [2026-10-31] — Phase 0: SEO Audit
 ### Added
 - AUDIT.md with full technical and content audit results.
