@@ -303,6 +303,7 @@
 - Competitive SEO analysis: docs/COMPETITOR_SEO.md — 11 competitors on SERP with pricing, SLA, schema comparison and recommendations.
 - Cannibalization audit: docs/CANNIBALIZATION_AUDIT.md — fixed exact duplicate title (services/mail.html vs infrastructure/mail-server.html). Other clusters analyzed: no full duplicates found (content differs by intent).
 - Unified numbers per ff-services skill: savings "до 80%" → "до 40–80%" (53 files); per-PC price "от 500 ₽/ПК" → "от 900 ₽/ПК" (4 files). Guarantee 6 months confirmed (30 days only in cancellation-notice context).
+- Deduplicated FAQ sections on index.html, support.html, servers.html: merged overlapping questions, removed exact duplicates. 0 remaining pages with duplicate FAQ questions across sections.
 - Legal risk: "99% остаются" → "95% остаются" on index.html brandbar; added "(по расчётам)" qualifier to savings claim on index.html. "100% uptime" → "99,5% uptime" on vybor-podryadchika.html.
 - Added landing pages for Nizhnekamsk (nizhnekamsk.html) and Zelendolsk (zelendolsk.html) with cases sections; regenerated sitemap.xml (166 URLs).
 - SEO Phase 1: audit of 170 pages vs ~40 queries; title/meta improvements on 7 pages; docs/SEO_PHASE1_AUDIT.md.
