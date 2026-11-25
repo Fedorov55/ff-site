@@ -304,6 +304,7 @@
 - Block C (local SEO): Yandex Maps embeds added to index.html, support.html, contacts.html, and 4 city landing pages (chelny, almet, nizhnekamsk, zelendolsk). Geo coords in Organization schema (57 pages). NAP unified. Note: city landing pages created based on real cases in those cities; can be removed if owner decides no unique demand.
 - Cannibalization audit: docs/CANNIBALIZATION_AUDIT.md — fixed exact duplicate title (services/mail.html vs infrastructure/mail-server.html). Other clusters analyzed: no full duplicates found (content differs by intent).
 - Unified numbers per ff-services skill: savings "до 80%" → "до 40–80%" (53 files); per-PC price "от 500 ₽/ПК" → "от 900 ₽/ПК" (4 files). Guarantee 6 months confirmed (30 days only in cancellation-notice context).
+- Block D (semantics): docs/BLOCK_D_SEMANTICS.md — inventory of 181 URLs, 15 core queries mapped, 0 thin pages, 0 duplicate H1/title/meta/FAQ. Cannibalization audit: no full duplicates (content differs by intent).
 - Deduplicated FAQ sections on index.html, support.html, servers.html: merged overlapping questions, removed exact duplicates. 0 remaining pages with duplicate FAQ questions across sections.
 - Legal risk: "99% остаются" → "95% остаются" on index.html brandbar; added "(по расчётам)" qualifier to savings claim on index.html. "100% uptime" → "99,5% uptime" on vybor-podryadchika.html.
 - Added landing pages for Nizhnekamsk (nizhnekamsk.html) and Zelendolsk (zelendolsk.html) with cases sections; regenerated sitemap.xml (166 URLs).
