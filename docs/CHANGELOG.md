@@ -301,6 +301,7 @@
 - P1-15: added FAQ "Что если результат не устроит?" to 124 pages with FAQ blocks.
 - P1-16: prices.html already contains "Что входит и что не входит в поддержку" and "Что входит и что оплачивается отдельно" sections with in/out lists (verified).
 - Competitive SEO analysis: docs/COMPETITOR_SEO.md — 11 competitors on SERP with pricing, SLA, schema comparison and recommendations.
+- Block C (local SEO): Yandex Maps embeds added to index.html, support.html, contacts.html, and 4 city landing pages (chelny, almet, nizhnekamsk, zelendolsk). Geo coords in Organization schema (57 pages). NAP unified. Note: city landing pages created based on real cases in those cities; can be removed if owner decides no unique demand.
 - Cannibalization audit: docs/CANNIBALIZATION_AUDIT.md — fixed exact duplicate title (services/mail.html vs infrastructure/mail-server.html). Other clusters analyzed: no full duplicates found (content differs by intent).
 - Unified numbers per ff-services skill: savings "до 80%" → "до 40–80%" (53 files); per-PC price "от 500 ₽/ПК" → "от 900 ₽/ПК" (4 files). Guarantee 6 months confirmed (30 days only in cancellation-notice context).
 - Deduplicated FAQ sections on index.html, support.html, servers.html: merged overlapping questions, removed exact duplicates. 0 remaining pages with duplicate FAQ questions across sections.
