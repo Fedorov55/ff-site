@@ -293,3 +293,4 @@
 - SEO Phase 1: audit of 170 pages vs ~40 queries; title/meta improvements on 7 pages; docs/SEO_PHASE1_AUDIT.md.
 - SEO Phase 2: created 10 new landing pages (sistemnyy-administrator, obsluzhivanie-kompyuterov, udalennyy-sisadmin, obsluzhivanie-serverov, it-podderzhka, monitoring-serverov, rezervnoe-kopirovanie, vosstanovlenie-dannykh, kompyuternaya-pomoshch, nastroyka-seti-ofisa, it-autsorsing-malyy-biznes); sitemap 177 URLs.
 - Individual Review schema: added 7 Review entries to Organization schema on company/testimonials.html.
+- Support.html: fixed color-contrast on tariff__badge (color: var(--bg) -> #0A0D14 on gold background). Lighthouse mobile a11y 96 -> expected 100 after cache refresh.
