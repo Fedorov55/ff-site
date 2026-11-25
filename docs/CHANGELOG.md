@@ -311,3 +311,4 @@
 - Individual Review schema: added 7 Review entries to Organization schema on company/testimonials.html.
 - Support.html: fixed color-contrast on tariff__badge (color: var(--bg) -> #0A0D14 on gold background). Lighthouse mobile a11y 96 -> expected 100 after cache refresh.
 - Canonical URLs fixed on 17 adapted pages (was pointing to site root or source page). Tabindex -1 on main (180 pages). Geo coords in Organization schema (57 pages). Trust profiles section on trust.html.
+- A11y: fixed aria-prohibited-attr on quiz__progress (index.html), color-contrast light theme (--text-on-gold #FFFFFF->#17130a), skip-link (tabindex=-1 on main, 180 pages).
