@@ -283,7 +283,6 @@
 - Rich Results Test: validated all 684 JSON-LD blocks across 168 pages — 0 errors. Types: Article, BreadcrumbList, CollectionPage, FAQPage, HowTo, Organization, Service, WebPage. FAQPage mainEntity and AggregateRating structurally valid.
 - Lighthouse (after font subsetting/CWV fixes): mobile perf 98, LCP 978ms, CLS 0, TBT 45ms, a11y 100, SEO 100, BP 100. Desktop perf 76, CLS 0.996 (terminal animation). Forced reflow in script.js (review slider) noted.
 - Cross-browser: added -webkit-backdrop-filter prefixes to all backdrop-filter rules in css/style.css, css/critical.css, css/components.css. Fonts/images already modern (WebP, woff2). No optional chaining/nullish coalescing in JS (ES2017 baseline).
-- Fix: restored blocking style.css link (previously removed async media=print links had also removed the only blocking style.css on some pages, causing FOUC). All CSS now render-blocking + noscript fallback.
 - Font subsetting: subset all 7 woff2 fonts to the 279 unique characters used on the site via fontTools (pyftsubset). Sizes reduced ~35% (28KB→18-19KB Inter, 24KB→19-20KB JetBrains Mono). npm run build ok.
 - P1-33: added "Нам доверяют" section with anonymized client-segment chips on index.html, cases.html, company/testimonials.html (real logos pending client permission).
 - P1-15: added FAQ "Что если результат не устроит?" to 124 pages with FAQ blocks.
