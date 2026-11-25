@@ -1,1063 +1,1069 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ff-it.ru/</loc>
+    <loc>https://fedorov55.github.io/ff-site/</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/ai/ai-docs.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/ai/ai-docs.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/ai/ai-telegram.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/ai/ai-telegram.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/ai/ai.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/ai/ai.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/almet.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/almet.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/articles.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/ad-setup.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/migration-2012.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/ransomware-protection.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/server-1c-saturday.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/server-vs-cloud.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/articles/tco-calc.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/audits/audit.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/audits/backup-checklist.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/audits/security-audit.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/152fz.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/ad-setup.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/3-year-tco-comparison.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/migration-2012.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/abonentka-chto-vhodit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/ransomware-protection.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/ad-small-business.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/server-1c-saturday.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/admin-quit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/server-vs-cloud.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/backup-3-2-1.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/articles/tco-calc.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/backup-check-15min.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/audit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/backup-not-restoring.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/backup-checklist.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/backup-strategy.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/audits/security-audit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/blog/cctv-poe.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/cost-of-downtime.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/cryptopro-vipnet.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/ecp-guide.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/ecp-lost.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/fines-2026.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/how-to-choose.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/it-autsorsing-kazan-guide.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/it-clinics-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/it-horeca-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/it-outsourcing-cost-kazan-2026.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/it-retail-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/mail-server.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/office-move.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/pochemu-1c-tormozit.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/rds-remote.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/refurbished.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-1c-saturday.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-1c.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-cloud-vs-local.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-down-saturday.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-office.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-pod-klyuch-kazan-guide.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/server-upal-subbotu-plan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sisadmin-cost-2026.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sisadmin-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sisadmin-uvolilsya.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sisadmin-vs-abonent.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sks-ports.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/skud-office.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/sla-995.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/tco-calc.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/transition-to-abonent.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/veracrypt.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/vybor-servera-ofisa.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/what-included.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/blog/wifi6-office.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/cases.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/1c-migration.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/152fz.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/backup-recovery.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/3-year-tco-comparison.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-incident-saturday.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/abonentka-chto-vhodit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-security-nabchelny.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/ad-small-business.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-security-nizhnekamsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/admin-quit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-server-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/backup-3-2-1.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-servers-almetyevsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/backup-check-15min.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-servers-innopolis.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/backup-not-restoring.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-servers-nabchelny.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/backup-strategy.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-support-almetyevsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/cctv-poe.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-support-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/cost-of-downtime.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-support-nizhnekamsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/cryptopro-vipnet.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-support-zelendolsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/ecp-guide.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/case-vs-staff.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/ecp-lost.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/ecp-eis.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/fines-2026.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/ecp-nizhnekamsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/how-to-choose.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/import-substitution-nch.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-autsorsing-kazan-guide.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/office-move-zelendolsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-clinics-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/office-network.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-horeca-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/office-support.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-outsourcing-cost-kazan-2026.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/ransomware-recovery.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/it-retail-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/server-turnkey.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/mail-server.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/sql-optimization-almetyevsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/office-move.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/tatar-septic.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/pochemu-1c-tormozit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/tobacco.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/rds-remote.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/cases/vipnet-offices.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/refurbished.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/chelny.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-1c-saturday.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/about.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-1c.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/partners.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-cloud-vs-local.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/team.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-down-saturday.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/testimonials.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-office.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/trust.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-pod-klyuch-kazan-guide.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/company/visit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/server-upal-subbotu-plan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/compare/compare-freelance.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/sisadmin-cost-2026.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/compare/compare-integrator.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/sisadmin-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/compare/compare.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/sisadmin-uvolilsya.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/compare/ff-vs-staff-2026.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/sisadmin-vs-abonent.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/compare/staff-sysadmin-cost.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/sks-ports.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/contacts.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/blog/skud-office.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/sla-995.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/tco-calc.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/transition-to-abonent.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/veracrypt.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/vybor-servera-ofisa.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/what-included.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/blog/wifi6-office.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/cases.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/googleab4f84957a2713c2.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/1c-migration.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/incidents/incident.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/backup-recovery.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/industries/industry-accounting.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-incident-saturday.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-bc.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-security-nabchelny.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-clinics.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-security-nizhnekamsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-cowork.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-server-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-franchise.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-almetyevsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-horeca-dealers.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-innopolis.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-horeca.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-servers-nabchelny.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-itpark.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-almetyevsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-logistics.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-manufacturing.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-nizhnekamsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-realty.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-support-zelendolsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-retail.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/case-vs-staff.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/industries/industry-web.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/ecp-eis.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/cctv.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/ecp-nizhnekamsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/infrastructure.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/import-substitution-nch.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/mail-server.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/office-move-zelendolsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/office-move.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/office-network.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/pbx.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/office-support.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/print-management.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/ransomware-recovery.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/printers.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/server-turnkey.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/sks.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/sql-optimization-almetyevsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/vpn.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/tatar-septic.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/vybor-podryadchika.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/tobacco.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/infrastructure/wifi-setup.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/cases/vipnet-offices.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/it-autsorsing-malyy-biznes.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/chelny.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/it-podderzhka-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/about.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/kompyuternaya-pomoshch-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/partners.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/leads/lead-audit.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/team.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/leads/lead-ecp.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/testimonials.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/leads/lead-network-move.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/trust.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/leads/lead-server-1c.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/company/visit.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/legal/consent.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare-freelance.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/legal/cookie.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare-integrator.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/legal/privacy.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/compare.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/legal/terms.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/ff-vs-staff-2026.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/monitoring-serverov-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/compare/staff-sysadmin-cost.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/nastroyka-seti-ofisa-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/nizhnekamsk.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/obsluzhivanie-kompyuterov-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/obsluzhivanie-serverov-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-1c-slow.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-admin-left.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-astra.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-new-employee.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-no-backup.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-no-internet.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/pain/pain-server-down.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/prices.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/contacts.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/resources/it-budget.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/googleab4f84957a2713c2.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/resources/methodology.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/incidents/incident.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/resources/research-msb.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/resources/research.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/rezervnoe-kopirovanie-kazan.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/security/crypto.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/security/security.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/server/server-1c-saturday.html</loc>
-    <lastmod>2026-11-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ff-it.ru/servers.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-accounting.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-bc.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-clinics.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-cowork.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-franchise.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-horeca-dealers.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-horeca.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-itpark.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-logistics.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-manufacturing.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-realty.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-retail.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/industries/industry-web.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/cctv.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/infrastructure.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/mail-server.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/office-move.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/pbx.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/print-management.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/printers.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/sks.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/vpn.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/vybor-podryadchika.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/infrastructure/wifi-setup.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/it-autsorsing-malyy-biznes.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/it-podderzhka-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/kompyuternaya-pomoshch-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-audit.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-ecp.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-network-move.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/leads/lead-server-1c.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/legal/consent.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/legal/cookie.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/legal/privacy.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/legal/terms.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/monitoring-serverov-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/nastroyka-seti-ofisa-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/nizhnekamsk.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/obsluzhivanie-kompyuterov-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/obsluzhivanie-serverov-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-1c-slow.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-admin-left.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-astra.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-new-employee.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-no-backup.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-no-internet.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/pain/pain-server-down.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/press.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/prices.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/152fz.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/resources/it-budget.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/crypto-gos.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/resources/methodology.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/import.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/resources/research-msb.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/it-support.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/resources/research.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/mail.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/rezervnoe-kopirovanie-kazan.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/server-1c.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/security/crypto.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/services/vipnet-veracrypt.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/security/security.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/sistemnyy-administrator-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/server/server-1c-saturday.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/support.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/servers.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/sysadmin-cost-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/services.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/services/152fz.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/terms-of-work.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/services/crypto-gos.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/udalennyy-sisadmin-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/services/import.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/vosstanovlenie-dannykh-kazan.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/services/it-support.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ff-it.ru/zelendolsk.html</loc>
+    <loc>https://fedorov55.github.io/ff-site/services/mail.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/services/server-1c.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/services/vipnet-veracrypt.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/sistemnyy-administrator-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/support.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/sysadmin-cost-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/terms-of-work.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/udalennyy-sisadmin-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/vosstanovlenie-dannykh-kazan.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedorov55.github.io/ff-site/zelendolsk.html</loc>
     <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
