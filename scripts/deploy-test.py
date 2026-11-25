@@ -61,4 +61,3 @@ sftp.close()
 ssh.close()
 print(f'uploaded: {uploaded} skipped: {skipped}')
 print('verify: http://92.255.199.90:8080/')
-"
