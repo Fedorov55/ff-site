@@ -290,4 +290,6 @@
 - P1-16: prices.html already contains "Что входит и что не входит в поддержку" and "Что входит и что оплачивается отдельно" sections with in/out lists (verified).
 - Competitive SEO analysis: docs/COMPETITOR_SEO.md — 11 competitors on SERP with pricing, SLA, schema comparison and recommendations.
 - Added landing pages for Nizhnekamsk (nizhnekamsk.html) and Zelendolsk (zelendolsk.html) with cases sections; regenerated sitemap.xml (166 URLs).
+- SEO Phase 1: audit of 170 pages vs ~40 queries; title/meta improvements on 7 pages; docs/SEO_PHASE1_AUDIT.md.
+- SEO Phase 2: created 10 new landing pages (sistemnyy-administrator, obsluzhivanie-kompyuterov, udalennyy-sisadmin, obsluzhivanie-serverov, it-podderzhka, monitoring-serverov, rezervnoe-kopirovanie, vosstanovlenie-dannykh, kompyuternaya-pomoshch, nastroyka-seti-ofisa, it-autsorsing-malyy-biznes); sitemap 177 URLs.
 - Individual Review schema: added 7 Review entries to Organization schema on company/testimonials.html.
