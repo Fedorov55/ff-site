@@ -310,3 +310,4 @@
 - SEO Phase 2: created 10 new landing pages (sistemnyy-administrator, obsluzhivanie-kompyuterov, udalennyy-sisadmin, obsluzhivanie-serverov, it-podderzhka, monitoring-serverov, rezervnoe-kopirovanie, vosstanovlenie-dannykh, kompyuternaya-pomoshch, nastroyka-seti-ofisa, it-autsorsing-malyy-biznes); sitemap 177 URLs.
 - Individual Review schema: added 7 Review entries to Organization schema on company/testimonials.html.
 - Support.html: fixed color-contrast on tariff__badge (color: var(--bg) -> #0A0D14 on gold background). Lighthouse mobile a11y 96 -> expected 100 after cache refresh.
+- Canonical URLs fixed on 17 adapted pages (was pointing to site root or source page). Tabindex -1 on main (180 pages). Geo coords in Organization schema (57 pages). Trust profiles section on trust.html.
