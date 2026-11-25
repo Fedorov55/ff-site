@@ -44,7 +44,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image:alt" content="F&F — IT-аутсорсинг Казань">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon-180.webp">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"F&F","url":"https://fedorov55.github.io/ff-site/","logo":"https://fedorov55.github.io/ff-site/img/logo.webp","image":"https://fedorov55.github.io/ff-site/img/og-preview.webp","telephone":"+79012655252","email":"FathFed@yandex.ru","areaServed":["Казань","Республика Татарстан","Россия"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"F&F","url":"https://fedorov55.github.io/ff-site/","logo":"https://fedorov55.github.io/ff-site/img/logo.webp","image":"https://fedorov55.github.io/ff-site/img/og-preview.webp","telephone":"+79012655252","email":"FathFed@yandex.ru","areaServed":["Казань","Республика Татарстан","Россия"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"7","bestRating":"5","worstRating":"1"}}</script>
 <link rel="preload" href="../js/script.js?v=130" as="script">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Как выбрать сервер для 1С","description":"Пошаговая инструкция по выбору сервера для 1С: память, диск, процессор.","step":[{"@type":"HowToStep","name":"Определите количество пользователей","text":"До 5 пользователей — 8 ГБ RAM, 10-20 — 16 ГБ, 20-40 — 32 ГБ."},{"@type":"HowToStep","name":"Выберите диск","text":"NVMe под базу данных, RAID 10 для надёжности."},{"@type":"HowToStep","name":"Учтите режим работы","text":"Файловый или клиент-серверный режим влияет на требования к RAM и диску."},{"@type":"HowToStep","name":"Проверьте терминальный доступ","text":"Если пользователи работают через RDP, добавьте запас по RAM."}]}</script>
 <link rel="alternate" type="application/rss+xml" title="F&F Блог" href="../rss.xml">
@@ -66,7 +66,7 @@
 <a href="../index.html" class="logo">
 <img src="../img/logo-44.webp?v=130" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager" decoding="async">
 <span class="logo__text-wrap">
-<span class="logo__brand">F&amp;F-IT</span>
+<span class="logo__brand">F&amp;F</span>
 
 </span>
 </a>
@@ -127,7 +127,7 @@
 </div>
 </div>
 <main id="main" class="site-main" role="main">
-<nav class="quick-nav" aria-label="Быстрая навигация"><a href="#prices">Цены</a><a href="#faq">FAQ</a><a href="../prices.html#calculator">Калькулятор</a><a href="#comparison">Сравнение</a><a href="#process">Процесс</a></nav>
+<nav class="quick-nav" aria-label="Быстрая навигация"><a href="../prices.html">Цены</a><a href="../prices.html#calculator">Калькулятор</a><a href="../compare/compare.html">Сравнение</a><a href="#process">Процесс</a></nav>
 
 <nav class="u-breadcrumb breadcrumbs" aria-label="Хлебные крошки" >
 <a href="../index.html" class="u-link-muted">Главная</a>
@@ -179,7 +179,7 @@
 <li>Тестовый контур — копия базы, а не «попробуем на рабочей».</li>
 </ul>
 <p class="article-note">Для 1С сначала считают сессии, потом берут RAM и NVMe, и только затем смотрят на процессор. Конфигурация на 10–15 пользователей с RAID 10 и 32 ГБ стоит 400 000–600 000 ₽ под ключ.</p>
-<h2>Как мы работаем по этой задаче</h2>
+<h2 id="process">Как мы работаем по этой задаче</h2>
 <p>Сначала — короткий аудит: снимаем метрики, опрашиваем сотрудников, фиксируем узкие места. Потом — спецификация с ценами и сроками. После согласования — монтаж, настройка, тестирование, документация. Клиент получает работающую систему и понятную схему, а не «мы всё сделали».</p>
 <p>Сопровождение — по договору: мониторинг, обновления, реакция от 15 минут. Если что-то ломается — мы уже знаем, где и почему, и чиним быстро.</p>
 <ul class="article-checklist">
@@ -303,7 +303,7 @@
       <a href="../index.html" class="logo">
         <img src="../img/logo-44.webp?v=130" alt="F&F" class="logo__img" width="44" height="44" loading="lazy" decoding="async">
       </a>
-      <span class="logo__brand">F&amp;F-IT</span>
+      <span class="logo__brand">F&amp;F</span>
     </div>
     <p class="footer__slogan">Ваш IT-контур под контролем. Серверы, инфраструктура, безопасность, криптография. Казань и вся Россия.</p>
   </div>
@@ -342,6 +342,8 @@
       <a href="../legal/privacy.html" class="btn btn--ghost btn--sm">Политика ПДн</a>
       <a href="../legal/cookie.html" class="btn btn--ghost btn--sm">Cookie</a>
       <a href="../legal/terms.html" class="btn btn--ghost btn--sm">Условия пользования</a>
+      <a href="../legal/consent.html" class="btn btn--ghost btn--sm">Согласие на ПДн</a>
+      <a href="../terms-of-work.html" class="btn btn--ghost btn--sm">Условия работы</a>
     </div>
   </div>
 </div>

@@ -30,7 +30,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/webp" href="../img/favicon-32.webp">
 <link rel="icon" href="../favicon.ico" sizes="any">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"F&F","url":"https://fedorov55.github.io/ff-site/","logo":"https://fedorov55.github.io/ff-site/img/logo.webp","image":"https://fedorov55.github.io/ff-site/img/og-preview.webp","telephone":"+79012655252","email":"FathFed@yandex.ru","address":{"@type":"PostalAddress","addressLocality":"Казань","addressCountry":"RU"},"taxID":"165506822661","description":"IT-аутсорсинг и инфраструктура для бизнеса: серверы, безопасность, криптография. Казань и вся Россия.","areaServed":["Казань","Татарстан","Россия"],"sameAs":["https://t.me/FathFed","https://max.ru/se14849309_bot"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"F&F","url":"https://fedorov55.github.io/ff-site/","logo":"https://fedorov55.github.io/ff-site/img/logo.webp","image":"https://fedorov55.github.io/ff-site/img/og-preview.webp","telephone":"+79012655252","email":"FathFed@yandex.ru","address":{"@type":"PostalAddress","addressLocality":"Казань","addressCountry":"RU"},"taxID":"165506822661","description":"IT-аутсорсинг и инфраструктура для бизнеса: серверы, безопасность, криптография. Казань и вся Россия.","areaServed":["Казань","Республика Татарстан","Россия"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"7","bestRating":"5","worstRating":"1"},"sameAs":["https://t.me/FathFed","https://max.ru/se14849309_bot"]}</script>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="F&F — IT-аутсорсинг Казань">
 <meta name="twitter:description" content="Серверы, инфраструктура, безопасность, криптография. Казань — приедем, Россия — удалённо.">
@@ -64,7 +64,7 @@
 <a href="../index.html" class="logo">
 <img src="../img/logo-44.webp?v=130" alt="F&F — IT-аутсорсинг Казань" class="logo__img" width="44" height="44" fetchpriority="high" loading="eager" decoding="async">
 <span class="logo__text-wrap">
-<span class="logo__brand">F&amp;F-IT</span>
+<span class="logo__brand">F&amp;F</span>
 
 </span>
 </a>
@@ -125,7 +125,7 @@
 </div>
 </div>
 <main id="main" class="site-main" role="main">
-<nav class="quick-nav" aria-label="Быстрая навигация"><a href="#prices">Цены</a><a href="#faq">FAQ</a><a href="../prices.html#calculator">Калькулятор</a><a href="#comparison">Сравнение</a><a href="#process">Процесс</a></nav>
+<nav class="quick-nav" aria-label="Быстрая навигация"><a href="../prices.html">Цены</a><a href="#faq">FAQ</a><a href="../prices.html#calculator">Калькулятор</a><a href="../compare/compare.html">Сравнение</a><a href="#process">Процесс</a></nav>
 
 <nav class="u-breadcrumb breadcrumbs" aria-label="Хлебные крошки" >
 <a href="../index.html" class="u-link-muted">Главная</a>
@@ -285,6 +285,11 @@
 <p class="faq__answer">ViPNet — сертифицированное ФСБ решение для защиты гостайны и коммерческой тайны. Работает по ГОСТ, поддерживает криптошлюзы, координаторы и защищённые сети между офисами. Обычный VPN для гостайны не подходит.</p>
 </details>
 <details class="faq__item">
+  <summary class="faq__question">Что если результат не устроит?</summary>
+  <p class="faq__answer">Гарантия 6 месяцев — не заработало, исправим бесплатно. Можно отказаться с уведомлением за 30 дней. Без штрафов.</p>
+</details>
+
+<details class="faq__item">
 <summary class="faq__question">Сколько офисов можно связать через ViPNet?</summary>
 <p class="faq__answer">От 2 до нескольких десятков. Каждый офис — свой координатор или клиент. Сеть масштабируется, добавляем новые точки по мере роста компании.</p>
 </details>
@@ -323,10 +328,9 @@
 </div>
 <div class="contact__layout">
 <form class="contact__form fade-up" name="contact-form">
-<input type="hidden" name="service" value="ViPNet и VeraCrypt">
 <div class="form-group">
 <label for="name">Имя</label>
-<input type="text" id="name" name="name" placeholder="Иван" required>
+<input type="text" id="name" name="name" placeholder="Иван Петров" required>
 </div>
 <div class="form-group">
 <label for="phone">Телефон</label>
@@ -339,18 +343,21 @@
 </div>
 <div class="form-group form-group--checkbox">
 <input type="checkbox" id="agree" name="agree" required>
-<label for="agree">Я согласен на обработку персональных данных в соответствии с <a href="../legal/privacy.html" target="_blank" rel="noopener noreferrer" class="u-gold-underline" >политикой конфиденциальности</a>
+<label for="agree">Я согласен на обработку персональных данных в соответствии с <a href="../legal/privacy.html" target="_blank" rel="noopener noreferrer" class="u-gold-underline" >политикой конфиденциальности</a> и <a href="../legal/consent.html" target="_blank" rel="noopener noreferrer" class="u-gold-underline" >Согласие на обработку ПДн</a>
 </label>
 </div>
-<button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
-      <p class="u-fs-11-muted-center-mt8" >Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности. Данные используются только для ответа на вашу заявку.</p>
-<p class="u-fs-12-muted-center-mt8" >Ответим за 15 минут. Смета без обязательств.</p>
+<button type="submit" class="btn btn--primary btn--full">Получить расчёт</button>
+      <p class="u-fs-11-muted-center-mt8" >Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности и <a href="../terms-of-work.html">условиями работы</a>. Данные используются только для ответа на вашу заявку.</p>
+<p class="u-fs-12-muted-center-mt8" >Гарантия 6 месяцев. Ответим за 15 минут. Смета без обязательств.</p>
 <div class="u-hidden"  aria-hidden="true">
 <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off">
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="u-hidden">
 </label>
 </div>
 <div class="form-success u-hidden-mt16" aria-live="polite">
+  <p class="u-fs-14-neon-bold-mb8">Заявка отправлена!</p>
+  <p class="u-text2-m0">Мы свяжемся с вами в течение 15 минут.
+    <p class="u-text2-m0" style="margin-top:8px;"><a href="https://t.me/FathFed" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">Написать в Telegram</a> <a href="https://max.ru/se14849309_bot" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">Написать в MAX</a></p> Смета без обязательств.</p>
 </div>
 </form>
 <div class="contact__info fade-up">
@@ -423,6 +430,25 @@
 <div class="container u-center">
 <p class="u-text-2-sm">Нужна консультация? Звоните.</p>
 <a href="tel:+79012655252" class="u-text-18-bold btn btn--primary" >+7 (901) 265-52-52</a>
+</div>
+</section>
+<section class="section reveal">
+<div class="container">
+<div class="section__head fade-up reveal">
+<span class="section__label reveal">Процесс</span>
+<h2 class="section__title reveal">Что будет после заявки</h2>
+</div>
+<p class="answer-first">4 шага от заявки до результата. Ответ за 15 минут.</p>
+<ol class="u-text-14-0" style="padding-left:20px;">
+<li>Уточним задачу — позвоним, зададим 2-3 вопроса.</li>
+<li>Дадим смету и сроки — фиксированная цена в договоре.</li>
+<li>Согласование — вы утверждаете объём и стоимость.</li>
+<li>Договор и SLA — подписываем, приступаем к работе.</li>
+</ol>
+<p class="u-text-13-2" style="margin-top:8px;">Без обязательств. Смета до старта. Гарантия 6 месяцев.</p>
+<div class="page-intro__actions" style="margin-top:12px;">
+<a class="btn btn--primary" href="../contacts.html">Оставить заявку</a>
+</div>
 </div>
 </section>
 </main>
@@ -521,7 +547,7 @@
       <a href="../index.html" class="logo">
         <img src="../img/logo-44.webp?v=130" alt="F&F" class="logo__img" width="44" height="44" loading="lazy" decoding="async">
       </a>
-      <span class="logo__brand">F&amp;F-IT</span>
+      <span class="logo__brand">F&amp;F</span>
     </div>
     <p class="footer__slogan">Ваш IT-контур под контролем. Серверы, инфраструктура, безопасность, криптография. Казань и вся Россия.</p>
   </div>
@@ -560,6 +586,8 @@
       <a href="../legal/privacy.html" class="btn btn--ghost btn--sm">Политика ПДн</a>
       <a href="../legal/cookie.html" class="btn btn--ghost btn--sm">Cookie</a>
       <a href="../legal/terms.html" class="btn btn--ghost btn--sm">Условия пользования</a>
+      <a href="../legal/consent.html" class="btn btn--ghost btn--sm">Согласие на ПДн</a>
+      <a href="../terms-of-work.html" class="btn btn--ghost btn--sm">Условия работы</a>
     </div>
   </div>
 </div>

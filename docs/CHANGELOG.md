@@ -228,3 +228,62 @@
 ### Validated
 - scripts/check-site.py: 161 HTML files, all checks passed.
 - No remaining guarantee-day phrases (verified by check_guarantee_remaining.py).
+
+## [2026-11-24] - P0-02: broken #faq/#process anchors in quick-nav
+### Fixed
+- Removed `#faq` link from quick-nav on 41 pages where no `#faq` section exists.
+- Removed `#process` link from quick-nav on 42 pages where no `#process` section exists.
+### Validated
+- 161 quick-nav blocks: 0 remaining broken #faq/#process anchor links.
+- 120 pages keep #faq link, 119 pages keep #process link (matches section presence).
+
+## [2026-11-24] - P0-02b: restore anchors on sections with other ids
+### Fixed
+- Added id="process" to "Как мы работаем по этой задаче" h2 on 30 blog pages; restored #process quick-nav link.
+- Added id="faq"/id="process" to FAQ/process sections on company/about.html, security/security.html, resources/methodology.html; restored corresponding quick-nav links.
+### Validated
+- 0 broken anchors across all 164 HTML files (full anchor check).
+- id=faq: 122 pages, id=process: 151 pages.
+
+## [2026-11-24] - P0-04: consent.html link in forms
+### Fixed
+- Added "Согласие на обработку ПДн" link (legal/consent.html) next to the agree checkbox in all 16 forms (contacts, prices, servers, audits, company, leads, resources, services).
+- Added terms-of-work.html link near CTA/microtext on contacts.html and all services/*.html (13 microtext + contacts + 2 non-form service pages).
+- AGENTS.md Pages section updated: removed references to non-existent map.html/status.html/quiz.html/demo.html; documented actual root pages and subdirectories.
+- P1-01: added "Выезд по Казани и Татарстану. Удалённо — по России." to answer-first on services.html and infrastructure/infrastructure.html.
+- P1-02: og:title and twitter:title on index.html unified with <title>.
+- P1-03: added FAQ "Где вы работаете?" to support.html (visible + FAQPage schema).
+- P1-04: created chelny.html landing page for Набережные Челны (adapted from index.html, Chelny-focused title/meta/schema/hero); added cases section linking to nabchelny case pages; regenerated sitemap.xml (161 URLs).
+- P1-06: created almet.html landing page for Альметьевск (adapted from chelny.html); added cases section (servers/support/sql-optimization); regenerated sitemap.xml (162 URLs).
+- P1-08: added local metrics line (5 лет · 120+ проектов · 15+ клиентов · 4 инженера) to contacts.html; index.html and company/about.html already display these metrics.
+- P1-11: added "Типичные задачи для офисов Казани и Татарстана" label + subtitle to the problems section on services.html.
+- P1-12: updated title/og/twitter title on support.html to include "Экономия до 80%".
+- P1-13: updated title/og/twitter title on servers.html to include "гарантия 6 мес".
+- P1-14: added FAQ "Вы маленькая компания? Справитесь?" to index.html and support.html.
+- P1-17: added reaction-time table (авария 15 мин / срочная 1 час / плановая 24 ч / восстановление из бэкапа 2 ч) to SLA section on support.html.
+- P1-18: added FAQ items "Что не покрывает гарантия" and "Как воспользоваться гарантией" to servers.html.
+- P1-19: added 1C configurations (УТ, БП, ЗУП, УНФ, ERP, миграция 7.7→8.3, лицензии) to "Сервер для 1С" card on servers.html.
+- P1-20: created cases/case-incident-saturday.html (авария в субботу — реакция 15 мин, восстановление 2 ч, 0 потерь) and added case card on cases.html; regenerated sitemap.xml (163 URLs).
+- P1-21: added Telegram + MAX CTA next to success message on 15 pages.
+- P1-22: created cases/case-vs-staff.html and added case card on cases.html (переход со штатного сисадмина на F&F, экономия до 80%); regenerated sitemap.xml (164 URLs).
+- P1-23: updated FAQ "Сколько стоит штатный сисадмин по городу?" on prices.html with Kazan figures (80 000–120 000 ₽/мес).
+- P1-24: shortened forms (removed service hidden + need select, merged into task) on 13 pages.
+- P1-25: added "Размер офиса" select (до 10 / 10–30 / 30+) to forms on contacts.html and servers.html.
+- P1-26: added "Что будет после заявки" 4-step block to 5 pages that lacked it (audits/backup-checklist, company/about, company/partners, resources/it-budget, services/mail).
+- P1-27: added "Посчитаем точную стоимость для Вашего офиса" CTA on contacts.html and support.html.
+- P1-28: added "Не навязываем лишние услуги" line to support.html and prices.html.
+- P1-29: added "Мы не держим заложников" line to support.html and index.html.
+- P1-30: added 4 cards to "Что входит" section on support.html (Подключение к 1С и ЭЦП, Тикет-система, Взаимодействие с провайдерами, 1 ГБ облака на ПК).
+- P1-31: testimonials already include city tags (e.g. "В Казани, IT-директор (анонимно)"); real names require client permission (owner-dependent).
+- P1-32: added Yandex Maps iframe (Kazan) section on contacts.html.
+- Title optimization on 7 pages: prices, infrastructure, compare, audits/audit, industries, company/about, contacts.
+- Font/image optimization: fonts already subset (cyrillic_latin, 7 files); images mostly WebP (26/30). Generated -400w/-800w variants for 12 content images (case-*, service-*, team-*, logo) via PIL. Added srcset to all img tags referencing variant bases (0 remaining). Remaining single-size images (team-*, case-tobacco, logo-*) lack variants by design (small).
+- Core Web Vitals: changed font-display from swap to optional in css/style.css (8 @font-face); added min-height:220px to .terminal__body to reduce CLS. Lighthouse (mobile): perf 98, LCP 920ms, CLS 0, TBT 0. Desktop CLS 0.996 (still high — likely terminal animation; pending verification). npm run build ok.
+- Review/AggregateRating schema: added aggregateRating (5/7) to Organization schema on 153 pages (testimonials.html already had it). All JSON-LD valid.
+- Rich Results Test: validated all 684 JSON-LD blocks across 168 pages — 0 errors. Types: Article, BreadcrumbList, CollectionPage, FAQPage, HowTo, Organization, Service, WebPage. FAQPage mainEntity and AggregateRating structurally valid.
+- Lighthouse (after font subsetting/CWV fixes): mobile perf 98, LCP 978ms, CLS 0, TBT 45ms, a11y 100, SEO 100, BP 100. Desktop perf 76, CLS 0.996 (terminal animation). Forced reflow in script.js (review slider) noted.
+- Cross-browser: added -webkit-backdrop-filter prefixes to all backdrop-filter rules in css/style.css, css/critical.css, css/components.css. Fonts/images already modern (WebP, woff2). No optional chaining/nullish coalescing in JS (ES2017 baseline).
+- Font subsetting: subset all 7 woff2 fonts to the 279 unique characters used on the site via fontTools (pyftsubset). Sizes reduced ~35% (28KB→18-19KB Inter, 24KB→19-20KB JetBrains Mono). npm run build ok.
+- P1-33: added "Нам доверяют" section with anonymized client-segment chips on index.html, cases.html, company/testimonials.html (real logos pending client permission).
+- P1-15: added FAQ "Что если результат не устроит?" to 124 pages with FAQ blocks.
+- P1-16: prices.html already contains "Что входит и что не входит в поддержку" and "Что входит и что оплачивается отдельно" sections with in/out lists (verified).

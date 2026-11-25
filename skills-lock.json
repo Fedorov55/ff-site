@@ -1,47 +1,143 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
+    "ai-prompt-research": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/ai-prompt-research/SKILL.md",
+      "computedHash": "04486830a22e0d1736d1883af5d9d9ab8b04ac306f904f826ca0ade6253f7e62"
+    },
+    "ai-visibility-audit": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/ai-visibility-audit/SKILL.md",
+      "computedHash": "1e765da9eefe0a42ccb57576bd6cc9e219c71f7a662827c25e0486c9ce804b7f"
+    },
     "audit": {
       "source": "ScaleBrick/founder-marketing-skills",
       "sourceType": "github",
       "skillPath": "skills/audit/SKILL.md",
-      "computedHash": "4bc41d68f6a648aa22949c3f7697c851de501abda2c8dae1da8dbb69efc8121d"
+      "computedHash": "ec43ef2680c4301ac3b4fb583c0bd063b2748d668e3abbc977ae84da36c71d92"
+    },
+    "competitive-landscape": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/competitive-landscape/SKILL.md",
+      "computedHash": "1a712f94ad6b5c891b493f29167d0f5a40acf4ceba406ba4ef648ff766ae9cb3"
+    },
+    "competitor-analysis": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/competitor-analysis/SKILL.md",
+      "computedHash": "323f1bbf2daca295c74aa5386b138780475a93e37dc22d98fd4167f5f00fd070"
     },
     "competitors": {
       "source": "ScaleBrick/founder-marketing-skills",
       "sourceType": "github",
       "skillPath": "skills/competitors/SKILL.md",
-      "computedHash": "d0b6569d3e065f43959d732b999eeea8d923120ebded2a561769230c43e1b808"
+      "computedHash": "d495f0eb48ac75f6d063dc088091c2eeba5f95b4704f3f3a13a4fc64289b5e66"
     },
     "forge-motion": {
       "source": "BekhruzTursunboev/Bexa-professional-frontend-design-skills-for-ai-agents",
       "sourceType": "github",
       "skillPath": "SKILL.md",
-      "computedHash": "d97f2a77ae48a3df2712b409af36070ea73ec88ca43fb3755f000f121d73d380"
+      "computedHash": "1637a5bca07c36d66c7287bc941d9b67d3d0d057dca06b54689b6deacde42f97"
     },
     "frontend-no-slop": {
       "source": "Emily2040/frontend-no-slop",
       "sourceType": "github",
       "skillPath": "SKILL.md",
-      "computedHash": "0295240798757dcf0027e4faba7fed323dd6da9f79eef0c137a55dc2d9f4084c"
+      "computedHash": "770580c5a8deb9d3a833fc45cf5ca59e5229ba8a39694f2cb5ce7b93e200cc4d"
+    },
+    "keyword-clustering": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/keyword-clustering/SKILL.md",
+      "computedHash": "6ef5d95ea7df2ecda46392a56e848f55012d79c6df375d82c2fd7454af7b9ba9"
+    },
+    "keyword-research": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/keyword-research/SKILL.md",
+      "computedHash": "671a0b7926d23342f7287a3dbd793f8db4335a77a78f03d408052723641b8fb9"
     },
     "keywords": {
       "source": "ScaleBrick/founder-marketing-skills",
       "sourceType": "github",
       "skillPath": "skills/keywords/SKILL.md",
-      "computedHash": "0262c297fceb9097a8368834c969e95c6a8b9da1fc8a101ea71d983988ba81cc"
+      "computedHash": "eb00893889dee2592e22b74ba7ea5d7afc2ae504ab601ff07fcdc3d610352307"
+    },
+    "link-prospecting": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/link-prospecting/SKILL.md",
+      "computedHash": "f6bf96b92b968fba2bf4ddbcc03832a6a9d8062005680bebbf27422162b0c7a0"
+    },
+    "local-seo": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/local-seo/SKILL.md",
+      "computedHash": "e21cefac73c0e1f263aa6ee5c0486ed1587801668b27f486a1ad1a7b8650323b"
+    },
+    "seo-audit": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/seo-audit/SKILL.md",
+      "computedHash": "8a2e211109ea1b8acc1867e6b5cbd0ba73b6971df1426960b70265cf6e1ddcfb"
+    },
+    "seo-coach": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/seo-coach/SKILL.md",
+      "computedHash": "c08db5fd4966c02c29c61a0571ccd4871a5499c414af754997b44dd4add5ff56"
+    },
+    "seo-project-setup": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/seo-project-setup/SKILL.md",
+      "computedHash": "1d89897c5e7359cd639ad1c291def935cfa4bcf3177fc885e7cee1ac9254edcd"
+    },
+    "seo-report": {
+      "source": "every-app/open-seo",
+      "ref": "main",
+      "commit": "6f68494e92a695db17f4b22da25e84b9bf1e582c",
+      "sourceType": "github",
+      "skillPath": "plugins/openseo/skills/seo-report/SKILL.md",
+      "computedHash": "d3bf29ae82805c787a323730be2153951715ba6b640d5c7dc4ea698632f788f7"
     },
     "strategy": {
       "source": "ScaleBrick/founder-marketing-skills",
       "sourceType": "github",
       "skillPath": "skills/strategy/SKILL.md",
-      "computedHash": "9f250c9414d1813e14cf703171c49528db313db924d5e481317cdbc9cee88279"
+      "computedHash": "f86876675a5083c6f31f056a348dbe1bb11c056678042ffc449bd5bd1a02ff14"
     },
     "ui-ux-design-pro": {
       "source": "saifyxpro/ui-ux-design-pro-skill",
       "sourceType": "github",
       "skillPath": "skills/ui-ux-design-pro/SKILL.md",
-      "computedHash": "035ea182bbe684c1328c1130f2a340c111efa994348abecc837a9b6832c702a1"
+      "computedHash": "7d8644c61293afabf07489fa689c6969c9c4b28041b28411e8550e95676a1ac0"
     }
   }
 }

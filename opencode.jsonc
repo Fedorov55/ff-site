@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugins": [
+    "@upstash/context7-opencode",
+    "opencode-mem",
+    "@dietrichgebert/ponytail",
+    "cc-safety-net",
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    "oh-my-opencode"
+  ],
   "mcp": {
     "servers": {
       "exa": { "type": "remote", "url": "https://mcp.exa.ai/mcp" },
@@ -9,7 +17,6 @@
       "memory": { "type": "local", "command": ["npx", "-y", "@modelcontextprotocol/server-memory"] },
       "playwright": { "type": "local", "command": ["npx", "-y", "@playwright/mcp"] },
       "time": { "type": "local", "command": ["npx", "-y", "@odgrim/mcp-datetime"] },
-      "chrome-devtools": { "type": "local", "command": ["npx", "-y", "chrome-devtools-mcp"] },
       "computefirst": { "type": "remote", "url": "https://computefirst.net/mcp" },
       "cve-intelligence": { "type": "remote", "url": "https://excessionlabs.ai/mcp/cve" },
       "repomix": { "type": "local", "command": ["npx", "-y", "repomix", "--mcp"] },
@@ -28,12 +35,13 @@
       },
       "serena": {
         "type": "local",
-        "command": ["C:\\Users\\Eblan\\.local\\bin\\serena.exe", "start-mcp-server"]
+        "command": ["C:\\Users\\Eblan\\.local\\bin\\serena.exe", "start-mcp-server"],
+        "protocol": "2026-07-28"
       },
       "crawl4ai": {
         "type": "local",
         "command": ["C:\\Users\\Eblan\\.local\\share\\crawl4ai-venv\\Scripts\\crawl4ai-mcp.exe"],
-        "protocol": "auto"
+        "protocol": "2026-07-28"
       },
       "desktop-commander": {
         "type": "local",
@@ -51,8 +59,84 @@
       },
       "openseo": {
         "type": "remote",
-        "url": "https://app.openseo.so/mcp",
-        "disabled": true
+        "url": "https://app.openseo.so/mcp"
+      },
+      "inspo": {
+        "type": "remote",
+        "url": "https://inspomcp.dev/api/mcp"
+      },
+      "standby-design": {
+        "type": "remote",
+        "url": "https://mcp.standby.design/mcp"
+      },
+      "motion-fab": {
+        "type": "remote",
+        "url": "https://motionfab.app/api/library/mcp"
+      },
+      "persuasion-taxonomy": {
+        "type": "remote",
+        "url": "https://taxonomy.coppica.com/mcp"
+      },
+      "writing-editor": {
+        "type": "local",
+        "command": ["C:\\Users\\Eblan\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\uvx.exe", "writing-editor-mcp"]
+      },
+      "css-creme": {
+        "type": "remote",
+        "url": "https://csscreme.com/mcp",
+        "protocol": "legacy"
+      },
+      "ux-mcp": {
+        "type": "local",
+        "command": ["npx", "-y", "@elsahafy/ux-mcp-server"]
+      },
+      "designmind": {
+        "type": "local",
+        "command": ["npx", "-y", "@reneturcios/designmind", "mcp"]
+      },
+      "web-stylebook": {
+        "type": "local",
+        "command": ["npx", "-y", "web-stylebook-mcp"]
+      },
+      "accesslumens": {
+        "type": "local",
+        "command": ["npx", "-y", "@accesslumens/mcp"]
+      },
+      "lighthouse-audit": {
+        "type": "remote",
+        "url": "https://audit.mrza.ch/mcp"
+      },
+      "visual-parity": {
+        "type": "local",
+        "command": ["npx", "-y", "visual-parity-mcp"]
+      },
+      "marketing-playbooks": {
+        "type": "remote",
+        "url": "https://playbooks.managedcloudvps.com/mcp"
+      },
+      "parallel-search": {
+        "type": "remote",
+        "url": "https://search.parallel.ai/mcp"
+      },
+      "tpc-free-tools": {
+        "type": "remote",
+        "url": "https://mcp-tools.tpc-hosting.com/mcp"
+      },
+      "dns-beautiful": {
+        "type": "remote",
+        "url": "https://dnsisbeautiful.com/api/mcp"
+      },
+      "network-mcp": {
+        "type": "local",
+        "command": ["npx", "-y", "p3x-network-mcp"]
+      },
+      "internetvitals": {
+        "type": "remote",
+        "url": "https://internetvitals.com/mcp"
+      },
+      "nuqti": {
+        "type": "remote",
+        "url": "https://nuqti.com/api/public/mcp"
       }
     }
   }
