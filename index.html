@@ -59,167 +59,207 @@
 
 <style id="hero-rack-css">
 
-.hero-rack, .hero__rack, .hero__visual {
-  --bg-deep: #05070A;
-  --bg-page: #0A0D14;
-  --metal-dark: #1A1D24;
-  --metal-mid: #2A2F3A;
-  --metal-light: #3D4450;
-  --gold: #D4AF37;
-  --gold-bright: #E8C44D;
-  --gold-glow: rgba(212, 175, 55, 0.6);
-  --neon-green: #00FF88;
-  --neon-green-glow: rgba(0, 255, 136, 0.6);
-  --text-primary: #E8EAF0;
-  --text-secondary: #9AA0A6;
-  --text-dim: #5B6472;
-}
-
-/* ===== HERO RACK CONTAINER ===== */
-.hero__rack, .hero__visual {
+.hero-visual-realistic {
   position: relative;
-  min-height: 500px;
-  overflow: visible;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ===== AMBIENT GLOW (CSS, blurred) ===== */
-.hero__rack .ambient-glow, .hero__visual .ambient-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(212,175,55,0.4) 0%, rgba(0,255,136,0.15) 30%, transparent 65%);
-  filter: blur(100px);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 0;
-  animation: pulse-glow 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
-}
-
-/* ===== SVG RACK ===== */
-.hero__rack .server-rack-svg, .hero__visual .server-rack-svg {
-  width: 100%;
   max-width: 480px;
-  height: auto;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  width: 100%;
+  perspective: 1200px;
 }
 
-/* ===== RACK REFLECTION ===== */
-.hero__rack .rack-reflection, .hero__visual .rack-reflection {
+/* Свечение сзади */
+.visual-glow {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 80px;
-  background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, transparent 100%);
-  filter: blur(8px);
-  opacity: 0.3;
-  pointer-events: none;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
   z-index: 0;
 }
 
-/* ===== DEVICE HOVER (SVG) ===== */
-.hero__rack .rack-device, .hero__visual .rack-device {
+/* Контейнер с фото (наклон для 3D) */
+.rack-photo-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: -15px 15px 40px rgba(0,0,0,0.8);
+  transform: rotateY(-8deg) rotateX(4deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.hero-visual-realistic:hover .rack-photo-container {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+/* Само фото */
+.rack-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.7) contrast(1.2) saturate(0.8) sepia(0.1);
+}
+
+/* Сканирующая линия */
+.scanner-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: #00FF88;
+  box-shadow: 0 0 15px 3px rgba(0, 255, 136, 0.5);
+  opacity: 0.7;
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Интерактивные зоны */
+.rack-hotspot {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 14%;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
-.hero__rack .rack-device:hover, .hero__visual .rack-device:hover {
-  filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+.hs-1 { top: 8%; }
+.hs-2 { top: 24%; }
+.hs-3 { top: 40%; }
+.hs-4 { top: 56%; }
+.hs-5 { top: 72%; }
+
+.rack-hotspot:hover {
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(2px);
 }
 
-/* LED blinking animations */
-@keyframes led-blink-1 {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-@keyframes led-blink-2 {
-  0%, 100% { opacity: 1; }
-  33% { opacity: 0.3; }
-  66% { opacity: 1; }
-}
-@keyframes led-blink-3 {
-  0%, 100% { opacity: 1; }
-  25% { opacity: 0.4; }
-  75% { opacity: 1; }
-}
-
-.hero__rack .led-blink-1, .hero__visual .led-blink-1 { animation: led-blink-1 1.5s infinite; }
-.hero__rack .led-blink-2, .hero__visual .led-blink-2 { animation: led-blink-2 2s infinite; }
-.hero__rack .led-blink-3, .hero__visual .led-blink-3 { animation: led-blink-3 1.8s infinite; }
-
-/* ===== TOOLTIP (HTML overlay) ===== */
-.hero__rack .rack-tooltip, .hero__visual .rack-tooltip {
+/* Тултип внутри зоны */
+.hs-tooltip {
   position: absolute;
-  background: rgba(10, 15, 25, 0.95);
-  border: 1px solid var(--gold);
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  color: var(--text-primary);
-  pointer-events: none;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: rgba(10, 13, 20, 0.95);
+  border: 1px solid #D4AF37;
+  padding: 12px 16px;
+  border-radius: 8px;
   opacity: 0;
-  transition: opacity 0.2s ease;
-  z-index: 100;
-  white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  min-width: 200px;
 }
 
-.hero__rack .rack-tooltip.visible, .hero__visual .rack-tooltip.visible {
+.rack-hotspot:hover .hs-tooltip {
   opacity: 1;
+  transform: translateY(-50%) scale(1);
 }
 
-.hero__rack .rack-tooltip .tooltip-title, .hero__visual .rack-tooltip .tooltip-title {
-  font-weight: 600;
-  color: var(--gold-bright);
-  margin-bottom: 2px;
+.hs-tooltip h4 {
+  margin: 0 0 4px;
+  color: #D4AF37;
+  font-size: 14px;
 }
 
-.hero__rack .rack-tooltip .tooltip-desc, .hero__visual .rack-tooltip .tooltip-desc {
-  font-size: 10px;
-  color: var(--text-secondary);
+.hs-tooltip span {
+  display: block;
+  color: #9AA0A6;
+  font-size: 11px;
+  margin-bottom: 8px;
 }
 
-.hero__rack .rack-tooltip .tooltip-cta, .hero__visual .rack-tooltip .tooltip-cta {
+.hs-btn {
+  display: inline-block;
+  color: #00FF88;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+/* --- ПЛАШКА С ЦИФРАМИ --- */
+.rack-brandbar {
+  position: relative;
+  margin-top: 24px;
+  background: #12151C;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  z-index: 10;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric .num {
+  display: block;
+  color: #E8EAF0;
+  font-size: 20px;
+  font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
+}
+
+.metric .lbl {
+  display: block;
+  color: #9AA0A6;
   font-size: 9px;
-  color: var(--neon-green);
+  text-transform: uppercase;
   margin-top: 4px;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .hero__rack .server-rack-svg, .hero__visual .server-rack-svg {
-    max-width: 100%;
-  }
-  .hero__rack .ambient-glow, .hero__visual .ambient-glow {
-    width: 400px;
-    height: 400px;
-  }
+.status-plate {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #00FF88;
+  font-size: 10px;
+  font-family: monospace;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 12px;
 }
 
-/* ===== REDUCED MOTION ===== */
-@media (prefers-reduced-motion: reduce) {
-  .hero__rack *, .hero__rack *::before, .hero__rack *::after,
-  .hero__visual *, .hero__visual *::before, .hero__visual *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #00FF88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00FF88;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 600px) {
+  .rack-photo-container {
+    transform: none;
+  }
+  .rack-brandbar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .metric .num {
+    font-size: 16px;
+  }
+  .metric .lbl {
+    font-size: 8px;
   }
 }
 
@@ -319,242 +359,68 @@
 <p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
-<div class="hero__rack hero__visual">
-  <!-- Ambient glow (CSS, blurred) -->
-  <div class="ambient-glow"></div>
+<div class="hero-visual-realistic">
+  <!-- Фоновое свечение -->
+  <div class="visual-glow"></div>
 
-  <!-- SVG Rack -->
-  <svg class="server-rack-svg" viewBox="0 0 480 680" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <!-- Server chassis metal gradient -->
-      <linearGradient id="server-chassis" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#4A505E" />
-        <stop offset="20%" stop-color="#2A2F3A" />
-        <stop offset="80%" stop-color="#1A1D24" />
-        <stop offset="100%" stop-color="#0E1116" />
-      </linearGradient>
+  <!-- Контейнер с фото и эффектами -->
+  <div class="rack-photo-container">
+    <!-- Реальное фото шкафа с проводами -->
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" alt="Серверный шкаф F&F" class="rack-img" />
+    
+    <!-- Сканирующая линия (эффект) -->
+    <div class="scanner-line"></div>
 
-      <!-- Vent pattern -->
-      <pattern id="vent-pattern" width="6" height="6" patternUnits="userSpaceOnUse">
-        <rect width="6" height="6" fill="#15181E" />
-        <rect width="2" height="6" fill="#000" />
-        <rect x="2" width="1" height="6" fill="rgba(255,255,255,0.1)" />
-      </pattern>
+    <!-- Интерактивные зоны поверх фото -->
+    <a href="servers.html" class="rack-hotspot hs-1">
+      <div class="hs-tooltip">
+        <h4>Настройка серверов</h4>
+        <span>Подбор, монтаж, виртуализация</span>
+        <div class="hs-btn">Перейти →</div>
+      </div>
+    </a>
+    <a href="audits/audit.html" class="rack-hotspot hs-2">
+      <div class="hs-tooltip">
+        <h4>IT-аудит</h4>
+        <span>Проверка инфраструктуры</span>
+        <div class="hs-btn">Перейти →</div>
+      </div>
+    </a>
+    <a href="security/crypto.html" class="rack-hotspot hs-3">
+      <div class="hs-tooltip">
+        <h4>ЭЦП и КриптоПро</h4>
+        <span>Установка и настройка</span>
+        <div class="hs-btn">Перейти →</div>
+      </div>
+    </a>
+    <a href="security/security.html" class="rack-hotspot hs-4">
+      <div class="hs-tooltip">
+        <h4>Безопасность данных</h4>
+        <span>Защита данных и доступов</span>
+        <div class="hs-btn">Перейти →</div>
+      </div>
+    </a>
+    <a href="services.html" class="rack-hotspot hs-5">
+      <div class="hs-tooltip">
+        <h4>Абонентское обслуживание</h4>
+        <span>Команда вместо сисадмина</span>
+        <div class="hs-btn">Перейти →</div>
+      </div>
+    </a>
+  </div>
 
-      <!-- Glass gradient -->
-      <linearGradient id="glass-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="rgba(20,30,40,0.35)" />
-        <stop offset="50%" stop-color="rgba(10,15,20,0.15)" />
-        <stop offset="100%" stop-color="rgba(5,10,15,0.4)" />
-      </linearGradient>
-
-      <!-- Rack back panel (grid) -->
-      <pattern id="rack-back-panel" width="20" height="20" patternUnits="userSpaceOnUse">
-        <rect width="20" height="20" fill="#05070A" />
-        <path d="M 0 0 L 20 0 M 0 10 L 20 10 M 0 0 L 0 20 M 10 0 L 10 20" stroke="#15181E" stroke-width="1" />
-      </pattern>
-
-      <!-- Metal rail gradient -->
-      <linearGradient id="metal-rail" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#1A1D24" />
-        <stop offset="50%" stop-color="#3A404D" />
-        <stop offset="100%" stop-color="#1A1D24" />
-      </linearGradient>
-
-      <!-- Inner glow filter -->
-      <filter id="inner-glow">
-        <feGaussianBlur stdDeviation="3" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-      </filter>
-
-      <!-- Drop shadow for devices -->
-      <filter id="device-shadow">
-        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.6" />
-      </filter>
-
-      <!-- LED glow -->
-      <filter id="led-glow">
-        <feGaussianBlur stdDeviation="2" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-      </filter>
-    </defs>
-
-    <!-- Layer 0: Floor shadow -->
-    <ellipse cx="240" cy="660" rx="180" ry="25" fill="rgba(0,0,0,0.6)" filter="url(#device-shadow)" />
-
-    <!-- Layer 1: Rack frame -->
-    <g id="rack-frame">
-      <!-- Left rail -->
-      <rect x="40" y="40" width="22" height="600" rx="2" fill="url(#metal-rail)" stroke="#000" stroke-width="1" />
-      <!-- Right rail -->
-      <rect x="418" y="40" width="22" height="600" rx="2" fill="url(#metal-rail)" stroke="#000" stroke-width="1" />
-      <!-- Back panel -->
-      <rect x="62" y="40" width="356" height="600" fill="url(#rack-back-panel)" stroke="#111" stroke-width="1" />
-      <!-- Inner neon backlight -->
-      <rect x="62" y="40" width="356" height="600" fill="rgba(0,255,136,0.03)" />
-    </g>
-
-    <!-- Layer 2: Devices -->
-    <g id="devices-layer" transform="translate(62, 40)">
-
-      <!-- Device 1: Patch Panel (1U) - y=0 -->
-      <g class="rack-device" data-service="Сетевая инфраструктура">
-        <rect x="0" y="0" width="356" height="30" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <!-- Ports (24 ports) -->
-        <g fill="#111" stroke="#333" stroke-width="0.5">
-          <rect x="10" y="8" width="6" height="6" /><rect x="20" y="8" width="6" height="6" /><rect x="30" y="8" width="6" height="6" />
-          <rect x="40" y="8" width="6" height="6" /><rect x="50" y="8" width="6" height="6" /><rect x="60" y="8" width="6" height="6" />
-          <rect x="70" y="8" width="6" height="6" /><rect x="80" y="8" width="6" height="6" /><rect x="90" y="8" width="6" height="6" />
-          <rect x="100" y="8" width="6" height="6" /><rect x="110" y="8" width="6" height="6" /><rect x="120" y="8" width="6" height="6" />
-          <rect x="135" y="8" width="6" height="6" /><rect x="145" y="8" width="6" height="6" /><rect x="155" y="8" width="6" height="6" />
-          <rect x="165" y="8" width="6" height="6" /><rect x="175" y="8" width="6" height="6" /><rect x="185" y="8" width="6" height="6" />
-          <rect x="195" y="8" width="6" height="6" /><rect x="205" y="8" width="6" height="6" /><rect x="215" y="8" width="6" height="6" />
-          <rect x="225" y="8" width="6" height="6" /><rect x="235" y="8" width="6" height="6" />
-        </g>
-        <!-- LEDs -->
-        <circle cx="300" cy="10" r="2" fill="#00FF88" filter="url(#led-glow)" />
-        <circle cx="300" cy="22" r="2" fill="#D4AF37" filter="url(#led-glow)" />
-        <!-- Label -->
-        <text x="320" y="18" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">PATCH-24</text>
-      </g>
-
-      <!-- Device 2: Switch (1U) - y=35 -->
-      <g class="rack-device" data-service="Сетевое оборудование">
-        <rect x="0" y="35" width="356" height="30" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <!-- Ports row -->
-        <g fill="#111" stroke="#333" stroke-width="0.5">
-          <rect x="10" y="42" width="5" height="5" /><rect x="18" y="42" width="5" height="5" /><rect x="26" y="42" width="5" height="5" />
-          <rect x="34" y="42" width="5" height="5" /><rect x="42" y="42" width="5" height="5" /><rect x="50" y="42" width="5" height="5" />
-          <rect x="58" y="42" width="5" height="5" /><rect x="66" y="42" width="5" height="5" />
-          <rect x="80" y="42" width="5" height="5" /><rect x="88" y="42" width="5" height="5" /><rect x="96" y="42" width="5" height="5" />
-          <rect x="104" y="42" width="5" height="5" /><rect x="112" y="42" width="5" height="5" /><rect x="120" y="42" width="5" height="5" />
-          <rect x="128" y="42" width="5" height="5" /><rect x="136" y="42" width="5" height="5" />
-        </g>
-        <!-- LEDs (blinking) -->
-        <circle cx="280" cy="40" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
-        <circle cx="280" cy="50" r="2" fill="#D4AF37" filter="url(#led-glow)" class="led-blink-2" />
-        <circle cx="290" cy="40" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3" />
-        <circle cx="290" cy="50" r="2" fill="#00FF88" filter="url(#led-glow)" />
-        <!-- Label -->
-        <text x="310" y="52" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SW-16P</text>
-      </g>
-
-      <!-- Device 3: Server 2U - y=70 -->
-      <g class="rack-device" data-service="Настройка серверов">
-        <rect x="0" y="70" width="356" height="44" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <!-- Vents -->
-        <rect x="10" y="78" width="200" height="28" fill="url(#vent-pattern)" rx="1" />
-        <!-- Handle -->
-        <rect x="173" y="68" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
-        <!-- Bolts -->
-        <circle cx="8" cy="75" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="75" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="8" cy="109" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="109" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <!-- LEDs -->
-        <circle cx="300" cy="78" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
-        <circle cx="300" cy="90" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
-        <circle cx="300" cy="102" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-2" />
-        <!-- Label -->
-        <text x="315" y="92" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-01</text>
-      </g>
-
-      <!-- Device 4: Server 2U - y=120 -->
-      <g class="rack-device" data-service="Безопасность данных">
-        <rect x="0" y="120" width="356" height="44" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <rect x="10" y="128" width="200" height="28" fill="url(#vent-pattern)" rx="1" />
-        <rect x="173" y="118" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
-        <circle cx="8" cy="125" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="125" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="8" cy="159" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="159" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="300" cy="128" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
-        <circle cx="300" cy="140" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
-        <circle cx="300" cy="152" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
-        <text x="315" y="142" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-02</text>
-      </g>
-
-      <!-- Device 5: Server 4U - y=170 -->
-      <g class="rack-device" data-service="Абонентское обслуживание">
-        <rect x="0" y="170" width="356" height="88" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <rect x="10" y="178" width="200" height="32" fill="url(#vent-pattern)" rx="1" />
-        <rect x="10" y="214" width="200" height="32" fill="url(#vent-pattern)" rx="1" />
-        <rect x="173" y="168" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
-        <circle cx="8" cy="175" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="175" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="8" cy="253" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="348" cy="253" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
-        <circle cx="300" cy="185" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
-        <circle cx="300" cy="200" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3" />
-        <circle cx="300" cy="215" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
-        <circle cx="300" cy="230" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
-        <circle cx="300" cy="245" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
-        <text x="315" y="215" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-03</text>
-      </g>
-
-      <!-- Device 6: PDU (Power Distribution) - y=265 -->
-      <g class="rack-device" data-service="Электропитание">
-        <rect x="0" y="265" width="356" height="20" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
-        <!-- Outlets -->
-        <g fill="#111" stroke="#333" stroke-width="0.5">
-          <rect x="15" y="270" width="8" height="10" /><rect x="30" y="270" width="8" height="10" />
-          <rect x="45" y="270" width="8" height="10" /><rect x="60" y="270" width="8" height="10" />
-          <rect x="75" y="270" width="8" height="10" /><rect x="90" y="270" width="8" height="10" />
-          <rect x="105" y="270" width="8" height="10" /><rect x="120" y="270" width="8" height="10" />
-        </g>
-        <text x="310" y="278" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">PDU-16A</text>
-      </g>
-
-      <!-- Device 7: Empty slot (1U) - y=290 -->
-      <g class="rack-device" data-service="Свободный слот">
-        <rect x="0" y="290" width="356" height="24" rx="2" fill="#0E1116" stroke="#222" stroke-width="1" />
-        <rect x="10" y="295" width="336" height="14" fill="url(#vent-pattern)" rx="1" opacity="0.3" />
-      </g>
-
-      <!-- Device 8: Empty slot (1U) - y=318 -->
-      <g class="rack-device" data-service="Свободный слот">
-        <rect x="0" y="318" width="356" height="24" rx="2" fill="#0E1116" stroke="#222" stroke-width="1" />
-        <rect x="10" y="323" width="336" height="14" fill="url(#vent-pattern)" rx="1" opacity="0.3" />
-      </g>
-
-    </g>
-
-    <!-- Layer 3: Cables (drawn over devices, under glass) -->
-    <g id="cables-layer" opacity="0.85">
-      <!-- Cable 1: blue, from patch panel port to server -->
-      <path d="M 100 52 C 100 80, 120 100, 120 130" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 2: red -->
-      <path d="M 150 52 C 150 90, 180 110, 180 140" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 3: green -->
-      <path d="M 200 52 C 200 100, 220 120, 220 150" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 4: yellow -->
-      <path d="M 250 52 C 250 85, 270 105, 270 135" stroke="#EAB308" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 5: blue (longer) -->
-      <path d="M 80 52 C 60 52, 40 120, 60 180 C 80 240, 100 260, 100 290" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 6: red -->
-      <path d="M 130 52 C 110 52, 90 130, 110 190 C 130 250, 150 270, 150 300" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 7: green -->
-      <path d="M 180 52 C 160 52, 140 140, 160 200 C 180 260, 200 280, 200 310" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 8: yellow -->
-      <path d="M 230 52 C 210 52, 190 150, 210 210 C 230 270, 250 290, 250 320" stroke="#EAB308" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 9: purple -->
-      <path d="M 270 52 C 290 52, 310 100, 310 150" stroke="#A855F7" stroke-width="2" fill="none" stroke-linecap="round" />
-      <!-- Cable 10: cyan -->
-      <path d="M 320 52 C 340 52, 360 100, 360 150" stroke="#06B6D4" stroke-width="2" fill="none" stroke-linecap="round" />
-    </g>
-
-    <!-- Layer 4: Glass door -->
-    <g id="glass-door">
-      <rect x="40" y="30" width="400" height="620" rx="5" fill="url(#glass-gradient)" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
-      <!-- Glass highlight (diagonal) -->
-      <path d="M 50 40 L 200 40 L 50 280 Z" fill="rgba(255,255,255,0.06)" />
-      <path d="M 430 640 L 280 640 L 430 400 Z" fill="rgba(255,255,255,0.03)" />
-    </g>
-
-  </svg>
-
-  <!-- Rack reflection (CSS) -->
-  <div class="rack-reflection"></div>
+  <!-- ПЛАШКА С ЦИФРАМИ -->
+  <div class="rack-brandbar">
+    <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
+    <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
+    <div class="metric"><span class="num" data-target="27">0</span><span class="lbl">отзывов</span></div>
+    <div class="metric"><span class="num" data-target="99" data-suffix="%">0</span><span class="lbl">остаются</span></div>
+    <div class="metric"><span class="num" data-target="4" data-suffix="+">0</span><span class="lbl">специалиста</span></div>
+    <div class="metric"><span class="num">24/7</span><span class="lbl">на связи</span></div>
+    <div class="status-plate">
+      <span class="status-dot"></span> ONLINE · Готовы помочь вашему бизнесу
+    </div>
+  </div>
 </div>
 </div>
 </div>
@@ -1095,74 +961,25 @@
 <script id="hero-rack-js">
 
 document.addEventListener('DOMContentLoaded', () => {
-  // SVG device interaction
-  const svg = document.querySelector('.server-rack-svg');
-  const tooltip = document.createElement('div');
-  tooltip.className = 'rack-tooltip';
-  document.querySelector('.hero__rack, .hero__visual').appendChild(tooltip);
-
-  const serviceLinks = {
-    'Настройка серверов': 'servers.html',
-    'Безопасность данных': 'security/security.html',
-    'Абонентское обслуживание': 'services.html',
-    'Сетевая инфраструктура': 'infrastructure/infrastructure.html',
-    'Сетевое оборудование': 'infrastructure/infrastructure.html',
-    'Электропитание': 'servers.html',
-    'Свободный слот': 'contacts.html'
-  };
-
-  const serviceDescs = {
-    'Настройка серверов': 'Подбор, монтаж, виртуализация, бэкапы',
-    'Безопасность данных': 'Антивирус, шифрование, разграничение доступа',
-    'Абонентское обслуживание': 'Команда инженеров вместо штатного сисадмина',
-    'Сетевая инфраструктура': 'Кабели, коммутаторы, патч-панели',
-    'Сетевое оборудование': 'Управляемые коммутаторы, маршрутизаторы',
-    'Электропитание': 'PDU, ИБП, распределение нагрузки',
-    'Свободный слот': 'Свободный юнит для вашего оборудования'
-  };
-
-  document.querySelectorAll('.rack-device').forEach(device => {
-    const service = device.getAttribute('data-service');
-    const link = serviceLinks[service] || 'services.html';
-
-    device.addEventListener('mouseenter', (e) => {
-      const rect = device.getBoundingClientRect();
-      const container = document.querySelector('.hero__rack, .hero__visual').getBoundingClientRect();
-      tooltip.innerHTML = '<div class="tooltip-title">' + service + '</div>' +
-        '<div class="tooltip-desc">' + (serviceDescs[service] || '') + '</div>' +
-        '<div class="tooltip-cta">[ Перейти → ]</div>';
-      tooltip.style.left = (rect.left - container.left + rect.width / 2 - 60) + 'px';
-      tooltip.style.top = (rect.top - container.top - 40) + 'px';
-      tooltip.classList.add('visible');
-    });
-
-    device.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('visible');
-    });
-
-    device.addEventListener('click', () => {
-      console.log('[F&F] Click:', service);
-      window.location.href = link;
-    });
+  // Counter animation
+  const counters = document.querySelectorAll('.metric .num[data-target]');
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    const suffix = counter.dataset.suffix || '';
+    let current = 0;
+    const increment = target / 50;
+    
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        counter.innerText = Math.ceil(current) + suffix;
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.innerText = target + suffix;
+      }
+    };
+    updateCounter();
   });
-
-  // Ambient glow pulse (already CSS, but ensure it runs)
-  // Mouse parallax for particles
-  const particles = document.querySelectorAll('.hero__rack .p, .hero__visual .p');
-  const rack = document.querySelector('.hero__rack, .hero__visual');
-  if (rack && window.matchMedia('(pointer: fine)').matches) {
-    document.addEventListener('mousemove', (e) => {
-      const rect = rack.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const deltaX = (e.clientX - centerX) / 50;
-      const deltaY = (e.clientY - centerY) / 50;
-      particles.forEach((p, i) => {
-        const factor = (i + 1) * 0.3;
-        p.style.transform = 'translate(' + (deltaX * factor) + 'px, ' + (deltaY * factor) + 'px)';
-      });
-    });
-  }
 });
 </script>
 </body>
