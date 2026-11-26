@@ -36,7 +36,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://ajax.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://formspree.io https://ajax.googleapis.com; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="favicon.ico" sizes="any">
 
@@ -59,77 +59,63 @@
 
 <style id="hero-rack-css">
 
-.hero-3d-container {
+.hero-visual-tilt {
   position: relative;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  perspective: 1000px;
 }
 
-/* Прозрачный фон для 3D-модели */
-.model-viewer-3d {
-  width: 100%;
-  height: 550px;
-  background-color: transparent;
-  --poster-color: transparent;
-  outline: none;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
-}
-
-/* Свечение позади шкафа */
-.ambient-glow {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 70%);
-  filter: blur(60px);
-  z-index: 0;
-  pointer-events: none;
-  animation: pulse-glow 4s infinite alternate;
-}
-
-/* --- ХОТСПОТЫ (3D Кнопки) --- */
-.hotspot {
-  background: rgba(10, 13, 20, 0.8);
-  border: 1px solid #D4AF37;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.tilt-container {
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform-style: preserve-3d;
 }
 
-/* Пульсация внутри кнопки */
-.hs-icon {
-  width: 8px;
-  height: 8px;
+.rack-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  mix-blend-mode: screen;
+}
+
+/* --- ХОТСПОТЫ --- */
+.hotspot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 2px solid #D4AF37;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.hotspot::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
   background: #D4AF37;
   border-radius: 50%;
-  box-shadow: 0 0 8px #D4AF37;
-  animation: blink 1.5s infinite;
+  animation: pulse 2s infinite;
 }
 
 .hotspot:hover {
-  transform: scale(1.3);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
-  z-index: 100;
+  transform: translate(-50%, -50%) scale(1.3);
+  background: rgba(212, 175, 55, 0.5);
 }
 
-/* Тултип (текст при наведении) */
+/* Тултип */
 .hs-tooltip {
   position: absolute;
-  left: 35px;
+  left: 30px;
   top: 50%;
   transform: translateY(-50%) translateX(10px);
   background: #12151C;
@@ -140,10 +126,10 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
   display: flex;
   flex-direction: column;
-  text-align: left;
+  z-index: 9999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
 }
 
 .hotspot:hover .hs-tooltip {
@@ -154,7 +140,17 @@
 .hs-tooltip strong { color: #E8EAF0; font-size: 13px; margin-bottom: 2px; }
 .hs-tooltip span { color: #9AA0A6; font-size: 11px; }
 
-/* Плашка с цифрами */
+/* Фоновое свечение */
+.ambient-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- ПЛАШКА С ЦИФРАМИ --- */
 .rack-brandbar {
   position: relative;
   margin-top: 24px;
@@ -212,26 +208,15 @@
   animation: pulse 2s infinite;
 }
 
-/* Анимации */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
 
-@keyframes pulse-glow {
-  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-}
-
 /* Mobile */
 @media (max-width: 600px) {
-  .model-viewer-3d {
-    height: 400px;
+  .tilt-container {
+    transform: none;
   }
   .rack-brandbar {
     grid-template-columns: repeat(3, 1fr);
@@ -246,7 +231,7 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-3d-container *, .hero-3d-container *::before, .hero-3d-container *::after {
+  .hero-visual-tilt *, .hero-visual-tilt *::before, .hero-visual-tilt *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -254,7 +239,6 @@
 }
 
 </style>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body class="grain">
 
@@ -350,55 +334,37 @@
 <p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
-<div class="hero-3d-container">
-  <!-- Фоновое свечение -->
+<div class="hero-visual-tilt">
   <div class="ambient-glow"></div>
 
-  <!-- 3D МОДЕЛЬ -->
-  <model-viewer 
-    src="img/server-rack.glb" 
-    alt="3D Серверный шкаф F&F"
-    auto-rotate 
-    auto-rotate-delay="500"
-    rotation-per-second="10deg"
-    camera-controls 
-    shadow-intensity="2"
-    environment-image="neutral"
-    exposure="2"
-    camera-orbit="30deg 75deg 120%"
-    min-camera-orbit="auto auto 50%"
-    max-camera-orbit="auto auto 300%"
-    field-of-view="30deg"
-    class="model-viewer-3d"
-  >
-    <!-- ИНТЕРАКТИВНЫЕ КНОПКИ (ХОТСПОТЫ) -->
-    <button class="hotspot" slot="hotspot-servers" data-position="0.2m 0.5m 0.3m" data-normal="0m 0m 1m">
-      <div class="hs-icon"></div>
+  <!-- Контейнер с картинкой и хотспотами -->
+  <div class="tilt-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+    <!-- Картинка шкафа -->
+    <img src="img/server-rack.png" alt="Серверный шкаф F&F" class="rack-image" />
+    
+    <!-- ХОТСПОТЫ -->
+    <a href="servers.html" class="hotspot" style="top: 20%; left: 30%;">
       <div class="hs-tooltip"><strong>Настройка серверов</strong><span>Монтаж и виртуализация</span></div>
-    </button>
-
-    <button class="hotspot" slot="hotspot-audit" data-position="-0.2m 0.3m 0.3m" data-normal="0m 0m 1m">
-      <div class="hs-icon"></div>
+    </a>
+    
+    <a href="audits/audit.html" class="hotspot" style="top: 35%; left: 40%;">
       <div class="hs-tooltip"><strong>IT-аудит</strong><span>Проверка инфраструктуры</span></div>
-    </button>
+    </a>
 
-    <button class="hotspot" slot="hotspot-security" data-position="0m 0m 0.4m" data-normal="0m 0m 1m">
-      <div class="hs-icon"></div>
+    <a href="security/crypto.html" class="hotspot" style="top: 50%; left: 45%;">
       <div class="hs-tooltip"><strong>КриптоПро и ЭЦП</strong><span>Токены и лицензии</span></div>
-    </button>
+    </a>
 
-    <button class="hotspot" slot="hotspot-backup" data-position="0.1m -0.2m 0.3m" data-normal="0m 0m 1m">
-      <div class="hs-icon"></div>
-      <div class="hs-tooltip"><strong>Резервное копирование</strong><span>Защита от потери данных</span></div>
-    </button>
+    <a href="security/security.html" class="hotspot" style="top: 65%; left: 50%;">
+      <div class="hs-tooltip"><strong>Безопасность</strong><span>Защита данных</span></div>
+    </a>
 
-    <button class="hotspot" slot="hotspot-support" data-position="-0.1m -0.4m 0.3m" data-normal="0m 0m 1m">
-      <div class="hs-icon"></div>
+    <a href="services.html" class="hotspot" style="top: 80%; left: 55%;">
       <div class="hs-tooltip"><strong>Абонентка</strong><span>Команда инженеров</span></div>
-    </button>
-  </model-viewer>
+    </a>
+  </div>
 
-  <!-- ПЛАШКА С ЦИФРАМИ (Внизу) -->
+  <!-- ПЛАШКА С ЦИФРАМИ -->
   <div class="rack-brandbar">
     <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
     <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
@@ -971,5 +937,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </body>
 </html>
