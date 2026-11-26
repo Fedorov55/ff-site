@@ -59,72 +59,102 @@
 
 <style id="hero-rack-css">
 
-/* ===== SVG RACK CONTAINER ===== */
-.hero-visual-realistic {
+.hero-3d-container {
   position: relative;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  perspective: 1500px;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Ambient glow (behind SVG) */
-.visual-glow {
+/* Прозрачный фон для 3D-модели */
+.model-viewer-3d {
+  width: 100%;
+  height: 550px;
+  background-color: transparent;
+  --poster-color: transparent;
+  outline: none;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+}
+
+/* Свечение позади шкафа */
+.ambient-glow {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.12) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 70%);
   filter: blur(60px);
-  opacity: 0.6;
-  pointer-events: none;
   z-index: 0;
-  animation: pulse-glow 5s infinite alternate ease-in-out;
+  pointer-events: none;
+  animation: pulse-glow 4s infinite alternate;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
-}
-
-/* SVG Rack */
-.server-rack-svg {
-  width: 100%;
-  height: auto;
+/* --- ХОТСПОТЫ (3D Кнопки) --- */
+.hotspot {
+  background: rgba(10, 13, 20, 0.8);
+  border: 1px solid #D4AF37;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
   position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-visual-realistic:hover .server-rack-svg {
-  transform: rotateY(5deg) rotateX(2deg);
+/* Пульсация внутри кнопки */
+.hs-icon {
+  width: 8px;
+  height: 8px;
+  background: #D4AF37;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #D4AF37;
+  animation: blink 1.5s infinite;
 }
 
-/* LED blinking animations */
-@keyframes led-blink-1 {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-@keyframes led-blink-2 {
-  0%, 100% { opacity: 1; }
-  33% { opacity: 0.3; }
-  66% { opacity: 1; }
-}
-@keyframes led-blink-3 {
-  0%, 100% { opacity: 1; }
-  25% { opacity: 0.4; }
-  75% { opacity: 1; }
+.hotspot:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+  z-index: 100;
 }
 
-.led-blink-1 { animation: led-blink-1 1.5s infinite; }
-.led-blink-2 { animation: led-blink-2 2s infinite; }
-.led-blink-3 { animation: led-blink-3 1.8s infinite; }
+/* Тултип (текст при наведении) */
+.hs-tooltip {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: #12151C;
+  border: 1px solid #D4AF37;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
 
-/* ===== BRAND BAR ===== */
+.hotspot:hover .hs-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.hs-tooltip strong { color: #E8EAF0; font-size: 13px; margin-bottom: 2px; }
+.hs-tooltip span { color: #9AA0A6; font-size: 11px; }
+
+/* Плашка с цифрами */
 .rack-brandbar {
   position: relative;
   margin-top: 24px;
@@ -182,18 +212,26 @@
   animation: pulse 2s infinite;
 }
 
+/* Анимации */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
 
-/* ===== MOBILE ===== */
+@keyframes pulse-glow {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
-  .hero-visual-realistic {
-    max-width: 100%;
-  }
-  .server-rack-svg {
-    max-width: 100%;
+  .model-viewer-3d {
+    height: 400px;
   }
   .rack-brandbar {
     grid-template-columns: repeat(3, 1fr);
@@ -206,9 +244,9 @@
   }
 }
 
-/* ===== REDUCED MOTION ===== */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-visual-realistic *, .hero-visual-realistic *::before, .hero-visual-realistic *::after {
+  .hero-3d-container *, .hero-3d-container *::before, .hero-3d-container *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -216,6 +254,7 @@
 }
 
 </style>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body class="grain">
 
@@ -311,322 +350,52 @@
 <p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
-<div class="hero-visual-realistic">
+<div class="hero-3d-container">
   <!-- Фоновое свечение -->
-  <div class="visual-glow"></div>
+  <div class="ambient-glow"></div>
 
-  <!-- SVG Шкаф -->
-  <svg class="server-rack-svg" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <!-- Металл корпуса (градиент для объема) -->
-      <linearGradient id="metal-main" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#15181E"/>
-        <stop offset="30%" stop-color="#2A2F3A"/>
-        <stop offset="50%" stop-color="#3D4450"/>
-        <stop offset="70%" stop-color="#2A2F3A"/>
-        <stop offset="100%" stop-color="#1A1D24"/>
-      </linearGradient>
+  <!-- 3D МОДЕЛЬ -->
+  <model-viewer 
+    src="img/server-rack.glb" 
+    alt="3D Серверный шкаф F&F"
+    auto-rotate 
+    auto-rotate-delay="500"
+    rotation-per-second="10deg"
+    camera-controls 
+    disable-zoom
+    shadow-intensity="2"
+    environment-image="neutral"
+    exposure="1.5"
+    class="model-viewer-3d"
+  >
+    <!-- ИНТЕРАКТИВНЫЕ КНОПКИ (ХОТСПОТЫ) -->
+    <button class="hotspot" slot="hotspot-servers" data-position="0.2m 0.5m 0.3m" data-normal="0m 0m 1m">
+      <div class="hs-icon"></div>
+      <div class="hs-tooltip"><strong>Настройка серверов</strong><span>Монтаж и виртуализация</span></div>
+    </button>
 
-      <!-- Металл боковой стойки (более темный) -->
-      <linearGradient id="metal-side" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#0E1116"/>
-        <stop offset="50%" stop-color="#1A1D24"/>
-        <stop offset="100%" stop-color="#0A0D14"/>
-      </linearGradient>
+    <button class="hotspot" slot="hotspot-audit" data-position="-0.2m 0.3m 0.3m" data-normal="0m 0m 1m">
+      <div class="hs-icon"></div>
+      <div class="hs-tooltip"><strong>IT-аудит</strong><span>Проверка инфраструктуры</span></div>
+    </button>
 
-      <!-- Металл верхней крышки -->
-      <linearGradient id="metal-top" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#4E5666"/>
-        <stop offset="50%" stop-color="#2A2F3A"/>
-        <stop offset="100%" stop-color="#1A1D24"/>
-      </linearGradient>
+    <button class="hotspot" slot="hotspot-security" data-position="0m 0m 0.4m" data-normal="0m 0m 1m">
+      <div class="hs-icon"></div>
+      <div class="hs-tooltip"><strong>КриптоПро и ЭЦП</strong><span>Токены и лицензии</span></div>
+    </button>
 
-      <!-- Вентиляционная решетка -->
-      <pattern id="vents" width="4" height="4" patternUnits="userSpaceOnUse">
-        <rect width="4" height="4" fill="#0E1116"/>
-        <rect width="1" height="4" fill="#000"/>
-        <rect x="1" width="0.5" height="4" fill="rgba(255,255,255,0.05)"/>
-      </pattern>
+    <button class="hotspot" slot="hotspot-backup" data-position="0.1m -0.2m 0.3m" data-normal="0m 0m 1m">
+      <div class="hs-icon"></div>
+      <div class="hs-tooltip"><strong>Резервное копирование</strong><span>Защита от потери данных</span></div>
+    </button>
 
-      <!-- Задняя стенка (сетка) -->
-      <pattern id="back-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-        <rect width="20" height="20" fill="#05070A"/>
-        <path d="M 0 0 L 20 0 M 0 10 L 20 10 M 0 0 L 0 20 M 10 0 L 10 20" stroke="#15181E" stroke-width="1"/>
-      </pattern>
+    <button class="hotspot" slot="hotspot-support" data-position="-0.1m -0.4m 0.3m" data-normal="0m 0m 1m">
+      <div class="hs-icon"></div>
+      <div class="hs-tooltip"><strong>Абонентка</strong><span>Команда инженеров</span></div>
+    </button>
+  </model-viewer>
 
-      <!-- Стекло (полупрозрачное) -->
-      <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="rgba(20,30,40,0.35)"/>
-        <stop offset="50%" stop-color="rgba(10,15,20,0.2)"/>
-        <stop offset="100%" stop-color="rgba(5,10,15,0.45)"/>
-      </linearGradient>
-
-      <!-- Свечение светодиодов -->
-      <filter id="led-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="2.5" result="blur"/>
-        <feMerge>
-          <feMergeNode in="blur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-
-      <!-- Мягкое свечение (для ambient) -->
-      <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="8" result="blur"/>
-        <feMerge>
-          <feMergeNode in="blur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-
-      <!-- Тень на полу -->
-      <filter id="floor-shadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="15" result="blur"/>
-        <feComposite in="SourceGraphic" in2="blur" operator="in"/>
-      </filter>
-
-      <!-- Тень от устройств -->
-      <filter id="device-shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.6"/>
-      </filter>
-
-      <!-- Болт (radial gradient) -->
-      <radialGradient id="bolt" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#5A6272"/>
-        <stop offset="70%" stop-color="#2A2F3A"/>
-        <stop offset="100%" stop-color="#1A1D24"/>
-      </radialGradient>
-
-      <!-- Ручка (скобка) -->
-      <linearGradient id="handle" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#4E5666"/>
-        <stop offset="50%" stop-color="#2A2F3A"/>
-        <stop offset="100%" stop-color="#1A1D24"/>
-      </linearGradient>
-    </defs>
-
-    <!-- ===== 1. ТЕНЬ НА ПОЛУ ===== -->
-    <ellipse cx="300" cy="760" rx="220" ry="35" fill="#000" opacity="0.7" filter="url(#floor-shadow)"/>
-
-    <!-- ===== 2. КОРПУС (Задняя часть) ===== -->
-    <g id="rack-frame">
-      <!-- Задняя стенка (сетка) -->
-      <polygon points="150,80 450,120 450,720 150,760" fill="url(#back-grid)" stroke="#111" stroke-width="1"/>
-      
-      <!-- Боковая стойка (левая, уходящая вглубь) -->
-      <polygon points="100,60 150,80 150,760 100,780" fill="url(#metal-side)" stroke="#0A0D14" stroke-width="1"/>
-      
-      <!-- Боковая стойка (правая, уходящая вглубь) -->
-      <polygon points="450,120 500,100 500,740 450,720" fill="url(#metal-side)" stroke="#0A0D14" stroke-width="1"/>
-      
-      <!-- Верхняя крышка -->
-      <polygon points="100,60 150,80 450,120 500,100 450,40 150,20" fill="url(#metal-top)" stroke="#0A0D14" stroke-width="1"/>
-      
-      <!-- Нижняя часть (колесики) -->
-      <g id="casters">
-        <circle cx="120" cy="770" r="8" fill="#1A1D24" stroke="#0E1116" stroke-width="1"/>
-        <circle cx="120" cy="770" r="3" fill="#3A404D"/>
-        <circle cx="480" cy="730" r="8" fill="#1A1D24" stroke="#0E1116" stroke-width="1"/>
-        <circle cx="480" cy="730" r="3" fill="#3A404D"/>
-      </g>
-      
-      <!-- Неоновая подсветка внутри (зеленая) -->
-      <rect x="150" y="80" width="300" height="640" fill="rgba(0,255,136,0.02)"/>
-    </g>
-
-    <!-- ===== 3. СЕРВЕРНЫЕ БЛОКИ ===== -->
-    <g id="servers" filter="url(#device-shadow)">
-      
-      <!-- Сервер 1 (2U) - Patch Panel -->
-      <g transform="translate(120, 140)">
-        <!-- Корпус -->
-        <polygon points="0,0 300,25 300,55 0,30" fill="url(#metal-main)"/>
-        <rect x="0" y="0" width="300" height="30" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <!-- Верхняя грань (3D) -->
-        <polygon points="0,0 300,25 300,0 0,-25" fill="#4E5666" opacity="0.3"/>
-        <!-- Решетка -->
-        <rect x="15" y="8" width="180" height="14" fill="url(#vents)" rx="1"/>
-        <!-- Порты (24 штуки) -->
-        <g fill="#0E1116" stroke="#333" stroke-width="0.5">
-          <rect x="200" y="8" width="5" height="5"/><rect x="210" y="8" width="5" height="5"/><rect x="220" y="8" width="5" height="5"/>
-          <rect x="230" y="8" width="5" height="5"/><rect x="240" y="8" width="5" height="5"/><rect x="250" y="8" width="5" height="5"/>
-          <rect x="260" y="8" width="5" height="5"/><rect x="270" y="8" width="5" height="5"/>
-        </g>
-        <!-- Светодиоды -->
-        <circle cx="285" cy="10" r="2" fill="#00FF88" filter="url(#led-glow)"/>
-        <circle cx="285" cy="22" r="2" fill="#D4AF37" filter="url(#led-glow)"/>
-        <!-- Ручка -->
-        <rect x="145" y="-3" width="10" height="6" rx="1" fill="url(#handle)" stroke="#0A0D14" stroke-width="0.5"/>
-        <!-- Болты -->
-        <circle cx="8" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="8" cy="22" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="22" r="2.5" fill="url(#bolt)"/>
-        <!-- Подпись -->
-        <text x="200" y="28" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">PATCH-24</text>
-      </g>
-
-      <!-- Сервер 2 (1U) - Switch -->
-      <g transform="translate(120, 185)">
-        <polygon points="0,0 300,25 300,45 0,20" fill="url(#metal-main)"/>
-        <rect x="0" y="0" width="300" height="20" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <polygon points="0,0 300,25 300,0 0,-25" fill="#4E5666" opacity="0.2"/>
-        <!-- Порты -->
-        <g fill="#0E1116" stroke="#333" stroke-width="0.5">
-          <rect x="15" y="5" width="4" height="4"/><rect x="22" y="5" width="4" height="4"/><rect x="29" y="5" width="4" height="4"/>
-          <rect x="36" y="5" width="4" height="4"/><rect x="43" y="5" width="4" height="4"/><rect x="50" y="5" width="4" height="4"/>
-          <rect x="57" y="5" width="4" height="4"/><rect x="64" y="5" width="4" height="4"/>
-          <rect x="78" y="5" width="4" height="4"/><rect x="85" y="5" width="4" height="4"/><rect x="92" y="5" width="4" height="4"/>
-          <rect x="99" y="5" width="4" height="4"/><rect x="106" y="5" width="4" height="4"/><rect x="113" y="5" width="4" height="4"/>
-          <rect x="120" y="5" width="4" height="4"/><rect x="127" y="5" width="4" height="4"/>
-        </g>
-        <!-- Светодиоды -->
-        <circle cx="270" cy="7" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1"/>
-        <circle cx="270" cy="15" r="2" fill="#D4AF37" filter="url(#led-glow)" class="led-blink-2"/>
-        <circle cx="280" cy="7" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3"/>
-        <circle cx="280" cy="15" r="2" fill="#00FF88" filter="url(#led-glow)"/>
-        <!-- Ручка -->
-        <rect x="145" y="-3" width="10" height="6" rx="1" fill="url(#handle)" stroke="#0A0D14" stroke-width="0.5"/>
-        <!-- Болты -->
-        <circle cx="8" cy="5" r="2" fill="url(#bolt)"/>
-        <circle cx="292" cy="5" r="2" fill="url(#bolt)"/>
-        <circle cx="8" cy="15" r="2" fill="url(#bolt)"/>
-        <circle cx="292" cy="15" r="2" fill="url(#bolt)"/>
-        <!-- Подпись -->
-        <text x="200" y="14" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">SW-16P</text>
-      </g>
-
-      <!-- Сервер 3 (2U) -->
-      <g transform="translate(120, 215)">
-        <polygon points="0,0 300,25 300,55 0,30" fill="url(#metal-main)"/>
-        <rect x="0" y="0" width="300" height="30" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <polygon points="0,0 300,25 300,0 0,-25" fill="#4E5666" opacity="0.2"/>
-        <rect x="15" y="8" width="180" height="14" fill="url(#vents)" rx="1"/>
-        <!-- Ручка -->
-        <rect x="145" y="-3" width="10" height="6" rx="1" fill="url(#handle)" stroke="#0A0D14" stroke-width="0.5"/>
-        <!-- Болты -->
-        <circle cx="8" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="8" cy="22" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="22" r="2.5" fill="url(#bolt)"/>
-        <!-- Светодиоды -->
-        <circle cx="285" cy="10" r="2.5" fill="#00FF88" filter="url(#led-glow)"/>
-        <circle cx="285" cy="22" r="2.5" fill="#D4AF37" filter="url(#led-glow)" class="led-blink-1"/>
-        <!-- Подпись -->
-        <text x="200" y="28" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">SRV-01</text>
-      </g>
-
-      <!-- Сервер 4 (2U) -->
-      <g transform="translate(120, 260)">
-        <polygon points="0,0 300,25 300,55 0,30" fill="url(#metal-main)"/>
-        <rect x="0" y="0" width="300" height="30" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <polygon points="0,0 300,25 300,0 0,-25" fill="#4E5666" opacity="0.2"/>
-        <rect x="15" y="8" width="180" height="14" fill="url(#vents)" rx="1"/>
-        <rect x="145" y="-3" width="10" height="6" rx="1" fill="url(#handle)" stroke="#0A0D14" stroke-width="0.5"/>
-        <circle cx="8" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="8" cy="22" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="22" r="2.5" fill="url(#bolt)"/>
-        <circle cx="285" cy="10" r="2.5" fill="#00FF88" filter="url(#led-glow)"/>
-        <circle cx="285" cy="22" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-2"/>
-        <text x="200" y="28" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">SRV-02</text>
-      </g>
-
-      <!-- Сервер 5 (4U) -->
-      <g transform="translate(120, 305)">
-        <polygon points="0,0 300,25 300,90 0,65" fill="url(#metal-main)"/>
-        <rect x="0" y="0" width="300" height="65" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <polygon points="0,0 300,25 300,0 0,-25" fill="#4E5666" opacity="0.2"/>
-        <rect x="15" y="8" width="180" height="18" fill="url(#vents)" rx="1"/>
-        <rect x="15" y="32" width="180" height="18" fill="url(#vents)" rx="1"/>
-        <rect x="145" y="-3" width="10" height="6" rx="1" fill="url(#handle)" stroke="#0A0D14" stroke-width="0.5"/>
-        <circle cx="8" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="8" r="2.5" fill="url(#bolt)"/>
-        <circle cx="8" cy="57" r="2.5" fill="url(#bolt)"/>
-        <circle cx="292" cy="57" r="2.5" fill="url(#bolt)"/>
-        <circle cx="285" cy="12" r="2.5" fill="#00FF88" filter="url(#led-glow)"/>
-        <circle cx="285" cy="28" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1"/>
-        <circle cx="285" cy="44" r="2.5" fill="#D4AF37" filter="url(#led-glow)"/>
-        <circle cx="285" cy="60" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3"/>
-        <text x="200" y="55" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">SRV-03</text>
-      </g>
-
-      <!-- PDU (Блок питания) -->
-      <g transform="translate(120, 385)">
-        <rect x="0" y="0" width="300" height="20" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-        <g fill="#0E1116" stroke="#333" stroke-width="0.5">
-          <rect x="15" y="5" width="8" height="10"/><rect x="30" y="5" width="8" height="10"/>
-          <rect x="45" y="5" width="8" height="10"/><rect x="60" y="5" width="8" height="10"/>
-          <rect x="75" y="5" width="8" height="10"/><rect x="90" y="5" width="8" height="10"/>
-          <rect x="105" y="5" width="8" height="10"/><rect x="120" y="5" width="8" height="10"/>
-        </g>
-        <text x="200" y="14" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">PDU-16A</text>
-      </g>
-
-      <!-- Пустые слоты -->
-      <g transform="translate(120, 415)">
-        <rect x="0" y="0" width="300" height="18" rx="2" fill="#0E1116" stroke="#222" stroke-width="1"/>
-        <rect x="15" y="4" width="270" height="10" fill="url(#vents)" rx="1" opacity="0.3"/>
-      </g>
-      <g transform="translate(120, 440)">
-        <rect x="0" y="0" width="300" height="18" rx="2" fill="#0E1116" stroke="#222" stroke-width="1"/>
-        <rect x="15" y="4" width="270" height="10" fill="url(#vents)" rx="1" opacity="0.3"/>
-      </g>
-    </g>
-
-    <!-- ===== 4. КАБЕЛИ (Провода) ===== -->
-    <g id="cables" opacity="0.8">
-      <!-- Синие кабели -->
-      <path d="M 300 155 C 320 180, 350 250, 380 350" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 310 155 C 330 190, 360 270, 390 380" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
-      <!-- Красные кабели -->
-      <path d="M 280 200 C 300 230, 330 300, 360 400" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 290 200 C 310 240, 340 320, 370 420" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
-      <!-- Зеленые кабели -->
-      <path d="M 270 230 C 290 260, 320 330, 350 430" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 280 230 C 300 270, 330 350, 360 450" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
-      <!-- Желтые кабели -->
-      <path d="M 260 275 C 280 300, 310 370, 340 470" fill="none" stroke="#EAB308" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 270 275 C 290 310, 320 390, 350 490" fill="none" stroke="#EAB308" stroke-width="2" stroke-linecap="round"/>
-      <!-- Фиолетовые -->
-      <path d="M 250 320 C 270 340, 300 410, 330 510" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round"/>
-      <!-- Голубые -->
-      <path d="M 240 320 C 260 350, 290 420, 320 520" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"/>
-      <!-- Розовые -->
-      <path d="M 230 390 C 250 410, 280 480, 310 560" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round"/>
-      <!-- Оранжевые -->
-      <path d="M 220 390 C 240 420, 270 490, 300 570" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
-    </g>
-
-    <!-- ===== 5. СТЕКЛЯННАЯ ДВЕРЬ (Слева) ===== -->
-    <g id="glass-door">
-      <!-- Трапеция двери -->
-      <polygon points="90,100 130,130 130,730 90,770" fill="url(#glass)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
-      <!-- Блик на стекле (диагональ) -->
-      <polygon points="95,110 120,135 120,350 95,300" fill="rgba(255,255,255,0.06)"/>
-      <polygon points="100,400 125,430 125,650 100,620" fill="rgba(255,255,255,0.03)"/>
-      <!-- Ручка двери -->
-      <rect x="118" y="420" width="8" height="40" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-      <circle cx="122" cy="425" r="2" fill="#5A6272"/>
-      <circle cx="122" cy="455" r="2" fill="#5A6272"/>
-      <!-- Петли -->
-      <rect x="95" y="150" width="6" height="15" rx="1" fill="#2A2F3A" stroke="#111" stroke-width="0.5"/>
-      <rect x="95" y="600" width="6" height="15" rx="1" fill="#2A2F3A" stroke="#111" stroke-width="0.5"/>
-    </g>
-
-    <!-- ===== 6. ПЕРЕДНЯЯ РАМКА (для глубины) ===== -->
-    <g id="front-frame">
-      <!-- Левая вертикальная стойка (передняя) -->
-      <rect x="80" y="90" width="12" height="690" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-      <!-- Правая вертикальная стойка (передняя) -->
-      <rect x="440" y="110" width="12" height="630" rx="2" fill="url(#metal-main)" stroke="#0A0D14" stroke-width="1"/>
-      <!-- Верхняя перекладина -->
-      <rect x="80" y="90" width="372" height="12" rx="2" fill="url(#metal-top)" stroke="#0A0D14" stroke-width="1"/>
-    </g>
-
-  </svg>
-
-  <!-- Плашка с метриками -->
+  <!-- ПЛАШКА С ЦИФРАМИ (Внизу) -->
   <div class="rack-brandbar">
     <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
     <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
