@@ -20,7 +20,7 @@ EXCLUDE_DIRS = {'.git', 'node_modules', '.agents', 'dist', 'docs', 'scripts', 's
 EXCLUDE_FILES = {'.gitignore', 'AGENTS.md', 'README.md', 'package.json', 'package-lock.json',
                  'opencode.jsonc', 'skills-lock.json', '.clinerules', '.htmlhintrc',
                  'eslint.config.mjs', 'build.js', '.nojekyll'}
-ALLOWED_EXT = {'.html', '.css', '.js', '.json', '.txt', '.xml', '.webp', '.ico', '.svg',
+ALLOWED_EXT = {'.html', '.css', '.js', '.json', '.txt', '.xml', '.webp', '.ico', '.svg', '.glb',
                '.woff2', '.png', '.jpg', '.jpeg', '.gif'}
 ALLOWED_NAMES = {'_headers', '_redirects', 'robots.txt', 'sitemap.xml', 'favicon.ico',
                  'manifest.json', 'sw.js', 'data.json', 'search-index.json',
