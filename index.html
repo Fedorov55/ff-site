@@ -59,153 +59,262 @@
 
 <style id="hero-rack-css">
 
-.hero-visual-tilt {
-  position: relative;
+.hero-3d-section {
+  perspective: 1500px;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  perspective: 1000px;
+  position: relative;
+  z-index: 1;
 }
 
-.tilt-container {
+.rack-scene {
   position: relative;
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform-style: preserve-3d;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.rack-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  mix-blend-mode: screen;
-}
-
-/* --- ХОТСПОТЫ --- */
-.hotspot {
+/* Ambient glow */
+.ambient-glow {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgba(212, 175, 55, 0.2);
-  border: 2px solid #D4AF37;
-  border-radius: 50%;
-  cursor: pointer;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-  transition: all 0.3s ease;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulse-glow 4s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.rack-cabinet {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transform: rotateY(-25deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-3d-section:hover .rack-cabinet {
+  transform: rotateY(-15deg) rotateX(2deg);
+}
+
+/* Общие стили для всех граней */
+.face {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* ПЕРЕДНЯЯ ПАНЕЛЬ */
+.face-front {
+  transform: translateZ(60px);
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  box-shadow: inset 0 0 20px rgba(0,0,0,1);
+  padding: 10px;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+/* ЛЕВАЯ СТЕНКА */
+.face-left {
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, #0E1116, #2A2F3A);
+  transform: rotateY(-90deg) translateZ(-60px) translateX(-60px);
+  transform-origin: left center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ПРАВАЯ СТЕНКА */
+.face-right {
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(-90deg, #0E1116, #1A1D24);
+  transform: rotateY(90deg) translateZ(-60px) translateX(60px);
+  transform-origin: right center;
+}
+
+/* ВЕРХНЯЯ КРЫШКА */
+.face-top {
+  width: 100%;
+  height: 120px;
+  background: #1A1D24;
+  transform: rotateX(90deg) translateZ(60px);
+  transform-origin: top center;
+}
+
+/* ЗАДНЯЯ СТЕНКА */
+.face-back {
+  transform: translateZ(-60px);
+  background: #0A0D14;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- СЕРВЕРНЫЕ ЮНИТЫ --- */
+.rack-unit {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(180deg, #353B47 0%, #232731 20%, #15181E 100%);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 2px solid #000;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.1), 0 4px 6px rgba(0,0,0,0.5);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+  cursor: pointer;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* ЭФФЕКТ ВЫДВИЖЕНИЯ СЕРВЕРА ПРИ НАВЕДЕНИИ */
+.server-unit:hover {
+  transform: translateZ(40px);
+  box-shadow: -5px 5px 20px rgba(0,0,0,0.8), 0 0 15px rgba(212,175,55,0.3);
   z-index: 10;
 }
 
-.hotspot::after {
-  content: '';
+/* Детали сервера: Решетка */
+.unit-vents {
   position: absolute;
-  inset: 4px;
-  background: #D4AF37;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
+  top: 15px; left: 20px; right: 80px; height: 18px;
+  background: repeating-linear-gradient(90deg, transparent, transparent 3px, #000 3px, #000 4px);
+  opacity: 0.6;
 }
 
-.hotspot:hover {
-  transform: translate(-50%, -50%) scale(1.3);
-  background: rgba(212, 175, 55, 0.5);
-}
-
-/* Тултип */
-.hs-tooltip {
+/* Детали сервера: Лампочки */
+.unit-leds {
   position: absolute;
-  left: 30px;
-  top: 50%;
-  transform: translateY(-50%) translateX(10px);
-  background: #12151C;
+  top: 20px; right: 20px;
+  display: flex; gap: 6px;
+}
+.led {
+  width: 6px; height: 6px; border-radius: 50%;
+}
+.led.green { background: #00FF88; box-shadow: 0 0 8px #00FF88; animation: blink 2s infinite; }
+.led.gold { background: #D4AF37; box-shadow: 0 0 8px #D4AF37; animation: blink 1.5s infinite alternate; }
+
+/* Всплывающая подсказка */
+.unit-tooltip {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) translateZ(10px);
+  background: rgba(10, 13, 20, 0.95);
   border: 1px solid #D4AF37;
-  padding: 8px 12px;
-  border-radius: 6px;
+  color: #D4AF37;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  transition: all 0.3s;
   z-index: 9999;
   box-shadow: 0 5px 15px rgba(0,0,0,0.8);
 }
-
-.hotspot:hover .hs-tooltip {
+.server-unit:hover .unit-tooltip {
   opacity: 1;
-  transform: translateY(-50%) translateX(0);
+  transform: translate(-50%, -50%) translateZ(20px);
 }
 
-.hs-tooltip strong { color: #E8EAF0; font-size: 13px; margin-bottom: 2px; }
-.hs-tooltip span { color: #9AA0A6; font-size: 11px; }
-
-/* Фоновое свечение */
-.ambient-glow {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-  filter: blur(40px);
-  z-index: 0;
-  pointer-events: none;
+/* Логотип в шапке */
+.header-unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #2A2F3A 0%, #1A1D24 100%);
+}
+.header-unit .logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212,175,55,0.3);
 }
 
-/* --- ПЛАШКА С ЦИФРАМИ --- */
-.rack-brandbar {
-  position: relative;
-  margin-top: 24px;
-  background: #12151C;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+/* Плашка с метриками */
+.brandbar-unit {
+  background: #0E1116;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  z-index: 10;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-.metric {
+.brandbar-unit .metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.brandbar-unit .metric {
   text-align: center;
 }
 
-.metric .num {
+.brandbar-unit .metric span {
   display: block;
   color: #E8EAF0;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
 }
 
-.metric .lbl {
+.brandbar-unit .metric small {
   display: block;
   color: #9AA0A6;
-  font-size: 9px;
+  font-size: 8px;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
-.status-plate {
-  grid-column: 1 / -1;
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.brandbar-unit .status {
+  text-align: center;
   color: #00FF88;
   font-size: 10px;
   font-family: monospace;
   border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .status-dot {
-  width: 6px;
-  height: 6px;
+  display: inline-block;
+  width: 6px; height: 6px;
   background: #00FF88;
   border-radius: 50%;
   box-shadow: 0 0 8px #00FF88;
   animation: pulse 2s infinite;
+  margin-right: 4px;
+}
+
+/* Стеклянная дверца */
+.glass-door {
+  position: absolute;
+  inset: 0;
+  transform: translateZ(62px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(20,30,40,0.3) 50%, rgba(255,255,255,0.02) 100%);
+  border: 2px solid rgba(255,255,255,0.1);
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
 }
 
 @keyframes pulse {
@@ -215,23 +324,25 @@
 
 /* Mobile */
 @media (max-width: 600px) {
-  .tilt-container {
-    transform: none;
+  .rack-cabinet {
+    width: 280px;
+    height: 420px;
+    transform: rotateY(-20deg) rotateX(3deg);
   }
-  .rack-brandbar {
-    grid-template-columns: repeat(3, 1fr);
+  .face-left, .face-right {
+    width: 80px;
   }
-  .metric .num {
-    font-size: 16px;
+  .rack-unit {
+    height: 40px;
   }
-  .metric .lbl {
-    font-size: 8px;
+  .brandbar-unit .metrics {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-visual-tilt *, .hero-visual-tilt *::before, .hero-visual-tilt *::after {
+  .hero-3d-section *, .hero-3d-section *::before, .hero-3d-section *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -334,46 +445,77 @@
 <p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
-<div class="hero-visual-tilt">
+<div class="hero-3d-section">
   <div class="ambient-glow"></div>
 
-  <!-- Контейнер с картинкой и хотспотами -->
-  <div class="tilt-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-    <!-- Картинка шкафа -->
-    <img src="img/server-rack.png" alt="Серверный шкаф F&F" class="rack-image" />
-    
-    <!-- ХОТСПОТЫ -->
-    <a href="servers.html" class="hotspot" style="top: 20%; left: 30%;">
-      <div class="hs-tooltip"><strong>Настройка серверов</strong><span>Монтаж и виртуализация</span></div>
-    </a>
-    
-    <a href="audits/audit.html" class="hotspot" style="top: 35%; left: 40%;">
-      <div class="hs-tooltip"><strong>IT-аудит</strong><span>Проверка инфраструктуры</span></div>
-    </a>
+  <div class="rack-scene">
+    <!-- Сам шкаф (наклоняем для 3D-эффекта) -->
+    <div class="rack-cabinet">
+      
+      <!-- 1. Задняя стенка (создает глубину) -->
+      <div class="face face-back"></div>
 
-    <a href="security/crypto.html" class="hotspot" style="top: 50%; left: 45%;">
-      <div class="hs-tooltip"><strong>КриптоПро и ЭЦП</strong><span>Токены и лицензии</span></div>
-    </a>
+      <!-- 2. Левая стенка шкафа -->
+      <div class="face face-left"></div>
 
-    <a href="security/security.html" class="hotspot" style="top: 65%; left: 50%;">
-      <div class="hs-tooltip"><strong>Безопасность</strong><span>Защита данных</span></div>
-    </a>
+      <!-- 3. Правая стенка шкафа -->
+      <div class="face face-right"></div>
 
-    <a href="services.html" class="hotspot" style="top: 80%; left: 55%;">
-      <div class="hs-tooltip"><strong>Абонентка</strong><span>Команда инженеров</span></div>
-    </a>
-  </div>
+      <!-- 4. Верхняя крышка -->
+      <div class="face face-top"></div>
 
-  <!-- ПЛАШКА С ЦИФРАМИ -->
-  <div class="rack-brandbar">
-    <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
-    <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
-    <div class="metric"><span class="num" data-target="27">0</span><span class="lbl">отзывов</span></div>
-    <div class="metric"><span class="num" data-target="99" data-suffix="%">0</span><span class="lbl">остаются</span></div>
-    <div class="metric"><span class="num" data-target="4" data-suffix="+">0</span><span class="lbl">специалиста</span></div>
-    <div class="metric"><span class="num">24/7</span><span class="lbl">на связи</span></div>
-    <div class="status-plate">
-      <span class="status-dot"></span> ONLINE · Готовы помочь вашему бизнесу
+      <!-- 5. СЕРВЕРЫ (Передняя панель) -->
+      <div class="face face-front">
+        
+        <!-- Верхний юнит с логотипом -->
+        <div class="rack-unit header-unit">
+          <div class="logo">FF-IT</div>
+        </div>
+
+        <!-- Серверные юниты с ховером (сдвиг вперед по оси Z) -->
+        <a href="servers.html" class="rack-unit server-unit">
+          <div class="unit-vents"></div>
+          <div class="unit-leds"><span class="led green"></span><span class="led gold"></span></div>
+          <div class="unit-tooltip">Настройка серверов</div>
+        </a>
+
+        <a href="audits/audit.html" class="rack-unit server-unit">
+          <div class="unit-vents"></div>
+          <div class="unit-leds"><span class="led green"></span></div>
+          <div class="unit-tooltip">IT-аудит</div>
+        </a>
+
+        <a href="security/crypto.html" class="rack-unit server-unit">
+          <div class="unit-vents"></div>
+          <div class="unit-leds"><span class="led gold"></span></div>
+          <div class="unit-tooltip">КриптоПро и ЭЦП</div>
+        </a>
+
+        <a href="security/security.html" class="rack-unit server-unit">
+          <div class="unit-vents"></div>
+          <div class="unit-leds"><span class="led green"></span></div>
+          <div class="unit-tooltip">Безопасность</div>
+        </a>
+
+        <!-- Плашка с цифрами как нижний юнит шкафа -->
+        <div class="rack-unit brandbar-unit">
+          <div class="metrics">
+            <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
+            <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
+            <div class="metric"><span class="num" data-target="27">0</span><span class="lbl">отзывов</span></div>
+            <div class="metric"><span class="num" data-target="99" data-suffix="%">0</span><span class="lbl">остаются</span></div>
+            <div class="metric"><span class="num" data-target="4" data-suffix="+">0</span><span class="lbl">специалиста</span></div>
+            <div class="metric"><span class="num">24/7</span><span class="lbl">на связи</span></div>
+          </div>
+          <div class="status-plate">
+            <span class="status-dot"></span> ONLINE · Готовы помочь вашему бизнесу
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Стеклянная дверца (эффект) -->
+      <div class="glass-door"></div>
     </div>
   </div>
 </div>
@@ -937,6 +1079,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </body>
 </html>
