@@ -56,6 +56,561 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Как мы работаем","step":[{"@type":"HowToStep","name":"Заявка и диагностика","text":"Вы описываете задачу — мы проводим бесплатную диагностику и предлагаем решение с точной сметой."},{"@type":"HowToStep","name":"Договор и сроки","text":"Фиксируем объём работ, сроки и стоимость в договоре. Без скрытых платежей."},{"@type":"HowToStep","name":"Выполнение","text":"Выполняем работы в согласованные сроки. Держим вас в курсе на каждом этапе."},{"@type":"HowToStep","name":"Приёмка и гарантия","text":"Передаём результат, подписываем акт. Гарантия 6 месяцев на все работы."}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит IT-аутсорсинг в Казани?", "acceptedAnswer": {"@type": "Answer", "text": "От 10 000 ₽/мес для офиса 10–15 человек. Рыночная цена в Казани — 8 000–25 000 ₽/мес. F&F: мониторинг 24/7, SLA 99,5%, реакция 15 мин. Тарифы →"}}, {"@type": "Question", "name": "Чем F&F отличается от штатного сисадмина?", "acceptedAnswer": {"@type": "Answer", "text": "Команда из 4+ специалистов вместо одного человека. Экономия до 40–80% (1.6–1.9 млн ₽/год vs от 120 000 ₽/год). Нет зависимости от одного человека. Сравнение →"}}, {"@type": "Question", "name": "Как быстро реагируете на аварию?", "acceptedAnswer": {"@type": "Answer", "text": "15 минут в рабочее время, выезд в день обращения. F&F: приоритет аварийным заявкам, SLA 99,5%. Аварийный выезд →"}}, {"@type": "Question", "name": "Есть ли договор и гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "Да, договор с SLA и гарантией 6 месяцев на все работы. F&F: акт, чек, безнал для ИП/ООО. Реквизиты →"}}, {"@type": "Question", "name": "Можно ли отказаться от обслуживания?", "acceptedAnswer": {"@type": "Answer", "text": "Да, с уведомлением за 30 дней. Без штрафов, передаём документацию и доступы. Кейсы →"}}, {"@type": "Question", "name": "Где вы работаете?", "acceptedAnswer": {"@type": "Answer", "text": "Казань — выезд по городу и Татарстану. Россия — удалённая поддержка с тем же SLA и регламентом. Выезд по Казани в день обращения при аварии."}}]}</script>
 <meta name="google-site-verification" content="ccMY4BLEhERCDAMHmIJa5f5-G-zQutGb_YZDnIDaXd8" />
+
+<style id="hero-rack-css">
+
+:root {
+  --bg-deep: #05070A;
+  --bg-page: #0A0D14;
+  --metal-dark: #1A1D24;
+  --metal-mid: #2A2F3A;
+  --metal-light: #3D4450;
+  --metal-highlight: #4E5666;
+  --gold: #D4AF37;
+  --gold-bright: #E8C44D;
+  --gold-glow: rgba(212, 175, 55, 0.6);
+  --neon-green: #00FF88;
+  --neon-green-glow: rgba(0, 255, 136, 0.6);
+  --text-primary: #E8EAF0;
+  --text-secondary: #9AA0A6;
+  --text-dim: #5B6472;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ===== HERO RACK ===== */
+.hero-rack {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: var(--bg-page);
+  position: relative;
+  overflow: hidden;
+}
+
+.rack-container {
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  perspective: 1200px;
+  z-index: 2;
+}
+
+.rack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform-style: preserve-3d;
+  transform: rotateX(2deg);
+}
+
+/* ===== AMBIENT GLOW ===== */
+.ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 60%);
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* ===== PARTICLES ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.p {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+.p1 {
+  background: var(--neon-green);
+  box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green-glow);
+  left: 15%;
+  bottom: 0;
+  animation: float-up-1 8s linear infinite;
+}
+
+.p2 {
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold-glow);
+  left: 85%;
+  bottom: 0;
+  animation: float-up-2 10s linear infinite;
+  animation-delay: 2s;
+}
+
+.p3 {
+  background: var(--neon-green);
+  box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green-glow);
+  left: 50%;
+  bottom: 0;
+  animation: float-up-1 12s linear infinite;
+  animation-delay: 4s;
+}
+
+.p4 {
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold-glow);
+  left: 30%;
+  bottom: 0;
+  animation: float-up-2 9s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes float-up-1 {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(-300px) translateX(20px); }
+  90% { opacity: 1; }
+  100% { transform: translateY(-600px) translateX(-20px); opacity: 0; }
+}
+
+@keyframes float-up-2 {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(-300px) translateX(-20px); }
+  90% { opacity: 1; }
+  100% { transform: translateY(-600px) translateX(20px); opacity: 0; }
+}
+
+/* ===== SCANNER LINE ===== */
+.scanner-line {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+  box-shadow: 0 0 20px var(--neon-green);
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+  animation: scan-down 5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes scan-down {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ===== RACK UNITS ===== */
+.rack-unit {
+  position: relative;
+  background: linear-gradient(180deg, var(--metal-mid) 0%, var(--metal-dark) 50%, #22262F 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.4);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Header unit */
+.header-unit {
+  padding: 24px 32px;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px var(--gold-glow), 0 0 40px rgba(212,175,55,0.3);
+  margin-bottom: 8px;
+}
+
+.slogan-main {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.slogan-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-bright);
+  letter-spacing: 1px;
+  display: block;
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.unit-screws {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+}
+
+.unit-screws span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #5A6272 0%, #2A2F3A 100%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.unit-screws span:nth-child(1) { top: 0; left: 0; }
+.unit-screws span:nth-child(2) { top: 0; right: 0; }
+.unit-screws span:nth-child(3) { bottom: 0; left: 0; }
+.unit-screws span:nth-child(4) { bottom: 0; right: 0; }
+
+.unit-vents-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,0.6) 0px, rgba(0,0,0,0.6) 2px, transparent 2px, transparent 4px);
+  opacity: 0.5;
+}
+
+/* Server units */
+.server-unit {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  color: var(--text-primary);
+}
+
+.server-unit:hover {
+  transform: translateX(-8px) scale(1.01);
+  border-left: 2px solid var(--gold);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 30px rgba(212,175,55,0.25),
+    -10px 0 20px rgba(0,0,0,0.6);
+  z-index: 20;
+}
+
+.unit-rails {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  pointer-events: none;
+}
+
+.rail-left {
+  left: 0;
+  background: linear-gradient(90deg, #1A1D24 0%, transparent 100%);
+  border-right: 1px solid rgba(0,0,0,0.5);
+}
+
+.rail-right {
+  right: 0;
+  background: linear-gradient(270deg, #1A1D24 0%, transparent 100%);
+  border-left: 1px solid rgba(255,255,255,0.03);
+}
+
+.unit-vents {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0.5) 1px, transparent 1px, transparent 4px);
+  opacity: 0.4;
+}
+
+.unit-leds {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 16px;
+  z-index: 3;
+}
+
+.led {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: block;
+}
+
+.led-green {
+  background: var(--neon-green);
+  box-shadow: 0 0 6px var(--neon-green), 0 0 12px var(--neon-green-glow);
+  animation: blink 2s ease-in-out infinite;
+}
+
+.led-gold {
+  background: var(--gold);
+  box-shadow: 0 0 6px var(--gold), 0 0 12px var(--gold-glow);
+}
+
+.led-off {
+  background: #3A3F4A;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.delay-1 {
+  animation-delay: 0.7s;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
+
+.unit-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  z-index: 3;
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+/* Hologram overlay */
+.hologram-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(5,7,10,0.95) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 24px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  border-left: 2px solid var(--gold);
+}
+
+.server-unit:hover .hologram-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.holo-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.holo-status {
+  color: var(--neon-green);
+  font-size: 10px;
+  animation: blink 1.5s infinite;
+}
+
+.holo-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.holo-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  text-shadow: 0 0 10px rgba(212,175,55,0.4);
+}
+
+.holo-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.holo-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--gold-bright);
+  letter-spacing: 1px;
+  animation: text-pulse 2s ease-in-out infinite;
+}
+
+@keyframes text-pulse {
+  0%, 100% { opacity: 1; text-shadow: 0 0 8px var(--gold-glow); }
+  50% { opacity: 0.7; text-shadow: 0 0 2px var(--gold-glow); }
+}
+
+/* Brandbar unit */
+.brandbar-unit {
+  padding: 20px 24px 16px;
+  border-top: 2px solid var(--gold);
+  background: linear-gradient(180deg, #1A1D24 0%, #0E1116 100%);
+  position: relative;
+}
+
+.brandbar-unit::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  filter: blur(2px);
+}
+
+.brandbar-metrics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.metric-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.metric-lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.status-plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 4px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green-glow);
+  animation: blink 2s infinite;
+}
+
+.status-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--neon-green);
+  letter-spacing: 1px;
+}
+
+/* Reflection */
+.rack-reflection {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, transparent 100%);
+  transform: scaleY(-1);
+  opacity: 0.3;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .rack-container { max-width: 100%; padding: 0 12px; }
+  .header-unit { padding: 16px; min-height: 90px; }
+  .logo { font-size: 24px; letter-spacing: 2px; }
+  .slogan-main { font-size: 10px; letter-spacing: 1px; }
+  .slogan-sub { font-size: 10px; }
+  .server-unit { min-height: 56px; padding: 0 12px; }
+  .holo-title { font-size: 13px; }
+  .holo-desc { font-size: 10px; }
+  .brandbar-metrics { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .metric-num { font-size: 16px; }
+  .metric-lbl { font-size: 8px; }
+  .status-text { font-size: 8px; letter-spacing: 0.5px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile terminal hide (keep CTA above fold) */
+@media (max-width: 768px) {
+  .hero .terminal { display: none; }
+}
+
+</style>
 </head>
 <body class="grain">
 
@@ -131,66 +686,181 @@
 <nav class="quick-nav" aria-label="Быстрая навигация"><a href="prices.html">Цены</a><a href="#faq">FAQ</a><a href="prices.html#calculator">Калькулятор</a><a href="compare/compare.html">Сравнение</a><a href="#process">Процесс</a></nav>
 
 
-<!-- Hero -->
-<section class="hero hero--home">
-<div class="container">
-<div class="hero__inner">
-<div class="hero__copy">
-<span class="hero__badge">
-<span class="hero__badge-dot">
-</span> Казань — выезд · Россия — удалённо</span>
-<h1 class="hero__title">ИТ-поддержка офиса 20–50 человек без штатного сисадмина</h1>
-<p class="answer-first">ИТ-поддержка для офиса 20–50 человек в Казани. От 900 ₽/ПК/мес, SLA 99,5%, реакция 15 мин, гарантия 6 месяцев. Экономия до 40–80% (по расчётам).</p>
-<p class="hero__lead u-inl-26ea07">Ваш IT-контур под контролем: команда из 4+ специалистов, мониторинг 24/7, бэкапы с проверкой, выезд по городу.</p>
+<section class="hero-rack">
+  <div class="ambient-glow"></div>
+  <div class="particles">
+    <div class="p p1"></div>
+    <div class="p p2"></div>
+    <div class="p p3"></div>
+    <div class="p p4"></div>
+  </div>
+  <div class="scanner-line"></div>
+  <div class="rack-container">
+    <div class="rack">
+      <!-- Header unit -->
+      <div class="rack-unit header-unit">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-vents-top"></div>
+        <div class="header-content">
+          <div class="logo">FF-IT</div>
+          <div class="slogan">
+            <span class="slogan-main">ВАШ IT-КОНТУР ПОД КОНТРОЛЕМ.</span>
+            <span class="slogan-sub">Даже в субботу.</span>
+          </div>
+        </div>
+      </div>
 
-<p class="hero__trust-insert">Прозрачная цена и сроки до начала работ. Без скрытых доплат.</p>
-<div class="hero__buttons">
-<a href="prices.html#estimate-calc" class="btn btn--primary">Рассчитать онлайн</a>
-</div>
-<p class="u-fs-13-text2-mt8">Или позвоните: <a href="tel:+79012655252" class="u-gold-underline">+7 (901) 265-52-52</a> — ответим за 15 минут.</p>
-<p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
-<p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
-</div>
+      <!-- Server units -->
+      <a href="servers.html" class="rack-unit server-unit" data-service="Настройка серверов" aria-label="Настройка серверов">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-01 · 2U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-off"></span>
+          <span class="led led-green delay-1"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">Настройка серверов</div>
+          <div class="holo-desc">Подбор, монтаж, виртуализация, бэкапы</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
 
-<div class="hero__brandbar">
-<div class="hero__brandbar-logo">
-<img src="img/logo-44.webp?v=130" alt="Логотип F&F" class="hero__brandbar-logo-img" width="48" height="48" loading="lazy" decoding="async">
-<div>
-<div class="hero__brandbar-name">FF-IT.RU</div>
-<span class="hero__brandbar-sub">Ваш IT-контур под контролем</span>
-</div>
-</div>
-<div class="hero__brandbar-metrics">
-<div class="hero__metric">
-<span class="hero__metric-value">5</span>
-<div class="hero__metric-label">лет опыта</div>
-</div>
-<div class="hero__metric">
-<span class="hero__metric-value">120<sup>+</sup></span>
-<div class="hero__metric-label">проектов</div>
-</div>
-<div class="hero__metric">
-<span class="hero__metric-value">27</span>
-<div class="hero__metric-label">отзывов</div>
-</div>
-<div class="hero__metric">
-<span class="hero__metric-value">95<sup>%</sup></span>
-<div class="hero__metric-label">остаются</div>
-</div>
-<div class="hero__metric">
-<span class="hero__metric-value">4<sup>+</sup></span>
-<div class="hero__metric-label">специалиста</div>
-</div>
-<div class="hero__metric">
-<span class="hero__metric-value">24/7</span>
-<div class="hero__metric-label">на связи</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p class="u-center-mt16" ><a href="company/team.html" class="u-gold">Вся команда →</a></p>
-</div>
+      <a href="audits/audit.html" class="rack-unit server-unit" data-service="IT-аудит" aria-label="IT-аудит">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-02 · 2U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-green"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-off"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">IT-аудит</div>
+          <div class="holo-desc">Экспресс-проверка инфраструктуры за 30 минут</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
+
+      <a href="security/crypto.html" class="rack-unit server-unit" data-service="ЭЦП и КриптоПро" aria-label="ЭЦП и КриптоПро">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-03 · 1U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-off"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-green delay-1"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">ЭЦП и КриптоПро</div>
+          <div class="holo-desc">Токены, установка, настройка, перевыпуск</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
+
+      <a href="security/security.html" class="rack-unit server-unit" data-service="Безопасность данных" aria-label="Безопасность данных">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-04 · 1U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-green"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-off"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">Безопасность данных</div>
+          <div class="holo-desc">Антивирус, шифрование, разграничение доступа</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
+
+      <a href="infrastructure/infrastructure.html" class="rack-unit server-unit" data-service="СКУД и видеонаблюдение" aria-label="СКУД и видеонаблюдение">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-05 · 2U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-off"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-green delay-1"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">СКУД и видеонаблюдение</div>
+          <div class="holo-desc">Контроль доступа, IP-камеры, архив</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
+
+      <a href="services.html" class="rack-unit server-unit" data-service="Абонентское обслуживание" aria-label="Абонентское обслуживание">
+        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
+        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
+        <div class="unit-vents"></div>
+        <div class="unit-label">SRV-06 · 4U</div>
+        <div class="unit-leds">
+          <span class="led led-green"></span>
+          <span class="led led-green"></span>
+          <span class="led led-gold"></span>
+          <span class="led led-green delay-1"></span>
+        </div>
+        <div class="hologram-overlay">
+          <div class="holo-header">
+            <span class="holo-status">●</span>
+            <span class="holo-category">SERVICE</span>
+          </div>
+          <div class="holo-title">Абонентское обслуживание</div>
+          <div class="holo-desc">Команда инженеров вместо штатного сисадмина</div>
+          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
+        </div>
+      </a>
+
+      <!-- Brandbar unit -->
+      <div class="rack-unit brandbar-unit">
+        <div class="brandbar-metrics">
+          <div class="metric"><span class="metric-num" data-target="5">0</span><span class="metric-lbl">лет опыта</span></div>
+          <div class="metric"><span class="metric-num" data-target="120" data-suffix="+">0</span><span class="metric-lbl">проектов</span></div>
+          <div class="metric"><span class="metric-num" data-target="27">0</span><span class="metric-lbl">отзывов</span></div>
+          <div class="metric"><span class="metric-num" data-target="95" data-suffix="%">0</span><span class="metric-lbl">остаются</span></div>
+          <div class="metric"><span class="metric-num" data-target="4" data-suffix="+">0</span><span class="metric-lbl">специалиста</span></div>
+          <div class="metric"><span class="metric-num" data-fixed="24/7">0</span><span class="metric-lbl">на связи</span></div>
+        </div>
+        <div class="status-plate">
+          <span class="status-dot"></span>
+          <span class="status-text">ONLINE · Готовы помочь вашему бизнесу</span>
+        </div>
+      </div>
+    </div>
+    <div class="rack-reflection"></div>
+  </div>
 </section>
 
 <!-- Pain: urgent -->
@@ -724,5 +1394,66 @@
 <div class="u-card-center">JavaScript отключён. Оставьте заявку — вышлем смету вручную: <a href="contacts.html" class="u-gold">контакты</a>.</div>
 </noscript>
 <script src="js/script.js?v=130" defer></script>
+
+<script id="hero-rack-js">
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Counter animation
+  const counters = document.querySelectorAll('.metric-num[data-target]');
+  counters.forEach(counter => {
+    const target = parseFloat(counter.dataset.target);
+    const suffix = counter.dataset.suffix || '';
+    const fixed = counter.dataset.fixed;
+    if (fixed) { counter.textContent = fixed; return; }
+    const duration = 1800;
+    const startTime = performance.now();
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.floor(target * ease);
+      counter.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+      else counter.textContent = target + suffix;
+    }
+    requestAnimationFrame(update);
+  });
+
+  // 2. Mouse parallax for particles
+  const rack = document.querySelector('.rack-container');
+  const particles = document.querySelectorAll('.p');
+  if (rack && window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      const rect = rack.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = (e.clientX - centerX) / 40;
+      const deltaY = (e.clientY - centerY) / 40;
+      particles.forEach((p, i) => {
+        const factor = (i + 1) * 0.5;
+        p.style.transform = `translate(${deltaX * factor}px, ${deltaY * factor}px)`;
+      });
+    });
+  }
+
+  // 3. Click tracking
+  document.querySelectorAll('.server-unit').forEach(unit => {
+    unit.addEventListener('click', () => {
+      console.log('[F&F] Click:', unit.dataset.service);
+    });
+  });
+
+  // 4. Mobile tap
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    document.querySelectorAll('.server-unit').forEach(unit => {
+      unit.addEventListener('touchstart', () => {
+        document.querySelectorAll('.server-unit').forEach(u => u.classList.remove('active'));
+        unit.classList.add('active');
+      });
+    });
+  }
+});
+
+</script>
 </body>
 </html>
