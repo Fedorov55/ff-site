@@ -59,23 +59,14 @@
 
 <style id="hero-rack-css">
 
-/* --- Контейнер сцены --- */
-.hero-3d-section {
-  perspective: 1500px;
+/* --- СЦЕНА 3D --- */
+.scene-3d {
+  perspective: 2000px;
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-}
-
-.rack-scene {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Фоновое свечение */
@@ -96,125 +87,134 @@
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
-/* --- 3D-ШКАФ --- */
-.rack-cabinet {
-  position: relative;
+/* --- КОНТЕЙНЕР ШКАФА --- */
+.cabinet-wrapper {
   width: 340px;
-  height: 560px;
+  height: 520px;
   margin: 0 auto;
+  position: relative;
   transform-style: preserve-3d;
-  transform: rotateY(-20deg) rotateX(4deg);
+  transform: rotateY(-22deg) rotateX(4deg);
   transition: transform 0.6s ease;
 }
 
-/* Шкаф НЕ шевелится при наведении на сам корпус */
-.hero-3d-section:hover .rack-cabinet {
-  transform: rotateY(-20deg) rotateX(4deg);
+/* Шкаф НЕ шевелится при наведении на корпус */
+.scene-3d:hover .cabinet-wrapper {
+  transform: rotateY(-22deg) rotateX(4deg);
+}
+
+/* --- САМ ШКАФ (куб) --- */
+.cabinet {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
 }
 
 /* Общие стили граней */
-.face {
+.cabinet > div {
   position: absolute;
-  top: 0; left: 0;
 }
 
-/* Задняя стенка */
-.face-back {
-  width: 100%; height: 100%;
-  transform: translateZ(-80px);
-  background: #080A0F;
+/* ЗАДНЯЯ СТЕНКА */
+.cabinet-back {
+  inset: 0;
+  transform: translateZ(-90px);
+  background: #050505;
   border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
 }
 
-/* Левая стенка */
-.face-left {
-  width: 160px; height: 100%;
-  background: linear-gradient(90deg, #0A0D14 0%, #1A1D24 50%, #2A2F3A 100%);
-  transform: rotateY(-90deg) translateZ(-80px) translateX(-80px);
+/* ЛЕВАЯ СТЕНКА */
+.cabinet-side.left {
+  top: 0; left: 0; width: 180px; height: 100%;
+  background: linear-gradient(90deg, #0A0D14 0%, #1A1D24 40%, #2A2F3A 100%);
+  transform: rotateY(90deg) translateZ(-90px) translateX(-90px);
   transform-origin: left center;
-  border-right: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Правая стенка */
-.face-right {
-  width: 160px; height: 100%;
-  background: linear-gradient(-90deg, #0A0D14 0%, #15181E 50%, #1A1D24 100%);
-  transform: rotateY(90deg) translateZ(-80px) translateX(80px);
+/* ПРАВАЯ СТЕНКА */
+.cabinet-side.right {
+  top: 0; right: 0; width: 180px; height: 100%;
+  background: linear-gradient(-90deg, #0A0D14 0%, #15181E 40%, #1A1D24 100%);
+  transform: rotateY(-90deg) translateZ(-90px) translateX(90px);
   transform-origin: right center;
 }
 
-/* Верхняя крышка */
-.face-top {
-  width: 100%; height: 160px;
+/* ВЕРХНЯЯ КРЫШКА */
+.cabinet-top {
+  top: 0; left: 0; width: 100%; height: 180px;
   background: linear-gradient(180deg, #2A2F3A 0%, #1A1D24 100%);
-  transform: rotateX(90deg) translateZ(80px);
+  transform: rotateX(90deg) translateZ(90px);
   transform-origin: top center;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Нижняя часть (колесики) */
-.face-bottom {
-  width: 100%; height: 160px;
+/* НИЖНЯЯ КРЫШКА */
+.cabinet-bottom {
+  bottom: 0; left: 0; width: 100%; height: 180px;
   background: #0A0D14;
-  transform: rotateX(-90deg) translateZ(480px);
+  transform: rotateX(-90deg) translateZ(440px);
   transform-origin: bottom center;
 }
 
 /* Колесики */
-.face-bottom::before,
-.face-bottom::after {
+.cabinet-bottom::before,
+.cabinet-bottom::after {
   content: '';
   position: absolute;
-  width: 12px; height: 12px;
+  width: 14px; height: 14px;
   background: radial-gradient(circle, #3A404D 0%, #1A1D24 100%);
   border-radius: 50%;
-  bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  bottom: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.1);
 }
-.face-bottom::before { left: 30px; }
-.face-bottom::after { right: 30px; }
+.cabinet-bottom::before { left: 40px; }
+.cabinet-bottom::after { right: 40px; }
 
 /* --- ПЕРЕДНЯЯ ПАНЕЛЬ (Серверы) --- */
-.face-front {
-  transform: translateZ(80px);
+.cabinet-front {
+  inset: 0;
+  transform: translateZ(0);
   display: flex;
   flex-direction: column;
   background: #0D1017;
-  padding: 12px;
-  gap: 5px;
+  padding: 10px;
+  gap: 4px;
   border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.9);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.9);
   overflow: visible;
 }
 
 /* --- СЕРВЕРНЫЕ ЮНИТЫ --- */
-.rack-unit {
+.unit {
   width: 100%;
   position: relative;
-  background: linear-gradient(180deg, #3A404D 0%, #2A2F3A 15%, #1A1D24 60%, #0E1116 100%);
-  border-top: 1px solid rgba(255,255,255,0.15);
+  background: linear-gradient(180deg, #3A404D 0%, #2A2F3A 12%, #1A1D24 55%, #0E1116 100%);
+  border-top: 1px solid rgba(255,255,255,0.12);
   border-bottom: 1px solid #000;
-  box-shadow: inset 0 1px 3px rgba(255,255,255,0.08), 0 3px 8px rgba(0,0,0,0.6);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.06), 0 2px 6px rgba(0,0,0,0.5);
   border-radius: 2px;
   overflow: visible;
   transform-style: preserve-3d;
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s, border-left 0.25s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-/* Высоты юнитов */
-.rack-unit.header-unit { height: 52px; }
-.rack-unit.server-unit { height: 46px; }
-.rack-unit.server-unit.tall { height: 88px; }
-.rack-unit.server-unit.short { height: 32px; }
-.rack-unit.empty-slot { height: 28px; background: #0A0D14; border: 1px solid #1A1D24; }
-.rack-unit.brandbar-unit { height: auto; min-height: 80px; background: #0E1116; }
+/* Высоты */
+.unit.header-unit { height: 48px; background: linear-gradient(180deg, #2A2F3A 0%, #1A1D24 100%); }
+.unit.server-unit { height: 42px; }
+.unit.server-unit.tall { height: 80px; }
+.unit.server-unit.short { height: 30px; }
+.unit.empty-slot { height: 24px; background: #0A0D14; border: 1px solid #15181E; cursor: default; }
+.unit.brandbar-unit { height: auto; min-height: 75px; background: #0E1116; cursor: default; }
 
 /* ЭФФЕКТ ВЫДВИЖЕНИЯ ПРИ НАВЕДЕНИИ */
-.rack-unit.server-unit:hover {
-  transform: translateZ(35px);
-  box-shadow: -4px 4px 15px rgba(0,0,0,0.7), 0 0 12px rgba(212, 175, 55, 0.25);
+.unit.server-unit:hover {
+  transform: translateZ(40px);
+  box-shadow: -4px 4px 16px rgba(0,0,0,0.7), 0 0 12px rgba(212, 175, 55, 0.2);
   z-index: 100;
   border-left: 2px solid #D4AF37;
 }
@@ -224,8 +224,7 @@
 /* Направляющие (рельсы) */
 .unit-rails {
   position: absolute;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
+  top: 0; bottom: 0; left: 0; right: 0;
   pointer-events: none;
   z-index: 1;
 }
@@ -234,118 +233,117 @@
   content: '';
   position: absolute;
   top: 0; bottom: 0;
-  width: 8px;
+  width: 7px;
   background: linear-gradient(90deg, #1A1D24, #3A404D, #1A1D24);
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.05);
   box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
 }
 .unit-rails::before { left: 0; }
 .unit-rails::after { right: 0; }
 
 /* Вентиляционные решетки */
-.unit-vents {
+.vents {
   position: absolute;
-  top: 12px; left: 12px; right: 70px; height: 20px;
+  top: 10px; left: 10px; right: 60px; height: 18px;
   background: repeating-linear-gradient(90deg, transparent, transparent 3px, #000 3px, #000 4px);
-  opacity: 0.7;
+  opacity: 0.65;
   border-radius: 1px;
 }
-.unit-vents.tall { top: 12px; height: 28px; }
-.unit-vents.short { top: 8px; height: 14px; }
-.unit-vents.empty { opacity: 0.3; }
+.vents.tall { top: 12px; height: 24px; }
+.vents.short { top: 6px; height: 12px; }
+.vents.empty { opacity: 0.2; }
 
 /* Порты */
-.unit-ports {
+.ports {
   position: absolute;
-  top: 14px; right: 75px;
-  display: flex; gap: 3px;
+  top: 12px; right: 55px;
+  display: flex; gap: 2px;
   flex-wrap: wrap;
-  width: 60px;
+  width: 50px;
+  z-index: 2;
 }
-.unit-ports span {
-  width: 5px; height: 5px;
+.ports span {
+  width: 4px; height: 4px;
   background: #0E1116;
   border: 0.5px solid #333;
   border-radius: 1px;
 }
 
 /* Светодиоды */
-.unit-leds {
+.leds {
   position: absolute;
-  top: 16px; right: 15px;
-  display: flex; flex-direction: column; gap: 4px;
+  top: 12px; right: 12px;
+  display: flex; flex-direction: column; gap: 3px;
   z-index: 2;
 }
 .led {
   width: 5px; height: 5px;
   border-radius: 50%;
 }
-.led.green {
+.led.g {
   background: #00FF88;
-  box-shadow: 0 0 6px #00FF88, 0 0 12px rgba(0,255,136,0.4);
-  animation: blink-green 2s infinite;
+  box-shadow: 0 0 5px #00FF88, 0 0 10px rgba(0,255,136,0.3);
+  animation: blink-g 2s infinite;
 }
-.led.gold {
+.led.y {
   background: #D4AF37;
-  box-shadow: 0 0 6px #D4AF37, 0 0 12px rgba(212,175,55,0.4);
-  animation: blink-gold 1.5s infinite alternate;
+  box-shadow: 0 0 5px #D4AF37, 0 0 10px rgba(212,175,55,0.3);
+  animation: blink-y 1.5s infinite alternate;
 }
-.blink-1 { animation-delay: 0s; }
-.blink-2 { animation-delay: 0.3s; }
-.blink-3 { animation-delay: 0.7s; }
 
 /* Ручка/защелка */
-.unit-handle {
+.handle {
   position: absolute;
   top: 50%; left: 50%;
   transform: translateY(-50%);
-  width: 30px; height: 4px;
+  width: 24px; height: 3px;
   background: linear-gradient(90deg, #2A2F3A, #4E5666, #2A2F3A);
   border-radius: 2px;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1);
-  opacity: 0.5;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.08);
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 /* Болты */
-.unit-bolts {
+.bolts {
   position: absolute;
-  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  top: 5px; left: 5px; right: 5px; bottom: 5px;
   pointer-events: none;
+  z-index: 2;
 }
-.unit-bolts span {
+.bolts span {
   position: absolute;
   width: 4px; height: 4px;
   background: radial-gradient(circle, #5A6272 0%, #2A2F3A 100%);
   border-radius: 50%;
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.5);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 0 1px 2px rgba(0,0,0,0.5);
 }
-.unit-bolts span:nth-child(1) { top: 0; left: 0; }
-.unit-bolts span:nth-child(2) { top: 0; right: 0; }
-.unit-bolts span:nth-child(3) { bottom: 0; left: 0; }
-.unit-bolts span:nth-child(4) { bottom: 0; right: 0; }
+.bolts span:nth-child(1) { top: 0; left: 0; }
+.bolts span:nth-child(2) { top: 0; right: 0; }
+.bolts span:nth-child(3) { bottom: 0; left: 0; }
+.bolts span:nth-child(4) { bottom: 0; right: 0; }
 
-/* --- ЛОГОТИП В ШАПКЕ --- */
+/* --- ЛОГОТИП --- */
 .header-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #2A2F3A 0%, #1A1D24 100%);
+  gap: 2px;
 }
-.header-unit .logo {
+.logo {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #D4AF37;
   letter-spacing: 4px;
-  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212,175,55,0.2);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.5), 0 0 25px rgba(212,175,55,0.2);
 }
-.header-unit .slogan {
+.slogan {
   font-family: 'Inter', sans-serif;
-  font-size: 9px;
-  color: #9AA0A6;
+  font-size: 8px;
+  color: #6B7280;
   letter-spacing: 2px;
-  margin-top: 4px;
 }
 
 /* --- ТУЛТИП --- */
@@ -356,7 +354,7 @@
   background: rgba(10, 13, 20, 0.95);
   border: 1px solid #D4AF37;
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 5px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -368,7 +366,7 @@
   align-items: center;
   gap: 2px;
 }
-.server-unit:hover .unit-tooltip {
+.unit.server-unit:hover .unit-tooltip {
   opacity: 1;
   transform: translate(-50%, -50%) translateZ(45px);
 }
@@ -389,45 +387,61 @@
 }
 
 /* --- ПЛАШКА С МЕТРИКАМИ --- */
-.brandbar-unit {
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.brandbar-unit .metrics {
+.rack-brandbar {
+  margin-top: 24px;
+  background: #12151C;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  position: relative;
+  z-index: 10;
 }
-.brandbar-unit .metric {
+.rack-brandbar .metric {
   text-align: center;
 }
-.brandbar-unit .metric span {
+.rack-brandbar .metric span {
   display: block;
   color: #E8EAF0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
+  line-height: 1;
 }
-.brandbar-unit .metric .lbl {
+.rack-brandbar .metric .lbl {
   display: block;
   color: #9AA0A6;
   font-size: 8px;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 4px;
+  white-space: nowrap;
 }
-.brandbar-unit .status {
+.rack-brandbar .status {
+  grid-column: 1 / -1;
   text-align: center;
   color: #00FF88;
-  font-size: 9px;
+  font-size: 10px;
   font-family: monospace;
   border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 6px;
+  padding-top: 10px;
+  margin-top: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  white-space: nowrap;
+}
+.status-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: #00FF88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00FF88;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 
 /* --- СТЕКЛЯННАЯ ДВЕРЦА --- */
@@ -435,79 +449,86 @@
   position: absolute;
   inset: 0;
   transform: translateZ(82px);
-  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(20,30,40,0.25) 50%, rgba(255,255,255,0.02) 100%);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(20,30,40,0.2) 50%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
   pointer-events: none;
   box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
   border-radius: 4px;
+  z-index: 50;
 }
 .glass-door .glass-highlight {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.03) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.02) 100%);
   border-radius: 4px;
 }
 .glass-door .glass-handle {
   position: absolute;
-  right: 8px; top: 50%;
+  right: 6px; top: 50%;
   transform: translateY(-50%);
-  width: 6px; height: 40px;
+  width: 5px; height: 35px;
   background: linear-gradient(90deg, #2A2F3A, #4E5666, #2A2F3A);
   border-radius: 3px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
-/* --- ПРОВОДА (кабели) --- */
+/* --- ПРОВОДА --- */
 .cables {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  transform: translateZ(-70px);
+  transform: translateZ(-75px);
   pointer-events: none;
   z-index: -1;
+  overflow: hidden;
 }
 .cable {
   position: absolute;
   width: 2px;
   background: currentColor;
   border-radius: 1px;
-  opacity: 0.7;
+  opacity: 0.5;
   transform-origin: top center;
 }
-.cable.blue { color: #3B82F6; left: 20%; top: 10%; height: 60%; transform: rotate(5deg); }
-.cable.red { color: #EF4444; left: 35%; top: 15%; height: 55%; transform: rotate(-3deg); }
-.cable.green { color: #22C55E; left: 50%; top: 12%; height: 62%; transform: rotate(8deg); }
-.cable.yellow { color: #EAB308; left: 65%; top: 18%; height: 50%; transform: rotate(-5deg); }
-.cable.purple { color: #A855F7; left: 25%; top: 25%; height: 45%; transform: rotate(12deg); }
-.cable.cyan { color: #06B6D4; left: 70%; top: 20%; height: 48%; transform: rotate(-8deg); }
+.cable.blue { color: #3B82F6; left: 18%; top: 8%; height: 55%; transform: rotate(6deg); }
+.cable.red { color: #EF4444; left: 32%; top: 12%; height: 48%; transform: rotate(-4deg); }
+.cable.green { color: #22C55E; left: 48%; top: 10%; height: 58%; transform: rotate(9deg); }
+.cable.yellow { color: #EAB308; left: 62%; top: 15%; height: 45%; transform: rotate(-6deg); }
+.cable.purple { color: #A855F7; left: 22%; top: 22%; height: 40%; transform: rotate(13deg); }
+.cable.cyan { color: #06B6D4; left: 68%; top: 18%; height: 42%; transform: rotate(-9deg); }
 
 /* --- АНИМАЦИИ --- */
-@keyframes blink-green {
-  0%, 100% { opacity: 1; box-shadow: 0 0 6px #00FF88, 0 0 12px rgba(0,255,136,0.4); }
+@keyframes blink-g {
+  0%, 100% { opacity: 1; box-shadow: 0 0 5px #00FF88, 0 0 10px rgba(0,255,136,0.3); }
   50% { opacity: 0.3; box-shadow: 0 0 2px #00FF88; }
 }
-@keyframes blink-gold {
-  0%, 100% { opacity: 1; box-shadow: 0 0 6px #D4AF37, 0 0 12px rgba(212,175,55,0.4); }
+@keyframes blink-y {
+  0%, 100% { opacity: 1; box-shadow: 0 0 5px #D4AF37, 0 0 10px rgba(212,175,55,0.3); }
   50% { opacity: 0.4; box-shadow: 0 0 2px #D4AF37; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 /* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
 @media (max-width: 600px) {
   .rack-cabinet {
-    width: 290px;
-    height: 480px;
+    width: 280px;
+    height: 460px;
     transform: rotateY(-18deg) rotateX(3deg);
   }
   .face-left, .face-right {
     width: 100px;
   }
-  .rack-unit { height: 40px; }
-  .rack-unit.server-unit.tall { height: 72px; }
-  .rack-unit.server-unit.short { height: 28px; }
-  .brandbar-unit .metrics {
+  .unit { height: 36px; }
+  .unit.server-unit.tall { height: 68px; }
+  .unit.server-unit.short { height: 26px; }
+  .rack-brandbar {
     grid-template-columns: repeat(3, 1fr);
   }
-  .brandbar-unit .metric span { font-size: 14px; }
-  .brandbar-unit .metric .lbl { font-size: 7px; }
+  .rack-brandbar .metric span { font-size: 14px; }
+  .rack-brandbar .metric .lbl { font-size: 7px; }
+  .rack-brandbar .status { font-size: 9px; }
 }
 
 /* --- REDUCED MOTION --- */
@@ -615,169 +636,119 @@
 <p class="u-fs-13-text2-mt8" >Смета до старта. Оплата после согласования. Договор и SLA — до начала работ. Ответим за 15 минут. Смета без обязательств.</p>
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
-<div class="hero-3d-section">
+<div class="scene-3d">
   <div class="ambient-glow"></div>
 
-  <div class="rack-scene">
-    <div class="rack-cabinet">
-      
+  <!-- Частицы -->
+  <div class="particles">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <div class="cabinet-wrapper">
+    <!-- Сам шкаф -->
+    <div class="cabinet">
       <!-- Задняя стенка -->
-      <div class="face face-back"></div>
+      <div class="cabinet-back"></div>
 
       <!-- Левая стенка -->
-      <div class="face face-left"></div>
+      <div class="cabinet-side left"></div>
 
       <!-- Правая стенка -->
-      <div class="face face-right"></div>
+      <div class="cabinet-side right"></div>
 
       <!-- Верхняя крышка -->
-      <div class="face face-top"></div>
+      <div class="cabinet-top"></div>
 
-      <!-- Нижняя часть (колесики) -->
-      <div class="face face-bottom"></div>
+      <!-- Нижняя крышка -->
+      <div class="cabinet-bottom"></div>
 
-      <!-- СЕРВЕРЫ (Передняя панель) -->
-      <div class="face face-front">
-        
-        <!-- Верхний юнит: Логотип -->
-        <div class="rack-unit header-unit">
+      <!-- ПЕРЕДНЯЯ ПАНЕЛЬ (серверы) -->
+      <div class="cabinet-front">
+        <!-- Шапка -->
+        <div class="unit header-unit">
           <div class="logo">FF-IT</div>
           <div class="slogan">IT-КОНТУР ПОД КОНТРОЛЕМ</div>
         </div>
 
         <!-- Сервер 1: Патч-панель -->
-        <a href="servers.html" class="rack-unit server-unit">
-          <div class="unit-rails"></div>
-          <div class="unit-vents"></div>
-          <div class="unit-ports">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <a href="servers.html" class="unit server-unit">
+          <div class="vents"></div>
+          <div class="ports">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
-          <div class="unit-leds">
-            <span class="led green blink-1"></span>
-            <span class="led gold blink-2"></span>
-          </div>
-          <div class="unit-handle"></div>
-          <div class="unit-tooltip">
-            <span class="tooltip-title">Настройка серверов</span>
-            <span class="tooltip-desc">Монтаж, виртуализация, бэкапы</span>
-            <span class="tooltip-cta">Перейти →</span>
-          </div>
+          <div class="leds"><span class="led g"></span><span class="led y"></span></div>
+          <div class="handle"></div>
+          <div class="hologram">Настройка серверов</div>
         </a>
 
         <!-- Сервер 2: Коммутатор -->
-        <a href="audits/audit.html" class="rack-unit server-unit">
-          <div class="unit-rails"></div>
-          <div class="unit-vents"></div>
-          <div class="unit-ports">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <a href="audits/audit.html" class="unit server-unit">
+          <div class="vents"></div>
+          <div class="ports">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
-          <div class="unit-leds">
-            <span class="led green blink-3"></span>
-            <span class="led green blink-1"></span>
-            <span class="led gold"></span>
-          </div>
-          <div class="unit-handle"></div>
-          <div class="unit-tooltip">
-            <span class="tooltip-title">IT-аудит</span>
-            <span class="tooltip-desc">Проверка инфраструктуры</span>
-            <span class="tooltip-cta">Перейти →</span>
-          </div>
+          <div class="leds"><span class="led g blink-1"></span><span class="led g blink-2"></span><span class="led y"></span></div>
+          <div class="handle"></div>
+          <div class="hologram">IT-аудит</div>
         </a>
 
         <!-- Сервер 3: 2U сервер -->
-        <a href="security/crypto.html" class="rack-unit server-unit tall">
-          <div class="unit-rails"></div>
-          <div class="unit-vents tall"></div>
-          <div class="unit-leds">
-            <span class="led green blink-2"></span>
-            <span class="led gold blink-3"></span>
-            <span class="led green blink-1"></span>
-          </div>
-          <div class="unit-handle"></div>
-          <div class="unit-bolts">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="unit-tooltip">
-            <span class="tooltip-title">КриптоПро и ЭЦП</span>
-            <span class="tooltip-desc">Токены и лицензии</span>
-            <span class="tooltip-cta">Перейти →</span>
-          </div>
+        <a href="security/crypto.html" class="unit server-unit tall">
+          <div class="vents tall"></div>
+          <div class="leds"><span class="led g blink-2"></span><span class="led y blink-1"></span><span class="led g"></span></div>
+          <div class="bolts"><span></span><span></span><span></span><span></span></div>
+          <div class="handle"></div>
+          <div class="hologram">КриптоПро и ЭЦП</div>
         </a>
 
         <!-- Сервер 4: 2U сервер -->
-        <a href="security/security.html" class="rack-unit server-unit tall">
-          <div class="unit-rails"></div>
-          <div class="unit-vents tall"></div>
-          <div class="unit-leds">
-            <span class="led green"></span>
-            <span class="led green blink-2"></span>
-            <span class="led gold blink-1"></span>
-          </div>
-          <div class="unit-handle"></div>
-          <div class="unit-bolts">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="unit-tooltip">
-            <span class="tooltip-title">Безопасность данных</span>
-            <span class="tooltip-desc">Защита от утечек</span>
-            <span class="tooltip-cta">Перейти →</span>
-          </div>
+        <a href="security/security.html" class="unit server-unit tall">
+          <div class="vents tall"></div>
+          <div class="leds"><span class="led g"></span><span class="led g blink-3"></span><span class="led y blink-2"></span></div>
+          <div class="bolts"><span></span><span></span><span></span><span></span></div>
+          <div class="handle"></div>
+          <div class="hologram">Безопасность</div>
         </a>
 
-        <!-- Сервер 5: PDU -->
-        <a href="services.html" class="rack-unit server-unit short">
-          <div class="unit-rails"></div>
-          <div class="unit-vents short"></div>
-          <div class="unit-leds">
-            <span class="led green blink-3"></span>
-          </div>
-          <div class="unit-handle"></div>
-          <div class="unit-tooltip">
-            <span class="tooltip-title">Абонентка</span>
-            <span class="tooltip-desc">Команда инженеров</span>
-            <span class="tooltip-cta">Перейти →</span>
-          </div>
+        <!-- Сервер 5: PDU (короткий) -->
+        <a href="services.html" class="unit server-unit short">
+          <div class="vents short"></div>
+          <div class="leds"><span class="led g blink-3"></span></div>
+          <div class="handle"></div>
+          <div class="hologram">Абонентка</div>
         </a>
 
         <!-- Пустой слот -->
-        <div class="rack-unit empty-slot">
-          <div class="unit-vents empty"></div>
+        <div class="unit empty-slot">
+          <div class="vents empty"></div>
         </div>
-
-        <!-- Плашка с цифрами -->
-        <div class="rack-unit brandbar-unit">
-          <div class="metrics">
-            <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
-            <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
-            <div class="metric"><span class="num" data-target="27">0</span><span class="lbl">отзывов</span></div>
-            <div class="metric"><span class="num" data-target="99" data-suffix="%">0</span><span class="lbl">остаются</span></div>
-            <div class="metric"><span class="num" data-target="4" data-suffix="+">0</span><span class="lbl">специалиста</span></div>
-            <div class="metric"><span class="num">24/7</span><span class="lbl">на связи</span></div>
-          </div>
-          <div class="status-plate">
-            <span class="status-dot"></span> ONLINE · Готовы помочь вашему бизнесу
-          </div>
-        </div>
-
       </div>
-      
+
       <!-- Стеклянная дверца -->
-      <div class="glass-door">
+      <div class="cabinet-glass">
         <div class="glass-highlight"></div>
         <div class="glass-handle"></div>
       </div>
+    </div>
+  </div>
 
-      <!-- Провода (кабели) сзади шкафа -->
-      <div class="cables">
-        <span class="cable blue"></span>
-        <span class="cable red"></span>
-        <span class="cable green"></span>
-        <span class="cable yellow"></span>
-        <span class="cable purple"></span>
-        <span class="cable cyan"></span>
-      </div>
-
+  <!-- ПЛАШКА С ЦИФРАМИ (Вне 3D-куба) -->
+  <div class="rack-brandbar">
+    <div class="metric"><span class="num" data-target="5">0</span><span class="lbl">лет опыта</span></div>
+    <div class="metric"><span class="num" data-target="120" data-suffix="+">0</span><span class="lbl">проектов</span></div>
+    <div class="metric"><span class="num" data-target="27">0</span><span class="lbl">отзывов</span></div>
+    <div class="metric"><span class="num" data-target="99" data-suffix="%">0</span><span class="lbl">остаются</span></div>
+    <div class="metric"><span class="num" data-target="4" data-suffix="+">0</span><span class="lbl">специалиста</span></div>
+    <div class="metric"><span class="num">24/7</span><span class="lbl">на связи</span></div>
+    <div class="status-plate">
+      <span class="status-dot"></span> ONLINE · Готовы помочь вашему бизнесу
     </div>
   </div>
 </div>
