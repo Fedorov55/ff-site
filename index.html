@@ -61,44 +61,35 @@
 
 .hero-visual-realistic {
   position: relative;
-  max-width: 480px;
   width: 100%;
-  perspective: 1200px;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
-/* Свечение сзади */
+/* Свечение */
 .visual-glow {
   position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-  filter: blur(40px);
+  inset: -10px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  filter: blur(50px);
   z-index: 0;
 }
 
-/* Контейнер с фото (наклон для 3D) */
+/* Контейнер для фото */
 .rack-photo-container {
   position: relative;
   width: 100%;
   border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: -15px 15px 40px rgba(0,0,0,0.8);
-  transform: rotateY(-8deg) rotateX(4deg);
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease;
+  mix-blend-mode: screen;
+  transform: perspective(1000px) rotateY(-5deg);
   z-index: 1;
+  box-shadow: -20px 20px 50px rgba(0,0,0,0.8);
 }
 
-.hero-visual-realistic:hover .rack-photo-container {
-  transform: rotateY(0deg) rotateX(0deg);
-}
-
-/* Само фото */
 .rack-img {
   width: 100%;
   height: auto;
   display: block;
-  filter: brightness(0.7) contrast(1.2) saturate(0.8) sepia(0.1);
 }
 
 /* Сканирующая линия */
@@ -107,88 +98,68 @@
   top: 0; left: 0; right: 0;
   height: 2px;
   background: #00FF88;
-  box-shadow: 0 0 15px 3px rgba(0, 255, 136, 0.5);
-  opacity: 0.7;
-  animation: scan 4s linear infinite;
+  box-shadow: 0 0 20px 4px rgba(0, 255, 136, 0.6);
+  opacity: 0.8;
+  animation: scan 5s ease-in-out infinite;
   pointer-events: none;
-  z-index: 5;
-}
-
-@keyframes scan {
-  0% { top: 0%; }
-  100% { top: 100%; }
-}
-
-/* Интерактивные зоны */
-.rack-hotspot {
-  position: absolute;
-  left: 5%;
-  width: 90%;
-  height: 14%;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 10;
 }
 
-.hs-1 { top: 8%; }
-.hs-2 { top: 24%; }
-.hs-3 { top: 40%; }
-.hs-4 { top: 56%; }
-.hs-5 { top: 72%; }
+@keyframes scan {
+  0% { top: 5%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 95%; opacity: 0; }
+}
+
+/* Хотспоты (прозрачные зоны) */
+.rack-hotspot {
+  position: absolute;
+  left: 15%;
+  width: 65%;
+  height: 12%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
 
 .rack-hotspot:hover {
   background: rgba(212, 175, 55, 0.15);
-  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   backdrop-filter: blur(2px);
 }
 
-/* Тултип внутри зоны */
+/* Тултипы */
 .hs-tooltip {
   position: absolute;
-  right: 10%;
+  left: 100%;
   top: 50%;
-  transform: translateY(-50%) scale(0.9);
-  background: rgba(10, 13, 20, 0.95);
+  transform: translateY(-50%) translateX(10px);
+  background: #12151C;
   border: 1px solid #D4AF37;
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 6px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  min-width: 200px;
+  white-space: nowrap;
+  margin-left: 10px;
 }
 
 .rack-hotspot:hover .hs-tooltip {
   opacity: 1;
-  transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) translateX(0);
 }
 
-.hs-tooltip h4 {
-  margin: 0 0 4px;
-  color: #D4AF37;
-  font-size: 14px;
-}
+.hs-tooltip h4 { margin: 0 0 2px; color: #D4AF37; font-size: 14px; }
+.hs-tooltip span { color: #9AA0A6; font-size: 11px; }
 
-.hs-tooltip span {
-  display: block;
-  color: #9AA0A6;
-  font-size: 11px;
-  margin-bottom: 8px;
-}
-
-.hs-btn {
-  display: inline-block;
-  color: #00FF88;
-  font-size: 11px;
-  font-family: monospace;
-}
-
-/* --- ПЛАШКА С ЦИФРАМИ --- */
+/* Плашка */
 .rack-brandbar {
   position: relative;
-  margin-top: 24px;
+  margin-top: 30px;
   background: #12151C;
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 12px;
@@ -197,6 +168,7 @@
   grid-template-columns: repeat(6, 1fr);
   gap: 8px;
   z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .metric {
@@ -247,7 +219,7 @@
   50% { opacity: 0.3; }
 }
 
-/* --- MOBILE --- */
+/* Mobile */
 @media (max-width: 600px) {
   .rack-photo-container {
     transform: none;
@@ -365,47 +337,27 @@
 
   <!-- Контейнер с фото и эффектами -->
   <div class="rack-photo-container">
-    <!-- Реальное фото шкафа с проводами -->
-    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" alt="Серверный шкаф F&F" class="rack-img" />
+    <!-- Твое фото шкафа -->
+    <img src="img/server-rack.png" alt="Серверный шкаф F&F" class="rack-img" />
     
-    <!-- Сканирующая линия (эффект) -->
+    <!-- Сканер -->
     <div class="scanner-line"></div>
 
-    <!-- Интерактивные зоны поверх фото -->
-    <a href="servers.html" class="rack-hotspot hs-1">
-      <div class="hs-tooltip">
-        <h4>Настройка серверов</h4>
-        <span>Подбор, монтаж, виртуализация</span>
-        <div class="hs-btn">Перейти →</div>
-      </div>
+    <!-- Зоны -->
+    <a href="servers.html" class="rack-hotspot" style="top: 12%;">
+      <div class="hs-tooltip"><h4>Настройка серверов</h4><span>Монтаж и виртуализация</span></div>
     </a>
-    <a href="audits/audit.html" class="rack-hotspot hs-2">
-      <div class="hs-tooltip">
-        <h4>IT-аудит</h4>
-        <span>Проверка инфраструктуры</span>
-        <div class="hs-btn">Перейти →</div>
-      </div>
+    <a href="audits/audit.html" class="rack-hotspot" style="top: 26%;">
+      <div class="hs-tooltip"><h4>IT-аудит</h4><span>Поиск узких мест</span></div>
     </a>
-    <a href="security/crypto.html" class="rack-hotspot hs-3">
-      <div class="hs-tooltip">
-        <h4>ЭЦП и КриптоПро</h4>
-        <span>Установка и настройка</span>
-        <div class="hs-btn">Перейти →</div>
-      </div>
+    <a href="security/crypto.html" class="rack-hotspot" style="top: 40%;">
+      <div class="hs-tooltip"><h4>ЭЦП и КриптоПро</h4><span>Токены и лицензии</span></div>
     </a>
-    <a href="security/security.html" class="rack-hotspot hs-4">
-      <div class="hs-tooltip">
-        <h4>Безопасность данных</h4>
-        <span>Защита данных и доступов</span>
-        <div class="hs-btn">Перейти →</div>
-      </div>
+    <a href="security/security.html" class="rack-hotspot" style="top: 54%;">
+      <div class="hs-tooltip"><h4>Безопасность</h4><span>Защита от утечек</span></div>
     </a>
-    <a href="services.html" class="rack-hotspot hs-5">
-      <div class="hs-tooltip">
-        <h4>Абонентское обслуживание</h4>
-        <span>Команда вместо сисадмина</span>
-        <div class="hs-btn">Перейти →</div>
-      </div>
+    <a href="services.html" class="rack-hotspot" style="top: 68%;">
+      <div class="hs-tooltip"><h4>Абонентка</h4><span>Команда инженеров</span></div>
     </a>
   </div>
 
