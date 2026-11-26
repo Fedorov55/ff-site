@@ -65,7 +65,6 @@
   --metal-dark: #1A1D24;
   --metal-mid: #2A2F3A;
   --metal-light: #3D4450;
-  --metal-highlight: #4E5666;
   --gold: #D4AF37;
   --gold-bright: #E8C44D;
   --gold-glow: rgba(212, 175, 55, 0.6);
@@ -74,662 +73,144 @@
   --text-primary: #E8EAF0;
   --text-secondary: #9AA0A6;
   --text-dim: #5B6472;
-  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
-/* ===== HERO RACK (embedded) ===== */
+/* ===== HERO RACK CONTAINER ===== */
 .hero__rack, .hero__visual {
   position: relative;
   min-height: 500px;
   overflow: visible;
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ===== AMBIENT GLOW ===== */
+/* ===== AMBIENT GLOW (CSS, blurred) ===== */
 .hero__rack .ambient-glow, .hero__visual .ambient-glow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(212,175,55,0.5) 0%, rgba(0,255,136,0.2) 30%, transparent 65%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,0.4) 0%, rgba(0,255,136,0.15) 30%, transparent 65%);
   filter: blur(100px);
-  opacity: 0.4;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
   animation: pulse-glow 6s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.05); }
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
 }
 
-/* ===== PARTICLES ===== */
-.hero__rack .particles, .hero__visual .particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 5;
-  overflow: hidden;
-}
-
-.hero__rack .p, .hero__visual .p {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  filter: blur(0.5px);
-}
-
-.hero__rack .p1, .hero__visual .p1 {
-  background: var(--neon-green);
-  box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green-glow);
-  left: 15%;
-  bottom: 0;
-  animation: float-up-1 8s linear infinite;
-}
-
-.hero__rack .p2, .hero__visual .p2 {
-  background: var(--gold);
-  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold-glow);
-  left: 85%;
-  bottom: 0;
-  animation: float-up-2 10s linear infinite;
-  animation-delay: 2s;
-}
-
-.hero__rack .p3, .hero__visual .p3 {
-  background: var(--neon-green);
-  box-shadow: 0 0 12px var(--neon-green), 0 0 24px var(--neon-green-glow);
-  left: 50%;
-  bottom: 0;
-  animation: float-up-1 12s linear infinite;
-  animation-delay: 4s;
-}
-
-.hero__rack .p4, .hero__visual .p4 {
-  background: var(--gold);
-  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold-glow);
-  left: 30%;
-  bottom: 0;
-  animation: float-up-2 9s linear infinite;
-  animation-delay: 1s;
-}
-
-@keyframes float-up-1 {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateY(-300px) translateX(20px); }
-  90% { opacity: 1; }
-  100% { transform: translateY(-600px) translateX(-20px); opacity: 0; }
-}
-
-@keyframes float-up-2 {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateY(-300px) translateX(-20px); }
-  90% { opacity: 1; }
-  100% { transform: translateY(-600px) translateX(20px); opacity: 0; }
-}
-
-/* ===== RACK PERSPECTIVE ===== */
-.hero__rack .rack-perspective, .hero__visual .rack-perspective {
-  perspective: 2000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ===== SVG RACK ===== */
+.hero__rack .server-rack-svg, .hero__visual .server-rack-svg {
   width: 100%;
-  min-height: 500px;
+  max-width: 480px;
+  height: auto;
   position: relative;
-}
-
-.hero__rack .rack-perspective::after, .hero__visual .rack-perspective::after {
-  content: '';
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  height: 40px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.6) 0%, transparent 70%);
-  filter: blur(15px);
-  z-index: -1;
-}
-
-/* ===== RACK CABINET (3D BOX) ===== */
-.hero__rack .rack-cabinet, .hero__visual .rack-cabinet {
-  position: relative;
-  width: 320px;
-  height: 500px;
-  transform-style: preserve-3d;
-  transform: rotateY(-25deg) rotateX(5deg);
-  transition: transform 0.5s ease;
-}
-
-.hero__visual:hover .rack-cabinet,
-.hero__rack:hover .rack-cabinet {
-  transform: rotateY(-15deg) rotateX(2deg);
-}
-
-/* Inner (where servers sit) */
-.hero__rack .cabinet-inner, .hero__visual .cabinet-inner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #050505;
-  transform: translateZ(-40px);
-  padding: 10px;
-  box-shadow: inset 0 0 50px rgba(0,0,0,1), inset 0 0 40px rgba(0,255,136,0.08);
-  border: 1px solid rgba(255,255,255,0.05);
-  overflow: hidden;
-}
-
-/* Side walls */
-.hero__rack .cabinet-side, .hero__visual .cabinet-side {
-  position: absolute;
-  width: 80px;
-  height: 100%;
-  background: linear-gradient(180deg, #2A2F3A 0%, #15181E 100%);
-  border-left: 1px solid rgba(255,255,255,0.1);
-}
-.hero__rack .cabinet-side--left, .hero__visual .cabinet-side--left {
-  left: 0;
-  transform: rotateY(-90deg);
-  transform-origin: left center;
-}
-.hero__rack .cabinet-side--right, .hero__visual .cabinet-side--right {
-  right: 0;
-  transform: rotateY(90deg);
-  transform-origin: right center;
-}
-
-/* Top and bottom */
-.hero__rack .cabinet-top, .hero__rack .cabinet-bottom,
-.hero__visual .cabinet-top, .hero__visual .cabinet-bottom {
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(90deg, #1A1D24 0%, #2A2F3A 50%, #1A1D24 100%);
-  left: 0;
-}
-.hero__rack .cabinet-top, .hero__visual .cabinet-top {
-  top: 0;
-  transform: rotateX(90deg);
-  transform-origin: top center;
-}
-.hero__rack .cabinet-bottom, .hero__visual .cabinet-bottom {
-  bottom: 0;
-  transform: rotateX(-90deg);
-  transform-origin: bottom center;
-}
-
-/* Glass door (front) */
-.hero__rack .cabinet-glass-door, .hero__visual .cabinet-glass-door {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(10, 15, 25, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-top: 2px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  box-shadow:
-    inset 30px 30px 60px rgba(255,255,255,0.03),
-    inset -30px -30px 60px rgba(0,0,0,0.3),
-    0 0 20px rgba(0,0,0,0.8);
-  transform: translateZ(40px);
-  pointer-events: none;
-  border-radius: 4px;
-  z-index: 100;
-}
-
-.hero__rack .cabinet-glass-door::after, .hero__visual .cabinet-glass-door::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.05) 100%);
-  border-radius: 4px;
-}
-
-/* ===== SCANNER LINE ===== */
-.hero__rack .scanner-line, .hero__visual .scanner-line {
-  position: absolute;
-  left: -10%;
-  width: 120%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
-  box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green-glow);
-  top: 0;
-  z-index: 10;
-  pointer-events: none;
-  animation: scan-down 5s linear infinite;
-  opacity: 1;
-  mix-blend-mode: screen;
-}
-
-@keyframes scan-down {
-  0% { top: 0%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
-
-/* ===== RACK (inside cabinet) ===== */
-.hero__rack .rack, .hero__visual .rack {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  transform-style: preserve-3d;
-}
-
-/* ===== RACK UNITS ===== */
-.hero__rack .rack-unit, .hero__visual .rack-unit {
-  position: relative;
-  background:
-    radial-gradient(circle at 10px 10px, #5A6272 0%, #2A2F3A 100%) 0 0 / 20px 20px no-repeat,
-    radial-gradient(circle at calc(100% - 10px) 10px, #5A6272 0%, #2A2F3A 100%) 0 0 / 100% 100% no-repeat,
-    linear-gradient(180deg, #353B47 0%, #232731 20%, #15181E 80%, #0E1116 100%);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  border-bottom: 1px solid #000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-  border-radius: 2px;
-  overflow: hidden;
   z-index: 2;
-  transform-style: preserve-3d;
-  transform: translateZ(0);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
-  margin-bottom: 1px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
 
-/* Handle on server unit */
-.hero__rack .server-unit::after, .hero__visual .server-unit::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 4px;
-  background: linear-gradient(90deg, #3A404D 0%, #5A6272 50%, #3A404D 100%);
-  border-radius: 2px;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* Header unit */
-.hero__rack .header-unit, .hero__visual .header-unit {
-  padding: 24px 32px;
-  text-align: center;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(180deg, #2A2F3A 0%, #1A1D24 100%);
-  position: relative;
-  z-index: 10;
-}
-
-.hero__rack .logo, .hero__visual .logo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-shadow: 0 0 20px var(--gold-glow), 0 0 40px rgba(212,175,55,0.3);
-  margin-bottom: 8px;
-}
-
-.hero__rack .slogan-main, .hero__visual .slogan-main {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-primary);
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.hero__rack .slogan-sub, .hero__visual .slogan-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gold-bright);
-  letter-spacing: 1px;
-  display: block;
-  text-shadow: 0 0 10px var(--gold-glow);
-}
-
-.hero__rack .unit-screws, .hero__visual .unit-screws {
-  position: absolute;
-  inset: 4px;
-  pointer-events: none;
-}
-
-.hero__rack .unit-screws span, .hero__visual .unit-screws span {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #5A6272 0%, #2A2F3A 100%);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.hero__rack .unit-screws span:nth-child(1), .hero__visual .unit-screws span:nth-child(1) { top: 0; left: 0; }
-.hero__rack .unit-screws span:nth-child(2), .hero__visual .unit-screws span:nth-child(2) { top: 0; right: 0; }
-.hero__rack .unit-screws span:nth-child(3), .hero__visual .unit-screws span:nth-child(3) { bottom: 0; left: 0; }
-.hero__rack .unit-screws span:nth-child(4), .hero__visual .unit-screws span:nth-child(4) { bottom: 0; right: 0; }
-
-.hero__rack .unit-vents-top, .hero__visual .unit-vents-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: repeating-linear-gradient(90deg, rgba(0,0,0,0.6) 0px, rgba(0,0,0,0.6) 2px, transparent 2px, transparent 4px);
-  opacity: 0.5;
-}
-
-/* Server units */
-.hero__rack .server-unit, .hero__visual .server-unit {
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  text-decoration: none;
-  cursor: pointer;
-  color: var(--text-primary);
-}
-
-/* Hover: server slides OUT of cabinet */
-.hero__rack .server-unit:hover, .hero__visual .server-unit:hover {
-  transform: translateZ(70px);
-  box-shadow:
-    -5px 5px 20px rgba(0,0,0,0.8),
-    0 0 20px rgba(212,175,55,0.3);
-  z-index: 10;
-  border-left: 2px solid var(--gold);
-}
-
-/* Rails */
-.hero__rack .unit-rails, .hero__visual .unit-rails {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 10px;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.hero__rack .rail-left, .hero__visual .rail-left {
-  left: 0;
-  background: linear-gradient(90deg, #3A404D 0%, #1A1D24 100%);
-  border-right: 1px solid rgba(255,255,255,0.1);
-  box-shadow: inset -1px 0 2px rgba(0,0,0,0.5);
-}
-
-.hero__rack .rail-right, .hero__visual .rail-right {
-  right: 0;
-  background: linear-gradient(270deg, #3A404D 0%, #1A1D24 100%);
-  border-left: 1px solid rgba(255,255,255,0.1);
-  box-shadow: inset 1px 0 2px rgba(0,0,0,0.5);
-}
-
-/* Vents */
-.hero__rack .unit-vents, .hero__visual .unit-vents {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 16px;
-  background: repeating-linear-gradient(90deg, rgba(0,0,0,0.8) 0px, rgba(0,0,0,0.8) 1px, transparent 1px, transparent 4px);
-  opacity: 0.8;
-}
-
-/* LEDs */
-.hero__rack .unit-leds, .hero__visual .unit-leds {
-  display: flex;
-  gap: 6px;
-  margin-left: auto;
-  margin-right: 16px;
-  z-index: 3;
-}
-
-.hero__rack .led, .hero__visual .led {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  display: block;
-}
-
-.hero__rack .led-green, .hero__visual .led-green {
-  background: var(--neon-green);
-  box-shadow: 0 0 10px #00FF88, 0 0 20px #00FF88;
-  animation: blink 2s ease-in-out infinite;
-}
-
-.hero__rack .led-gold, .hero__visual .led-gold {
-  background: var(--gold);
-  box-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37;
-}
-
-.hero__rack .led-off, .hero__visual .led-off {
-  background: #3A3F4A;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
-}
-
-.hero__rack .delay-1, .hero__visual .delay-1 {
-  animation-delay: 0.7s;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.15; }
-}
-
-.hero__rack .unit-label, .hero__visual .unit-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--text-dim);
-  letter-spacing: 1px;
-  z-index: 3;
-  margin-right: auto;
-  margin-left: 16px;
-}
-
-/* Hologram overlay */
-.hero__rack .hologram-overlay, .hero__visual .hologram-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(5,7,10,0.95) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 12px 24px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  z-index: 10;
-  border-left: 2px solid var(--gold);
-}
-
-.hero__rack .server-unit:hover .hologram-overlay,
-.hero__visual .server-unit:hover .hologram-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero__rack .holo-header, .hero__visual .holo-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.hero__rack .holo-status, .hero__visual .holo-status {
-  color: var(--neon-green);
-  font-size: 10px;
-  animation: blink 1.5s infinite;
-}
-
-.hero__rack .holo-category, .hero__visual .holo-category {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  color: var(--gold);
-  letter-spacing: 2px;
-}
-
-.hero__rack .holo-title, .hero__visual .holo-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 2px;
-  text-shadow: 0 0 10px rgba(212,175,55,0.4);
-}
-
-.hero__rack .holo-desc, .hero__visual .holo-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
-}
-
-.hero__rack .holo-cta, .hero__visual .holo-cta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--gold-bright);
-  letter-spacing: 1px;
-  animation: text-pulse 2s ease-in-out infinite;
-}
-
-@keyframes text-pulse {
-  0%, 100% { opacity: 1; text-shadow: 0 0 8px var(--gold-glow); }
-  50% { opacity: 0.7; text-shadow: 0 0 2px var(--gold-glow); }
-}
-
-/* ===== BRAND BAR (chassis) ===== */
-.hero__rack .brandbar-unit, .hero__visual .brandbar-unit {
-  padding: 20px 24px 16px;
-  border-top: 3px solid var(--gold);
-  background: #0E1116;
-  position: relative;
-  z-index: 100;
-  transform: translateZ(45px);
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
-}
-
-.hero__rack .brandbar-unit::before, .hero__visual .brandbar-unit::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: 5%;
-  right: 5%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  filter: blur(4px);
-}
-
-.hero__rack .brandbar-metrics, .hero__visual .brandbar-metrics {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.hero__rack .metric, .hero__visual .metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.hero__rack .metric-num, .hero__visual .metric-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 rgba(255,255,255,0.2);
-}
-
-.hero__rack .metric-lbl, .hero__visual .metric-lbl {
-  font-family: 'Inter', sans-serif;
-  font-size: 9px;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-
-.hero__rack .status-plate, .hero__visual .status-plate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid rgba(0, 255, 136, 0.2);
-  border-radius: 4px;
-}
-
-.hero__rack .status-dot, .hero__visual .status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--neon-green);
-  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green-glow);
-  animation: blink 2s infinite;
-}
-
-.hero__rack .status-text, .hero__visual .status-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--neon-green);
-  letter-spacing: 1px;
-}
-
-/* ===== REFLECTION ===== */
+/* ===== RACK REFLECTION ===== */
 .hero__rack .rack-reflection, .hero__visual .rack-reflection {
   position: absolute;
-  bottom: -100px;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(180deg, rgba(212,175,55,0.15) 0%, rgba(0,255,136,0.08) 50%, transparent 100%);
-  transform: scaleY(-1);
-  opacity: 0.4;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, transparent 100%);
   filter: blur(8px);
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
 
+/* ===== DEVICE HOVER (SVG) ===== */
+.hero__rack .rack-device, .hero__visual .rack-device {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__rack .rack-device:hover, .hero__visual .rack-device:hover {
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+}
+
+/* LED blinking animations */
+@keyframes led-blink-1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+@keyframes led-blink-2 {
+  0%, 100% { opacity: 1; }
+  33% { opacity: 0.3; }
+  66% { opacity: 1; }
+}
+@keyframes led-blink-3 {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0.4; }
+  75% { opacity: 1; }
+}
+
+.hero__rack .led-blink-1, .hero__visual .led-blink-1 { animation: led-blink-1 1.5s infinite; }
+.hero__rack .led-blink-2, .hero__visual .led-blink-2 { animation: led-blink-2 2s infinite; }
+.hero__rack .led-blink-3, .hero__visual .led-blink-3 { animation: led-blink-3 1.8s infinite; }
+
+/* ===== TOOLTIP (HTML overlay) ===== */
+.hero__rack .rack-tooltip, .hero__visual .rack-tooltip {
+  position: absolute;
+  background: rgba(10, 15, 25, 0.95);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--text-primary);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero__rack .rack-tooltip.visible, .hero__visual .rack-tooltip.visible {
+  opacity: 1;
+}
+
+.hero__rack .rack-tooltip .tooltip-title, .hero__visual .rack-tooltip .tooltip-title {
+  font-weight: 600;
+  color: var(--gold-bright);
+  margin-bottom: 2px;
+}
+
+.hero__rack .rack-tooltip .tooltip-desc, .hero__visual .rack-tooltip .tooltip-desc {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.hero__rack .rack-tooltip .tooltip-cta, .hero__visual .rack-tooltip .tooltip-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--neon-green);
+  margin-top: 4px;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  .hero__rack .rack-perspective, .hero__visual .rack-perspective { min-height: 400px; }
-  .hero__rack .rack-cabinet, .hero__visual .rack-cabinet { width: 280px; height: 420px; }
-  .hero__rack .cabinet-side, .hero__visual .cabinet-side { width: 60px; }
-  .hero__rack .cabinet-top, .hero__rack .cabinet-bottom,
-  .hero__visual .cabinet-top, .hero__visual .cabinet-bottom { height: 60px; }
-  .hero__rack .header-unit, .hero__visual .header-unit { padding: 16px; min-height: 80px; }
-  .hero__rack .logo, .hero__visual .logo { font-size: 24px; letter-spacing: 2px; }
-  .hero__rack .slogan-main, .hero__visual .slogan-main { font-size: 10px; letter-spacing: 1px; }
-  .hero__rack .slogan-sub, .hero__visual .slogan-sub { font-size: 10px; }
-  .hero__rack .server-unit, .hero__visual .server-unit { min-height: 42px; padding: 0 12px; }
-  .hero__rack .holo-title, .hero__visual .holo-title { font-size: 13px; }
-  .hero__rack .holo-desc, .hero__visual .holo-desc { font-size: 10px; }
-  .hero__rack .brandbar-metrics, .hero__visual .brandbar-metrics { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .hero__rack .metric-num, .hero__visual .metric-num { font-size: 16px; }
-  .hero__rack .metric-lbl, .hero__visual .metric-lbl { font-size: 8px; }
-  .hero__rack .status-text, .hero__visual .status-text { font-size: 8px; letter-spacing: 0.5px; }
+  .hero__rack .server-rack-svg, .hero__visual .server-rack-svg {
+    max-width: 100%;
+  }
+  .hero__rack .ambient-glow, .hero__visual .ambient-glow {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 /* ===== REDUCED MOTION ===== */
@@ -740,13 +221,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* ===== ACTIVE STATE (mobile tap) ===== */
-.hero__rack .server-unit.active .hologram-overlay,
-.hero__visual .server-unit.active .hologram-overlay {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 </style>
@@ -846,190 +320,241 @@
 <p class="u-fs-13-text2-mt8" >Что будет после заявки: аудит → настройка → поддержка → отчётность.</p>
 </div>
 <div class="hero__rack hero__visual">
-<div class="ambient-glow"></div>
-  <div class="particles">
-    <div class="p p1"></div>
-    <div class="p p2"></div>
-    <div class="p p3"></div>
-    <div class="p p4"></div>
-  </div>
-  <div class="rack-perspective">
-  <div class="rack-cabinet">
-    <div class="cabinet-inner">
-      <div class="scanner-line"></div>
-      <div class="rack">
-      <!-- Header unit -->
-      <div class="rack-unit header-unit">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-vents-top"></div>
-        <div class="header-content">
-          <div class="logo">FF-IT</div>
-          <div class="slogan">
-            <span class="slogan-main">ВАШ IT-КОНТУР ПОД КОНТРОЛЕМ.</span>
-            <span class="slogan-sub">Даже в субботу.</span>
-          </div>
-        </div>
-      </div>
+  <!-- Ambient glow (CSS, blurred) -->
+  <div class="ambient-glow"></div>
 
-      <!-- Server units -->
-      <a href="servers.html" class="rack-unit server-unit" data-service="Настройка серверов" aria-label="Настройка серверов">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-01 · 2U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-off"></span>
-          <span class="led led-green delay-1"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">Настройка серверов</div>
-          <div class="holo-desc">Подбор, монтаж, виртуализация, бэкапы</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+  <!-- SVG Rack -->
+  <svg class="server-rack-svg" viewBox="0 0 480 680" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Server chassis metal gradient -->
+      <linearGradient id="server-chassis" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#4A505E" />
+        <stop offset="20%" stop-color="#2A2F3A" />
+        <stop offset="80%" stop-color="#1A1D24" />
+        <stop offset="100%" stop-color="#0E1116" />
+      </linearGradient>
 
-      <a href="audits/audit.html" class="rack-unit server-unit" data-service="IT-аудит" aria-label="IT-аудит">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-02 · 2U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-green"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-off"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">IT-аудит</div>
-          <div class="holo-desc">Экспресс-проверка инфраструктуры за 30 минут</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+      <!-- Vent pattern -->
+      <pattern id="vent-pattern" width="6" height="6" patternUnits="userSpaceOnUse">
+        <rect width="6" height="6" fill="#15181E" />
+        <rect width="2" height="6" fill="#000" />
+        <rect x="2" width="1" height="6" fill="rgba(255,255,255,0.1)" />
+      </pattern>
 
-      <a href="security/crypto.html" class="rack-unit server-unit" data-service="ЭЦП и КриптоПро" aria-label="ЭЦП и КриптоПро">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-03 · 1U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-off"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-green delay-1"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">ЭЦП и КриптоПро</div>
-          <div class="holo-desc">Токены, установка, настройка, перевыпуск</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+      <!-- Glass gradient -->
+      <linearGradient id="glass-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="rgba(20,30,40,0.35)" />
+        <stop offset="50%" stop-color="rgba(10,15,20,0.15)" />
+        <stop offset="100%" stop-color="rgba(5,10,15,0.4)" />
+      </linearGradient>
 
-      <a href="security/security.html" class="rack-unit server-unit" data-service="Безопасность данных" aria-label="Безопасность данных">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-04 · 1U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-green"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-off"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">Безопасность данных</div>
-          <div class="holo-desc">Антивирус, шифрование, разграничение доступа</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+      <!-- Rack back panel (grid) -->
+      <pattern id="rack-back-panel" width="20" height="20" patternUnits="userSpaceOnUse">
+        <rect width="20" height="20" fill="#05070A" />
+        <path d="M 0 0 L 20 0 M 0 10 L 20 10 M 0 0 L 0 20 M 10 0 L 10 20" stroke="#15181E" stroke-width="1" />
+      </pattern>
 
-      <a href="infrastructure/infrastructure.html" class="rack-unit server-unit" data-service="СКУД и видеонаблюдение" aria-label="СКУД и видеонаблюдение">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-05 · 2U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-off"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-green delay-1"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">СКУД и видеонаблюдение</div>
-          <div class="holo-desc">Контроль доступа, IP-камеры, архив</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+      <!-- Metal rail gradient -->
+      <linearGradient id="metal-rail" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1A1D24" />
+        <stop offset="50%" stop-color="#3A404D" />
+        <stop offset="100%" stop-color="#1A1D24" />
+      </linearGradient>
 
-      <a href="services.html" class="rack-unit server-unit" data-service="Абонентское обслуживание" aria-label="Абонентское обслуживание">
-        <div class="unit-screws"><span></span><span></span><span></span><span></span></div>
-        <div class="unit-rails"><span class="rail-left"></span><span class="rail-right"></span></div>
-        <div class="unit-vents"></div>
-        <div class="unit-label">SRV-06 · 4U</div>
-        <div class="unit-leds">
-          <span class="led led-green"></span>
-          <span class="led led-green"></span>
-          <span class="led led-gold"></span>
-          <span class="led led-green delay-1"></span>
-        </div>
-        <div class="hologram-overlay">
-          <div class="holo-header">
-            <span class="holo-status">●</span>
-            <span class="holo-category">SERVICE</span>
-          </div>
-          <div class="holo-title">Абонентское обслуживание</div>
-          <div class="holo-desc">Команда инженеров вместо штатного сисадмина</div>
-          <div class="holo-cta">[ Перейти на страницу услуги → ]</div>
-        </div>
-      </a>
+      <!-- Inner glow filter -->
+      <filter id="inner-glow">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
 
-      <!-- Brandbar unit -->
-      <div class="rack-unit brandbar-unit">
-        <div class="brandbar-metrics">
-          <div class="metric"><span class="metric-num" data-target="5">0</span><span class="metric-lbl">лет опыта</span></div>
-          <div class="metric"><span class="metric-num" data-target="120" data-suffix="+">0</span><span class="metric-lbl">проектов</span></div>
-          <div class="metric"><span class="metric-num" data-target="27">0</span><span class="metric-lbl">отзывов</span></div>
-          <div class="metric"><span class="metric-num" data-target="95" data-suffix="%">0</span><span class="metric-lbl">остаются</span></div>
-          <div class="metric"><span class="metric-num" data-target="4" data-suffix="+">0</span><span class="metric-lbl">специалиста</span></div>
-          <div class="metric"><span class="metric-num" data-fixed="24/7">0</span><span class="metric-lbl">на связи</span></div>
-        </div>
-        <div class="status-plate">
-          <span class="status-dot"></span>
-          <span class="status-text">ONLINE · Готовы помочь вашему бизнесу</span>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="cabinet-side cabinet-side--left"></div>
-    <div class="cabinet-side cabinet-side--right"></div>
-    <div class="cabinet-top"></div>
-    <div class="cabinet-bottom"></div>
-    <div class="cabinet-glass-door"></div>
-  </div>
-</div>
-<div class="rack-reflection"></div>
-  </div>
+      <!-- Drop shadow for devices -->
+      <filter id="device-shadow">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.6" />
+      </filter>
+
+      <!-- LED glow -->
+      <filter id="led-glow">
+        <feGaussianBlur stdDeviation="2" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+
+    <!-- Layer 0: Floor shadow -->
+    <ellipse cx="240" cy="660" rx="180" ry="25" fill="rgba(0,0,0,0.6)" filter="url(#device-shadow)" />
+
+    <!-- Layer 1: Rack frame -->
+    <g id="rack-frame">
+      <!-- Left rail -->
+      <rect x="40" y="40" width="22" height="600" rx="2" fill="url(#metal-rail)" stroke="#000" stroke-width="1" />
+      <!-- Right rail -->
+      <rect x="418" y="40" width="22" height="600" rx="2" fill="url(#metal-rail)" stroke="#000" stroke-width="1" />
+      <!-- Back panel -->
+      <rect x="62" y="40" width="356" height="600" fill="url(#rack-back-panel)" stroke="#111" stroke-width="1" />
+      <!-- Inner neon backlight -->
+      <rect x="62" y="40" width="356" height="600" fill="rgba(0,255,136,0.03)" />
+    </g>
+
+    <!-- Layer 2: Devices -->
+    <g id="devices-layer" transform="translate(62, 40)">
+
+      <!-- Device 1: Patch Panel (1U) - y=0 -->
+      <g class="rack-device" data-service="Сетевая инфраструктура">
+        <rect x="0" y="0" width="356" height="30" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <!-- Ports (24 ports) -->
+        <g fill="#111" stroke="#333" stroke-width="0.5">
+          <rect x="10" y="8" width="6" height="6" /><rect x="20" y="8" width="6" height="6" /><rect x="30" y="8" width="6" height="6" />
+          <rect x="40" y="8" width="6" height="6" /><rect x="50" y="8" width="6" height="6" /><rect x="60" y="8" width="6" height="6" />
+          <rect x="70" y="8" width="6" height="6" /><rect x="80" y="8" width="6" height="6" /><rect x="90" y="8" width="6" height="6" />
+          <rect x="100" y="8" width="6" height="6" /><rect x="110" y="8" width="6" height="6" /><rect x="120" y="8" width="6" height="6" />
+          <rect x="135" y="8" width="6" height="6" /><rect x="145" y="8" width="6" height="6" /><rect x="155" y="8" width="6" height="6" />
+          <rect x="165" y="8" width="6" height="6" /><rect x="175" y="8" width="6" height="6" /><rect x="185" y="8" width="6" height="6" />
+          <rect x="195" y="8" width="6" height="6" /><rect x="205" y="8" width="6" height="6" /><rect x="215" y="8" width="6" height="6" />
+          <rect x="225" y="8" width="6" height="6" /><rect x="235" y="8" width="6" height="6" />
+        </g>
+        <!-- LEDs -->
+        <circle cx="300" cy="10" r="2" fill="#00FF88" filter="url(#led-glow)" />
+        <circle cx="300" cy="22" r="2" fill="#D4AF37" filter="url(#led-glow)" />
+        <!-- Label -->
+        <text x="320" y="18" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">PATCH-24</text>
+      </g>
+
+      <!-- Device 2: Switch (1U) - y=35 -->
+      <g class="rack-device" data-service="Сетевое оборудование">
+        <rect x="0" y="35" width="356" height="30" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <!-- Ports row -->
+        <g fill="#111" stroke="#333" stroke-width="0.5">
+          <rect x="10" y="42" width="5" height="5" /><rect x="18" y="42" width="5" height="5" /><rect x="26" y="42" width="5" height="5" />
+          <rect x="34" y="42" width="5" height="5" /><rect x="42" y="42" width="5" height="5" /><rect x="50" y="42" width="5" height="5" />
+          <rect x="58" y="42" width="5" height="5" /><rect x="66" y="42" width="5" height="5" />
+          <rect x="80" y="42" width="5" height="5" /><rect x="88" y="42" width="5" height="5" /><rect x="96" y="42" width="5" height="5" />
+          <rect x="104" y="42" width="5" height="5" /><rect x="112" y="42" width="5" height="5" /><rect x="120" y="42" width="5" height="5" />
+          <rect x="128" y="42" width="5" height="5" /><rect x="136" y="42" width="5" height="5" />
+        </g>
+        <!-- LEDs (blinking) -->
+        <circle cx="280" cy="40" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
+        <circle cx="280" cy="50" r="2" fill="#D4AF37" filter="url(#led-glow)" class="led-blink-2" />
+        <circle cx="290" cy="40" r="2" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3" />
+        <circle cx="290" cy="50" r="2" fill="#00FF88" filter="url(#led-glow)" />
+        <!-- Label -->
+        <text x="310" y="52" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SW-16P</text>
+      </g>
+
+      <!-- Device 3: Server 2U - y=70 -->
+      <g class="rack-device" data-service="Настройка серверов">
+        <rect x="0" y="70" width="356" height="44" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <!-- Vents -->
+        <rect x="10" y="78" width="200" height="28" fill="url(#vent-pattern)" rx="1" />
+        <!-- Handle -->
+        <rect x="173" y="68" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
+        <!-- Bolts -->
+        <circle cx="8" cy="75" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="75" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="8" cy="109" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="109" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <!-- LEDs -->
+        <circle cx="300" cy="78" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
+        <circle cx="300" cy="90" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
+        <circle cx="300" cy="102" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-2" />
+        <!-- Label -->
+        <text x="315" y="92" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-01</text>
+      </g>
+
+      <!-- Device 4: Server 2U - y=120 -->
+      <g class="rack-device" data-service="Безопасность данных">
+        <rect x="0" y="120" width="356" height="44" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <rect x="10" y="128" width="200" height="28" fill="url(#vent-pattern)" rx="1" />
+        <rect x="173" y="118" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
+        <circle cx="8" cy="125" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="125" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="8" cy="159" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="159" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="300" cy="128" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
+        <circle cx="300" cy="140" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
+        <circle cx="300" cy="152" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
+        <text x="315" y="142" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-02</text>
+      </g>
+
+      <!-- Device 5: Server 4U - y=170 -->
+      <g class="rack-device" data-service="Абонентское обслуживание">
+        <rect x="0" y="170" width="356" height="88" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <rect x="10" y="178" width="200" height="32" fill="url(#vent-pattern)" rx="1" />
+        <rect x="10" y="214" width="200" height="32" fill="url(#vent-pattern)" rx="1" />
+        <rect x="173" y="168" width="10" height="6" rx="1" fill="#444" stroke="#222" stroke-width="0.5" />
+        <circle cx="8" cy="175" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="175" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="8" cy="253" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="348" cy="253" r="2" fill="#3A404D" stroke="#111" stroke-width="0.5" />
+        <circle cx="300" cy="185" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
+        <circle cx="300" cy="200" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-3" />
+        <circle cx="300" cy="215" r="2.5" fill="#D4AF37" filter="url(#led-glow)" />
+        <circle cx="300" cy="230" r="2.5" fill="#00FF88" filter="url(#led-glow)" class="led-blink-1" />
+        <circle cx="300" cy="245" r="2.5" fill="#00FF88" filter="url(#led-glow)" />
+        <text x="315" y="215" font-family="JetBrains Mono, monospace" font-size="8" fill="#5B6472">SRV-03</text>
+      </g>
+
+      <!-- Device 6: PDU (Power Distribution) - y=265 -->
+      <g class="rack-device" data-service="Электропитание">
+        <rect x="0" y="265" width="356" height="20" rx="2" fill="url(#server-chassis)" stroke="#000" stroke-width="1" filter="url(#device-shadow)" />
+        <!-- Outlets -->
+        <g fill="#111" stroke="#333" stroke-width="0.5">
+          <rect x="15" y="270" width="8" height="10" /><rect x="30" y="270" width="8" height="10" />
+          <rect x="45" y="270" width="8" height="10" /><rect x="60" y="270" width="8" height="10" />
+          <rect x="75" y="270" width="8" height="10" /><rect x="90" y="270" width="8" height="10" />
+          <rect x="105" y="270" width="8" height="10" /><rect x="120" y="270" width="8" height="10" />
+        </g>
+        <text x="310" y="278" font-family="JetBrains Mono, monospace" font-size="7" fill="#5B6472">PDU-16A</text>
+      </g>
+
+      <!-- Device 7: Empty slot (1U) - y=290 -->
+      <g class="rack-device" data-service="Свободный слот">
+        <rect x="0" y="290" width="356" height="24" rx="2" fill="#0E1116" stroke="#222" stroke-width="1" />
+        <rect x="10" y="295" width="336" height="14" fill="url(#vent-pattern)" rx="1" opacity="0.3" />
+      </g>
+
+      <!-- Device 8: Empty slot (1U) - y=318 -->
+      <g class="rack-device" data-service="Свободный слот">
+        <rect x="0" y="318" width="356" height="24" rx="2" fill="#0E1116" stroke="#222" stroke-width="1" />
+        <rect x="10" y="323" width="336" height="14" fill="url(#vent-pattern)" rx="1" opacity="0.3" />
+      </g>
+
+    </g>
+
+    <!-- Layer 3: Cables (drawn over devices, under glass) -->
+    <g id="cables-layer" opacity="0.85">
+      <!-- Cable 1: blue, from patch panel port to server -->
+      <path d="M 100 52 C 100 80, 120 100, 120 130" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 2: red -->
+      <path d="M 150 52 C 150 90, 180 110, 180 140" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 3: green -->
+      <path d="M 200 52 C 200 100, 220 120, 220 150" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 4: yellow -->
+      <path d="M 250 52 C 250 85, 270 105, 270 135" stroke="#EAB308" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 5: blue (longer) -->
+      <path d="M 80 52 C 60 52, 40 120, 60 180 C 80 240, 100 260, 100 290" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 6: red -->
+      <path d="M 130 52 C 110 52, 90 130, 110 190 C 130 250, 150 270, 150 300" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 7: green -->
+      <path d="M 180 52 C 160 52, 140 140, 160 200 C 180 260, 200 280, 200 310" stroke="#22C55E" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 8: yellow -->
+      <path d="M 230 52 C 210 52, 190 150, 210 210 C 230 270, 250 290, 250 320" stroke="#EAB308" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 9: purple -->
+      <path d="M 270 52 C 290 52, 310 100, 310 150" stroke="#A855F7" stroke-width="2" fill="none" stroke-linecap="round" />
+      <!-- Cable 10: cyan -->
+      <path d="M 320 52 C 340 52, 360 100, 360 150" stroke="#06B6D4" stroke-width="2" fill="none" stroke-linecap="round" />
+    </g>
+
+    <!-- Layer 4: Glass door -->
+    <g id="glass-door">
+      <rect x="40" y="30" width="400" height="620" rx="5" fill="url(#glass-gradient)" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
+      <!-- Glass highlight (diagonal) -->
+      <path d="M 50 40 L 200 40 L 50 280 Z" fill="rgba(255,255,255,0.06)" />
+      <path d="M 430 640 L 280 640 L 430 400 Z" fill="rgba(255,255,255,0.03)" />
+    </g>
+
+  </svg>
+
+  <!-- Rack reflection (CSS) -->
+  <div class="rack-reflection"></div>
 </div>
 </div>
 </div>
@@ -1570,60 +1095,71 @@
 <script id="hero-rack-js">
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Counter animation
-  const counters = document.querySelectorAll('.metric-num[data-target]');
-  counters.forEach(counter => {
-    const target = parseFloat(counter.dataset.target);
-    const suffix = counter.dataset.suffix || '';
-    const duration = 1800;
-    const startTime = performance.now();
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = Math.floor(target * ease);
-      counter.textContent = current + suffix;
-      if (progress < 1) requestAnimationFrame(update);
-      else counter.textContent = target + suffix;
-    }
-    requestAnimationFrame(update);
+  // SVG device interaction
+  const svg = document.querySelector('.server-rack-svg');
+  const tooltip = document.createElement('div');
+  tooltip.className = 'rack-tooltip';
+  document.querySelector('.hero__rack, .hero__visual').appendChild(tooltip);
+
+  const serviceLinks = {
+    'Настройка серверов': 'servers.html',
+    'Безопасность данных': 'security/security.html',
+    'Абонентское обслуживание': 'services.html',
+    'Сетевая инфраструктура': 'infrastructure/infrastructure.html',
+    'Сетевое оборудование': 'infrastructure/infrastructure.html',
+    'Электропитание': 'servers.html',
+    'Свободный слот': 'contacts.html'
+  };
+
+  const serviceDescs = {
+    'Настройка серверов': 'Подбор, монтаж, виртуализация, бэкапы',
+    'Безопасность данных': 'Антивирус, шифрование, разграничение доступа',
+    'Абонентское обслуживание': 'Команда инженеров вместо штатного сисадмина',
+    'Сетевая инфраструктура': 'Кабели, коммутаторы, патч-панели',
+    'Сетевое оборудование': 'Управляемые коммутаторы, маршрутизаторы',
+    'Электропитание': 'PDU, ИБП, распределение нагрузки',
+    'Свободный слот': 'Свободный юнит для вашего оборудования'
+  };
+
+  document.querySelectorAll('.rack-device').forEach(device => {
+    const service = device.getAttribute('data-service');
+    const link = serviceLinks[service] || 'services.html';
+
+    device.addEventListener('mouseenter', (e) => {
+      const rect = device.getBoundingClientRect();
+      const container = document.querySelector('.hero__rack, .hero__visual').getBoundingClientRect();
+      tooltip.innerHTML = '<div class="tooltip-title">' + service + '</div>' +
+        '<div class="tooltip-desc">' + (serviceDescs[service] || '') + '</div>' +
+        '<div class="tooltip-cta">[ Перейти → ]</div>';
+      tooltip.style.left = (rect.left - container.left + rect.width / 2 - 60) + 'px';
+      tooltip.style.top = (rect.top - container.top - 40) + 'px';
+      tooltip.classList.add('visible');
+    });
+
+    device.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('visible');
+    });
+
+    device.addEventListener('click', () => {
+      console.log('[F&F] Click:', service);
+      window.location.href = link;
+    });
   });
 
-  // Fixed values (like 24/7)
-  document.querySelectorAll('.metric-num[data-fixed]').forEach(el => {
-    el.textContent = el.dataset.fixed;
-  });
-
-  // 2. Mouse parallax for particles
-  const rack = document.querySelector('.hero__rack');
-  const particles = document.querySelectorAll('.hero__rack .p');
+  // Ambient glow pulse (already CSS, but ensure it runs)
+  // Mouse parallax for particles
+  const particles = document.querySelectorAll('.hero__rack .p, .hero__visual .p');
+  const rack = document.querySelector('.hero__rack, .hero__visual');
   if (rack && window.matchMedia('(pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
       const rect = rack.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const deltaX = (e.clientX - centerX) / 40;
-      const deltaY = (e.clientY - centerY) / 40;
+      const deltaX = (e.clientX - centerX) / 50;
+      const deltaY = (e.clientY - centerY) / 50;
       particles.forEach((p, i) => {
-        const factor = (i + 1) * 0.5;
+        const factor = (i + 1) * 0.3;
         p.style.transform = 'translate(' + (deltaX * factor) + 'px, ' + (deltaY * factor) + 'px)';
-      });
-    });
-  }
-
-  // 3. Click tracking
-  document.querySelectorAll('.server-unit').forEach(unit => {
-    unit.addEventListener('click', () => {
-      console.log('[F&F] Click:', unit.dataset.service);
-    });
-  });
-
-  // 4. Mobile tap
-  if (window.matchMedia('(pointer: coarse)').matches) {
-    document.querySelectorAll('.server-unit').forEach(unit => {
-      unit.addEventListener('touchstart', () => {
-        document.querySelectorAll('.server-unit').forEach(u => u.classList.remove('active'));
-        unit.classList.add('active');
       });
     });
   }
