@@ -84,12 +84,14 @@
   transform: perspective(1000px) rotateY(-5deg);
   z-index: 1;
   box-shadow: -20px 20px 50px rgba(0,0,0,0.8);
+  overflow: visible !important;
 }
 
 .rack-img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 /* Сканирующая линия */
@@ -121,7 +123,7 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 5;
+  z-index: 20;
 }
 
 .rack-hotspot:hover {
@@ -134,27 +136,38 @@
 /* Тултипы */
 .hs-tooltip {
   position: absolute;
-  left: 100%;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%) translateX(10px);
-  background: #12151C;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: rgba(10, 13, 20, 0.95);
+  backdrop-filter: blur(4px);
   border: 1px solid #D4AF37;
-  padding: 10px 14px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
   white-space: nowrap;
-  margin-left: 10px;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 
 .rack-hotspot:hover .hs-tooltip {
   opacity: 1;
-  transform: translateY(-50%) translateX(0);
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.hs-tooltip h4 { margin: 0 0 2px; color: #D4AF37; font-size: 14px; }
-.hs-tooltip span { color: #9AA0A6; font-size: 11px; }
+.hs-tooltip h4 {
+  margin: 0 0 4px;
+  color: #D4AF37;
+  font-size: 14px;
+  font-weight: 700;
+}
+.hs-tooltip span {
+  color: #E8EAF0;
+  font-size: 11px;
+  display: block;
+}
 
 /* Плашка */
 .rack-brandbar {
