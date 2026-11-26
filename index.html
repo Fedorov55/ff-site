@@ -59,62 +59,46 @@
 
 <style id="hero-rack-css">
 
+/* --- 1. Контейнер и 3D --- */
 .hero-visual-realistic {
   position: relative;
   width: 100%;
   max-width: 450px;
   margin: 0 auto;
+  perspective: 1200px;
+  z-index: 1;
 }
 
-/* Свечение */
-.visual-glow {
-  position: absolute;
-  inset: -10px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-  filter: blur(50px);
-  z-index: 0;
+/* Левитация всего блока */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotateY(-15deg) rotateX(5deg); }
+  50% { transform: translateY(-10px) rotateY(-12deg) rotateX(3deg); }
 }
 
-/* Контейнер для фото */
 .rack-photo-container {
   position: relative;
   width: 100%;
-  border-radius: 12px;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
   mix-blend-mode: screen;
-  transform: perspective(1000px) rotateY(-5deg);
-  z-index: 1;
-  box-shadow: -20px 20px 50px rgba(0,0,0,0.8);
+  z-index: 2;
   overflow: visible !important;
 }
 
+/* Отзеркаливаем саму картинку по горизонтали */
 .rack-img {
   width: 100%;
   height: auto;
   display: block;
+  transform: scaleX(-1);
+  filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.15));
   border-radius: 12px;
 }
 
-/* Сканирующая линия */
-.scanner-line {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: #00FF88;
-  box-shadow: 0 0 20px 4px rgba(0, 255, 136, 0.6);
-  opacity: 0.8;
-  animation: scan 5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 10;
-}
-
-@keyframes scan {
-  0% { top: 5%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 95%; opacity: 0; }
-}
-
-/* Хотспоты (прозрачные зоны) */
+/* --- 2. Хотспоты (Без размытия) --- */
 .rack-hotspot {
   position: absolute;
   left: 15%;
@@ -124,16 +108,16 @@
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 20;
+  backdrop-filter: none !important;
 }
 
 .rack-hotspot:hover {
   background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-  backdrop-filter: blur(2px);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Тултипы */
+/* --- 3. Тултипы --- */
 .hs-tooltip {
   position: absolute;
   left: 50%;
@@ -163,13 +147,58 @@
   font-size: 14px;
   font-weight: 700;
 }
+
 .hs-tooltip span {
   color: #E8EAF0;
   font-size: 11px;
   display: block;
 }
 
-/* Плашка */
+/* --- 4. Фоновое свечение (Ambient Glow) --- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; filter: blur(50px); transform: scale(1); }
+  50% { opacity: 0.6; filter: blur(60px); transform: scale(1.1); }
+}
+
+.visual-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; height: 120%;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 70%);
+  animation: pulse-glow 5s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- 5. Частицы (Data Packets) --- */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-300px) translateX(50px); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+}
+
+.p1 { bottom: 10%; left: 20%; background: #00FF88; box-shadow: 0 0 10px #00FF88; animation: float-particle 5s linear infinite; }
+.p2 { bottom: 20%; right: 30%; background: #D4AF37; box-shadow: 0 0 10px #D4AF37; animation: float-particle 7s linear infinite 1s; }
+.p3 { bottom: 0%; left: 50%; background: #00FF88; box-shadow: 0 0 10px #00FF88; animation: float-particle 6s linear infinite 2s; }
+.p4 { bottom: 30%; left: 10%; background: #D4AF37; box-shadow: 0 0 10px #D4AF37; animation: float-particle 8s linear infinite 0.5s; }
+.p5 { bottom: 5%; right: 20%; background: #00FF88; box-shadow: 0 0 10px #00FF88; animation: float-particle 4s linear infinite 3s; }
+
+/* --- 6. Плашка с метриками --- */
 .rack-brandbar {
   position: relative;
   margin-top: 30px;
@@ -232,10 +261,11 @@
   50% { opacity: 0.3; }
 }
 
-/* Mobile */
+/* --- 7. Мобильная адаптация --- */
 @media (max-width: 600px) {
   .rack-photo-container {
     transform: none;
+    animation: none;
   }
   .rack-brandbar {
     grid-template-columns: repeat(3, 1fr);
@@ -348,13 +378,20 @@
   <!-- Фоновое свечение -->
   <div class="visual-glow"></div>
 
+  <!-- Частицы (летающие точки) -->
+  <div class="particles-container">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+  </div>
+
   <!-- Контейнер с фото и эффектами -->
   <div class="rack-photo-container">
     <!-- Твое фото шкафа -->
     <img src="img/server-rack.png" alt="Серверный шкаф F&F" class="rack-img" />
     
-    <!-- Сканер -->
-    <div class="scanner-line"></div>
 
     <!-- Зоны -->
     <a href="servers.html" class="rack-hotspot" style="top: 12%;">
