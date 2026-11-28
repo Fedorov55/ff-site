@@ -148,7 +148,7 @@
 .footer__copy { color: var(--text-2); font-size: 13px; }
 .footer__region { color: var(--muted); font-size: 12px; }
 .footer__links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.footer__links a { color: var(--muted); font-size: 12px; text-decoration: underline; text-decoration-color: transparent; }
+.footer__links a { color: var(--muted); font-size: 12px; text-decoration: none; text-decoration-color: transparent; }
 .footer__links a:hover { color: var(--gold-light); text-decoration-color: currentColor; }
 @media (max-width: 900px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .footer__inner { grid-template-columns: 1fr; } }
@@ -271,7 +271,7 @@ PY
 /* Utility classes (Phase 2b) */
 .u-text-2 { color:var(--text-2); }
 .u-py-40-20 { padding: 40px 0 20px; }
-.u-gold-underline { color:var(--gold-light);text-decoration:underline; }
+.u-gold-underline { color:var(--gold-light);text-decoration:none; }
 .u-fs-18-gold-bold-ls1 { font-size:18px;font-weight:900;margin:0;color:var(--gold-light);letter-spacing:1px; }
 .u-fs-14-bold-mb4 { font-size:14px;font-weight:700;margin-bottom:4px; }
 .u-gold-fs18-m24 { color:var(--gold-light);font-size:18px;margin:24px 0 8px; }
@@ -390,7 +390,7 @@ PY
 .u-flex-between-card { display:flex;justify-content:space-between;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--card); }
 
 /* Utility classes (Phase 2g) */
-.u-gold-underline { color: var(--gold); text-decoration: underline; }
+.u-gold-underline { color: var(--gold); text-decoration: none; }
 .u-text-left-max920-ml0 { text-align:left;max-width:920px;margin-left:0; }
 .u-fs-28 { font-size:28px; }
 .u-fs-14-fw600-mb8-gold { font-size:14px;font-weight:600;margin:0 0 8px;color:var(--gold-light); }
@@ -508,7 +508,7 @@ PY
 .u-inl-454864 { border-bottom:1px solid var(--border-gold); }
 .u-inl-0a8bef { color:var(--gold);font-weight:600; }
 .u-inl-cf62eb { color:var(--gold-light); }
-.u-inl-b1847b { color:var(--gold-light);text-decoration:underline !important; }
+.u-inl-b1847b { color:var(--gold-light);text-decoration:none !important; }
 .u-inl-53ced0 { color:var(--text);font-size:20px;font-weight:700;margin-bottom:20px; }
 .u-inl-057d2c { color:var(--text);font-weight:600;font-variant-numeric:tabular-nums; }
 .u-inl-c7b3e4 { color:var(--text-2);font-size:14px;font-style:italic;margin:0 0 12px; }
